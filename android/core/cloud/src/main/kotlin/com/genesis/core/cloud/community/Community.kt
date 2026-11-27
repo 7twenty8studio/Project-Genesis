@@ -401,4 +401,79 @@ class CommunityApi(private val client: SupabaseClient, private val token: () -> 
         runCatching { client.callFunction("group-notify", buildJsonObject { put("announcementID", id) }.toString(), token()) }
     }
 
+
+    // Group settings and moderation (GroupMembersView and GroupModerationView on iOS)
+
+    private fun groupAndUser(group: String, user: String) =
+        arrayOf("p_group" to JsonPrimitive(group.lowercase()), "p_user" to JsonPrimitive(user.lowercase()))
+
+    /** A fresh invite code; the old one stops working. */
+    fun newInviteCode(group: String): String =
+        rpc("new_invite_code", "p_group" to JsonPrimitive(group)).trim().trim('"')
+
+    fun deleteGroup(group: String) {
+        rpc("delete_group", "p_group" to JsonPrimitive(group))
+    }
+
+    /** "leader" (moderator) or "member"; owner only. */
+    fun setRole(role: String, user: String, group: String) {
+        rpc("set_member_role", *groupAndUser(group, user), "p_role" to JsonPrimitive(role))
+    }
+
+    fun setChurchRole(role: ChurchMemberRole, user: String, group: String) {
+        rpc("set_church_role", *groupAndUser(group, user), "p_role" to JsonPrimitive(role.rawValue))
+    }
+
+    fun removeMember(user: String, group: String) {
+        rpc("remove_member", *groupAndUser(group, user))
+    }
+
+    fun transferOwnership(group: String, user: String) {
+        rpc("transfer_group_ownership", *groupAndUser(group, user))
+    }
+
+    fun banMember(user: String, group: String, reason: String) {
+        rpc("ban_member", *groupAndUser(group, user), "p_reason" to JsonPrimitive(reason.trim().take(300)))
+    }
+
+    fun unbanMember(user: String, group: String) {
+        rpc("unban_member", *groupAndUser(group, user))
+    }
+
+    /** Mutes for `hours` (0 unmutes). */
+    fun muteMember(user: String, group: String, hours: Int) {
+        rpc("mute_member", *groupAndUser(group, user), "p_hours" to JsonPrimitive(hours.coerceIn(0, 720)))
+    }
+
+    fun bans(group: String): List<GroupBan> = get(
+        "group_bans",
+        "select" to "group_id,user_id,display_name,reason,created_at",
+        "group_id" to "eq.$group",
+        "order" to "created_at.desc",
+    )
+
+    fun joinRequests(group: String): List<GroupJoinRequest> = get(
+        "group_join_requests",
+        "select" to "group_id,user_id,display_name,created_at,group_name",
+        "group_id" to "eq.$group",
+        "order" to "created_at.asc",
+    )
+
+    fun answerJoinRequest(user: String, group: String, accept: Boolean) {
+        rpc("answer_join_request", *groupAndUser(group, user), "p_accept" to JsonPrimitive(accept))
+    }
+
+    fun setRequiresApproval(required: Boolean, group: String) {
+        rpc("set_group_approval", "p_group" to JsonPrimitive(group), "p_required" to JsonPrimitive(required))
+    }
+
+    fun reports(group: String): List<GroupReport> = wrap {
+        json.decodeFromString<List<GroupReport>>(rpc("group_reports", "p_group" to JsonPrimitive(group)).ifBlank { "[]" }.let { if (it == "null") "[]" else it })
+    }
+
+    fun reviewReport(kind: ContentKind, id: String, action: ReportAction) {
+        rpc("review_group_report", "p_type" to JsonPrimitive(kind.rawValue), "p_id" to JsonPrimitive(id.lowercase()), "p_action" to JsonPrimitive(action.rawValue))
+    }
+
+    fun unblock(user: String) = delete("user_blocks", "blocker" to "eq.${me()}", "blocked" to "eq.${user.lowercase()}")
 }

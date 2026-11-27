@@ -128,5 +128,17 @@ class CommunityStore(private val account: AccountService, private val scope: Cor
         return true
     }
 
+    suspend fun unblock(user: String): Boolean {
+        if (!perform { it.unblock(user) }) return false
+        _state.update { it.copy(blocked = it.blocked - user.lowercase()) }
+        return true
+    }
+
+    suspend fun deleteGroup(id: String): Boolean {
+        if (!perform { it.deleteGroup(id) }) return false
+        _state.update { state -> state.copy(groups = state.groups.filterNot { it.id == id }) }
+        return true
+    }
+
     suspend fun report(kind: ContentKind, id: String, reason: ReportReason): Boolean = perform { it.report(kind, id, reason) }
 }

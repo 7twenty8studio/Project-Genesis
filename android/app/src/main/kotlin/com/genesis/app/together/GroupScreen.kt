@@ -107,6 +107,9 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, modifier: Modifier = Modifi
     var hidden by remember { mutableStateOf(setOf<String>()) }
     var loadError by remember { mutableStateOf<CommunityError?>(null) }
     var leaving by remember { mutableStateOf(false) }
+    var closing by remember { mutableStateOf(false) }
+    var moderating by rememberSaveable { mutableStateOf(false) }
+    var moderation by remember { mutableStateOf(ModerationContent()) }
 
     suspend fun reload() {
         val api = store.api ?: return
@@ -128,7 +131,16 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, modifier: Modifier = Modifi
             content = content.copy(loaded = true)
         }
     }
+    suspend fun reloadModeration() {
+        if (group?.isLeader == true) runCatching { moderation = loadModeration(app, groupId) }
+    }
     LaunchedEffect(groupId) { reload() }
+    LaunchedEffect(groupId, group?.isLeader, moderating) { if (!moderating) reloadModeration() }
+
+    if (moderating && group != null) {
+        ModerationScreen(group, onChanged = { store.refreshGroups(); reload() }, onDone = { moderating = false })
+        return
+    }
 
     fun shows(user: String, id: String) = user.lowercase() !in state.blocked && id !in hidden
 
@@ -136,7 +148,13 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, modifier: Modifier = Modifi
         Row(Modifier.padding(start = 4.dp, end = 4.dp, top = 8.dp), verticalAlignment = Alignment.CenterVertically) {
             TextButton(onClick = onBack) { Text("‹ " + stringResource(R.string.tab_together), color = colors.accent) }
             Spacer(Modifier.weight(1f))
-            if (group != null) GroupMenu(onLeave = { leaving = true })
+            if (group?.isLeader == true) {
+                TextButton(onClick = { moderating = true }) {
+                    val count = moderation.pendingCount
+                    Text(stringResource(R.string.moderation) + if (count > 0) " ($count)" else "", color = colors.accent)
+                }
+            }
+            if (group != null) GroupMenu(isOwner = group.isOwner, onLeave = { leaving = true }, onClose = { closing = true })
         }
         if (group == null) {
             EmptyJournal(R.string.not_available, R.string.not_in_group)
@@ -198,27 +216,41 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, modifier: Modifier = Modifi
                 menu = { menu(ContentKind.GROUP_ANNOUNCEMENT, it.id, it.userId, it.displayName) },
                 onPost = { title, body -> store.perform { it.addAnnouncement(title, body, groupId) }.also { if (it) reload() } },
             )
-            GroupTab.MEMBERS -> Members(group, content.members)
+            GroupTab.MEMBERS -> GroupMembers(group, content.members, onChanged = {
+                store.refreshGroups()
+                reload()
+            })
         }
     }
 
     if (leaving && group != null) {
-        AlertDialog(
-            onDismissRequest = { leaving = false },
-            title = { Text(stringResource(R.string.leave_name_question, group.name)) },
-            confirmButton = {
-                TextButton(onClick = {
-                    leaving = false
-                    scope.launch { if (store.leaveGroup(group.id)) onBack() }
-                }) { Text(stringResource(R.string.leave_group), color = colors.accent) }
-            },
-            dismissButton = { TextButton(onClick = { leaving = false }) { Text(stringResource(R.string.cancel), color = colors.secondaryText) } },
+        Confirm(
+            title = stringResource(R.string.leave_name_question, group.name),
+            message = stringResource(
+                when {
+                    !group.isOwner -> R.string.leave_rejoin
+                    group.isChurch -> R.string.leave_owner_admin
+                    else -> R.string.leave_owner_moderator
+                },
+            ),
+            action = stringResource(R.string.leave),
+            onConfirm = { scope.launch { if (store.leaveGroup(group.id)) onBack() } },
+            onDismiss = { leaving = false },
+        )
+    }
+    if (closing && group != null) {
+        Confirm(
+            title = stringResource(R.string.close_name_question, group.name),
+            message = stringResource(R.string.close_message),
+            action = stringResource(R.string.close_group),
+            onConfirm = { scope.launch { if (store.deleteGroup(group.id)) onBack() } },
+            onDismiss = { closing = false },
         )
     }
 }
 
 @Composable
-private fun GroupMenu(onLeave: () -> Unit) {
+private fun GroupMenu(isOwner: Boolean, onLeave: () -> Unit, onClose: () -> Unit) {
     val colors = LocalReaderColors.current
     var open by remember { mutableStateOf(false) }
     Box {
@@ -230,6 +262,7 @@ private fun GroupMenu(onLeave: () -> Unit) {
         }
         DropdownMenu(expanded = open, onDismissRequest = { open = false }) {
             DropdownMenuItem(text = { Text(stringResource(R.string.leave_group)) }, onClick = { open = false; onLeave() })
+            if (isOwner) DropdownMenuItem(text = { Text(stringResource(R.string.close_group)) }, onClick = { open = false; onClose() })
         }
     }
 }
@@ -402,53 +435,4 @@ private fun AnnouncementDialog(onPost: suspend (String, String) -> Boolean, onDo
         },
         dismissButton = { TextButton(onClick = onDone) { Text(stringResource(R.string.cancel), color = colors.secondaryText) } },
     )
-}
-
-@Composable
-private fun Members(group: GroupSummary, members: List<GroupMember>) {
-    val colors = LocalReaderColors.current
-    val context = LocalContext.current
-    val clipboard = LocalClipboard.current
-    val scope = rememberCoroutineScope()
-    var copied by remember { mutableStateOf(false) }
-    val invite = stringResource(R.string.invite_message, group.name, group.formattedInviteCode)
-    val shareTitle = stringResource(R.string.invite_people)
-    LazyColumn(Modifier.fillMaxSize(), contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        if (group.inviteCode.isNotBlank()) item {
-            Column(Modifier.fillMaxWidth().background(colors.surface, RoundedCornerShape(14.dp)).padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text(stringResource(R.string.invite_code), style = MaterialTheme.typography.labelLarge, color = colors.secondaryText)
-                Text(group.formattedInviteCode, style = MaterialTheme.typography.headlineSmall.copy(fontFamily = FontFamily.Monospace, fontWeight = FontWeight.SemiBold), color = colors.text)
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Button(
-                        onClick = {
-                            val send = Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT, invite)
-                            context.startActivity(Intent.createChooser(send, shareTitle))
-                        },
-                        colors = ButtonDefaults.buttonColors(containerColor = colors.accent, contentColor = colors.background),
-                    ) { Text(shareTitle) }
-                    TextButton(onClick = {
-                        scope.launch { clipboard.setClipEntry(ClipEntry(ClipData.newPlainText(shareTitle, group.formattedInviteCode))) }
-                        copied = true
-                    }) { Text(stringResource(if (copied) R.string.copied else R.string.copy), color = colors.accent) }
-                }
-            }
-        }
-        item {
-            Column(Modifier.fillMaxWidth().background(colors.surface, RoundedCornerShape(14.dp))) {
-                members.forEachIndexed { index, member ->
-                    Row(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
-                        Text(member.displayName, style = MaterialTheme.typography.bodyLarge, color = colors.text, modifier = Modifier.weight(1f))
-                        val standing = when {
-                            member.userId.equals(group.ownerId, ignoreCase = true) -> GroupStanding.OWNER
-                            member.isLeader -> GroupStanding.MODERATOR
-                            member.preacher == true -> GroupStanding.PREACHER
-                            else -> null
-                        }
-                        standing?.let { Text(stringResource(it.title(group.isChurch)), style = MaterialTheme.typography.labelMedium, color = colors.accent) }
-                    }
-                    if (index < members.lastIndex) HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
-                }
-            }
-        }
-    }
 }
