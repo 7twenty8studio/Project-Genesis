@@ -1523,4 +1523,27 @@
     <string name="year_most_read">Most read: %s</string>
     <string name="year_in_review">Your %s in Review</string>
     <string name="year_in_review_detail">Look back on your year of reading, highlights and prayer.</string>
+    <string name="whats_new">What\'s New</string>
+    <string name="whats_new_subtitle">Here\'s what has been added to Versely.</string>
+    <string name="whats_new_turn_on">Turn On %s</string>
+    <string name="whats_new_on">On. You can change this in Settings › Features.</string>
+    <string name="wn_church_title">Your church\'s sermons</string>
+    <string name="wn_church_outline">Open the outline</string>
+    <string name="wn_church_outline_detail">Scan your church\'s QR code or tap its link to follow the sermon outline in Versely. Its sermons also appear on your church\'s group page.</string>
+    <string name="wn_church_passages">Every passage in your Bible</string>
+    <string name="wn_church_passages_detail">Tap a reference to read it in your own Bible, then carry on where you were.</string>
+    <string name="wn_church_notes">Your own notes</string>
+    <string name="wn_church_notes_detail">Take Notes starts private sermon notes with the passages already added. They stay yours, even if the church takes the outline down.</string>
+    <string name="wn_handouts_title">Fill in the blanks</string>
+    <string name="wn_handouts">Sermon handouts</string>
+    <string name="wn_handouts_detail">When your church\'s outline has blanks, fill them in as you listen. Your answers are saved privately with your sermon notes.</string>
+    <string name="wn_handouts_check">Check your answers</string>
+    <string name="wn_handouts_check_detail">Once your church shares the answers, check yours, see the ones you missed, or practice again without losing your own.</string>
+    <string name="wn_community_title">The Versely community</string>
+    <string name="wn_community_wall">Prayer wall</string>
+    <string name="wn_community_wall_detail">Share a prayer request with everyone in Versely, anonymously if you like, and pray for others.</string>
+    <string name="wn_community_reflections">Reflections</string>
+    <string name="wn_community_reflections_detail">Share a short thought on a passage and encourage one another.</string>
+    <string name="wn_community_safe">Kind and safe</string>
+    <string name="wn_community_safe_detail">Everyone agrees to the community guidelines. Report or block anyone from the … menu on any post.</string>
 </resources>

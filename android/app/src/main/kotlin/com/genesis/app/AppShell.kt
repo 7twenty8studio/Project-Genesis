@@ -151,6 +151,21 @@ fun AppShell(
         return
     }
 
+    // One-time notes, a moment after the app settles (and again when a switch turns on).
+    var whatsNewIds by rememberSaveable { mutableStateOf<List<String>>(emptyList()) }
+    LaunchedEffect(flags) {
+        kotlinx.coroutines.delay(1_000)
+        if (whatsNewIds.isEmpty()) whatsNewIds = app.whatsNew.pending(flags).map { it.id }
+    }
+    if (whatsNewIds.isNotEmpty() && link == null && churchSermon == null) {
+        val shown = whatsNewIds.mapNotNull { id -> com.genesis.app.whatsnew.WhatsNewCatalog.all.firstOrNull { it.id == id } }
+        com.genesis.app.whatsnew.WhatsNewScreen(shown) {
+            app.whatsNew.markSeen(shown)
+            whatsNewIds = emptyList()
+        }
+        return
+    }
+
     // A versely:// link (a widget tap) opens its place over whatever was showing.
     LaunchedEffect(link) {
         when (link) {

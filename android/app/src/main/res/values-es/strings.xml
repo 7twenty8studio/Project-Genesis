@@ -1522,4 +1522,27 @@
     <string name="year_most_read">Lo más leído: %s</string>
     <string name="year_in_review">Tu %s en repaso</string>
     <string name="year_in_review_detail">Repasa tu año de lectura, resaltados y oración.</string>
+    <string name="whats_new">Novedades</string>
+    <string name="whats_new_subtitle">Esto es lo nuevo en Versely.</string>
+    <string name="whats_new_turn_on">Activar %s</string>
+    <string name="whats_new_on">Activado. Puedes cambiarlo en Ajustes › Funciones.</string>
+    <string name="wn_church_title">Los sermones de tu iglesia</string>
+    <string name="wn_church_outline">Abre el bosquejo</string>
+    <string name="wn_church_outline_detail">Escanea el código QR de tu iglesia o toca su enlace para seguir el bosquejo del sermón en Versely. Sus sermones también aparecen en la página del grupo de tu iglesia.</string>
+    <string name="wn_church_passages">Cada pasaje en tu Biblia</string>
+    <string name="wn_church_passages_detail">Toca una referencia para leerla en tu propia Biblia y luego sigue donde estabas.</string>
+    <string name="wn_church_notes">Tus propias notas</string>
+    <string name="wn_church_notes_detail">Tomar notas empieza notas privadas del sermón con los pasajes ya añadidos. Siguen siendo tuyas, aunque la iglesia retire el bosquejo.</string>
+    <string name="wn_handouts_title">Completa los espacios</string>
+    <string name="wn_handouts">Hojas de apuntes del sermón</string>
+    <string name="wn_handouts_detail">Cuando el bosquejo de tu iglesia tenga espacios en blanco, complétalos mientras escuchas. Tus respuestas se guardan en privado con tus notas del sermón.</string>
+    <string name="wn_handouts_check">Revisa tus respuestas</string>
+    <string name="wn_handouts_check_detail">Cuando tu iglesia comparta las respuestas, revisa las tuyas, mira las que te faltaron o practica de nuevo sin perder las tuyas.</string>
+    <string name="wn_community_title">La comunidad de Versely</string>
+    <string name="wn_community_wall">Muro de oración</string>
+    <string name="wn_community_wall_detail">Comparte una petición de oración con todos en Versely, de forma anónima si quieres, y ora por los demás.</string>
+    <string name="wn_community_reflections">Reflexiones</string>
+    <string name="wn_community_reflections_detail">Comparte una breve reflexión sobre un pasaje y anímense unos a otros.</string>
+    <string name="wn_community_safe">Amable y seguro</string>
+    <string name="wn_community_safe_detail">Todos aceptan las normas de la comunidad. Reporta o bloquea a cualquiera desde el menú … de cualquier publicación.</string>
 </resources>
