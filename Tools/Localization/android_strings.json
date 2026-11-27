@@ -1660,6 +1660,23 @@
     "first_letter_style": "First letter style",
     "initial_classic": "Classic",
     "initial_illuminated": "Illuminated",
-    "name_premium": "%@, Premium"
+    "name_premium": "%@, Premium",
+    "widget_background": "Background",
+    "chosen_in_versely": "Chosen in Versely",
+    "widget_style_paper": "Paper",
+    "widget_style_night": "Night",
+    "widget_style_spring": "Spring",
+    "widget_style_summer": "Summer",
+    "widget_style_autumn": "Autumn",
+    "widget_style_winter": "Winter",
+    "widget_style_forest": "Forest",
+    "widget_style_ocean": "Ocean",
+    "widget_style_hearth": "Hearth",
+    "widget_styles": "Widget Styles",
+    "widget_size_small": "Small",
+    "widget_size_medium": "Medium",
+    "widget_size_large": "Large",
+    "widget_styles_footer": "Your verse widgets use the style you choose here. To give one widget its own look, touch and hold it, open its settings and choose a Background.",
+    "widget_style_preview": "Preview of the %@ style"
   }
 }

@@ -79,17 +79,25 @@ class VerseWidgetConfigureActivity : ComponentActivity() {
             val preferences by settings.preferences.collectAsStateWithLifecycle()
             VerselyTheme(theme = preferences.theme) {
                 var current by remember { mutableStateOf<VerseWidgetSource?>(null) }
+                var background by remember { mutableStateOf(com.genesis.core.domain.widgets.VerseWidgetBackground.APP) }
                 val scope = rememberCoroutineScope()
                 androidx.compose.runtime.LaunchedEffect(Unit) {
-                    current = VerseWidgetSource.of(runCatching { getAppWidgetState(this@VerseWidgetConfigureActivity, PreferencesGlanceStateDefinition, glanceId)[VerseOfTheDayWidget.SOURCE] }.getOrNull())
+                    val state = runCatching { getAppWidgetState(this@VerseWidgetConfigureActivity, PreferencesGlanceStateDefinition, glanceId) }.getOrNull()
+                    current = VerseWidgetSource.of(state?.get(VerseOfTheDayWidget.SOURCE))
+                    background = state?.get(VerseOfTheDayWidget.BACKGROUND) ?: com.genesis.core.domain.widgets.VerseWidgetBackground.APP
                 }
                 Options(
                     chosen = current,
                     onChoose = { current = it },
+                    background = background,
+                    onBackground = { background = it },
                     onDone = {
                         val choice = current ?: VerseWidgetSource.VERSE_OF_THE_DAY
                         scope.launch {
-                            updateAppWidgetState(this@VerseWidgetConfigureActivity, glanceId) { it[VerseOfTheDayWidget.SOURCE] = choice.raw }
+                            updateAppWidgetState(this@VerseWidgetConfigureActivity, glanceId) {
+                                it[VerseOfTheDayWidget.SOURCE] = choice.raw
+                                it[VerseOfTheDayWidget.BACKGROUND] = background
+                            }
                             VerseOfTheDayWidget().update(this@VerseWidgetConfigureActivity, glanceId)
                             VerseOfTheDayReceiver.scheduleNextChange(this@VerseWidgetConfigureActivity)
                             finish()
@@ -102,7 +110,7 @@ class VerseWidgetConfigureActivity : ComponentActivity() {
 }
 
 @Composable
-private fun Options(chosen: VerseWidgetSource?, onChoose: (VerseWidgetSource) -> Unit, onDone: () -> Unit) {
+private fun Options(chosen: VerseWidgetSource?, onChoose: (VerseWidgetSource) -> Unit, background: String, onBackground: (String) -> Unit, onDone: () -> Unit) {
     val colors = LocalReaderColors.current
     val premium = Entitlements.isPremium
     Column(Modifier.fillMaxSize().background(colors.background).statusBarsPadding().navigationBarsPadding()) {
@@ -138,6 +146,46 @@ private fun Options(chosen: VerseWidgetSource?, onChoose: (VerseWidgetSource) ->
                     }
                 }
             }
+
+            // Background: the look chosen in Versely (Widget Styles), or one for this widget alone.
+            Text(stringResource(R.string.widget_background), style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.SemiBold, color = colors.secondaryText, modifier = Modifier.padding(top = 12.dp))
+            Column(Modifier.clip(RoundedCornerShape(14.dp)).background(colors.surface)) {
+                val choices = listOf(com.genesis.core.domain.widgets.VerseWidgetBackground.APP) + com.genesis.core.domain.widgets.WidgetArtStyle.galleryOrder.map { it.rawValue }
+                choices.forEachIndexed { index, raw ->
+                    if (index > 0) HorizontalDivider(color = colors.separator)
+                    val style = com.genesis.core.domain.widgets.WidgetArtStyle.of(raw)
+                    val locked = style?.needsPremium == true && !premium
+                    val selected = raw == background
+                    Row(
+                        Modifier.fillMaxWidth()
+                            .semantics { this.selected = selected }
+                            .clickable(enabled = !locked, role = Role.RadioButton) { onBackground(raw) }
+                            .padding(horizontal = 16.dp, vertical = 14.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Text(style?.let { stringResource(it.titleRes) } ?: stringResource(R.string.chosen_in_versely), color = if (locked) colors.secondaryText else colors.text, modifier = Modifier.weight(1f))
+                        when {
+                            selected -> Text("✓", color = colors.accent, fontWeight = FontWeight.SemiBold)
+                            locked -> Text("🔒 " + stringResource(R.string.premium), style = MaterialTheme.typography.labelMedium, color = colors.secondaryText)
+                        }
+                    }
+                }
+            }
         }
     }
 }
+
+/** The style's name, as Widget Styles and the widget's Background list have it. */
+internal val com.genesis.core.domain.widgets.WidgetArtStyle.titleRes: Int
+    get() = when (this) {
+        com.genesis.core.domain.widgets.WidgetArtStyle.CLASSIC -> R.string.initial_classic
+        com.genesis.core.domain.widgets.WidgetArtStyle.PAPER -> R.string.widget_style_paper
+        com.genesis.core.domain.widgets.WidgetArtStyle.NIGHT -> R.string.widget_style_night
+        com.genesis.core.domain.widgets.WidgetArtStyle.SPRING -> R.string.widget_style_spring
+        com.genesis.core.domain.widgets.WidgetArtStyle.SUMMER -> R.string.widget_style_summer
+        com.genesis.core.domain.widgets.WidgetArtStyle.AUTUMN -> R.string.widget_style_autumn
+        com.genesis.core.domain.widgets.WidgetArtStyle.WINTER -> R.string.widget_style_winter
+        com.genesis.core.domain.widgets.WidgetArtStyle.FOREST -> R.string.widget_style_forest
+        com.genesis.core.domain.widgets.WidgetArtStyle.OCEAN -> R.string.widget_style_ocean
+        com.genesis.core.domain.widgets.WidgetArtStyle.HEARTH -> R.string.widget_style_hearth
+    }

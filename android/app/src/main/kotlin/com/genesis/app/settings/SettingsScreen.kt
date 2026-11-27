@@ -69,6 +69,7 @@ fun SettingsScreen(
     onAmbient: (() -> Unit)? = null,
     offersYouVersionBibles: Boolean = false,
     onMorningWelcome: () -> Unit = {},
+    onWidgetStyles: () -> Unit = {},
     onDone: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -137,6 +138,9 @@ fun SettingsScreen(
                     icon = "🌅",
                     premium = !Entitlements.isPremium,
                 )
+                Divider_()
+                // Open to everyone: Premium styles carry their tag inside.
+                Row_(stringResource(R.string.widget_styles), onClick = onWidgetStyles, trailing = "›", icon = "▦")
             }
 
             Spacer(Modifier.size(20.dp))

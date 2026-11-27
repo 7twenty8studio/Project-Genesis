@@ -85,7 +85,16 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
             runCatching { getAppWidgetState(context, PreferencesGlanceStateDefinition, id)[SOURCE] }.getOrNull(),
         )
         val day = load(context, source)
-        provideContent { Content(day) }
+        // Its background: its own, or the one chosen in Versely; Classic (with a Premium tag) without Premium.
+        val own = runCatching { getAppWidgetState(context, PreferencesGlanceStateDefinition, id)[BACKGROUND] }.getOrNull()
+        val wanted = com.genesis.core.domain.widgets.VerseWidgetBackground.resolve(own, WidgetStylePreference.current(context))
+        val style = wanted.shown(Entitlements.isPremium)
+        val art = if (style.isPainted) withContext(Dispatchers.IO) {
+            com.genesis.core.domain.widgets.WidgetArtShape.entries.associateWith { WidgetArt.load(context, style, it) }
+        } else emptyMap()
+        // A painted style whose pictures aren't drawn yet shows Classic until they are.
+        val look = WidgetLook.of(if (art.values.any { it != null }) style else com.genesis.core.domain.widgets.WidgetArtStyle.CLASSIC, art, styleTag = wanted != style)
+        provideContent { Content(day, look) }
     }
 
     /**
@@ -152,8 +161,9 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
     }
 
     @Composable
-    private fun Content(day: WidgetVerse?) {
+    private fun Content(day: WidgetVerse?, look: WidgetLook) {
         val size = LocalSize.current
+        val picture = look.art[com.genesis.core.domain.widgets.WidgetArtShape.of(size.width.value, size.height.value)]
         val small = size.width < MEDIUM.width
         val padding = if (small) 14.dp else 18.dp
         // The verse's box: the widget less its padding, the eyebrow and the citation.
@@ -171,19 +181,19 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
         Column(
             modifier = GlanceModifier
                 .fillMaxSize()
-                .background(ImageProvider(R.drawable.widget_background))
+                .background(picture?.let { ImageProvider(it) } ?: ImageProvider(R.drawable.widget_background))
                 .cornerRadius(20.dp)
                 .padding(padding)
                 .clickable(actionStartActivity(open)),
             verticalAlignment = Alignment.Top,
         ) {
             Row(GlanceModifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                Eyebrow(androidx.glance.LocalContext.current.getString((day?.title ?: VerseWidgetSource.VERSE_OF_THE_DAY).titleRes))
-                if (day?.premiumTag == true) {
+                Eyebrow(androidx.glance.LocalContext.current.getString((day?.title ?: VerseWidgetSource.VERSE_OF_THE_DAY).titleRes), look.accent)
+                if (day?.premiumTag == true || look.styleTag) {
                     Spacer(GlanceModifier.defaultWeight())
                     Text(
                         androidx.glance.LocalContext.current.getString(R.string.premium),
-                        style = TextStyle(color = WidgetPalette.accent, fontWeight = FontWeight.Bold, fontSize = 9.sp),
+                        style = TextStyle(color = look.accent, fontWeight = FontWeight.Bold, fontSize = 9.sp),
                     )
                 }
             }
@@ -192,7 +202,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
                 day?.text ?: "",
                 maxLines = fit.maxLines,
                 style = TextStyle(
-                    color = WidgetPalette.text,
+                    color = look.text,
                     fontFamily = FontFamily.Serif,
                     fontSize = fit.fontSizeSp.sp,
                 ),
@@ -203,7 +213,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
                 Text(
                     day.citation,
                     maxLines = 1,
-                    style = TextStyle(color = WidgetPalette.secondary, fontFamily = FontFamily.Serif, fontStyle = FontStyle.Italic, fontSize = 12.sp),
+                    style = TextStyle(color = look.secondary, fontFamily = FontFamily.Serif, fontStyle = FontStyle.Italic, fontSize = 12.sp),
                 )
             }
         }
@@ -222,6 +232,9 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
 
         /** The widget's chosen option (VerseWidgetSource.raw), kept in its own Glance state. */
         val SOURCE = stringPreferencesKey("verse.source")
+
+        /** The widget's own Background ("app", the default, follows Widget Styles), kept in its Glance state. */
+        val BACKGROUND = stringPreferencesKey("verse.background")
         private val MEDIUM = DpSize(250.dp, 110.dp)
         private val LARGE = DpSize(250.dp, 260.dp)
 
@@ -249,3 +262,28 @@ internal val VerseWidgetSource.titleRes: Int
 /** The option's name in the widget's settings (Random Verse by its own name there). */
 internal val VerseWidgetSource.optionRes: Int
     get() = if (this == VerseWidgetSource.RANDOM) R.string.source_random else titleRes
+
+/**
+ * What a verse widget wears: its painted pictures (one per shape) and the
+ * ink that reads on them, as WidgetArtInk on iOS: light on Night and the
+ * scenes, the paper's own colours on the others, the brand's on Classic.
+ */
+internal data class WidgetLook(
+    val art: Map<com.genesis.core.domain.widgets.WidgetArtShape, android.graphics.Bitmap?>,
+    val text: androidx.glance.unit.ColorProvider,
+    val secondary: androidx.glance.unit.ColorProvider,
+    val accent: androidx.glance.unit.ColorProvider,
+    /** A Premium style chosen without Premium: Classic, with a Premium tag. */
+    val styleTag: Boolean = false,
+) {
+    companion object {
+        fun of(style: com.genesis.core.domain.widgets.WidgetArtStyle, art: Map<com.genesis.core.domain.widgets.WidgetArtShape, android.graphics.Bitmap?>, styleTag: Boolean): WidgetLook {
+            if (!style.isPainted) return WidgetLook(emptyMap(), WidgetPalette.text, WidgetPalette.secondary, WidgetPalette.accent, styleTag)
+            fun fixed(hex: Long) = androidx.glance.unit.ColorProvider(Color(hex))
+            if (style.isDark) return WidgetLook(art, fixed(0xFFF6EEE2), fixed(0xFFDCCBB6), fixed(0xFFEBC08F), styleTag)
+            val palette = (com.genesis.core.domain.share.VerseImageStyle.entries.firstOrNull { it.rawValue == style.rawValue }
+                ?: com.genesis.core.domain.share.VerseImageStyle.PAPER).theme(com.genesis.core.domain.theme.ReaderTheme.PAPER).palette
+            return WidgetLook(art, fixed(0xFF000000 or palette.text.toLong()), fixed(0xFF000000 or palette.secondaryText.toLong()), fixed(0xFF000000 or palette.accent.toLong()), styleTag)
+        }
+    }
+}

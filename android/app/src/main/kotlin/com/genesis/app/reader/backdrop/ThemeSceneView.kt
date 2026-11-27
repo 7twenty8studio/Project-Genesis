@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.FilterQuality
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.Paint
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.clipRect
@@ -58,27 +59,51 @@ fun ThemeSceneView(scene: ThemeScene, animates: Boolean, modifier: Modifier = Mo
         // Only the pictures this area uses (the Forest's tall or wide set), since each is large.
         val art = rememberSceneArt(scene, ForestWide.uses(size))
         Canvas(Modifier.fillMaxSize()) {
-            val time = if (running) ThemeScene.STILL_TIME + clock else ThemeScene.STILL_TIME
-            when (scene) {
-                ThemeScene.FOREST -> {
-                    drawForest(art, size, time)
-                    drawMist(size, time)
-                }
-                ThemeScene.OCEAN -> {
-                    drawOcean(art, size)
-                    drawSwell(art.swell, false, size, time)
-                    drawSwell(art.nearSwell, true, size, time)
-                }
-                ThemeScene.HEARTH -> drawHearthGlow(time)
-            }
-            drawShade(scene.shade)
-            if (scene == ThemeScene.HEARTH) drawEmbers(time)
+            drawScene(scene, art, size, if (running) ThemeScene.STILL_TIME + clock else ThemeScene.STILL_TIME)
         }
     }
 }
 
+/** The scene at one moment, laid out for `size` (in dp), into any DrawScope (the widget's painted backgrounds too). */
+internal fun DrawScope.drawScene(scene: ThemeScene, art: SceneArt, size: SceneSize, time: Double = ThemeScene.STILL_TIME) {
+    drawRect(Color(0xFF000000 or scene.fillHex.toLong()))
+    when (scene) {
+        ThemeScene.FOREST -> {
+            drawForest(art, size, time)
+            drawMist(size, time)
+        }
+        ThemeScene.OCEAN -> {
+            drawOcean(art, size)
+            drawSwell(art.swell, false, size, time)
+            drawSwell(art.nearSwell, true, size, time)
+        }
+        ThemeScene.HEARTH -> drawHearthGlow(time)
+    }
+    drawShade(scene.shade)
+    if (scene == ThemeScene.HEARTH) drawEmbers(time)
+}
+
+/** The scene's pictures outside Compose (for drawing into a bitmap). */
+internal fun sceneArt(resources: android.content.res.Resources, scene: ThemeScene, wide: Boolean): SceneArt {
+    fun load(id: Int) = android.graphics.BitmapFactory.decodeResource(resources, id).asImageBitmap()
+    return when {
+        scene == ThemeScene.FOREST && wide -> SceneArt(
+            wide = load(R.drawable.theme_scene_forestwide), wideCanopy = load(R.drawable.theme_scene_forestwide_canopy),
+            wideTrunks = load(R.drawable.theme_scene_forestwide_trunks), wideFront = load(R.drawable.theme_scene_forestwide_front),
+        )
+        scene == ThemeScene.FOREST -> SceneArt(
+            forest = load(R.drawable.theme_scene_forest), canopy = load(R.drawable.theme_scene_forest_canopy),
+            trunks = load(R.drawable.theme_scene_forest_trunks), front = load(R.drawable.theme_scene_forest_front),
+        )
+        scene == ThemeScene.OCEAN -> SceneArt(
+            ocean = load(R.drawable.theme_scene_ocean), swell = load(R.drawable.theme_scene_ocean_swell), nearSwell = load(R.drawable.theme_scene_ocean_near_swell),
+        )
+        else -> SceneArt()
+    }
+}
+
 /** The scene's pictures, decoded once while it's shown. */
-private class SceneArt(
+internal class SceneArt(
     val forest: ImageBitmap? = null, val canopy: ImageBitmap? = null, val trunks: ImageBitmap? = null, val front: ImageBitmap? = null,
     val wide: ImageBitmap? = null, val wideCanopy: ImageBitmap? = null, val wideTrunks: ImageBitmap? = null, val wideFront: ImageBitmap? = null,
     val ocean: ImageBitmap? = null, val swell: ImageBitmap? = null, val nearSwell: ImageBitmap? = null,

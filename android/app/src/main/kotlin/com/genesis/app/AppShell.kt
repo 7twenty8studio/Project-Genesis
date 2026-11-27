@@ -132,6 +132,9 @@ fun AppShell(
     var welcomeShown by rememberSaveable { mutableStateOf(false) }
     var welcomePreview by rememberSaveable { mutableStateOf(false) }
     var welcomeSettingsOpen by rememberSaveable { mutableStateOf(false) }
+    var widgetStylesOpen by rememberSaveable { mutableStateOf(false) }
+    // The verse widget's painted backgrounds, drawn once a moment after launch.
+    LaunchedEffect(Unit) { withContext(Dispatchers.Default) { com.genesis.app.widget.WidgetArt.drawIfNeeded(app) } }
     androidx.lifecycle.compose.LifecycleResumeEffect(Unit) {
         if (link != null) app.welcome.markShown()
         else if (app.welcome.shouldShow(com.genesis.app.settings.Entitlements.isPremium)) welcomeShown = true
@@ -455,6 +458,12 @@ fun AppShell(
         return
     }
 
+    if (widgetStylesOpen) {
+        androidx.activity.compose.BackHandler { widgetStylesOpen = false }
+        com.genesis.app.widget.WidgetStylesScreen(onDone = { widgetStylesOpen = false }, modifier = Modifier.fillMaxSize().navigationBarsPadding())
+        return
+    }
+
     if (settingsOpen) {
         val offersYouVersion = app.bibles.catalog.collectAsStateWithLifecycle().value.any { it.isYouVersion }
         SettingsScreen(
@@ -471,6 +480,7 @@ fun AppShell(
             onAmbient = if (features.shows(OptionalFeature.AMBIENT_SOUNDS, flags)) ({ settingsAmbient = true }) else null,
             offersYouVersionBibles = offersYouVersion,
             onMorningWelcome = { welcomeSettingsOpen = true },
+            onWidgetStyles = { widgetStylesOpen = true },
             onDone = { settingsOpen = false },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )

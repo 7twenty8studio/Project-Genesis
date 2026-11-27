@@ -72,14 +72,14 @@ internal fun WidgetCard(link: String, small: Boolean = false, content: @Composab
 
 /** The small capitals over every widget, starting with Versely's V (VerselyMark). */
 @Composable
-internal fun Eyebrow(title: String) {
+internal fun Eyebrow(title: String, color: androidx.glance.unit.ColorProvider = WidgetPalette.accent) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Image(ImageProvider(R.drawable.widget_mark), contentDescription = null, modifier = GlanceModifier.width(13.dp).height(9.dp))
         Spacer(GlanceModifier.width(5.dp))
         Text(
             title.uppercase(),
             maxLines = 1,
-            style = TextStyle(color = WidgetPalette.accent, fontWeight = FontWeight.Bold, fontSize = 10.sp),
+            style = TextStyle(color = color, fontWeight = FontWeight.Bold, fontSize = 10.sp),
             modifier = GlanceModifier.semantics { contentDescription = title },
         )
     }

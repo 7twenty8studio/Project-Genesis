@@ -1660,4 +1660,21 @@
     <string name="initial_classic">Clásico</string>
     <string name="initial_illuminated">Iluminada</string>
     <string name="name_premium">%s, Premium</string>
+    <string name="widget_background">Fondo</string>
+    <string name="chosen_in_versely">Elegido en Versely</string>
+    <string name="widget_style_paper">Papel</string>
+    <string name="widget_style_night">Noche</string>
+    <string name="widget_style_spring">Primavera</string>
+    <string name="widget_style_summer">Verano</string>
+    <string name="widget_style_autumn">Otoño</string>
+    <string name="widget_style_winter">Invierno</string>
+    <string name="widget_style_forest">Bosque</string>
+    <string name="widget_style_ocean">Océano</string>
+    <string name="widget_style_hearth">Lumbre</string>
+    <string name="widget_styles">Estilos de widgets</string>
+    <string name="widget_size_small">Pequeño</string>
+    <string name="widget_size_medium">Mediano</string>
+    <string name="widget_size_large">Grande</string>
+    <string name="widget_styles_footer">Tus widgets del versículo usan el estilo que elijas aquí. Para darle a un widget su propio aspecto, mantenlo pulsado, abre sus ajustes y elige un fondo.</string>
+    <string name="widget_style_preview">Vista previa del estilo %s</string>
 </resources>
