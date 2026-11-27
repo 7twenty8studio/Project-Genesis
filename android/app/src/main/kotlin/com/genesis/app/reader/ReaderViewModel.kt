@@ -61,6 +61,10 @@ data class ReaderUiState(
     val position: VerseId? = null,
     /** The cross references sheet, while it's open. */
     val crossReferences: CrossReferencesUiState? = null,
+    /** Original (Hebrew & Greek) is shown beside the Bible being read. */
+    val showsOriginal: Boolean = false,
+    /** The verse whose word study is open, if any. */
+    val wordStudyVerse: VerseId? = null,
 ) {
     val hasStartedReading: Boolean get() = position != null
 
@@ -400,6 +404,24 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
 
     /** Starts a note that isn't on a passage (Library's New Note). */
     fun newNote() = _state.update { it.copy(editingNote = Note(id = UUID.randomUUID().toString())) }
+
+    /** Shows or leaves the Original (Hebrew & Greek) beside the Bible being read. */
+    fun setOriginal(on: Boolean) = _state.update { it.copy(showsOriginal = on, selection = emptySet()) }
+
+    /** Opens word study for the first selected verse. */
+    fun openWordStudy() = _state.update { state ->
+        state.copy(wordStudyVerse = state.selection.minByOrNull { it.rawValue }, selection = emptySet())
+    }
+
+    fun closeWordStudy() = _state.update { it.copy(wordStudyVerse = null) }
+
+    /** Runs [block] with the Bible being read, off the main thread; null if it fails. */
+    internal suspend fun <T> withBible(block: (BibleRepository) -> T): T? {
+        val bible = state.value.bible
+        return withContext(Dispatchers.IO) {
+            runCatching { block(repository(bible)) }.onFailure { Log.e(TAG, "Couldn't read ${bible.asset}", it) }.getOrNull()
+        }
+    }
 
     private fun load() {
         val (id, bible) = state.value.let { it.chapterId to it.bible }

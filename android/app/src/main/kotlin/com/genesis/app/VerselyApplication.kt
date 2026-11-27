@@ -52,6 +52,23 @@ class VerselyApplication : Application() {
     /** The study database if it's already open in that language (no disk work). */
     fun studyIfOpen(language: String): StudyRepository? = studyRepository?.takeIf { it.first == language }?.second
 
+    /** Hebrew and Greek words, the lexicon and Matthew Henry (WordStudy.sqlite), in the app's language. */
+    private var wordStudyRepository: Pair<String, com.genesis.core.bible.WordStudyRepository?>? = null
+
+    /** Opens the word study database (off the main thread: the first open copies it out of the app). */
+    @Synchronized
+    fun wordStudy(language: String): com.genesis.core.bible.WordStudyRepository? {
+        wordStudyRepository?.let { (open, repository) -> if (open == language) return repository }
+        wordStudyRepository?.second?.close()
+        val repository = runCatching { com.genesis.core.bible.WordStudyRepository.open(this, language) }
+            .onFailure { android.util.Log.e("WordStudy", "Couldn't open WordStudy.sqlite", it) }.getOrNull()
+        wordStudyRepository = language to repository
+        return repository
+    }
+
+    /** Says Hebrew and Greek words aloud. */
+    val pronouncer: com.genesis.app.original.WordPronouncer by lazy { com.genesis.app.original.WordPronouncer(this) }
+
     /** The server's switches (groups, community…). */
     val flags: FeatureFlags by lazy { FeatureFlags(this, account.client) }
 

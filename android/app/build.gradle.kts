@@ -61,7 +61,7 @@ android {
         localeFilters += listOf("en", "es", "pt-rBR")
         // Android's default list, then the study databases whose features haven't
         // arrived yet (shared with iOS in Genesis/Resources/Study): not in the APK.
-        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:!WordStudy.sqlite:!Glosses.sqlite:!Topics.sqlite"
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:<dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:!Topics.sqlite"
     }
 }
 

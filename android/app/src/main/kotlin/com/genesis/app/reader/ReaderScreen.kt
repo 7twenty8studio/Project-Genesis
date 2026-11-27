@@ -47,6 +47,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.genesis.app.R
+import com.genesis.app.original.OriginalParallelScreen
 import com.genesis.core.bible.Chapter
 import com.genesis.core.design.LocalReaderColors
 import com.genesis.app.settings.Entitlements
@@ -90,8 +91,10 @@ fun ReaderRoute(
         lastListened = now
         if (following && now != null && before != null && now != before && state.chapterId == before) viewModel.open(now)
     }
+    androidx.compose.foundation.layout.Box(Modifier.fillMaxSize()) {
     ReaderScreen(
         state = state,
+        viewModel = viewModel,
         listening = ReaderListening(
             state = listening,
             speed = listeningPreferences.speed,
@@ -115,8 +118,13 @@ fun ReaderRoute(
             onNoteTap = viewModel::openNote,
             onCrossReferences = viewModel::openCrossReferences,
             onMemorise = viewModel::memoriseSelection,
+            onWordStudy = viewModel::openWordStudy,
         ),
     )
+    state.wordStudyVerse?.let { verse ->
+        com.genesis.app.original.VerseStudyScreen(verse, viewModel, onDone = viewModel::closeWordStudy)
+    }
+    }
 }
 
 
@@ -140,6 +148,7 @@ data class SelectionActions(
     val onNoteTap: (String) -> Unit = {},
     val onCrossReferences: () -> Unit = {},
     val onMemorise: () -> Unit = {},
+    val onWordStudy: () -> Unit = {},
 )
 
 /**
@@ -161,7 +170,9 @@ fun ReaderScreen(
     onPreviousAtEnd: () -> Unit = onPrevious,
     selection: SelectionActions = SelectionActions(),
     listening: ReaderListening? = null,
+    viewModel: ReaderViewModel? = null,
 ) {
+    var originalWord by remember { mutableStateOf<com.genesis.core.domain.original.OriginalWord?>(null) }
     var picking by rememberSaveable { mutableStateOf(false) }
     var bibleMenu by remember { mutableStateOf(false) }
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
@@ -234,6 +245,16 @@ fun ReaderScreen(
                                     },
                                 )
                             }
+                            if (viewModel != null) {
+                                androidx.compose.material3.HorizontalDivider(color = colors.separator)
+                                DropdownMenuItem(
+                                    text = { Text((if (state.showsOriginal) "✓ " else "") + stringResource(R.string.original_hebrew_greek)) },
+                                    onClick = {
+                                        bibleMenu = false
+                                        viewModel.setOriginal(!state.showsOriginal)
+                                    },
+                                )
+                            }
                         }
                     }
                 },
@@ -263,6 +284,7 @@ fun ReaderScreen(
                     onNote = selection.onNote,
                     onCrossReferences = selection.onCrossReferences,
                     onMemorise = selection.onMemorise,
+                    onWordStudy = selection.onWordStudy,
                     onDone = selection.onDone,
                 )
             } else BottomAppBar(containerColor = colors.background) {
@@ -286,6 +308,14 @@ fun ReaderScreen(
             val marks = remember(state.highlights, state.selection, notedVerses, playing) { VerseMarks(state.highlights, state.selection, notedVerses, playing) }
             val scripture = scriptureStyle(preferences, Entitlements.isPremium)
             when {
+                state.showsOriginal && viewModel != null -> OriginalParallelScreen(
+                    viewModel = viewModel,
+                    chapter = state.chapterId,
+                    bibleId = state.bible.id,
+                    fontSize = preferences.fontSize,
+                    onNext = onNext,
+                    onWord = { originalWord = it },
+                )
                 state.chapter != null && preferences.readingMode == ReadingMode.PAGE -> key(state.chapter.id, state.chapter.translation.id) {
                     val text = remember(state.chapter, colors, marks) { chapterText(state.chapter, colors, marks) }
                     PagedChapter(
@@ -310,6 +340,10 @@ fun ReaderScreen(
                 )
             }
         }
+    }
+
+    originalWord?.let { word ->
+        if (viewModel != null) com.genesis.app.original.OriginalWordSheet(word, viewModel) { originalWord = null }
     }
 
     if (settingsOpen) {
