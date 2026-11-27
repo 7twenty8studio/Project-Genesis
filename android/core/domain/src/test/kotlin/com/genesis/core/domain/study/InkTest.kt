@@ -90,4 +90,12 @@ class InkTest {
         assertTrue(InkFormat.fitsSync(null))
         assertTrue(!InkFormat.fitsSync("x".repeat(InkFormat.MAX_SYNCED_BYTES + 1)))
     }
+
+    @Test fun aTiltedPencilShades() {
+        val (upright, uprightOpacity) = InkTilt.shade(InkType.PENCIL, 4.0, 0.0)
+        assertEquals(4.0, upright); assertEquals(1.0, uprightOpacity)
+        val (side, sideOpacity) = InkTilt.shade(InkType.PENCIL, 4.0, Math.PI / 2)
+        assertEquals(14.0, side, 1e-9); assertEquals(0.5, sideOpacity, 1e-9)
+        assertEquals(4.0 to 1.0, InkTilt.shade(InkType.PEN, 4.0, 1.2))
+    }
 }

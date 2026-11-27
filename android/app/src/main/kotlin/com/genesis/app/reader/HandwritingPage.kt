@@ -45,6 +45,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.input.pointer.PointerType
 import androidx.compose.ui.input.pointer.isSecondaryPressed
+import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
@@ -83,6 +84,7 @@ private val WIDTHS = listOf(2.0, 4.0, 8.0)
  * scroll. With "Only Draw with a Pen" one finger scrolls instead. A pen's
  * eraser end or its side button erases whole strokes, as the eraser does.
  */
+@OptIn(androidx.compose.ui.ExperimentalComposeUiApi::class)
 @Composable
 internal fun HandwritingPage(page: InkPage, onChange: (InkPage) -> Unit, modifier: Modifier = Modifier) {
     val context = LocalContext.current
@@ -184,9 +186,14 @@ internal fun HandwritingPage(page: InkPage, onChange: (InkPage) -> Unit, modifie
             val colorNow by rememberUpdatedState(if (tool == Tool.MARKER) markerColor else penColor)
             val widthNow by rememberUpdatedState(width)
             val scaleNow by rememberUpdatedState(scale)
+            // The stylus's tilt, which Compose's pointer events don't carry: read from the raw events.
+            val tiltNow = remember { doubleArrayOf(0.0) }
 
             Box(
                 Modifier.fillMaxWidth().verticalScroll(scroll, enabled = false).height(with(density) { contentHeight.toDp() })
+                    .motionEventSpy { event ->
+                        tiltNow[0] = if (event.getToolType(0) == android.view.MotionEvent.TOOL_TYPE_STYLUS) event.getAxisValue(android.view.MotionEvent.AXIS_TILT, 0).toDouble() else 0.0
+                    }
                     .pointerInput(Unit) {
                         awaitEachGesture {
                             val down = awaitFirstDown(requireUnconsumed = false)
@@ -198,7 +205,8 @@ internal fun HandwritingPage(page: InkPage, onChange: (InkPage) -> Unit, modifie
                             fun at(p: Offset, pressure: Float): InkPoint {
                                 val ink = toolNow.ink
                                 val size = InkCapture.size(ink, widthNow * (if (ink == InkType.MARKER) 3.0 else 1.0), if (pen) pressure.toDouble() else 0.5)
-                                return InkPoint(p.x / pageScale, p.y / pageScale, size)
+                                val (shaded, opacity) = if (pen) com.genesis.core.domain.study.InkTilt.shade(ink, size, tiltNow[0]) else size to 1.0
+                                return InkPoint(p.x / pageScale, p.y / pageScale, shaded, opacity)
                             }
                             live.clear()
                             if (!scrolling && !erasing) live += at(down.position, down.pressure)

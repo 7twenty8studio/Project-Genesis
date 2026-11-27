@@ -201,6 +201,21 @@ object InkCapture {
     }
 }
 
+/**
+ * A pencil or crayon laid on its side shades, as with Apple Pencil: the line
+ * widens and lightens with the stylus's tilt (radians, 0 = upright, from
+ * MotionEvent.AXIS_TILT). Other inks keep their nib. Gives (size, opacity).
+ */
+object InkTilt {
+    fun shade(ink: InkType, size: Double, tilt: Double): Pair<Double, Double> {
+        val t = (tilt / (Math.PI / 2)).coerceIn(0.0, 1.0)
+        return when (ink) {
+            InkType.PENCIL, InkType.CRAYON -> size * (1 + 2.5 * t * t) to 1 - 0.5 * t
+            else -> size to 1.0
+        }
+    }
+}
+
 /** Erasing whole strokes, as PencilKit's object eraser: any stroke passing within [radius] of the point. */
 object InkEraser {
     fun erase(page: InkPage, x: Double, y: Double, radius: Double): InkPage {
