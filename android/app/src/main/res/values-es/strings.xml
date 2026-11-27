@@ -120,4 +120,25 @@
     <string name="version">Versión %s</string>
     <string name="same_as_phone">Igual que el teléfono</string>
     <string name="language_footer">Versely está disponible en inglés, español y portugués.</string>
+    <string name="versely_bible_study_app">Versely, app de estudio bíblico</string>
+    <string name="get_started">Comenzar</string>
+    <string name="go_beyond_the_verse">Ve más allá del versículo.</string>
+    <string name="skip">Omitir</string>
+    <string name="next">Siguiente</string>
+    <string name="continue_button">Continuar</string>
+    <string name="welcome_read_title">Tu lugar tranquilo para leer</string>
+    <string name="welcome_read_message">Un lector sereno que funciona sin conexión. Resalta, toma notas y continúa donde lo dejaste.</string>
+    <string name="welcome_listen_title">Escucha mientras lees</string>
+    <string name="welcome_listen_message">Escucha los capítulos en voz alta y síguelos versículo a versículo.</string>
+    <string name="welcome_pray_title">Un lugar para orar</string>
+    <string name="welcome_pray_message">Lleva un diario de oración, guarda los versículos que te hablan y recuerda las oraciones respondidas.</string>
+    <string name="page_of">Página %1$d de %2$d</string>
+    <string name="onboarding_tagline">La Escritura, con calma y belleza. Todo funciona sin conexión.</string>
+    <string name="switch_any_time">Puedes cambiarla cuando quieras desde el lector.</string>
+    <string name="begin_with_genesis">Empezar con Génesis</string>
+    <string name="start_with_john">O empieza con el Evangelio de Juan</string>
+    <string name="summary_kjv">La Biblia clásica en inglés, apreciada por su lenguaje majestuoso y poético.</string>
+    <string name="summary_web">Una traducción moderna y fácil de leer, en inglés cotidiano.</string>
+    <string name="summary_asv">Una traducción precisa y literal, apreciada para el estudio detallado.</string>
+    <string name="summary_blivre">La traducción de Almeida de 1819, actualizada al portugués de Brasil y libre para leer y compartir.</string>
 </resources>

@@ -121,4 +121,25 @@
     <string name="version">Version %s</string>
     <string name="same_as_phone">Same as phone</string>
     <string name="language_footer">Versely is available in English, Spanish and Portuguese.</string>
+    <string name="versely_bible_study_app">Versely, Bible Study App</string>
+    <string name="get_started">Get Started</string>
+    <string name="go_beyond_the_verse">Go beyond the verse.</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="continue_button">Continue</string>
+    <string name="welcome_read_title">Your quiet place to read</string>
+    <string name="welcome_read_message">A calm reader that works offline. Highlight, take notes and pick up where you left off.</string>
+    <string name="welcome_listen_title">Listen along</string>
+    <string name="welcome_listen_message">Hear chapters read aloud and follow along, verse by verse.</string>
+    <string name="welcome_pray_title">A place to pray</string>
+    <string name="welcome_pray_message">Keep a prayer journal, hold on to the verses that speak to you and look back on answered prayers.</string>
+    <string name="page_of">Page %1$d of %2$d</string>
+    <string name="onboarding_tagline">Scripture, quietly and beautifully. Everything works offline.</string>
+    <string name="switch_any_time">You can switch any time from the reader.</string>
+    <string name="begin_with_genesis">Begin with Genesis</string>
+    <string name="start_with_john">Or start with the Gospel of John</string>
+    <string name="summary_kjv">The classic English Bible, cherished for its majestic, poetic language.</string>
+    <string name="summary_web">A modern, readable translation in everyday English.</string>
+    <string name="summary_asv">A precise, literal translation valued for careful study.</string>
+    <string name="summary_blivre">The 1819 Almeida translation, updated into Brazilian Portuguese and free to read and share.</string>
 </resources>

@@ -32,6 +32,21 @@ class ReaderSettingsStore(context: Context) {
         prefs.edit { putString(RECENT_COLORS, next.joinToString(",") { it.id }) }
     }
 
+    /** The Bible being read ("library.currentTranslation" on iOS), or null before setup. */
+    var currentBible: String?
+        get() = prefs.getString(CURRENT_BIBLE, null)
+        set(value) = prefs.edit { putString(CURRENT_BIBLE, value) }
+
+    private val _onboardingComplete = MutableStateFlow(prefs.getBoolean(ONBOARDING, false))
+
+    /** True once first-launch setup is done ("onboarding.complete" on iOS). */
+    val onboardingComplete: StateFlow<Boolean> = _onboardingComplete.asStateFlow()
+
+    fun completeOnboarding() {
+        _onboardingComplete.value = true
+        prefs.edit { putBoolean(ONBOARDING, true) }
+    }
+
     fun update(change: (ReaderPreferences) -> ReaderPreferences) {
         val next = change(_preferences.value).clamped()
         _preferences.value = next
@@ -41,6 +56,8 @@ class ReaderSettingsStore(context: Context) {
     private companion object {
         const val KEY = "reader.preferences.v1"
         const val RECENT_COLORS = "highlights.recentColors"
+        const val CURRENT_BIBLE = "library.currentTranslation"
+        const val ONBOARDING = "onboarding.complete"
     }
 }
 

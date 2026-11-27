@@ -120,6 +120,27 @@
     "about_versely": "About Versely",
     "version": "Version %@",
     "same_as_phone": "Same as phone",
-    "language_footer": "Versely is available in English, Spanish and Portuguese."
+    "language_footer": "Versely is available in English, Spanish and Portuguese.",
+    "versely_bible_study_app": "Versely, Bible Study App",
+    "get_started": "Get Started",
+    "go_beyond_the_verse": "Go beyond the verse.",
+    "skip": "Skip",
+    "next": "Next",
+    "continue_button": "Continue",
+    "welcome_read_title": "Your quiet place to read",
+    "welcome_read_message": "A calm reader that works offline. Highlight, take notes and pick up where you left off.",
+    "welcome_listen_title": "Listen along",
+    "welcome_listen_message": "Hear chapters read aloud and follow along, verse by verse.",
+    "welcome_pray_title": "A place to pray",
+    "welcome_pray_message": "Keep a prayer journal, hold on to the verses that speak to you and look back on answered prayers.",
+    "page_of": "Page %lld of %lld",
+    "onboarding_tagline": "Scripture, quietly and beautifully. Everything works offline.",
+    "switch_any_time": "You can switch any time from the reader.",
+    "begin_with_genesis": "Begin with Genesis",
+    "start_with_john": "Or start with the Gospel of John",
+    "summary_kjv": "The classic English Bible, cherished for its majestic, poetic language.",
+    "summary_web": "A modern, readable translation in everyday English.",
+    "summary_asv": "A precise, literal translation valued for careful study.",
+    "summary_blivre": "The 1819 Almeida translation, updated into Brazilian Portuguese and free to read and share."
   }
 }

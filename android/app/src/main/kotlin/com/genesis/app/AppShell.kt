@@ -19,6 +19,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.genesis.app.home.HomeScreen
+import com.genesis.app.onboarding.OnboardingFlow
+import androidx.compose.ui.platform.LocalContext
 import com.genesis.app.library.LibraryScreen
 import com.genesis.app.library.LibraryShelf
 import com.genesis.app.reader.NoteEditorSheet
@@ -47,6 +49,8 @@ enum class AppTab { HOME, READ, LIBRARY }
 fun AppShell(onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Unit) {
     val reader: ReaderViewModel = viewModel()
     val state by reader.state.collectAsStateWithLifecycle()
+    val app = LocalContext.current.applicationContext as VerselyApplication
+    val onboarded by app.readerSettings.onboardingComplete.collectAsStateWithLifecycle()
     val search by reader.search.collectAsStateWithLifecycle()
     val colors = LocalReaderColors.current
     var tab by rememberSaveable { mutableStateOf(AppTab.HOME) }
@@ -58,6 +62,17 @@ fun AppShell(onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Uni
     fun read(verse: VerseId) {
         reader.openVerse(verse)
         tab = AppTab.READ
+    }
+
+    // First launch: setup, then the reader at the chosen Bible and chapter.
+    // Someone who has already read (an earlier build) isn't sent through it.
+    if (!onboarded && app.progress.position.value == null) {
+        OnboardingFlow(state.translations) { bible, chapter ->
+            reader.begin(bible, chapter)
+            app.readerSettings.completeOnboarding()
+            tab = AppTab.READ
+        }
+        return
     }
 
     // Back from Read or Library goes Home before it leaves the app.

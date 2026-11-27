@@ -101,7 +101,8 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
 
     private val _state = MutableStateFlow(
         ReaderUiState(
-            bible = BundledBible.default(Locale.getDefault().language),
+            bible = app.readerSettings.currentBible?.let { id -> BundledBible.entries.firstOrNull { it.id == id } }
+                ?: BundledBible.default(Locale.getDefault().language),
             chapterId = app.progress.position.value?.chapterId ?: ChapterId.john1,
         ),
     )
@@ -175,6 +176,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     fun choose(bible: BundledBible) {
+        app.readerSettings.currentBible = bible.id
         _state.update { it.copy(bible = bible) }
         load()
         if (_search.value.text.isNotBlank()) search(_search.value.text)
@@ -247,6 +249,13 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         val note = state.value.editingNote ?: return
         _state.update { it.copy(editingNote = null) }
         viewModelScope.launch(Dispatchers.IO) { app.userData.notes.delete(note.id) }
+    }
+
+    /** Setup's last step: the chosen Bible, opened at the chosen chapter. */
+    fun begin(bible: BundledBible, chapter: ChapterId) {
+        app.readerSettings.currentBible = bible.id
+        _state.update { it.copy(bible = bible, chapterId = chapter, openAtEnd = false, selection = emptySet(), focus = null) }
+        load()
     }
 
     /** The reader is showing the chapter: remember the place (as ReadingProgress on iOS). */

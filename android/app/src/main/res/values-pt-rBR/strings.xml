@@ -120,4 +120,25 @@
     <string name="version">Versão %s</string>
     <string name="same_as_phone">Igual ao celular</string>
     <string name="language_footer">O Versely está disponível em inglês, espanhol e português.</string>
+    <string name="versely_bible_study_app">Versely, app de estudo bíblico</string>
+    <string name="get_started">Começar</string>
+    <string name="go_beyond_the_verse">Vá além do versículo.</string>
+    <string name="skip">Pular</string>
+    <string name="next">Próximo</string>
+    <string name="continue_button">Continuar</string>
+    <string name="welcome_read_title">Seu lugar tranquilo para ler</string>
+    <string name="welcome_read_message">Um leitor tranquilo que funciona offline. Destaque, faça anotações e continue de onde parou.</string>
+    <string name="welcome_listen_title">Ouça enquanto lê</string>
+    <string name="welcome_listen_message">Ouça os capítulos em voz alta e acompanhe, versículo por versículo.</string>
+    <string name="welcome_pray_title">Um lugar para orar</string>
+    <string name="welcome_pray_message">Mantenha um diário de oração, guarde os versículos que falam com você e relembre as orações respondidas.</string>
+    <string name="page_of">Página %1$d de %2$d</string>
+    <string name="onboarding_tagline">As Escrituras, com calma e beleza. Tudo funciona offline.</string>
+    <string name="switch_any_time">Você pode mudar quando quiser pelo leitor.</string>
+    <string name="begin_with_genesis">Começar por Gênesis</string>
+    <string name="start_with_john">Ou comece pelo Evangelho de João</string>
+    <string name="summary_kjv">A Bíblia clássica em inglês, querida por sua linguagem majestosa e poética.</string>
+    <string name="summary_web">Uma tradução moderna e fácil de ler, em inglês do dia a dia.</string>
+    <string name="summary_asv">Uma tradução precisa e literal, valorizada para o estudo cuidadoso.</string>
+    <string name="summary_blivre">A tradução de Almeida de 1819, atualizada para o português do Brasil e livre para ler e compartilhar.</string>
 </resources>
