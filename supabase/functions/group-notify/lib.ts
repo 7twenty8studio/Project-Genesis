@@ -115,7 +115,7 @@ function clip(text: string, length: number): string {
 
 /**
  * The FCM HTTP v1 message for an Android phone: shown by Android itself in
- * the "groups" channel, with a versely:// link the app opens when tapped.
+ * the "groups" (or "nudges") channel, the app's own, with a versely:// link the app opens when tapped.
  */
 export function fcmMessage(token: string, payload: Record<string, unknown>): Record<string, unknown> {
   const alert = ((payload.aps as Record<string, unknown> | undefined)?.alert ?? {}) as Record<string, unknown>;
@@ -123,7 +123,7 @@ export function fcmMessage(token: string, payload: Record<string, unknown>): Rec
   const groupID = String(versely.groupID ?? "");
   const notification: Record<string, unknown> = {
     title: clip(String(alert.title ?? ""), 60),
-    channel_id: "groups",
+    channel_id: versely.nudge ? "nudges" : "groups",
     tag: `group-${groupID}`,
   };
   if (alert["loc-key"] === NUDGE_BODY_KEY) {

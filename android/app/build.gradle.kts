@@ -41,6 +41,11 @@ android {
         buildConfigField("String", "SUPABASE_ANON_KEY", "\"${cloudSetting("SUPABASE_ANON_KEY", "versely.supabaseAnonKey")}\"")
         // Crash reports go to the same Sentry project as the iPhone app's (none without a DSN).
         buildConfigField("String", "SENTRY_DSN", "\"${cloudSetting("SENTRY_DSN", "versely.sentryDsn")}\"")
+        // Push (Firebase Cloud Messaging): off until the Firebase project exists (android/PLAY_SETUP.md).
+        buildConfigField("String", "FIREBASE_APP_ID", "\"${cloudSetting("FIREBASE_APP_ID", "versely.firebaseAppId")}\"")
+        buildConfigField("String", "FIREBASE_API_KEY", "\"${cloudSetting("FIREBASE_API_KEY", "versely.firebaseApiKey")}\"")
+        buildConfigField("String", "FIREBASE_PROJECT_ID", "\"${cloudSetting("FIREBASE_PROJECT_ID", "versely.firebaseProjectId")}\"")
+        buildConfigField("String", "FIREBASE_SENDER_ID", "\"${cloudSetting("FIREBASE_SENDER_ID", "versely.firebaseSenderId")}\"")
     }
 
     buildTypes {
@@ -89,6 +94,8 @@ dependencies {
     implementation(libs.media3.exoplayer)
     implementation(libs.sentry.android)
     implementation(libs.play.services.auth)
+    implementation(libs.firebase.messaging)
+    implementation(libs.play.billing)
     implementation(libs.kotlinx.coroutines.play.services)
     testImplementation(libs.kotlin.test)
     testImplementation(libs.junit)

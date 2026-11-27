@@ -610,6 +610,23 @@ class CommunityApi(private val client: SupabaseClient, private val token: () -> 
         if (id.isNotEmpty()) runCatching { client.callFunction("group-notify", buildJsonObject { put("nudgeID", id.lowercase()) }.toString(), token()) }
     }
 
+    /** Whether group announcements reach the signed-in person (Settings › Notifications › Group Announcements). */
+    fun setAcceptsAnnouncements(on: Boolean) {
+        rpc("set_accepts_announcements", "p_on" to JsonPrimitive(on))
+    }
+
+    /** This phone's push address (Firebase Cloud Messaging), for announcements and nudges. */
+    fun registerAndroidPushToken(pushToken: String, atIso: String) = wrap {
+        client.upsert(
+            "android_push_tokens",
+            "user_id,token",
+            buildJsonObject { put("user_id", me()); put("token", pushToken); put("updated_at", atIso) }.toString(),
+            token(),
+        )
+    }
+
+    fun removeAndroidPushToken(pushToken: String) = delete("android_push_tokens", "token" to "eq.$pushToken", "user_id" to "eq.${me()}")
+
     /** Whether others may nudge the signed-in person (Settings › Notifications › Nudges from Friends). */
     fun setAcceptsNudges(on: Boolean) {
         rpc("set_accepts_nudges", "p_on" to JsonPrimitive(on))

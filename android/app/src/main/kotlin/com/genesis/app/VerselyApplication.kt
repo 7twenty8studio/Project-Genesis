@@ -14,6 +14,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.debounce
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.drop
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -126,6 +129,15 @@ class VerselyApplication : Application() {
             }
                 .debounce(1_500)
                 .collect { ReminderScheduler.refresh(this@VerselyApplication) }
+        }
+        // Group Announcements and Nudges from Friends: the server's switches and this phone's push token.
+        scope.launch {
+            notifications.state
+                .map { it.allows(com.genesis.core.domain.notifications.ReminderKind.GROUPS) to it.allows(com.genesis.core.domain.notifications.ReminderKind.NUDGES) }
+                .distinctUntilChanged()
+                .drop(1)
+                .debounce(1_500)
+                .collect { com.genesis.app.push.AndroidPush.sync(this@VerselyApplication) }
         }
         // Every widget follows reading, plan days, prayers and Memorize reviews.
         scope.launch {

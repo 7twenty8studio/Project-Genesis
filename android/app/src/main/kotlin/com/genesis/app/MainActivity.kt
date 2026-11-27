@@ -84,7 +84,8 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun receive(intent: Intent?) {
-        val data = intent?.dataString ?: return
+        // A push Android showed itself (Versely was closed) carries its link in the extras.
+        val data = intent?.dataString ?: intent?.getStringExtra("link")?.takeIf { it.startsWith("versely://") } ?: return
         // versely://auth-callback finishes signing in with Apple or Google.
         if ((application as VerselyApplication).account.handleCallback(data)) return
         GenesisLink.parse(data)?.let { parsed -> link.update { parsed } }
