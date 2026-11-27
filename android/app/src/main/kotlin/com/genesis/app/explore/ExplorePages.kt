@@ -294,7 +294,7 @@ private fun DictionaryText(text: String, isTranslated: Boolean) {
     }
 }
 
-/** A Premium part of a free page: what it offers. Unlocking arrives with billing. */
+/** A Premium part of a free page: what it offers; tapping it opens the Premium screen. */
 @Composable
 private fun Teaser(message: String) {
     val colors = LocalReaderColors.current
@@ -302,7 +302,8 @@ private fun Teaser(message: String) {
         message,
         style = MaterialTheme.typography.bodyMedium,
         color = colors.secondaryText,
-        modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(colors.surface).padding(16.dp),
+        modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(colors.surface)
+            .clickable { com.genesis.app.premium.Paywall.open() }.padding(16.dp),
     )
 }
 

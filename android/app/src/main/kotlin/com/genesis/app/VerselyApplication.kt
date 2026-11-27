@@ -46,6 +46,9 @@ class VerselyApplication : Application() {
     val scope = MainScope()
     val account: AccountService by lazy { AccountService(this, scope) }
 
+    /** Versely Premium bought through Google Play. */
+    val billing: com.genesis.app.premium.PlayBilling by lazy { com.genesis.app.premium.PlayBilling(this) }
+
     /** Journal attachment files backed up to the person's own Google Drive. */
     val attachmentTransfers: com.genesis.app.journal.AttachmentTransfers by lazy {
         com.genesis.app.journal.AttachmentTransfers(this, { userData.attachments }, scope)

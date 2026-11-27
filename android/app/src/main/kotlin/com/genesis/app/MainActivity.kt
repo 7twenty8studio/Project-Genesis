@@ -68,6 +68,8 @@ class MainActivity : ComponentActivity() {
             // A grant given (or ended) in Studio OS since Versely was last open.
             com.genesis.app.settings.Entitlements.refreshGrant(app)
         }
+        // Google Play: prices, and a subscription renewed, ended or bought on another phone.
+        (application as VerselyApplication).billing.start()
         // A new day, or a change in Android's notification settings.
         (application as VerselyApplication).refreshReminders()
     }
