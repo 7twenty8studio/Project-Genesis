@@ -57,6 +57,7 @@ class MainActivity : ComponentActivity() {
             val app = application as VerselyApplication
             kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) { app.userData }
             app.sync.schedule()
+            app.flags.refresh()
         }
         // A new day, or a change in Android's notification settings.
         (application as VerselyApplication).refreshReminders()

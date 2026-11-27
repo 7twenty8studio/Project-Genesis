@@ -49,9 +49,10 @@ import com.genesis.core.design.LocalReaderColors
 import com.genesis.core.design.scriptureStyle
 import com.genesis.core.domain.bible.VerseId
 import com.genesis.core.domain.reader.ReaderPreferences
+import com.genesis.app.together.TogetherScreen
 
-/** The phone's tabs, as on iPhone (Explore and Together join later). */
-enum class AppTab { HOME, READ, LIBRARY, EXPLORE }
+/** The phone's tabs, as on iPhone. Together shows only while groups are switched on. */
+enum class AppTab { HOME, READ, LIBRARY, EXPLORE, TOGETHER }
 
 /**
  * The app's frame: Home, Read and Library in a bottom bar, with search and
@@ -87,6 +88,9 @@ fun AppShell(
     val prayers by app.userData.prayers.all.collectAsStateWithLifecycle()
     val account by app.account.state.collectAsStateWithLifecycle()
     val syncState by app.sync.state.collectAsStateWithLifecycle()
+    val flags by app.flags.values.collectAsStateWithLifecycle()
+    val tabs = AppTab.entries.filter { it != AppTab.TOGETHER || flags[FeatureFlags.GROUPS] == true }
+    LaunchedEffect(tabs) { if (tab !in tabs) tab = AppTab.HOME }
 
     fun read(verse: VerseId) {
         reader.openVerse(verse)
@@ -225,7 +229,7 @@ fun AppShell(
         containerColor = colors.background,
         bottomBar = {
             NavigationBar(containerColor = colors.surface) {
-                for (item in AppTab.entries) {
+                for (item in tabs) {
                     NavigationBarItem(
                         selected = tab == item,
                         onClick = { tab = item },
@@ -295,6 +299,7 @@ fun AppShell(
                     modifier = content,
                 )
             }
+            AppTab.TOGETHER -> TogetherScreen(onSignIn = { accountOpen = true }, modifier = content)
         }
     }
 
@@ -340,4 +345,5 @@ private val AppTab.title: Int
         AppTab.READ -> R.string.tab_read
         AppTab.LIBRARY -> R.string.tab_library
         AppTab.EXPLORE -> R.string.tab_explore
+        AppTab.TOGETHER -> R.string.tab_together
     }

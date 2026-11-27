@@ -78,6 +78,19 @@ internal fun TabIcon(tab: AppTab, color: Color) {
                 }
                 drawPath(needle, color, style = stroke)
             }
+            AppTab.TOGETHER -> {
+                // Two people side by side.
+                drawCircle(color, radius = w * 0.11f, center = Offset(w * 0.36f, h * 0.32f), style = stroke)
+                drawCircle(color, radius = w * 0.09f, center = Offset(w * 0.68f, h * 0.36f), style = stroke)
+                val people = Path().apply {
+                    moveTo(w * 0.12f, h * 0.82f)
+                    cubicTo(w * 0.14f, h * 0.6f, w * 0.26f, h * 0.52f, w * 0.36f, h * 0.52f)
+                    cubicTo(w * 0.46f, h * 0.52f, w * 0.58f, h * 0.6f, w * 0.6f, h * 0.82f)
+                    moveTo(w * 0.6f, h * 0.55f)
+                    cubicTo(w * 0.76f, h * 0.53f, w * 0.86f, h * 0.62f, w * 0.88f, h * 0.78f)
+                }
+                drawPath(people, color, style = stroke)
+            }
         }
     }
 }

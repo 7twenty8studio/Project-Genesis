@@ -124,6 +124,33 @@ class SupabaseClient(
         send("PATCH", "rest/v1/$table", "id=in.(${ids.joinToString(",")})", body, accessToken, prefer = "return=minimal")
     }
 
+    /** GET rows of a table or view; `query` pairs are URL-encoded (PostgREST filters such as "eq.x"). */
+    fun select(table: String, query: List<Pair<String, String>>, accessToken: String?): String =
+        send("GET", "rest/v1/$table", query.joinToString("&") { (key, value) -> "${encode(key)}=${encode(value)}" }, null, accessToken)
+
+    fun insert(table: String, rowJson: String, accessToken: String) {
+        send("POST", "rest/v1/$table", "", rowJson, accessToken, prefer = "return=minimal")
+    }
+
+    fun delete(table: String, query: List<Pair<String, String>>, accessToken: String) {
+        send("DELETE", "rest/v1/$table", query.joinToString("&") { (key, value) -> "${encode(key)}=${encode(value)}" }, null, accessToken, prefer = "return=minimal")
+    }
+
+    /** Calls a database function; the JSON it returns. */
+    fun rpc(name: String, paramsJson: String, accessToken: String?): String =
+        send("POST", "rest/v1/rpc/$name", "", paramsJson, accessToken)
+
+    /** The server's switches (public.feature_flags), readable without signing in. */
+    fun featureFlags(): Map<String, Boolean> {
+        val rows = json.parseToJsonElement(select("feature_flags", listOf("select" to "key,enabled"), null).ifEmpty { "[]" }).jsonArray
+        return rows.mapNotNull { row ->
+            val obj = row as? JsonObject ?: return@mapNotNull null
+            val key = obj.string("key") ?: return@mapNotNull null
+            val enabled = (obj["enabled"] as? JsonPrimitive)?.contentOrNull == "true"
+            key to enabled
+        }.toMap()
+    }
+
     private fun encode(value: String) = java.net.URLEncoder.encode(value, Charsets.UTF_8)
 
     private fun tokenRequest(path: String, query: String, body: JsonObject): AuthSession {

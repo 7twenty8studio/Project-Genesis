@@ -52,6 +52,12 @@ class VerselyApplication : Application() {
     /** The study database if it's already open in that language (no disk work). */
     fun studyIfOpen(language: String): StudyRepository? = studyRepository?.takeIf { it.first == language }?.second
 
+    /** The server's switches (groups, community…). */
+    val flags: FeatureFlags by lazy { FeatureFlags(this, account.client) }
+
+    /** Church groups (Together). */
+    val community: com.genesis.app.together.CommunityStore by lazy { com.genesis.app.together.CommunityStore(account, scope) }
+
     /** Chapters read aloud by the phone's voice. */
     val listening: com.genesis.app.audio.Listening by lazy {
         com.genesis.app.audio.Listening(this, com.genesis.app.audio.ListeningSettings(this))
