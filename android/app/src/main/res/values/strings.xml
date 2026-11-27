@@ -1177,4 +1177,25 @@
     <string name="lexicon_bdb">Brown-Driver-Briggs</string>
     <string name="lexicon_lsj">Liddell-Scott-Jones</string>
     <string name="remove_from_device">Remove from This Device</string>
+    <string name="widget_continue_description">Pick up where you left off.</string>
+    <string name="reading_progress">Reading Progress</string>
+    <string name="widget_progress_description">Today\'s plan reading, your streak and prayer reminders.</string>
+    <string name="widget_streak_description">Days in a row you\'ve read.</string>
+    <string name="prayer_reminder">Prayer Reminder</string>
+    <string name="widget_prayer_description">Your next prayer reminder and how many requests you\'re praying for.</string>
+    <string name="widget_todays_reading_description">Today\'s reading from your plan. Tick it off when you\'re done.</string>
+    <string name="widget_memorise_description">Recall a verse you\'re learning by heart. Comes with Versely Premium.</string>
+    <string name="widget_start_plan">Start a reading plan in Versely to see today\'s reading here.</string>
+    <string name="mark_read">Mark Read</string>
+    <string name="one_prayer">1 prayer</string>
+    <string name="prayers_count">%d prayers</string>
+    <string name="next_reminder_at">Next reminder %s</string>
+    <string name="no_reminder_set">No reminder set</string>
+    <string name="widget_memorise_locked">Memorize Scripture with Versely Premium.</string>
+    <string name="widget_memorise_empty">Add a verse to memorize in Versely.</string>
+    <string name="memorise_due_count">%d due</string>
+    <string name="widget_memorise_hidden">Memorize Scripture is turned off in Versely.</string>
+    <string name="streak_days">%d-day streak</string>
+    <string name="genesis_one">Genesis 1</string>
+    <string name="tap_to_review">Tap to review</string>
 </resources>

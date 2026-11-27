@@ -121,7 +121,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
                 day?.text ?: "",
                 maxLines = fit.maxLines,
                 style = TextStyle(
-                    color = Palette.text,
+                    color = WidgetPalette.text,
                     fontFamily = FontFamily.Serif,
                     fontSize = fit.fontSizeSp.sp,
                 ),
@@ -132,38 +132,13 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
                 Text(
                     day.citation,
                     maxLines = 1,
-                    style = TextStyle(color = Palette.secondary, fontFamily = FontFamily.Serif, fontStyle = FontStyle.Italic, fontSize = 12.sp),
+                    style = TextStyle(color = WidgetPalette.secondary, fontFamily = FontFamily.Serif, fontStyle = FontStyle.Italic, fontSize = 12.sp),
                 )
             }
         }
     }
 
-    @Composable
-    private fun Eyebrow(title: String) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Image(
-                ImageProvider(R.drawable.widget_mark),
-                contentDescription = null,
-                modifier = GlanceModifier.width(13.dp).height(9.dp),
-            )
-            Spacer(GlanceModifier.width(5.dp))
-            Text(
-                title.uppercase(),
-                maxLines = 1,
-                style = TextStyle(color = Palette.accent, fontWeight = FontWeight.Bold, fontSize = 10.sp),
-                modifier = GlanceModifier.semantics { contentDescription = title },
-            )
-        }
-    }
-
     private data class WidgetVerse(val link: String, val text: String, val citation: String)
-
-    /** WidgetPalette on iOS: deepened brand colours so small text keeps its contrast. */
-    private object Palette {
-        val accent = ColorProvider(day = Color(0xFF9A6640), night = Color(0xFFE0B48D))
-        val text = ColorProvider(day = Color(0xFF4A2E1A), night = Color(0xFFF3E2CC))
-        val secondary = ColorProvider(day = Color(0xFF8A6243), night = Color(0xFFC7A27F))
-    }
 
     companion object {
         private const val TAG = "VerseWidget"
@@ -171,9 +146,6 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
         private val LARGE = DpSize(250.dp, 260.dp)
 
         /** Redraws every placed widget (the Bible changed, or the app opened on a new day). */
-        suspend fun refresh(context: Context) {
-            runCatching { VerseOfTheDayWidget().updateAll(context) }
-                .onFailure { Log.w(TAG, "Couldn't refresh the widget", it) }
-        }
+        suspend fun refresh(context: Context) = VerselyWidgets.refresh(context)
     }
 }

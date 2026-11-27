@@ -24,6 +24,9 @@ sealed interface GenesisLink {
     /** versely://prayer: the Prayer Journal. */
     data object Prayer : GenesisLink
 
+    /** versely://memorise: Memorize Scripture (the Memorize widget). */
+    data object Memorise : GenesisLink
+
     /**
      * A church's sermon: versely://sermon/<slug>, or its one link
      * https://versely.7twenty8studio.com/s/<slug> (an App Link).
@@ -36,6 +39,7 @@ sealed interface GenesisLink {
         const val CONTINUE_READING = "$SCHEME://read"
         const val PLANS = "$SCHEME://plans"
         const val PRAYER = "$SCHEME://prayer"
+        const val MEMORISE = "$SCHEME://memorise"
 
         fun read(verse: VerseId): String = "$SCHEME://read/${verse.rawValue}"
 
@@ -52,6 +56,7 @@ sealed interface GenesisLink {
                 "home" -> Home
                 "plans" -> Plans
                 "prayer" -> Prayer
+                "memorise" -> Memorise
                 else -> null
             }
         }

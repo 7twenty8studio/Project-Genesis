@@ -76,6 +76,78 @@
         </receiver>
 
         <receiver
+            android:name=".widget.ContinueReadingReceiver"
+            android:exported="false"
+            android:label="@string/continue_reading">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/continue_reading_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.ReadingProgressReceiver"
+            android:exported="false"
+            android:label="@string/reading_progress">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/reading_progress_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.StreakReceiver"
+            android:exported="false"
+            android:label="@string/challenge_streak">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/streak_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.PrayerReminderReceiver"
+            android:exported="false"
+            android:label="@string/prayer_reminder">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/prayer_reminder_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.TodaysReadingReceiver"
+            android:exported="false"
+            android:label="@string/todays_reading">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/todays_reading_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.MemoriseReceiver"
+            android:exported="false"
+            android:label="@string/memorise">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/memorise_widget_info" />
+        </receiver>
+
+        <receiver
             android:name=".notifications.ReminderReceiver"
             android:exported="false">
             <intent-filter>

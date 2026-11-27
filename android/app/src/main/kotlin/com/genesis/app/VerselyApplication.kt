@@ -102,6 +102,13 @@ class VerselyApplication : Application() {
                 .debounce(1_500)
                 .collect { ReminderScheduler.refresh(this@VerselyApplication) }
         }
+        // Every widget follows reading, plan days, prayers and Memorize reviews.
+        scope.launch {
+            val data = withContext(Dispatchers.IO) { userData }
+            combine(progress.record, progress.position, data.prayers.all, data.plans.all, data.memory.all) { _, _, _, _, _ -> }
+                .debounce(2_000)
+                .collect { com.genesis.app.widget.VerselyWidgets.refresh(this@VerselyApplication) }
+        }
     }
 
     fun refreshReminders() {

@@ -137,6 +137,12 @@ fun AppShell(
                 plansOpen = false
                 journalOpen = true
             }
+            GenesisLink.Memorise -> {
+                settingsOpen = false
+                plansOpen = false
+                journalOpen = false
+                memoriseOpen = true
+            }
             is GenesisLink.Sermon -> {
                 settingsOpen = false
                 sermonNotesId = null

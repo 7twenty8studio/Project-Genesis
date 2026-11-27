@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A flame, for the reading streak (SF Symbols' "flame" on iOS). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp" android:viewportWidth="24" android:viewportHeight="24">
+    <path android:fillColor="#FF9A6640"
+        android:pathData="M12,2C12,2 6,8.2 6,13.5C6,17.4 8.7,21 12,21C15.3,21 18,17.4 18,13.5C18,10.6 16.4,8.4 15.3,7.2C15.2,9 14.3,10.6 13,11.4C13.4,8.2 12,4.6 12,2ZM12,19C10.3,19 9,17.6 9,15.9C9,14 10.6,12.6 12,11C13.4,12.6 15,14 15,15.9C15,17.6 13.7,19 12,19Z" />
+</vector>

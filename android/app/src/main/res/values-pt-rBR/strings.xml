@@ -1176,4 +1176,25 @@
     <string name="lexicon_bdb">Brown-Driver-Briggs</string>
     <string name="lexicon_lsj">Liddell-Scott-Jones</string>
     <string name="remove_from_device">Remover deste dispositivo</string>
+    <string name="widget_continue_description">Continue de onde parou.</string>
+    <string name="reading_progress">Progresso de leitura</string>
+    <string name="widget_progress_description">A leitura de hoje do seu plano, sua sequência e seus lembretes de oração.</string>
+    <string name="widget_streak_description">Dias seguidos em que você leu.</string>
+    <string name="prayer_reminder">Lembrete de oração</string>
+    <string name="widget_prayer_description">Seu próximo lembrete de oração e por quantos pedidos você está orando.</string>
+    <string name="widget_todays_reading_description">A leitura de hoje do seu plano. Marque quando terminar.</string>
+    <string name="widget_memorise_description">Relembre um versículo que você está decorando. Vem com o Versely Premium.</string>
+    <string name="widget_start_plan">Comece um plano de leitura no Versely para ver a leitura de hoje aqui.</string>
+    <string name="mark_read">Marcar como lida</string>
+    <string name="one_prayer">1 oração</string>
+    <string name="prayers_count">%d orações</string>
+    <string name="next_reminder_at">Próximo lembrete: %s</string>
+    <string name="no_reminder_set">Nenhum lembrete</string>
+    <string name="widget_memorise_locked">Memorize as Escrituras com o Versely Premium.</string>
+    <string name="widget_memorise_empty">Adicione um versículo para memorizar no Versely.</string>
+    <string name="memorise_due_count">%d pendentes</string>
+    <string name="widget_memorise_hidden">Memorizar as Escrituras está desativado no Versely.</string>
+    <string name="streak_days">Sequência de %d dias</string>
+    <string name="genesis_one">Gênesis 1</string>
+    <string name="tap_to_review">Toque para revisar</string>
 </resources>
