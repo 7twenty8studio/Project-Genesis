@@ -56,6 +56,11 @@
     <string name="copy">Copy</string>
     <string name="copied">Copied</string>
     <string name="share">Share</string>
+    <string name="related">Related</string>
+    <string name="cross_references">Cross References</string>
+    <string name="related_passages">Related passages</string>
+    <string name="no_cross_references">No cross references for this verse.</string>
+    <string name="cross_references_attribution">Cross references from OpenBible.info, CC-BY.</string>
     <string name="remove_highlight">Remove highlight</string>
     <string name="done_selecting">Done selecting</string>
     <string name="highlight_color">Highlight %s</string>

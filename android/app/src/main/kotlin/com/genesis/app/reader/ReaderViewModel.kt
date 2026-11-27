@@ -9,6 +9,8 @@ import com.genesis.core.bible.BibleSearch
 import com.genesis.core.bible.SearchResults
 import com.genesis.core.bible.BundledBible
 import com.genesis.core.bible.Chapter
+import com.genesis.core.bible.CrossReference
+import com.genesis.core.bible.CrossReferenceRepository
 import com.genesis.core.bible.Translation
 import com.genesis.core.bible.Verse
 import com.genesis.app.VerselyApplication
@@ -56,6 +58,8 @@ data class ReaderUiState(
     val focus: ReaderFocus? = null,
     /** The last verse read in the reader, or null before the first chapter. */
     val position: VerseId? = null,
+    /** The cross references sheet, while it's open. */
+    val crossReferences: CrossReferencesUiState? = null,
 ) {
     val hasStartedReading: Boolean get() = position != null
 
@@ -87,6 +91,18 @@ data class ReaderUiState(
 /** A verse the reader brings into view; a new token asks again for the same verse. */
 data class ReaderFocus(val verse: VerseId, val token: Long = System.nanoTime())
 
+/** A verse's related passages, strongest links first, each shown verbatim from the Bible being read. */
+data class CrossReferencesUiState(
+    val verse: VerseId,
+    val language: String = "en",
+    val sourceText: String = "",
+    val items: List<CrossReferenceItem> = emptyList(),
+    val loading: Boolean = true,
+)
+
+/** One related passage: its first three verses, with "…" when it runs on (as iOS). */
+data class CrossReferenceItem(val reference: CrossReference, val title: String, val text: String)
+
 /** What the search sheet shows. */
 data class SearchUiState(
     val text: String = "",
@@ -97,6 +113,11 @@ data class SearchUiState(
 
 class ReaderViewModel(application: Application) : AndroidViewModel(application) {
     private val repositories = mutableMapOf<BundledBible, BibleRepository>()
+    private var crossReferenceOpened = false
+    private val crossReferenceRepository by lazy {
+        crossReferenceOpened = true
+        CrossReferenceRepository.open(getApplication())
+    }
     private val app = application as VerselyApplication
 
     private val _state = MutableStateFlow(
@@ -274,6 +295,40 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
+    /** Related passages for the first selected verse (the selection bar's Related). */
+    fun openCrossReferences() {
+        val verse = state.value.selection.minByOrNull { it.rawValue } ?: return
+        val bible = state.value.bible
+        _state.update { it.copy(crossReferences = CrossReferencesUiState(verse)) }
+        viewModelScope.launch {
+            val loaded = withContext(Dispatchers.IO) {
+                runCatching {
+                    val repository = repository(bible)
+                    val language = repository.translation.language
+                    val items = crossReferenceRepository.references(verse).map { reference ->
+                        val passage = repository.passage(reference.target, reference.targetEnd, limit = 4)
+                        val text = passage.take(3).joinToString(" ") { it.plainText } + if (passage.size > 3) " \u2026" else ""
+                        CrossReferenceItem(reference, reference.description(language), text)
+                    }.filter { it.text.isNotEmpty() }
+                    val source = repository.verses(listOf(verse))[verse]?.plainText.orEmpty()
+                    CrossReferencesUiState(verse, language, source, items, loading = false)
+                }.onFailure { Log.e(TAG, "Couldn't read cross references for $verse", it) }.getOrNull()
+            }
+            _state.update { current ->
+                if (current.crossReferences?.verse != verse) current
+                else current.copy(crossReferences = loaded ?: current.crossReferences.copy(loading = false))
+            }
+        }
+    }
+
+    fun closeCrossReferences() = _state.update { it.copy(crossReferences = null) }
+
+    /** Opens a related passage in the reader. */
+    fun openCrossReference(verse: VerseId) {
+        _state.update { it.copy(crossReferences = null) }
+        openVerse(verse)
+    }
+
     /** Starts a note that isn't on a passage (Library's New Note). */
     fun newNote() = _state.update { it.copy(editingNote = Note(id = UUID.randomUUID().toString())) }
 
@@ -302,5 +357,6 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
 
     override fun onCleared() {
         synchronized(repositories) { repositories.values.forEach { it.close() } }
+        if (crossReferenceOpened) crossReferenceRepository.close()
     }
 }

@@ -89,6 +89,27 @@ class BibleRepository private constructor(private val connection: SQLiteConnecti
         }
     }
 
+    /** The verses from one id through another, in order, verbatim (cross references). */
+    fun passage(from: VerseId, through: VerseId, limit: Int = 200): List<Verse> = synchronized(lock) {
+        buildList {
+            connection.prepare("SELECT id, text, paragraph, poetry FROM verses WHERE id BETWEEN ? AND ? ORDER BY id LIMIT ?").use { statement ->
+                statement.bindLong(1, from.rawValue.toLong())
+                statement.bindLong(2, maxOf(from.rawValue, through.rawValue).toLong())
+                statement.bindLong(3, limit.toLong())
+                while (statement.step()) {
+                    add(
+                        Verse(
+                            id = VerseId(statement.getLong(0).toInt()),
+                            text = statement.getText(1),
+                            startsParagraph = statement.getLong(2) != 0L,
+                            isPoetry = statement.getLong(3) != 0L,
+                        ),
+                    )
+                }
+            }
+        }
+    }
+
     /**
      * Verses matching an FTS5 expression (from `FullTextQuery`, never typed
      * text), verbatim, best match first or in Bible order.

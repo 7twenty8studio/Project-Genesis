@@ -46,7 +46,7 @@ import kotlinx.coroutines.launch
 /**
  * The bar that replaces the chapter buttons while verses are selected, as
  * SelectionActionBar on iOS: the reference and ×, then the colours (the
- * three most recent first), Note, Bookmark, Remove when a selected verse is
+ * three most recent first), Note, Related (cross references), Bookmark, Remove when a selected verse is
  * highlighted, Copy and Share.
  */
 @Composable
@@ -60,6 +60,7 @@ internal fun SelectionBar(
     onRemoveHighlight: () -> Unit,
     onBookmark: () -> Unit,
     onNote: () -> Unit,
+    onCrossReferences: () -> Unit,
     onDone: () -> Unit,
 ) {
     val colors = LocalReaderColors.current
@@ -99,6 +100,7 @@ internal fun SelectionBar(
         }
         Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 8.dp, vertical = 4.dp)) {
             Action(R.string.note, onNote)
+            Action(R.string.related, onCrossReferences)
             Action(if (isBookmarked) R.string.remove_bookmark else R.string.bookmark, onBookmark)
             if (anyHighlighted) Action(R.string.remove_highlight, onRemoveHighlight)
             Action(R.string.copy) {

@@ -82,6 +82,7 @@ fun ReaderRoute(
             onBookmark = viewModel::toggleBookmark,
             onNote = viewModel::openNoteForSelection,
             onNoteTap = viewModel::openNote,
+            onCrossReferences = viewModel::openCrossReferences,
         ),
     )
 }
@@ -97,6 +98,7 @@ data class SelectionActions(
     val onBookmark: () -> Unit = {},
     val onNote: () -> Unit = {},
     val onNoteTap: (String) -> Unit = {},
+    val onCrossReferences: () -> Unit = {},
 )
 
 /**
@@ -194,6 +196,7 @@ fun ReaderScreen(
                     onRemoveHighlight = selection.onRemoveHighlight,
                     onBookmark = selection.onBookmark,
                     onNote = selection.onNote,
+                    onCrossReferences = selection.onCrossReferences,
                     onDone = selection.onDone,
                 )
             } else BottomAppBar(containerColor = colors.background) {

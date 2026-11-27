@@ -23,6 +23,7 @@ import com.genesis.app.onboarding.OnboardingFlow
 import androidx.compose.ui.platform.LocalContext
 import com.genesis.app.library.LibraryScreen
 import com.genesis.app.library.LibraryShelf
+import com.genesis.app.reader.CrossReferencesSheet
 import com.genesis.app.reader.NoteEditorSheet
 import com.genesis.app.reader.ReaderRoute
 import com.genesis.app.reader.ReaderViewModel
@@ -158,6 +159,18 @@ fun AppShell(onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Uni
                 read(it)
             },
             onDismiss = { searching = false },
+        )
+    }
+
+    state.crossReferences?.let { crossReferences ->
+        CrossReferencesSheet(
+            crossReferences = crossReferences,
+            scripture = scriptureStyle(LocalReaderPreferences.current, Entitlements.isPremium),
+            onOpen = {
+                reader.openCrossReference(it)
+                tab = AppTab.READ
+            },
+            onDismiss = reader::closeCrossReferences,
         )
     }
 
