@@ -18,6 +18,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
 import java.util.UUID
+import com.genesis.core.domain.study.InkFormat
+import com.genesis.core.domain.study.InkPage
 
 /**
  * The files behind attachments, as AttachmentFiles and AttachmentMedia on
@@ -74,6 +76,67 @@ internal object AttachmentFiles {
             store.add(Attachment(id, owner, ownerId, AttachmentKind.AUDIO, target.length(), durationSeconds = seconds))
         }
 
+    /**
+     * A Pencil page on sermon notes. Android writes it as Versely Ink
+     * (docs/HANDWRITING_FORMAT.md); an iPhone's page is PencilKit data, which
+     * stays in the person's iCloud, so [drawing] reads only Versely Ink.
+     */
+    suspend fun addDrawing(context: Context, store: UserDatabase.AttachmentStore, ownerId: String, page: InkPage): Attachment =
+        withContext(Dispatchers.IO) {
+            val text = InkFormat.encode(page) ?: throw Failure(Problem.SAVING)
+            val id = UUID.randomUUID().toString()
+            val target = File(folder(context), "$id.${AttachmentKind.DRAWING.fileExtension}")
+            runCatching { target.writeText(text) }.onFailure { target.delete(); throw Failure(Problem.SAVING) }
+            store.add(Attachment(id, AttachmentOwner.SERMON, ownerId, AttachmentKind.DRAWING, target.length()))
+        }
+
+    /** Saves an edited Pencil page over its file; an emptied page removes the attachment. */
+    suspend fun updateDrawing(context: Context, store: UserDatabase.AttachmentStore, attachment: Attachment, page: InkPage) =
+        withContext(Dispatchers.IO) {
+            if (page.isEmpty) {
+                store.delete(attachment.id)?.let { remove(context, listOf(it)) }
+                return@withContext
+            }
+            val text = InkFormat.encode(page) ?: throw Failure(Problem.SAVING)
+            val target = file(context, attachment)
+            runCatching { target.writeText(text) }.onFailure { throw Failure(Problem.SAVING) }
+            store.replaced(attachment.id, target.length())
+        }
+
+    /** A Pencil page written on Android; null when the file isn't here or is an iPhone's PencilKit page. */
+    suspend fun drawing(context: Context, attachment: Attachment): InkPage? = withContext(Dispatchers.IO) {
+        val file = file(context, attachment)
+        if (!file.exists()) return@withContext null
+        runCatching { InkFormat.decode(file.readText()) }.getOrNull()
+    }
+
+    /** Draws a Pencil page small, on white, for the strip. */
+    private fun drawingThumbnail(page: InkPage, sidePx: Int): Bitmap {
+        val height = maxOf(page.width, (page.strokes.flatMap { it.points }.maxOfOrNull { it.y } ?: 0.0) + InkPage.LINE_SPACING)
+        val scale = sidePx / maxOf(page.width, height)
+        val bitmap = Bitmap.createBitmap(sidePx, sidePx, Bitmap.Config.ARGB_8888)
+        bitmap.eraseColor(android.graphics.Color.WHITE)
+        val canvas = android.graphics.Canvas(bitmap)
+        val paint = android.graphics.Paint(android.graphics.Paint.ANTI_ALIAS_FLAG).apply {
+            style = android.graphics.Paint.Style.STROKE
+            strokeCap = android.graphics.Paint.Cap.ROUND
+            strokeJoin = android.graphics.Paint.Join.ROUND
+        }
+        for (stroke in page.strokes) {
+            val points = stroke.points
+            if (points.isEmpty()) continue
+            paint.color = stroke.color.toInt()
+            paint.strokeWidth = maxOf(1f, (points.map { it.size }.average() * scale).toFloat())
+            val path = android.graphics.Path().apply {
+                moveTo((points[0].x * scale).toFloat(), (points[0].y * scale).toFloat())
+                points.drop(1).forEach { lineTo((it.x * scale).toFloat(), (it.y * scale).toFloat()) }
+                if (points.size == 1) lineTo((points[0].x * scale).toFloat() + 0.1f, (points[0].y * scale).toFloat())
+            }
+            canvas.drawPath(path, paint)
+        }
+        return bitmap
+    }
+
     /** Removes attachments' rows' files (after their rows were marked deleted). */
     fun remove(context: Context, attachments: List<Attachment>) {
         attachments.forEach { file(context, it).delete() }
@@ -109,6 +172,7 @@ internal object AttachmentFiles {
                         }
                     }
                 }
+                AttachmentKind.DRAWING -> InkFormat.decode(file.readText())?.let { drawingThumbnail(it, sidePx) }
                 else -> null
             }
         }.getOrNull()

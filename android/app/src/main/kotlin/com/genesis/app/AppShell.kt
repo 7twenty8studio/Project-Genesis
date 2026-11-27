@@ -110,6 +110,8 @@ fun AppShell(
     val memoryVerses by app.userData.memory.all.collectAsStateWithLifecycle()
     val prayers by app.userData.prayers.all.collectAsStateWithLifecycle()
     val account by app.account.state.collectAsStateWithLifecycle()
+    // Signing in or out: that account's Premium grant.
+    LaunchedEffect(account.user?.id) { com.genesis.app.settings.Entitlements.refreshGrant(app) }
     val syncState by app.sync.state.collectAsStateWithLifecycle()
     val flags by app.flags.values.collectAsStateWithLifecycle()
     val features by app.features.enabled.collectAsStateWithLifecycle()
@@ -117,7 +119,7 @@ fun AppShell(
     val tabs = AppTab.entries.filter {
         when (it) {
             AppTab.EXPLORE -> features.shows(OptionalFeature.EXPLORE, flags)
-            AppTab.TOGETHER -> flags[FeatureFlags.GROUPS] == true && features.shows(OptionalFeature.TOGETHER, flags)
+            AppTab.TOGETHER -> (flags[FeatureFlags.GROUPS] == true || flags[FeatureFlags.COMMUNITY] == true) && features.shows(OptionalFeature.TOGETHER, flags)
             else -> true
         }
     }
@@ -134,6 +136,9 @@ fun AppShell(
     var welcomeSettingsOpen by rememberSaveable { mutableStateOf(false) }
     var widgetStylesOpen by rememberSaveable { mutableStateOf(false) }
     var widgetPhotoOpen by rememberSaveable { mutableStateOf(false) }
+    var appIconOpen by rememberSaveable { mutableStateOf(false) }
+    // A link to a feature the person hid: its note and switch instead of the screen.
+    var featureOff by rememberSaveable { mutableStateOf<String?>(null) }
     // The verse widget's painted backgrounds, drawn once a moment after launch.
     LaunchedEffect(Unit) { withContext(Dispatchers.Default) { com.genesis.app.widget.WidgetArt.drawIfNeeded(app) } }
     androidx.lifecycle.compose.LifecycleResumeEffect(Unit) {
@@ -172,6 +177,22 @@ fun AppShell(
 
     // A versely:// link (a widget tap) opens its place over whatever was showing.
     LaunchedEffect(link) {
+        val linked = when (link) {
+            GenesisLink.Plans -> OptionalFeature.PLANS
+            GenesisLink.Prayer -> OptionalFeature.PRAYER
+            GenesisLink.Memorise -> OptionalFeature.MEMORISE
+            GenesisLink.Sermons -> OptionalFeature.SERMONS
+            GenesisLink.Insights -> OptionalFeature.INSIGHTS
+            is GenesisLink.Group -> OptionalFeature.TOGETHER
+            is GenesisLink.Sermon -> OptionalFeature.CHURCH_SERMONS
+            else -> null
+        }
+        if (linked != null && linked !in features) {
+            settingsOpen = false
+            featureOff = linked.rawValue
+            onLinkHandled()
+            return@LaunchedEffect
+        }
         when (link) {
             is GenesisLink.Read -> {
                 settingsOpen = false
@@ -459,6 +480,23 @@ fun AppShell(
         return
     }
 
+    featureOff?.let(OptionalFeature::of)?.let { hidden ->
+        androidx.activity.compose.BackHandler { featureOff = null }
+        com.genesis.app.features.FeatureOffScreen(
+            feature = hidden,
+            onTurnOn = { app.features.set(hidden, on = true); featureOff = null },
+            onDone = { featureOff = null },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
+
+    if (appIconOpen) {
+        androidx.activity.compose.BackHandler { appIconOpen = false }
+        com.genesis.app.settings.AppIconScreen(onDone = { appIconOpen = false }, modifier = Modifier.fillMaxSize().navigationBarsPadding())
+        return
+    }
+
     if (widgetPhotoOpen) {
         androidx.activity.compose.BackHandler { widgetPhotoOpen = false }
         com.genesis.app.widget.WidgetPhotoScreen(onDone = { widgetPhotoOpen = false }, modifier = Modifier.fillMaxSize().navigationBarsPadding())
@@ -489,6 +527,7 @@ fun AppShell(
             onMorningWelcome = { welcomeSettingsOpen = true },
             onWidgetStyles = { widgetStylesOpen = true },
             onWidgetPhoto = { widgetPhotoOpen = true },
+            onAppIcon = { appIconOpen = true },
             onDone = { settingsOpen = false },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )

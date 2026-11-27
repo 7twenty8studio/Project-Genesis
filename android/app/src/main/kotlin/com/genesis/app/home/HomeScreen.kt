@@ -315,6 +315,9 @@ fun HomeScreen(
         // A milestone just reached, once.
         if (shows(OptionalFeature.GOALS)) com.genesis.app.goals.MilestoneBanner()
 
+        // Once: the verse of the day and an evening reminder.
+        com.genesis.app.notifications.NotificationInviteCard()
+
         // Progress, with Insights beside it.
         if (state.hasStartedReading) {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {

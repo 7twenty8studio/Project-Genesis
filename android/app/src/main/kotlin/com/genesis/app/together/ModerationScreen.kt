@@ -204,7 +204,7 @@ private fun ReportRow(report: GroupReport, onRemove: () -> Unit, onKeep: () -> U
         ContentKind.GROUP_PRAYER -> R.string.kind_prayer_request
         ContentKind.GROUP_POST -> R.string.kind_discussion
         ContentKind.GROUP_ANNOUNCEMENT -> R.string.kind_announcement
-        null -> R.string.kind_group_post
+        ContentKind.COMMUNITY_POST, ContentKind.COMMUNITY_COMMENT, null -> R.string.kind_group_post
     }
     val count = if (report.reportCount == 1) stringResource(R.string.reported_once) else stringResource(R.string.reported_times, report.reportCount)
     val reasons = report.reasons.map { raw -> ReportReason.entries.firstOrNull { it.value == raw }?.let { stringResource(it.title) } ?: raw }.distinct().sorted()

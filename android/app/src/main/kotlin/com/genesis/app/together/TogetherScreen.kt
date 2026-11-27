@@ -128,15 +128,49 @@ fun TogetherScreen(
                 onDone = if (editingName) ({ editingName = false }) else null,
             )
             else -> {
-                val scope = rememberCoroutineScope()
-                var refreshing by remember { mutableStateOf(false) }
-                PullToRefreshBox(
-                    isRefreshing = refreshing,
-                    onRefresh = { scope.launch { refreshing = true; store.refreshGroups(); refreshing = false } },
-                ) { GroupsList(state, onOpen = { openGroup = it }) }
+                // Groups, then the prayer wall and reflections while the community switch is on.
+                val sections = buildList {
+                    if (flags[com.genesis.app.FeatureFlags.GROUPS] == true) add(TogetherSection.GROUPS)
+                    if (flags[com.genesis.app.FeatureFlags.COMMUNITY] == true) { add(TogetherSection.PRAYER); add(TogetherSection.REFLECTIONS) }
+                }.ifEmpty { listOf(TogetherSection.GROUPS) }
+                var chosen by rememberSaveable { mutableStateOf(TogetherSection.GROUPS) }
+                val section = if (chosen in sections) chosen else sections.first()
+                if (sections.size > 1) {
+                    Row(Modifier.padding(horizontal = 16.dp, vertical = 4.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                        sections.forEach { item ->
+                            androidx.compose.material3.FilterChip(
+                                selected = item == section,
+                                onClick = { chosen = item },
+                                label = { Text(stringResource(item.title)) },
+                                colors = androidx.compose.material3.FilterChipDefaults.filterChipColors(
+                                    selectedContainerColor = colors.accent.copy(alpha = 0.18f),
+                                    selectedLabelColor = colors.text,
+                                    labelColor = colors.secondaryText,
+                                ),
+                            )
+                        }
+                    }
+                }
+                when (section) {
+                    TogetherSection.GROUPS -> {
+                        val scope = rememberCoroutineScope()
+                        var refreshing by remember { mutableStateOf(false) }
+                        PullToRefreshBox(
+                            isRefreshing = refreshing,
+                            onRefresh = { scope.launch { refreshing = true; store.refreshGroups(); refreshing = false } },
+                        ) { GroupsList(state, onOpen = { openGroup = it }) }
+                    }
+                    TogetherSection.PRAYER -> CommunityFeed(com.genesis.core.cloud.community.CommunityPostKind.PRAYER, bible.language, onRead)
+                    TogetherSection.REFLECTIONS -> CommunityFeed(com.genesis.core.cloud.community.CommunityPostKind.REFLECTION, bible.language, onRead)
+                }
             }
         }
     }
+}
+
+/** Together's parts, as TogetherView.Area on iOS. */
+internal enum class TogetherSection(val title: Int) {
+    GROUPS(R.string.together_groups), PRAYER(R.string.prayer_wall), REFLECTIONS(R.string.wn_community_reflections)
 }
 
 @Composable
@@ -290,9 +324,9 @@ private fun ActionRow(title: String, onClick: () -> Unit) {
     Text(title, style = MaterialTheme.typography.bodyLarge, color = colors.accent, modifier = Modifier.fillMaxWidth().clickable(onClick = onClick).padding(16.dp))
 }
 
-/** The community guidelines, agreed to once before starting or joining a group. */
+/** The community guidelines, agreed to once before starting or joining a group, or posting to the community. */
 @Composable
-private fun Guidelines(onAccepted: () -> Unit, onCancel: () -> Unit) {
+internal fun Guidelines(onAccepted: () -> Unit, onCancel: () -> Unit, community: Boolean = false) {
     val app = LocalContext.current.applicationContext as VerselyApplication
     val state by app.community.state.collectAsStateWithLifecycle()
     val colors = LocalReaderColors.current
@@ -302,14 +336,14 @@ private fun Guidelines(onAccepted: () -> Unit, onCancel: () -> Unit) {
         title = { Text(stringResource(R.string.community_guidelines)) },
         text = {
             Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                Text(stringResource(R.string.guidelines_groups_intro), color = colors.secondaryText)
+                Text(stringResource(if (community) R.string.guidelines_community_intro else R.string.guidelines_groups_intro), color = colors.secondaryText)
                 listOf(R.string.rule_kind, R.string.rule_abuse, R.string.rule_private, R.string.rule_spam, R.string.rule_report).forEach { rule ->
                     Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                         Text("•", color = colors.accent, fontWeight = FontWeight.Bold)
                         Text(stringResource(rule), color = colors.text)
                     }
                 }
-                Text(stringResource(R.string.guidelines_groups_footer), style = MaterialTheme.typography.bodySmall, color = colors.secondaryText)
+                Text(stringResource(if (community) R.string.guidelines_community_footer else R.string.guidelines_groups_footer), style = MaterialTheme.typography.bodySmall, color = colors.secondaryText)
                 state.error?.let { Text(stringResource(it.text()), color = colors.accent, style = MaterialTheme.typography.bodySmall) }
             }
         },

@@ -34,6 +34,8 @@ class MainActivity : ComponentActivity() {
         // The widget catches up on a new day, the Bible or the language when the app opens.
         lifecycleScope.launch { VerseOfTheDayWidget.refresh(applicationContext) }
         (application as VerselyApplication).followReminders()
+        // Seasons changes with the calendar; a lapsed Premium returns to the standard icon.
+        com.genesis.app.settings.AppIcons.apply(applicationContext)
         setContent {
             val preferences by settings.preferences.collectAsStateWithLifecycle()
             val recentColors = settings.recentColors.collectAsStateWithLifecycle()
@@ -63,6 +65,8 @@ class MainActivity : ComponentActivity() {
             kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) { app.userData }
             app.sync.schedule()
             app.flags.refresh()
+            // A grant given (or ended) in Studio OS since Versely was last open.
+            com.genesis.app.settings.Entitlements.refreshGrant(app)
         }
         // A new day, or a change in Android's notification settings.
         (application as VerselyApplication).refreshReminders()
