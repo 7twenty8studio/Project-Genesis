@@ -60,6 +60,7 @@ import com.genesis.app.settings.Group
 import com.genesis.app.settings.Header
 import com.genesis.core.design.LocalReaderColors
 import com.genesis.core.domain.notifications.ReminderKind
+import com.genesis.app.features.feature
 import kotlinx.coroutines.launch
 import java.util.Calendar
 
@@ -108,6 +109,8 @@ fun NotificationSettingsScreen(onDone: () -> Unit, modifier: Modifier = Modifier
             }
 
             if (state.allowsNotifications) {
+                // Kinds of a hidden feature aren't listed (or sent).
+                val shows = com.genesis.app.features.rememberFeatureShows()
                 Section(stringResource(R.string.every_day), listOf(ReminderKind.VERSE_OF_THE_DAY, ReminderKind.DAILY_READING), state, permission) { editing = it }
                 Section(stringResource(R.string.your_bible_life), listOfNotNull(
                     ReminderKind.READING_PLAN,
@@ -117,7 +120,7 @@ fun NotificationSettingsScreen(onDone: () -> Unit, modifier: Modifier = Modifier
                     ReminderKind.PRAYER_ANNIVERSARY,
                     ReminderKind.SERMONS,
                     ReminderKind.WEEKLY_RECAP,
-                ), state, permission) { editing = it }
+                ).filter { kind -> kind.feature()?.let(shows) ?: true }, state, permission) { editing = it }
             }
             Spacer(Modifier.size(32.dp))
         }

@@ -1,5 +1,6 @@
 package com.genesis.app.reader
 
+import com.genesis.core.domain.features.OptionalFeature
 import android.content.ClipData
 import android.content.Intent
 import android.widget.Toast
@@ -101,13 +102,14 @@ internal fun SelectionBar(
                 )
             }
         }
+        val shows = com.genesis.app.features.rememberFeatureShows()
         Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 8.dp, vertical = 4.dp)) {
             Action(R.string.note, onNote)
             Action(R.string.related, onCrossReferences)
-            Action(R.string.word_study, onWordStudy)
-            Action(R.string.study_action, onStudy)
+            if (shows(OptionalFeature.WORD_STUDY)) Action(R.string.word_study, onWordStudy)
+            if (shows(OptionalFeature.STUDY_LIBRARY)) Action(R.string.study_action, onStudy)
             // Memorize is Premium; without it the action isn't offered here.
-            if (com.genesis.app.settings.Entitlements.isPremium) {
+            if (com.genesis.app.settings.Entitlements.isPremium && shows(OptionalFeature.MEMORISE)) {
                 val added = stringResource(R.string.memorise_added)
                 Action(R.string.memorise) {
                     onMemorise()

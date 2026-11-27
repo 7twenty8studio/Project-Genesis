@@ -42,6 +42,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -74,12 +75,12 @@ import com.genesis.core.domain.bible.ChapterId
 import kotlinx.coroutines.launch
 import java.util.Locale
 
-private enum class Step { HERO, PAGES, TRANSLATION }
+private enum class Step { HERO, PAGES, TRANSLATION, FEATURES }
 
 /**
  * First launch, as OnboardingView on iOS: the hero (Get Started), a few
- * welcome pages, then choosing a Bible and beginning with Genesis or John.
- * "Make Versely yours" (optional features) joins with those features.
+ * welcome pages, choosing a Bible and where to begin, then "Make Versely
+ * yours" (which optional features to show).
  */
 @Composable
 fun OnboardingFlow(
@@ -87,6 +88,8 @@ fun OnboardingFlow(
     onBegin: (com.genesis.core.bible.InstalledBible, ChapterId) -> Unit,
 ) {
     var step by rememberSaveable { mutableStateOf(Step.HERO) }
+    // The Bible and chapter chosen, kept until the features are chosen.
+    var begin by remember { mutableStateOf<Pair<com.genesis.core.bible.InstalledBible, ChapterId>?>(null) }
     BackHandler(enabled = step != Step.HERO) { step = Step.entries[step.ordinal - 1] }
 
     AnimatedContent(
@@ -99,7 +102,14 @@ fun OnboardingFlow(
         when (current) {
             Step.HERO -> Hero { step = Step.PAGES }
             Step.PAGES -> WelcomePages { step = Step.TRANSLATION }
-            Step.TRANSLATION -> ChooseTranslation(translations, onBegin)
+            Step.TRANSLATION -> ChooseTranslation(translations) { bible, chapter ->
+                begin = bible to chapter
+                step = Step.FEATURES
+            }
+            Step.FEATURES -> com.genesis.app.features.MakeVerselyYours {
+                val (bible, chapter) = begin ?: (com.genesis.core.bible.InstalledBible.of(BundledBible.default(Locale.getDefault().language)) to ChapterId.genesis1)
+                onBegin(bible, chapter)
+            }
         }
     }
 }

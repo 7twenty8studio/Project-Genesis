@@ -73,8 +73,9 @@ fun LibraryScreen(
                 modifier = Modifier.weight(1f).semantics { heading() },
             )
             TextButton(onClick = onBibles) { Text(stringResource(R.string.bibles), color = colors.accent) }
-            TextButton(onClick = onStudyLibrary) { Text(stringResource(R.string.study_library), color = colors.accent) }
-            TextButton(onClick = onSermons) { Text(stringResource(R.string.sermons), color = colors.accent) }
+            val shows = com.genesis.app.features.rememberFeatureShows()
+            if (shows(com.genesis.core.domain.features.OptionalFeature.STUDY_LIBRARY)) TextButton(onClick = onStudyLibrary) { Text(stringResource(R.string.study_library), color = colors.accent) }
+            if (shows(com.genesis.core.domain.features.OptionalFeature.SERMONS)) TextButton(onClick = onSermons) { Text(stringResource(R.string.sermons), color = colors.accent) }
             val search = stringResource(R.string.search)
             IconButton(onClick = onSearch, modifier = Modifier.semantics { contentDescription = search }) {
                 Magnifier(colors.accent, iconSize = 24.dp)

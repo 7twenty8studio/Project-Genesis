@@ -36,6 +36,8 @@ import com.genesis.app.prayer.PrayerJournalFlow
 import com.genesis.app.account.AccountScreen
 import com.genesis.app.reader.CrossReferencesSheet
 import com.genesis.core.domain.link.GenesisLink
+import com.genesis.app.features.shows
+import com.genesis.core.domain.features.OptionalFeature
 import com.genesis.app.reader.NoteEditorSheet
 import com.genesis.app.reader.ReaderRoute
 import com.genesis.app.reader.ReaderViewModel
@@ -85,6 +87,7 @@ fun AppShell(
     var notificationsOpen by rememberSaveable { mutableStateOf(false) }
     var insightsOpen by rememberSaveable { mutableStateOf(false) }
     var goalsOpen by rememberSaveable { mutableStateOf(false) }
+    var featuresOpen by rememberSaveable { mutableStateOf(false) }
     val readingRecord by app.progress.record.collectAsStateWithLifecycle()
     var accountOpen by rememberSaveable { mutableStateOf(false) }
     // Reading plans over the tabs: the list, or one plan (its id).
@@ -106,7 +109,15 @@ fun AppShell(
     val account by app.account.state.collectAsStateWithLifecycle()
     val syncState by app.sync.state.collectAsStateWithLifecycle()
     val flags by app.flags.values.collectAsStateWithLifecycle()
-    val tabs = AppTab.entries.filter { it != AppTab.TOGETHER || flags[FeatureFlags.GROUPS] == true }
+    val features by app.features.enabled.collectAsStateWithLifecycle()
+    // Explore and Together show only when chosen (Settings › Features); Together also needs its server switch.
+    val tabs = AppTab.entries.filter {
+        when (it) {
+            AppTab.EXPLORE -> features.shows(OptionalFeature.EXPLORE, flags)
+            AppTab.TOGETHER -> flags[FeatureFlags.GROUPS] == true && features.shows(OptionalFeature.TOGETHER, flags)
+            else -> true
+        }
+    }
     LaunchedEffect(tabs) { if (tab !in tabs) tab = AppTab.HOME }
 
     fun read(verse: VerseId) {
@@ -214,7 +225,7 @@ fun AppShell(
         bibles = state.translations.map { it.first.id }.ifEmpty { listOf(state.bible.id) },
         language = translationNow?.language ?: "en",
         isSignedIn = account.user != null,
-        isAvailable = flags[FeatureFlags.CHURCH_SERMONS] == true,
+        isAvailable = features.shows(OptionalFeature.CHURCH_SERMONS, flags),
         passage = reader::churchPassage,
         onRead = { verse ->
             churchSermon = null
@@ -334,6 +345,12 @@ fun AppShell(
         return
     }
 
+    if (featuresOpen) {
+        BackHandler { featuresOpen = false }
+        com.genesis.app.features.FeaturesScreen(onDone = { featuresOpen = false }, modifier = Modifier.fillMaxSize().navigationBarsPadding())
+        return
+    }
+
     if (goalsOpen) {
         BackHandler { goalsOpen = false }
         com.genesis.app.goals.GoalsScreen(
@@ -370,6 +387,8 @@ fun AppShell(
             onReading = { readingSettings = true },
             onNotifications = { notificationsOpen = true },
             onGoals = { goalsOpen = true },
+            onFeatures = { featuresOpen = true },
+            showsGoals = features.shows(OptionalFeature.GOALS, flags),
             onDone = { settingsOpen = false },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )

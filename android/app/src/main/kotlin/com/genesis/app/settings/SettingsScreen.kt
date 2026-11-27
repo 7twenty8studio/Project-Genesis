@@ -55,6 +55,8 @@ fun SettingsScreen(
     onReading: () -> Unit,
     onNotifications: () -> Unit,
     onGoals: () -> Unit,
+    onFeatures: () -> Unit = {},
+    showsGoals: Boolean = true,
     onDone: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -87,8 +89,12 @@ fun SettingsScreen(
                 Row_(stringResource(R.string.reading), onClick = onReading, trailing = "›")
                 HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
                 Row_(stringResource(R.string.notifications), onClick = onNotifications, trailing = "›")
+                if (showsGoals) {
+                    HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
+                    Row_(stringResource(R.string.goals_and_streaks), onClick = onGoals, trailing = "›")
+                }
                 HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
-                Row_(stringResource(R.string.goals_and_streaks), onClick = onGoals, trailing = "›")
+                Row_(stringResource(R.string.features), onClick = onFeatures, trailing = "›")
             }
 
             Header(stringResource(R.string.listening))

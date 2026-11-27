@@ -110,7 +110,7 @@ internal fun GroupMembers(group: GroupSummary, members: List<GroupMember>, onCha
                 }
             }
         }
-        if (members.size > 1) item {
+        if (members.size > 1 && app.features.isOn(com.genesis.core.domain.features.OptionalFeature.NUDGES)) item {
             run {
                 // What a nudge says; the push uses the same sentence, in the receiver's language.
                 val name = members.firstOrNull { permissions.isMe(it) }?.displayName ?: stringResource(R.string.a_friend)
@@ -253,7 +253,8 @@ private fun MemberRow(
                 if (member.isMuted()) Text(stringResource(R.string.muted), style = MaterialTheme.typography.labelMedium, color = colors.secondaryText)
             }
         }
-        if (!isMe && !blocked) {
+        val shows = com.genesis.app.features.rememberFeatureShows()
+        if (!isMe && !blocked && shows(com.genesis.core.domain.features.OptionalFeature.NUDGES)) {
             if (nudged) {
                 val label = stringResource(R.string.nudged_name, member.displayName)
                 Text("✓", color = colors.secondaryText, modifier = Modifier.padding(horizontal = 12.dp).semantics { contentDescription = label })

@@ -31,6 +31,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.genesis.app.features.shows
+import com.genesis.core.domain.features.OptionalFeature
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
@@ -104,6 +107,11 @@ fun HomeScreen(
     modifier: Modifier = Modifier,
 ) {
     val colors = LocalReaderColors.current
+    val app = LocalContext.current.applicationContext as com.genesis.app.VerselyApplication
+    val features by app.features.enabled.collectAsStateWithLifecycle()
+    val flags by app.flags.values.collectAsStateWithLifecycle()
+    // Only what the person chose to see (Settings › Features).
+    fun shows(feature: OptionalFeature) = features.shows(feature, flags)
     val language = state.chapter?.translation?.language ?: "en"
     val zone = ZoneId.systemDefault()
     val today = LocalDate.now(zone)
@@ -203,6 +211,7 @@ fun HomeScreen(
         }
 
         // Today's reading (reading plans).
+        if (shows(OptionalFeature.PLANS)) {
         val active = plans.firstOrNull { it.isActive && it.plan != null }
         Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
             if (active != null) {
@@ -224,8 +233,10 @@ fun HomeScreen(
                 onPlans = { onPlans(null) },
             )
         }
+        }
 
         // Prayer journal.
+        if (shows(OptionalFeature.PRAYER)) {
         Row(
             Modifier.fillMaxWidth().clip18().clickable(onClick = onPrayerJournal).card(colors.surface),
             verticalAlignment = Alignment.CenterVertically,
@@ -244,9 +255,10 @@ fun HomeScreen(
             }
             Text("\u203A", style = MaterialTheme.typography.titleLarge, color = colors.secondaryText)
         }
+        }
 
         // Sunday mornings: a card for taking sermon notes.
-        if (SermonSunday.isSundayMorning(today.dayOfWeek, LocalTime.now().hour)) {
+        if (shows(OptionalFeature.SERMONS) && SermonSunday.isSundayMorning(today.dayOfWeek, LocalTime.now().hour)) {
             Row(
                 Modifier.fillMaxWidth().clip18().clickable(onClick = onSermons).card(colors.surface),
                 verticalAlignment = Alignment.CenterVertically,
@@ -260,6 +272,7 @@ fun HomeScreen(
         }
 
         // Memorize Scripture (Premium): passages saved and how many are due.
+        if (shows(OptionalFeature.MEMORISE)) {
         Row(
             Modifier.fillMaxWidth().clip18().clickable(onClick = onMemorise).card(colors.surface),
             verticalAlignment = Alignment.CenterVertically,
@@ -289,9 +302,10 @@ fun HomeScreen(
             }
             Text("\u203A", style = MaterialTheme.typography.titleLarge, color = colors.secondaryText)
         }
+        }
 
         // A milestone just reached, once.
-        com.genesis.app.goals.MilestoneBanner()
+        if (shows(OptionalFeature.GOALS)) com.genesis.app.goals.MilestoneBanner()
 
         // Progress, with Insights beside it.
         if (state.hasStartedReading) {
@@ -303,14 +317,14 @@ fun HomeScreen(
                         color = colors.text,
                         modifier = Modifier.weight(1f).semantics { heading() },
                     )
-                    TextButton(onClick = onInsights) { Text(stringResource(R.string.insights), color = colors.accent) }
+                    if (shows(OptionalFeature.INSIGHTS)) TextButton(onClick = onInsights) { Text(stringResource(R.string.insights), color = colors.accent) }
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                     ProgressStat((LocalContext.current.applicationContext as com.genesis.app.VerselyApplication).progress.streak(today, record.readingDays), stringResource(R.string.day_streak), Modifier.weight(1f))
                     ProgressStat(record.chaptersRead.size, stringResource(R.string.chapters_read), Modifier.weight(1f))
                     ProgressStat(ReadingStats.booksCompleted(record.chaptersRead), stringResource(R.string.books_finished), Modifier.weight(1f))
                 }
-                com.genesis.app.goals.GoalHomeCard(onOpen = onGoals)
+                if (shows(OptionalFeature.GOALS)) com.genesis.app.goals.GoalHomeCard(onOpen = onGoals)
             }
         }
 

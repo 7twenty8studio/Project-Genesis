@@ -36,6 +36,7 @@ class VerselyApplication : Application() {
     val userData: UserDatabase by lazy { UserDatabase.open(this) }
     val progress: ReadingProgressStore by lazy { ReadingProgressStore(this).also { it.streakShieldsActive = goals.state.value.usesStreakShields } }
     val goals: com.genesis.app.goals.GoalPreferences by lazy { com.genesis.app.goals.GoalPreferences(this) }
+    val features: com.genesis.app.features.FeaturePreferences by lazy { com.genesis.app.features.FeaturePreferences(this) { readerSettings.onboardingComplete.value || progress.position.value != null } }
 
     /** The process's own scope, for work that outlives a screen (sign-in). */
     val scope = MainScope()
@@ -107,7 +108,9 @@ class VerselyApplication : Application() {
         scope.launch { bibles.refreshCatalog() }
         scope.launch {
             val data = withContext(Dispatchers.IO) { userData }
-            combine(notifications.state, data.prayers.all, data.plans.all, data.memory.all, goals.state) { _, _, _, _, goal ->
+            // Also the goal and the features shown: a hidden feature's reminders stop.
+            val choices = combine(goals.state, features.enabled) { goal, _ -> goal }
+            combine(notifications.state, data.prayers.all, data.plans.all, data.memory.all, choices) { _, _, _, _, goal ->
                 progress.streakShieldsActive = goal.usesStreakShields
             }
                 .debounce(1_500)

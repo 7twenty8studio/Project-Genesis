@@ -22,6 +22,8 @@ import com.genesis.core.domain.link.GenesisLink
 import com.genesis.core.domain.notifications.NotificationInput
 import com.genesis.core.domain.notifications.NotificationPlanner
 import com.genesis.core.domain.notifications.ReminderKind
+import com.genesis.app.features.feature
+import com.genesis.app.features.shows
 import com.genesis.core.domain.notifications.ReminderMessage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
@@ -75,7 +77,7 @@ object ReminderScheduler {
                 val (title, body) = words.text(planned.message)
                 items += Alarm(planned.id, planned.kind, planned.fireAt, title, body, planned.link)
             }
-            if (preferences.allows(ReminderKind.PRAYER)) {
+            if (preferences.allows(ReminderKind.PRAYER) && versely.features.isOn(com.genesis.core.domain.features.OptionalFeature.PRAYER)) {
                 for (prayer in versely.userData.prayers.all.value) {
                     val at = prayer.reminderAt?.let { LocalDateTime.ofInstant(Instant.ofEpochMilli(it), zone) }
                     val fire = NotificationPlanner.prayerReminder(prayer.isAnswered, at, prayer.reminderRepeatsDaily, now) ?: continue
@@ -101,7 +103,12 @@ object ReminderScheduler {
 
     /** Gathers what the planner needs, as ReminderScheduler.input on iOS. */
     private fun input(app: VerselyApplication, words: Context, preferences: NotificationPreferences.State, now: LocalDateTime, zone: ZoneId): NotificationInput {
-        val settings = preferences.settings
+        // Nothing is sent for a hidden feature (Settings › Features).
+        val shown = app.features.enabled.value
+        val flags = app.flags.values.value
+        val settings = preferences.settings.let { all ->
+            all.copy(enabled = all.enabled.filter { kind -> kind.feature()?.let { shown.shows(it, flags) } ?: true }.toSet())
+        }
         val today = now.toLocalDate()
         val days = (0 until NotificationPlanner.HORIZON_DAYS).map { today.plusDays(it.toLong()) }
         val language = words.resources.configuration.locales[0].language

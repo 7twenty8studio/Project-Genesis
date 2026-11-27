@@ -220,6 +220,7 @@ fun ReaderScreen(
     viewModel: ReaderViewModel? = null,
 ) {
     var originalWord by remember { mutableStateOf<com.genesis.core.domain.original.OriginalWord?>(null) }
+    val shows = com.genesis.app.features.rememberFeatureShows()
     var picking by rememberSaveable { mutableStateOf(false) }
     var bibleMenu by remember { mutableStateOf(false) }
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
@@ -248,7 +249,7 @@ fun ReaderScreen(
                     }
                 },
                 actions = {
-                    if (listening != null) {
+                    if (listening != null && shows(com.genesis.core.domain.features.OptionalFeature.LISTEN)) {
                         val listen = stringResource(R.string.listen_to_chapter)
                         IconButton(
                             onClick = {
@@ -300,7 +301,7 @@ fun ReaderScreen(
                                     onMoreBibles()
                                 },
                             )
-                            if (viewModel != null) {
+                            if (viewModel != null && shows(com.genesis.core.domain.features.OptionalFeature.WORD_STUDY)) {
                                 androidx.compose.material3.HorizontalDivider(color = colors.separator)
                                 DropdownMenuItem(
                                     text = { Text((if (state.showsOriginal) "✓ " else "") + stringResource(R.string.original_hebrew_greek)) },
