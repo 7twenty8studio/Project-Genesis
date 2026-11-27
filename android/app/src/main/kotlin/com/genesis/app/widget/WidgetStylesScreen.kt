@@ -190,17 +190,21 @@ private fun Preview(style: WidgetArtStyle, shape: WidgetArtShape, verse: Pair<St
     val palette = (VerseImageStyle.entries.firstOrNull { it.rawValue == style.rawValue } ?: VerseImageStyle.PAPER).theme(ReaderTheme.PAPER).palette
     fun hex(value: Int) = Color(0xFF000000 or value.toLong())
     val classic = !style.hasPicture
+    val vintage = style == WidgetArtStyle.VINTAGE
     val text = when {
+        vintage -> Color(0xFF2E2A26)
         classic -> Color(0xFF4A2E1A)
         dark -> Color(0xFFF6EEE2)
         else -> hex(palette.text)
     }
     val secondary = when {
+        vintage -> Color(0xFF6F675C)
         classic -> Color(0xFF8A6243)
         dark -> Color(0xFFDCCBB6)
         else -> hex(palette.secondaryText)
     }
     val accent = when {
+        vintage -> Color(0xFF9B2C2C)
         classic -> Color(0xFF9A6640)
         dark -> Color(0xFFEBC08F)
         else -> hex(palette.accent)

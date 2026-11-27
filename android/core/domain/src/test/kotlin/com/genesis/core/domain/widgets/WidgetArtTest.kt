@@ -14,7 +14,8 @@ class WidgetArtTest {
 
     @Test fun idsMatchIOS() {
         assertEquals(WidgetArtStyle.FOREST, WidgetArtStyle.of("forest"))
-        assertEquals(null, WidgetArtStyle.of("vintage"))
+        assertEquals(WidgetArtStyle.VINTAGE, WidgetArtStyle.of("vintage"))
+        assertEquals(null, WidgetArtStyle.of("typewriter"))
     }
 
     @Test fun darkInk() {

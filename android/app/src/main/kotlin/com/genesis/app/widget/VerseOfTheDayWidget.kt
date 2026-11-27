@@ -166,10 +166,12 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
         val picture = look.art[com.genesis.core.domain.widgets.WidgetArtShape.of(size.width.value, size.height.value)]
         val small = size.width < MEDIUM.width
         val padding = if (small) 14.dp else 18.dp
+        // Vintage: the words keep clear of the stamp and its postmark (96 dp, 12 from the edge).
+        val stampRoom = if (look.vintage && !small) 100.dp else 0.dp
         // The verse's box: the widget less its padding, the eyebrow and the citation.
         val fit = TextFit.fit(
             characters = day?.text?.length ?: 0,
-            widthDp = (size.width - padding * 2).value.toDouble(),
+            widthDp = (size.width - padding * 2 - stampRoom).value.toDouble(),
             heightDp = (size.height - padding * 2 - (if (small) 6.dp else 10.dp) - 14.dp - 24.dp).value.toDouble(),
             largest = if (size.height >= LARGE.height) 20 else if (small) 15 else 17,
             smallest = 11,
@@ -187,7 +189,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
                 .clickable(actionStartActivity(open)),
             verticalAlignment = Alignment.Top,
         ) {
-            Row(GlanceModifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+            Row(GlanceModifier.fillMaxWidth().padding(end = stampRoom), verticalAlignment = Alignment.CenterVertically) {
                 Eyebrow(androidx.glance.LocalContext.current.getString((day?.title ?: VerseWidgetSource.VERSE_OF_THE_DAY).titleRes), look.accent)
                 if (day?.premiumTag == true || look.styleTag) {
                     Spacer(GlanceModifier.defaultWeight())
@@ -206,12 +208,13 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
                     fontFamily = FontFamily.Serif,
                     fontSize = fit.fontSizeSp.sp,
                 ),
-                modifier = GlanceModifier.defaultWeight(),
+                modifier = GlanceModifier.defaultWeight().padding(end = stampRoom),
             )
             if (day != null) {
                 Spacer(GlanceModifier.height(6.dp))
                 Text(
-                    day.citation,
+                    // "Matthew 11:28 — KJV" on the postcard.
+                    if (look.vintage) day.citation.replace(" · ", " — ") else day.citation,
                     maxLines = 1,
                     style = TextStyle(color = look.secondary, fontFamily = FontFamily.Serif, fontStyle = FontStyle.Italic, fontSize = 12.sp),
                 )
@@ -275,12 +278,15 @@ internal data class WidgetLook(
     val accent: androidx.glance.unit.ColorProvider,
     /** A Premium style chosen without Premium: Classic, with a Premium tag. */
     val styleTag: Boolean = false,
+    /** The postcard: the words keep clear of the stamp, and the citation reads "John 3:16 — KJV". */
+    val vintage: Boolean = false,
 ) {
     companion object {
         fun of(style: com.genesis.core.domain.widgets.WidgetArtStyle, art: Map<com.genesis.core.domain.widgets.WidgetArtShape, android.graphics.Bitmap?>, styleTag: Boolean): WidgetLook {
             if (!style.hasPicture) return WidgetLook(emptyMap(), WidgetPalette.text, WidgetPalette.secondary, WidgetPalette.accent, styleTag)
             fun fixed(hex: Long) = androidx.glance.unit.ColorProvider(Color(hex))
             if (style.isDark) return WidgetLook(art, fixed(0xFFF6EEE2), fixed(0xFFDCCBB6), fixed(0xFFEBC08F), styleTag)
+            if (style == com.genesis.core.domain.widgets.WidgetArtStyle.VINTAGE) return WidgetLook(art, fixed(0xFF2E2A26), fixed(0xFF6F675C), fixed(0xFF9B2C2C), styleTag, vintage = true)
             val palette = (com.genesis.core.domain.share.VerseImageStyle.entries.firstOrNull { it.rawValue == style.rawValue }
                 ?: com.genesis.core.domain.share.VerseImageStyle.PAPER).theme(com.genesis.core.domain.theme.ReaderTheme.PAPER).palette
             return WidgetLook(art, fixed(0xFF000000 or palette.text.toLong()), fixed(0xFF000000 or palette.secondaryText.toLong()), fixed(0xFF000000 or palette.accent.toLong()), styleTag)

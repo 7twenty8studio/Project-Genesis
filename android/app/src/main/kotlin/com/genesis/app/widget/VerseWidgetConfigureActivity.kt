@@ -180,6 +180,7 @@ internal val com.genesis.core.domain.widgets.WidgetArtStyle.titleRes: Int
     get() = when (this) {
         com.genesis.core.domain.widgets.WidgetArtStyle.CLASSIC -> R.string.initial_classic
         com.genesis.core.domain.widgets.WidgetArtStyle.PAPER -> R.string.widget_style_paper
+        com.genesis.core.domain.widgets.WidgetArtStyle.VINTAGE -> R.string.widget_style_vintage
         com.genesis.core.domain.widgets.WidgetArtStyle.NIGHT -> R.string.widget_style_night
         com.genesis.core.domain.widgets.WidgetArtStyle.SPRING -> R.string.widget_style_spring
         com.genesis.core.domain.widgets.WidgetArtStyle.SUMMER -> R.string.widget_style_summer

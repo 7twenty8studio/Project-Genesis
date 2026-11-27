@@ -4,11 +4,13 @@ package com.genesis.core.domain.widgets
  * The verse widget's looks, as WidgetArtStyle on iOS (the same ids). Classic
  * is free; the painted papers, the seasons, Night and the scenes are
  * Premium, and show Classic with a Premium tag without it, never a locked
- * card. (Vintage and the keepsakes join later.)
+ * card. (The keepsakes join later.)
  */
 enum class WidgetArtStyle(val rawValue: String) {
     CLASSIC("classic"),
     PAPER("paper"),
+    /** A postcard: cream stock, a stamp and a postmark. */
+    VINTAGE("vintage"),
     NIGHT("night"),
     SPRING("spring"),
     SUMMER("summer"),
@@ -38,7 +40,7 @@ enum class WidgetArtStyle(val rawValue: String) {
 
     companion object {
         /** The order Widget Styles shows them in, as on iOS. */
-        val galleryOrder: List<WidgetArtStyle> = listOf(CLASSIC, PAPER, NIGHT, SPRING, SUMMER, AUTUMN, WINTER, FOREST, OCEAN, HEARTH, PHOTO)
+        val galleryOrder: List<WidgetArtStyle> = listOf(CLASSIC, PAPER, VINTAGE, NIGHT, SPRING, SUMMER, AUTUMN, WINTER, FOREST, OCEAN, HEARTH, PHOTO)
 
         val painted: List<WidgetArtStyle> = entries.filter { it.isPainted }
 

@@ -131,6 +131,10 @@ object WidgetArt {
             }
             return bitmap
         }
+        if (style == WidgetArtStyle.VINTAGE) {
+            paintVintage(canvas, width, height, stamp = width > 600)
+            return bitmap
+        }
         val imageStyle = VerseImageStyle.entries.firstOrNull { it.rawValue == style.rawValue } ?: VerseImageStyle.PAPER
         canvas.drawColor((0xFF000000 or imageStyle.theme(ReaderTheme.PAPER).palette.background.toLong()).toInt())
         imageStyle.season?.let { season ->
@@ -158,5 +162,77 @@ object WidgetArt {
             layer.recycle()
         }
         return bitmap
+    }
+
+    /**
+     * Vintage, as VintageBackground on iOS: cream postcard stock with a fine
+     * grain and, beside the words on the larger sizes, a blank stamp with
+     * perforated edges, slightly turned, a round postmark over its corner and
+     * wavy cancellation lines.
+     */
+    private fun paintVintage(canvas: Canvas, width: Int, height: Int, stamp: Boolean) {
+        canvas.drawColor(0xFFF6F1E7.toInt())
+        // One point of the iOS widget, in this picture's pixels.
+        val pt = width / if (width > 600) 364f else 170f
+        val grain = Paint(Paint.ANTI_ALIAS_FLAG)
+        var seed = 0x5EEDL
+        fun next(): Float {
+            seed = seed * 6_364_136_223_846_793_005L + 1_442_695_040_888_963_407L
+            return ((seed ushr 11).toDouble() / (1L shl 53).toDouble()).toFloat()
+        }
+        repeat((width / pt * height / pt / 28f).toInt()) {
+            val r = (0.3f + next() * 0.5f) * pt
+            val x = next() * width
+            val y = next() * height
+            grain.color = android.graphics.Color.argb(((0.04f + next() * 0.04f) * 255).toInt(), 102, 84, 61)
+            canvas.drawCircle(x, y, r, grain)
+        }
+        if (!stamp) return
+        canvas.save()
+        // The stamp's 96-point box, 12 points in from the top right.
+        canvas.translate(width - (96f + 12f) * pt, 12f * pt)
+        canvas.scale(pt, pt)
+        val ink = android.graphics.Color.rgb(107, 102, 97)
+        fun inkPaint(alpha: Float, stroke: Float? = null) = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = ink
+            this.alpha = (alpha * 255).toInt()
+            if (stroke != null) { style = Paint.Style.STROKE; strokeWidth = stroke }
+        }
+        val stampRect = android.graphics.RectF(18f, 4f, 76f, 74f)
+        canvas.save()
+        canvas.rotate(4f, stampRect.centerX(), stampRect.centerY())
+        canvas.drawRect(android.graphics.RectF(stampRect).apply { offset(1f, 1.5f) }, Paint().apply { color = 0x14000000 })
+        canvas.drawRect(stampRect, Paint().apply { color = android.graphics.Color.rgb(252, 250, 242) })
+        val hole = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = 0xFFF6F1E7.toInt() }
+        var hx = stampRect.left
+        while (hx <= stampRect.right) {
+            canvas.drawCircle(hx, stampRect.top, 2.2f, hole); canvas.drawCircle(hx, stampRect.bottom, 2.2f, hole); hx += 6f
+        }
+        var hy = stampRect.top
+        while (hy <= stampRect.bottom) {
+            canvas.drawCircle(stampRect.left, hy, 2.2f, hole); canvas.drawCircle(stampRect.right, hy, 2.2f, hole); hy += 6f
+        }
+        canvas.drawRect(android.graphics.RectF(stampRect).apply { inset(5f, 5f) }, inkPaint(0.25f, 0.6f))
+        canvas.restore()
+        // Postmark.
+        val cx = stampRect.right - 4f
+        val cy = stampRect.bottom - 6f
+        for (radius in listOf(17f, 12.5f)) canvas.drawCircle(cx, cy, radius, inkPaint(0.55f, 1f))
+        for (row in 0 until 3) {
+            val rowY = cy - 5f + row * 5f
+            canvas.drawLine(cx - 9f, rowY, cx + 9f, rowY, inkPaint(0.4f, 0.8f))
+        }
+        // Wavy cancellation lines to the left.
+        for (row in 0 until 4) {
+            val baseY = stampRect.bottom - 26f + row * 6f
+            val wave = android.graphics.Path().apply { moveTo(0f, baseY) }
+            var wx = 0f
+            while (wx < stampRect.left + 14f) {
+                wave.quadTo(wx + 4f, baseY + if ((wx / 8f).toInt() % 2 == 0) -2.5f else 2.5f, wx + 8f, baseY)
+                wx += 8f
+            }
+            canvas.drawPath(wave, inkPaint(0.5f, 0.9f))
+        }
+        canvas.restore()
     }
 }
