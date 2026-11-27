@@ -49,4 +49,14 @@ jobs:
         working-directory: .
         run: python3 Tools/Localization/build_android_strings.py --check
       - name: Tests and debug build
-        run: ./gradlew --no-configuration-cache :core:domain:test :app:assembleDebug
+        # Downloads can hit Maven Central's rate limit; a failed build that
+        # never got past resolving is tried again, a real failure is not.
+        run: |
+          set -o pipefail
+          for attempt in 1 2 3; do
+            if ./gradlew --no-configuration-cache :core:domain:test :app:assembleDebug 2>&1 | tee build.log; then exit 0; fi
+            grep -qE "Could not resolve|could not resolve plugin artifact|429" build.log || exit 1
+            echo "Dependency download failed (attempt $attempt); retrying in 60 s"
+            sleep 60
+          done
+          exit 1
