@@ -16,6 +16,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import com.genesis.core.domain.plans.PlanEnrollment
+import com.genesis.core.domain.memorise.MemoryGrade
+import com.genesis.core.domain.memorise.MemorySchedule
+import com.genesis.core.domain.memorise.MemoryVerse
 import com.genesis.core.domain.prayer.Prayer
 import com.genesis.core.domain.prayer.PrayerCategory
 import com.genesis.core.domain.prayer.PrayerPassage
@@ -151,6 +154,29 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             )
             connection.execSQL("PRAGMA user_version = 5")
         }
+        if (version < 6) {
+            // Memorize (Premium), as memory_verses on the server: verse ids and the schedule, never the text.
+            connection.execSQL(
+                """
+                CREATE TABLE memory_verses (
+                    id TEXT PRIMARY KEY NOT NULL,
+                    start_verse INTEGER NOT NULL,
+                    end_verse INTEGER NOT NULL,
+                    translation_id TEXT NOT NULL,
+                    ease REAL NOT NULL,
+                    interval_days REAL NOT NULL,
+                    repetitions INTEGER NOT NULL,
+                    due_at INTEGER NOT NULL,
+                    last_reviewed_at INTEGER,
+                    review_count INTEGER NOT NULL DEFAULT 0,
+                    created_at INTEGER NOT NULL,
+                    updated_at INTEGER NOT NULL,
+                    deleted_at INTEGER
+                )
+                """.trimIndent(),
+            )
+            connection.execSQL("PRAGMA user_version = 6")
+        }
     }
 
     private val _localEdits = MutableStateFlow(0L)
@@ -165,6 +191,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
     val notes = NoteStore()
     val plans = PlanStore()
     val prayers = PrayerStore()
+    val memory = MemoryStore()
     val sync = SyncAccess()
 
     /** Reading plans the person follows, the most recently changed first (as Home picks one on iOS). */
@@ -262,6 +289,116 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             }
             reload()
             edited()
+        }
+    }
+
+    /** Passages being learned by heart (Memorize), the soonest due first. */
+    inner class MemoryStore {
+        private val _all = MutableStateFlow(load())
+        val all: StateFlow<List<MemoryVerse>> = _all.asStateFlow()
+
+        internal fun reload() {
+            _all.value = load()
+        }
+
+        private fun load(): List<MemoryVerse> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT $MEMORY_COLUMNS FROM memory_verses WHERE deleted_at IS NULL ORDER BY due_at").use { s ->
+                    while (s.step()) add(readMemory(s))
+                }
+            }
+        }
+
+        /** Adds a passage to learn, or returns the one already there. */
+        fun memorise(start: VerseId, end: VerseId, translationId: String, now: Long = System.currentTimeMillis()): MemoryVerse {
+            val last = maxOf(end, start)
+            _all.value.firstOrNull { it.start == start && it.end == last }?.let { return it }
+            val verse = MemoryVerse(
+                id = UUID.randomUUID().toString(),
+                start = start,
+                end = last,
+                translationId = translationId,
+                schedule = MemorySchedule(dueAt = now),
+                createdAt = now,
+                updatedAt = now,
+            )
+            synchronized(lock) { transaction { writeMemory(verse, deletedAt = null) } }
+            reload()
+            edited()
+            return verse
+        }
+
+        fun review(id: String, grade: MemoryGrade, now: Long = System.currentTimeMillis()) {
+            val verse = _all.value.firstOrNull { it.id == id } ?: return
+            synchronized(lock) { transaction { writeMemory(verse.reviewed(grade, now), deletedAt = null) } }
+            reload()
+            edited()
+        }
+
+        /**
+         * A finished game counts as a review only for a passage that's due:
+         * extra practice helps memory without moving the schedule. True when recorded.
+         */
+        fun recordGame(id: String, grade: MemoryGrade, now: Long = System.currentTimeMillis()): Boolean {
+            val verse = _all.value.firstOrNull { it.id == id } ?: return false
+            if (!verse.isDue(now)) return false
+            review(id, grade, now)
+            return true
+        }
+
+        fun delete(id: String, now: Long = System.currentTimeMillis()) {
+            synchronized(lock) {
+                transaction {
+                    connection.prepare("UPDATE memory_verses SET deleted_at = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL").use {
+                        it.bindLong(1, now)
+                        it.bindLong(2, now)
+                        it.bindText(3, id)
+                        it.step()
+                    }
+                }
+            }
+            reload()
+            edited()
+        }
+    }
+
+    private fun readMemory(s: androidx.sqlite.SQLiteStatement) = MemoryVerse(
+        id = s.getText(0),
+        start = VerseId(s.getLong(1).toInt()),
+        end = VerseId(s.getLong(2).toInt()),
+        translationId = s.getText(3),
+        schedule = MemorySchedule(s.getDouble(4), s.getDouble(5), s.getLong(6).toInt(), s.getLong(7)),
+        lastReviewedAt = s.longOrNull(8),
+        reviewCount = s.getLong(9).toInt(),
+        createdAt = s.getLong(10),
+        updatedAt = s.getLong(11),
+    )
+
+    private fun writeMemory(verse: MemoryVerse, deletedAt: Long?) {
+        connection.prepare(
+            """
+            INSERT INTO memory_verses (id, start_verse, end_verse, translation_id, ease, interval_days, repetitions, due_at, last_reviewed_at, review_count, created_at, updated_at, deleted_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(id) DO UPDATE SET start_verse = excluded.start_verse, end_verse = excluded.end_verse, translation_id = excluded.translation_id,
+                ease = excluded.ease, interval_days = excluded.interval_days, repetitions = excluded.repetitions, due_at = excluded.due_at,
+                last_reviewed_at = excluded.last_reviewed_at, review_count = excluded.review_count, created_at = excluded.created_at,
+                updated_at = excluded.updated_at, deleted_at = excluded.deleted_at
+            """.trimIndent(),
+        ).use {
+            it.bindText(1, verse.id)
+            it.bindLong(2, verse.start.rawValue.toLong())
+            it.bindLong(3, verse.end.rawValue.toLong())
+            it.bindText(4, verse.translationId)
+            it.bindDouble(5, verse.schedule.ease)
+            it.bindDouble(6, verse.schedule.intervalDays)
+            it.bindLong(7, verse.schedule.repetitions.toLong())
+            it.bindLong(8, verse.schedule.dueAt)
+            verse.lastReviewedAt?.let { at -> it.bindLong(9, at) } ?: it.bindNull(9)
+            it.bindLong(10, verse.reviewCount.toLong())
+            it.bindLong(11, verse.createdAt)
+            it.bindLong(12, verse.updatedAt)
+            deletedAt?.let { at -> it.bindLong(13, at) } ?: it.bindNull(13)
+            it.step()
         }
     }
 
@@ -781,6 +918,30 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             prayers.reload()
         }
 
+        fun memoryChanged(since: Long): List<MemoryRecord> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT $MEMORY_COLUMNS, deleted_at FROM memory_verses WHERE updated_at > ?").use { s ->
+                    s.bindLong(1, since)
+                    while (s.step()) add(MemoryRecord(readMemory(s), s.longOrNull(12)))
+                }
+            }
+        }
+
+        fun applyMemory(rows: List<MemoryRecord>) = synchronized(lock) {
+            if (rows.isEmpty()) return@synchronized
+            transaction {
+                for (row in rows) {
+                    val verse = row.verse
+                    when (SyncMerge.decide(verse.updatedAt, row.deletedAt != null, updatedAt("memory_verses", verse.id))) {
+                        SyncMerge.Decision.KEEP_LOCAL -> Unit
+                        SyncMerge.Decision.DELETE_LOCAL -> markDeleted("memory_verses", verse.id, row.deletedAt ?: verse.updatedAt, verse.updatedAt)
+                        SyncMerge.Decision.APPLY_REMOTE -> writeMemory(verse, deletedAt = null)
+                    }
+                }
+            }
+            memory.reload()
+        }
+
         /** Server rows to mark deleted, by table. */
         fun pendingDeletions(): Map<String, List<String>> = synchronized(lock) {
             buildList {
@@ -805,13 +966,14 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
         /** Removes everything the person saved from this device (not from the cloud). */
         fun eraseAll() = synchronized(lock) {
             transaction {
-                for (table in listOf("highlights", "bookmarks", "notes", "reading_plans", "prayers", "pending_deletions")) connection.execSQL("DELETE FROM $table")
+                for (table in listOf("highlights", "bookmarks", "notes", "reading_plans", "prayers", "memory_verses", "pending_deletions")) connection.execSQL("DELETE FROM $table")
             }
             highlights.reload()
             bookmarks.reload()
             notes.reload()
             plans.reload()
             prayers.reload()
+            memory.reload()
         }
 
         private fun updatedAt(table: String, id: String): Long? =
@@ -858,6 +1020,8 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
     companion object {
         private const val PRAYER_COLUMNS =
             "id, title, body, category, is_answered, answered_at, answer_note, reminder_at, reminder_repeats_daily, passages, last_prayed_at, created_at, updated_at"
+        private const val MEMORY_COLUMNS =
+            "id, start_verse, end_verse, translation_id, ease, interval_days, repetitions, due_at, last_reviewed_at, review_count, created_at, updated_at"
         private const val PLAN_COLUMNS =
             "id, plan_id, title, start_date, completed_days, custom_books, custom_days, is_active, created_at, updated_at"
 

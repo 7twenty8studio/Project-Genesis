@@ -61,6 +61,7 @@ internal fun SelectionBar(
     onBookmark: () -> Unit,
     onNote: () -> Unit,
     onCrossReferences: () -> Unit,
+    onMemorise: () -> Unit,
     onDone: () -> Unit,
 ) {
     val colors = LocalReaderColors.current
@@ -101,6 +102,14 @@ internal fun SelectionBar(
         Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(horizontal = 8.dp, vertical = 4.dp)) {
             Action(R.string.note, onNote)
             Action(R.string.related, onCrossReferences)
+            // Memorize is Premium; without it the action isn't offered here.
+            if (com.genesis.app.settings.Entitlements.isPremium) {
+                val added = stringResource(R.string.memorise_added)
+                Action(R.string.memorise) {
+                    onMemorise()
+                    android.widget.Toast.makeText(context, added, android.widget.Toast.LENGTH_SHORT).show()
+                }
+            }
             Action(if (isBookmarked) R.string.remove_bookmark else R.string.bookmark, onBookmark)
             if (anyHighlighted) Action(R.string.remove_highlight, onRemoveHighlight)
             Action(R.string.copy) {

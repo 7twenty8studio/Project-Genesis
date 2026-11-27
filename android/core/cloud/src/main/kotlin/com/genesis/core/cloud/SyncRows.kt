@@ -118,10 +118,31 @@ data class RemotePrayer(
     @SerialName("server_updated_at") val serverUpdatedAt: String? = null,
 )
 
+/** A passage being memorized: verse ids and the review schedule, never the text. */
+@Serializable
+data class RemoteMemoryVerse(
+    val id: String,
+    @SerialName("user_id") val userId: String,
+    @SerialName("start_verse") val startVerse: Int,
+    @SerialName("end_verse") val endVerse: Int,
+    @SerialName("translation_id") val translationId: String,
+    val ease: Double = 2.5,
+    @SerialName("interval_days") val intervalDays: Double = 0.0,
+    val repetitions: Int = 0,
+    @SerialName("due_at") val dueAt: String,
+    @SerialName("last_reviewed_at") val lastReviewedAt: String? = null,
+    @SerialName("review_count") val reviewCount: Int = 0,
+    @SerialName("created_at") val createdAt: String,
+    @SerialName("updated_at") val updatedAt: String,
+    @SerialName("deleted_at") val deletedAt: String? = null,
+    @SerialName("server_updated_at") val serverUpdatedAt: String? = null,
+)
+
 object SyncTable {
     const val HIGHLIGHTS = "highlights"
     const val BOOKMARKS = "bookmarks"
     const val NOTES = "notes"
     const val READING_PLANS = "reading_plans"
     const val PRAYERS = "prayers"
+    const val MEMORY_VERSES = "memory_verses"
 }

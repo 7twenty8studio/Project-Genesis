@@ -47,3 +47,9 @@ data class PrayerRecord(
     val prayer: com.genesis.core.domain.prayer.Prayer,
     val deletedAt: Long?,
 )
+
+/** A Memorize passage as sync moves it. */
+data class MemoryRecord(
+    val verse: com.genesis.core.domain.memorise.MemoryVerse,
+    val deletedAt: Long?,
+)

@@ -7,6 +7,7 @@ import com.genesis.core.cloud.RemoteBookmark
 import com.genesis.core.cloud.RemoteHighlight
 import com.genesis.core.cloud.RemoteNote
 import com.genesis.core.cloud.RemotePlan
+import com.genesis.core.cloud.RemoteMemoryVerse
 import com.genesis.core.cloud.RemotePrayer
 import com.genesis.core.cloud.RemotePrayerPassage
 import com.genesis.core.cloud.SupabaseClient
@@ -17,6 +18,7 @@ import com.genesis.core.data.BookmarkRecord
 import com.genesis.core.data.HighlightRecord
 import com.genesis.core.data.NoteRecord
 import com.genesis.core.data.PlanRecord
+import com.genesis.core.data.MemoryRecord
 import com.genesis.core.data.PrayerRecord
 import com.genesis.core.domain.prayer.Prayer
 import com.genesis.core.domain.prayer.PrayerCategory
@@ -184,6 +186,9 @@ class SyncService(
         pull(SyncTable.PRAYERS, RemotePrayer.serializer(), client, token, userId, pageSize = 200) { rows ->
             database.sync.applyPrayers(rows.mapNotNull { row -> row.record()?.let { it to (row.passages == null) } })
         }
+        pull(SyncTable.MEMORY_VERSES, RemoteMemoryVerse.serializer(), client, token, userId) { rows ->
+            database.sync.applyMemory(rows.mapNotNull { it.record() })
+        }
 
         // Everything edited since the last successful push, deletions included.
         val since = prefs.getLong(key("lastPushedAt", userId), 0)
@@ -192,6 +197,7 @@ class SyncService(
         push(SyncTable.NOTES, RemoteNote.serializer(), database.sync.notesChanged(since).map { it.remote(userId) }, client, token, batch = 50)
         push(SyncTable.READING_PLANS, RemotePlan.serializer(), database.sync.plansChanged(since).map { it.remote(userId) }, client, token)
         push(SyncTable.PRAYERS, RemotePrayer.serializer(), database.sync.prayersChanged(since).map { it.remote(userId) }, client, token)
+        push(SyncTable.MEMORY_VERSES, RemoteMemoryVerse.serializer(), database.sync.memoryChanged(since).map { it.remote(userId) }, client, token)
         for ((table, ids) in database.sync.pendingDeletions()) {
             client.markDeleted(table, ids, System.currentTimeMillis(), token)
             database.sync.clearPendingDeletions(table, ids)
@@ -356,5 +362,41 @@ private fun PrayerRecord.remote(userId: String) = RemotePrayer(
     lastPrayedAt = prayer.lastPrayedAt?.let(Timestamps::string),
     createdAt = Timestamps.string(prayer.createdAt),
     updatedAt = Timestamps.string(prayer.updatedAt),
+    deletedAt = deletedAt?.let(Timestamps::string),
+)
+
+private fun RemoteMemoryVerse.record(): MemoryRecord? {
+    val updated = millis(updatedAt) ?: return null
+    val due = millis(dueAt) ?: return null
+    return MemoryRecord(
+        com.genesis.core.domain.memorise.MemoryVerse(
+            id = id.lowercase(),
+            start = com.genesis.core.domain.bible.VerseId(startVerse),
+            end = com.genesis.core.domain.bible.VerseId(maxOf(endVerse, startVerse)),
+            translationId = translationId,
+            schedule = com.genesis.core.domain.memorise.MemorySchedule(ease, intervalDays, repetitions, due),
+            lastReviewedAt = millis(lastReviewedAt),
+            reviewCount = reviewCount,
+            createdAt = millis(createdAt) ?: updated,
+            updatedAt = updated,
+        ),
+        millis(deletedAt),
+    )
+}
+
+private fun MemoryRecord.remote(userId: String) = RemoteMemoryVerse(
+    id = verse.id,
+    userId = userId,
+    startVerse = verse.start.rawValue,
+    endVerse = verse.end.rawValue,
+    translationId = verse.translationId,
+    ease = verse.schedule.ease,
+    intervalDays = verse.schedule.intervalDays,
+    repetitions = verse.schedule.repetitions,
+    dueAt = Timestamps.string(verse.schedule.dueAt),
+    lastReviewedAt = verse.lastReviewedAt?.let(Timestamps::string),
+    reviewCount = verse.reviewCount,
+    createdAt = Timestamps.string(verse.createdAt),
+    updatedAt = Timestamps.string(verse.updatedAt),
     deletedAt = deletedAt?.let(Timestamps::string),
 )

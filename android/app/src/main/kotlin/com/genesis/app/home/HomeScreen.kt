@@ -93,6 +93,8 @@ fun HomeScreen(
     onMarkPlanDay: (PlanEnrollment, Int, Boolean) -> Unit,
     activePrayers: Int,
     onPrayerJournal: () -> Unit,
+    memorise: Pair<Int, Int> = 0 to 0,
+    onMemorise: () -> Unit = {},
     record: ReadingRecord,
     onInsights: () -> Unit,
     modifier: Modifier = Modifier,
@@ -234,6 +236,37 @@ fun HomeScreen(
                     },
                     style = MaterialTheme.typography.bodyMedium,
                     color = colors.secondaryText,
+                )
+            }
+            Text("\u203A", style = MaterialTheme.typography.titleLarge, color = colors.secondaryText)
+        }
+
+        // Memorize Scripture (Premium): passages saved and how many are due.
+        Row(
+            Modifier.fillMaxWidth().clip18().clickable(onClick = onMemorise).card(colors.surface),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            val unlocked = Entitlements.isPremium
+            val (saved, due) = memorise
+            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                Text(stringResource(R.string.memorise_title), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, color = colors.text)
+                Text(
+                    when {
+                        !unlocked || saved == 0 -> stringResource(R.string.memorise_card_message)
+                        due == 0 -> stringResource(R.string.memorise_caught_up_today)
+                        else -> stringResource(R.string.memorise_due_today, due)
+                    },
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = colors.secondaryText,
+                )
+            }
+            if (!unlocked) {
+                Text(
+                    stringResource(R.string.premium),
+                    style = MaterialTheme.typography.labelSmall,
+                    fontWeight = FontWeight.SemiBold,
+                    color = colors.accent,
+                    modifier = Modifier.padding(end = 8.dp),
                 )
             }
             Text("\u203A", style = MaterialTheme.typography.titleLarge, color = colors.secondaryText)

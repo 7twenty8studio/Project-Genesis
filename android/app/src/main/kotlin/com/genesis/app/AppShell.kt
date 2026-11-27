@@ -27,6 +27,8 @@ import com.genesis.app.library.LibraryScreen
 import com.genesis.app.library.LibraryShelf
 import com.genesis.app.plans.PlansFlow
 import com.genesis.app.prayer.JournalBible
+import com.genesis.app.memorise.MemoriseScreen
+import com.genesis.app.memorise.MemoryTexts
 import com.genesis.app.prayer.PrayerJournalFlow
 import com.genesis.app.account.AccountScreen
 import com.genesis.app.reader.CrossReferencesSheet
@@ -86,6 +88,8 @@ fun AppShell(
     var planToOpen by rememberSaveable { mutableStateOf<String?>(null) }
     val plans by app.userData.plans.all.collectAsStateWithLifecycle()
     var journalOpen by rememberSaveable { mutableStateOf(false) }
+    var memoriseOpen by rememberSaveable { mutableStateOf(false) }
+    val memoryVerses by app.userData.memory.all.collectAsStateWithLifecycle()
     val prayers by app.userData.prayers.all.collectAsStateWithLifecycle()
     val account by app.account.state.collectAsStateWithLifecycle()
     val syncState by app.sync.state.collectAsStateWithLifecycle()
@@ -159,6 +163,22 @@ fun AppShell(
                 verses = reader::verses,
             ),
             onDone = { journalOpen = false },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
+
+    if (memoriseOpen) {
+        val translation = state.chapter?.translation
+        MemoriseScreen(
+            store = app.userData.memory,
+            texts = MemoryTexts(
+                bibleId = state.bible.id,
+                language = translation?.language ?: "en",
+                passage = { verse, nearby -> reader.memoryPassage(verse.translationId, verse.start, verse.end, nearby) },
+                hasVerse = reader::hasVerse,
+            ),
+            onDone = { memoriseOpen = false },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )
         return
@@ -270,6 +290,8 @@ fun AppShell(
                 onMarkPlanDay = { enrollment, day, done -> app.userData.plans.setDay(day, done, enrollment.id) },
                 activePrayers = prayers.count { it.hasContent && !it.isAnswered },
                 onPrayerJournal = { journalOpen = true },
+                memorise = memoryVerses.size to memoryVerses.count { it.isDue() },
+                onMemorise = { memoriseOpen = true },
                 record = readingRecord,
                 onInsights = { insightsOpen = true },
                 modifier = content,

@@ -236,6 +236,21 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         clearSelection()
     }
 
+    /**
+     * Adds the selection to Memorize (Premium), as memoriseSelection on iOS:
+     * one chapter, at most 15 verses, in the Bible being read.
+     */
+    fun memoriseSelection() {
+        val selection = state.value.selection.sorted()
+        val first = selection.firstOrNull() ?: return
+        val last = selection.last().takeIf { it.chapterId == first.chapterId } ?: first
+        val max = com.genesis.core.domain.memorise.MemoriseSuggestions.MAXIMUM_VERSES
+        val end = if (last.verse - first.verse < max) last else VerseId(first.book, first.chapter, first.verse + max - 1)
+        val bible = state.value.bible.id
+        viewModelScope.launch(Dispatchers.IO) { app.userData.memory.memorise(first, end, bible) }
+        clearSelection()
+    }
+
     /** Opens the selection's note, or a new one on the selected verses. */
     fun openNoteForSelection() {
         val current = state.value
@@ -296,6 +311,42 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         return withContext(Dispatchers.IO) {
             runCatching { repository(bible).verses(ids) }.onFailure { Log.e(TAG, "Couldn't read verses", it) }.getOrDefault(emptyMap())
         }
+    }
+
+    /**
+     * A Memorize passage's verses, verbatim, as BibleLibrary.memoryTranslation
+     * on iOS: the Bible being read, except that a passage keeps the Bible it
+     * was added in while that one is in the same language; the saved Bible
+     * when the one being read doesn't have it. `nearby`: two verses either
+     * side too, only as decoy words for Fill the Gaps.
+     */
+    suspend fun memoryPassage(savedBibleId: String, from: VerseId, through: VerseId, nearby: Boolean = false): MemoryPassage? {
+        val reading = state.value.bible
+        return withContext(Dispatchers.IO) {
+            runCatching {
+                val saved = BundledBible.entries.firstOrNull { it.id == savedBibleId }
+                fun base(bible: BundledBible) = repository(bible).translation.language.substringBefore('-')
+                val chosen = if (saved != null && base(saved) == base(reading)) saved else reading
+                var bible = chosen
+                var verses = repository(chosen).passage(from, through)
+                if (verses.isEmpty() && saved != null && saved != chosen) {
+                    bible = saved
+                    verses = repository(saved).passage(from, through)
+                }
+                if (verses.isEmpty()) return@runCatching null
+                val repository = repository(bible)
+                val around = if (nearby) {
+                    repository.passage(VerseId(from.rawValue - 2), VerseId(from.rawValue - 1)) + repository.passage(VerseId(through.rawValue + 1), VerseId(through.rawValue + 2))
+                } else emptyList()
+                MemoryPassage(bible.id, repository.translation.abbreviation, repository.translation.language, verses.map { it.plainText }, around.map { it.plainText })
+            }.onFailure { Log.e(TAG, "Couldn't read a Memorize passage", it) }.getOrNull()
+        }
+    }
+
+    /** True when the Bible being read has this verse (Memorize's Add Verse). */
+    suspend fun hasVerse(verse: VerseId): Boolean {
+        val bible = state.value.bible
+        return withContext(Dispatchers.IO) { runCatching { repository(bible).verses(listOf(verse)).isNotEmpty() }.getOrDefault(false) }
     }
 
     /** Related passages for the first selected verse (the selection bar's Related). */
@@ -362,4 +413,16 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         synchronized(repositories) { repositories.values.forEach { it.close() } }
         if (crossReferenceOpened) crossReferenceRepository.close()
     }
+}
+
+/** A Memorize passage as shown: each verse's text verbatim, and the Bible it comes from. */
+data class MemoryPassage(
+    val bibleId: String,
+    val abbreviation: String,
+    val language: String,
+    val verses: List<String>,
+    val nearby: List<String> = emptyList(),
+) {
+    /** The whole passage, the verses joined with a space (as iOS). */
+    val text: String get() = verses.joinToString(" ")
 }
