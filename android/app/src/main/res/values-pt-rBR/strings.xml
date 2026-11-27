@@ -418,4 +418,24 @@
     <string name="group_reuben">Tribo de Rúben</string>
     <string name="group_simeon">Tribo de Simeão</string>
     <string name="group_zebulun">Tribo de Zebulom</string>
+    <string name="insights">Estatísticas</string>
+    <string name="progress">Progresso</string>
+    <string name="day_streak">dias de sequência</string>
+    <string name="chapters_read">capítulos lidos</string>
+    <string name="books_finished">livros concluídos</string>
+    <string name="longest_streak">maior sequência</string>
+    <string name="verses_highlighted">versículos destacados</string>
+    <string name="notes_written">anotações escritas</string>
+    <string name="total_reading_time">tempo total de leitura</string>
+    <string name="this_week_stat">esta semana</string>
+    <string name="reading_time_two_weeks">Tempo de leitura, últimas duas semanas</string>
+    <string name="favorite_books">Livros favoritos</string>
+    <string name="chapters_of_book">%1$d de %2$d capítulos</string>
+    <string name="count_of_total">%1$d de %2$d</string>
+    <string name="insights_locked">Veja seu tempo de leitura, sua maior sequência, seus livros e temas favoritos e mais com o Premium.</string>
+    <string name="unlock_insights">Desbloquear Estatísticas</string>
+    <string name="duration_minutes">%d min</string>
+    <string name="duration_hours_minutes">%1$d h %2$d min</string>
+    <string name="minutes_axis">minutos</string>
+    <string name="reading_time_summary">Tempo de leitura nas últimas duas semanas: %s no total</string>
 </resources>

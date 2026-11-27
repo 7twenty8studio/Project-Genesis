@@ -418,6 +418,26 @@
     "group_naphtali": "Tribe of Naphtali",
     "group_reuben": "Tribe of Reuben",
     "group_simeon": "Tribe of Simeon",
-    "group_zebulun": "Tribe of Zebulun"
+    "group_zebulun": "Tribe of Zebulun",
+    "insights": "Insights",
+    "progress": "Progress",
+    "day_streak": "day streak",
+    "chapters_read": "chapters read",
+    "books_finished": "books finished",
+    "longest_streak": "longest streak",
+    "verses_highlighted": "verses highlighted",
+    "notes_written": "notes written",
+    "total_reading_time": "total reading time",
+    "this_week_stat": "this week",
+    "reading_time_two_weeks": "Reading Time, Last Two Weeks",
+    "favorite_books": "Favorite Books",
+    "chapters_of_book": "%lld of %lld chapters",
+    "count_of_total": "%lld of %lld",
+    "insights_locked": "See your reading time, longest streak, favorite books and topics, and more with Premium.",
+    "unlock_insights": "Unlock Insights",
+    "duration_minutes": "%lld min",
+    "duration_hours_minutes": "%lld h %lld min",
+    "minutes_axis": "minutes",
+    "reading_time_summary": "Reading time over the last two weeks: %@ in total"
   }
 }

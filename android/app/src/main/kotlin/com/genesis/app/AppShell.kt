@@ -1,6 +1,7 @@
 package com.genesis.app
 
 import androidx.activity.compose.BackHandler
+import com.genesis.app.insights.InsightsScreen
 import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -75,6 +76,8 @@ fun AppShell(
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
     var readingSettings by rememberSaveable { mutableStateOf(false) }
     var notificationsOpen by rememberSaveable { mutableStateOf(false) }
+    var insightsOpen by rememberSaveable { mutableStateOf(false) }
+    val readingRecord by app.progress.record.collectAsStateWithLifecycle()
     var accountOpen by rememberSaveable { mutableStateOf(false) }
     // Reading plans over the tabs: the list, or one plan (its id).
     var plansOpen by rememberSaveable { mutableStateOf(false) }
@@ -170,6 +173,15 @@ fun AppShell(
         return
     }
 
+    if (insightsOpen) {
+        InsightsScreen(
+            language = state.chapter?.translation?.language ?: "en",
+            onDone = { insightsOpen = false },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
+
     if (notificationsOpen) {
         NotificationSettingsScreen(
             onDone = { notificationsOpen = false },
@@ -252,6 +264,8 @@ fun AppShell(
                 onMarkPlanDay = { enrollment, day, done -> app.userData.plans.setDay(day, done, enrollment.id) },
                 activePrayers = prayers.count { it.hasContent && !it.isAnswered },
                 onPrayerJournal = { journalOpen = true },
+                record = readingRecord,
+                onInsights = { insightsOpen = true },
                 modifier = content,
             )
             AppTab.READ -> androidx.compose.foundation.layout.Box(content) {

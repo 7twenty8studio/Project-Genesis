@@ -56,6 +56,13 @@ import com.genesis.core.domain.reader.ReadingMode
 import com.genesis.core.domain.bible.VerseId
 import com.genesis.core.domain.study.HighlightColor
 import com.genesis.app.settings.LocalRecentColors
+import android.os.SystemClock
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import com.genesis.app.VerselyApplication
 
 @Composable
 fun ReaderRoute(
@@ -65,6 +72,7 @@ fun ReaderRoute(
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     LaunchedEffect(state.chapter?.id, state.focus) { viewModel.recordPosition() }
+    ReadingTimer()
     ReaderScreen(
         state = state,
         onSearchClick = onSearchClick,
@@ -341,5 +349,35 @@ internal fun Magnifier(color: androidx.compose.ui.graphics.Color, iconSize: andr
         drawCircle(color, radius, center, style = androidx.compose.ui.graphics.drawscope.Stroke(stroke))
         val start = androidx.compose.ui.geometry.Offset(center.x + radius * 0.72f, center.y + radius * 0.72f)
         drawLine(color, start, androidx.compose.ui.geometry.Offset(size.width * 0.92f, size.height * 0.92f), stroke, androidx.compose.ui.graphics.StrokeCap.Round)
+    }
+}
+
+/**
+ * Counts the time the reader is on screen with the app in front, as iOS's
+ * reading time: each session ends when the app leaves the foreground or the
+ * reader closes, and adds at most 45 minutes.
+ */
+@Composable
+private fun ReadingTimer() {
+    val app = LocalContext.current.applicationContext as VerselyApplication
+    val lifecycle = LocalLifecycleOwner.current.lifecycle
+    DisposableEffect(lifecycle) {
+        var started: Long? = SystemClock.elapsedRealtime().takeIf { lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) }
+        fun stop() {
+            started?.let { app.progress.addReadingTime((SystemClock.elapsedRealtime() - it) / 1_000) }
+            started = null
+        }
+        val observer = LifecycleEventObserver { _, event ->
+            when (event) {
+                Lifecycle.Event.ON_RESUME -> if (started == null) started = SystemClock.elapsedRealtime()
+                Lifecycle.Event.ON_PAUSE -> stop()
+                else -> Unit
+            }
+        }
+        lifecycle.addObserver(observer)
+        onDispose {
+            lifecycle.removeObserver(observer)
+            stop()
+        }
     }
 }

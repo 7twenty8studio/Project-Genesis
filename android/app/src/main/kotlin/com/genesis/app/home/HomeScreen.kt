@@ -63,6 +63,9 @@ import com.genesis.core.domain.bible.VerseId
 import com.genesis.core.domain.home.DailyVerse
 import com.genesis.core.domain.home.Greeting
 import com.genesis.core.domain.home.progressThroughBook
+import com.genesis.core.domain.insights.ReadingStats
+import com.genesis.core.domain.notifications.NotificationPlanner
+import com.genesis.app.settings.ReadingRecord
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.ZoneId
@@ -90,6 +93,8 @@ fun HomeScreen(
     onMarkPlanDay: (PlanEnrollment, Int, Boolean) -> Unit,
     activePrayers: Int,
     onPrayerJournal: () -> Unit,
+    record: ReadingRecord,
+    onInsights: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val colors = LocalReaderColors.current
@@ -234,6 +239,26 @@ fun HomeScreen(
             Text("\u203A", style = MaterialTheme.typography.titleLarge, color = colors.secondaryText)
         }
 
+        // Progress, with Insights beside it.
+        if (state.hasStartedReading) {
+            Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        stringResource(R.string.progress),
+                        style = MaterialTheme.typography.titleLarge.copy(fontFamily = FontFamily.Serif, fontWeight = FontWeight.SemiBold),
+                        color = colors.text,
+                        modifier = Modifier.weight(1f).semantics { heading() },
+                    )
+                    TextButton(onClick = onInsights) { Text(stringResource(R.string.insights), color = colors.accent) }
+                }
+                Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                    ProgressStat(NotificationPlanner.streak(record.readingDays, today), stringResource(R.string.day_streak), Modifier.weight(1f))
+                    ProgressStat(record.chaptersRead.size, stringResource(R.string.chapters_read), Modifier.weight(1f))
+                    ProgressStat(ReadingStats.booksCompleted(record.chaptersRead), stringResource(R.string.books_finished), Modifier.weight(1f))
+                }
+            }
+        }
+
         // Recently highlighted.
         if (recentHighlights.isNotEmpty()) {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -266,6 +291,18 @@ fun HomeScreen(
             }
         }
         Spacer(Modifier)
+    }
+}
+
+@Composable
+private fun ProgressStat(value: Int, label: String, modifier: Modifier) {
+    val colors = LocalReaderColors.current
+    Column(
+        modifier.background(colors.surface, RoundedCornerShape(16.dp)).padding(14.dp).semantics(mergeDescendants = true) {},
+        verticalArrangement = Arrangement.spacedBy(2.dp),
+    ) {
+        Text("$value", style = MaterialTheme.typography.titleLarge.copy(fontFamily = FontFamily.Serif, fontWeight = FontWeight.SemiBold), color = colors.text)
+        Text(label, style = MaterialTheme.typography.bodySmall, color = colors.secondaryText, maxLines = 2)
     }
 }
 
