@@ -56,12 +56,14 @@ object BibleBooks {
     @Serializable
     private data class File(val books: List<BibleBook>)
 
+    private val json = Json { ignoreUnknownKeys = true }
+
     val all: List<BibleBook> by lazy {
         val stream = requireNotNull(BibleBooks::class.java.getResourceAsStream("bibleBooks.json")) {
             "bibleBooks.json is missing from core:domain's resources"
         }
         val text = stream.use { it.readBytes().decodeToString() }
-        Json { ignoreUnknownKeys = true }.decodeFromString<File>(text).books
+        json.decodeFromString<File>(text).books
     }
 
     val oldTestament: List<BibleBook> get() = all.filter { it.testament == Testament.OLD }

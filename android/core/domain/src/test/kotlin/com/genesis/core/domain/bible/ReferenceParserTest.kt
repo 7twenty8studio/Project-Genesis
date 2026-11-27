@@ -27,7 +27,7 @@ class ReferenceParserTest {
     }
 
     private fun cases(key: String) = fixtures.getValue(key).jsonArray.map { it.jsonObject }
-    private fun JsonObject.int(key: String): Int? = (get(key) as? JsonElement)?.takeIf { it !is JsonNull }?.jsonPrimitive?.intOrNull
+    private fun JsonObject.int(key: String): Int? = get(key)?.takeIf { it !is JsonNull }?.jsonPrimitive?.intOrNull
     private fun JsonObject.string(key: String): String = getValue(key).jsonPrimitive.content
 
     @Test fun parsesEverySharedCase() {
