@@ -1310,6 +1310,14 @@
     "sermon_notes_reminder": "Heading to church? Your sermon notes are ready.",
     "your_week_in_scripture": "Your week in Scripture",
     "weekly_recap_body": "See what you read this week, and pick a goal for the next.",
-    "sunday_at": "Sunday at"
+    "sunday_at": "Sunday at",
+    "error_already_nudged": "You've already nudged them today.",
+    "error_nudge_limit": "You've sent a lot of nudges today. Try again tomorrow.",
+    "error_nudges_off": "They've turned off nudges.",
+    "nudge_footer": "Tap the wave to send someone a friendly nudge: %@",
+    "nudge_message": "%@ is praying for you. Read with me today?",
+    "a_friend": "A friend",
+    "nudged_name": "Nudged %@",
+    "nudge_name": "Nudge %@ to read today"
   }
 }

@@ -1310,4 +1310,12 @@
     <string name="your_week_in_scripture">Tu semana en las Escrituras</string>
     <string name="weekly_recap_body">Mira lo que leíste esta semana y elige una meta para la próxima.</string>
     <string name="sunday_at">Domingo a las</string>
+    <string name="error_already_nudged">Ya le enviaste una invitación hoy.</string>
+    <string name="error_nudge_limit">Has enviado muchas invitaciones hoy. Inténtalo mañana.</string>
+    <string name="error_nudges_off">Esta persona desactivó las invitaciones.</string>
+    <string name="nudge_footer">Toca el saludo para enviar a alguien una invitación amable: %s</string>
+    <string name="nudge_message">%s está orando por ti. ¿Lees conmigo hoy?</string>
+    <string name="a_friend">Un amigo</string>
+    <string name="nudged_name">%s invitado</string>
+    <string name="nudge_name">Invitar a %s a leer hoy</string>
 </resources>

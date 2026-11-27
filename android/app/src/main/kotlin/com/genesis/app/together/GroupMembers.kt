@@ -39,6 +39,7 @@ import androidx.compose.ui.platform.ClipEntry
 import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontFamily
@@ -77,6 +78,8 @@ internal fun GroupMembers(group: GroupSummary, members: List<GroupMember>, onCha
     var banning by remember { mutableStateOf<GroupMember?>(null) }
     var newOwner by remember { mutableStateOf<GroupMember?>(null) }
     var steppingDown by remember { mutableStateOf<GroupMember?>(null) }
+    // Members nudged from this screen (the server allows one a day each).
+    var nudged by remember(group.id) { mutableStateOf(emptySet<String>()) }
 
     fun act(action: (CommunityApi) -> Unit) {
         scope.launch { if (store.perform(action)) onChanged() }
@@ -96,9 +99,27 @@ internal fun GroupMembers(group: GroupSummary, members: List<GroupMember>, onCha
                         onBan = { banning = member },
                         onMakeOwner = { newOwner = member },
                         onStepDown = { steppingDown = member },
+                        nudged = member.userId.lowercase() in nudged,
+                        onNudge = {
+                            scope.launch {
+                                if (store.perform { it.nudge(member.userId, group.id) }) nudged = nudged + member.userId.lowercase()
+                            }
+                        },
                     )
                     if (index < members.lastIndex) HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
                 }
+            }
+        }
+        if (members.size > 1) item {
+            run {
+                // What a nudge says; the push uses the same sentence, in the receiver's language.
+                val name = members.firstOrNull { permissions.isMe(it) }?.displayName ?: stringResource(R.string.a_friend)
+                Text(
+                    stringResource(R.string.nudge_footer, stringResource(R.string.nudge_message, name)),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = colors.secondaryText,
+                    modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 8.dp),
+                )
             }
         }
     }
@@ -211,6 +232,8 @@ private fun MemberRow(
     onBan: () -> Unit,
     onMakeOwner: () -> Unit,
     onStepDown: () -> Unit,
+    nudged: Boolean = false,
+    onNudge: () -> Unit = {},
 ) {
     val app = LocalContext.current.applicationContext as VerselyApplication
     val colors = LocalReaderColors.current
@@ -228,6 +251,17 @@ private fun MemberRow(
             Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                 if (standing != GroupStanding.MEMBER) Text(stringResource(standing.title(permissions.isChurch)), style = MaterialTheme.typography.labelMedium, color = colors.accent)
                 if (member.isMuted()) Text(stringResource(R.string.muted), style = MaterialTheme.typography.labelMedium, color = colors.secondaryText)
+            }
+        }
+        if (!isMe && !blocked) {
+            if (nudged) {
+                val label = stringResource(R.string.nudged_name, member.displayName)
+                Text("✓", color = colors.secondaryText, modifier = Modifier.padding(horizontal = 12.dp).semantics { contentDescription = label })
+            } else {
+                val label = stringResource(R.string.nudge_name, member.displayName)
+                IconButton(onClick = onNudge, modifier = Modifier.size(40.dp).semantics { contentDescription = label }) {
+                    Text("👋", modifier = Modifier.clearAndSetSemantics {})
+                }
             }
         }
         if (isMe && !permissions.canStepDown(member)) return@Row

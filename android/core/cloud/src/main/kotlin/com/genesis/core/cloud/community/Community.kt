@@ -481,6 +481,21 @@ class CommunityApi(private val client: SupabaseClient, private val token: () -> 
     }
 
 
+    /**
+     * A friendly "read with me today?" to another member (send_group_nudge
+     * checks everything), then the push to them (best effort: the nudge is
+     * recorded even if it fails).
+     */
+    fun nudge(user: String, group: String) {
+        val id = rpc("send_group_nudge", "p_group" to JsonPrimitive(group.lowercase()), "p_to" to JsonPrimitive(user.lowercase())).trim().trim('"')
+        if (id.isNotEmpty()) runCatching { client.callFunction("group-notify", buildJsonObject { put("nudgeID", id.lowercase()) }.toString(), token()) }
+    }
+
+    /** Whether others may nudge the signed-in person (Settings › Notifications › Nudges from Friends). */
+    fun setAcceptsNudges(on: Boolean) {
+        rpc("set_accepts_nudges", "p_on" to JsonPrimitive(on))
+    }
+
     // Group settings and moderation (GroupMembersView and GroupModerationView on iOS)
 
     private fun groupAndUser(group: String, user: String) =

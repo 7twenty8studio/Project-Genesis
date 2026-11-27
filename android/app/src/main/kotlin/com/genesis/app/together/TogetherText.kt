@@ -41,6 +41,9 @@ internal fun CommunityError.text(): Int = when (this) {
         "challenge_ended" -> R.string.error_challenge_ended
         "not_started" -> R.string.error_not_started
         "invalid_item" -> R.string.error_invalid_item
+        "already_nudged" -> R.string.error_already_nudged
+        "nudge_limit" -> R.string.error_nudge_limit
+        "nudges_off" -> R.string.error_nudges_off
         else -> R.string.error_unknown
     }
 }

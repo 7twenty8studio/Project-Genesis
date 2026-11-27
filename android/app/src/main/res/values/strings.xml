@@ -1311,4 +1311,12 @@
     <string name="your_week_in_scripture">Your week in Scripture</string>
     <string name="weekly_recap_body">See what you read this week, and pick a goal for the next.</string>
     <string name="sunday_at">Sunday at</string>
+    <string name="error_already_nudged">You\'ve already nudged them today.</string>
+    <string name="error_nudge_limit">You\'ve sent a lot of nudges today. Try again tomorrow.</string>
+    <string name="error_nudges_off">They\'ve turned off nudges.</string>
+    <string name="nudge_footer">Tap the wave to send someone a friendly nudge: %s</string>
+    <string name="nudge_message">%s is praying for you. Read with me today?</string>
+    <string name="a_friend">A friend</string>
+    <string name="nudged_name">Nudged %s</string>
+    <string name="nudge_name">Nudge %s to read today</string>
 </resources>
