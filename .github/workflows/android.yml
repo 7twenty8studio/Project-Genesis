@@ -3,7 +3,9 @@
 name: Android
 
 on:
+  # Pull requests run it; pushes only on main, so a PR branch isn't built twice.
   push:
+    branches: [main]
     paths:
       - "android/**"
       - "Genesis/Resources/Bibles/**"
