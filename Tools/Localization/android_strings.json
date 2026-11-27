@@ -438,6 +438,8 @@
     "duration_minutes": "%lld min",
     "duration_hours_minutes": "%lld h %lld min",
     "minutes_axis": "minutes",
-    "reading_time_summary": "Reading time over the last two weeks: %@ in total"
+    "reading_time_summary": "Reading time over the last two weeks: %@ in total",
+    "developer": "Developer",
+    "test_as_premium": "Test as Premium"
   }
 }

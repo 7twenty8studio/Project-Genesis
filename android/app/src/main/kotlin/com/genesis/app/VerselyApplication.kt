@@ -19,6 +19,11 @@ import kotlinx.coroutines.withContext
 
 /** The app process. Dependency injection (Hilt) arrives with accounts and sync. */
 class VerselyApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        com.genesis.app.settings.Entitlements.load(this)
+    }
+
     val readerSettings: ReaderSettingsStore by lazy { ReaderSettingsStore(this) }
 
     /** Opened off the main thread the first time (it reads the person's highlights). */

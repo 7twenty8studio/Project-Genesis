@@ -18,6 +18,8 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Switch
+import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -35,6 +37,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.genesis.app.BuildConfig
 import com.genesis.app.R
 import com.genesis.core.design.LocalReaderColors
 
@@ -107,6 +110,20 @@ fun SettingsScreen(
                 }
             }
             Footer(stringResource(R.string.language_footer))
+
+            if (BuildConfig.DEBUG) {
+                Header(stringResource(R.string.developer))
+                Group {
+                    Row(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
+                        Text(stringResource(R.string.test_as_premium), style = MaterialTheme.typography.bodyLarge, color = colors.text, modifier = Modifier.weight(1f))
+                        Switch(
+                            checked = Entitlements.isPremium,
+                            onCheckedChange = { Entitlements.setTestingPremium(context, it) },
+                            colors = SwitchDefaults.colors(checkedTrackColor = colors.accent),
+                        )
+                    }
+                }
+            }
 
             Header(stringResource(R.string.about_versely))
             Footer(stringResource(R.string.version, version))

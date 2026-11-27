@@ -1,7 +1,11 @@
 package com.genesis.app.settings
 
 import android.content.Context
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
+import com.genesis.app.BuildConfig
 import androidx.core.content.edit
 import com.genesis.core.domain.reader.ReaderPreferences
 import com.genesis.core.domain.study.HighlightColor
@@ -70,9 +74,24 @@ val LocalRecentColors = staticCompositionLocalOf<androidx.compose.runtime.State<
 val LocalReaderPreferences = staticCompositionLocalOf { ReaderPreferences() }
 
 /**
- * Premium arrives with Play Billing (phase 4). Until then everything Premium
- * is shown with its tag and can't be chosen, as on iOS without Premium.
+ * Premium arrives with Play Billing. Until then everything Premium is shown
+ * with its tag and can't be chosen, as on iOS without Premium; debug builds
+ * have Settings › Developer › Test as Premium, as iOS's DEBUG builds do.
  */
 object Entitlements {
-    const val isPremium: Boolean = false
+    var isPremium: Boolean by mutableStateOf(false)
+        private set
+
+    private const val TEST_KEY = "premium.testAsPremium"
+
+    fun load(context: Context) {
+        if (!BuildConfig.DEBUG) return
+        isPremium = context.getSharedPreferences("premium", Context.MODE_PRIVATE).getBoolean(TEST_KEY, false)
+    }
+
+    fun setTestingPremium(context: Context, on: Boolean) {
+        if (!BuildConfig.DEBUG) return
+        context.getSharedPreferences("premium", Context.MODE_PRIVATE).edit { putBoolean(TEST_KEY, on) }
+        isPremium = on
+    }
 }

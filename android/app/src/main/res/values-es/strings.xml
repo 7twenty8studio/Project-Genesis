@@ -438,4 +438,6 @@
     <string name="duration_hours_minutes">%1$d h %2$d min</string>
     <string name="minutes_axis">minutos</string>
     <string name="reading_time_summary">Tiempo de lectura en las últimas dos semanas: %s en total</string>
+    <string name="developer">Desarrollador</string>
+    <string name="test_as_premium">Probar como Premium</string>
 </resources>
