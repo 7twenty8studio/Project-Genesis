@@ -112,6 +112,7 @@ internal fun CompanionPanel(
                             language = translation?.language ?: "en",
                             abbreviation = translation?.abbreviation ?: state.bible.id,
                             verses = viewModel::verses,
+                            export = viewModel::exportSource,
                         ),
                         onDone = {},
                         modifier = Modifier.fillMaxSize().navigationBarsPadding(),

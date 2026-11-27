@@ -35,6 +35,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontFamily
@@ -64,6 +65,8 @@ class JournalBible(
     val language: String,
     val abbreviation: String,
     val verses: suspend (Collection<VerseId>) -> Map<VerseId, Verse>,
+    /** Verses for a PDF export, from the Bible Premium tools use (never a YouVersion Bible's text). */
+    val export: suspend (Collection<VerseId>) -> com.genesis.app.journal.JournalExport.Source?,
 )
 
 /**
@@ -99,8 +102,11 @@ fun PrayerJournalFlow(store: UserDatabase.PrayerStore, bible: JournalBible, onDo
         return
     }
 
+    var exporting by rememberSaveable { mutableStateOf(false) }
+    if (exporting) com.genesis.app.journal.JournalExportDialog(prayers, bible) { exporting = false }
     JournalList(
         prayers = prayers,
+        onExport = { exporting = true },
         onOpen = { editingId = it },
         onNew = { category ->
             newCategory = category?.id
@@ -114,6 +120,7 @@ fun PrayerJournalFlow(store: UserDatabase.PrayerStore, bible: JournalBible, onDo
 @Composable
 private fun JournalList(
     prayers: List<Prayer>,
+    onExport: () -> Unit,
     onOpen: (String) -> Unit,
     onNew: (PrayerCategory?) -> Unit,
     onDone: () -> Unit,
@@ -137,6 +144,7 @@ private fun JournalList(
                 modifier = Modifier.weight(1f).semantics { heading() },
             )
             TextButton(onClick = { onNew(category) }) { Text("+ " + stringResource(R.string.new_prayer), color = colors.accent) }
+            ExportMenu(onExport)
             TextButton(onClick = onDone) { Text(stringResource(R.string.done), color = colors.accent, fontWeight = FontWeight.SemiBold) }
         }
         LazyColumn(
@@ -307,4 +315,29 @@ internal fun fieldColors(): TextFieldColors {
         focusedPlaceholderColor = colors.secondaryText,
         unfocusedPlaceholderColor = colors.secondaryText,
     )
+}
+
+/** Premium: the journal as a PDF for a range of days (marked Premium, and not chosen, without it). */
+@Composable
+private fun ExportMenu(onExport: () -> Unit) {
+    val colors = LocalReaderColors.current
+    var open by remember { mutableStateOf(false) }
+    val more = stringResource(R.string.more)
+    androidx.compose.foundation.layout.Box {
+        TextButton(onClick = { open = true }, modifier = Modifier.semantics { contentDescription = more }) {
+            Text("⋯", style = MaterialTheme.typography.titleLarge, color = colors.accent)
+        }
+        androidx.compose.material3.DropdownMenu(expanded = open, onDismissRequest = { open = false }) {
+            val unlocked = com.genesis.app.settings.Entitlements.isPremium
+            androidx.compose.material3.DropdownMenuItem(
+                text = { Text(stringResource(R.string.export_as_pdf)) },
+                trailingIcon = if (unlocked) null else ({ com.genesis.app.reader.PremiumTag() }),
+                enabled = unlocked,
+                onClick = {
+                    open = false
+                    onExport()
+                },
+            )
+        }
+    }
 }

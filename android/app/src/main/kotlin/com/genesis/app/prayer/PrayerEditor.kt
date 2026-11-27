@@ -70,6 +70,8 @@ internal fun PrayerEditor(
     val colors = LocalReaderColors.current
     var draft by remember(original.id) { mutableStateOf(original) }
     var confirmDelete by remember { mutableStateOf(false) }
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val exportScope = rememberCoroutineScope()
     fun close() = onClose(draft, false)
     BackHandler { close() }
 
@@ -80,6 +82,17 @@ internal fun PrayerEditor(
                 style = MaterialTheme.typography.headlineSmall.copy(fontFamily = FontFamily.Serif, fontWeight = FontWeight.SemiBold),
                 color = colors.text,
                 modifier = Modifier.weight(1f).semantics { heading() },
+            )
+            com.genesis.app.journal.JournalExtrasMenu(
+                sermon = false,
+                onTemplate = { template -> draft = draft.copy(body = com.genesis.core.domain.journal.JournalTemplate.inserting(template, draft.body).text) },
+                onExport = {
+                    val snapshot = draft
+                    exportScope.launch {
+                        val export = com.genesis.app.journal.JournalExportBuilder(context, bible).export(snapshot)
+                        com.genesis.app.journal.JournalPdf.share(context, export)
+                    }
+                },
             )
             TextButton(onClick = ::close) { Text(stringResource(R.string.done), color = colors.accent, fontWeight = FontWeight.SemiBold) }
         }

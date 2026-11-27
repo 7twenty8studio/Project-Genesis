@@ -114,6 +114,7 @@ internal fun SermonEditor(
     var detailsOpen by remember(original.id) { mutableStateOf(original.preacher.isBlank() && original.church.isBlank()) }
     var confirmDelete by remember { mutableStateOf(false) }
     var lookingUp by remember { mutableStateOf(false) }
+    val exportScope = rememberCoroutineScope()
     var openHandout by remember { mutableStateOf<com.genesis.core.cloud.community.SavedHandout?>(null) }
     fun close() = onClose(draft.copy(body = body.text), false)
     BackHandler { close() }
@@ -155,6 +156,20 @@ internal fun SermonEditor(
                 TextButton(onClick = { draft = draft.copy(isFavourite = !draft.isFavourite) }, modifier = Modifier.semantics { contentDescription = star }) {
                     Text(if (draft.isFavourite) "★" else "☆", style = MaterialTheme.typography.titleLarge, color = if (draft.isFavourite) colors.accent else colors.secondaryText)
                 }
+                com.genesis.app.journal.JournalExtrasMenu(
+                    sermon = true,
+                    onTemplate = { template ->
+                        val inserted = com.genesis.core.domain.journal.JournalTemplate.inserting(template, body.text, body.selection.start)
+                        body = TextFieldValue(inserted.text, TextRange(inserted.cursor))
+                    },
+                    onExport = {
+                        val snapshot = draft.copy(body = body.text)
+                        exportScope.launch {
+                            val export = com.genesis.app.journal.JournalExportBuilder(context, bible).export(snapshot)
+                            com.genesis.app.journal.JournalPdf.share(context, export)
+                        }
+                    },
+                )
                 TextButton(onClick = ::close) { Text(stringResource(R.string.done), color = colors.accent, fontWeight = FontWeight.SemiBold) }
             }
             Row(

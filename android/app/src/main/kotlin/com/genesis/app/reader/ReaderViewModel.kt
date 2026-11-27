@@ -378,6 +378,27 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
             }.onFailure { Log.e(TAG, "Couldn't read verses", it) }.getOrNull()
         }
 
+    /**
+     * Verses for a journal PDF (Premium): from the Bible Premium tools use, so
+     * a YouVersion Bible's text never goes into one; with the credit a
+     * licensed Bible asks for.
+     */
+    suspend fun exportSource(ids: Collection<VerseId>): com.genesis.app.journal.JournalExport.Source? {
+        val bible = premiumToolsBible()
+        return withContext(Dispatchers.IO) {
+            runCatching {
+                val repository = repository(bible)
+                val translation = repository.translation
+                com.genesis.app.journal.JournalExport.Source(
+                    repository.verses(ids),
+                    translation.abbreviation,
+                    translation.language,
+                    translation.license.takeIf { translation.showsLicenseUnderChapters },
+                )
+            }.onFailure { Log.e(TAG, "Couldn't read verses", it) }.getOrNull()
+        }
+    }
+
     suspend fun verses(ids: Collection<VerseId>): Map<VerseId, Verse> {
         val bible = state.value.bible
         return withContext(Dispatchers.IO) {
