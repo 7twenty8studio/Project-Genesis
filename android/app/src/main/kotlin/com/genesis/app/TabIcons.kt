@@ -66,6 +66,18 @@ internal fun TabIcon(tab: AppTab, color: Color) {
                 }
                 drawPath(leaning, color, style = stroke)
             }
+            AppTab.EXPLORE -> {
+                // A compass.
+                drawCircle(color, radius = w * 0.38f, center = Offset(w * 0.5f, h * 0.5f), style = stroke)
+                val needle = Path().apply {
+                    moveTo(w * 0.64f, h * 0.36f)
+                    lineTo(w * 0.55f, h * 0.55f)
+                    lineTo(w * 0.36f, h * 0.64f)
+                    lineTo(w * 0.45f, h * 0.45f)
+                    close()
+                }
+                drawPath(needle, color, style = stroke)
+            }
         }
     }
 }

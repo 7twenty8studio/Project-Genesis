@@ -37,6 +37,10 @@ import com.genesis.app.reader.SearchSheet
 import com.genesis.app.reader.ReaderSettingsSheet
 import com.genesis.app.settings.SettingsScreen
 import com.genesis.app.notifications.NotificationSettingsScreen
+import com.genesis.app.explore.ExploreScreen
+import androidx.compose.runtime.produceState
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import androidx.compose.foundation.layout.navigationBarsPadding
 import com.genesis.app.settings.Entitlements
 import com.genesis.app.settings.LocalReaderPreferences
@@ -46,7 +50,7 @@ import com.genesis.core.domain.bible.VerseId
 import com.genesis.core.domain.reader.ReaderPreferences
 
 /** The phone's tabs, as on iPhone (Explore and Together join later). */
-enum class AppTab { HOME, READ, LIBRARY }
+enum class AppTab { HOME, READ, LIBRARY, EXPLORE }
 
 /**
  * The app's frame: Home, Read and Library in a bottom bar, with search and
@@ -264,6 +268,19 @@ fun AppShell(
                 onSearch = { searching = true },
                 modifier = content,
             )
+            AppTab.EXPLORE -> {
+                val language = LocalContext.current.resources.configuration.locales[0].language
+                val study by produceState(app.studyIfOpen(language), language) { value = withContext(Dispatchers.IO) { app.study(language) } }
+                val translation = state.chapter?.translation
+                ExploreScreen(
+                    study = study,
+                    bibleLanguage = translation?.language ?: "en",
+                    abbreviation = translation?.abbreviation ?: state.bible.id,
+                    verses = reader::verses,
+                    onRead = ::read,
+                    modifier = content,
+                )
+            }
         }
     }
 
@@ -308,4 +325,5 @@ private val AppTab.title: Int
         AppTab.HOME -> R.string.tab_home
         AppTab.READ -> R.string.tab_read
         AppTab.LIBRARY -> R.string.tab_library
+        AppTab.EXPLORE -> R.string.tab_explore
     }

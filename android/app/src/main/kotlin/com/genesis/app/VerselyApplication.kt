@@ -7,6 +7,7 @@ import kotlinx.coroutines.MainScope
 import com.genesis.app.settings.ReaderSettingsStore
 import com.genesis.app.settings.ReadingProgressStore
 import com.genesis.core.data.UserDatabase
+import com.genesis.core.bible.StudyRepository
 import com.genesis.app.notifications.NotificationPreferences
 import com.genesis.app.notifications.ReminderScheduler
 import kotlinx.coroutines.Dispatchers
@@ -30,6 +31,21 @@ class VerselyApplication : Application() {
 
     /** Highlights, notes and bookmarks with the person's account; started by MainActivity. */
     val sync: SyncService by lazy { SyncService(this, userData, account, scope).also { it.start() } }
+
+    /** Explore's people, places and events in the app's language (opened off the main thread). */
+    private var studyRepository: Pair<String, StudyRepository?>? = null
+
+    @Synchronized
+    fun study(language: String): StudyRepository? {
+        studyRepository?.let { (open, repository) -> if (open == language) return repository }
+        studyRepository?.second?.close()
+        val repository = runCatching { StudyRepository.open(this, language) }.getOrNull()
+        studyRepository = language to repository
+        return repository
+    }
+
+    /** The study database if it's already open in that language (no disk work). */
+    fun studyIfOpen(language: String): StudyRepository? = studyRepository?.takeIf { it.first == language }?.second
 
     /** Settings › Notifications. */
     val notifications: NotificationPreferences by lazy { NotificationPreferences(this) }

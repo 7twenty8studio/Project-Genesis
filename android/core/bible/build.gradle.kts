@@ -18,6 +18,9 @@ android {
         // One copy of each Bible in the repository, shared with iOS. The
         // cross references ride along for phase 2.
         getByName("main").assets.directories.add("../../../Genesis/Resources/Bibles")
+        // Explore's people, places and events (Study.sqlite and its LICENSE.txt);
+        // the app leaves out the folder's other databases until their features arrive.
+        getByName("main").assets.directories.add("../../../Genesis/Resources/Study")
     }
 }
 
