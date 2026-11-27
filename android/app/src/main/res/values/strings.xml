@@ -53,4 +53,16 @@
     <string name="layout">Layout</string>
     <string name="reading_mode_pages">Pages</string>
     <string name="reading_mode_scroll">Scroll</string>
+    <string name="copy">Copy</string>
+    <string name="copied">Copied</string>
+    <string name="share">Share</string>
+    <string name="remove_highlight">Remove highlight</string>
+    <string name="done_selecting">Done selecting</string>
+    <string name="highlight_color">Highlight %s</string>
+    <string name="color_yellow">Yellow</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_green">Green</string>
+    <string name="color_purple">Purple</string>
+    <string name="color_pink">Pink</string>
+    <string name="color_orange">Orange</string>
 </resources>

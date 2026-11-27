@@ -9,6 +9,7 @@ import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.genesis.app.reader.ReaderRoute
 import com.genesis.app.settings.LocalReaderPreferences
+import com.genesis.app.settings.LocalRecentColors
 import com.genesis.core.design.VerselyTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,8 +19,9 @@ class MainActivity : ComponentActivity() {
         val settings = (application as VerselyApplication).readerSettings
         setContent {
             val preferences by settings.preferences.collectAsStateWithLifecycle()
+            val recentColors = settings.recentColors.collectAsStateWithLifecycle()
             VerselyTheme(theme = preferences.theme) {
-                CompositionLocalProvider(LocalReaderPreferences provides preferences) {
+                CompositionLocalProvider(LocalReaderPreferences provides preferences, LocalRecentColors provides recentColors) {
                     ReaderRoute(onChangeSettings = settings::update)
                 }
             }

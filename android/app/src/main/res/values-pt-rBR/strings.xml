@@ -52,4 +52,16 @@
     <string name="layout">Layout</string>
     <string name="reading_mode_pages">Páginas</string>
     <string name="reading_mode_scroll">Rolagem</string>
+    <string name="copy">Copiar</string>
+    <string name="copied">Copiado</string>
+    <string name="share">Compartilhar</string>
+    <string name="remove_highlight">Remover destaque</string>
+    <string name="done_selecting">Concluir seleção</string>
+    <string name="highlight_color">Destacar em %s</string>
+    <string name="color_yellow">Amarelo</string>
+    <string name="color_blue">Azul</string>
+    <string name="color_green">Verde</string>
+    <string name="color_purple">Roxo</string>
+    <string name="color_pink">Rosa</string>
+    <string name="color_orange">Laranja</string>
 </resources>

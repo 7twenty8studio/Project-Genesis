@@ -49,6 +49,7 @@ internal fun PagedChapter(
     openAtEnd: Boolean,
     onNextChapter: () -> Unit,
     onPreviousChapter: () -> Unit,
+    onVerseTap: (com.genesis.core.domain.bible.VerseId) -> Unit,
 ) {
     val colors = LocalReaderColors.current
     val measurer = rememberTextMeasurer()
@@ -96,7 +97,7 @@ internal fun PagedChapter(
                         textAlign = TextAlign.Center,
                         modifier = Modifier.fillMaxWidth().height(head).padding(top = 6.dp),
                     )
-                    Text(page, style = style, color = colors.text, modifier = Modifier.weight(1f).fillMaxWidth())
+                    VerseText(page, style = style, color = colors.text, onVerseTap = onVerseTap, modifier = Modifier.weight(1f).fillMaxWidth())
                     Box(Modifier.fillMaxWidth().height(foot), contentAlignment = Alignment.Center) {
                         Text("$index", style = MaterialTheme.typography.bodyMedium.copy(fontSize = 12.sp), color = colors.secondaryText)
                     }

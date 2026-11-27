@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.core.content.edit
 import com.genesis.core.domain.reader.ReaderPreferences
+import com.genesis.core.domain.study.HighlightColor
+import com.genesis.core.domain.study.RecentHighlightColors
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -17,6 +19,19 @@ class ReaderSettingsStore(context: Context) {
     private val _preferences = MutableStateFlow(ReaderPreferences.decoded(prefs.getString(KEY, null)))
     val preferences: StateFlow<ReaderPreferences> = _preferences.asStateFlow()
 
+    private val _recentColors = MutableStateFlow(
+        prefs.getString(RECENT_COLORS, null).orEmpty().split(',').filter { it.isNotEmpty() }.map(HighlightColor::withId),
+    )
+
+    /** The highlight colours used most recently, first in the selection bar. */
+    val recentColors: StateFlow<List<HighlightColor>> = _recentColors.asStateFlow()
+
+    fun used(color: HighlightColor) {
+        val next = RecentHighlightColors.after(color, _recentColors.value)
+        _recentColors.value = next
+        prefs.edit { putString(RECENT_COLORS, next.joinToString(",") { it.id }) }
+    }
+
     fun update(change: (ReaderPreferences) -> ReaderPreferences) {
         val next = change(_preferences.value).clamped()
         _preferences.value = next
@@ -25,7 +40,13 @@ class ReaderSettingsStore(context: Context) {
 
     private companion object {
         const val KEY = "reader.preferences.v1"
+        const val RECENT_COLORS = "highlights.recentColors"
     }
+}
+
+/** The highlight colours used most recently, for the selection bar. */
+val LocalRecentColors = staticCompositionLocalOf<androidx.compose.runtime.State<List<HighlightColor>>> {
+    androidx.compose.runtime.mutableStateOf(emptyList())
 }
 
 /** The reader's settings for the screens below the activity. */

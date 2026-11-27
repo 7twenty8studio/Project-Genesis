@@ -52,6 +52,18 @@
     "font_caption_spectral": "A light, refined face made for screens",
     "layout": "Layout",
     "reading_mode_pages": "Pages",
-    "reading_mode_scroll": "Scroll"
+    "reading_mode_scroll": "Scroll",
+    "copy": "Copy",
+    "copied": "Copied",
+    "share": "Share",
+    "remove_highlight": "Remove highlight",
+    "done_selecting": "Done selecting",
+    "highlight_color": "Highlight %@",
+    "color_yellow": "Yellow",
+    "color_blue": "Blue",
+    "color_green": "Green",
+    "color_purple": "Purple",
+    "color_pink": "Pink",
+    "color_orange": "Orange"
   }
 }

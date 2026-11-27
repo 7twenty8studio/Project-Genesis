@@ -48,6 +48,9 @@ import com.genesis.app.settings.LocalReaderPreferences
 import com.genesis.core.design.scriptureStyle
 import com.genesis.core.domain.reader.ReaderPreferences
 import com.genesis.core.domain.reader.ReadingMode
+import com.genesis.core.domain.bible.VerseId
+import com.genesis.core.domain.study.HighlightColor
+import com.genesis.app.settings.LocalRecentColors
 
 @Composable
 fun ReaderRoute(
@@ -63,14 +66,28 @@ fun ReaderRoute(
         onNext = { viewModel.next() },
         onPrevious = { viewModel.previous() },
         onPreviousAtEnd = { viewModel.previous(atEnd = true) },
+        selection = SelectionActions(
+            onVerseTap = viewModel::toggle,
+            onHighlight = viewModel::highlight,
+            onRemoveHighlight = viewModel::removeHighlight,
+            onDone = viewModel::clearSelection,
+        ),
     )
 }
 
+/** What the reader does with tapped verses. */
+data class SelectionActions(
+    val onVerseTap: (VerseId) -> Unit = {},
+    val onHighlight: (HighlightColor) -> Unit = {},
+    val onRemoveHighlight: () -> Unit = {},
+    val onDone: () -> Unit = {},
+)
+
 /**
- * The first Android reader: one chapter, scrolling, verse numbers in the
+ * The reader: one chapter, page by page or scrolling, verse numbers in the
  * theme's accent, the translation's headings, poetry line by line and the
- * licence under the chapter when it isn't public domain. Paged reading,
- * page turns, highlights and selection follow in phase 2.
+ * licence under the chapter when it isn't public domain. Tapping verses
+ * selects them; the selection bar highlights, copies and shares.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -82,6 +99,7 @@ fun ReaderScreen(
     onNext: () -> Unit,
     onPrevious: () -> Unit,
     onPreviousAtEnd: () -> Unit = onPrevious,
+    selection: SelectionActions = SelectionActions(),
 ) {
     var picking by rememberSaveable { mutableStateOf(false) }
     var bibleMenu by remember { mutableStateOf(false) }
@@ -135,7 +153,18 @@ fun ReaderScreen(
             )
         },
         bottomBar = {
-            BottomAppBar(containerColor = colors.background) {
+            if (state.selection.isNotEmpty()) {
+                val recent by LocalRecentColors.current
+                SelectionBar(
+                    reference = state.selectionReference,
+                    shareText = state.shareText,
+                    colorsInOrder = (recent + HighlightColor.entries).distinct(),
+                    anyHighlighted = state.selection.any { it in state.highlights },
+                    onHighlight = selection.onHighlight,
+                    onRemoveHighlight = selection.onRemoveHighlight,
+                    onDone = selection.onDone,
+                )
+            } else BottomAppBar(containerColor = colors.background) {
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                     TextButton(onClick = onPrevious, enabled = state.chapterId.previous != null) {
                         Text("‹  " + stringResource(R.string.previous_chapter))
@@ -150,10 +179,11 @@ fun ReaderScreen(
     ) { padding ->
         Box(Modifier.fillMaxSize().padding(padding), contentAlignment = Alignment.TopCenter) {
             val preferences = LocalReaderPreferences.current
+            val marks = remember(state.highlights, state.selection) { VerseMarks(state.highlights, state.selection) }
             val scripture = scriptureStyle(preferences, Entitlements.isPremium)
             when {
                 state.chapter != null && preferences.readingMode == ReadingMode.PAGE -> key(state.chapter.id, state.chapter.translation.id) {
-                    val text = remember(state.chapter, colors) { chapterText(state.chapter, colors) }
+                    val text = remember(state.chapter, colors, marks) { chapterText(state.chapter, colors, marks) }
                     PagedChapter(
                         chapter = state.chapter,
                         text = text,
@@ -162,9 +192,10 @@ fun ReaderScreen(
                         openAtEnd = state.openAtEnd,
                         onNextChapter = onNext,
                         onPreviousChapter = onPreviousAtEnd,
+                        onVerseTap = selection.onVerseTap,
                     )
                 }
-                state.chapter != null -> ChapterText(state.chapter, scripture)
+                state.chapter != null -> ChapterText(state.chapter, scripture, marks, selection.onVerseTap)
                 state.failed -> Text(
                     stringResource(R.string.chapter_load_failed),
                     color = colors.secondaryText,
@@ -196,7 +227,7 @@ fun ReaderScreen(
 }
 
 @Composable
-private fun ChapterText(chapter: Chapter, scripture: TextStyle) {
+private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMarks, onVerseTap: (VerseId) -> Unit) {
     val colors = LocalReaderColors.current
     val listState = rememberLazyListState()
     LaunchedEffect(chapter.id, chapter.translation.id) { listState.scrollToItem(0) }
@@ -224,7 +255,7 @@ private fun ChapterText(chapter: Chapter, scripture: TextStyle) {
                     color = colors.text,
                     modifier = Modifier.padding(top = 12.dp, bottom = 6.dp).semantics { heading() },
                 )
-                is Block.Prose -> VerseParagraph(block.verses, scripture)
+                is Block.Prose -> VerseParagraph(block.verses, scripture, marks, onVerseTap)
             }
         }
         if (chapter.translation.showsLicenseUnderChapters) {
