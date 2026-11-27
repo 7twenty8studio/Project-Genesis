@@ -78,6 +78,7 @@ fun BiblesScreen(currentBible: String, onRead: (InstalledBible) -> Unit, onDone:
     val loaded by library.catalogLoaded.collectAsStateWithLifecycle()
     val downloads by library.downloads.collectAsStateWithLifecycle()
     val downloading by library.downloading.collectAsStateWithLifecycle()
+    val savedChanges by library.savedChanges.collectAsStateWithLifecycle()
     val problem by library.problem.collectAsStateWithLifecycle()
     val bookProgress by library.bookProgress.collectAsStateWithLifecycle()
     var tried by remember { mutableStateOf(false) }
@@ -162,7 +163,7 @@ fun BiblesScreen(currentBible: String, onRead: (InstalledBible) -> Unit, onDone:
                                 isCurrent = entry.id == currentBible,
                                 isDownloading = entry.id in downloading,
                                 booksDone = bookProgress[entry.id],
-                                savedBooks = offered[entry.id]?.takeIf { it.isYouVersion && entry.id !in downloading && entry.id !in downloads }?.let { library.savedBookCount(it) } ?: 0,
+                                savedBooks = savedChanges.let { offered[entry.id]?.takeIf { it.isYouVersion && entry.id !in downloading && entry.id !in downloads }?.let { library.savedBookCount(it) } ?: 0 },
                                 toolsBible = offered[entry.id]?.takeIf { it.isYouVersion }?.let { toolsBibleName(it.baseLanguage, catalog, translations) },
                                 onDiscard = { offered[entry.id]?.let { library.discard(it) } },
                                 onPause = { library.pause(entry.id) },

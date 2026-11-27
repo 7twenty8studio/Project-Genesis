@@ -18,6 +18,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.json.Json
@@ -62,6 +63,10 @@ class BibleLibrary(context: Context, private val client: SupabaseClient?, privat
 
     private val _downloading = MutableStateFlow<Set<String>>(emptySet())
     val downloading: StateFlow<Set<String>> = _downloading.asStateFlow()
+
+    private val _savedChanges = MutableStateFlow(0)
+    /** Changes when an unfinished download's saved books change (paused, discarded, finished), so the screen reads them again. */
+    val savedChanges: StateFlow<Int> = _savedChanges.asStateFlow()
 
     private val _problem = MutableStateFlow<BibleDownloadProblem?>(null)
     val problem: StateFlow<BibleDownloadProblem?> = _problem.asStateFlow()
@@ -162,9 +167,13 @@ class BibleLibrary(context: Context, private val client: SupabaseClient?, privat
             return
         }
         if (item.isYouVersion) BibleDownloadService.start(context)
-        val job = scope.launch {
+        // Shown as downloading at once, even while a paused one is still letting go.
+        _downloading.update { it + item.id }
+        val previous = synchronized(jobs) { jobs[item.id] }
+        val job = scope.launch(start = kotlinx.coroutines.CoroutineStart.LAZY) {
             try {
-                install(item)
+                previous?.cancelAndJoin()
+                install(item, claimed = true)
             } catch (error: BibleDownload) {
                 _problem.value = error.problem
             } catch (error: kotlinx.coroutines.CancellationException) {
@@ -173,15 +182,21 @@ class BibleLibrary(context: Context, private val client: SupabaseClient?, privat
                 Log.w(TAG, "Couldn't download ${item.id}", error)
                 _problem.value = BibleDownloadProblem.DAMAGED
             } finally {
-                synchronized(jobs) { jobs.remove(item.id) }
+                val self = coroutineContext[kotlinx.coroutines.Job]
+                synchronized(jobs) { if (jobs[item.id] === self) jobs.remove(item.id) }
+                _savedChanges.update { it + 1 }
             }
         }
         synchronized(jobs) { jobs[item.id] = job }
+        job.start()
     }
 
     /** Pauses one download; a YouVersion Bible keeps the books it has and Continue carries on from there. */
     fun pause(id: String) {
         synchronized(jobs) { jobs[id] }?.cancel()
+        // Shown as paused at once: a book already asked for may take a moment to let go.
+        _downloading.update { it - id }
+        _savedChanges.update { it + 1 }
     }
 
     /** Stops every download; YouVersion books fetched so far are kept. */
@@ -200,7 +215,12 @@ class BibleLibrary(context: Context, private val client: SupabaseClient?, privat
     fun savedBookCount(item: DownloadableBible): Int = youVersion.savedBookCount(item, directory)
 
     /** Forgets an unfinished YouVersion download. */
-    fun discard(item: DownloadableBible) = youVersion.discard(item, directory)
+    fun discard(item: DownloadableBible) {
+        synchronized(jobs) { jobs[item.id] }?.cancel()
+        _downloading.update { it - item.id }
+        youVersion.discard(item, directory)
+        _savedChanges.update { it + 1 }
+    }
 
     /** The free Bible in the same language a YouVersion one needs beside it, when it isn't on the phone. */
     private fun companionBible(item: DownloadableBible): DownloadableBible? {
@@ -242,8 +262,8 @@ class BibleLibrary(context: Context, private val client: SupabaseClient?, privat
     private fun isOnline(): Boolean =
         (context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager).activeNetwork != null
 
-    private suspend fun install(item: DownloadableBible) {
-        if (item.id in _downloading.value) return
+    private suspend fun install(item: DownloadableBible, claimed: Boolean = false) {
+        if (!claimed && item.id in _downloading.value) return
         _downloading.update { it + item.id }
         try {
             if (item.isYouVersion) {
@@ -263,7 +283,9 @@ class BibleLibrary(context: Context, private val client: SupabaseClient?, privat
                 saveInstalled()
             }
         } finally {
-            _downloading.update { it - item.id }
+            // A paused download that's still letting go mustn't hide one started again since.
+            val restarted = synchronized(jobs) { jobs[item.id] }?.let { it !== kotlin.coroutines.coroutineContext[kotlinx.coroutines.Job] && it.isActive } == true
+            if (!restarted) _downloading.update { it - item.id }
         }
     }
 
