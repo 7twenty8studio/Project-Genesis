@@ -10,6 +10,7 @@ import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -24,6 +25,7 @@ import androidx.compose.ui.platform.LocalContext
 import com.genesis.app.library.LibraryScreen
 import com.genesis.app.library.LibraryShelf
 import com.genesis.app.reader.CrossReferencesSheet
+import com.genesis.core.domain.link.GenesisLink
 import com.genesis.app.reader.NoteEditorSheet
 import com.genesis.app.reader.ReaderRoute
 import com.genesis.app.reader.ReaderViewModel
@@ -47,7 +49,11 @@ enum class AppTab { HOME, READ, LIBRARY }
  * highlight made in the reader shows on Home at once.
  */
 @Composable
-fun AppShell(onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Unit) {
+fun AppShell(
+    onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Unit,
+    link: GenesisLink? = null,
+    onLinkHandled: () -> Unit = {},
+) {
     val reader: ReaderViewModel = viewModel()
     val state by reader.state.collectAsStateWithLifecycle()
     val app = LocalContext.current.applicationContext as VerselyApplication
@@ -63,6 +69,26 @@ fun AppShell(onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Uni
     fun read(verse: VerseId) {
         reader.openVerse(verse)
         tab = AppTab.READ
+    }
+
+    // A versely:// link (a widget tap) opens its place over whatever was showing.
+    LaunchedEffect(link) {
+        when (link) {
+            is GenesisLink.Read -> {
+                settingsOpen = false
+                read(link.verse)
+            }
+            GenesisLink.ContinueReading -> {
+                settingsOpen = false
+                tab = AppTab.READ
+            }
+            GenesisLink.Home -> {
+                settingsOpen = false
+                tab = AppTab.HOME
+            }
+            null -> return@LaunchedEffect
+        }
+        onLinkHandled()
     }
 
     // First launch: setup, then the reader at the chosen Bible and chapter.

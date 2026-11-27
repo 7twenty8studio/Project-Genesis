@@ -14,6 +14,7 @@ import com.genesis.core.bible.CrossReferenceRepository
 import com.genesis.core.bible.Translation
 import com.genesis.core.bible.Verse
 import com.genesis.app.VerselyApplication
+import com.genesis.app.widget.VerseOfTheDayWidget
 import com.genesis.core.domain.bible.ChapterId
 import com.genesis.core.domain.bible.ReferenceParser
 import com.genesis.core.domain.bible.VerseId
@@ -198,6 +199,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
 
     fun choose(bible: BundledBible) {
         app.readerSettings.currentBible = bible.id
+        viewModelScope.launch { VerseOfTheDayWidget.refresh(getApplication()) }
         _state.update { it.copy(bible = bible) }
         load()
         if (_search.value.text.isNotBlank()) search(_search.value.text)
@@ -275,6 +277,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
     /** Setup's last step: the chosen Bible, opened at the chosen chapter. */
     fun begin(bible: BundledBible, chapter: ChapterId) {
         app.readerSettings.currentBible = bible.id
+        viewModelScope.launch { VerseOfTheDayWidget.refresh(getApplication()) }
         _state.update { it.copy(bible = bible, chapterId = chapter, openAtEnd = false, selection = emptySet(), focus = null) }
         load()
     }
