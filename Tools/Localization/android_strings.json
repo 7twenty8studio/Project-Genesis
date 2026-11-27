@@ -282,6 +282,27 @@
     "one_prayer_holding": "1 prayer you're holding up",
     "prayers_holding": "%lld prayers you're holding up",
     "has_bible_passages": "Has Bible passages",
-    "reminder_set": "Reminder set"
+    "reminder_set": "Reminder set",
+    "journal_list": "List",
+    "journal_timeline": "Timeline",
+    "your_prayer_life": "Your Prayer Life",
+    "more_about_prayers": "More About Your Prayers",
+    "prayer_streak": "%lld days in a row of prayer",
+    "prayed_today_fresh": "You've prayed today. Every day is a fresh start.",
+    "quiet_moment": "Take a quiet moment with God today.",
+    "stat_requests": "requests",
+    "stat_answered": "answered",
+    "stat_answered_share": "of all answered",
+    "stat_still_praying": "still praying",
+    "i_prayed_today": "I Prayed Today",
+    "prayed": "Prayed",
+    "answer_wait_none": "When a prayer is answered, you'll see how long the answer took.",
+    "answer_wait_day": "Answers came within a day, on average.",
+    "answer_wait_one": "Answers came after about a day, on average.",
+    "answer_wait_days": "Answers came after about %lld days, on average.",
+    "story_with_god": "Your story with God",
+    "story_with_god_message": "Prayers and answers appear here by month, so you can look back on God's faithfulness.",
+    "answered_asked": "Answered %@ · asked %@",
+    "asked_category": "Asked %@ · %@"
   }
 }
