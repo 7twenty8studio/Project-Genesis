@@ -113,7 +113,8 @@ internal fun PagedChapter(
 private fun AnnotatedString.trimmedForPage(): AnnotatedString {
     var start = 0
     var end = length
-    if (startsWith("\u200B\n")) start = 2
+    // Paragraph styles break lines by themselves, so the gap is just its mark.
+    while (start < end && (this[start] == '\u200B' || this[start] == '\n')) start++
     while (end > start && this[end - 1] == '\n') end--
     return subSequence(start, end)
 }
