@@ -1739,6 +1739,21 @@
     "drive_waiting": "Attachments waiting to copy to Google Drive: %lld",
     "drive_unavailable": "Google Drive isn't available on this phone right now.",
     "attachment_in_icloud": "Some attachments were added on an iPhone or iPad and are kept in its iCloud. Open them there.",
-    "attachment_not_downloaded": "Some attachments haven't come down from Google Drive yet."
+    "attachment_not_downloaded": "Some attachments haven't come down from Google Drive yet.",
+    "ink_pen": "Pen",
+    "ink_pencil": "Pencil",
+    "ink_marker": "Marker",
+    "ink_eraser": "Eraser",
+    "undo": "Undo",
+    "redo": "Redo",
+    "lined_paper": "Lined paper",
+    "plain_paper": "Plain paper",
+    "only_draw_with_pen": "Only Draw with a Pen",
+    "clear_page": "Clear Page",
+    "clear_this_page_question": "Clear this page?",
+    "clear_page_message": "Your handwriting on this page will be removed.",
+    "handwriting": "Handwriting",
+    "page_on_iphone": "This note has a handwritten page from an iPhone or iPad. Open the note there once in the latest Versely to bring the page here.",
+    "page_too_large": "This page is too large to sync, so it stays on this device."
   }
 }

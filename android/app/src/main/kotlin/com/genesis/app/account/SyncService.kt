@@ -214,7 +214,15 @@ class SyncService(
         val since = prefs.getLong(key("lastPushedAt", userId), 0)
         push(SyncTable.HIGHLIGHTS, RemoteHighlight.serializer(), database.sync.highlightsChanged(since).map { it.remote(userId) }, client, token)
         push(SyncTable.BOOKMARKS, RemoteBookmark.serializer(), database.sync.bookmarksChanged(since).map { it.remote(userId) }, client, token)
-        push(SyncTable.NOTES, RemoteNote.serializer(), database.sync.notesChanged(since).map { it.remote(userId) }, client, token, batch = 50)
+        // Notes: the page (Versely Ink) only when there's one or it changed here, and then the
+        // server's PencilKit copy is cleared, since this phone can't update it. Each key set in its own request.
+        val notes = database.sync.notesChanged(since)
+        notes.map { it to it.remoteJson(userId) }.groupBy { it.second.keys }.values.forEach { rows ->
+            for (chunk in rows.chunked(50)) {
+                client.upsert(SyncTable.NOTES, JsonArray(chunk.map { it.second }).toString(), token)
+                database.sync.inkPushed(chunk.filter { it.first.inkEdited }.map { it.first.id })
+            }
+        }
         push(SyncTable.READING_PLANS, RemotePlan.serializer(), database.sync.plansChanged(since).map { it.remote(userId) }, client, token)
         push(SyncTable.PRAYERS, RemotePrayer.serializer(), database.sync.prayersChanged(since).map { it.remote(userId) }, client, token)
         push(SyncTable.MEMORY_VERSES, RemoteMemoryVerse.serializer(), database.sync.memoryChanged(since).map { it.remote(userId) }, client, token)
@@ -307,7 +315,20 @@ private fun RemoteNote.record(): NoteRecord? {
     return NoteRecord(
         id.lowercase(), title, body, kind, anchorType, startVerse, endVerse, book, chapter, theme,
         millis(createdAt) ?: updated, updated, millis(deletedAt),
+        ink = ink?.takeIf { com.genesis.core.domain.study.InkFormat.decode(it) != null },
+        hasDrawing = !drawing.isNullOrEmpty(),
     )
+}
+
+private fun NoteRecord.remoteJson(userId: String): JsonObject {
+    val row = syncJson.encodeToJsonElement(RemoteNote.serializer(), remote(userId)).jsonObject.toMutableMap()
+    row.remove("ink")
+    row.remove("drawing")
+    row.remove("server_updated_at")
+    val sendsInk = com.genesis.core.domain.study.InkFormat.fitsSync(ink)
+    if (sendsInk && (ink != null || inkEdited)) row["ink"] = ink?.let { kotlinx.serialization.json.JsonPrimitive(it) } ?: kotlinx.serialization.json.JsonNull
+    if (sendsInk && inkEdited) row["drawing"] = kotlinx.serialization.json.JsonNull
+    return JsonObject(row)
 }
 
 private fun HighlightRecord.remote(userId: String) = RemoteHighlight(

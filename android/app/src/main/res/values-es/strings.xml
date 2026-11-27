@@ -1739,4 +1739,19 @@
     <string name="drive_unavailable">Google Drive no está disponible en este teléfono ahora mismo.</string>
     <string name="attachment_in_icloud">Algunos adjuntos se añadieron en un iPhone o iPad y se guardan en su iCloud. Ábrelos allí.</string>
     <string name="attachment_not_downloaded">Algunos adjuntos aún no se han descargado de Google Drive.</string>
+    <string name="ink_pen">Pluma</string>
+    <string name="ink_pencil">Lápiz</string>
+    <string name="ink_marker">Marcador</string>
+    <string name="ink_eraser">Borrador</string>
+    <string name="undo">Deshacer</string>
+    <string name="redo">Rehacer</string>
+    <string name="lined_paper">Papel rayado</string>
+    <string name="plain_paper">Papel liso</string>
+    <string name="only_draw_with_pen">Dibujar solo con lápiz óptico</string>
+    <string name="clear_page">Borrar página</string>
+    <string name="clear_this_page_question">¿Borrar esta página?</string>
+    <string name="clear_page_message">Se borrará tu escritura de esta página.</string>
+    <string name="handwriting">Escritura a mano</string>
+    <string name="page_on_iphone">Esta nota tiene una página escrita a mano en un iPhone o iPad. Abre la nota allí una vez con la versión más reciente de Versely para traer la página aquí.</string>
+    <string name="page_too_large">Esta página es demasiado grande para sincronizarse, así que se queda en este dispositivo.</string>
 </resources>

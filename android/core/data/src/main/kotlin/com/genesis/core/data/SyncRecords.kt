@@ -34,6 +34,12 @@ data class NoteRecord(
     val createdAt: Long,
     val updatedAt: Long,
     val deletedAt: Long?,
+    /** The handwritten page in Versely Ink (docs/HANDWRITING_FORMAT.md), or null. */
+    val ink: String? = null,
+    /** Pushing: the page was edited here, so the server's PencilKit copy (notes.drawing) is out of date. */
+    val inkEdited: Boolean = false,
+    /** Pulling: the server has a PencilKit page (notes.drawing). */
+    val hasDrawing: Boolean = false,
 )
 
 /** A reading plan enrollment as sync moves it (the plan's rules are in core:domain). */

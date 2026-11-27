@@ -58,9 +58,13 @@ data class Note(
     val anchor: NoteAnchor = NoteAnchor.None,
     val createdAt: Long = 0,
     val updatedAt: Long = 0,
+    /** It has a handwritten page (Versely Ink, read on its own: NoteStore.page). */
+    val hasPage: Boolean = false,
+    /** It has a page written on an iPhone that hasn't been shared in Versely Ink yet. */
+    val pageOnIPhone: Boolean = false,
 ) {
     /** Nothing written yet: saving it would only leave an empty note behind. */
-    val isEmpty: Boolean get() = title.isBlank() && body.isBlank()
+    val isEmpty: Boolean get() = title.isBlank() && body.isBlank() && !hasPage && !pageOnIPhone
 
     /** The verse the reader puts the note's mark after (the passage's last). */
     val markedVerse: VerseId? get() = (anchor as? NoteAnchor.Verses)?.end

@@ -665,6 +665,9 @@ fun AppShell(
             note = note,
             language = state.chapter?.translation?.language ?: "en",
             onChange = reader::editNote,
+            page = state.editingPage?.page,
+            onOpenPage = reader::loadPage,
+            onPageChange = reader::editPage,
             onClose = reader::closeNote,
             onDelete = reader::deleteNote,
         )

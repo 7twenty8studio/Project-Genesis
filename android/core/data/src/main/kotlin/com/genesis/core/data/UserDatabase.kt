@@ -242,6 +242,15 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             connection.execSQL("UPDATE attachments SET needs_upload = 1 WHERE deleted_at IS NULL")
             connection.execSQL("PRAGMA user_version = 9")
         }
+        if (version < 10) {
+            // Handwritten pages in Versely Ink, shared with the iPhone: the page,
+            // whether it was edited here since the last push, and whether the
+            // server has only an iPhone's PencilKit page.
+            connection.execSQL("ALTER TABLE notes ADD COLUMN ink TEXT")
+            connection.execSQL("ALTER TABLE notes ADD COLUMN ink_edited INTEGER NOT NULL DEFAULT 0")
+            connection.execSQL("ALTER TABLE notes ADD COLUMN iphone_page INTEGER NOT NULL DEFAULT 0")
+            connection.execSQL("PRAGMA user_version = 10")
+        }
     }
 
     private val _localEdits = MutableStateFlow(0L)
@@ -835,7 +844,8 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             buildList {
                 connection.prepare(
                     """
-                    SELECT id, title, body, kind, anchor_type, start_verse, end_verse, book_number, chapter_number, theme, created_at, updated_at
+                    SELECT id, title, body, kind, anchor_type, start_verse, end_verse, book_number, chapter_number, theme, created_at, updated_at,
+                        ink IS NOT NULL, iphone_page
                     FROM notes WHERE deleted_at IS NULL ORDER BY updated_at DESC
                     """.trimIndent(),
                 ).use { s ->
@@ -850,6 +860,8 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                                 anchor = NoteAnchor.of(s.getText(4), int(5), int(6), int(7), int(8), if (s.isNull(9)) null else s.getText(9)),
                                 createdAt = s.getLong(10),
                                 updatedAt = s.getLong(11),
+                                hasPage = s.getLong(12) != 0L,
+                                pageOnIPhone = s.getLong(13) != 0L,
                             ),
                         )
                     }
@@ -896,6 +908,29 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             _all.value = listOf(saved) + _all.value.filter { it.id != saved.id }
             edited()
             saved
+        }
+
+        /** A note's handwritten page in Versely Ink, or null (read on its own: pages can be large). */
+        fun page(id: String): String? = synchronized(lock) {
+            connection.prepare("SELECT ink FROM notes WHERE id = ?").use { s ->
+                s.bindText(1, id)
+                if (s.step() && !s.isNull(0)) s.getText(0) else null
+            }
+        }
+
+        /** Saves a note's page (null clears it); the note must be saved already. */
+        fun savePage(id: String, ink: String?, now: Long = System.currentTimeMillis()) = synchronized(lock) {
+            transaction {
+                connection.prepare("UPDATE notes SET ink = ?, ink_edited = 1, iphone_page = 0, updated_at = ? WHERE id = ?").use {
+                    if (ink == null) it.bindNull(1) else it.bindText(1, ink)
+                    it.bindLong(2, now)
+                    it.bindText(3, id)
+                    it.step()
+                }
+            }
+            _all.value = _all.value.map { if (it.id == id) it.copy(hasPage = ink != null, pageOnIPhone = false, updatedAt = now) else it }
+                .sortedByDescending { it.updatedAt }
+            edited()
         }
 
         fun delete(id: String, now: Long = System.currentTimeMillis()) = synchronized(lock) {
@@ -1019,7 +1054,8 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             buildList {
                 connection.prepare(
                     """
-                    SELECT id, title, body, kind, anchor_type, start_verse, end_verse, book_number, chapter_number, theme, created_at, updated_at, deleted_at
+                    SELECT id, title, body, kind, anchor_type, start_verse, end_verse, book_number, chapter_number, theme, created_at, updated_at, deleted_at,
+                        ink, ink_edited
                     FROM notes WHERE updated_at > ?
                     """.trimIndent(),
                 ).use { s ->
@@ -1031,6 +1067,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                                 startVerse = s.intOrNull(5), endVerse = s.intOrNull(6), book = s.intOrNull(7), chapter = s.intOrNull(8),
                                 theme = if (s.isNull(9)) null else s.getText(9),
                                 createdAt = s.getLong(10), updatedAt = s.getLong(11), deletedAt = s.longOrNull(12),
+                                ink = if (s.isNull(13)) null else s.getText(13), inkEdited = s.getLong(14) != 0L,
                             ),
                         )
                     }
@@ -1121,14 +1158,15 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                         SyncMerge.Decision.DELETE_LOCAL -> markDeleted("notes", row.id, row.deletedAt ?: row.updatedAt, row.updatedAt)
                         SyncMerge.Decision.APPLY_REMOTE -> connection.prepare(
                             """
-                            INSERT INTO notes (id, title, body, kind, anchor_type, start_verse, end_verse, book_number, chapter_number, theme, created_at, updated_at, deleted_at)
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)
+                            INSERT INTO notes (id, title, body, kind, anchor_type, start_verse, end_verse, book_number, chapter_number, theme, created_at, updated_at, deleted_at, ink, ink_edited, iphone_page)
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, 0, ?)
                             ON CONFLICT(id) DO UPDATE SET
                                 title = excluded.title, body = excluded.body, kind = excluded.kind,
                                 anchor_type = excluded.anchor_type, start_verse = excluded.start_verse,
                                 end_verse = excluded.end_verse, book_number = excluded.book_number,
                                 chapter_number = excluded.chapter_number, theme = excluded.theme,
-                                created_at = excluded.created_at, updated_at = excluded.updated_at, deleted_at = NULL
+                                created_at = excluded.created_at, updated_at = excluded.updated_at, deleted_at = NULL,
+                                ink = excluded.ink, ink_edited = 0, iphone_page = excluded.iphone_page
                             """.trimIndent(),
                         ).use {
                             fun bind(index: Int, value: Int?) = if (value == null) it.bindNull(index) else it.bindLong(index, value.toLong())
@@ -1144,12 +1182,24 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                             if (row.theme == null) it.bindNull(10) else it.bindText(10, row.theme)
                             it.bindLong(11, row.createdAt)
                             it.bindLong(12, row.updatedAt)
+                            // A page too large to sync never reached the server: it stays here (as iOS).
+                            val local = connection.prepare("SELECT ink FROM notes WHERE id = ?").use { s -> s.bindText(1, row.id); if (s.step() && !s.isNull(0)) s.getText(0) else null }
+                            val ink = if (!com.genesis.core.domain.study.InkFormat.fitsSync(local) && row.ink == null) local else row.ink
+                            if (ink == null) it.bindNull(13) else it.bindText(13, ink)
+                            it.bindLong(14, if (ink == null && row.hasDrawing) 1 else 0)
                             it.step()
                         }
                     }
                 }
             }
             notes.reload()
+        }
+
+        /** The pages pushed: the server's PencilKit copy of them is now cleared. */
+        fun inkPushed(ids: List<String>) = synchronized(lock) {
+            transaction {
+                for (id in ids) connection.prepare("UPDATE notes SET ink_edited = 0 WHERE id = ?").use { it.bindText(1, id); it.step() }
+            }
         }
 
         fun plansChanged(since: Long): List<PlanRecord> = synchronized(lock) {

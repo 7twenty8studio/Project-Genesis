@@ -1,4 +1,12 @@
 {
+ "Pen": "Pluma",
+ "Pencil": "Lápiz",
+ "Marker": "Marcador",
+ "Eraser": "Borrador",
+ "Undo": "Deshacer",
+ "Redo": "Rehacer",
+ "Only Draw with a Pen": "Dibujar solo con lápiz óptico",
+ "This note has a handwritten page from an iPhone or iPad. Open the note there once in the latest Versely to bring the page here.": "Esta nota tiene una página escrita a mano en un iPhone o iPad. Abre la nota allí una vez con la versión más reciente de Versely para traer la página aquí.",
  "Back Up to Google Drive": "Copiar a Google Drive",
  "Stop Google Drive Backup": "Dejar de copiar a Google Drive",
  "Attachments are saved on this device. Back them up to your own Google Drive to see them on your other Android devices.": "Los adjuntos se guardan en este dispositivo. Cópialos a tu propio Google Drive para verlos en tus otros dispositivos Android.",

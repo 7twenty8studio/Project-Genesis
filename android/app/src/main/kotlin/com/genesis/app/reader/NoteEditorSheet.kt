@@ -50,11 +50,16 @@ internal fun NoteEditorSheet(
     note: Note,
     language: String,
     onChange: ((Note) -> Note) -> Unit,
+    page: com.genesis.core.domain.study.InkPage? = null,
+    onOpenPage: () -> Unit = {},
+    onPageChange: (com.genesis.core.domain.study.InkPage) -> Unit = {},
     onClose: () -> Unit,
     onDelete: () -> Unit,
 ) {
     val colors = LocalReaderColors.current
     var confirmDelete by rememberSaveable { mutableStateOf(false) }
+    // Which page shows: the text, or the handwritten page (NotePage on iOS).
+    var handwriting by rememberSaveable { mutableStateOf(false) }
     val fieldColors = TextFieldDefaults.colors(
         focusedContainerColor = Color.Transparent,
         unfocusedContainerColor = Color.Transparent,
@@ -68,6 +73,8 @@ internal fun NoteEditorSheet(
     ModalBottomSheet(
         onDismissRequest = onClose,
         sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true),
+        // Writing never pulls the sheet down: on the page, drags are the pen's.
+        sheetGesturesEnabled = !handwriting,
         containerColor = colors.surface,
     ) {
         Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp).imePadding()) {
@@ -87,6 +94,37 @@ internal fun NoteEditorSheet(
                 TextButton(onClick = onClose) {
                     Text(stringResource(R.string.done), color = colors.accent, fontWeight = FontWeight.SemiBold)
                 }
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                for (showsPage in listOf(false, true)) {
+                    FilterChip(
+                        selected = handwriting == showsPage,
+                        onClick = {
+                            handwriting = showsPage
+                            if (showsPage) onOpenPage()
+                        },
+                        label = { Text(stringResource(if (showsPage) R.string.handwriting else R.string.text)) },
+                        colors = FilterChipDefaults.filterChipColors(
+                            labelColor = colors.secondaryText,
+                            selectedContainerColor = colors.accent.copy(alpha = 0.16f),
+                            selectedLabelColor = colors.text,
+                        ),
+                    )
+                }
+            }
+            if (handwriting) {
+                if (note.pageOnIPhone && (page == null || page.isEmpty)) {
+                    Text(stringResource(R.string.page_on_iphone), style = MaterialTheme.typography.bodySmall, color = colors.secondaryText, modifier = Modifier.padding(vertical = 6.dp))
+                }
+                if (page != null) {
+                    val tooLarge = !com.genesis.core.domain.study.InkFormat.fitsSync(com.genesis.core.domain.study.InkFormat.encode(page))
+                    if (tooLarge) Text(stringResource(R.string.page_too_large), style = MaterialTheme.typography.bodySmall, color = colors.secondaryText)
+                    HandwritingPage(page, onPageChange, Modifier.fillMaxWidth())
+                } else {
+                    Spacer(Modifier.heightIn(min = 460.dp))
+                }
+                Spacer(Modifier.padding(bottom = 16.dp))
+                return@Column
             }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 for (kind in NoteKind.writable) {

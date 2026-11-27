@@ -1740,4 +1740,19 @@
     <string name="drive_unavailable">Google Drive isn\'t available on this phone right now.</string>
     <string name="attachment_in_icloud">Some attachments were added on an iPhone or iPad and are kept in its iCloud. Open them there.</string>
     <string name="attachment_not_downloaded">Some attachments haven\'t come down from Google Drive yet.</string>
+    <string name="ink_pen">Pen</string>
+    <string name="ink_pencil">Pencil</string>
+    <string name="ink_marker">Marker</string>
+    <string name="ink_eraser">Eraser</string>
+    <string name="undo">Undo</string>
+    <string name="redo">Redo</string>
+    <string name="lined_paper">Lined paper</string>
+    <string name="plain_paper">Plain paper</string>
+    <string name="only_draw_with_pen">Only Draw with a Pen</string>
+    <string name="clear_page">Clear Page</string>
+    <string name="clear_this_page_question">Clear this page?</string>
+    <string name="clear_page_message">Your handwriting on this page will be removed.</string>
+    <string name="handwriting">Handwriting</string>
+    <string name="page_on_iphone">This note has a handwritten page from an iPhone or iPad. Open the note there once in the latest Versely to bring the page here.</string>
+    <string name="page_too_large">This page is too large to sync, so it stays on this device.</string>
 </resources>

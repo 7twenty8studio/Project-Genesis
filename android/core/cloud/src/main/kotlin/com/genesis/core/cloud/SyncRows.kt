@@ -67,6 +67,10 @@ data class RemoteNote(
     @SerialName("updated_at") val updatedAt: String,
     @SerialName("deleted_at") val deletedAt: String? = null,
     @SerialName("server_updated_at") val serverUpdatedAt: String? = null,
+    /** The handwritten page in Versely Ink (docs/HANDWRITING_FORMAT.md). Sent only when there's one or it changed. */
+    val ink: String? = null,
+    /** An iPhone's PencilKit page (base64); read only to know there is one, never sent but as null. */
+    val drawing: String? = null,
 )
 
 /** A reading plan enrollment; `start_date` is a day ("yyyy-MM-dd"). */

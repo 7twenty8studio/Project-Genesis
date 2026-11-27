@@ -61,6 +61,8 @@ data class ReaderUiState(
     val notes: List<Note> = emptyList(),
     /** The note open in the editor, if any. */
     val editingNote: Note? = null,
+    /** The open note's handwritten page as loaded, and as it is now (null until it's read). */
+    val editingPage: PageDraft? = null,
     /** A verse to bring into view (from search), once per request. */
     val focus: ReaderFocus? = null,
     /** The last verse read in the reader, or null before the first chapter. */
@@ -269,7 +271,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
 
     /** A note on the whole chapter (the study panel's Note on John 15). */
     fun newChapterNote() = _state.update {
-        it.copy(editingNote = Note(id = UUID.randomUUID().toString(), kind = com.genesis.core.domain.study.NoteKind.STUDY, anchor = com.genesis.core.domain.study.NoteAnchor.Chapter(it.chapterId)))
+        it.copy(editingPage = null, editingNote = Note(id = UUID.randomUUID().toString(), kind = com.genesis.core.domain.study.NoteKind.STUDY, anchor = com.genesis.core.domain.study.NoteAnchor.Chapter(it.chapterId)))
     }
 
     fun highlight(color: HighlightColor) {
@@ -314,35 +316,54 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         val sorted = current.selection.sorted().ifEmpty { return }
         val note = current.selectionNote
             ?: Note(id = UUID.randomUUID().toString(), anchor = NoteAnchor.Verses(sorted.first(), sorted.last()))
-        _state.update { it.copy(editingNote = note, selection = emptySet()) }
+        _state.update { it.copy(editingNote = note, editingPage = null, selection = emptySet()) }
     }
 
     /** The mark after a verse opens its note. */
     fun openNote(id: String) {
         val note = state.value.notes.firstOrNull { it.id == id } ?: return
-        _state.update { it.copy(editingNote = note) }
+        _state.update { it.copy(editingNote = note, editingPage = null) }
     }
 
     /** Keeps the editor's copy current; the note is saved when the editor closes. */
     fun editNote(change: (Note) -> Note) = _state.update { it.copy(editingNote = it.editingNote?.let(change)) }
 
+    /** Reads the open note's page (off the main thread: pages can be large). */
+    fun loadPage() {
+        val note = state.value.editingNote ?: return
+        if (state.value.editingPage != null) return
+        viewModelScope.launch(Dispatchers.IO) {
+            val text = app.userData.notes.page(note.id)
+            val page = com.genesis.core.domain.study.InkFormat.decode(text) ?: com.genesis.core.domain.study.InkPage()
+            _state.update { if (it.editingNote?.id == note.id) it.copy(editingPage = PageDraft(page, page)) else it }
+        }
+    }
+
+    fun editPage(page: com.genesis.core.domain.study.InkPage) = _state.update { current ->
+        val draft = current.editingPage ?: return@update current
+        current.copy(editingPage = draft.copy(page = page), editingNote = current.editingNote?.copy(hasPage = !page.isEmpty))
+    }
+
     /** Saves what was written (an untouched new note leaves nothing behind). */
     fun closeNote() {
         val note = state.value.editingNote ?: return
-        _state.update { it.copy(editingNote = null) }
+        val draft = state.value.editingPage
+        _state.update { it.copy(editingNote = null, editingPage = null) }
         val saved = state.value.notes.firstOrNull { it.id == note.id }
+        val pageChanged = draft != null && draft.page != draft.original
         viewModelScope.launch(Dispatchers.IO) {
             when {
-                saved == null && note.isEmpty -> Unit
-                saved == note -> Unit
-                else -> app.userData.notes.save(note)
+                saved == null && note.isEmpty -> return@launch
+                saved == note && !pageChanged -> return@launch
+                saved != note || saved == null -> app.userData.notes.save(note)
             }
+            if (pageChanged) app.userData.notes.savePage(note.id, com.genesis.core.domain.study.InkFormat.encode(draft!!.page))
         }
     }
 
     fun deleteNote() {
         val note = state.value.editingNote ?: return
-        _state.update { it.copy(editingNote = null) }
+        _state.update { it.copy(editingNote = null, editingPage = null) }
         viewModelScope.launch(Dispatchers.IO) { app.userData.notes.delete(note.id) }
     }
 
@@ -506,7 +527,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     /** Starts a note that isn't on a passage (Library's New Note). */
-    fun newNote() = _state.update { it.copy(editingNote = Note(id = UUID.randomUUID().toString())) }
+    fun newNote() = _state.update { it.copy(editingPage = null, editingNote = Note(id = UUID.randomUUID().toString())) }
 
     /** Shows or leaves the Original (Hebrew & Greek) beside the Bible being read. */
     fun setOriginal(on: Boolean) {
@@ -594,3 +615,6 @@ data class MemoryPassage(
     /** The whole passage, the verses joined with a space (as iOS). */
     val text: String get() = verses.joinToString(" ")
 }
+
+/** A note's handwritten page while its editor is open: as loaded, and as it is now. */
+data class PageDraft(val original: com.genesis.core.domain.study.InkPage, val page: com.genesis.core.domain.study.InkPage)
