@@ -1729,4 +1729,14 @@
     <string name="change_sounds">Cambiar sonidos</string>
     <string name="add_ambient_sounds">Añadir sonidos ambientales</string>
     <string name="ambient_sounds_lower">Sonidos ambientales</string>
+    <string name="back_up_to_google_drive">Copiar a Google Drive</string>
+    <string name="stop_google_drive_backup">Dejar de copiar a Google Drive</string>
+    <string name="attachments_drive_off_footer">Los adjuntos se guardan en este dispositivo. Cópialos a tu propio Google Drive para verlos en tus otros dispositivos Android.</string>
+    <string name="attachments_drive_footer">Los adjuntos se guardan primero en este dispositivo y luego se copian a tu propio Google Drive, en una carpeta oculta que solo Versely puede abrir.</string>
+    <string name="drive_access_needed">Versely no puede acceder a tu Google Drive. Toca Copiar a Google Drive para volver a permitirlo.</string>
+    <string name="drive_full">Tu Google Drive está lleno, así que los adjuntos nuevos se quedan en este dispositivo.</string>
+    <string name="drive_waiting">Adjuntos por copiar a Google Drive: %d</string>
+    <string name="drive_unavailable">Google Drive no está disponible en este teléfono ahora mismo.</string>
+    <string name="attachment_in_icloud">Algunos adjuntos se añadieron en un iPhone o iPad y se guardan en su iCloud. Ábrelos allí.</string>
+    <string name="attachment_not_downloaded">Algunos adjuntos aún no se han descargado de Google Drive.</string>
 </resources>

@@ -43,6 +43,14 @@ class AttachmentTest {
 }
 
 class AttachmentStorageTest {
+    @Test fun retriesBackOffToSixHours() {
+        assertEquals(0L, AttachmentStorage.retryDelayMillis(0))
+        assertEquals(30_000L, AttachmentStorage.retryDelayMillis(1))
+        assertEquals(60_000L, AttachmentStorage.retryDelayMillis(2))
+        assertEquals(6L * 60 * 60 * 1000, AttachmentStorage.retryDelayMillis(12))
+        assertEquals(6L * 60 * 60 * 1000, AttachmentStorage.retryDelayMillis(400))
+    }
+
     @Test fun places() {
         assertEquals(AttachmentStorage.Place.THIS_DEVICE, AttachmentStorage.place(null))
         assertEquals(AttachmentStorage.Place.GOOGLE_DRIVE, AttachmentStorage.place("gdrive:abc.jpg"))

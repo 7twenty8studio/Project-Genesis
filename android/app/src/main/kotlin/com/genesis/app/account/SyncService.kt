@@ -120,6 +120,7 @@ class SyncService(
                 val now = System.currentTimeMillis()
                 prefs.edit { putLong(key("lastSyncedAt", user.id), now) }
                 _state.update { it.copy(isSyncing = false, lastSyncedAt = now) }
+                (context.applicationContext as? com.genesis.app.VerselyApplication)?.attachmentTransfers?.kick()
             } catch (error: SupabaseError) {
                 Log.w(TAG, "Sync failed", error)
                 _state.update { it.copy(isSyncing = false, failure = failure(error)) }
@@ -162,13 +163,20 @@ class SyncService(
     suspend fun deleteAccount(): Boolean {
         scheduled?.cancel()
         return running.withLock {
-            account.deleteAccount().also { deleted -> if (deleted) withContext(Dispatchers.IO) { eraseDevice() } }
+            account.deleteAccount().also { deleted ->
+                if (deleted) {
+                    // The files in the person's Drive go with the account, as the iCloud zone does on iOS.
+                    (context.applicationContext as? com.genesis.app.VerselyApplication)?.attachmentTransfers?.deleteEverything()
+                    withContext(Dispatchers.IO) { eraseDevice() }
+                }
+            }
         }.also { if (it) com.genesis.app.widget.GroupWidgetStore.clear(context) }
     }
 
     /** Removes the synced data and every cursor, so the next sync starts from scratch. */
     private fun eraseDevice() {
         database.sync.eraseAll()
+        com.genesis.app.journal.AttachmentFiles.folder(context).deleteRecursively()
         prefs.edit { clear() }
     }
 

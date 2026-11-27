@@ -1729,6 +1729,16 @@
     "now_playing": "Now Playing",
     "change_sounds": "Change Sounds",
     "add_ambient_sounds": "Add Ambient Sounds",
-    "ambient_sounds_lower": "Ambient sounds"
+    "ambient_sounds_lower": "Ambient sounds",
+    "back_up_to_google_drive": "Back Up to Google Drive",
+    "stop_google_drive_backup": "Stop Google Drive Backup",
+    "attachments_drive_off_footer": "Attachments are saved on this device. Back them up to your own Google Drive to see them on your other Android devices.",
+    "attachments_drive_footer": "Attachments are saved on this device first, then copied to your own Google Drive, in a hidden folder only Versely can open.",
+    "drive_access_needed": "Versely can't reach your Google Drive. Tap Back Up to Google Drive to allow it again.",
+    "drive_full": "Your Google Drive is full, so new attachments stay on this device.",
+    "drive_waiting": "Attachments waiting to copy to Google Drive: %lld",
+    "drive_unavailable": "Google Drive isn't available on this phone right now.",
+    "attachment_in_icloud": "Some attachments were added on an iPhone or iPad and are kept in its iCloud. Open them there.",
+    "attachment_not_downloaded": "Some attachments haven't come down from Google Drive yet."
   }
 }

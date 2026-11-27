@@ -43,6 +43,11 @@ class VerselyApplication : Application() {
     val scope = MainScope()
     val account: AccountService by lazy { AccountService(this, scope) }
 
+    /** Journal attachment files backed up to the person's own Google Drive. */
+    val attachmentTransfers: com.genesis.app.journal.AttachmentTransfers by lazy {
+        com.genesis.app.journal.AttachmentTransfers(this, { userData.attachments }, scope)
+    }
+
     /** Highlights, notes and bookmarks with the person's account; started by MainActivity. */
     val sync: SyncService by lazy { SyncService(this, userData, account, scope).also { it.start() } }
 

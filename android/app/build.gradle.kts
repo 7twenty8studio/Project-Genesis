@@ -88,6 +88,8 @@ dependencies {
     implementation(libs.media3.session)
     implementation(libs.media3.exoplayer)
     implementation(libs.sentry.android)
+    implementation(libs.play.services.auth)
+    implementation(libs.kotlinx.coroutines.play.services)
     testImplementation(libs.kotlin.test)
     testImplementation(libs.junit)
 }

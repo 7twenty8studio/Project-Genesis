@@ -110,6 +110,21 @@ object AttachmentStorage {
 
     fun drivePath(fileName: String): String = DRIVE_PREFIX + fileName
 
+    /** How long to wait after [failures] failed transfers in a row: 30 s, doubling, at most 6 hours (as iOS). */
+    fun retryDelayMillis(failures: Int): Long {
+        if (failures <= 0) return 0
+        val doubled = 30_000L shl (failures - 1).coerceAtMost(20)
+        return doubled.coerceAtMost(6L * 60 * 60 * 1000)
+    }
+
+    /** The file's type, for Drive. */
+    fun mimeType(kind: AttachmentKind): String = when (kind) {
+        AttachmentKind.PHOTO -> "image/jpeg"
+        AttachmentKind.AUDIO -> "audio/mp4"
+        AttachmentKind.PDF -> "application/pdf"
+        AttachmentKind.DRAWING -> "application/octet-stream"
+    }
+
     fun place(storagePath: String?): Place = when {
         storagePath.isNullOrEmpty() -> Place.THIS_DEVICE
         storagePath.startsWith(DRIVE_PREFIX) -> Place.GOOGLE_DRIVE

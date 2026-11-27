@@ -77,6 +77,7 @@ internal object AttachmentFiles {
     /** Removes attachments' rows' files (after their rows were marked deleted). */
     fun remove(context: Context, attachments: List<Attachment>) {
         attachments.forEach { file(context, it).delete() }
+        (context.applicationContext as? com.genesis.app.VerselyApplication)?.attachmentTransfers?.queueDeletion(attachments)
     }
 
     /** Deletes everything on a prayer or sermon that's gone. */

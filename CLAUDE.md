@@ -1197,6 +1197,12 @@ shares; README.md has the architecture.
   from supabase/functions/_shared/bibleBooks.json; reference cases from
   fixtures/references.json (one reading on iPhone, Android and the web).
   When a rule changes on iOS, add a shared fixture and run it on Android.
+- Journal attachments on Android: files on the device, copied (when the
+  person turns it on) to their own Google Drive's hidden app folder
+  (`AttachmentTransfers`, `DriveClient`, scope drive.appdata; owner's
+  choice, 27 November 2026), rows synced with storage_path "gdrive:<file>";
+  iPhone files stay in iCloud and show a note. Setup:
+  android/GOOGLE_DRIVE_SETUP.md.
 - Strings: add the resource name and its English (as iOS writes it) to
   Tools/Localization/android_strings.json, its Spanish and Portuguese to
   es.json / pt.json as usual, then run

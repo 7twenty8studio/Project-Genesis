@@ -33,6 +33,9 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.activity.result.IntentSenderRequest
+import com.genesis.core.domain.journal.AttachmentStorage
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableDoubleStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -77,8 +80,10 @@ import java.io.File
  * The attachments on a prayer or sermon notes (Premium journal extras), as
  * AttachmentsSection on iOS: a strip of photos and PDFs, the recordings
  * below it, and an Add Attachment menu. Without Premium, anything already
- * attached still shows, with a teaser in place of the menu. On Android the
- * files stay on this device for now.
+ * attached still shows, with a teaser in place of the menu. Files are saved
+ * on this device and, once the person turns it on, copied to their own
+ * Google Drive (AttachmentTransfers); a synced attachment whose file isn't
+ * here yet comes down from Drive when shown.
  */
 @Composable
 internal fun AttachmentsSection(owner: AttachmentOwner, ownerId: String) {
@@ -101,6 +106,41 @@ internal fun AttachmentsSection(owner: AttachmentOwner, ownerId: String) {
     var deleting by remember { mutableStateOf<Attachment?>(null) }
     var recording by remember { mutableStateOf(false) }
 
+    val transfers = app.attachmentTransfers
+    val backup by transfers.enabled.collectAsStateWithLifecycle()
+    val driveProblem by transfers.problem.collectAsStateWithLifecycle()
+    val waiting by transfers.pending.collectAsStateWithLifecycle()
+    var driveUnavailable by remember { mutableStateOf(false) }
+    // Bumped when a file comes down from Drive, so its thumbnail loads.
+    var downloads by remember { mutableIntStateOf(0) }
+    var missing by remember { mutableStateOf<Set<AttachmentStorage.Place>>(emptySet()) }
+    LaunchedEffect(attachments) {
+        transfers.kick()
+        val gone = attachments.filter { !AttachmentFiles.file(context, it).exists() }
+        var still = gone.map { AttachmentStorage.place(it.storagePath) }.toSet()
+        if (gone.any { AttachmentStorage.place(it.storagePath) == AttachmentStorage.Place.GOOGLE_DRIVE }) {
+            var failed = false
+            for (attachment in gone.filter { AttachmentStorage.place(it.storagePath) == AttachmentStorage.Place.GOOGLE_DRIVE }) {
+                if (transfers.download(attachment)) downloads++ else failed = true
+            }
+            if (!failed) still = still - AttachmentStorage.Place.GOOGLE_DRIVE
+        }
+        missing = still
+    }
+    val consent = rememberLauncherForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
+        transfers.finishAccess(result.data)
+    }
+    fun backUp() {
+        driveUnavailable = false
+        scope.launch {
+            when (val access = transfers.requestAccess()) {
+                is AttachmentTransfers.Access.Granted -> transfers.turnOn()
+                is AttachmentTransfers.Access.Ask -> runCatching { consent.launch(IntentSenderRequest.Builder(access.intent).build()) }
+                AttachmentTransfers.Access.Unavailable -> driveUnavailable = true
+            }
+        }
+    }
+
     fun adding(block: suspend () -> Unit) {
         problem = null
         busy = true
@@ -111,6 +151,7 @@ internal fun AttachmentsSection(owner: AttachmentOwner, ownerId: String) {
                 problem = failure.problem
             } finally {
                 busy = false
+                transfers.kick()
             }
         }
     }
@@ -131,7 +172,7 @@ internal fun AttachmentsSection(owner: AttachmentOwner, ownerId: String) {
     Group {
         if (pictures.isNotEmpty()) {
             Row(Modifier.horizontalScroll(rememberScrollState()).padding(12.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                pictures.forEach { attachment -> Thumbnail(attachment) { viewing = attachment } }
+                pictures.forEach { attachment -> Thumbnail(attachment, downloads) { viewing = attachment } }
             }
             HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
         }
@@ -184,12 +225,37 @@ internal fun AttachmentsSection(owner: AttachmentOwner, ownerId: String) {
                     }
                 }
             }
+            if (!backup || driveProblem == AttachmentTransfers.Problem.ACCESS_NEEDED) {
+                HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
+                Text(
+                    stringResource(R.string.back_up_to_google_drive),
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = colors.accent,
+                    modifier = Modifier.fillMaxWidth().clickable(onClick = ::backUp).padding(16.dp),
+                )
+            }
         } else {
             PremiumTeaser(stringResource(R.string.attachments_premium_teaser), Modifier.padding(4.dp))
         }
     }
-    problem?.let { Text(stringResource(it.message), style = MaterialTheme.typography.bodySmall, color = Color(0xFFC77700), modifier = Modifier.padding(start = 16.dp, top = 8.dp)) }
-    Footer(stringResource(R.string.attachments_device_footer))
+    val notes = buildList {
+        problem?.let { add(stringResource(it.message)) }
+        if (driveUnavailable) add(stringResource(R.string.drive_unavailable))
+        if (backup) when (driveProblem) {
+            AttachmentTransfers.Problem.ACCESS_NEEDED -> add(stringResource(R.string.drive_access_needed))
+            AttachmentTransfers.Problem.DRIVE_FULL -> add(stringResource(R.string.drive_full))
+            null -> if (waiting > 0 && attachments.isNotEmpty()) add(stringResource(R.string.drive_waiting, waiting))
+        }
+        if (AttachmentStorage.Place.ICLOUD in missing) add(stringResource(R.string.attachment_in_icloud))
+        if (AttachmentStorage.Place.GOOGLE_DRIVE in missing) add(stringResource(R.string.attachment_not_downloaded))
+    }
+    notes.forEach { Text(it, style = MaterialTheme.typography.bodySmall, color = Color(0xFFC77700), modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 8.dp)) }
+    Footer(stringResource(if (backup) R.string.attachments_drive_footer else R.string.attachments_drive_off_footer))
+    if (backup && unlocked) {
+        TextButton(onClick = { transfers.turnOff() }, modifier = Modifier.padding(start = 4.dp)) {
+            Text(stringResource(R.string.stop_google_drive_backup), color = colors.secondaryText, style = MaterialTheme.typography.bodySmall)
+        }
+    }
 
     viewing?.let { attachment ->
         if (attachment.kind == AttachmentKind.PDF) {
@@ -240,11 +306,11 @@ private val AttachmentFiles.Problem.message: Int
     }
 
 @Composable
-private fun Thumbnail(attachment: Attachment, onOpen: () -> Unit) {
+private fun Thumbnail(attachment: Attachment, downloads: Int, onOpen: () -> Unit) {
     val context = LocalContext.current
     val colors = LocalReaderColors.current
     val side = with(LocalDensity.current) { 84.dp.roundToPx() }
-    val bitmap by produceState<Bitmap?>(null, attachment.id) { value = AttachmentFiles.thumbnail(context, attachment, side) }
+    val bitmap by produceState<Bitmap?>(null, attachment.id, downloads) { value = AttachmentFiles.thumbnail(context, attachment, side) }
     val label = if (attachment.kind == AttachmentKind.PDF) {
         attachment.pageCount?.let { stringResource(R.string.pdf_pages, it) } ?: stringResource(R.string.pdf)
     } else {
