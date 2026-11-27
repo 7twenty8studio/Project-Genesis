@@ -61,11 +61,11 @@ object InkFormat {
     const val MAX_SYNCED_BYTES = 2_097_152
 
     /**
-     * Whether pages sync (notes.ink, migration 20261129000000). Off until
-     * that migration has run: pages then stay on the device, kept through
-     * pulls, and go up once it's turned on (they stay marked as edited).
+     * Whether pages sync (notes.ink, migration 20261129000000, run 27
+     * November 2026). Off, pages stay on the device, kept through pulls,
+     * and go up once it's on again (they stay marked as edited).
      */
-    const val SYNCS = false
+    const val SYNCS = true
 
     private val json = Json { ignoreUnknownKeys = true }
 

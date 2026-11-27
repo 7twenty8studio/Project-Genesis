@@ -315,8 +315,9 @@ shares; README.md has the architecture.
   and as Versely Ink in notes.ink (docs/HANDWRITING_FORMAT.md; JSON shared
   with Android, `VerselyInk` pure, `NoteInk` to and from PencilKit,
   fixtures/ink.json tested on both). iOS reads `drawing` first, else `ink`.
-  Sending ink waits for migration 20261129000000 (`VerselyInk.syncs`,
-  Android's `InkFormat.SYNCS`); then `NoteInkBackfill` pushes every page once.
+  Migration 20261129000000 ran 27 November 2026, so `VerselyInk.syncs`
+  and Android's `InkFormat.SYNCS` are on; `NoteInkBackfill` pushes every
+  page once per device.
   Journal entries offer `JournalPrompts`.
 - Reading touches: `ReaderPreferences.largeInitial` (restyles, never changes,
   the first letter; verse 1's number is dropped), `pageTurnSound`

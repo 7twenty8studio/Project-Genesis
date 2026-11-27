@@ -51,9 +51,9 @@ enum VerselyInk {
     static let maxSyncedBytes = 2_097_152
 
     /// Whether pages go up as `ink` (migration 20261129000000_note_ink.sql).
-    /// Off until that migration has run; reading `ink` from the server is
-    /// always on. Turning it on also sends every page once (`NoteInkBackfill`).
-    static let syncs = false
+    /// On since that migration ran (27 November 2026); reading `ink` from the server is
+    /// always on. Each device sends every page once after updating (`NoteInkBackfill`).
+    static let syncs = true
 
     /// The page as JSON text; nil for an empty page (a note without one).
     static func encode(_ page: InkPage) -> String? {
