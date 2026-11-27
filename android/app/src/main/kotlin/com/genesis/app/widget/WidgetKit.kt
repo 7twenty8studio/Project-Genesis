@@ -140,6 +140,7 @@ object VerselyWidgets {
     )
 
     suspend fun refresh(context: Context) {
+        WidgetReload.bump()
         for (widget in all()) {
             runCatching { widget.updateAll(context) }.onFailure { Log.w(TAG, "Couldn't refresh ${widget::class.simpleName}", it) }
         }

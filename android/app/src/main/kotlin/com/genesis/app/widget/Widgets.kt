@@ -40,8 +40,8 @@ abstract class VerselyWidget : GlanceAppWidget() {
     override val sizeMode: SizeMode = SizeMode.Exact
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
-        val data = WidgetData.load(context)
-        provideContent { Content(data) }
+        val first = WidgetData.load(context)
+        provideContent { Content(reloaded(first) { WidgetData.load(context) }) }
     }
 
     @Composable

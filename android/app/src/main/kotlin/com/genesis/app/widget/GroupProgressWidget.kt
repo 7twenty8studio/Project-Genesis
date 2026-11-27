@@ -58,8 +58,8 @@ class GroupProgressWidget : GlanceAppWidget() {
     override val sizeMode: SizeMode = SizeMode.Exact
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
-        val snapshot = withContext(Dispatchers.IO) { GroupWidgetStore.read(context) }
-        provideContent { Content(snapshot) }
+        val first = withContext(Dispatchers.IO) { GroupWidgetStore.read(context) }
+        provideContent { Content(reloaded(first) { withContext(Dispatchers.IO) { GroupWidgetStore.read(context) } }) }
     }
 
     @Composable

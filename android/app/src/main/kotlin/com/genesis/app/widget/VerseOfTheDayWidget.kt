@@ -82,6 +82,21 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
     override val sizeMode = SizeMode.Exact
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
+        val first = loadLook(context, id)
+        provideContent {
+            val shown = reloaded(first) { loadLook(context, id) }
+            Content(shown.day, shown.look, shown.photo, shown.frames)
+        }
+    }
+
+    private class Shown(
+        val day: WidgetVerse?,
+        val look: WidgetLook,
+        val photo: android.graphics.Bitmap?,
+        val frames: Map<com.genesis.core.domain.widgets.WidgetArtShape, List<android.net.Uri>?>,
+    )
+
+    private suspend fun loadLook(context: Context, id: GlanceId): Shown {
         val source = VerseWidgetSource.of(
             runCatching { getAppWidgetState(context, PreferencesGlanceStateDefinition, id)[SOURCE] }.getOrNull(),
         )
@@ -102,7 +117,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
             com.genesis.core.domain.widgets.WidgetArtShape.entries.associateWith { WidgetFrames.load(context, style, it) }
                 .also { loaded -> if (loaded.values.any { it == null }) WidgetFrames.drawLater(context, style) }
         } else emptyMap()
-        provideContent { Content(day, look, photo, frames) }
+        return Shown(day, look, photo, frames)
     }
 
     /**

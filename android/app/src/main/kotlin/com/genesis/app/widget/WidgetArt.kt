@@ -69,7 +69,7 @@ object WidgetStylePreference {
  */
 object WidgetArt {
     /** Bump to draw the pictures again after changing them. */
-    private const val VERSION = 1
+    private const val VERSION = 2
     private const val VERSION_KEY = "widgetArt.version"
     private const val TAG = "WidgetArt"
     private val drawing = Mutex()
@@ -150,13 +150,13 @@ object WidgetArt {
                     }
                 }
             }
-            // Kept to the edges: faint in the middle, where the words go.
+            // Full strength at the edges, as in the reader, and softened (never hidden) behind the words.
             val mask = Paint().apply {
                 xfermode = PorterDuffXfermode(PorterDuff.Mode.DST_IN)
                 shader = RadialGradient(
                     width / 2f, height / 2f, maxOf(width, height) * 0.62f,
-                    intArrayOf(0x1A000000, 0x1A000000, 0xFF000000.toInt()),
-                    floatArrayOf(0f, 0.45f, 1f),
+                    intArrayOf(0x73000000, 0x8C000000.toInt(), 0xFF000000.toInt()),
+                    floatArrayOf(0f, 0.4f, 0.85f),
                     Shader.TileMode.CLAMP,
                 )
             }

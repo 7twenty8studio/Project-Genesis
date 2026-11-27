@@ -40,9 +40,11 @@ object WidgetFrames {
     private const val STEP = 0.26
     /** Frames are drawn at this share of the still's size. */
     private const val SCALE = 0.55f
-    private const val VERSION = 1
+    private const val VERSION = 2
     private const val TAG = "WidgetFrames"
     private val drawing = Mutex()
+    /** Styles whose frames failed to draw in this run of the app: not tried again until it restarts. */
+    private val failed = mutableSetOf<String>()
 
     fun animates(style: WidgetArtStyle): Boolean = sceneOf(style) != null || seasonOf(style) != null
 
@@ -93,7 +95,7 @@ object WidgetFrames {
 
     /** True when something was drawn. */
     suspend fun draw(context: Context, style: WidgetArtStyle): Boolean = drawing.withLock {
-        if (!animates(style)) return@withLock false
+        if (!animates(style) || style.rawValue in failed) return@withLock false
         val missing = WidgetArtShape.entries.filter { shape -> (0 until COUNT).any { !file(context, style, shape, it).exists() } }
         if (missing.isEmpty()) return@withLock false
         withContext(Dispatchers.Default) {
@@ -124,6 +126,9 @@ object WidgetFrames {
                 }
             }
         }
-        true
+        // Only a complete loop is worth a refresh; otherwise the still stays and nothing loops.
+        val complete = missing.all { shape -> (0 until COUNT).all { file(context, style, shape, it).exists() } }
+        if (!complete) failed += style.rawValue
+        complete
     }
 }
