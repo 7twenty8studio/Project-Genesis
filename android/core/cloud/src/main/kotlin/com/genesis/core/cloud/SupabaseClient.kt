@@ -189,7 +189,7 @@ class SupabaseClient(
     fun select(table: String, query: List<Pair<String, String>>, accessToken: String?): String =
         send("GET", "rest/v1/$table", query.joinToString("&") { (key, value) -> "${encode(key)}=${encode(value)}" }, null, accessToken)
 
-    fun insert(table: String, rowJson: String, accessToken: String) {
+    fun insert(table: String, rowJson: String, accessToken: String?) {
         send("POST", "rest/v1/$table", "", rowJson, accessToken, prefer = "return=minimal")
     }
 

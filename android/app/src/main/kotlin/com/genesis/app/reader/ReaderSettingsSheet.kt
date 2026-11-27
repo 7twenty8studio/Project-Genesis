@@ -467,7 +467,7 @@ private fun FontRow(font: ReaderFont, selected: Boolean, locked: Boolean, onClic
 }
 
 @Composable
-private fun PremiumTag() {
+internal fun PremiumTag() {
     val colors = LocalReaderColors.current
     Text(
         stringResource(R.string.premium),

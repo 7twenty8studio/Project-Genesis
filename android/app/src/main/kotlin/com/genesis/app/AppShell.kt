@@ -99,6 +99,8 @@ fun AppShell(
     var sermonsOpen by rememberSaveable { mutableStateOf(false) }
     var studyLibraryOpen by rememberSaveable { mutableStateOf(false) }
     var biblesOpen by rememberSaveable { mutableStateOf(false) }
+    var feedbackOpen by rememberSaveable { mutableStateOf(false) }
+    var settingsAmbient by rememberSaveable { mutableStateOf(false) }
     var groupToOpen by rememberSaveable { mutableStateOf<String?>(null) }
     var sermonsNew by rememberSaveable { mutableStateOf(false) }
     // A church sermon over any tab (its link's slug), and notes opened from it.
@@ -380,7 +382,18 @@ fun AppShell(
         return
     }
 
+    if (feedbackOpen) {
+        androidx.activity.compose.BackHandler { feedbackOpen = false }
+        com.genesis.app.settings.FeedbackScreen(
+            readingContext = "${state.bible.id} ${state.chapterId.description("en")}",
+            onDone = { feedbackOpen = false },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
+
     if (settingsOpen) {
+        val offersYouVersion = app.bibles.catalog.collectAsStateWithLifecycle().value.any { it.isYouVersion }
         SettingsScreen(
             accountTitle = account.user?.let { it.email ?: it.name },
             onAccount = { accountOpen = true },
@@ -389,6 +402,11 @@ fun AppShell(
             onGoals = { goalsOpen = true },
             onFeatures = { featuresOpen = true },
             showsGoals = features.shows(OptionalFeature.GOALS, flags),
+            onBibles = { biblesOpen = true },
+            onFeedback = { feedbackOpen = true },
+            showsListening = features.shows(OptionalFeature.LISTEN, flags),
+            onAmbient = if (features.shows(OptionalFeature.AMBIENT_SOUNDS, flags)) ({ settingsAmbient = true }) else null,
+            offersYouVersionBibles = offersYouVersion,
             onDone = { settingsOpen = false },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )
@@ -399,6 +417,7 @@ fun AppShell(
                 onDismiss = { readingSettings = false },
             )
         }
+        if (settingsAmbient) com.genesis.app.audio.AmbientSoundsSheet(app.ambient) { settingsAmbient = false }
         return
     }
 
