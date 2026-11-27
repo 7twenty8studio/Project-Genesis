@@ -72,6 +72,7 @@ internal fun ReaderControls(
     onMoreBibles: () -> Unit,
     onToggleOriginal: () -> Unit,
     onTogglePanel: () -> Unit,
+    onReadInParallel: (InstalledBible?) -> Unit = {},
 ) {
     val colors = LocalReaderColors.current
     val language = state.chapter?.translation?.language ?: "en"
@@ -103,7 +104,7 @@ internal fun ReaderControls(
             }
             Spacer(Modifier.weight(1f).widthIn(min = 6.dp))
             Capsule {
-                BibleMenu(state, showsOriginalItem, onChooseBible, onMoreBibles, onToggleOriginal)
+                BibleMenu(state, showsOriginalItem, onChooseBible, onMoreBibles, onToggleOriginal, onReadInParallel)
                 if (!overflow) BookmarkButton(state.isChapterBookmarked, iconWidth, onBookmark)
                 if (showsListen && listening != null) {
                     val current = listening.state
@@ -172,14 +173,20 @@ private fun BibleMenu(
     onChooseBible: (InstalledBible) -> Unit,
     onMoreBibles: () -> Unit,
     onToggleOriginal: () -> Unit,
+    onReadInParallel: (InstalledBible?) -> Unit,
 ) {
     val colors = LocalReaderColors.current
     var open by remember { mutableStateOf(false) }
+    // The menu's Read in Parallel list, shown in place of the Bibles.
+    var parallelList by remember { mutableStateOf(false) }
     val current = state.chapter?.translation
+    val parallel = state.parallelBible?.takeIf { it != state.bible }
+    val parallelName = state.translations.firstOrNull { it.first == parallel }?.second?.abbreviation
+        ?: if (state.showsOriginal) stringResource(R.string.original) else null
     Box {
         val chooseTranslation = stringResource(R.string.choose_translation)
         Text(
-            current?.abbreviation ?: state.bible.id,
+            (current?.abbreviation ?: state.bible.id) + (parallelName?.let { " | $it" } ?: ""),
             style = MaterialTheme.typography.labelLarge,
             fontWeight = FontWeight.SemiBold,
             color = colors.text,
@@ -189,13 +196,56 @@ private fun BibleMenu(
                 .semantics { contentDescription = chooseTranslation }
                 .padding(horizontal = 8.dp, vertical = 10.dp),
         )
-        DropdownMenu(expanded = open, onDismissRequest = { open = false }) {
+        DropdownMenu(expanded = open, onDismissRequest = { open = false; parallelList = false }) {
             val mine = (current?.language ?: "en").substringBefore('-')
-            val groups = state.translations
+            fun grouped(list: List<Pair<InstalledBible, com.genesis.core.bible.Translation>>) = list
                 .groupBy { it.second.language.substringBefore('-') }
                 .toList()
                 .sortedWith(compareBy({ it.first != mine }, { it.first }))
-            for ((code, bibles) in groups) {
+            if (parallelList) {
+                for ((code, bibles) in grouped(state.translations.filter { it.first != state.bible })) {
+                    Text(
+                        languageName(code),
+                        style = MaterialTheme.typography.labelMedium,
+                        color = colors.secondaryText,
+                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
+                    )
+                    for ((bible, translation) in bibles) {
+                        DropdownMenuItem(
+                            text = { Text((if (bible == parallel) "✓ " else "") + "${translation.abbreviation} · ${translation.name}") },
+                            onClick = {
+                                open = false
+                                parallelList = false
+                                onReadInParallel(bible)
+                            },
+                        )
+                    }
+                }
+                if (showsOriginalItem) {
+                    HorizontalDivider(color = colors.separator)
+                    DropdownMenuItem(
+                        text = { Text((if (state.showsOriginal) "✓ " else "") + stringResource(R.string.original_hebrew_greek)) },
+                        onClick = {
+                            open = false
+                            parallelList = false
+                            if (!state.showsOriginal) onToggleOriginal()
+                        },
+                    )
+                }
+                if (parallel != null || state.showsOriginal) {
+                    HorizontalDivider(color = colors.separator)
+                    DropdownMenuItem(
+                        text = { Text(stringResource(R.string.stop_parallel_reading)) },
+                        onClick = {
+                            open = false
+                            parallelList = false
+                            onReadInParallel(null)
+                        },
+                    )
+                }
+                return@DropdownMenu
+            }
+            for ((code, bibles) in grouped(state.translations)) {
                 Text(
                     languageName(code),
                     style = MaterialTheme.typography.labelMedium,
@@ -212,16 +262,11 @@ private fun BibleMenu(
                     )
                 }
             }
-            if (showsOriginalItem) {
-                HorizontalDivider(color = colors.separator)
-                DropdownMenuItem(
-                    text = { Text((if (state.showsOriginal) "✓ " else "") + stringResource(R.string.original_hebrew_greek)) },
-                    onClick = {
-                        open = false
-                        onToggleOriginal()
-                    },
-                )
-            }
+            HorizontalDivider(color = colors.separator)
+            DropdownMenuItem(
+                text = { Text(stringResource(R.string.read_in_parallel) + "  ›") },
+                onClick = { parallelList = true },
+            )
             HorizontalDivider(color = colors.separator)
             DropdownMenuItem(
                 text = { Text(stringResource(R.string.more_bibles), color = colors.accent) },

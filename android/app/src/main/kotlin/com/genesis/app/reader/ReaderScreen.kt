@@ -292,6 +292,7 @@ fun ReaderScreen(
                     .union(androidx.compose.foundation.layout.WindowInsets.displayCutout)
                     .only(androidx.compose.foundation.layout.WindowInsetsSides.Vertical),
             )
+        val parallelBible = state.parallelBible?.takeIf { it != state.bible && !state.showsOriginal }
         Box(textArea, contentAlignment = Alignment.TopCenter) {
             when {
                 state.showsOriginal && viewModel != null -> Box(Modifier.padding(top = 56.dp)) {
@@ -304,6 +305,14 @@ fun ReaderScreen(
                         onWord = { originalWord = it },
                     )
                 }
+                parallelBible != null && state.chapter != null && viewModel != null -> ParallelChapterScreen(
+                    viewModel = viewModel,
+                    primary = state.chapter,
+                    secondaryBible = parallelBible,
+                    playingVerse = playing?.takeIf { it.book == state.chapterId.book && it.chapter == state.chapterId.chapter }?.verse,
+                    onNext = onNext.takeIf { state.chapterId.next != null },
+                    onTap = onToggleControls,
+                )
                 state.chapter != null && preferences.readingMode == ReadingMode.PAGE -> key(state.chapter.id, state.chapter.translation.id) {
                     val text = remember(state.chapter, colors, marks, textOptions) { chapterText(state.chapter, colors, marks, textOptions) }
                     PagedChapter(
@@ -399,6 +408,7 @@ fun ReaderScreen(
                 onMoreBibles = onMoreBibles,
                 onToggleOriginal = { viewModel?.setOriginal(!state.showsOriginal) },
                 onTogglePanel = { viewModel?.toggleCompanion(panelShown) ?: onTogglePanel() },
+                onReadInParallel = { viewModel?.readInParallel(it) },
             )
         }
 

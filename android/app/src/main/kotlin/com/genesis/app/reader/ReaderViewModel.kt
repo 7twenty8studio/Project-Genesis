@@ -69,6 +69,8 @@ data class ReaderUiState(
     val crossReferences: CrossReferencesUiState? = null,
     /** Original (Hebrew & Greek) is shown beside the Bible being read. */
     val showsOriginal: Boolean = false,
+    /** A second Bible read beside the current one, verse by verse (remembered). */
+    val parallelBible: InstalledBible? = null,
     /** The verse whose word study is open, if any. */
     val wordStudyVerse: VerseId? = null,
     /** The verse whose study notes and commentary are open (the selection bar's Study). */
@@ -190,7 +192,17 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
                 }
                 val reading = state.value.bible
                 val stillHere = translations.any { it.first == reading }
-                _state.update { it.copy(translations = translations, bible = if (stillHere) reading else app.bibles.default()) }
+                // The Bible (or the Original) read in parallel, as last left (reader.parallel, as on iOS).
+                val savedParallel = parallelDefaults.getString(PARALLEL_KEY, null)
+                _state.update { current ->
+                    val bible = if (stillHere) reading else app.bibles.default()
+                    current.copy(
+                        translations = translations,
+                        bible = bible,
+                        parallelBible = translations.firstOrNull { it.first.id == savedParallel && it.first != bible }?.first,
+                        showsOriginal = if (first) savedParallel == ORIGINAL_PARALLEL else current.showsOriginal,
+                    )
+                }
                 if (first || !stillHere) load()
                 first = false
             }
@@ -497,7 +509,23 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
     fun newNote() = _state.update { it.copy(editingNote = Note(id = UUID.randomUUID().toString())) }
 
     /** Shows or leaves the Original (Hebrew & Greek) beside the Bible being read. */
-    fun setOriginal(on: Boolean) = _state.update { it.copy(showsOriginal = on, selection = emptySet()) }
+    fun setOriginal(on: Boolean) {
+        parallelDefaults.edit().apply { if (on) putString(PARALLEL_KEY, ORIGINAL_PARALLEL) else remove(PARALLEL_KEY) }.apply()
+        _state.update { it.copy(showsOriginal = on, parallelBible = null, selection = emptySet()) }
+    }
+
+    /** Reads a second Bible beside the current one, or stops (null). */
+    fun readInParallel(bible: InstalledBible?) {
+        parallelDefaults.edit().apply { if (bible != null) putString(PARALLEL_KEY, bible.id) else remove(PARALLEL_KEY) }.apply()
+        _state.update { it.copy(parallelBible = bible, showsOriginal = false, selection = emptySet()) }
+    }
+
+    /** A chapter of the Bible read in parallel, or null if it doesn't have it. */
+    suspend fun parallelChapter(bible: InstalledBible, id: ChapterId): com.genesis.core.bible.Chapter? = withContext(Dispatchers.IO) {
+        runCatching { repository(bible).chapter(id) }.onFailure { Log.e(TAG, "Couldn't read ${bible.id}", it) }.getOrNull()
+    }
+
+    private val parallelDefaults by lazy { getApplication<android.app.Application>().getSharedPreferences("reader", android.content.Context.MODE_PRIVATE) }
 
     /** Opens word study for the first selected verse. */
     fun openWordStudy() = _state.update { state ->
@@ -542,6 +570,8 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
 
     private companion object {
         const val TAG = "Reader"
+        const val PARALLEL_KEY = "reader.parallel"
+        const val ORIGINAL_PARALLEL = "original"
     }
 
     override fun onCleared() {
