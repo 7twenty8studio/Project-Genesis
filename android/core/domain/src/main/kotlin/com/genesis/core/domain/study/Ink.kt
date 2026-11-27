@@ -60,6 +60,13 @@ object InkFormat {
     /** The database's limit on notes.ink, in bytes (as notes.drawing). */
     const val MAX_SYNCED_BYTES = 2_097_152
 
+    /**
+     * Whether pages sync (notes.ink, migration 20261129000000). Off until
+     * that migration has run: pages then stay on the device, kept through
+     * pulls, and go up once it's turned on (they stay marked as edited).
+     */
+    const val SYNCS = false
+
     private val json = Json { ignoreUnknownKeys = true }
 
     /** The page as JSON text; null for an empty page (a note without one). */

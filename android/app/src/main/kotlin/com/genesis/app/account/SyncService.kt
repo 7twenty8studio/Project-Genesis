@@ -220,7 +220,7 @@ class SyncService(
         notes.map { it to it.remoteJson(userId) }.groupBy { it.second.keys }.values.forEach { rows ->
             for (chunk in rows.chunked(50)) {
                 client.upsert(SyncTable.NOTES, JsonArray(chunk.map { it.second }).toString(), token)
-                database.sync.inkPushed(chunk.filter { it.first.inkEdited }.map { it.first.id })
+                database.sync.inkPushed(chunk.filter { it.first.inkEdited && it.second.containsKey("ink") }.map { it.first.id })
             }
         }
         push(SyncTable.READING_PLANS, RemotePlan.serializer(), database.sync.plansChanged(since).map { it.remote(userId) }, client, token)
@@ -325,7 +325,7 @@ private fun NoteRecord.remoteJson(userId: String): JsonObject {
     row.remove("ink")
     row.remove("drawing")
     row.remove("server_updated_at")
-    val sendsInk = com.genesis.core.domain.study.InkFormat.fitsSync(ink)
+    val sendsInk = com.genesis.core.domain.study.InkFormat.SYNCS && com.genesis.core.domain.study.InkFormat.fitsSync(ink)
     if (sendsInk && (ink != null || inkEdited)) row["ink"] = ink?.let { kotlinx.serialization.json.JsonPrimitive(it) } ?: kotlinx.serialization.json.JsonNull
     if (sendsInk && inkEdited) row["drawing"] = kotlinx.serialization.json.JsonNull
     return JsonObject(row)

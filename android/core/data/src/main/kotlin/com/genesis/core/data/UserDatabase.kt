@@ -1056,7 +1056,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                     """
                     SELECT id, title, body, kind, anchor_type, start_verse, end_verse, book_number, chapter_number, theme, created_at, updated_at, deleted_at,
                         ink, ink_edited
-                    FROM notes WHERE updated_at > ?
+                    FROM notes WHERE updated_at > ? OR ${if (com.genesis.core.domain.study.InkFormat.SYNCS) "ink_edited = 1" else "0"}
                     """.trimIndent(),
                 ).use { s ->
                     s.bindLong(1, since)
@@ -1166,7 +1166,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                                 end_verse = excluded.end_verse, book_number = excluded.book_number,
                                 chapter_number = excluded.chapter_number, theme = excluded.theme,
                                 created_at = excluded.created_at, updated_at = excluded.updated_at, deleted_at = NULL,
-                                ink = excluded.ink, ink_edited = 0, iphone_page = excluded.iphone_page
+                                ink = excluded.ink, ink_edited = ${if (com.genesis.core.domain.study.InkFormat.SYNCS) "0" else "notes.ink_edited"}, iphone_page = excluded.iphone_page
                             """.trimIndent(),
                         ).use {
                             fun bind(index: Int, value: Int?) = if (value == null) it.bindNull(index) else it.bindLong(index, value.toLong())
@@ -1184,7 +1184,9 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                             it.bindLong(12, row.updatedAt)
                             // A page too large to sync never reached the server: it stays here (as iOS).
                             val local = connection.prepare("SELECT ink FROM notes WHERE id = ?").use { s -> s.bindText(1, row.id); if (s.step() && !s.isNull(0)) s.getText(0) else null }
-                            val ink = if (!com.genesis.core.domain.study.InkFormat.fitsSync(local) && row.ink == null) local else row.ink
+                            // Before pages sync, the server has none: the page here stays.
+                            val keepsLocal = !com.genesis.core.domain.study.InkFormat.SYNCS || (!com.genesis.core.domain.study.InkFormat.fitsSync(local) && row.ink == null)
+                            val ink = if (keepsLocal) local else row.ink
                             if (ink == null) it.bindNull(13) else it.bindText(13, ink)
                             it.bindLong(14, if (ink == null && row.hasDrawing) 1 else 0)
                             it.step()
