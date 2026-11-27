@@ -282,7 +282,8 @@ fun ReaderScreen(
         // Forest, Ocean and Hearth: the scene behind clear pages, the whole screen.
         val scene = com.genesis.core.domain.theme.ThemeScene.of(preferences.theme)
             ?.takeIf { state.chapter != null && !state.showsOriginal }
-        if (scene != null) key(scene) { com.genesis.app.reader.backdrop.ThemeSceneView(scene, animates = preferences.seasonalEffects) }
+        val sceneBackdrop = remember { com.genesis.app.reader.backdrop.SceneBackdrop() }
+        if (scene != null) key(scene) { com.genesis.app.reader.backdrop.ThemeSceneView(scene, animates = preferences.seasonalEffects, backdrop = sceneBackdrop) }
 
         // Text keeps clear of the system bars' stable insets, so nothing reflows as they show and hide.
         val textArea = Modifier
@@ -329,6 +330,7 @@ fun ReaderScreen(
                         onVerseTap = selection.onVerseTap,
                         onNoteTap = selection.onNoteTap,
                         scene = scene,
+                        sceneBackdrop = sceneBackdrop,
                         isSelecting = state.selection.isNotEmpty(),
                         hidesPageChrome = chromeShown,
                         onClearSelection = selection.onDone,

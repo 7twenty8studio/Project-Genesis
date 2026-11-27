@@ -5,6 +5,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.positionInWindow
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -49,15 +53,27 @@ import kotlin.math.roundToInt
  * otherwise the composed still (ThemeScene.STILL_TIME).
  */
 @Composable
-fun ThemeSceneView(scene: ThemeScene, animates: Boolean, modifier: Modifier = Modifier) {
+fun ThemeSceneView(scene: ThemeScene, animates: Boolean, modifier: Modifier = Modifier, backdrop: SceneBackdrop? = null) {
     val running = animates && !rememberReduceMotion() && !rememberPowerSave() && rememberResumed()
-    val clock by rememberMotionTime(running) { 1.0 / 30 }
+    val clockState = rememberMotionTime(running) { 1.0 / 30 }
+    val clock by clockState
     BoxWithConstraints(
-        modifier.fillMaxSize().clipToBounds().background(Color(0xFF000000 or scene.fillHex.toLong())).clearAndSetSemantics { },
+        modifier.fillMaxSize().clipToBounds().background(Color(0xFF000000 or scene.fillHex.toLong())).clearAndSetSemantics { }
+            .then(if (backdrop != null) Modifier.onGloballyPositioned { backdrop.origin = it.positionInWindow() } else Modifier),
     ) {
         val size = SceneSize(maxWidth.value.toDouble(), maxHeight.value.toDouble())
         // Only the pictures this area uses (the Forest's tall or wide set), since each is large.
         val art = rememberSceneArt(scene, ForestWide.uses(size))
+        if (backdrop != null) {
+            SideEffect {
+                backdrop.scene = scene
+                backdrop.art = art
+                backdrop.size = size
+                backdrop.clock = clockState
+                backdrop.running = running
+            }
+            DisposableEffect(backdrop) { onDispose { backdrop.scene = null } }
+        }
         Canvas(Modifier.fillMaxSize()) {
             drawScene(scene, art, size, if (running) ThemeScene.STILL_TIME + clock else ThemeScene.STILL_TIME)
         }

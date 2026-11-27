@@ -22,6 +22,9 @@ import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.layout.onPlaced
+import androidx.compose.ui.layout.positionInWindow
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.snapshotFlow
@@ -75,6 +78,8 @@ internal fun PagedChapter(
     onNoteTap: (String) -> Unit = {},
     /** Forest, Ocean or Hearth behind the pages: clear pages, and room kept above its swells or glow. */
     scene: com.genesis.core.domain.theme.ThemeScene? = null,
+    /** The live scene, painted under the pages while one curls over it. */
+    sceneBackdrop: com.genesis.app.reader.backdrop.SceneBackdrop? = null,
     isSelecting: Boolean = false,
     /** The controls are out: the running head and page number make way for them. */
     hidesPageChrome: Boolean = false,
@@ -122,8 +127,9 @@ internal fun PagedChapter(
         }
         val initial = sheetOf(focus) ?: if (openAtEnd) sheets else 1
         val scope = rememberCoroutineScope()
-        // Page Curl needs opaque pages: over a scene the pages slide.
-        val curls = pageTurn == PageTurnStyle.CURL && scene == null
+        // Page Curl needs opaque pages: over a scene each page paints the live scene under its words while one turns.
+        val curls = pageTurn == PageTurnStyle.CURL && (scene == null || sceneBackdrop != null)
+        val curlState = if (curls) remember(pages.size, spread) { PageCurlState(initial) { count } } else null
 
         val totalWidth = with(density) { maxWidth.toPx() }
         val marginPx = with(density) { margin.toPx() }
@@ -131,10 +137,22 @@ internal fun PagedChapter(
         @Composable
         fun Sheet(index: Int, turn: (Boolean) -> Unit) {
             val background = if (scene != null) Color.Transparent else colors.background
+            // Where this page sits, read as it's drawn (kept outside state so a new page is never a frame late).
+            val placed = remember { arrayOfNulls<androidx.compose.ui.layout.LayoutCoordinates>(1) }
+            val paintsScene = scene != null && curlState?.isTurning == true && sceneBackdrop != null
             Box(
                 Modifier
                     .fillMaxSize()
                     .background(background)
+                    .then(
+                        if (paintsScene) Modifier
+                            .onPlaced { placed[0] = it }
+                            .drawBehind {
+                                val at = placed[0]?.takeIf { it.isAttached }?.positionInWindow() ?: return@drawBehind
+                                with(sceneBackdrop!!) { paint(at) }
+                            }
+                        else Modifier,
+                    )
                     .pointerInput(isSelecting, totalWidth, leftHanded) { detectTapGestures { tap(it.x, null, totalWidth, marginPx, isSelecting, leftHanded, turn, onVerseTap, onClearSelection, onToggleControls) } },
             ) {
                 if (index !in 1..sheets) return@Box
@@ -168,7 +186,7 @@ internal fun PagedChapter(
         }
 
         if (curls) {
-            val curl = remember(pages.size, spread) { PageCurlState(initial) { count } }
+            val curl = curlState!!
             LaunchedEffect(focus) { sheetOf(focus)?.let { if (it != curl.current) curl.snapTo(it) } }
             LaunchedEffect(follow) {
                 val sheet = follow?.let { sheetOf(ReaderFocus(it)) } ?: return@LaunchedEffect
