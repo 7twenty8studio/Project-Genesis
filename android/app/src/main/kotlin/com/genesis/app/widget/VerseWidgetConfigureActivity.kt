@@ -188,4 +188,5 @@ internal val com.genesis.core.domain.widgets.WidgetArtStyle.titleRes: Int
         com.genesis.core.domain.widgets.WidgetArtStyle.FOREST -> R.string.widget_style_forest
         com.genesis.core.domain.widgets.WidgetArtStyle.OCEAN -> R.string.widget_style_ocean
         com.genesis.core.domain.widgets.WidgetArtStyle.HEARTH -> R.string.widget_style_hearth
+        com.genesis.core.domain.widgets.WidgetArtStyle.PHOTO -> R.string.widget_style_photo
     }

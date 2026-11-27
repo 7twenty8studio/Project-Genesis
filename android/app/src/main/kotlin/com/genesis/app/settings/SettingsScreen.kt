@@ -70,6 +70,7 @@ fun SettingsScreen(
     offersYouVersionBibles: Boolean = false,
     onMorningWelcome: () -> Unit = {},
     onWidgetStyles: () -> Unit = {},
+    onWidgetPhoto: () -> Unit = {},
     onDone: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -141,6 +142,8 @@ fun SettingsScreen(
                 Divider_()
                 // Open to everyone: Premium styles carry their tag inside.
                 Row_(stringResource(R.string.widget_styles), onClick = onWidgetStyles, trailing = "›", icon = "▦")
+                Divider_()
+                Row_(stringResource(R.string.widget_photo), onClick = onWidgetPhoto, trailing = "›", icon = "🖼")
             }
 
             Spacer(Modifier.size(20.dp))

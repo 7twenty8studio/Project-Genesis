@@ -1678,4 +1678,17 @@
     <string name="widget_size_large">Large</string>
     <string name="widget_styles_footer">Your verse widgets use the style you choose here. To give one widget its own look, touch and hold it, open its settings and choose a Background.</string>
     <string name="widget_style_preview">Preview of the %s style</string>
+    <string name="widget_photo">Widget Photo</string>
+    <string name="widget_photo_preview">Preview of the verse widget with your photo</string>
+    <string name="no_photo_chosen">No photo chosen</string>
+    <string name="change_photo">Change Photo</string>
+    <string name="choose_photo">Choose Photo</string>
+    <string name="adjust_photo">Adjust Photo</string>
+    <string name="remove_photo">Remove Photo</string>
+    <string name="widget_photo_footer">To use it, choose Your Photo in Settings › Widget Styles. The photo stays on this phone.</string>
+    <string name="adjust_photo_footer">Drag to move the photo and pinch to zoom. Each widget size keeps its own framing.</string>
+    <string name="reset">Reset</string>
+    <string name="widget_photo_in_widget">Your photo in the widget</string>
+    <string name="widget_style_photo">Your Photo</string>
+    <string name="choose_photo_for_style">Choose a photo to use this style.</string>
 </resources>

@@ -133,6 +133,7 @@ fun AppShell(
     var welcomePreview by rememberSaveable { mutableStateOf(false) }
     var welcomeSettingsOpen by rememberSaveable { mutableStateOf(false) }
     var widgetStylesOpen by rememberSaveable { mutableStateOf(false) }
+    var widgetPhotoOpen by rememberSaveable { mutableStateOf(false) }
     // The verse widget's painted backgrounds, drawn once a moment after launch.
     LaunchedEffect(Unit) { withContext(Dispatchers.Default) { com.genesis.app.widget.WidgetArt.drawIfNeeded(app) } }
     androidx.lifecycle.compose.LifecycleResumeEffect(Unit) {
@@ -458,9 +459,15 @@ fun AppShell(
         return
     }
 
+    if (widgetPhotoOpen) {
+        androidx.activity.compose.BackHandler { widgetPhotoOpen = false }
+        com.genesis.app.widget.WidgetPhotoScreen(onDone = { widgetPhotoOpen = false }, modifier = Modifier.fillMaxSize().navigationBarsPadding())
+        return
+    }
+
     if (widgetStylesOpen) {
         androidx.activity.compose.BackHandler { widgetStylesOpen = false }
-        com.genesis.app.widget.WidgetStylesScreen(onDone = { widgetStylesOpen = false }, modifier = Modifier.fillMaxSize().navigationBarsPadding())
+        com.genesis.app.widget.WidgetStylesScreen(onDone = { widgetStylesOpen = false }, onPhoto = { widgetPhotoOpen = true }, modifier = Modifier.fillMaxSize().navigationBarsPadding())
         return
     }
 
@@ -481,6 +488,7 @@ fun AppShell(
             offersYouVersionBibles = offersYouVersion,
             onMorningWelcome = { welcomeSettingsOpen = true },
             onWidgetStyles = { widgetStylesOpen = true },
+            onWidgetPhoto = { widgetPhotoOpen = true },
             onDone = { settingsOpen = false },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )

@@ -79,7 +79,7 @@ import java.time.ZoneId
  * Premium screen comes with Google Play Billing).
  */
 @Composable
-fun WidgetStylesScreen(onDone: () -> Unit, modifier: Modifier = Modifier) {
+fun WidgetStylesScreen(onDone: () -> Unit, onPhoto: () -> Unit, modifier: Modifier = Modifier) {
     val colors = LocalReaderColors.current
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -153,7 +153,10 @@ fun WidgetStylesScreen(onDone: () -> Unit, modifier: Modifier = Modifier) {
                         .clip(RoundedCornerShape(16.dp))
                         .background(colors.surface)
                         .semantics { this.selected = selected }
-                        .clickable(enabled = !locked, role = Role.RadioButton) { scope.launch { WidgetStylePreference.set(context, style) } }
+                        .clickable(enabled = !locked, role = Role.RadioButton) {
+                            scope.launch { WidgetStylePreference.set(context, style) }
+                            if (style == WidgetArtStyle.PHOTO && !WidgetPhoto.exists(context)) onPhoto()
+                        }
                         .padding(14.dp),
                     verticalArrangement = Arrangement.spacedBy(10.dp),
                 ) {
@@ -164,6 +167,9 @@ fun WidgetStylesScreen(onDone: () -> Unit, modifier: Modifier = Modifier) {
                             locked -> PremiumTag()
                             selected -> Text("✓", color = colors.accent, fontWeight = FontWeight.SemiBold)
                         }
+                    }
+                    if (style == WidgetArtStyle.PHOTO && !locked && !WidgetPhoto.exists(context)) {
+                        Text(stringResource(R.string.choose_photo_for_style), style = MaterialTheme.typography.bodySmall, color = colors.secondaryText)
                     }
                 }
             }
@@ -176,13 +182,14 @@ fun WidgetStylesScreen(onDone: () -> Unit, modifier: Modifier = Modifier) {
 @Composable
 private fun Preview(style: WidgetArtStyle, shape: WidgetArtShape, verse: Pair<String, String>?, drawn: Int) {
     val context = LocalContext.current
-    val picture by produceState<Bitmap?>(null, style, shape, drawn) {
-        value = if (style.isPainted) withContext(Dispatchers.IO) { WidgetArt.load(context, style, shape) } else null
+    val photoVersion by WidgetPhoto.version.collectAsStateWithLifecycle()
+    val picture by produceState<Bitmap?>(null, style, shape, drawn, photoVersion) {
+        value = if (style.hasPicture) withContext(Dispatchers.IO) { WidgetArt.load(context, style, shape) } else null
     }
     val dark = style.isDark
     val palette = (VerseImageStyle.entries.firstOrNull { it.rawValue == style.rawValue } ?: VerseImageStyle.PAPER).theme(ReaderTheme.PAPER).palette
     fun hex(value: Int) = Color(0xFF000000 or value.toLong())
-    val classic = !style.isPainted
+    val classic = !style.hasPicture
     val text = when {
         classic -> Color(0xFF4A2E1A)
         dark -> Color(0xFFF6EEE2)

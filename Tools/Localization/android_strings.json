@@ -1677,6 +1677,19 @@
     "widget_size_medium": "Medium",
     "widget_size_large": "Large",
     "widget_styles_footer": "Your verse widgets use the style you choose here. To give one widget its own look, touch and hold it, open its settings and choose a Background.",
-    "widget_style_preview": "Preview of the %@ style"
+    "widget_style_preview": "Preview of the %@ style",
+    "widget_photo": "Widget Photo",
+    "widget_photo_preview": "Preview of the verse widget with your photo",
+    "no_photo_chosen": "No photo chosen",
+    "change_photo": "Change Photo",
+    "choose_photo": "Choose Photo",
+    "adjust_photo": "Adjust Photo",
+    "remove_photo": "Remove Photo",
+    "widget_photo_footer": "To use it, choose Your Photo in Settings › Widget Styles. The photo stays on this phone.",
+    "adjust_photo_footer": "Drag to move the photo and pinch to zoom. Each widget size keeps its own framing.",
+    "reset": "Reset",
+    "widget_photo_in_widget": "Your photo in the widget",
+    "widget_style_photo": "Your Photo",
+    "choose_photo_for_style": "Choose a photo to use this style."
   }
 }

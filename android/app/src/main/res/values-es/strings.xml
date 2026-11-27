@@ -1677,4 +1677,17 @@
     <string name="widget_size_large">Grande</string>
     <string name="widget_styles_footer">Tus widgets del versículo usan el estilo que elijas aquí. Para darle a un widget su propio aspecto, mantenlo pulsado, abre sus ajustes y elige un fondo.</string>
     <string name="widget_style_preview">Vista previa del estilo %s</string>
+    <string name="widget_photo">Foto del widget</string>
+    <string name="widget_photo_preview">Vista previa del widget del versículo con tu foto</string>
+    <string name="no_photo_chosen">No has elegido ninguna foto</string>
+    <string name="change_photo">Cambiar foto</string>
+    <string name="choose_photo">Elegir foto</string>
+    <string name="adjust_photo">Ajustar foto</string>
+    <string name="remove_photo">Quitar foto</string>
+    <string name="widget_photo_footer">Para usarla, elige Tu foto en Ajustes › Estilos de widgets. La foto se queda en este teléfono.</string>
+    <string name="adjust_photo_footer">Arrastra para mover la foto y pellizca para acercarla. Cada tamaño de widget guarda su propio encuadre.</string>
+    <string name="reset">Restablecer</string>
+    <string name="widget_photo_in_widget">Tu foto en el widget</string>
+    <string name="widget_style_photo">Tu foto</string>
+    <string name="choose_photo_for_style">Elige una foto para usar este estilo.</string>
 </resources>

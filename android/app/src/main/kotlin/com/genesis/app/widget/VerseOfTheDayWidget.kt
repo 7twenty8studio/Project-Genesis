@@ -89,7 +89,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
         val own = runCatching { getAppWidgetState(context, PreferencesGlanceStateDefinition, id)[BACKGROUND] }.getOrNull()
         val wanted = com.genesis.core.domain.widgets.VerseWidgetBackground.resolve(own, WidgetStylePreference.current(context))
         val style = wanted.shown(Entitlements.isPremium)
-        val art = if (style.isPainted) withContext(Dispatchers.IO) {
+        val art = if (style.hasPicture) withContext(Dispatchers.IO) {
             com.genesis.core.domain.widgets.WidgetArtShape.entries.associateWith { WidgetArt.load(context, style, it) }
         } else emptyMap()
         // A painted style whose pictures aren't drawn yet shows Classic until they are.
@@ -278,7 +278,7 @@ internal data class WidgetLook(
 ) {
     companion object {
         fun of(style: com.genesis.core.domain.widgets.WidgetArtStyle, art: Map<com.genesis.core.domain.widgets.WidgetArtShape, android.graphics.Bitmap?>, styleTag: Boolean): WidgetLook {
-            if (!style.isPainted) return WidgetLook(emptyMap(), WidgetPalette.text, WidgetPalette.secondary, WidgetPalette.accent, styleTag)
+            if (!style.hasPicture) return WidgetLook(emptyMap(), WidgetPalette.text, WidgetPalette.secondary, WidgetPalette.accent, styleTag)
             fun fixed(hex: Long) = androidx.glance.unit.ColorProvider(Color(hex))
             if (style.isDark) return WidgetLook(art, fixed(0xFFF6EEE2), fixed(0xFFDCCBB6), fixed(0xFFEBC08F), styleTag)
             val palette = (com.genesis.core.domain.share.VerseImageStyle.entries.firstOrNull { it.rawValue == style.rawValue }

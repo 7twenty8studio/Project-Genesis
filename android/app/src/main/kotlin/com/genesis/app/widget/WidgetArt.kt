@@ -73,8 +73,9 @@ object WidgetArt {
     private const val TAG = "WidgetArt"
     private val drawing = Mutex()
 
-    private fun folder(context: Context) = File(context.filesDir, "WidgetArt")
+    internal fun folder(context: Context) = File(context.applicationContext.filesDir, "WidgetArt")
 
+    /** A painted picture, or the person's photo framed for the shape. */
     fun file(context: Context, style: WidgetArtStyle, shape: WidgetArtShape): File =
         File(folder(context), "${style.rawValue}-${shape.rawValue}.jpg")
 

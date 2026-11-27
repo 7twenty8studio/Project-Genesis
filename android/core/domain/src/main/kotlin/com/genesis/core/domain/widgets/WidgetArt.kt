@@ -4,7 +4,7 @@ package com.genesis.core.domain.widgets
  * The verse widget's looks, as WidgetArtStyle on iOS (the same ids). Classic
  * is free; the painted papers, the seasons, Night and the scenes are
  * Premium, and show Classic with a Premium tag without it, never a locked
- * card. (Vintage, the keepsakes and Your Photo join later.)
+ * card. (Vintage and the keepsakes join later.)
  */
 enum class WidgetArtStyle(val rawValue: String) {
     CLASSIC("classic"),
@@ -16,24 +16,29 @@ enum class WidgetArtStyle(val rawValue: String) {
     WINTER("winter"),
     FOREST("forest"),
     OCEAN("ocean"),
-    HEARTH("hearth");
+    HEARTH("hearth"),
+    /** A photo the person chose in Versely (Settings › Widget Photo). */
+    PHOTO("photo");
 
     val needsPremium: Boolean get() = this != CLASSIC
 
     val isScene: Boolean get() = this == FOREST || this == OCEAN || this == HEARTH
 
-    /** Words go in light ink on these. */
-    val isDark: Boolean get() = this == NIGHT || isScene
+    /** Words go in light ink on these (dark art or a shaded photo). */
+    val isDark: Boolean get() = this == NIGHT || this == PHOTO || isScene
 
-    /** A picture the app paints for the widget (everything but Classic). */
-    val isPainted: Boolean get() = this != CLASSIC
+    /** A picture the app paints for the widget. */
+    val isPainted: Boolean get() = this != CLASSIC && this != PHOTO
+
+    /** A picture behind the words (painted, or the person's photo). */
+    val hasPicture: Boolean get() = this != CLASSIC
 
     /** What a widget shows: the style, or Classic without Premium (with a Premium tag). */
     fun shown(premium: Boolean): WidgetArtStyle = if (needsPremium && !premium) CLASSIC else this
 
     companion object {
         /** The order Widget Styles shows them in, as on iOS. */
-        val galleryOrder: List<WidgetArtStyle> = listOf(CLASSIC, PAPER, NIGHT, SPRING, SUMMER, AUTUMN, WINTER, FOREST, OCEAN, HEARTH)
+        val galleryOrder: List<WidgetArtStyle> = listOf(CLASSIC, PAPER, NIGHT, SPRING, SUMMER, AUTUMN, WINTER, FOREST, OCEAN, HEARTH, PHOTO)
 
         val painted: List<WidgetArtStyle> = entries.filter { it.isPainted }
 
