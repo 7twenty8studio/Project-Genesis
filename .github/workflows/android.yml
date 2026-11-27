@@ -1,0 +1,49 @@
+# Builds Versely for Android and runs its shared tests.
+# Runs only when something Android reads changes, to save Actions minutes.
+name: Android
+
+on:
+  push:
+    paths:
+      - "android/**"
+      - "Genesis/Resources/Bibles/**"
+      - "supabase/functions/_shared/bibleBooks.json"
+      - "fixtures/**"
+      - "Tools/Localization/**"
+      - ".github/workflows/android.yml"
+  pull_request:
+    paths:
+      - "android/**"
+      - "Genesis/Resources/Bibles/**"
+      - "supabase/functions/_shared/bibleBooks.json"
+      - "fixtures/**"
+      - "Tools/Localization/**"
+      - ".github/workflows/android.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: android
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: android-actions/setup-android@v3
+      - name: Install Android SDK platform 37.2
+        run: sdkmanager "platforms;android-37.2" "platforms;android-37.0" "build-tools;36.0.0"
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Android strings are up to date
+        working-directory: .
+        run: python3 Tools/Localization/build_android_strings.py --check
+      - name: Tests and debug build
+        run: ./gradlew --no-configuration-cache :core:domain:test :app:assembleDebug
