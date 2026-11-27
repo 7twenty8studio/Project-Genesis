@@ -78,4 +78,17 @@
     <string name="note_placeholder_text">Escribe una nota…</string>
     <string name="note_placeholder_study">Observaciones, preguntas, conexiones…</string>
     <string name="note_placeholder_journal">¿Qué hay en tu corazón hoy?</string>
+    <string name="search">Buscar</string>
+    <string name="search_try">Prueba</string>
+    <string name="go_to">Ir a %s</string>
+    <string name="one_verse">1 versículo</string>
+    <string name="verse_count">%d versículos</string>
+    <string name="verses_showing">%1$d versículos · se muestran %2$d</string>
+    <string name="no_verses_found">No se encontraron versículos en la %s. Prueba con menos palabras o con otra ortografía.</string>
+    <string name="search_example_john">Juan 3:16</string>
+    <string name="search_example_psalm">Salmos 23</string>
+    <string name="search_example_forgiveness">perdón</string>
+    <string name="search_example_love">améis unos a otros</string>
+    <string name="search_example_shepherd">“Jehová es mi pastor”</string>
+    <string name="search_example_romans">Romanos 8</string>
 </resources>

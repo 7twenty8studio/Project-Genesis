@@ -8,7 +8,18 @@ data class PassageReference(
     val chapter: Int? = null,
     val verseStart: Int? = null,
     val verseEnd: Int? = null,
-)
+) {
+    /** Where the reader opens for it: its first verse, or the chapter's start. */
+    val firstVerse: VerseId get() = VerseId(book.id, chapter ?: 1, verseStart ?: 1)
+
+    /** "John 3:16–18", "Salmos 23" or "Romans", in a language. */
+    fun description(language: String): String {
+        val name = book.name(language)
+        val chapter = chapter ?: return name
+        val start = verseStart ?: return "$name $chapter"
+        return ReferenceParser.describe(firstVerse.rawValue, VerseId(book.id, chapter, verseEnd ?: start).rawValue, language)
+    }
+}
 
 enum class ReferenceStatus { VERIFIED, AMBIGUOUS, UNLINKED }
 

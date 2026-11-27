@@ -7,6 +7,8 @@ import androidx.sqlite.driver.bundled.SQLITE_OPEN_READONLY
 import androidx.sqlite.execSQL
 import com.genesis.core.domain.bible.ChapterId
 import com.genesis.core.domain.bible.VerseId
+import com.genesis.core.domain.search.SearchOrder
+import com.genesis.core.domain.search.SearchScope
 import java.io.File
 
 /**
@@ -63,6 +65,51 @@ class BibleRepository private constructor(private val connection: SQLiteConnecti
             }
         }
         Chapter(id, translation, verses, headings)
+    }
+
+    /**
+     * Verses matching an FTS5 expression (from `FullTextQuery`, never typed
+     * text), verbatim, best match first or in Bible order.
+     */
+    fun search(matchExpression: String, scope: SearchScope, order: SearchOrder, limit: Int): List<Verse> = synchronized(lock) {
+        val range = scope.idRange
+        val orderBy = if (order == SearchOrder.RELEVANCE) "f.rank" else "f.rowid"
+        buildList {
+            connection.prepare(
+                """
+                SELECT v.id, v.text, v.paragraph, v.poetry
+                FROM verses_fts f JOIN verses v ON v.id = f.rowid
+                WHERE verses_fts MATCH ? AND f.rowid BETWEEN ? AND ?
+                ORDER BY $orderBy
+                LIMIT ?
+                """.trimIndent(),
+            ).use { statement ->
+                statement.bindText(1, matchExpression)
+                statement.bindLong(2, range.first.toLong())
+                statement.bindLong(3, range.last.toLong())
+                statement.bindLong(4, limit.toLong())
+                while (statement.step()) {
+                    add(
+                        Verse(
+                            id = VerseId(statement.getLong(0).toInt()),
+                            text = statement.getText(1),
+                            startsParagraph = statement.getLong(2) != 0L,
+                            isPoetry = statement.getLong(3) != 0L,
+                        ),
+                    )
+                }
+            }
+        }
+    }
+
+    fun countMatches(matchExpression: String, scope: SearchScope): Int = synchronized(lock) {
+        val range = scope.idRange
+        connection.prepare("SELECT count(*) FROM verses_fts WHERE verses_fts MATCH ? AND rowid BETWEEN ? AND ?").use { statement ->
+            statement.bindText(1, matchExpression)
+            statement.bindLong(2, range.first.toLong())
+            statement.bindLong(3, range.last.toLong())
+            if (statement.step()) statement.getLong(0).toInt() else 0
+        }
     }
 
     override fun close() = synchronized(lock) { connection.close() }

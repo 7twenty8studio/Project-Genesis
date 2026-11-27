@@ -79,4 +79,17 @@
     <string name="note_placeholder_text">Write a note…</string>
     <string name="note_placeholder_study">Observations, questions, connections…</string>
     <string name="note_placeholder_journal">What\'s on your heart today?</string>
+    <string name="search">Search</string>
+    <string name="search_try">Try</string>
+    <string name="go_to">Go to %s</string>
+    <string name="one_verse">1 verse</string>
+    <string name="verse_count">%d verses</string>
+    <string name="verses_showing">%1$d verses · showing %2$d</string>
+    <string name="no_verses_found">No verses found in the %s. Try fewer words or a different spelling.</string>
+    <string name="search_example_john">John 3:16</string>
+    <string name="search_example_psalm">Psalm 23</string>
+    <string name="search_example_forgiveness">forgiveness</string>
+    <string name="search_example_love">love one another</string>
+    <string name="search_example_shepherd">“the Lord is my shepherd”</string>
+    <string name="search_example_romans">Romans 8</string>
 </resources>

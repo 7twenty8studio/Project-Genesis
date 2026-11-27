@@ -47,6 +47,7 @@ internal fun PagedChapter(
     style: TextStyle,
     runningHead: String,
     openAtEnd: Boolean,
+    focus: ReaderFocus?,
     onNextChapter: () -> Unit,
     onPreviousChapter: () -> Unit,
     onVerseTap: (com.genesis.core.domain.bible.VerseId) -> Unit,
@@ -76,7 +77,14 @@ internal fun PagedChapter(
 
         // One blank page at each end stands for the chapters either side.
         val pageCount = pages.size + 2
-        val pager = rememberPagerState(initialPage = if (openAtEnd) pages.size else 1) { pageCount }
+        fun pageOf(focus: ReaderFocus?): Int? {
+            val id = focus?.verse?.rawValue?.toString() ?: return null
+            val index = pages.indexOfFirst { page -> page.getStringAnnotations(VERSE_TAG, 0, page.length).any { it.item == id } }
+            return if (index >= 0) index + 1 else null
+        }
+        val pager = rememberPagerState(initialPage = pageOf(focus) ?: if (openAtEnd) pages.size else 1) { pageCount }
+        // A verse found by search in the chapter already open.
+        LaunchedEffect(focus) { pageOf(focus)?.let { if (it != pager.currentPage) pager.scrollToPage(it) } }
 
         LaunchedEffect(pager, pages.size) {
             snapshotFlow { pager.settledPage }.distinctUntilChanged().drop(1).collect { page ->

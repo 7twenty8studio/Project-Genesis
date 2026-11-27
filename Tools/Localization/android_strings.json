@@ -78,6 +78,19 @@
     "note_kind_journal": "Journal",
     "note_placeholder_text": "Write a note…",
     "note_placeholder_study": "Observations, questions, connections…",
-    "note_placeholder_journal": "What's on your heart today?"
+    "note_placeholder_journal": "What's on your heart today?",
+    "search": "Search",
+    "search_try": "Try",
+    "go_to": "Go to %@",
+    "one_verse": "1 verse",
+    "verse_count": "%lld verses",
+    "verses_showing": "%lld verses · showing %lld",
+    "no_verses_found": "No verses found in the %@. Try fewer words or a different spelling.",
+    "search_example_john": "John 3:16",
+    "search_example_psalm": "Psalm 23",
+    "search_example_forgiveness": "forgiveness",
+    "search_example_love": "love one another",
+    "search_example_shepherd": "“the Lord is my shepherd”",
+    "search_example_romans": "Romans 8"
   }
 }

@@ -78,4 +78,17 @@
     <string name="note_placeholder_text">Escreva uma anotação…</string>
     <string name="note_placeholder_study">Observações, perguntas, conexões…</string>
     <string name="note_placeholder_journal">O que está no seu coração hoje?</string>
+    <string name="search">Buscar</string>
+    <string name="search_try">Experimente</string>
+    <string name="go_to">Ir para %s</string>
+    <string name="one_verse">1 versículo</string>
+    <string name="verse_count">%d versículos</string>
+    <string name="verses_showing">%1$d versículos · mostrando %2$d</string>
+    <string name="no_verses_found">Nenhum versículo encontrado na %s. Tente menos palavras ou outra grafia.</string>
+    <string name="search_example_john">João 3:16</string>
+    <string name="search_example_psalm">Salmos 23</string>
+    <string name="search_example_forgiveness">perdão</string>
+    <string name="search_example_love">ameis uns aos outros</string>
+    <string name="search_example_shepherd">“O Senhor é meu pastor”</string>
+    <string name="search_example_romans">Romanos 8</string>
 </resources>

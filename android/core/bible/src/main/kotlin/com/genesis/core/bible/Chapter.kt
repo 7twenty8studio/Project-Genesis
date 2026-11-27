@@ -14,6 +14,9 @@ data class Verse(
     val isPoetry: Boolean,
 ) {
     val number: Int get() = id.verse
+
+    /** One line, for copying, sharing and search results (as `plainText` on iOS). */
+    val plainText: String get() = text.replace('\n', ' ')
 }
 
 /** A section heading from the translation, shown before a verse. */

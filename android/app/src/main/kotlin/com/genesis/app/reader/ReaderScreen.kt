@@ -63,8 +63,12 @@ fun ReaderRoute(
     viewModel: ReaderViewModel = viewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val search by viewModel.search.collectAsStateWithLifecycle()
     ReaderScreen(
         state = state,
+        search = search,
+        onSearch = viewModel::search,
+        onOpenVerse = viewModel::openVerse,
         onChangeSettings = onChangeSettings,
         onOpen = viewModel::open,
         onChooseBible = viewModel::choose,
@@ -116,6 +120,9 @@ data class SelectionActions(
 @Composable
 fun ReaderScreen(
     state: ReaderUiState,
+    search: SearchUiState = SearchUiState(),
+    onSearch: (String) -> Unit = {},
+    onOpenVerse: (VerseId) -> Unit = {},
     onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Unit,
     onOpen: (com.genesis.core.domain.bible.ChapterId) -> Unit,
     onChooseBible: (com.genesis.core.bible.BundledBible) -> Unit,
@@ -128,6 +135,7 @@ fun ReaderScreen(
     var picking by rememberSaveable { mutableStateOf(false) }
     var bibleMenu by remember { mutableStateOf(false) }
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
+    var searching by rememberSaveable { mutableStateOf(false) }
     val language = state.chapter?.translation?.language ?: "en"
     val colors = LocalReaderColors.current
 
@@ -153,6 +161,11 @@ fun ReaderScreen(
                     }
                 },
                 actions = {
+                    val searchLabel = stringResource(R.string.search)
+                    IconButton(
+                        onClick = { searching = true },
+                        modifier = Modifier.semantics { contentDescription = searchLabel },
+                    ) { Magnifier(colors.accent) }
                     if (state.isChapterBookmarked) {
                         val removeBookmark = stringResource(R.string.remove_bookmark)
                         IconButton(
@@ -225,13 +238,14 @@ fun ReaderScreen(
                         style = scripture,
                         runningHead = state.chapterId.description(language).uppercase(),
                         openAtEnd = state.openAtEnd,
+                        focus = state.focus,
                         onNextChapter = onNext,
                         onPreviousChapter = onPreviousAtEnd,
                         onVerseTap = selection.onVerseTap,
                         onNoteTap = selection.onNoteTap,
                     )
                 }
-                state.chapter != null -> ChapterText(state.chapter, scripture, marks, selection.onVerseTap, selection.onNoteTap)
+                state.chapter != null -> ChapterText(state.chapter, scripture, marks, state.focus, selection.onVerseTap, selection.onNoteTap)
                 state.failed -> Text(
                     stringResource(R.string.chapter_load_failed),
                     color = colors.secondaryText,
@@ -246,6 +260,19 @@ fun ReaderScreen(
             preferences = LocalReaderPreferences.current,
             onChange = onChangeSettings,
             onDismiss = { settingsOpen = false },
+        )
+    }
+
+    if (searching) {
+        SearchSheet(
+            search = search,
+            scripture = scriptureStyle(LocalReaderPreferences.current, Entitlements.isPremium),
+            onText = onSearch,
+            onOpen = {
+                searching = false
+                onOpenVerse(it)
+            },
+            onDismiss = { searching = false },
         )
     }
 
@@ -273,11 +300,17 @@ fun ReaderScreen(
 }
 
 @Composable
-private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMarks, onVerseTap: (VerseId) -> Unit, onNoteTap: (String) -> Unit) {
+private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMarks, focus: ReaderFocus?, onVerseTap: (VerseId) -> Unit, onNoteTap: (String) -> Unit) {
     val colors = LocalReaderColors.current
     val listState = rememberLazyListState()
-    LaunchedEffect(chapter.id, chapter.translation.id) { listState.scrollToItem(0) }
     val blocks = remember(chapter) { blocks(chapter) }
+    LaunchedEffect(chapter.id, chapter.translation.id, focus) {
+        // The chapter's number is item 0; a verse from search scrolls to its block.
+        val block = focus?.takeIf { it.verse.chapterId == chapter.id }?.let { focus ->
+            blocks.indexOfFirst { it is Block.Prose && it.verses.any { verse -> verse.id == focus.verse } }
+        }
+        listState.scrollToItem(if (block != null && block >= 0) block + 1 else 0)
+    }
 
     LazyColumn(
         state = listState,
@@ -330,5 +363,18 @@ private fun Ribbon(color: androidx.compose.ui.graphics.Color) {
             close()
         }
         drawPath(path, color)
+    }
+}
+
+/** The search button's magnifying glass. */
+@Composable
+private fun Magnifier(color: androidx.compose.ui.graphics.Color) {
+    Canvas(Modifier.size(20.dp)) {
+        val stroke = size.minDimension * 0.11f
+        val radius = size.minDimension * 0.32f
+        val center = androidx.compose.ui.geometry.Offset(size.width * 0.42f, size.height * 0.42f)
+        drawCircle(color, radius, center, style = androidx.compose.ui.graphics.drawscope.Stroke(stroke))
+        val start = androidx.compose.ui.geometry.Offset(center.x + radius * 0.72f, center.y + radius * 0.72f)
+        drawLine(color, start, androidx.compose.ui.geometry.Offset(size.width * 0.92f, size.height * 0.92f), stroke, androidx.compose.ui.graphics.StrokeCap.Round)
     }
 }

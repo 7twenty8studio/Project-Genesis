@@ -5,6 +5,8 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.genesis.core.bible.BibleRepository
+import com.genesis.core.bible.BibleSearch
+import com.genesis.core.bible.SearchResults
 import com.genesis.core.bible.BundledBible
 import com.genesis.core.bible.Chapter
 import com.genesis.core.bible.Translation
@@ -18,6 +20,8 @@ import com.genesis.core.domain.study.Note
 import com.genesis.core.domain.study.NoteAnchor
 import com.genesis.core.domain.study.ShareText
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -47,6 +51,8 @@ data class ReaderUiState(
     val notes: List<Note> = emptyList(),
     /** The note open in the editor, if any. */
     val editingNote: Note? = null,
+    /** A verse to bring into view (from search), once per request. */
+    val focus: ReaderFocus? = null,
 ) {
     val isChapterBookmarked: Boolean get() = Bookmarks.isBookmarked(bookmarks, chapterId)
 
@@ -61,7 +67,7 @@ data class ReaderUiState(
     val shareText: String
         get() {
             val chapter = chapter ?: return ""
-            val verses = chapter.verses.filter { it.id in selection }.map { it.id to it.text }
+            val verses = chapter.verses.filter { it.id in selection }.map { it.id to it.plainText }
             return ShareText.of(verses, chapter.translation.abbreviation, chapter.translation.language)
         }
 
@@ -73,12 +79,27 @@ data class ReaderUiState(
         }
 }
 
+/** A verse the reader brings into view; a new token asks again for the same verse. */
+data class ReaderFocus(val verse: VerseId, val token: Long = System.nanoTime())
+
+/** What the search sheet shows. */
+data class SearchUiState(
+    val text: String = "",
+    val results: SearchResults = SearchResults(),
+    val translationAbbreviation: String = "",
+    val language: String = "en",
+)
+
 class ReaderViewModel(application: Application) : AndroidViewModel(application) {
     private val repositories = mutableMapOf<BundledBible, BibleRepository>()
     private val _state = MutableStateFlow(ReaderUiState(bible = BundledBible.default(Locale.getDefault().language)))
     val state: StateFlow<ReaderUiState> = _state.asStateFlow()
 
     private val app = application as VerselyApplication
+
+    private val _search = MutableStateFlow(SearchUiState())
+    val search: StateFlow<SearchUiState> = _search.asStateFlow()
+    private var searchJob: Job? = null
 
     init {
         viewModelScope.launch {
@@ -107,13 +128,43 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     fun open(chapterId: ChapterId, atEnd: Boolean = false) {
-        _state.update { it.copy(chapterId = chapterId, openAtEnd = atEnd, selection = emptySet()) }
+        _state.update { it.copy(chapterId = chapterId, openAtEnd = atEnd, selection = emptySet(), focus = null) }
         load()
+    }
+
+    /** Opens a verse's chapter with the verse in view (search results, references). */
+    fun openVerse(verse: VerseId) {
+        val sameChapter = state.value.chapterId == verse.chapterId
+        _state.update { it.copy(chapterId = verse.chapterId, openAtEnd = false, selection = emptySet(), focus = ReaderFocus(verse)) }
+        if (!sameChapter) load()
+    }
+
+    /** Searches the Bible being read as the person types, after a short pause. */
+    fun search(text: String) {
+        _search.update { it.copy(text = text) }
+        searchJob?.cancel()
+        val bible = state.value.bible
+        searchJob = viewModelScope.launch {
+            if (text.isBlank()) {
+                _search.update { it.copy(results = SearchResults()) }
+                return@launch
+            }
+            // A brief pause so fast typists don't search on every keystroke.
+            delay(90)
+            val found = withContext(Dispatchers.IO) {
+                runCatching {
+                    val repository = repository(bible)
+                    Triple(BibleSearch.run(text, repository), repository.translation.abbreviation, repository.translation.language)
+                }.onFailure { Log.e(TAG, "Search failed", it) }.getOrNull()
+            } ?: return@launch
+            _search.update { it.copy(results = found.first, translationAbbreviation = found.second, language = found.third) }
+        }
     }
 
     fun choose(bible: BundledBible) {
         _state.update { it.copy(bible = bible) }
         load()
+        if (_search.value.text.isNotBlank()) search(_search.value.text)
     }
 
     fun next() = state.value.chapterId.next?.let { open(it) }
