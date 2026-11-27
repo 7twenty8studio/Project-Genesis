@@ -352,6 +352,10 @@ fun ReaderScreen(
             }
             // Starlight's sky lies over the page, in the margins and the band at the top only.
             val shownTheme = preferences.theme.resolved(androidx.compose.foundation.isSystemInDarkTheme())
+            val season = shownTheme.season
+            if (season != null && preferences.seasonalEffects && state.chapter != null && !state.showsOriginal) {
+                key(season) { com.genesis.app.reader.backdrop.SeasonalEffect(season) }
+            }
             if (shownTheme.hasStars && state.chapter != null && !state.showsOriginal) {
                 val paged = preferences.readingMode == ReadingMode.PAGE
                 com.genesis.app.reader.backdrop.StarlightSky(
