@@ -147,7 +147,7 @@ fun HeadphonesIcon(color: Color, iconSize: Dp = 22.dp) {
 }
 
 @Composable
-private fun PlayIcon(color: Color, iconSize: Dp = 22.dp) {
+internal fun PlayIcon(color: Color, iconSize: Dp = 22.dp) {
     Canvas(Modifier.size(iconSize)) {
         drawPath(Path().apply {
             moveTo(size.width * 0.25f, size.height * 0.15f)
@@ -159,7 +159,7 @@ private fun PlayIcon(color: Color, iconSize: Dp = 22.dp) {
 }
 
 @Composable
-private fun PauseIcon(color: Color, iconSize: Dp = 22.dp) {
+internal fun PauseIcon(color: Color, iconSize: Dp = 22.dp) {
     Canvas(Modifier.size(iconSize)) {
         val bar = Size(size.width * 0.22f, size.height * 0.7f)
         drawRect(color, Offset(size.width * 0.22f, size.height * 0.15f), bar)

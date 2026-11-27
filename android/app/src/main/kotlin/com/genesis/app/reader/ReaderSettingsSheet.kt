@@ -69,6 +69,7 @@ internal fun ReaderSettingsSheet(
     preferences: ReaderPreferences,
     onChange: ((ReaderPreferences) -> ReaderPreferences) -> Unit,
     onDismiss: () -> Unit,
+    onAmbient: (() -> Unit)? = null,
 ) {
     val colors = LocalReaderColors.current
     val premium = Entitlements.isPremium
@@ -180,6 +181,21 @@ internal fun ReaderSettingsSheet(
                     locked = font.isPremium && !premium,
                     onClick = { onChange { it.copy(font = font) } },
                 )
+            }
+
+            if (onAmbient != null) {
+                SectionTitle(R.string.ambient_sounds)
+                Row(
+                    Modifier
+                        .fillMaxWidth()
+                        .clickable(enabled = premium, role = Role.Button, onClick = onAmbient)
+                        .alpha(if (premium) 1f else 0.55f)
+                        .padding(horizontal = 24.dp, vertical = 10.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(stringResource(R.string.ambient_title), color = colors.text, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
+                    if (premium) Text("›", color = colors.secondaryText, fontSize = 20.sp) else PremiumTag()
+                }
             }
         }
     }

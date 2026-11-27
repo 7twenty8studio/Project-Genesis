@@ -92,6 +92,9 @@ class VerselyApplication : Application() {
         com.genesis.app.audio.Listening(this, com.genesis.app.audio.ListeningSettings(this))
     }
 
+    /** Ambient sounds to read and pray with (Premium). */
+    val ambient: com.genesis.app.audio.AmbientSounds by lazy { com.genesis.app.audio.AmbientSounds(this, listening) }
+
     /** Settings › Notifications. */
     val notifications: NotificationPreferences by lazy { NotificationPreferences(this) }
     private var remindersFollowed = false

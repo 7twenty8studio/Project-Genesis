@@ -56,6 +56,10 @@ android {
         compose = true
         buildConfig = true
     }
+    sourceSets {
+        // Ambient sounds: the same loops as iOS (Genesis/Resources/Ambient), never copied.
+        getByName("main").assets.directories.add("../../Genesis/Resources/Ambient")
+    }
     androidResources {
         // Screens in English, Spanish and Brazilian Portuguese, as on iOS.
         localeFilters += listOf("en", "es", "pt-rBR")
@@ -78,6 +82,7 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.glance.appwidget)
     implementation(libs.media3.session)
+    implementation(libs.media3.exoplayer)
     testImplementation(libs.kotlin.test)
     testImplementation(libs.junit)
 }

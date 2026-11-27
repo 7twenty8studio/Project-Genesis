@@ -1374,4 +1374,27 @@
     <string name="shape">Shape</string>
     <string name="background">Background</string>
     <string name="color">Color</string>
+    <string name="ambient_title">Ambient Sounds</string>
+    <string name="ambient_rain">Rain</string>
+    <string name="ambient_waves">Ocean Waves</string>
+    <string name="ambient_wind">Wind</string>
+    <string name="ambient_fireplace">Fireplace</string>
+    <string name="ambient_birdsong">Birdsong</string>
+    <string name="ambient_pad">Worship Pad</string>
+    <string name="ambient_mix_quiet_rain">Quiet Rain</string>
+    <string name="ambient_mix_fireside">Fireside</string>
+    <string name="ambient_mix_garden">Morning Garden</string>
+    <string name="ambient_mix_seaside">Seaside</string>
+    <string name="ambient_mix_sanctuary">Sanctuary</string>
+    <string name="ambient_sounds">Sounds</string>
+    <string name="ambient_mixes">Mixes</string>
+    <string name="ambient_timer">Timer</string>
+    <string name="ambient_fades_at">Fades out at %s.</string>
+    <string name="ambient_choose">Choose a sound</string>
+    <string name="ambient_playing">Playing</string>
+    <string name="ambient_paused">Paused</string>
+    <string name="ambient_stop">Stop ambient sounds</string>
+    <string name="ambient_bar_label">Ambient sounds, %s</string>
+    <string name="ambient_volume">%s volume</string>
+    <string name="ambient_footer_android">Sounds keep playing when you lock your phone, play alongside music from other apps, and sit quieter while the Bible is read aloud.</string>
 </resources>

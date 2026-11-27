@@ -234,6 +234,8 @@ fun ReaderScreen(
     var picking by rememberSaveable { mutableStateOf(false) }
     var bibleMenu by remember { mutableStateOf(false) }
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
+    var ambientOpen by rememberSaveable { mutableStateOf(false) }
+    val ambient = (androidx.compose.ui.platform.LocalContext.current.applicationContext as com.genesis.app.VerselyApplication).ambient
     val language = state.chapter?.translation?.language ?: "en"
     val colors = LocalReaderColors.current
 
@@ -333,6 +335,13 @@ fun ReaderScreen(
                     state = listening.state,
                     speed = listening.speed,
                     listening = listening.controls,
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
+                )
+            }
+            if (state.selection.isEmpty() && shows(com.genesis.core.domain.features.OptionalFeature.AMBIENT_SOUNDS)) {
+                com.genesis.app.audio.AmbientMiniBar(
+                    ambient = ambient,
+                    onOpen = { ambientOpen = true },
                     modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
                 )
             }
@@ -440,9 +449,14 @@ fun ReaderScreen(
         ReaderSettingsSheet(
             preferences = LocalReaderPreferences.current,
             onChange = onChangeSettings,
+            onAmbient = if (shows(com.genesis.core.domain.features.OptionalFeature.AMBIENT_SOUNDS)) {
+                { settingsOpen = false; ambientOpen = true }
+            } else null,
             onDismiss = { settingsOpen = false },
         )
     }
+
+    if (ambientOpen) com.genesis.app.audio.AmbientSoundsSheet(ambient) { ambientOpen = false }
 
     if (picking) {
         BookPicker(

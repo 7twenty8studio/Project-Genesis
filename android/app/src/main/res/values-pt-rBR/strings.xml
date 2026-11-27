@@ -1373,4 +1373,27 @@
     <string name="shape">Formato</string>
     <string name="background">Fundo</string>
     <string name="color">Cor</string>
+    <string name="ambient_title">Sons ambientes</string>
+    <string name="ambient_rain">Chuva</string>
+    <string name="ambient_waves">Ondas do mar</string>
+    <string name="ambient_wind">Vento</string>
+    <string name="ambient_fireplace">Lareira</string>
+    <string name="ambient_birdsong">Canto dos pássaros</string>
+    <string name="ambient_pad">Fundo de adoração</string>
+    <string name="ambient_mix_quiet_rain">Chuva suave</string>
+    <string name="ambient_mix_fireside">Junto ao fogo</string>
+    <string name="ambient_mix_garden">Jardim ao amanhecer</string>
+    <string name="ambient_mix_seaside">Beira-mar</string>
+    <string name="ambient_mix_sanctuary">Santuário</string>
+    <string name="ambient_sounds">Sons</string>
+    <string name="ambient_mixes">Misturas</string>
+    <string name="ambient_timer">Temporizador</string>
+    <string name="ambient_fades_at">Diminui até parar às %s.</string>
+    <string name="ambient_choose">Escolha um som</string>
+    <string name="ambient_playing">Tocando</string>
+    <string name="ambient_paused">Pausado</string>
+    <string name="ambient_stop">Parar os sons ambientes</string>
+    <string name="ambient_bar_label">Sons ambientes, %s</string>
+    <string name="ambient_volume">Volume de %s</string>
+    <string name="ambient_footer_android">Os sons continuam tocando com o celular bloqueado, tocam junto com música de outros apps e ficam mais baixos enquanto a Bíblia é lida em voz alta.</string>
 </resources>

@@ -57,7 +57,7 @@ class FeaturePreferences(context: Context, private val existingUser: () -> Boole
          * built; the study assistant stays out of Android).
          */
         val built: Set<OptionalFeature> = OptionalFeature.entries.toSet() -
-            setOf(OptionalFeature.STUDY_ASSISTANT, OptionalFeature.AMBIENT_SOUNDS, OptionalFeature.MOMENTS)
+            setOf(OptionalFeature.STUDY_ASSISTANT, OptionalFeature.MOMENTS)
 
         fun offered(flags: Map<String, Boolean>): List<OptionalFeature> =
             OptionalFeature.entries.filter { it in built && OptionalFeature.isAvailable(it, flags) }

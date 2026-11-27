@@ -70,6 +70,12 @@
             </intent-filter>
         </service>
 
+        <!-- Ambient sounds keep playing with the screen off. -->
+        <service
+            android:name=".audio.AmbientService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
         <activity
             android:name=".widget.VerseWidgetConfigureActivity"
             android:exported="true"
