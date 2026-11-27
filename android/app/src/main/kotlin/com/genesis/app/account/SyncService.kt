@@ -8,6 +8,8 @@ import com.genesis.core.cloud.RemoteHighlight
 import com.genesis.core.cloud.RemoteNote
 import com.genesis.core.cloud.RemotePlan
 import com.genesis.core.cloud.RemoteMemoryVerse
+import com.genesis.core.cloud.RemoteSermon
+import com.genesis.core.cloud.RemoteSermonPush
 import com.genesis.core.cloud.RemotePrayer
 import com.genesis.core.cloud.RemotePrayerPassage
 import com.genesis.core.cloud.SupabaseClient
@@ -19,6 +21,7 @@ import com.genesis.core.data.HighlightRecord
 import com.genesis.core.data.NoteRecord
 import com.genesis.core.data.PlanRecord
 import com.genesis.core.data.MemoryRecord
+import com.genesis.core.data.SermonRecord
 import com.genesis.core.data.PrayerRecord
 import com.genesis.core.domain.prayer.Prayer
 import com.genesis.core.domain.prayer.PrayerCategory
@@ -189,6 +192,9 @@ class SyncService(
         pull(SyncTable.MEMORY_VERSES, RemoteMemoryVerse.serializer(), client, token, userId) { rows ->
             database.sync.applyMemory(rows.mapNotNull { it.record() })
         }
+        pull(SyncTable.SERMONS, RemoteSermon.serializer(), client, token, userId, pageSize = 50) { rows ->
+            database.sync.applySermons(rows.mapNotNull { it.record() })
+        }
 
         // Everything edited since the last successful push, deletions included.
         val since = prefs.getLong(key("lastPushedAt", userId), 0)
@@ -198,6 +204,7 @@ class SyncService(
         push(SyncTable.READING_PLANS, RemotePlan.serializer(), database.sync.plansChanged(since).map { it.remote(userId) }, client, token)
         push(SyncTable.PRAYERS, RemotePrayer.serializer(), database.sync.prayersChanged(since).map { it.remote(userId) }, client, token)
         push(SyncTable.MEMORY_VERSES, RemoteMemoryVerse.serializer(), database.sync.memoryChanged(since).map { it.remote(userId) }, client, token)
+        push(SyncTable.SERMONS, RemoteSermonPush.serializer(), database.sync.sermonsChanged(since).map { it.remote(userId) }, client, token, batch = 50)
         for ((table, ids) in database.sync.pendingDeletions()) {
             client.markDeleted(table, ids, System.currentTimeMillis(), token)
             database.sync.clearPendingDeletions(table, ids)
@@ -398,5 +405,44 @@ private fun MemoryRecord.remote(userId: String) = RemoteMemoryVerse(
     reviewCount = verse.reviewCount,
     createdAt = Timestamps.string(verse.createdAt),
     updatedAt = Timestamps.string(verse.updatedAt),
+    deletedAt = deletedAt?.let(Timestamps::string),
+)
+
+private fun RemoteSermon.record(): SermonRecord? {
+    val updated = millis(updatedAt) ?: return null
+    val created = millis(createdAt) ?: updated
+    return SermonRecord(
+        com.genesis.core.domain.sermons.Sermon(
+            id = id.lowercase(),
+            title = title,
+            preacher = preacher,
+            church = church,
+            preachedAt = millis(preachedAt) ?: created,
+            series = series,
+            body = body,
+            passages = PrayerPassage.decode(passages.map { it.startVerse to it.endVerse }),
+            isFavourite = isFavourite,
+            sourceSermonId = sourceSermonId,
+            handoutsJson = handouts?.takeIf { it !is kotlinx.serialization.json.JsonNull }?.toString(),
+            createdAt = created,
+            updatedAt = updated,
+        ),
+        millis(deletedAt),
+    )
+}
+
+private fun SermonRecord.remote(userId: String) = RemoteSermonPush(
+    id = sermon.id,
+    userId = userId,
+    title = sermon.title.take(200),
+    preacher = sermon.preacher.take(120),
+    church = sermon.church.take(120),
+    preachedAt = Timestamps.string(sermon.preachedAt),
+    series = sermon.series?.trim()?.ifEmpty { null }?.take(120),
+    body = sermon.body.take(100_000),
+    passages = sermon.passages.map { RemotePrayerPassage(it.start.rawValue, it.end.rawValue) },
+    isFavourite = sermon.isFavourite,
+    createdAt = Timestamps.string(sermon.createdAt),
+    updatedAt = Timestamps.string(sermon.updatedAt),
     deletedAt = deletedAt?.let(Timestamps::string),
 )

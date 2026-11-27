@@ -20,6 +20,7 @@ import com.genesis.core.domain.memorise.MemoryGrade
 import com.genesis.core.domain.memorise.MemorySchedule
 import com.genesis.core.domain.memorise.MemoryVerse
 import com.genesis.core.domain.prayer.Prayer
+import com.genesis.core.domain.sermons.Sermon
 import com.genesis.core.domain.prayer.PrayerCategory
 import com.genesis.core.domain.prayer.PrayerPassage
 import com.genesis.core.domain.plans.ReadingPlan
@@ -177,6 +178,32 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             )
             connection.execSQL("PRAGMA user_version = 6")
         }
+        if (version < 7) {
+            // Sermon Notes, as sermons on the server: passages as "start-end" ids,
+            // never the text. The church sermon id and handouts (JSON) come from
+            // the iPhone and are kept as they are.
+            connection.execSQL(
+                """
+                CREATE TABLE sermons (
+                    id TEXT PRIMARY KEY NOT NULL,
+                    title TEXT NOT NULL DEFAULT '',
+                    preacher TEXT NOT NULL DEFAULT '',
+                    church TEXT NOT NULL DEFAULT '',
+                    preached_at INTEGER NOT NULL,
+                    series TEXT,
+                    body TEXT NOT NULL DEFAULT '',
+                    passages TEXT NOT NULL DEFAULT '',
+                    is_favourite INTEGER NOT NULL DEFAULT 0,
+                    source_sermon_id TEXT,
+                    handouts TEXT,
+                    created_at INTEGER NOT NULL,
+                    updated_at INTEGER NOT NULL,
+                    deleted_at INTEGER
+                )
+                """.trimIndent(),
+            )
+            connection.execSQL("PRAGMA user_version = 7")
+        }
     }
 
     private val _localEdits = MutableStateFlow(0L)
@@ -192,6 +219,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
     val plans = PlanStore()
     val prayers = PrayerStore()
     val memory = MemoryStore()
+    val sermons = SermonStore()
     val sync = SyncAccess()
 
     /** Reading plans the person follows, the most recently changed first (as Home picks one on iOS). */
@@ -359,6 +387,96 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             }
             reload()
             edited()
+        }
+    }
+
+    /** Sermon Notes, the most recently preached first. Free, with no limits. */
+    inner class SermonStore {
+        private val _all = MutableStateFlow(load())
+        val all: StateFlow<List<Sermon>> = _all.asStateFlow()
+
+        internal fun reload() {
+            _all.value = load()
+        }
+
+        private fun load(): List<Sermon> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT $SERMON_COLUMNS FROM sermons WHERE deleted_at IS NULL ORDER BY preached_at DESC").use { s ->
+                    while (s.step()) add(readSermon(s))
+                }
+            }
+        }
+
+        fun get(id: String): Sermon? = _all.value.firstOrNull { it.id == id }
+
+        /** Saves new or edited notes, stamping them with the edit time. */
+        fun save(sermon: Sermon, now: Long = System.currentTimeMillis()): Sermon {
+            val saved = sermon.copy(createdAt = if (sermon.createdAt == 0L) now else sermon.createdAt, updatedAt = now)
+            synchronized(lock) { transaction { writeSermon(saved, deletedAt = null) } }
+            reload()
+            edited()
+            return saved
+        }
+
+        fun delete(id: String, now: Long = System.currentTimeMillis()) {
+            synchronized(lock) {
+                transaction {
+                    connection.prepare("UPDATE sermons SET deleted_at = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL").use {
+                        it.bindLong(1, now)
+                        it.bindLong(2, now)
+                        it.bindText(3, id)
+                        it.step()
+                    }
+                }
+            }
+            reload()
+            edited()
+        }
+    }
+
+    private fun readSermon(s: androidx.sqlite.SQLiteStatement) = Sermon(
+        id = s.getText(0),
+        title = s.getText(1),
+        preacher = s.getText(2),
+        church = s.getText(3),
+        preachedAt = s.getLong(4),
+        series = if (s.isNull(5)) null else s.getText(5),
+        body = s.getText(6),
+        passages = PrayerPassage.decode(s.getText(7)),
+        isFavourite = s.getLong(8) != 0L,
+        sourceSermonId = if (s.isNull(9)) null else s.getText(9),
+        handoutsJson = if (s.isNull(10)) null else s.getText(10),
+        createdAt = s.getLong(11),
+        updatedAt = s.getLong(12),
+    )
+
+    private fun writeSermon(sermon: Sermon, deletedAt: Long?) {
+        connection.prepare(
+            """
+            INSERT INTO sermons (id, title, preacher, church, preached_at, series, body, passages, is_favourite, source_sermon_id, handouts, created_at, updated_at, deleted_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(id) DO UPDATE SET title = excluded.title, preacher = excluded.preacher, church = excluded.church,
+                preached_at = excluded.preached_at, series = excluded.series, body = excluded.body, passages = excluded.passages,
+                is_favourite = excluded.is_favourite, source_sermon_id = excluded.source_sermon_id, handouts = excluded.handouts,
+                created_at = excluded.created_at, updated_at = excluded.updated_at, deleted_at = excluded.deleted_at
+            """.trimIndent(),
+        ).use {
+            fun text(index: Int, value: String?) = if (value == null) it.bindNull(index) else it.bindText(index, value)
+            it.bindText(1, sermon.id)
+            it.bindText(2, sermon.title)
+            it.bindText(3, sermon.preacher)
+            it.bindText(4, sermon.church)
+            it.bindLong(5, sermon.preachedAt)
+            text(6, sermon.series)
+            it.bindText(7, sermon.body)
+            it.bindText(8, PrayerPassage.encode(sermon.passages))
+            it.bindLong(9, if (sermon.isFavourite) 1 else 0)
+            text(10, sermon.sourceSermonId)
+            text(11, sermon.handoutsJson)
+            it.bindLong(12, sermon.createdAt)
+            it.bindLong(13, sermon.updatedAt)
+            deletedAt?.let { at -> it.bindLong(14, at) } ?: it.bindNull(14)
+            it.step()
         }
     }
 
@@ -942,6 +1060,30 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             memory.reload()
         }
 
+        fun sermonsChanged(since: Long): List<SermonRecord> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT $SERMON_COLUMNS, deleted_at FROM sermons WHERE updated_at > ?").use { s ->
+                    s.bindLong(1, since)
+                    while (s.step()) add(SermonRecord(readSermon(s), s.longOrNull(13)))
+                }
+            }
+        }
+
+        fun applySermons(rows: List<SermonRecord>) = synchronized(lock) {
+            if (rows.isEmpty()) return@synchronized
+            transaction {
+                for (row in rows) {
+                    val sermon = row.sermon
+                    when (SyncMerge.decide(sermon.updatedAt, row.deletedAt != null, updatedAt("sermons", sermon.id))) {
+                        SyncMerge.Decision.KEEP_LOCAL -> Unit
+                        SyncMerge.Decision.DELETE_LOCAL -> markDeleted("sermons", sermon.id, row.deletedAt ?: sermon.updatedAt, sermon.updatedAt)
+                        SyncMerge.Decision.APPLY_REMOTE -> writeSermon(sermon, deletedAt = null)
+                    }
+                }
+            }
+            sermons.reload()
+        }
+
         /** Server rows to mark deleted, by table. */
         fun pendingDeletions(): Map<String, List<String>> = synchronized(lock) {
             buildList {
@@ -966,7 +1108,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
         /** Removes everything the person saved from this device (not from the cloud). */
         fun eraseAll() = synchronized(lock) {
             transaction {
-                for (table in listOf("highlights", "bookmarks", "notes", "reading_plans", "prayers", "memory_verses", "pending_deletions")) connection.execSQL("DELETE FROM $table")
+                for (table in listOf("highlights", "bookmarks", "notes", "reading_plans", "prayers", "memory_verses", "sermons", "pending_deletions")) connection.execSQL("DELETE FROM $table")
             }
             highlights.reload()
             bookmarks.reload()
@@ -974,6 +1116,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             plans.reload()
             prayers.reload()
             memory.reload()
+            sermons.reload()
         }
 
         private fun updatedAt(table: String, id: String): Long? =
@@ -1020,6 +1163,8 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
     companion object {
         private const val PRAYER_COLUMNS =
             "id, title, body, category, is_answered, answered_at, answer_note, reminder_at, reminder_repeats_daily, passages, last_prayed_at, created_at, updated_at"
+        private const val SERMON_COLUMNS =
+            "id, title, preacher, church, preached_at, series, body, passages, is_favourite, source_sermon_id, handouts, created_at, updated_at"
         private const val MEMORY_COLUMNS =
             "id, start_verse, end_verse, translation_id, ease, interval_days, repetitions, due_at, last_reviewed_at, review_count, created_at, updated_at"
         private const val PLAN_COLUMNS =

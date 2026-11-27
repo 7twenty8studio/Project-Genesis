@@ -53,3 +53,9 @@ data class MemoryRecord(
     val verse: com.genesis.core.domain.memorise.MemoryVerse,
     val deletedAt: Long?,
 )
+
+/** Sermon notes as sync moves them. */
+data class SermonRecord(
+    val sermon: com.genesis.core.domain.sermons.Sermon,
+    val deletedAt: Long?,
+)

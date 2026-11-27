@@ -43,6 +43,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.genesis.app.R
+import com.genesis.core.domain.sermons.SermonSunday
 import com.genesis.app.library.LibraryShelf
 import com.genesis.app.plans.HomePlanCard
 import com.genesis.core.domain.bible.ChapterId
@@ -95,6 +96,7 @@ fun HomeScreen(
     onPrayerJournal: () -> Unit,
     memorise: Pair<Int, Int> = 0 to 0,
     onMemorise: () -> Unit = {},
+    onSermons: () -> Unit = {},
     record: ReadingRecord,
     onInsights: () -> Unit,
     modifier: Modifier = Modifier,
@@ -239,6 +241,20 @@ fun HomeScreen(
                 )
             }
             Text("\u203A", style = MaterialTheme.typography.titleLarge, color = colors.secondaryText)
+        }
+
+        // Sunday mornings: a card for taking sermon notes.
+        if (SermonSunday.isSundayMorning(today.dayOfWeek, LocalTime.now().hour)) {
+            Row(
+                Modifier.fillMaxWidth().clip18().clickable(onClick = onSermons).card(colors.surface),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                    Text(stringResource(R.string.sermon_notes), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, color = colors.text)
+                    Text(stringResource(R.string.sermon_card_message), style = MaterialTheme.typography.bodyMedium, color = colors.secondaryText)
+                }
+                Text("\u203A", style = MaterialTheme.typography.titleLarge, color = colors.secondaryText)
+            }
         }
 
         // Memorize Scripture (Premium): passages saved and how many are due.

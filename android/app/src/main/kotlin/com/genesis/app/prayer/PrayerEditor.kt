@@ -105,7 +105,7 @@ internal fun PrayerEditor(
             Header(stringResource(R.string.category))
             CategoryChips(draft.category, includeAll = false) { it?.let { category -> draft = draft.copy(category = category) } }
 
-            Passages(draft, bible, onAttach = { draft = draft.attaching(it) }, onDetach = { draft = draft.detaching(it) })
+            Passages(draft.passages, bible, PrayerPassage.MAXIMUM_PER_PRAYER, stringResource(R.string.pray_with_scripture), onAttach = { draft = draft.attaching(it) }, onDetach = { draft = draft.detaching(it) })
 
             if (!draft.isAnswered) {
                 Spacer(Modifier.size(24.dp))
@@ -181,9 +181,16 @@ private fun Action(title: String, enabled: Boolean = true, color: Color? = null,
     )
 }
 
-/** The passages a prayer holds, verbatim from the Bible being read, and a field to add another. */
+/** The passages a prayer or sermon holds, verbatim from the Bible being read, and a field to add another. */
 @Composable
-private fun Passages(prayer: Prayer, bible: JournalBible, onAttach: (PrayerPassage) -> Unit, onDetach: (PrayerPassage) -> Unit) {
+internal fun Passages(
+    passages: List<PrayerPassage>,
+    bible: JournalBible,
+    maximum: Int,
+    footer: String,
+    onAttach: (PrayerPassage) -> Unit,
+    onDetach: (PrayerPassage) -> Unit,
+) {
     val colors = LocalReaderColors.current
     val scope = rememberCoroutineScope()
     var text by remember { mutableStateOf("") }
@@ -192,7 +199,7 @@ private fun Passages(prayer: Prayer, bible: JournalBible, onAttach: (PrayerPassa
 
     Header(stringResource(R.string.bible_passages))
     Group {
-        prayer.passages.forEach { passage ->
+        passages.forEach { passage ->
             val ids = remember(passage.id) { (passage.start.verse..passage.end.verse).map { VerseId(passage.start.book, passage.start.chapter, it) } }
             val verses by produceState(emptyMap(), passage.id, bible.key) { value = bible.verses(ids) }
             Row(Modifier.fillMaxWidth().padding(start = 16.dp, top = 12.dp, bottom = 12.dp), verticalAlignment = Alignment.Top) {
@@ -215,7 +222,7 @@ private fun Passages(prayer: Prayer, bible: JournalBible, onAttach: (PrayerPassa
             }
             HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
         }
-        if (prayer.passages.size < PrayerPassage.MAXIMUM_PER_PRAYER) {
+        if (passages.size < maximum) {
             Row(Modifier.padding(12.dp), verticalAlignment = Alignment.CenterVertically) {
                 OutlinedTextField(
                     value = text,
@@ -255,6 +262,6 @@ private fun Passages(prayer: Prayer, bible: JournalBible, onAttach: (PrayerPassa
     if (message != null) {
         Text(stringResource(message), style = MaterialTheme.typography.bodySmall, color = Destructive, modifier = Modifier.padding(start = 16.dp, top = 8.dp))
     } else {
-        Footer(stringResource(R.string.pray_with_scripture))
+        Footer(footer)
     }
 }

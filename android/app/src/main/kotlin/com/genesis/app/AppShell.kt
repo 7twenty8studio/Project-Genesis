@@ -27,6 +27,7 @@ import com.genesis.app.library.LibraryScreen
 import com.genesis.app.library.LibraryShelf
 import com.genesis.app.plans.PlansFlow
 import com.genesis.app.prayer.JournalBible
+import com.genesis.app.sermons.SermonNotesFlow
 import com.genesis.app.memorise.MemoriseScreen
 import com.genesis.app.memorise.MemoryTexts
 import com.genesis.app.prayer.PrayerJournalFlow
@@ -89,6 +90,8 @@ fun AppShell(
     val plans by app.userData.plans.all.collectAsStateWithLifecycle()
     var journalOpen by rememberSaveable { mutableStateOf(false) }
     var memoriseOpen by rememberSaveable { mutableStateOf(false) }
+    var sermonsOpen by rememberSaveable { mutableStateOf(false) }
+    var sermonsNew by rememberSaveable { mutableStateOf(false) }
     val memoryVerses by app.userData.memory.all.collectAsStateWithLifecycle()
     val prayers by app.userData.prayers.all.collectAsStateWithLifecycle()
     val account by app.account.state.collectAsStateWithLifecycle()
@@ -163,6 +166,25 @@ fun AppShell(
                 verses = reader::verses,
             ),
             onDone = { journalOpen = false },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
+
+    if (sermonsOpen) {
+        // Before the notes, so the editor's own back (save and close) comes first.
+        BackHandler { sermonsOpen = false }
+        val translation = state.chapter?.translation
+        SermonNotesFlow(
+            store = app.userData.sermons,
+            bible = JournalBible(
+                key = state.bible,
+                language = translation?.language ?: "en",
+                abbreviation = translation?.abbreviation ?: state.bible.id,
+                verses = reader::verses,
+            ),
+            startNew = sermonsNew,
+            onDone = { sermonsOpen = false },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )
         return
@@ -292,6 +314,10 @@ fun AppShell(
                 onPrayerJournal = { journalOpen = true },
                 memorise = memoryVerses.size to memoryVerses.count { it.isDue() },
                 onMemorise = { memoriseOpen = true },
+                onSermons = {
+                    sermonsNew = true
+                    sermonsOpen = true
+                },
                 record = readingRecord,
                 onInsights = { insightsOpen = true },
                 modifier = content,
@@ -308,6 +334,10 @@ fun AppShell(
                 onOpenNote = reader::openNote,
                 onNewNote = reader::newNote,
                 onSearch = { searching = true },
+                onSermons = {
+                    sermonsNew = false
+                    sermonsOpen = true
+                },
                 modifier = content,
             )
             AppTab.EXPLORE -> {

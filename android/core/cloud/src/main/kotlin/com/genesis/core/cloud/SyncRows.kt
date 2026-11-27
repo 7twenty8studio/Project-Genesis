@@ -138,6 +138,51 @@ data class RemoteMemoryVerse(
     @SerialName("server_updated_at") val serverUpdatedAt: String? = null,
 )
 
+/**
+ * Sermon notes as pulled. `source_sermon_id` and `handouts` (church sermons,
+ * written by the iPhone) are read so they're kept on this device.
+ */
+@Serializable
+data class RemoteSermon(
+    val id: String,
+    @SerialName("user_id") val userId: String,
+    val title: String = "",
+    val preacher: String = "",
+    val church: String = "",
+    @SerialName("preached_at") val preachedAt: String? = null,
+    val series: String? = null,
+    val body: String = "",
+    val passages: List<RemotePrayerPassage> = emptyList(),
+    @SerialName("is_favourite") val isFavourite: Boolean = false,
+    @SerialName("source_sermon_id") val sourceSermonId: String? = null,
+    val handouts: kotlinx.serialization.json.JsonElement? = null,
+    @SerialName("created_at") val createdAt: String,
+    @SerialName("updated_at") val updatedAt: String,
+    @SerialName("deleted_at") val deletedAt: String? = null,
+    @SerialName("server_updated_at") val serverUpdatedAt: String? = null,
+)
+
+/**
+ * Sermon notes as pushed: never `source_sermon_id` or `handouts`, so an edit
+ * here leaves the iPhone's church sermon link and saved handouts as they are.
+ */
+@Serializable
+data class RemoteSermonPush(
+    val id: String,
+    @SerialName("user_id") val userId: String,
+    val title: String,
+    val preacher: String,
+    val church: String,
+    @SerialName("preached_at") val preachedAt: String,
+    val series: String?,
+    val body: String,
+    val passages: List<RemotePrayerPassage>,
+    @SerialName("is_favourite") val isFavourite: Boolean,
+    @SerialName("created_at") val createdAt: String,
+    @SerialName("updated_at") val updatedAt: String,
+    @SerialName("deleted_at") val deletedAt: String? = null,
+)
+
 object SyncTable {
     const val HIGHLIGHTS = "highlights"
     const val BOOKMARKS = "bookmarks"
@@ -145,4 +190,5 @@ object SyncTable {
     const val READING_PLANS = "reading_plans"
     const val PRAYERS = "prayers"
     const val MEMORY_VERSES = "memory_verses"
+    const val SERMONS = "sermons"
 }
