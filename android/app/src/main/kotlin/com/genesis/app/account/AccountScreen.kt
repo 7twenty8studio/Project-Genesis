@@ -3,7 +3,10 @@ package com.genesis.app.account
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
+import android.text.format.DateUtils
 import androidx.compose.foundation.BorderStroke
+import kotlinx.coroutines.launch
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -70,7 +73,14 @@ import com.genesis.core.design.LocalReaderColors
  * who, and Sign Out. Sync and account deletion join with sync.
  */
 @Composable
-fun AccountScreen(account: AccountService, state: AccountUiState, onDone: () -> Unit, modifier: Modifier = Modifier) {
+fun AccountScreen(
+    account: AccountService,
+    state: AccountUiState,
+    sync: SyncService,
+    syncState: SyncState,
+    onDone: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     val colors = LocalReaderColors.current
     val context = LocalContext.current
 
@@ -104,6 +114,7 @@ fun AccountScreen(account: AccountService, state: AccountUiState, onDone: () -> 
                         Text(user.email ?: user.name.orEmpty(), style = MaterialTheme.typography.bodyLarge, color = colors.text)
                     }
                 }
+                CloudSync(sync, syncState)
                 Spacer(Modifier.size(24.dp))
                 Group { Row_(stringResource(R.string.sign_out), onClick = account::signOut) }
             } else {
@@ -292,4 +303,31 @@ private fun GoogleLogo(modifier: Modifier) {
         }
         drawRect(Color(0xFF4285F4), topLeft = Offset(center.x, center.y - line / 2), size = Size(side / 2, line))
     }
+}
+
+@Composable
+private fun CloudSync(sync: SyncService, state: SyncState) {
+    val colors = LocalReaderColors.current
+    val scope = rememberCoroutineScope()
+    Header(stringResource(R.string.cloud_sync))
+    Group {
+        Row_(stringResource(R.string.sync_now), onClick = { if (!state.isSyncing) scope.launch { sync.syncNow() } })
+        val failure = state.failure
+        val status = when {
+            state.isSyncing -> stringResource(R.string.syncing)
+            failure != null -> failure.text ?: failure.res?.let { stringResource(it) }.orEmpty()
+            state.lastSyncedAt != null -> stringResource(
+                R.string.synced,
+                DateUtils.getRelativeTimeSpanString(state.lastSyncedAt, System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS).toString(),
+            )
+            else -> stringResource(R.string.waiting_to_sync)
+        }
+        Text(
+            status,
+            style = MaterialTheme.typography.bodySmall,
+            color = if (failure != null && !state.isSyncing) Color(0xFFC0392B) else colors.secondaryText,
+            modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 14.dp),
+        )
+    }
+    Footer(stringResource(R.string.sync_footer))
 }

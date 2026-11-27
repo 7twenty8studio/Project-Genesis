@@ -170,4 +170,10 @@
     <string name="session_ended">Sua sessão terminou. Entre de novo.</string>
     <string name="unexpected_response">O servidor enviou uma resposta inesperada.</string>
     <string name="server_unreachable">Não foi possível conectar ao servidor do Versely. Verifique sua conexão e tente de novo.</string>
+    <string name="cloud_sync">Sincronização na nuvem</string>
+    <string name="sync_now">Sincronizar agora</string>
+    <string name="syncing">Sincronizando…</string>
+    <string name="synced">Sincronizado %s</string>
+    <string name="waiting_to_sync">Esperando para sincronizar</string>
+    <string name="sync_footer">Destaques, anotações e marcadores sincronizam automaticamente, de graça.</string>
 </resources>

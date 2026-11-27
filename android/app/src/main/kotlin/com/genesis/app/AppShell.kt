@@ -68,6 +68,7 @@ fun AppShell(
     var readingSettings by rememberSaveable { mutableStateOf(false) }
     var accountOpen by rememberSaveable { mutableStateOf(false) }
     val account by app.account.state.collectAsStateWithLifecycle()
+    val syncState by app.sync.state.collectAsStateWithLifecycle()
 
     fun read(verse: VerseId) {
         reader.openVerse(verse)
@@ -114,6 +115,8 @@ fun AppShell(
         AccountScreen(
             account = app.account,
             state = account,
+            sync = app.sync,
+            syncState = syncState,
             onDone = { accountOpen = false },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )

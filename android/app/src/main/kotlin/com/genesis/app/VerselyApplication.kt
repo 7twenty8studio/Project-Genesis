@@ -2,6 +2,7 @@ package com.genesis.app
 
 import android.app.Application
 import com.genesis.app.account.AccountService
+import com.genesis.app.account.SyncService
 import kotlinx.coroutines.MainScope
 import com.genesis.app.settings.ReaderSettingsStore
 import com.genesis.app.settings.ReadingProgressStore
@@ -18,4 +19,7 @@ class VerselyApplication : Application() {
     /** The process's own scope, for work that outlives a screen (sign-in). */
     val scope = MainScope()
     val account: AccountService by lazy { AccountService(this, scope) }
+
+    /** Highlights, notes and bookmarks with the person's account; started by MainActivity. */
+    val sync: SyncService by lazy { SyncService(this, userData, account, scope).also { it.start() } }
 }

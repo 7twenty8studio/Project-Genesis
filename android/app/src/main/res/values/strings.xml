@@ -171,4 +171,10 @@
     <string name="session_ended">Your session has ended. Please sign in again.</string>
     <string name="unexpected_response">The server sent an unexpected response.</string>
     <string name="server_unreachable">Couldn\'t reach Versely\'s server. Check your connection and try again.</string>
+    <string name="cloud_sync">Cloud Sync</string>
+    <string name="sync_now">Sync Now</string>
+    <string name="syncing">Syncing…</string>
+    <string name="synced">Synced %s</string>
+    <string name="waiting_to_sync">Waiting to sync</string>
+    <string name="sync_footer">Highlights, notes and bookmarks sync automatically, free.</string>
 </resources>

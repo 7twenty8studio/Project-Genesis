@@ -170,6 +170,12 @@
     "reset_sent": "If an account exists for that email, a reset link is on its way.",
     "session_ended": "Your session has ended. Please sign in again.",
     "unexpected_response": "The server sent an unexpected response.",
-    "server_unreachable": "Couldn't reach Versely's server. Check your connection and try again."
+    "server_unreachable": "Couldn't reach Versely's server. Check your connection and try again.",
+    "cloud_sync": "Cloud Sync",
+    "sync_now": "Sync Now",
+    "syncing": "Syncing…",
+    "synced": "Synced %@",
+    "waiting_to_sync": "Waiting to sync",
+    "sync_footer": "Highlights, notes and bookmarks sync automatically, free."
   }
 }

@@ -10,9 +10,11 @@ import com.genesis.core.domain.study.HighlightColor
 import com.genesis.core.domain.study.Note
 import com.genesis.core.domain.study.NoteAnchor
 import com.genesis.core.domain.study.NoteKind
+import com.genesis.core.domain.sync.SyncMerge
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import java.io.File
 import java.util.UUID
 
@@ -80,16 +82,43 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             )
             connection.execSQL("PRAGMA user_version = 2")
         }
+        if (version < 3) {
+            // Server rows to mark deleted that have no local row left to carry
+            // the deletion (a second highlight for the same verse from
+            // another device), as iOS's Tombstones.
+            connection.execSQL(
+                """
+                CREATE TABLE pending_deletions (
+                    record_id TEXT NOT NULL,
+                    table_name TEXT NOT NULL,
+                    PRIMARY KEY (record_id, table_name)
+                )
+                """.trimIndent(),
+            )
+            connection.execSQL("PRAGMA user_version = 3")
+        }
     }
+
+    private val _localEdits = MutableStateFlow(0L)
+
+    /** Counts the person's own edits (not sync's), so sync can follow them. */
+    val localEdits: StateFlow<Long> = _localEdits.asStateFlow()
+
+    private fun edited() = _localEdits.update { it + 1 }
 
     val highlights = HighlightStore()
     val bookmarks = BookmarkStore()
     val notes = NoteStore()
+    val sync = SyncAccess()
 
     /** Bookmarks, one per chapter as on iOS (rules in `Bookmarks`). */
     inner class BookmarkStore {
         private val _all = MutableStateFlow(load())
         val all: StateFlow<Set<VerseId>> = _all.asStateFlow()
+
+        internal fun reload() {
+            _all.value = load()
+        }
 
         private fun load(): Set<VerseId> = synchronized(lock) {
             buildSet {
@@ -122,6 +151,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                 }
             }
             _all.value = _all.value - change.remove + listOfNotNull(change.add)
+            edited()
             change.add != null
         }
     }
@@ -130,6 +160,10 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
     inner class NoteStore {
         private val _all = MutableStateFlow(load())
         val all: StateFlow<List<Note>> = _all.asStateFlow()
+
+        internal fun reload() {
+            _all.value = load()
+        }
 
         private fun load(): List<Note> = synchronized(lock) {
             buildList {
@@ -194,6 +228,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                 }
             }
             _all.value = listOf(saved) + _all.value.filter { it.id != saved.id }
+            edited()
             saved
         }
 
@@ -207,6 +242,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                 }
             }
             _all.value = _all.value.filter { it.id != id }
+            edited()
         }
     }
 
@@ -218,6 +254,10 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
     inner class HighlightStore {
         private val _all = MutableStateFlow(load())
         val all: StateFlow<Map<VerseId, HighlightColor>> = _all.asStateFlow()
+
+        internal fun reload() {
+            _all.value = load()
+        }
 
         private fun load(): Map<VerseId, HighlightColor> = synchronized(lock) {
             buildMap {
@@ -253,6 +293,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                 }
                 // Newest first, so Home's Recently Highlighted reads the front.
                 _all.value = verses.associateWith { color } + (_all.value - verses.toSet())
+                edited()
             }
         }
 
@@ -269,9 +310,231 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                     }
                 }
                 _all.value = _all.value - verses.toSet()
+                edited()
             }
         }
     }
+
+    /**
+     * What sync reads and writes, as SyncService does with SwiftData on iOS:
+     * rows edited since a time (deleted ones too, so the deletion travels),
+     * pulled rows merged by the newest edit, and server rows to mark deleted.
+     * Applying pulled rows never counts as the person's edit.
+     */
+    inner class SyncAccess {
+        fun highlightsChanged(since: Long): List<HighlightRecord> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT id, verse, color, created_at, updated_at, deleted_at FROM highlights WHERE updated_at > ?").use { s ->
+                    s.bindLong(1, since)
+                    while (s.step()) add(HighlightRecord(s.getText(0), s.getLong(1).toInt(), s.getText(2), s.getLong(3), s.getLong(4), s.longOrNull(5)))
+                }
+            }
+        }
+
+        fun bookmarksChanged(since: Long): List<BookmarkRecord> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT id, verse, created_at, updated_at, deleted_at FROM bookmarks WHERE updated_at > ?").use { s ->
+                    s.bindLong(1, since)
+                    while (s.step()) add(BookmarkRecord(s.getText(0), s.getLong(1).toInt(), s.getLong(2), s.getLong(3), s.longOrNull(4)))
+                }
+            }
+        }
+
+        fun notesChanged(since: Long): List<NoteRecord> = synchronized(lock) {
+            buildList {
+                connection.prepare(
+                    """
+                    SELECT id, title, body, kind, anchor_type, start_verse, end_verse, book_number, chapter_number, theme, created_at, updated_at, deleted_at
+                    FROM notes WHERE updated_at > ?
+                    """.trimIndent(),
+                ).use { s ->
+                    s.bindLong(1, since)
+                    while (s.step()) {
+                        add(
+                            NoteRecord(
+                                id = s.getText(0), title = s.getText(1), body = s.getText(2), kind = s.getText(3), anchorType = s.getText(4),
+                                startVerse = s.intOrNull(5), endVerse = s.intOrNull(6), book = s.intOrNull(7), chapter = s.intOrNull(8),
+                                theme = if (s.isNull(9)) null else s.getText(9),
+                                createdAt = s.getLong(10), updatedAt = s.getLong(11), deletedAt = s.longOrNull(12),
+                            ),
+                        )
+                    }
+                }
+            }
+        }
+
+        /**
+         * Pulled highlights, newest edit winning. One highlight per verse: a
+         * different record for the same verse gives way to the newer one, and
+         * the loser is marked deleted on the server too (as iOS does).
+         */
+        fun applyHighlights(rows: List<HighlightRecord>) = synchronized(lock) {
+            if (rows.isEmpty()) return@synchronized
+            transaction {
+                for (row in rows) {
+                    val local = updatedAt("highlights", row.id)
+                    when (SyncMerge.decide(row.updatedAt, row.deletedAt != null, local)) {
+                        SyncMerge.Decision.KEEP_LOCAL -> Unit
+                        SyncMerge.Decision.DELETE_LOCAL -> markDeleted("highlights", row.id, row.deletedAt ?: row.updatedAt, row.updatedAt)
+                        SyncMerge.Decision.APPLY_REMOTE -> {
+                            val other = connection.prepare("SELECT id, updated_at, deleted_at FROM highlights WHERE verse = ? AND id != ?").use { s ->
+                                s.bindLong(1, row.verse.toLong())
+                                s.bindText(2, row.id)
+                                if (s.step()) Triple(s.getText(0), s.getLong(1), s.longOrNull(2)) else null
+                            }
+                            if (other != null) {
+                                if (other.third == null && other.second > row.updatedAt) {
+                                    queueDeletion("highlights", row.id)
+                                    continue
+                                }
+                                queueDeletion("highlights", other.first)
+                                connection.prepare("DELETE FROM highlights WHERE id = ?").use { it.bindText(1, other.first); it.step() }
+                            }
+                            connection.prepare(
+                                """
+                                INSERT INTO highlights (id, verse, color, created_at, updated_at, deleted_at) VALUES (?, ?, ?, ?, ?, NULL)
+                                ON CONFLICT(id) DO UPDATE SET verse = excluded.verse, color = excluded.color,
+                                    created_at = excluded.created_at, updated_at = excluded.updated_at, deleted_at = NULL
+                                """.trimIndent(),
+                            ).use {
+                                it.bindText(1, row.id)
+                                it.bindLong(2, row.verse.toLong())
+                                it.bindText(3, row.color)
+                                it.bindLong(4, row.createdAt)
+                                it.bindLong(5, row.updatedAt)
+                                it.step()
+                            }
+                        }
+                    }
+                }
+            }
+            highlights.reload()
+        }
+
+        fun applyBookmarks(rows: List<BookmarkRecord>) = synchronized(lock) {
+            if (rows.isEmpty()) return@synchronized
+            transaction {
+                for (row in rows) {
+                    when (SyncMerge.decide(row.updatedAt, row.deletedAt != null, updatedAt("bookmarks", row.id))) {
+                        SyncMerge.Decision.KEEP_LOCAL -> Unit
+                        SyncMerge.Decision.DELETE_LOCAL -> markDeleted("bookmarks", row.id, row.deletedAt ?: row.updatedAt, row.updatedAt)
+                        SyncMerge.Decision.APPLY_REMOTE -> connection.prepare(
+                            """
+                            INSERT INTO bookmarks (id, verse, created_at, updated_at, deleted_at) VALUES (?, ?, ?, ?, NULL)
+                            ON CONFLICT(id) DO UPDATE SET verse = excluded.verse, created_at = excluded.created_at,
+                                updated_at = excluded.updated_at, deleted_at = NULL
+                            """.trimIndent(),
+                        ).use {
+                            it.bindText(1, row.id)
+                            it.bindLong(2, row.verse.toLong())
+                            it.bindLong(3, row.createdAt)
+                            it.bindLong(4, row.updatedAt)
+                            it.step()
+                        }
+                    }
+                }
+            }
+            bookmarks.reload()
+        }
+
+        fun applyNotes(rows: List<NoteRecord>) = synchronized(lock) {
+            if (rows.isEmpty()) return@synchronized
+            transaction {
+                for (row in rows) {
+                    when (SyncMerge.decide(row.updatedAt, row.deletedAt != null, updatedAt("notes", row.id))) {
+                        SyncMerge.Decision.KEEP_LOCAL -> Unit
+                        SyncMerge.Decision.DELETE_LOCAL -> markDeleted("notes", row.id, row.deletedAt ?: row.updatedAt, row.updatedAt)
+                        SyncMerge.Decision.APPLY_REMOTE -> connection.prepare(
+                            """
+                            INSERT INTO notes (id, title, body, kind, anchor_type, start_verse, end_verse, book_number, chapter_number, theme, created_at, updated_at, deleted_at)
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)
+                            ON CONFLICT(id) DO UPDATE SET
+                                title = excluded.title, body = excluded.body, kind = excluded.kind,
+                                anchor_type = excluded.anchor_type, start_verse = excluded.start_verse,
+                                end_verse = excluded.end_verse, book_number = excluded.book_number,
+                                chapter_number = excluded.chapter_number, theme = excluded.theme,
+                                created_at = excluded.created_at, updated_at = excluded.updated_at, deleted_at = NULL
+                            """.trimIndent(),
+                        ).use {
+                            fun bind(index: Int, value: Int?) = if (value == null) it.bindNull(index) else it.bindLong(index, value.toLong())
+                            it.bindText(1, row.id)
+                            it.bindText(2, row.title)
+                            it.bindText(3, row.body)
+                            it.bindText(4, row.kind)
+                            it.bindText(5, row.anchorType)
+                            bind(6, row.startVerse)
+                            bind(7, row.endVerse)
+                            bind(8, row.book)
+                            bind(9, row.chapter)
+                            if (row.theme == null) it.bindNull(10) else it.bindText(10, row.theme)
+                            it.bindLong(11, row.createdAt)
+                            it.bindLong(12, row.updatedAt)
+                            it.step()
+                        }
+                    }
+                }
+            }
+            notes.reload()
+        }
+
+        /** Server rows to mark deleted, by table. */
+        fun pendingDeletions(): Map<String, List<String>> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT table_name, record_id FROM pending_deletions").use { s ->
+                    while (s.step()) add(s.getText(0) to s.getText(1))
+                }
+            }.groupBy({ it.first }, { it.second })
+        }
+
+        fun clearPendingDeletions(table: String, ids: Collection<String>) = synchronized(lock) {
+            transaction {
+                for (id in ids) {
+                    connection.prepare("DELETE FROM pending_deletions WHERE table_name = ? AND record_id = ?").use {
+                        it.bindText(1, table)
+                        it.bindText(2, id)
+                        it.step()
+                    }
+                }
+            }
+        }
+
+        /** Removes everything the person saved from this device (not from the cloud). */
+        fun eraseAll() = synchronized(lock) {
+            transaction {
+                for (table in listOf("highlights", "bookmarks", "notes", "pending_deletions")) connection.execSQL("DELETE FROM $table")
+            }
+            highlights.reload()
+            bookmarks.reload()
+            notes.reload()
+        }
+
+        private fun updatedAt(table: String, id: String): Long? =
+            connection.prepare("SELECT updated_at FROM $table WHERE id = ?").use { s ->
+                s.bindText(1, id)
+                if (s.step()) s.getLong(0) else null
+            }
+
+        private fun markDeleted(table: String, id: String, deletedAt: Long, updatedAt: Long) {
+            connection.prepare("UPDATE $table SET deleted_at = ?, updated_at = ? WHERE id = ?").use {
+                it.bindLong(1, deletedAt)
+                it.bindLong(2, updatedAt)
+                it.bindText(3, id)
+                it.step()
+            }
+        }
+
+        private fun queueDeletion(table: String, id: String) {
+            connection.prepare("INSERT OR IGNORE INTO pending_deletions (record_id, table_name) VALUES (?, ?)").use {
+                it.bindText(1, id)
+                it.bindText(2, table)
+                it.step()
+            }
+        }
+    }
+
+    private fun androidx.sqlite.SQLiteStatement.longOrNull(column: Int): Long? = if (isNull(column)) null else getLong(column)
+
+    private fun androidx.sqlite.SQLiteStatement.intOrNull(column: Int): Int? = if (isNull(column)) null else getLong(column).toInt()
 
     private inline fun transaction(block: () -> Unit) {
         connection.execSQL("BEGIN IMMEDIATE")

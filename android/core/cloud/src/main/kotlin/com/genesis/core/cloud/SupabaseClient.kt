@@ -84,14 +84,46 @@ class SupabaseClient(
     }
 
     fun currentUser(accessToken: String): AuthUser =
-        parseUser(json.parseToJsonElement(send("GET", "auth/v1/user", "", null, accessToken)).jsonObject)
+        parseUser(json.parseToJsonElement(send("GET", "auth/v1/user", "", null, accessToken).ifEmpty { "{}" }).jsonObject)
 
     fun sendPasswordReset(email: String) {
         send("POST", "auth/v1/recover", "", buildJsonObject { put("email", email) }.toString(), null)
     }
 
+    // MARK: REST (PostgREST), as on iOS
+
+    /** Rows of `table` changed on the server after `cursor` (server_updated_at), oldest first. */
+    fun changes(table: String, cursor: String?, limit: Int, accessToken: String): String {
+        val query = buildList {
+            add("select=*")
+            add("order=server_updated_at.asc")
+            add("limit=$limit")
+            // "+" must be escaped: PostgREST reads it as a space, which would break "…+00:00".
+            if (cursor != null) add("server_updated_at=gt.${encode(cursor)}")
+        }.joinToString("&")
+        return send("GET", "rest/v1/$table", query, null, accessToken)
+    }
+
+    /**
+     * Inserts or updates rows by id. Only the columns sent change, so what
+     * Android doesn't know (a note's handwritten page) stays as it was.
+     */
+    fun upsert(table: String, rowsJson: String, accessToken: String) {
+        send("POST", "rest/v1/$table", "on_conflict=id", rowsJson, accessToken, prefer = "resolution=merge-duplicates,return=minimal")
+    }
+
+    /** Marks rows deleted so other devices remove them too. */
+    fun markDeleted(table: String, ids: Collection<String>, atMillis: Long, accessToken: String) {
+        if (ids.isEmpty()) return
+        val stamp = Timestamps.string(atMillis)
+        val body = buildJsonObject { put("deleted_at", stamp); put("updated_at", stamp) }.toString()
+        send("PATCH", "rest/v1/$table", "id=in.(${ids.joinToString(",")})", body, accessToken, prefer = "return=minimal")
+    }
+
+    private fun encode(value: String) = java.net.URLEncoder.encode(value, Charsets.UTF_8)
+
     private fun tokenRequest(path: String, query: String, body: JsonObject): AuthSession {
-        val response = json.parseToJsonElement(send("POST", path, query, body.toString(), null)).jsonObject
+        val response = json.parseToJsonElement(send("POST", path, query, body.toString(), null).ifEmpty { "{}" }).jsonObject
         val accessToken = response.string("access_token")
         val refreshToken = response.string("refresh_token")
         val user = response["user"] as? JsonObject
@@ -104,14 +136,14 @@ class SupabaseClient(
         return AuthSession(accessToken, refreshToken, clock() + (expiresIn * 1000).toLong(), parseUser(user))
     }
 
-    private fun send(method: String, path: String, query: String, body: String?, accessToken: String?): String {
+    private fun send(method: String, path: String, query: String, body: String?, accessToken: String?, prefer: String? = null): String {
         val url = "$baseUrl/$path" + if (query.isNotEmpty()) "?$query" else ""
         val headers = mapOf(
             "apikey" to anonKey,
             "Authorization" to "Bearer ${accessToken ?: anonKey}",
             "Content-Type" to "application/json",
             "Accept" to "application/json",
-        )
+        ) + listOfNotNull(prefer?.let { "Prefer" to it })
         val response = try {
             transport.send(HttpRequest(method, url, headers, body))
         } catch (error: IOException) {
@@ -123,7 +155,7 @@ class SupabaseClient(
             } ?: "HTTP ${response.status}"
             throw SupabaseError.Http(response.status, message)
         }
-        return response.body.ifEmpty { "{}" }
+        return response.body
     }
 
     companion object {

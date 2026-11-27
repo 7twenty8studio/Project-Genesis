@@ -74,3 +74,23 @@ class SupabaseClientTest {
         assertEquals(false, session.needsRefresh(now = 30_000L))
     }
 }
+
+class SyncRowsTest {
+    @Test
+    fun timestampsRoundTripAtMilliseconds() {
+        assertEquals("2026-09-29T17:46:00.123Z", Timestamps.string(Timestamps.millis("2026-09-29T17:46:00.123456+00:00")!!))
+        assertEquals(Timestamps.millis("2026-09-29T17:46:00.123Z"), Timestamps.millis("2026-09-29 17:46:00.123+00"))
+        assertEquals("2026-09-29T17:46:00.000Z", Timestamps.string(Timestamps.millis("2026-09-29T17:46:00Z")!!))
+    }
+
+    @Test
+    fun changesPageByTheServersCursor() {
+        var url = ""
+        val client = SupabaseClient("https://x.supabase.co", "anon", { request -> url = request.url; HttpResponse(200, "[]") })
+        client.changes(SyncTable.NOTES, "2026-09-29T17:46:00.123456+00:00", 50, "token")
+        assertEquals(
+            "https://x.supabase.co/rest/v1/notes?select=*&order=server_updated_at.asc&limit=50&server_updated_at=gt.2026-09-29T17%3A46%3A00.123456%2B00%3A00",
+            url,
+        )
+    }
+}

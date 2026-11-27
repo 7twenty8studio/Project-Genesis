@@ -42,7 +42,7 @@ data class AccountUiState(
 class AccountService(context: Context, private val scope: CoroutineScope) {
     private val vault = SessionVault(context)
     private val prefs = context.getSharedPreferences("account.oauth", Context.MODE_PRIVATE)
-    private val client: SupabaseClient? = BuildConfig.SUPABASE_URL.takeIf { it.startsWith("https://") && BuildConfig.SUPABASE_ANON_KEY.isNotEmpty() }
+    internal val client: SupabaseClient? = BuildConfig.SUPABASE_URL.takeIf { it.startsWith("https://") && BuildConfig.SUPABASE_ANON_KEY.isNotEmpty() }
         ?.let { SupabaseClient(it, BuildConfig.SUPABASE_ANON_KEY) }
     private var session: AuthSession? = if (client != null) vault.load() else null
     private val refreshing = Mutex()

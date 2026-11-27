@@ -49,6 +49,16 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        // Catch up with the person's other devices whenever Versely comes back.
+        lifecycleScope.launch {
+            val app = application as VerselyApplication
+            kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) { app.userData }
+            app.sync.schedule()
+        }
+    }
+
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         receive(intent)
