@@ -6,6 +6,7 @@ import androidx.core.content.edit
 import com.genesis.core.cloud.RemoteBookmark
 import com.genesis.core.cloud.RemoteHighlight
 import com.genesis.core.cloud.RemoteNote
+import com.genesis.core.cloud.RemotePlan
 import com.genesis.core.cloud.SupabaseClient
 import com.genesis.core.cloud.SupabaseError
 import com.genesis.core.cloud.SyncTable
@@ -13,6 +14,9 @@ import com.genesis.core.cloud.Timestamps
 import com.genesis.core.data.BookmarkRecord
 import com.genesis.core.data.HighlightRecord
 import com.genesis.core.data.NoteRecord
+import com.genesis.core.data.PlanRecord
+import com.genesis.core.domain.plans.PlanEnrollment
+import java.time.LocalDate
 import com.genesis.core.data.UserDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -168,11 +172,16 @@ class SyncService(
             database.sync.applyNotes(rows.mapNotNull { it.record() })
         }
 
+        pull(SyncTable.READING_PLANS, RemotePlan.serializer(), client, token, userId) { rows ->
+            database.sync.applyPlans(rows.mapNotNull { it.record() })
+        }
+
         // Everything edited since the last successful push, deletions included.
         val since = prefs.getLong(key("lastPushedAt", userId), 0)
         push(SyncTable.HIGHLIGHTS, RemoteHighlight.serializer(), database.sync.highlightsChanged(since).map { it.remote(userId) }, client, token)
         push(SyncTable.BOOKMARKS, RemoteBookmark.serializer(), database.sync.bookmarksChanged(since).map { it.remote(userId) }, client, token)
         push(SyncTable.NOTES, RemoteNote.serializer(), database.sync.notesChanged(since).map { it.remote(userId) }, client, token, batch = 50)
+        push(SyncTable.READING_PLANS, RemotePlan.serializer(), database.sync.plansChanged(since).map { it.remote(userId) }, client, token)
         for ((table, ids) in database.sync.pendingDeletions()) {
             client.markDeleted(table, ids, System.currentTimeMillis(), token)
             database.sync.clearPendingDeletions(table, ids)
@@ -263,4 +272,39 @@ private fun BookmarkRecord.remote(userId: String) = RemoteBookmark(
 private fun NoteRecord.remote(userId: String) = RemoteNote(
     id, userId, title, body, kind, anchorType, startVerse, endVerse, book, chapter, theme,
     Timestamps.string(createdAt), Timestamps.string(updatedAt), deletedAt?.let(Timestamps::string),
+)
+
+private fun RemotePlan.record(): PlanRecord? {
+    val updated = millis(updatedAt) ?: return null
+    val start = runCatching { LocalDate.parse(startDate.take(10)) }.getOrNull() ?: return null
+    return PlanRecord(
+        PlanEnrollment(
+            id = id.lowercase(),
+            planId = planId,
+            title = title,
+            startDate = start,
+            completedDays = completedDays.toSet(),
+            customBooks = customBooks,
+            customDays = customDays,
+            isActive = isActive,
+            createdAt = millis(createdAt) ?: updated,
+            updatedAt = updated,
+        ),
+        millis(deletedAt),
+    )
+}
+
+private fun PlanRecord.remote(userId: String) = RemotePlan(
+    id = enrollment.id,
+    userId = userId,
+    planId = enrollment.planId,
+    title = enrollment.title,
+    startDate = enrollment.startDate.toString(),
+    completedDays = enrollment.completedDays.sorted(),
+    customBooks = enrollment.customBooks,
+    customDays = enrollment.customDays,
+    isActive = enrollment.isActive,
+    createdAt = Timestamps.string(enrollment.createdAt),
+    updatedAt = Timestamps.string(enrollment.updatedAt),
+    deletedAt = deletedAt?.let(Timestamps::string),
 )

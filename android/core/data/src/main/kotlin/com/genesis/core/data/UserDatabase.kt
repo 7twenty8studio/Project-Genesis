@@ -15,7 +15,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import com.genesis.core.domain.plans.PlanEnrollment
+import com.genesis.core.domain.plans.ReadingPlan
 import java.io.File
+import java.time.LocalDate
 import java.util.UUID
 
 /**
@@ -97,6 +100,29 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             )
             connection.execSQL("PRAGMA user_version = 3")
         }
+        if (version < 4) {
+            // Reading plans, as reading_plans on the server: the start day as
+            // "yyyy-MM-dd", completed days and a custom plan's books as
+            // comma-separated numbers.
+            connection.execSQL(
+                """
+                CREATE TABLE reading_plans (
+                    id TEXT PRIMARY KEY NOT NULL,
+                    plan_id TEXT NOT NULL,
+                    title TEXT NOT NULL,
+                    start_date TEXT NOT NULL,
+                    completed_days TEXT NOT NULL DEFAULT '',
+                    custom_books TEXT,
+                    custom_days INTEGER,
+                    is_active INTEGER NOT NULL DEFAULT 1,
+                    created_at INTEGER NOT NULL,
+                    updated_at INTEGER NOT NULL,
+                    deleted_at INTEGER
+                )
+                """.trimIndent(),
+            )
+            connection.execSQL("PRAGMA user_version = 4")
+        }
     }
 
     private val _localEdits = MutableStateFlow(0L)
@@ -109,7 +135,109 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
     val highlights = HighlightStore()
     val bookmarks = BookmarkStore()
     val notes = NoteStore()
+    val plans = PlanStore()
     val sync = SyncAccess()
+
+    /** Reading plans the person follows, the most recently changed first (as Home picks one on iOS). */
+    inner class PlanStore {
+        private val _all = MutableStateFlow(load())
+        val all: StateFlow<List<PlanEnrollment>> = _all.asStateFlow()
+
+        internal fun reload() {
+            _all.value = load()
+        }
+
+        private fun load(): List<PlanEnrollment> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT $PLAN_COLUMNS FROM reading_plans WHERE deleted_at IS NULL ORDER BY updated_at DESC").use { s ->
+                    while (s.step()) readPlan(s)?.let(::add)
+                }
+            }
+        }
+
+        /** Starts a plan today; the new enrollment. */
+        fun start(plan: ReadingPlan, title: String, on: LocalDate, now: Long = System.currentTimeMillis()): PlanEnrollment {
+            val enrollment = PlanEnrollment.start(plan, UUID.randomUUID().toString(), title, on).copy(createdAt = now, updatedAt = now)
+            synchronized(lock) { transaction { writePlan(enrollment, deletedAt = null) } }
+            reload()
+            edited()
+            return enrollment
+        }
+
+        fun setDay(day: Int, completed: Boolean, enrollmentId: String, now: Long = System.currentTimeMillis()) =
+            change(enrollmentId, now) { it.copy(completedDays = if (completed) it.completedDays + day else it.completedDays - day) }
+
+        /** Starts the plan again from `on`, clearing progress. */
+        fun restart(enrollmentId: String, on: LocalDate, now: Long = System.currentTimeMillis()) =
+            change(enrollmentId, now) { it.copy(completedDays = emptySet(), startDate = on, isActive = true) }
+
+        fun delete(enrollmentId: String, now: Long = System.currentTimeMillis()) {
+            synchronized(lock) {
+                transaction {
+                    connection.prepare("UPDATE reading_plans SET deleted_at = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL").use {
+                        it.bindLong(1, now)
+                        it.bindLong(2, now)
+                        it.bindText(3, enrollmentId)
+                        it.step()
+                    }
+                }
+            }
+            reload()
+            edited()
+        }
+
+        private fun change(id: String, now: Long, update: (PlanEnrollment) -> PlanEnrollment) {
+            val current = _all.value.firstOrNull { it.id == id } ?: return
+            synchronized(lock) { transaction { writePlan(update(current).copy(updatedAt = now), deletedAt = null) } }
+            reload()
+            edited()
+        }
+    }
+
+    private fun readPlan(s: androidx.sqlite.SQLiteStatement): PlanEnrollment? {
+        val start = runCatching { LocalDate.parse(s.getText(3)) }.getOrNull() ?: return null
+        return PlanEnrollment(
+            id = s.getText(0),
+            planId = s.getText(1),
+            title = s.getText(2),
+            startDate = start,
+            completedDays = numbers(s.getText(4)).toSet(),
+            customBooks = if (s.isNull(5)) null else numbers(s.getText(5)),
+            customDays = s.intOrNull(6),
+            isActive = s.getLong(7) != 0L,
+            createdAt = s.getLong(8),
+            updatedAt = s.getLong(9),
+        )
+    }
+
+    private fun numbers(text: String): List<Int> = text.split(',').mapNotNull { it.trim().toIntOrNull() }
+
+    private fun writePlan(plan: PlanEnrollment, deletedAt: Long?) {
+        connection.prepare(
+            """
+            INSERT INTO reading_plans (id, plan_id, title, start_date, completed_days, custom_books, custom_days, is_active, created_at, updated_at, deleted_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(id) DO UPDATE SET
+                plan_id = excluded.plan_id, title = excluded.title, start_date = excluded.start_date,
+                completed_days = excluded.completed_days, custom_books = excluded.custom_books,
+                custom_days = excluded.custom_days, is_active = excluded.is_active,
+                created_at = excluded.created_at, updated_at = excluded.updated_at, deleted_at = excluded.deleted_at
+            """.trimIndent(),
+        ).use {
+            it.bindText(1, plan.id)
+            it.bindText(2, plan.planId)
+            it.bindText(3, plan.title)
+            it.bindText(4, plan.startDate.toString())
+            it.bindText(5, plan.completedDays.sorted().joinToString(","))
+            plan.customBooks?.let { books -> it.bindText(6, books.joinToString(",")) } ?: it.bindNull(6)
+            plan.customDays?.let { days -> it.bindLong(7, days.toLong()) } ?: it.bindNull(7)
+            it.bindLong(8, if (plan.isActive) 1 else 0)
+            it.bindLong(9, plan.createdAt)
+            it.bindLong(10, plan.updatedAt)
+            deletedAt?.let { at -> it.bindLong(11, at) } ?: it.bindNull(11)
+            it.step()
+        }
+    }
 
     /** Bookmarks, one per chapter as on iOS (rules in `Bookmarks`). */
     inner class BookmarkStore {
@@ -477,6 +605,30 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             notes.reload()
         }
 
+        fun plansChanged(since: Long): List<PlanRecord> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT $PLAN_COLUMNS, deleted_at FROM reading_plans WHERE updated_at > ?").use { s ->
+                    s.bindLong(1, since)
+                    while (s.step()) readPlan(s)?.let { add(PlanRecord(it, s.longOrNull(10))) }
+                }
+            }
+        }
+
+        fun applyPlans(rows: List<PlanRecord>) = synchronized(lock) {
+            if (rows.isEmpty()) return@synchronized
+            transaction {
+                for (row in rows) {
+                    val plan = row.enrollment
+                    when (SyncMerge.decide(plan.updatedAt, row.deletedAt != null, updatedAt("reading_plans", plan.id))) {
+                        SyncMerge.Decision.KEEP_LOCAL -> Unit
+                        SyncMerge.Decision.DELETE_LOCAL -> markDeleted("reading_plans", plan.id, row.deletedAt ?: plan.updatedAt, plan.updatedAt)
+                        SyncMerge.Decision.APPLY_REMOTE -> writePlan(plan, deletedAt = null)
+                    }
+                }
+            }
+            plans.reload()
+        }
+
         /** Server rows to mark deleted, by table. */
         fun pendingDeletions(): Map<String, List<String>> = synchronized(lock) {
             buildList {
@@ -501,11 +653,12 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
         /** Removes everything the person saved from this device (not from the cloud). */
         fun eraseAll() = synchronized(lock) {
             transaction {
-                for (table in listOf("highlights", "bookmarks", "notes", "pending_deletions")) connection.execSQL("DELETE FROM $table")
+                for (table in listOf("highlights", "bookmarks", "notes", "reading_plans", "pending_deletions")) connection.execSQL("DELETE FROM $table")
             }
             highlights.reload()
             bookmarks.reload()
             notes.reload()
+            plans.reload()
         }
 
         private fun updatedAt(table: String, id: String): Long? =
@@ -550,6 +703,9 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
     override fun close() = synchronized(lock) { connection.close() }
 
     companion object {
+        private const val PLAN_COLUMNS =
+            "id, plan_id, title, start_date, completed_days, custom_books, custom_days, is_active, created_at, updated_at"
+
         fun open(file: File): UserDatabase {
             file.parentFile?.mkdirs()
             val connection = BundledSQLiteDriver().open(file.path)

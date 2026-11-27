@@ -69,8 +69,27 @@ data class RemoteNote(
     @SerialName("server_updated_at") val serverUpdatedAt: String? = null,
 )
 
+/** A reading plan enrollment; `start_date` is a day ("yyyy-MM-dd"). */
+@Serializable
+data class RemotePlan(
+    val id: String,
+    @SerialName("user_id") val userId: String,
+    @SerialName("plan_id") val planId: String,
+    val title: String = "",
+    @SerialName("start_date") val startDate: String,
+    @SerialName("completed_days") val completedDays: List<Int> = emptyList(),
+    @SerialName("custom_books") val customBooks: List<Int>? = null,
+    @SerialName("custom_days") val customDays: Int? = null,
+    @SerialName("is_active") val isActive: Boolean = true,
+    @SerialName("created_at") val createdAt: String,
+    @SerialName("updated_at") val updatedAt: String,
+    @SerialName("deleted_at") val deletedAt: String? = null,
+    @SerialName("server_updated_at") val serverUpdatedAt: String? = null,
+)
+
 object SyncTable {
     const val HIGHLIGHTS = "highlights"
     const val BOOKMARKS = "bookmarks"
     const val NOTES = "notes"
+    const val READING_PLANS = "reading_plans"
 }

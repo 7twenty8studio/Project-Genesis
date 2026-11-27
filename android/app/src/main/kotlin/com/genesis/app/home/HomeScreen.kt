@@ -44,6 +44,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.genesis.app.R
 import com.genesis.app.library.LibraryShelf
+import com.genesis.app.plans.HomePlanCard
+import com.genesis.core.domain.bible.ChapterId
+import com.genesis.core.domain.plans.PlanEnrollment
 import com.genesis.app.library.NoteRow
 import com.genesis.app.library.VerseSnippet
 import com.genesis.app.library.card
@@ -81,6 +84,10 @@ fun HomeScreen(
     onSettings: () -> Unit,
     onOpenNote: (String) -> Unit,
     onSeeAll: (LibraryShelf) -> Unit,
+    plans: List<PlanEnrollment>,
+    onPlans: (String?) -> Unit,
+    onReadChapter: (ChapterId) -> Unit,
+    onMarkPlanDay: (PlanEnrollment, Int, Boolean) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val colors = LocalReaderColors.current
@@ -180,6 +187,29 @@ fun HomeScreen(
                     color = colors.accent,
                 )
             }
+        }
+
+        // Today's reading (reading plans).
+        val active = plans.firstOrNull { it.isActive && it.plan != null }
+        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            if (active != null) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        stringResource(R.string.todays_reading),
+                        style = MaterialTheme.typography.titleLarge.copy(fontFamily = FontFamily.Serif, fontWeight = FontWeight.SemiBold),
+                        color = colors.text,
+                        modifier = Modifier.weight(1f).semantics { heading() },
+                    )
+                    TextButton(onClick = { onPlans(null) }) { Text(stringResource(R.string.all_plans), color = colors.accent) }
+                }
+            }
+            HomePlanCard(
+                enrollment = active,
+                onRead = onReadChapter,
+                onMark = onMarkPlanDay,
+                onOpen = { onPlans(it.id) },
+                onPlans = { onPlans(null) },
+            )
         }
 
         // Recently highlighted.

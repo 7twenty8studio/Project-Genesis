@@ -35,3 +35,9 @@ data class NoteRecord(
     val updatedAt: Long,
     val deletedAt: Long?,
 )
+
+/** A reading plan enrollment as sync moves it (the plan's rules are in core:domain). */
+data class PlanRecord(
+    val enrollment: com.genesis.core.domain.plans.PlanEnrollment,
+    val deletedAt: Long?,
+)

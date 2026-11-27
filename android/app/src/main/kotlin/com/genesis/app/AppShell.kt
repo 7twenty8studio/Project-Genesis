@@ -24,6 +24,7 @@ import com.genesis.app.onboarding.OnboardingFlow
 import androidx.compose.ui.platform.LocalContext
 import com.genesis.app.library.LibraryScreen
 import com.genesis.app.library.LibraryShelf
+import com.genesis.app.plans.PlansFlow
 import com.genesis.app.account.AccountScreen
 import com.genesis.app.reader.CrossReferencesSheet
 import com.genesis.core.domain.link.GenesisLink
@@ -67,6 +68,10 @@ fun AppShell(
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
     var readingSettings by rememberSaveable { mutableStateOf(false) }
     var accountOpen by rememberSaveable { mutableStateOf(false) }
+    // Reading plans over the tabs: the list, or one plan (its id).
+    var plansOpen by rememberSaveable { mutableStateOf(false) }
+    var planToOpen by rememberSaveable { mutableStateOf<String?>(null) }
+    val plans by app.userData.plans.all.collectAsStateWithLifecycle()
     val account by app.account.state.collectAsStateWithLifecycle()
     val syncState by app.sync.state.collectAsStateWithLifecycle()
 
@@ -110,6 +115,21 @@ fun AppShell(
     BackHandler(enabled = tab != AppTab.HOME && !settingsOpen) { tab = AppTab.HOME }
     BackHandler(enabled = settingsOpen && !accountOpen) { settingsOpen = false }
     BackHandler(enabled = accountOpen) { accountOpen = false }
+    BackHandler(enabled = plansOpen) { plansOpen = false }
+
+    if (plansOpen) {
+        PlansFlow(
+            store = app.userData.plans,
+            openPlanId = planToOpen,
+            onRead = {
+                plansOpen = false
+                read(it.firstVerse)
+            },
+            onDone = { plansOpen = false },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
 
     if (accountOpen) {
         AccountScreen(
@@ -175,6 +195,13 @@ fun AppShell(
                     shelf = it
                     tab = AppTab.LIBRARY
                 },
+                plans = plans,
+                onPlans = {
+                    planToOpen = it
+                    plansOpen = true
+                },
+                onReadChapter = { read(it.firstVerse) },
+                onMarkPlanDay = { enrollment, day, done -> app.userData.plans.setDay(day, done, enrollment.id) },
                 modifier = content,
             )
             AppTab.READ -> androidx.compose.foundation.layout.Box(content) {
