@@ -61,7 +61,9 @@ import java.util.Locale
  * categories and Random Verse come with Premium in phase 5.
  */
 class VerseOfTheDayWidget : GlanceAppWidget() {
-    override val sizeMode = SizeMode.Responsive(setOf(SMALL, MEDIUM, LARGE))
+    // Exact, so LocalSize is the widget's real size and the verse can be fitted
+    // to it (Responsive gives the size bucket, which is far smaller).
+    override val sizeMode = SizeMode.Exact
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
         val day = load(context)
@@ -165,7 +167,6 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
 
     companion object {
         private const val TAG = "VerseWidget"
-        private val SMALL = DpSize(110.dp, 110.dp)
         private val MEDIUM = DpSize(250.dp, 110.dp)
         private val LARGE = DpSize(250.dp, 260.dp)
 
