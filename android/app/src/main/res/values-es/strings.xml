@@ -1350,4 +1350,27 @@
     <string name="make_versely_yours_detail">La lectura, los resaltados, las notas y la búsqueda siempre están aquí. Elige lo que quieras además; puedes cambiarlo cuando quieras en Ajustes.</string>
     <string name="keep_it_simple">Mantenerlo sencillo</string>
     <string name="features_footer">Desactivar algo solo lo oculta. Tus planes, oraciones, grupos y notas se conservan y vuelven cuando lo activas.</string>
+    <string name="verse_image">Imagen del versículo</string>
+    <string name="image_action">Imagen</string>
+    <string name="shape_square">Cuadrada</string>
+    <string name="shape_story">Historia</string>
+    <string name="shape_lock_screen">Pantalla bloqueada</string>
+    <string name="style_photo">Foto</string>
+    <string name="your_photo">Tu foto</string>
+    <string name="ink_ink">Tinta</string>
+    <string name="ink_white">Blanco</string>
+    <string name="ink_gold">Dorado</string>
+    <string name="ink_navy">Azul marino</string>
+    <string name="save_to_photos">Guardar en Fotos</string>
+    <string name="saved_to_photos">Guardado en Fotos</string>
+    <string name="couldnt_save_try_again">No se pudo guardar. Inténtalo de nuevo</string>
+    <string name="text_size">Tamaño del texto</string>
+    <string name="align_left">Alinear a la izquierda</string>
+    <string name="align_center">Centrar</string>
+    <string name="choose_a_photo">Elegir una foto</string>
+    <string name="preview_of">Vista previa: %s</string>
+    <string name="set_as_wallpaper">Usar como fondo de pantalla</string>
+    <string name="shape">Forma</string>
+    <string name="background">Fondo</string>
+    <string name="color">Color</string>
 </resources>

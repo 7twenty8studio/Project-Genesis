@@ -352,3 +352,15 @@ private object SummerLight {
         }
     }
 }
+
+/** The season's painted still, drawn into any DrawScope (verse images, as iOS's `paintedMoment`). */
+internal fun DrawScope.drawSeasonStill(season: Season) {
+    if (season == Season.WINTER) WinterSnow.drawFrost(this)
+    val t = SeasonMotion.PAINTED_MOMENT
+    when (season) {
+        Season.AUTUMN -> AutumnLeaves.draw(this, t, 1f)
+        Season.SPRING -> SpringPetals.draw(this, t, 1f)
+        Season.WINTER -> WinterSnow.draw(this, t, 1f)
+        Season.SUMMER -> SummerLight.draw(this, t, 1f)
+    }
+}

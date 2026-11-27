@@ -66,6 +66,7 @@ internal fun SelectionBar(
     onWordStudy: () -> Unit,
     onStudy: () -> Unit,
     onDone: () -> Unit,
+    onImage: () -> Unit = {},
 ) {
     val colors = LocalReaderColors.current
     val context = LocalContext.current
@@ -116,6 +117,7 @@ internal fun SelectionBar(
                     android.widget.Toast.makeText(context, added, android.widget.Toast.LENGTH_SHORT).show()
                 }
             }
+            Action(R.string.image_action, onImage)
             Action(if (isBookmarked) R.string.remove_bookmark else R.string.bookmark, onBookmark)
             if (anyHighlighted) Action(R.string.remove_highlight, onRemoveHighlight)
             Action(R.string.copy) {

@@ -88,6 +88,14 @@ data class ReaderUiState(
             return ShareText.of(verses, chapter.translation.abbreviation, chapter.translation.language)
         }
 
+    /** The selected verses for a verse image, verbatim, with the reference and the Bible's name. */
+    val selectionCard: com.genesis.core.domain.share.VerseCard?
+        get() {
+            val chapter = chapter ?: return null
+            val text = chapter.verses.filter { it.id in selection }.joinToString(" ") { it.plainText }.ifBlank { return null }
+            return com.genesis.core.domain.share.VerseCard(text, selectionReference, chapter.translation.name)
+        }
+
     /** The selection's reference, as the selection bar shows it. */
     val selectionReference: String
         get() {

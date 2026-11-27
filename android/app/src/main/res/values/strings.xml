@@ -1351,4 +1351,27 @@
     <string name="make_versely_yours_detail">Reading, highlights, notes and search are always here. Choose anything else you\'d like; you can change this any time in Settings.</string>
     <string name="keep_it_simple">Keep It Simple</string>
     <string name="features_footer">Turning something off only hides it. Your plans, prayers, groups and notes stay, and come back when you turn it on.</string>
+    <string name="verse_image">Verse Image</string>
+    <string name="image_action">Image</string>
+    <string name="shape_square">Square</string>
+    <string name="shape_story">Story</string>
+    <string name="shape_lock_screen">Lock Screen</string>
+    <string name="style_photo">Photo</string>
+    <string name="your_photo">Your Photo</string>
+    <string name="ink_ink">Ink</string>
+    <string name="ink_white">White</string>
+    <string name="ink_gold">Gold</string>
+    <string name="ink_navy">Navy</string>
+    <string name="save_to_photos">Save to Photos</string>
+    <string name="saved_to_photos">Saved to Photos</string>
+    <string name="couldnt_save_try_again">Couldn\'t Save. Try Again</string>
+    <string name="text_size">Text size</string>
+    <string name="align_left">Align left</string>
+    <string name="align_center">Center</string>
+    <string name="choose_a_photo">Choose a photo</string>
+    <string name="preview_of">Preview: %s</string>
+    <string name="set_as_wallpaper">Set as Wallpaper</string>
+    <string name="shape">Shape</string>
+    <string name="background">Background</string>
+    <string name="color">Color</string>
 </resources>

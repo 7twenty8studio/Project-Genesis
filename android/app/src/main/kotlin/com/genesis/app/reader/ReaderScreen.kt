@@ -221,6 +221,16 @@ fun ReaderScreen(
 ) {
     var originalWord by remember { mutableStateOf<com.genesis.core.domain.original.OriginalWord?>(null) }
     val shows = com.genesis.app.features.rememberFeatureShows()
+    var verseImage by remember { mutableStateOf<com.genesis.core.domain.share.VerseCard?>(null) }
+    verseImage?.let { card ->
+        val preferences = LocalReaderPreferences.current
+        com.genesis.app.share.VerseImageScreen(
+            card,
+            readingTheme = preferences.theme.resolved(androidx.compose.foundation.isSystemInDarkTheme()),
+            readingFont = preferences.font,
+            onDone = { verseImage = null },
+        )
+    }
     var picking by rememberSaveable { mutableStateOf(false) }
     var bibleMenu by remember { mutableStateOf(false) }
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
@@ -343,6 +353,10 @@ fun ReaderScreen(
                     onWordStudy = selection.onWordStudy,
                     onStudy = selection.onStudy,
                     onDone = selection.onDone,
+                    onImage = {
+                        verseImage = state.selectionCard
+                        selection.onDone()
+                    },
                 )
             } else BottomAppBar(containerColor = colors.background) {
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
