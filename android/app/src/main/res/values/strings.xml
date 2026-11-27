@@ -105,7 +105,7 @@
     <string name="continue_reading">Continue Reading</string>
     <string name="begin_reading">Begin Reading</string>
     <string name="verse_of_the_day">Verse of the Day</string>
-    <string name="widget_verse_description">A new verse each morning.</string>
+    <string name="widget_verse_description">A new verse each morning, a random verse, or verses on hope, peace and more.</string>
     <string name="recently_highlighted">Recently Highlighted</string>
     <string name="recent_notes">Recent Notes</string>
     <string name="see_all">See All</string>
@@ -1198,4 +1198,17 @@
     <string name="streak_days">%d-day streak</string>
     <string name="genesis_one">Genesis 1</string>
     <string name="tap_to_review">Tap to review</string>
+    <string name="source_random">Random Verse</string>
+    <string name="a_verse_for_you">A Verse for You</string>
+    <string name="from_your_reading">From Your Reading</string>
+    <string name="category_hope">Hope</string>
+    <string name="category_peace">Peace</string>
+    <string name="category_faith">Faith</string>
+    <string name="category_strength">Strength</string>
+    <string name="category_comfort">Comfort</string>
+    <string name="category_love">Love</string>
+    <string name="category_gratitude">Gratitude</string>
+    <string name="category_guidance">Guidance</string>
+    <string name="widget_show">Show</string>
+    <string name="widget_verse_choose">Choose which verse the widget shows.</string>
 </resources>

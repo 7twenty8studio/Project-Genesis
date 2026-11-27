@@ -50,6 +50,19 @@ import com.genesis.core.domain.link.GenesisLink
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.time.LocalDate
+import java.time.LocalDateTime
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.glance.appwidget.state.getAppWidgetState
+import androidx.glance.state.PreferencesGlanceStateDefinition
+import androidx.glance.layout.fillMaxWidth
+import com.genesis.app.settings.Entitlements
+import com.genesis.core.domain.bible.ChapterId
+import com.genesis.core.domain.widgets.CategoryPassage
+import com.genesis.core.domain.widgets.ReadingVersePicker
+import com.genesis.core.domain.widgets.VerseCategories
+import com.genesis.core.domain.widgets.VerseWidgetSchedule
+import com.genesis.core.domain.widgets.VerseWidgetSource
+import com.genesis.core.domain.widgets.WidgetVerses
 import java.time.ZoneId
 import java.util.Locale
 
@@ -58,7 +71,9 @@ import java.util.Locale
  * (WidgetAccess on iOS): the day's verse verbatim from the Bible being read,
  * its reference, and a tap that opens the reader there. The brand's cream,
  * copper and walnut, walnut at night (WidgetPalette). Premium backgrounds,
- * categories and Random Verse come with Premium in phase 5.
+ * Verse of the Day and Random Verse are free; the categories and From Your
+ * Reading are Premium (VerseWidgetIntent on iOS), chosen when the widget is
+ * placed or by reconfiguring it. Painted backgrounds come with scene themes.
  */
 class VerseOfTheDayWidget : GlanceAppWidget() {
     // Exact, so LocalSize is the widget's real size and the verse can be fitted
@@ -66,27 +81,75 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
     override val sizeMode = SizeMode.Exact
 
     override suspend fun provideGlance(context: Context, id: GlanceId) {
-        val day = load(context)
+        val source = VerseWidgetSource.of(
+            runCatching { getAppWidgetState(context, PreferencesGlanceStateDefinition, id)[SOURCE] }.getOrNull(),
+        )
+        val day = load(context, source)
         provideContent { Content(day) }
     }
 
-    /** Today's verse from the person's Bible, read once per update. */
-    private suspend fun load(context: Context): WidgetVerse? = withContext(Dispatchers.IO) {
+    /**
+     * The widget's verse, read once per update, verbatim: from the person's
+     * Bible, or the KJV where their Bible numbers a passage differently. A
+     * Premium option without Premium shows the verse of the day with a
+     * Premium tag (never a locked card); anything not found falls back to it.
+     */
+    private suspend fun load(context: Context, chosen: VerseWidgetSource): WidgetVerse? = withContext(Dispatchers.IO) {
         val app = context.applicationContext as VerselyApplication
         val bible = app.readerSettings.currentBible?.let { id -> BundledBible.entries.firstOrNull { it.id == id } }
             ?: BundledBible.default(Locale.getDefault().language)
-        val verse = DailyVerse.verse(LocalDate.now(), ZoneId.systemDefault())
+        val zone = ZoneId.systemDefault()
+        val now = LocalDateTime.now(zone)
+        val locked = chosen.needsPremium && !Entitlements.isPremium
+        val source = if (locked) VerseWidgetSource.VERSE_OF_THE_DAY else chosen
+        val day = VerseWidgetSchedule.dayNumber(now.toLocalDate(), zone)
         runCatching {
             BibleRepository.open(context, bible).use { repository ->
-                val text = repository.verses(listOf(verse))[verse]?.plainText ?: return@use null
                 val translation = repository.translation
-                WidgetVerse(
-                    link = GenesisLink.read(verse),
-                    text = text,
-                    citation = ReferenceParser.describe(verse.rawValue, language = translation.language) + " · " + translation.abbreviation,
-                )
+                fun passage(item: CategoryPassage): WidgetVerse? {
+                    val own = WidgetVerses.usesOwnBible(item, translation.id)
+                    val found = if (own) repository.verses(item.verseIds) else BibleRepository.open(context, BundledBible.KJV).use { it.verses(item.verseIds) }
+                    val verses = item.verseIds.mapNotNull { found[it] }
+                    if (verses.size != item.verseIds.size) return null
+                    val shown = if (own) translation else null
+                    return WidgetVerse(
+                        link = GenesisLink.read(item.start),
+                        text = verses.joinToString(" ") { it.plainText },
+                        citation = item.reference.description(shown?.language ?: "en") + " · " + (shown?.abbreviation ?: "KJV"),
+                        title = source,
+                        premiumTag = locked,
+                    )
+                }
+                fun rotating(pool: List<CategoryPassage>) = VerseWidgetSchedule.index(now, pool.size, zone)?.let { passage(pool[it]) }
+                val picked = when (source) {
+                    VerseWidgetSource.VERSE_OF_THE_DAY -> null
+                    VerseWidgetSource.RANDOM -> rotating(WidgetVerses.randomPool(day))
+                    VerseWidgetSource.FROM_YOUR_READING -> {
+                        val chapters = app.progress.recentChapters(7, now.toLocalDate())
+                        ReadingVersePicker.pick(chapters, day, { key -> runCatching { repository.chapter(ChapterId(key / 1_000, key % 1_000)).verses }.getOrDefault(emptyList()) }, { it.plainText })?.let { verse ->
+                            WidgetVerse(
+                                link = GenesisLink.read(verse.id),
+                                text = verse.plainText,
+                                citation = ReferenceParser.describe(verse.id.rawValue, language = translation.language) + " · " + translation.abbreviation,
+                                title = source,
+                            )
+                        }
+                    }
+                    else -> source.category?.let { rotating(VerseCategories.passages(it)) }
+                }
+                picked ?: run {
+                    val verse = DailyVerse.verse(now.toLocalDate(), zone)
+                    val text = repository.verses(listOf(verse))[verse]?.plainText ?: return@use null
+                    WidgetVerse(
+                        link = GenesisLink.read(verse),
+                        text = text,
+                        citation = ReferenceParser.describe(verse.rawValue, language = translation.language) + " · " + translation.abbreviation,
+                        title = VerseWidgetSource.VERSE_OF_THE_DAY,
+                        premiumTag = locked,
+                    )
+                }
             }
-        }.onFailure { Log.e(TAG, "Couldn't read the verse of the day", it) }.getOrNull()
+        }.onFailure { Log.e(TAG, "Couldn't read the widget's verse", it) }.getOrNull()
     }
 
     @Composable
@@ -115,7 +178,16 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
                 .clickable(actionStartActivity(open)),
             verticalAlignment = Alignment.Top,
         ) {
-            Eyebrow(androidx.glance.LocalContext.current.getString(R.string.verse_of_the_day))
+            Row(GlanceModifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                Eyebrow(androidx.glance.LocalContext.current.getString((day?.title ?: VerseWidgetSource.VERSE_OF_THE_DAY).titleRes))
+                if (day?.premiumTag == true) {
+                    Spacer(GlanceModifier.defaultWeight())
+                    Text(
+                        androidx.glance.LocalContext.current.getString(R.string.premium),
+                        style = TextStyle(color = WidgetPalette.accent, fontWeight = FontWeight.Bold, fontSize = 9.sp),
+                    )
+                }
+            }
             Spacer(GlanceModifier.height(if (small) 6.dp else 10.dp))
             Text(
                 day?.text ?: "",
@@ -138,10 +210,19 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
         }
     }
 
-    private data class WidgetVerse(val link: String, val text: String, val citation: String)
+    private data class WidgetVerse(
+        val link: String,
+        val text: String,
+        val citation: String,
+        val title: VerseWidgetSource = VerseWidgetSource.VERSE_OF_THE_DAY,
+        val premiumTag: Boolean = false,
+    )
 
     companion object {
         private const val TAG = "VerseWidget"
+
+        /** The widget's chosen option (VerseWidgetSource.raw), kept in its own Glance state. */
+        val SOURCE = stringPreferencesKey("verse.source")
         private val MEDIUM = DpSize(250.dp, 110.dp)
         private val LARGE = DpSize(250.dp, 260.dp)
 
@@ -149,3 +230,23 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
         suspend fun refresh(context: Context) = VerselyWidgets.refresh(context)
     }
 }
+
+/** The small capitals above the verse, per option (as iOS: Random Verse reads "A Verse for You"). */
+internal val VerseWidgetSource.titleRes: Int
+    get() = when (this) {
+        VerseWidgetSource.VERSE_OF_THE_DAY -> R.string.verse_of_the_day
+        VerseWidgetSource.RANDOM -> R.string.a_verse_for_you
+        VerseWidgetSource.FROM_YOUR_READING -> R.string.from_your_reading
+        VerseWidgetSource.HOPE -> R.string.category_hope
+        VerseWidgetSource.PEACE -> R.string.category_peace
+        VerseWidgetSource.FAITH -> R.string.category_faith
+        VerseWidgetSource.STRENGTH -> R.string.category_strength
+        VerseWidgetSource.COMFORT -> R.string.category_comfort
+        VerseWidgetSource.LOVE -> R.string.category_love
+        VerseWidgetSource.GRATITUDE -> R.string.category_gratitude
+        VerseWidgetSource.GUIDANCE -> R.string.category_guidance
+    }
+
+/** The option's name in the widget's settings (Random Verse by its own name there). */
+internal val VerseWidgetSource.optionRes: Int
+    get() = if (this == VerseWidgetSource.RANDOM) R.string.source_random else titleRes

@@ -105,7 +105,7 @@
     "continue_reading": "Continue Reading",
     "begin_reading": "Begin Reading",
     "verse_of_the_day": "Verse of the Day",
-    "widget_verse_description": "A new verse each morning.",
+    "widget_verse_description": "A new verse each morning, a random verse, or verses on hope, peace and more.",
     "recently_highlighted": "Recently Highlighted",
     "recent_notes": "Recent Notes",
     "see_all": "See All",
@@ -1197,6 +1197,19 @@
     "widget_memorise_hidden": "Memorize Scripture is turned off in Versely.",
     "streak_days": "%lld-day streak",
     "genesis_one": "Genesis 1",
-    "tap_to_review": "Tap to review"
+    "tap_to_review": "Tap to review",
+    "source_random": "Random Verse",
+    "a_verse_for_you": "A Verse for You",
+    "from_your_reading": "From Your Reading",
+    "category_hope": "Hope",
+    "category_peace": "Peace",
+    "category_faith": "Faith",
+    "category_strength": "Strength",
+    "category_comfort": "Comfort",
+    "category_love": "Love",
+    "category_gratitude": "Gratitude",
+    "category_guidance": "Guidance",
+    "widget_show": "Show",
+    "widget_verse_choose": "Choose which verse the widget shows."
   }
 }

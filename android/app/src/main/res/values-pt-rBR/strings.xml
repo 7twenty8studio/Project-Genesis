@@ -104,7 +104,7 @@
     <string name="continue_reading">Continuar lendo</string>
     <string name="begin_reading">Começar a ler</string>
     <string name="verse_of_the_day">Versículo do dia</string>
-    <string name="widget_verse_description">Um versículo novo a cada manhã.</string>
+    <string name="widget_verse_description">Um versículo novo a cada manhã, um versículo aleatório ou versículos sobre esperança, paz e mais.</string>
     <string name="recently_highlighted">Destacados recentemente</string>
     <string name="recent_notes">Anotações recentes</string>
     <string name="see_all">Ver tudo</string>
@@ -1197,4 +1197,17 @@
     <string name="streak_days">Sequência de %d dias</string>
     <string name="genesis_one">Gênesis 1</string>
     <string name="tap_to_review">Toque para revisar</string>
+    <string name="source_random">Versículo aleatório</string>
+    <string name="a_verse_for_you">Um versículo para você</string>
+    <string name="from_your_reading">Da sua leitura</string>
+    <string name="category_hope">Esperança</string>
+    <string name="category_peace">Paz</string>
+    <string name="category_faith">Fé</string>
+    <string name="category_strength">Força</string>
+    <string name="category_comfort">Consolo</string>
+    <string name="category_love">Amor</string>
+    <string name="category_gratitude">Gratidão</string>
+    <string name="category_guidance">Direção</string>
+    <string name="widget_show">Mostrar</string>
+    <string name="widget_verse_choose">Escolha qual versículo o widget mostra.</string>
 </resources>

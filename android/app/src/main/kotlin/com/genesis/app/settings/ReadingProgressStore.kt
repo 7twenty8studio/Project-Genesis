@@ -63,6 +63,7 @@ class ReadingProgressStore(context: Context) {
                 chaptersRead = current.chaptersRead + chapter,
             )
         }
+        recordRecent(today, chapter)
         if (_position.value == verse && !newDay && !newChapter) return
         _position.value = verse
         defaults.edit().apply {
@@ -71,6 +72,31 @@ class ReadingProgressStore(context: Context) {
             if (newDay) putStringSet(DAYS, _record.value.readingDays.mapTo(mutableSetOf()) { it.toString() })
             if (newChapter) putStringSet(CHAPTERS, _record.value.chaptersRead.mapTo(mutableSetOf()) { it.toString() })
         }.apply()
+    }
+
+    /** Chapters opened per day ("yyyy-MM-dd:key"), the last two weeks, for the verse widget's From Your Reading. */
+    private var chaptersByDay: Set<String> = defaults.getStringSet(BY_DAY, emptySet()).orEmpty()
+
+    private fun recordRecent(today: LocalDate, chapter: Int) {
+        val entry = "$today:$chapter"
+        if (entry in chaptersByDay) return
+        val oldest = today.minusDays(14).toString()
+        chaptersByDay = chaptersByDay.filter { it.substringBefore(':') >= oldest }.toSet() + entry
+        defaults.edit().putStringSet(BY_DAY, chaptersByDay).apply()
+    }
+
+    /**
+     * The chapters opened in the last `days` days, most recent day first,
+     * each once (chapter keys, book × 1,000 + chapter), as
+     * ReadingProgress.recentChapters on iOS.
+     */
+    fun recentChapters(days: Int = 7, today: LocalDate = LocalDate.now()): List<Int> {
+        val byDay = chaptersByDay.groupBy({ it.substringBefore(':') }, { it.substringAfter(':').toIntOrNull() })
+        val seen = LinkedHashSet<Int>()
+        for (offset in 0 until days.coerceAtLeast(0)) {
+            byDay[today.minusDays(offset.toLong()).toString()].orEmpty().filterNotNull().sorted().forEach { seen.add(it) }
+        }
+        return seen.toList()
     }
 
     /** Adds a session in the reader, ending today (capped at 45 minutes, as iOS). */
@@ -89,5 +115,6 @@ class ReadingProgressStore(context: Context) {
         const val DAYS = "progress.readingDays"
         const val CHAPTERS = "progress.chaptersRead"
         const val SECONDS = "progress.readingSeconds"
+        const val BY_DAY = "progress.chaptersByDay"
     }
 }
