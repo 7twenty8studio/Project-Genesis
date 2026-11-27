@@ -37,6 +37,8 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.selection.toggleable
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.genesis.app.BuildConfig
 import com.genesis.app.R
 import com.genesis.core.design.LocalReaderColors
@@ -86,6 +88,16 @@ fun SettingsScreen(
                 Row_(stringResource(R.string.notifications), onClick = onNotifications, trailing = "›")
             }
 
+            Header(stringResource(R.string.listening))
+            val listening = (context.applicationContext as com.genesis.app.VerselyApplication).listening.settings
+            val listeningPreferences by listening.state.collectAsStateWithLifecycle()
+            Group {
+                SettingSwitch(stringResource(R.string.follow_along), listeningPreferences.followsAlong, listening::setFollowsAlong)
+                HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
+                SettingSwitch(stringResource(R.string.continue_next_chapter), listeningPreferences.continuesToNextChapter, listening::setContinuesToNextChapter)
+            }
+            Footer(stringResource(R.string.follow_along_footer))
+
             Header(stringResource(R.string.language))
             Group {
                 AppLanguageChoice.entries.forEachIndexed { index, choice ->
@@ -128,6 +140,18 @@ fun SettingsScreen(
             Header(stringResource(R.string.about_versely))
             Footer(stringResource(R.string.version, version))
         }
+    }
+}
+
+@Composable
+private fun SettingSwitch(title: String, checked: Boolean, onChange: (Boolean) -> Unit) {
+    val colors = LocalReaderColors.current
+    Row(
+        Modifier.fillMaxWidth().toggleable(value = checked, role = Role.Switch, onValueChange = onChange).padding(horizontal = 16.dp, vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text(title, style = MaterialTheme.typography.bodyLarge, color = colors.text, modifier = Modifier.weight(1f))
+        Switch(checked = checked, onCheckedChange = null, colors = SwitchDefaults.colors(checkedTrackColor = colors.accent))
     }
 }
 

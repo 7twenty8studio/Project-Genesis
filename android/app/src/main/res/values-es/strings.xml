@@ -440,4 +440,24 @@
     <string name="reading_time_summary">Tiempo de lectura en las últimas dos semanas: %s en total</string>
     <string name="developer">Desarrollador</string>
     <string name="test_as_premium">Probar como Premium</string>
+    <string name="listen">Escuchar</string>
+    <string name="listen_to_chapter">Escuchar este capítulo</string>
+    <string name="play">Reproducir</string>
+    <string name="pause">Pausar</string>
+    <string name="speed">Velocidad</string>
+    <string name="more">Más</string>
+    <string name="off">Desactivado</string>
+    <string name="sleep_timer">Temporizador</string>
+    <string name="sleep_timer_detail">Temporizador: %s</string>
+    <string name="stop_listening">Dejar de escuchar</string>
+    <string name="minutes_count">%d minutos</string>
+    <string name="end_of_chapter">Fin del capítulo</string>
+    <string name="follow_along">Seguir la lectura</string>
+    <string name="continue_next_chapter">Continuar con el siguiente capítulo</string>
+    <string name="listening">Escuchando</string>
+    <string name="device_voice_source">%s · Voz del dispositivo</string>
+    <string name="follow_along_footer">Seguir la lectura pasa las páginas y marca el versículo que se lee.</string>
+    <string name="listening_no_engine">Este teléfono no tiene un motor de texto a voz. Instala uno, como Servicios de voz de Google, para escuchar.</string>
+    <string name="listening_no_voice">Tu teléfono no tiene una voz en el idioma de esta Biblia. Agrega una en los ajustes del teléfono, en Salida de texto a voz.</string>
+    <string name="listening_no_focus">Otra app está reproduciendo audio. Vuelve a intentarlo en un momento.</string>
 </resources>

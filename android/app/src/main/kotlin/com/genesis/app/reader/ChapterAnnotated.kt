@@ -52,11 +52,14 @@ internal data class VerseMarks(
     val selection: Set<VerseId> = emptySet(),
     /** Verses followed by a note's mark, with the note's id. */
     val notes: Map<VerseId, String> = emptyMap(),
+    /** The verse being read aloud, while Follow Along is on. */
+    val playing: VerseId? = null,
 ) {
     fun style(verse: VerseId, colors: ReaderColors): SpanStyle {
         val highlight = highlights[verse]
         val selected = verse in selection
         val background = when {
+            verse == playing -> colors.accent.copy(alpha = 0.22f)
             highlight != null -> Color(0xFF000000 or highlight.hex.toLong()).copy(alpha = highlight.alpha(colors.isDark))
             selected -> colors.accent.copy(alpha = 0.14f)
             else -> Color.Unspecified

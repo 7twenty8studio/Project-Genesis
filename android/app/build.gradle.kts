@@ -77,6 +77,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.glance.appwidget)
+    implementation(libs.media3.session)
     testImplementation(libs.kotlin.test)
     testImplementation(libs.junit)
 }

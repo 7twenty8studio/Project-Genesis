@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
@@ -63,6 +64,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import com.genesis.app.VerselyApplication
+import com.genesis.app.audio.HeadphonesIcon
+import com.genesis.app.audio.Listening
+import com.genesis.app.audio.ListeningBar
+import com.genesis.app.audio.ListeningState
 
 @Composable
 fun ReaderRoute(
@@ -73,8 +78,26 @@ fun ReaderRoute(
     val state by viewModel.state.collectAsStateWithLifecycle()
     LaunchedEffect(state.chapter?.id, state.focus) { viewModel.recordPosition() }
     ReadingTimer()
+    val app = LocalContext.current.applicationContext as VerselyApplication
+    val listening by app.listening.state.collectAsStateWithLifecycle()
+    val listeningPreferences by app.listening.settings.state.collectAsStateWithLifecycle()
+    val following = listeningPreferences.followsAlong && listening.isActive && listening.bible == state.bible
+    // Follow Along: when listening moves on to the next chapter, the reader goes with it.
+    var lastListened by remember { mutableStateOf<com.genesis.core.domain.bible.ChapterId?>(null) }
+    LaunchedEffect(listening.chapter, following) {
+        val now = listening.chapter
+        val before = lastListened
+        lastListened = now
+        if (following && now != null && before != null && now != before && state.chapterId == before) viewModel.open(now)
+    }
     ReaderScreen(
         state = state,
+        listening = ReaderListening(
+            state = listening,
+            speed = listeningPreferences.speed,
+            controls = app.listening,
+            playing = listening.verse.takeIf { following && listening.chapter == state.chapterId },
+        ),
         onSearchClick = onSearchClick,
         onChangeSettings = onChangeSettings,
         onOpen = viewModel::open,
@@ -96,6 +119,14 @@ fun ReaderRoute(
 }
 
 
+
+/** Listening, as the reader shows it: the bar, and the verse to mark and follow. */
+data class ReaderListening(
+    val state: ListeningState,
+    val speed: Double,
+    val controls: Listening,
+    val playing: VerseId?,
+)
 
 /** What the reader does with tapped verses. */
 data class SelectionActions(
@@ -127,6 +158,7 @@ fun ReaderScreen(
     onPrevious: () -> Unit,
     onPreviousAtEnd: () -> Unit = onPrevious,
     selection: SelectionActions = SelectionActions(),
+    listening: ReaderListening? = null,
 ) {
     var picking by rememberSaveable { mutableStateOf(false) }
     var bibleMenu by remember { mutableStateOf(false) }
@@ -156,6 +188,20 @@ fun ReaderScreen(
                     }
                 },
                 actions = {
+                    if (listening != null) {
+                        val listen = stringResource(R.string.listen_to_chapter)
+                        IconButton(
+                            onClick = {
+                                val current = listening.state
+                                if (current.isActive && current.chapter == state.chapterId && current.bible == state.bible) {
+                                    listening.controls.toggle()
+                                } else {
+                                    listening.controls.play(state.bible, state.chapterId)
+                                }
+                            },
+                            modifier = Modifier.semantics { contentDescription = listen },
+                        ) { HeadphonesIcon(colors.accent) }
+                    }
                     val searchLabel = stringResource(R.string.search)
                     IconButton(
                         onClick = onSearchClick,
@@ -192,6 +238,15 @@ fun ReaderScreen(
             )
         },
         bottomBar = {
+          Column {
+            if (listening != null && listening.state.isActive && state.selection.isEmpty()) {
+                ListeningBar(
+                    state = listening.state,
+                    speed = listening.speed,
+                    listening = listening.controls,
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
+                )
+            }
             if (state.selection.isNotEmpty()) {
                 val recent by LocalRecentColors.current
                 SelectionBar(
@@ -217,13 +272,15 @@ fun ReaderScreen(
                     }
                 }
             }
+          }
         },
         containerColor = colors.background,
     ) { padding ->
         Box(Modifier.fillMaxSize().padding(padding), contentAlignment = Alignment.TopCenter) {
             val preferences = LocalReaderPreferences.current
             val notedVerses = state.notedVerses
-            val marks = remember(state.highlights, state.selection, notedVerses) { VerseMarks(state.highlights, state.selection, notedVerses) }
+            val playing = listening?.playing
+            val marks = remember(state.highlights, state.selection, notedVerses, playing) { VerseMarks(state.highlights, state.selection, notedVerses, playing) }
             val scripture = scriptureStyle(preferences, Entitlements.isPremium)
             when {
                 state.chapter != null && preferences.readingMode == ReadingMode.PAGE -> key(state.chapter.id, state.chapter.translation.id) {
@@ -235,13 +292,14 @@ fun ReaderScreen(
                         runningHead = state.chapterId.description(language).uppercase(),
                         openAtEnd = state.openAtEnd,
                         focus = state.focus,
+                        follow = playing,
                         onNextChapter = onNext,
                         onPreviousChapter = onPreviousAtEnd,
                         onVerseTap = selection.onVerseTap,
                         onNoteTap = selection.onNoteTap,
                     )
                 }
-                state.chapter != null -> ChapterText(state.chapter, scripture, marks, state.focus, selection.onVerseTap, selection.onNoteTap)
+                state.chapter != null -> ChapterText(state.chapter, scripture, marks, state.focus, playing, selection.onVerseTap, selection.onNoteTap)
                 state.failed -> Text(
                     stringResource(R.string.chapter_load_failed),
                     color = colors.secondaryText,
@@ -273,7 +331,7 @@ fun ReaderScreen(
 }
 
 @Composable
-private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMarks, focus: ReaderFocus?, onVerseTap: (VerseId) -> Unit, onNoteTap: (String) -> Unit) {
+private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMarks, focus: ReaderFocus?, follow: VerseId?, onVerseTap: (VerseId) -> Unit, onNoteTap: (String) -> Unit) {
     val colors = LocalReaderColors.current
     val listState = rememberLazyListState()
     val blocks = remember(chapter) { blocks(chapter) }
@@ -283,6 +341,16 @@ private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMark
             blocks.indexOfFirst { it is Block.Prose && it.verses.any { verse -> verse.id == focus.verse } }
         }
         listState.scrollToItem(if (block != null && block >= 0) block + 1 else 0)
+    }
+    // Follow Along: keep the verse being read on screen, moving only when it's about to leave.
+    LaunchedEffect(follow) {
+        val verse = follow?.takeIf { it.chapterId == chapter.id } ?: return@LaunchedEffect
+        val block = blocks.indexOfFirst { it is Block.Prose && it.verses.any { v -> v.id == verse } }.takeIf { it >= 0 } ?: return@LaunchedEffect
+        val item = block + 1
+        val visible = listState.layoutInfo.visibleItemsInfo
+        val shown = visible.firstOrNull { it.index == item }
+        val bottom = listState.layoutInfo.viewportEndOffset
+        if (shown == null || shown.offset + shown.size > bottom && shown.offset > bottom / 3) listState.animateScrollToItem(item)
     }
 
     LazyColumn(

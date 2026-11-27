@@ -48,6 +48,7 @@ internal fun PagedChapter(
     runningHead: String,
     openAtEnd: Boolean,
     focus: ReaderFocus?,
+    follow: com.genesis.core.domain.bible.VerseId? = null,
     onNextChapter: () -> Unit,
     onPreviousChapter: () -> Unit,
     onVerseTap: (com.genesis.core.domain.bible.VerseId) -> Unit,
@@ -85,6 +86,11 @@ internal fun PagedChapter(
         val pager = rememberPagerState(initialPage = pageOf(focus) ?: if (openAtEnd) pages.size else 1) { pageCount }
         // A verse found by search in the chapter already open.
         LaunchedEffect(focus) { pageOf(focus)?.let { if (it != pager.currentPage) pager.scrollToPage(it) } }
+        // Follow Along: turn to the page with the verse being read aloud.
+        LaunchedEffect(follow) {
+            val page = follow?.let { pageOf(ReaderFocus(it)) } ?: return@LaunchedEffect
+            if (page != pager.currentPage && !pager.isScrollInProgress) pager.animateScrollToPage(page)
+        }
 
         LaunchedEffect(pager, pages.size) {
             snapshotFlow { pager.settledPage }.distinctUntilChanged().drop(1).collect { page ->

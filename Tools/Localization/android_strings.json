@@ -440,6 +440,26 @@
     "minutes_axis": "minutes",
     "reading_time_summary": "Reading time over the last two weeks: %@ in total",
     "developer": "Developer",
-    "test_as_premium": "Test as Premium"
+    "test_as_premium": "Test as Premium",
+    "listen": "Listen",
+    "listen_to_chapter": "Listen to this chapter",
+    "play": "Play",
+    "pause": "Pause",
+    "speed": "Speed",
+    "more": "More",
+    "off": "Off",
+    "sleep_timer": "Sleep Timer",
+    "sleep_timer_detail": "Sleep timer: %@",
+    "stop_listening": "Stop Listening",
+    "minutes_count": "%lld minutes",
+    "end_of_chapter": "End of chapter",
+    "follow_along": "Follow Along",
+    "continue_next_chapter": "Continue to Next Chapter",
+    "listening": "Listening",
+    "device_voice_source": "%@ · Device voice",
+    "follow_along_footer": "Follow Along turns the pages and marks the verse being read.",
+    "listening_no_engine": "This phone has no text-to-speech engine. Install one, such as Speech Services by Google, to listen.",
+    "listening_no_voice": "Your phone has no voice for this Bible's language. Add one in your phone's settings under Text-to-speech output.",
+    "listening_no_focus": "Another app is playing audio. Try again in a moment."
   }
 }

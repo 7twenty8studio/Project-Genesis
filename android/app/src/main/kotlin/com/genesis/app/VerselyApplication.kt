@@ -52,6 +52,11 @@ class VerselyApplication : Application() {
     /** The study database if it's already open in that language (no disk work). */
     fun studyIfOpen(language: String): StudyRepository? = studyRepository?.takeIf { it.first == language }?.second
 
+    /** Chapters read aloud by the phone's voice. */
+    val listening: com.genesis.app.audio.Listening by lazy {
+        com.genesis.app.audio.Listening(this, com.genesis.app.audio.ListeningSettings(this))
+    }
+
     /** Settings › Notifications. */
     val notifications: NotificationPreferences by lazy { NotificationPreferences(this) }
     private var remindersFollowed = false

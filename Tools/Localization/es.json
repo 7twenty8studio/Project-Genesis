@@ -2465,5 +2465,10 @@
  "Android's own book serif": "La serif propia de Android",
  "this week": "esta semana",
  "minutes": "minutos",
- "Developer": "Desarrollador"
+ "Developer": "Desarrollador",
+ "Sleep timer: %@": "Temporizador: %@",
+ "Follow Along turns the pages and marks the verse being read.": "Seguir la lectura pasa las páginas y marca el versículo que se lee.",
+ "This phone has no text-to-speech engine. Install one, such as Speech Services by Google, to listen.": "Este teléfono no tiene un motor de texto a voz. Instala uno, como Servicios de voz de Google, para escuchar.",
+ "Your phone has no voice for this Bible's language. Add one in your phone's settings under Text-to-speech output.": "Tu teléfono no tiene una voz en el idioma de esta Biblia. Agrega una en los ajustes del teléfono, en Salida de texto a voz.",
+ "Another app is playing audio. Try again in a moment.": "Otra app está reproduciendo audio. Vuelve a intentarlo en un momento."
 }
