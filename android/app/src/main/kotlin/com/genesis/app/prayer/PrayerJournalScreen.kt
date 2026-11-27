@@ -120,13 +120,13 @@ private fun JournalList(
     modifier: Modifier,
 ) {
     val colors = LocalReaderColors.current
+    var timelineMode by rememberSaveable { mutableStateOf(false) }
     var answered by rememberSaveable { mutableStateOf(false) }
     var categoryId by rememberSaveable { mutableStateOf<String?>(null) }
     var query by rememberSaveable { mutableStateOf("") }
     val category = categoryId?.let(PrayerCategory::lenient)
-    val visible = prayers.filter {
-        it.hasContent && it.isAnswered == answered && (category == null || it.category == category) && PrayerSearch.matches(it, query)
-    }
+    val searched = prayers.filter { it.hasContent && (category == null || it.category == category) && PrayerSearch.matches(it, query) }
+    val visible = searched.filter { it.isAnswered == answered }
 
     Column(modifier.fillMaxSize().background(colors.background).statusBarsPadding().imePadding()) {
         Row(Modifier.padding(start = 20.dp, end = 8.dp, top = 16.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -153,29 +153,38 @@ private fun JournalList(
                     modifier = Modifier.fillMaxWidth(),
                 )
             }
+            if (query.isBlank()) item { PrayerLife(prayers) }
             item {
+                Spacer(Modifier.size(8.dp))
                 Segmented(
-                    options = listOf(stringResource(R.string.praying), stringResource(R.string.answered)),
-                    selected = if (answered) 1 else 0,
-                    onSelect = { answered = it == 1 },
+                    options = listOf(stringResource(R.string.journal_list), stringResource(R.string.journal_timeline)),
+                    selected = if (timelineMode) 1 else 0,
+                    onSelect = { timelineMode = it == 1 },
                 )
             }
+            if (!timelineMode) {
+                item {
+                    Segmented(
+                        options = listOf(stringResource(R.string.praying), stringResource(R.string.answered)),
+                        selected = if (answered) 1 else 0,
+                        onSelect = { answered = it == 1 },
+                    )
+                }
+            }
             item { CategoryChips(category, includeAll = true) { categoryId = it?.id } }
-            if (visible.isEmpty()) {
+            if (timelineMode) {
+                timeline(searched, onOpen)
+            } else if (visible.isEmpty()) {
                 item {
                     val (title, message) = when {
                         query.isNotBlank() -> R.string.no_matching_prayers to R.string.no_matching_prayers_message
                         answered -> R.string.no_answered_prayers to R.string.no_answered_prayers_message
                         else -> R.string.no_prayer_requests to R.string.no_prayer_requests_message
                     }
-                    Column(Modifier.fillMaxWidth().padding(vertical = 40.dp, horizontal = 16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-                        Text(stringResource(title), style = MaterialTheme.typography.titleMedium, color = colors.text, textAlign = TextAlign.Center)
-                        Spacer(Modifier.size(6.dp))
-                        Text(stringResource(message), style = MaterialTheme.typography.bodyMedium, color = colors.secondaryText, textAlign = TextAlign.Center)
-                    }
+                    EmptyJournal(title, message)
                 }
             }
-            items(visible, key = { it.id }) { prayer -> PrayerRow(prayer, Modifier.clickable { onOpen(prayer.id) }) }
+            if (!timelineMode) items(visible, key = { it.id }) { prayer -> PrayerRow(prayer, Modifier.clickable { onOpen(prayer.id) }) }
         }
     }
 }
@@ -212,6 +221,16 @@ private fun PrayerRow(prayer: Prayer, modifier: Modifier) {
         if (prayer.isAnswered && !note.isNullOrBlank()) {
             Text(note, style = MaterialTheme.typography.bodyMedium, fontStyle = FontStyle.Italic, color = colors.secondaryText, maxLines = 2, overflow = TextOverflow.Ellipsis)
         }
+    }
+}
+
+@Composable
+internal fun EmptyJournal(title: Int, message: Int) {
+    val colors = LocalReaderColors.current
+    Column(Modifier.fillMaxWidth().padding(vertical = 40.dp, horizontal = 16.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(stringResource(title), style = MaterialTheme.typography.titleMedium, color = colors.text, textAlign = TextAlign.Center)
+        Spacer(Modifier.size(6.dp))
+        Text(stringResource(message), style = MaterialTheme.typography.bodyMedium, color = colors.secondaryText, textAlign = TextAlign.Center)
     }
 }
 

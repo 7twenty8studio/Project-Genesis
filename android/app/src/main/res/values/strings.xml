@@ -283,4 +283,25 @@
     <string name="prayers_holding">%d prayers you\'re holding up</string>
     <string name="has_bible_passages">Has Bible passages</string>
     <string name="reminder_set">Reminder set</string>
+    <string name="journal_list">List</string>
+    <string name="journal_timeline">Timeline</string>
+    <string name="your_prayer_life">Your Prayer Life</string>
+    <string name="more_about_prayers">More About Your Prayers</string>
+    <string name="prayer_streak">%d days in a row of prayer</string>
+    <string name="prayed_today_fresh">You\'ve prayed today. Every day is a fresh start.</string>
+    <string name="quiet_moment">Take a quiet moment with God today.</string>
+    <string name="stat_requests">requests</string>
+    <string name="stat_answered">answered</string>
+    <string name="stat_answered_share">of all answered</string>
+    <string name="stat_still_praying">still praying</string>
+    <string name="i_prayed_today">I Prayed Today</string>
+    <string name="prayed">Prayed</string>
+    <string name="answer_wait_none">When a prayer is answered, you\'ll see how long the answer took.</string>
+    <string name="answer_wait_day">Answers came within a day, on average.</string>
+    <string name="answer_wait_one">Answers came after about a day, on average.</string>
+    <string name="answer_wait_days">Answers came after about %d days, on average.</string>
+    <string name="story_with_god">Your story with God</string>
+    <string name="story_with_god_message">Prayers and answers appear here by month, so you can look back on God\'s faithfulness.</string>
+    <string name="answered_asked">Answered %1$s · asked %2$s</string>
+    <string name="asked_category">Asked %1$s · %2$s</string>
 </resources>

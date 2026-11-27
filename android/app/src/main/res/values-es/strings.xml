@@ -282,4 +282,25 @@
     <string name="prayers_holding">%d oraciones por las que estás orando</string>
     <string name="has_bible_passages">Tiene pasajes bíblicos</string>
     <string name="reminder_set">Recordatorio activado</string>
+    <string name="journal_list">Lista</string>
+    <string name="journal_timeline">Cronología</string>
+    <string name="your_prayer_life">Tu vida de oración</string>
+    <string name="more_about_prayers">Más sobre tus oraciones</string>
+    <string name="prayer_streak">%d días seguidos de oración</string>
+    <string name="prayed_today_fresh">Hoy has orado. Cada día es un nuevo comienzo.</string>
+    <string name="quiet_moment">Toma hoy un momento tranquilo con Dios.</string>
+    <string name="stat_requests">peticiones</string>
+    <string name="stat_answered">respondidas</string>
+    <string name="stat_answered_share">del total respondidas</string>
+    <string name="stat_still_praying">aún en oración</string>
+    <string name="i_prayed_today">Hoy oré</string>
+    <string name="prayed">Oré</string>
+    <string name="answer_wait_none">Cuando una oración sea respondida, verás cuánto tardó la respuesta.</string>
+    <string name="answer_wait_day">Las respuestas llegaron en menos de un día, en promedio.</string>
+    <string name="answer_wait_one">Las respuestas llegaron después de un día aproximadamente, en promedio.</string>
+    <string name="answer_wait_days">Las respuestas llegaron después de unos %d días, en promedio.</string>
+    <string name="story_with_god">Tu historia con Dios</string>
+    <string name="story_with_god_message">Tus oraciones y respuestas aparecen aquí por mes, para que recuerdes la fidelidad de Dios.</string>
+    <string name="answered_asked">Respondida el %1$s · pedida el %2$s</string>
+    <string name="asked_category">Pedida el %1$s · %2$s</string>
 </resources>
