@@ -5,6 +5,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.BaselineShift
@@ -13,7 +14,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import com.genesis.core.bible.Verse
 import com.genesis.core.design.LocalReaderColors
-import com.genesis.core.design.ScriptureText
 
 /**
  * Verses run on in one paragraph with small raised numbers, as in a printed
@@ -21,7 +21,7 @@ import com.genesis.core.design.ScriptureText
  * keeps its id as an annotation, ready for taps, highlights and selection.
  */
 @Composable
-internal fun VerseParagraph(verses: List<Verse>) {
+internal fun VerseParagraph(verses: List<Verse>, style: TextStyle) {
     val colors = LocalReaderColors.current
     val poetry = verses.firstOrNull()?.isPoetry == true
     val text = buildAnnotatedString {
@@ -38,7 +38,7 @@ internal fun VerseParagraph(verses: List<Verse>) {
     }
     Text(
         text,
-        style = ScriptureText,
+        style = style,
         color = colors.text,
         modifier = Modifier.padding(bottom = 12.dp, start = if (poetry) 16.dp else 0.dp),
     )

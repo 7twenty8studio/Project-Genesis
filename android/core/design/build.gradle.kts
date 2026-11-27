@@ -15,6 +15,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures { compose = true }
+    sourceSets {
+        // The reader's bundled typefaces (OFL), one copy shared with iOS.
+        getByName("main").assets.directories.add("../../../Genesis/Resources/Fonts")
+    }
 }
 
 dependencies {

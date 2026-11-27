@@ -41,13 +41,20 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.genesis.app.R
 import com.genesis.core.bible.Chapter
 import com.genesis.core.design.LocalReaderColors
-import com.genesis.core.design.ScriptureText
+import com.genesis.app.settings.Entitlements
+import com.genesis.app.settings.LocalReaderPreferences
+import com.genesis.core.design.scriptureStyle
+import com.genesis.core.domain.reader.ReaderPreferences
 
 @Composable
-fun ReaderRoute(viewModel: ReaderViewModel = viewModel()) {
+fun ReaderRoute(
+    onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Unit,
+    viewModel: ReaderViewModel = viewModel(),
+) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     ReaderScreen(
         state = state,
+        onChangeSettings = onChangeSettings,
         onOpen = viewModel::open,
         onChooseBible = viewModel::choose,
         onNext = { viewModel.next() },
@@ -65,6 +72,7 @@ fun ReaderRoute(viewModel: ReaderViewModel = viewModel()) {
 @Composable
 fun ReaderScreen(
     state: ReaderUiState,
+    onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Unit,
     onOpen: (com.genesis.core.domain.bible.ChapterId) -> Unit,
     onChooseBible: (com.genesis.core.bible.BundledBible) -> Unit,
     onNext: () -> Unit,
@@ -72,6 +80,7 @@ fun ReaderScreen(
 ) {
     var picking by rememberSaveable { mutableStateOf(false) }
     var bibleMenu by remember { mutableStateOf(false) }
+    var settingsOpen by rememberSaveable { mutableStateOf(false) }
     val language = state.chapter?.translation?.language ?: "en"
     val colors = LocalReaderColors.current
 
@@ -85,6 +94,15 @@ fun ReaderScreen(
                             style = MaterialTheme.typography.titleMedium,
                             color = colors.text,
                         )
+                    }
+                },
+                navigationIcon = {
+                    val readingSettings = stringResource(R.string.reading_settings)
+                    TextButton(
+                        onClick = { settingsOpen = true },
+                        modifier = Modifier.semantics { contentDescription = readingSettings },
+                    ) {
+                        Text("Aa", color = colors.accent, style = MaterialTheme.typography.titleMedium)
                     }
                 },
                 actions = {
@@ -137,6 +155,14 @@ fun ReaderScreen(
         }
     }
 
+    if (settingsOpen) {
+        ReaderSettingsSheet(
+            preferences = LocalReaderPreferences.current,
+            onChange = onChangeSettings,
+            onDismiss = { settingsOpen = false },
+        )
+    }
+
     if (picking) {
         BookPicker(
             language = language,
@@ -182,6 +208,7 @@ private fun blocks(chapter: Chapter): List<Block> {
 private fun ChapterText(chapter: Chapter) {
     val colors = LocalReaderColors.current
     val listState = rememberLazyListState()
+    val scripture = scriptureStyle(LocalReaderPreferences.current, Entitlements.isPremium)
     LaunchedEffect(chapter.id, chapter.translation.id) { listState.scrollToItem(0) }
     val blocks = remember(chapter) { blocks(chapter) }
 
@@ -203,11 +230,11 @@ private fun ChapterText(chapter: Chapter) {
             when (block) {
                 is Block.Heading -> Text(
                     block.text,
-                    style = ScriptureText.copy(fontWeight = FontWeight.SemiBold),
+                    style = scripture.copy(fontWeight = FontWeight.SemiBold),
                     color = colors.text,
                     modifier = Modifier.padding(top = 12.dp, bottom = 6.dp).semantics { heading() },
                 )
-                is Block.Prose -> VerseParagraph(block.verses)
+                is Block.Prose -> VerseParagraph(block.verses, scripture)
             }
         }
         if (chapter.translation.showsLicenseUnderChapters) {
