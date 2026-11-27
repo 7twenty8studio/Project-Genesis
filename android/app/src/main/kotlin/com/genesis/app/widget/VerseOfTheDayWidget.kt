@@ -45,6 +45,7 @@ import com.genesis.core.bible.BibleRepository
 import com.genesis.core.bible.BundledBible
 import com.genesis.core.domain.bible.ReferenceParser
 import com.genesis.core.domain.home.DailyVerse
+import com.genesis.core.domain.home.TextFit
 import com.genesis.core.domain.link.GenesisLink
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -90,11 +91,15 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
     private fun Content(day: WidgetVerse?) {
         val size = LocalSize.current
         val small = size.width < MEDIUM.width
-        val lines = when {
-            size.height >= LARGE.height -> 12
-            small -> 6
-            else -> 4
-        }
+        val padding = if (small) 14.dp else 18.dp
+        // The verse's box: the widget less its padding, the eyebrow and the citation.
+        val fit = TextFit.fit(
+            characters = day?.text?.length ?: 0,
+            widthDp = (size.width - padding * 2).value.toDouble(),
+            heightDp = (size.height - padding * 2 - (if (small) 6.dp else 10.dp) - 14.dp - 24.dp).value.toDouble(),
+            largest = if (size.height >= LARGE.height) 20 else if (small) 15 else 17,
+            smallest = 11,
+        )
         val open = Intent(Intent.ACTION_VIEW, Uri.parse(day?.link ?: "versely://read"))
             .setClass(androidx.glance.LocalContext.current, MainActivity::class.java)
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -104,7 +109,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
                 .fillMaxSize()
                 .background(ImageProvider(R.drawable.widget_background))
                 .cornerRadius(20.dp)
-                .padding(if (small) 14.dp else 18.dp)
+                .padding(padding)
                 .clickable(actionStartActivity(open)),
             verticalAlignment = Alignment.Top,
         ) {
@@ -112,11 +117,11 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
             Spacer(GlanceModifier.height(if (small) 6.dp else 10.dp))
             Text(
                 day?.text ?: "",
-                maxLines = lines,
+                maxLines = fit.maxLines,
                 style = TextStyle(
                     color = Palette.text,
                     fontFamily = FontFamily.Serif,
-                    fontSize = if (small) 14.sp else 16.sp,
+                    fontSize = fit.fontSizeSp.sp,
                 ),
                 modifier = GlanceModifier.defaultWeight(),
             )
