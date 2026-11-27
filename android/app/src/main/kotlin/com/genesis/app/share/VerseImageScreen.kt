@@ -92,14 +92,14 @@ private enum class SaveOutcome { SAVED, FAILED }
  * person's photos; the face, colour, size and alignment to taste.
  */
 @Composable
-fun VerseImageScreen(card: VerseCard, readingTheme: ReaderTheme, readingFont: ReaderFont, onDone: () -> Unit) {
+fun VerseImageScreen(card: VerseCard, readingTheme: ReaderTheme, readingFont: ReaderFont, onDone: () -> Unit, offersLiveWallpaper: Boolean = true) {
     Dialog(onDismissRequest = onDone, properties = DialogProperties(usePlatformDefaultWidth = false, decorFitsSystemWindows = false)) {
-        VerseImageContent(card, readingTheme, readingFont, onDone)
+        VerseImageContent(card, readingTheme, readingFont, onDone, offersLiveWallpaper)
     }
 }
 
 @Composable
-private fun VerseImageContent(card: VerseCard, readingTheme: ReaderTheme, readingFont: ReaderFont, onDone: () -> Unit) {
+private fun VerseImageContent(card: VerseCard, readingTheme: ReaderTheme, readingFont: ReaderFont, onDone: () -> Unit, offersLiveWallpaper: Boolean) {
     val colors = LocalReaderColors.current
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -184,6 +184,29 @@ private fun VerseImageContent(card: VerseCard, readingTheme: ReaderTheme, readin
                     enabled = rendered != null,
                     modifier = Modifier.weight(1f).heightIn(min = 48.dp),
                 ) { Text(stringResource(R.string.set_as_wallpaper), color = colors.accent) }
+            }
+        }
+
+        // Premium: the same wallpaper with its season drifting (never a YouVersion Bible's text, as on iOS).
+        val season = style.season
+        if (shape == VerseImageShape.LOCK_SCREEN && season != null && offersLiveWallpaper) {
+            OutlinedButton(
+                onClick = {
+                    scope.launch {
+                        val moving = withContext(Dispatchers.Default) {
+                            runCatching { VerseImageRenderer.render(context, card, style, shape, options, readingTheme, photo, seasonStill = false) }.getOrNull()
+                        } ?: return@launch
+                        LiveWallpaper.set(context, moving, season)
+                    }
+                },
+                enabled = premium,
+                modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp, bottom = 12.dp).heightIn(min = 48.dp),
+            ) {
+                Text(stringResource(R.string.set_as_live_wallpaper), color = if (premium) colors.accent else colors.secondaryText)
+                if (!premium) {
+                    androidx.compose.foundation.layout.Spacer(Modifier.width(8.dp))
+                    com.genesis.app.reader.PremiumTag()
+                }
             }
         }
 

@@ -244,6 +244,7 @@ fun ReaderScreen(
             readingTheme = preferences.theme.resolved(androidx.compose.foundation.isSystemInDarkTheme()),
             readingFont = preferences.font,
             onDone = { verseImage = null },
+            offersLiveWallpaper = state.chapter?.translation?.isYouVersion != true,
         )
     }
     var picking by rememberSaveable { mutableStateOf(false) }

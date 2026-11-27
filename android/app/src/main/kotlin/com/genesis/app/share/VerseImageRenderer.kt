@@ -52,6 +52,8 @@ object VerseImageRenderer {
         options: VerseImageOptions,
         reading: ReaderTheme,
         photo: Bitmap?,
+        /** False for the live wallpaper, which draws the season moving over the image itself. */
+        seasonStill: Boolean = true,
     ): Bitmap {
         val width = shape.width
         val height = shape.height
@@ -72,7 +74,7 @@ object VerseImageRenderer {
         }
 
         // A season's still, drawn at phone size and enlarged so leaves and snow keep their size.
-        style.season?.let { season ->
+        style.season?.takeIf { seasonStill }?.let { season ->
             val layer = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
             val layerCanvas = Canvas(layer)
             val enlarge = 2.5f

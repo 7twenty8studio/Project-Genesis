@@ -1698,4 +1698,6 @@
     <string name="widget_style_library_card">Ficha de biblioteca</string>
     <string name="widget_style_calendar_page">Folha de calendário</string>
     <string name="due_for_today">Para hoje</string>
+    <string name="set_as_live_wallpaper">Usar como papel de parede animado</string>
+    <string name="live_wallpaper_description">Seu versículo, com a estação passando suavemente.</string>
 </resources>

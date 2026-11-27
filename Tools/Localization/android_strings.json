@@ -1698,6 +1698,8 @@
     "widget_style_typewriter": "Typewriter",
     "widget_style_library_card": "Library Card",
     "widget_style_calendar_page": "Calendar Page",
-    "due_for_today": "Due for Today"
+    "due_for_today": "Due for Today",
+    "set_as_live_wallpaper": "Set as Live Wallpaper",
+    "live_wallpaper_description": "Your verse, with the season drifting by."
   }
 }

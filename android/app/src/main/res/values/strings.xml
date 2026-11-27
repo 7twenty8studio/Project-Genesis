@@ -1699,4 +1699,6 @@
     <string name="widget_style_library_card">Library Card</string>
     <string name="widget_style_calendar_page">Calendar Page</string>
     <string name="due_for_today">Due for Today</string>
+    <string name="set_as_live_wallpaper">Set as Live Wallpaper</string>
+    <string name="live_wallpaper_description">Your verse, with the season drifting by.</string>
 </resources>

@@ -57,6 +57,19 @@ fun SeasonalEffect(season: Season, modifier: Modifier = Modifier) {
     }
 }
 
+/** One moment of the season, into any DrawScope (the live wallpaper too); winter's frost included. */
+internal fun DrawScope.drawSeasonMoment(season: Season, t: Double, fade: Float) {
+    when (season) {
+        Season.AUTUMN -> AutumnLeaves.draw(this, t, fade)
+        Season.SPRING -> SpringPetals.draw(this, t, fade)
+        Season.WINTER -> {
+            WinterSnow.drawFrost(this)
+            WinterSnow.draw(this, t, fade)
+        }
+        Season.SUMMER -> SummerLight.draw(this, t, fade)
+    }
+}
+
 private fun hex(value: Long) = Color(0xFF000000 or value)
 
 private fun DrawScope.disc(center: Offset, radius: Float, color: Color) = drawCircle(color, radius, center)
