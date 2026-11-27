@@ -88,8 +88,9 @@ fun PlansFlow(
 
     BackHandler(enabled = creating) { creating = false }
     BackHandler(enabled = !creating && opened != null) { open = null }
+    val context = androidx.compose.ui.platform.LocalContext.current
 
-    when {
+    androidx.compose.foundation.layout.Box { when {
         creating -> CustomPlanScreen(
             onCreate = { title, books, days ->
                 val plan = ReadingPlan.custom("custom-${UUID.randomUUID().toString().lowercase()}", title, books, days)
@@ -102,7 +103,13 @@ fun PlansFlow(
         opened != null -> PlanDetailScreen(
             enrollment = opened,
             onRead = onRead,
-            onToggle = { day, done -> store.setDay(day, done, opened.id) },
+            onToggle = { day, done ->
+                // A day newly read gets its ribbon (the list plays its own haptic).
+                if (done && day !in opened.completedDays) {
+                    com.genesis.app.moments.ChapterMoments.planDayCompleted(context, day, opened.id, com.genesis.app.moments.ChapterMoments.Place.PLANS)
+                }
+                store.setDay(day, done, opened.id)
+            },
             onRestart = { store.restart(opened.id, LocalDate.now()) },
             onRemove = {
                 store.delete(opened.id)
@@ -119,6 +126,8 @@ fun PlansFlow(
             onDone = onDone,
             modifier = modifier,
         )
+    }
+    com.genesis.app.moments.ChapterMomentOverlay(com.genesis.app.moments.ChapterMoments.Place.PLANS, topInset = 24.dp, language = appLanguage())
     }
 }
 

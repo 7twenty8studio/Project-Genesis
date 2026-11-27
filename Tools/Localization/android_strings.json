@@ -1489,6 +1489,9 @@
     "welcome_plays_sounds": "Plays %@, fading in gently.",
     "preview": "Preview",
     "not_now": "Not Now",
-    "continue_reading_button": "Continue Reading"
+    "continue_reading_button": "Continue Reading",
+    "chapter_complete": "Chapter complete",
+    "day_complete": "Day complete",
+    "day_number": "Day %lld"
   }
 }

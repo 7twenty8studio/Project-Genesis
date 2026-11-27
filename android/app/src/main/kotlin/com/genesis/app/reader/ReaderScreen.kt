@@ -275,6 +275,8 @@ fun ReaderScreen(
             largeInitial = preferences.largeInitial,
         )
         val context = androidx.compose.ui.platform.LocalContext.current
+        // Reaching a chapter's end by reading (a page turn or a scroll, not a jump): a brief ribbon, once a day.
+        val reachedEnd = { com.genesis.app.moments.ChapterMoments.chapterFinished(context, state.chapterId); Unit }
         val turnFeedback = remember(context) { PageTurnFeedback(context) }
         // Forest, Ocean and Hearth: the scene behind clear pages, the whole screen.
         val scene = com.genesis.core.domain.theme.ThemeScene.of(preferences.theme)
@@ -312,7 +314,7 @@ fun ReaderScreen(
                         openAtEnd = state.openAtEnd,
                         focus = state.focus,
                         follow = playing,
-                        onNextChapter = onNext,
+                        onNextChapter = { reachedEnd(); onNext() },
                         onPreviousChapter = onPreviousAtEnd,
                         onVerseTap = selection.onVerseTap,
                         onNoteTap = selection.onNoteTap,
@@ -336,6 +338,7 @@ fun ReaderScreen(
                     state.chapter, scripture, marks, state.focus, playing, selection.onVerseTap, selection.onNoteTap,
                     options = textOptions,
                     margin = preferences.margins.points.dp,
+                    onReachEnd = reachedEnd,
                     onTap = { verse, x ->
                         when (val action = com.genesis.core.domain.reader.ReaderTap.action(x, 0f, 0f, 0f, verse, state.selection.isNotEmpty(), turnsPages = false)) {
                             is com.genesis.core.domain.reader.ReaderTap.Action.ToggleSelection -> selection.onVerseTap(action.verse)
@@ -367,6 +370,12 @@ fun ReaderScreen(
                 )
             }
         }
+
+        com.genesis.app.moments.ChapterMomentOverlay(
+            com.genesis.app.moments.ChapterMoments.Place.READER,
+            topInset = with(androidx.compose.ui.platform.LocalDensity.current) { androidx.compose.foundation.layout.WindowInsets.statusBarsIgnoringVisibility.getTop(this).toDp() },
+            language = language,
+        )
 
         // The controls float over the page's top while they're out (ReaderControls).
         androidx.compose.animation.AnimatedVisibility(
@@ -484,9 +493,14 @@ fun ReaderScreen(
 }
 
 @Composable
-private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMarks, focus: ReaderFocus?, follow: VerseId?, onVerseTap: (VerseId) -> Unit, onNoteTap: (String) -> Unit, options: TextOptions, margin: androidx.compose.ui.unit.Dp, onTap: (VerseId?, Float) -> Unit) {
+private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMarks, focus: ReaderFocus?, follow: VerseId?, onVerseTap: (VerseId) -> Unit, onNoteTap: (String) -> Unit, options: TextOptions, margin: androidx.compose.ui.unit.Dp, onReachEnd: () -> Unit = {}, onTap: (VerseId?, Float) -> Unit) {
     val colors = LocalReaderColors.current
     val listState = rememberLazyListState()
+    // Scrolled down to the chapter's end (not a short chapter that never scrolls).
+    LaunchedEffect(listState, chapter.id) {
+        androidx.compose.runtime.snapshotFlow { listState.firstVisibleItemIndex > 0 && !listState.canScrollForward }
+            .collect { if (it) onReachEnd() }
+    }
     val blocks = remember(chapter) { blocks(chapter) }
     LaunchedEffect(chapter.id, chapter.translation.id, focus) {
         // The chapter's number is item 0; a verse from search scrolls to its block.

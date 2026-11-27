@@ -1490,4 +1490,7 @@
     <string name="preview">Preview</string>
     <string name="not_now">Not Now</string>
     <string name="continue_reading_button">Continue Reading</string>
+    <string name="chapter_complete">Chapter complete</string>
+    <string name="day_complete">Day complete</string>
+    <string name="day_number">Day %d</string>
 </resources>

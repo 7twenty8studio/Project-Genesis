@@ -487,7 +487,7 @@ fun AppShell(
         val content = Modifier.fillMaxSize().padding(padding).consumeWindowInsets(padding)
         // Each tab keeps where it was (an open group, an Explore page) while another tab is shown.
         tabStates.SaveableStateProvider(tab.name) { when (tab) {
-            AppTab.HOME -> HomeScreen(
+            AppTab.HOME -> androidx.compose.foundation.layout.Box(content) { HomeScreen(
                 state = state,
                 verses = reader::verses,
                 onRead = ::read,
@@ -505,7 +505,12 @@ fun AppShell(
                     plansOpen = true
                 },
                 onReadChapter = { read(it.firstVerse) },
-                onMarkPlanDay = { enrollment, day, done -> app.userData.plans.setDay(day, done, enrollment.id) },
+                onMarkPlanDay = { enrollment, day, done ->
+                    if (done && day !in enrollment.completedDays) {
+                        com.genesis.app.moments.ChapterMoments.planDayCompleted(app, day, enrollment.id, com.genesis.app.moments.ChapterMoments.Place.HOME)
+                    }
+                    app.userData.plans.setDay(day, done, enrollment.id)
+                },
                 greetingName = account.user?.let { user ->
                     val welcomeName = app.welcome.settings.collectAsStateWithLifecycle().value.name
                     com.genesis.core.domain.welcome.MorningWelcomeRules.firstName(welcomeName)
@@ -522,8 +527,11 @@ fun AppShell(
                 record = readingRecord,
                 onInsights = { insightsOpen = true },
                 onGoals = { goalsOpen = true },
-                modifier = content,
+                modifier = Modifier.fillMaxSize(),
             )
+                // Drawn edge to edge, so the ribbon hangs from the very top.
+                com.genesis.app.moments.ChapterMomentOverlay(com.genesis.app.moments.ChapterMoments.Place.HOME, language = com.genesis.app.plans.appLanguage())
+            }
             // The reader reads edge to edge, under the status bar and the tab bar, and keeps its own insets.
             AppTab.READ -> androidx.compose.foundation.layout.Box(Modifier.fillMaxSize()) {
                 ReaderRoute(onChangeSettings = onChangeSettings, onSearchClick = { searching = true }, onMoreBibles = { biblesOpen = true }, viewModel = reader)
