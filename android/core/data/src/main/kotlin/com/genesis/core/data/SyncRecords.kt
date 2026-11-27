@@ -41,3 +41,9 @@ data class PlanRecord(
     val enrollment: com.genesis.core.domain.plans.PlanEnrollment,
     val deletedAt: Long?,
 )
+
+/** A prayer as sync moves it. */
+data class PrayerRecord(
+    val prayer: com.genesis.core.domain.prayer.Prayer,
+    val deletedAt: Long?,
+)

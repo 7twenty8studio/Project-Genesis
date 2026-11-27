@@ -88,6 +88,8 @@ fun HomeScreen(
     onPlans: (String?) -> Unit,
     onReadChapter: (ChapterId) -> Unit,
     onMarkPlanDay: (PlanEnrollment, Int, Boolean) -> Unit,
+    activePrayers: Int,
+    onPrayerJournal: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val colors = LocalReaderColors.current
@@ -210,6 +212,26 @@ fun HomeScreen(
                 onOpen = { onPlans(it.id) },
                 onPlans = { onPlans(null) },
             )
+        }
+
+        // Prayer journal.
+        Row(
+            Modifier.fillMaxWidth().clip18().clickable(onClick = onPrayerJournal).card(colors.surface),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                Text(stringResource(R.string.prayer_journal), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold, color = colors.text)
+                Text(
+                    when (activePrayers) {
+                        0 -> stringResource(R.string.prayer_card_message)
+                        1 -> stringResource(R.string.one_prayer_holding)
+                        else -> stringResource(R.string.prayers_holding, activePrayers)
+                    },
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = colors.secondaryText,
+                )
+            }
+            Text("\u203A", style = MaterialTheme.typography.titleLarge, color = colors.secondaryText)
         }
 
         // Recently highlighted.

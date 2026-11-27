@@ -7,6 +7,8 @@ import com.genesis.core.cloud.RemoteBookmark
 import com.genesis.core.cloud.RemoteHighlight
 import com.genesis.core.cloud.RemoteNote
 import com.genesis.core.cloud.RemotePlan
+import com.genesis.core.cloud.RemotePrayer
+import com.genesis.core.cloud.RemotePrayerPassage
 import com.genesis.core.cloud.SupabaseClient
 import com.genesis.core.cloud.SupabaseError
 import com.genesis.core.cloud.SyncTable
@@ -15,6 +17,10 @@ import com.genesis.core.data.BookmarkRecord
 import com.genesis.core.data.HighlightRecord
 import com.genesis.core.data.NoteRecord
 import com.genesis.core.data.PlanRecord
+import com.genesis.core.data.PrayerRecord
+import com.genesis.core.domain.prayer.Prayer
+import com.genesis.core.domain.prayer.PrayerCategory
+import com.genesis.core.domain.prayer.PrayerPassage
 import com.genesis.core.domain.plans.PlanEnrollment
 import java.time.LocalDate
 import com.genesis.core.data.UserDatabase
@@ -175,6 +181,9 @@ class SyncService(
         pull(SyncTable.READING_PLANS, RemotePlan.serializer(), client, token, userId) { rows ->
             database.sync.applyPlans(rows.mapNotNull { it.record() })
         }
+        pull(SyncTable.PRAYERS, RemotePrayer.serializer(), client, token, userId, pageSize = 200) { rows ->
+            database.sync.applyPrayers(rows.mapNotNull { row -> row.record()?.let { it to (row.passages == null) } })
+        }
 
         // Everything edited since the last successful push, deletions included.
         val since = prefs.getLong(key("lastPushedAt", userId), 0)
@@ -182,6 +191,7 @@ class SyncService(
         push(SyncTable.BOOKMARKS, RemoteBookmark.serializer(), database.sync.bookmarksChanged(since).map { it.remote(userId) }, client, token)
         push(SyncTable.NOTES, RemoteNote.serializer(), database.sync.notesChanged(since).map { it.remote(userId) }, client, token, batch = 50)
         push(SyncTable.READING_PLANS, RemotePlan.serializer(), database.sync.plansChanged(since).map { it.remote(userId) }, client, token)
+        push(SyncTable.PRAYERS, RemotePrayer.serializer(), database.sync.prayersChanged(since).map { it.remote(userId) }, client, token)
         for ((table, ids) in database.sync.pendingDeletions()) {
             client.markDeleted(table, ids, System.currentTimeMillis(), token)
             database.sync.clearPendingDeletions(table, ids)
@@ -306,5 +316,45 @@ private fun PlanRecord.remote(userId: String) = RemotePlan(
     isActive = enrollment.isActive,
     createdAt = Timestamps.string(enrollment.createdAt),
     updatedAt = Timestamps.string(enrollment.updatedAt),
+    deletedAt = deletedAt?.let(Timestamps::string),
+)
+
+private fun RemotePrayer.record(): PrayerRecord? {
+    val updated = millis(updatedAt) ?: return null
+    return PrayerRecord(
+        Prayer(
+            id = id.lowercase(),
+            title = title,
+            body = body,
+            category = PrayerCategory.lenient(category),
+            isAnswered = isAnswered,
+            answeredAt = millis(answeredAt),
+            answerNote = answerNote,
+            reminderAt = millis(reminderAt),
+            reminderRepeatsDaily = reminderRepeatsDaily,
+            passages = PrayerPassage.decode(passages.orEmpty().map { it.startVerse to it.endVerse }),
+            lastPrayedAt = millis(lastPrayedAt),
+            createdAt = millis(createdAt) ?: updated,
+            updatedAt = updated,
+        ),
+        millis(deletedAt),
+    )
+}
+
+private fun PrayerRecord.remote(userId: String) = RemotePrayer(
+    id = prayer.id,
+    userId = userId,
+    title = prayer.title,
+    body = prayer.body,
+    category = prayer.category.id,
+    isAnswered = prayer.isAnswered,
+    answeredAt = prayer.answeredAt?.let(Timestamps::string),
+    answerNote = prayer.answerNote,
+    reminderAt = prayer.reminderAt?.let(Timestamps::string),
+    reminderRepeatsDaily = prayer.reminderRepeatsDaily,
+    passages = prayer.passages.map { RemotePrayerPassage(it.start.rawValue, it.end.rawValue) },
+    lastPrayedAt = prayer.lastPrayedAt?.let(Timestamps::string),
+    createdAt = Timestamps.string(prayer.createdAt),
+    updatedAt = Timestamps.string(prayer.updatedAt),
     deletedAt = deletedAt?.let(Timestamps::string),
 )

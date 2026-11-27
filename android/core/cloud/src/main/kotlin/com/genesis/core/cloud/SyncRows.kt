@@ -87,9 +87,41 @@ data class RemotePlan(
     @SerialName("server_updated_at") val serverUpdatedAt: String? = null,
 )
 
+/** A passage on a prayer, as in prayers.passages (jsonb): verse ids only. */
+@Serializable
+data class RemotePrayerPassage(
+    @SerialName("start_verse") val startVerse: Int,
+    @SerialName("end_verse") val endVerse: Int,
+)
+
+/**
+ * A prayer. `passages` is null in rows from a server without the journal's
+ * newer columns; the device's passages are then kept.
+ */
+@Serializable
+data class RemotePrayer(
+    val id: String,
+    @SerialName("user_id") val userId: String,
+    val title: String = "",
+    val body: String = "",
+    val category: String,
+    @SerialName("is_answered") val isAnswered: Boolean = false,
+    @SerialName("answered_at") val answeredAt: String? = null,
+    @SerialName("answer_note") val answerNote: String? = null,
+    @SerialName("reminder_at") val reminderAt: String? = null,
+    @SerialName("reminder_repeats_daily") val reminderRepeatsDaily: Boolean = false,
+    val passages: List<RemotePrayerPassage>? = null,
+    @SerialName("last_prayed_at") val lastPrayedAt: String? = null,
+    @SerialName("created_at") val createdAt: String,
+    @SerialName("updated_at") val updatedAt: String,
+    @SerialName("deleted_at") val deletedAt: String? = null,
+    @SerialName("server_updated_at") val serverUpdatedAt: String? = null,
+)
+
 object SyncTable {
     const val HIGHLIGHTS = "highlights"
     const val BOOKMARKS = "bookmarks"
     const val NOTES = "notes"
     const val READING_PLANS = "reading_plans"
+    const val PRAYERS = "prayers"
 }

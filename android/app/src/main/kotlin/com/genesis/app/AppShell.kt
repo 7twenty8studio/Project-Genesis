@@ -25,6 +25,8 @@ import androidx.compose.ui.platform.LocalContext
 import com.genesis.app.library.LibraryScreen
 import com.genesis.app.library.LibraryShelf
 import com.genesis.app.plans.PlansFlow
+import com.genesis.app.prayer.JournalBible
+import com.genesis.app.prayer.PrayerJournalFlow
 import com.genesis.app.account.AccountScreen
 import com.genesis.app.reader.CrossReferencesSheet
 import com.genesis.core.domain.link.GenesisLink
@@ -72,6 +74,8 @@ fun AppShell(
     var plansOpen by rememberSaveable { mutableStateOf(false) }
     var planToOpen by rememberSaveable { mutableStateOf<String?>(null) }
     val plans by app.userData.plans.all.collectAsStateWithLifecycle()
+    var journalOpen by rememberSaveable { mutableStateOf(false) }
+    val prayers by app.userData.prayers.all.collectAsStateWithLifecycle()
     val account by app.account.state.collectAsStateWithLifecycle()
     val syncState by app.sync.state.collectAsStateWithLifecycle()
 
@@ -116,6 +120,24 @@ fun AppShell(
     BackHandler(enabled = settingsOpen && !accountOpen) { settingsOpen = false }
     BackHandler(enabled = accountOpen) { accountOpen = false }
     BackHandler(enabled = plansOpen) { plansOpen = false }
+
+    if (journalOpen) {
+        // Before the journal, so the editor's own back (save and close) comes first.
+        BackHandler { journalOpen = false }
+        val translation = state.chapter?.translation
+        PrayerJournalFlow(
+            store = app.userData.prayers,
+            bible = JournalBible(
+                key = state.bible,
+                language = translation?.language ?: "en",
+                abbreviation = translation?.abbreviation ?: state.bible.id,
+                verses = reader::verses,
+            ),
+            onDone = { journalOpen = false },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
 
     if (plansOpen) {
         PlansFlow(
@@ -202,6 +224,8 @@ fun AppShell(
                 },
                 onReadChapter = { read(it.firstVerse) },
                 onMarkPlanDay = { enrollment, day, done -> app.userData.plans.setDay(day, done, enrollment.id) },
+                activePrayers = prayers.count { it.hasContent && !it.isAnswered },
+                onPrayerJournal = { journalOpen = true },
                 modifier = content,
             )
             AppTab.READ -> androidx.compose.foundation.layout.Box(content) {

@@ -16,6 +16,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import com.genesis.core.domain.plans.PlanEnrollment
+import com.genesis.core.domain.prayer.Prayer
+import com.genesis.core.domain.prayer.PrayerCategory
+import com.genesis.core.domain.prayer.PrayerPassage
 import com.genesis.core.domain.plans.ReadingPlan
 import java.io.File
 import java.time.LocalDate
@@ -123,6 +126,31 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             )
             connection.execSQL("PRAGMA user_version = 4")
         }
+        if (version < 5) {
+            // The prayer journal, as prayers on the server; passages as
+            // "start-end" verse ids separated by commas (never the text).
+            connection.execSQL(
+                """
+                CREATE TABLE prayers (
+                    id TEXT PRIMARY KEY NOT NULL,
+                    title TEXT NOT NULL DEFAULT '',
+                    body TEXT NOT NULL DEFAULT '',
+                    category TEXT NOT NULL,
+                    is_answered INTEGER NOT NULL DEFAULT 0,
+                    answered_at INTEGER,
+                    answer_note TEXT,
+                    reminder_at INTEGER,
+                    reminder_repeats_daily INTEGER NOT NULL DEFAULT 0,
+                    passages TEXT NOT NULL DEFAULT '',
+                    last_prayed_at INTEGER,
+                    created_at INTEGER NOT NULL,
+                    updated_at INTEGER NOT NULL,
+                    deleted_at INTEGER
+                )
+                """.trimIndent(),
+            )
+            connection.execSQL("PRAGMA user_version = 5")
+        }
     }
 
     private val _localEdits = MutableStateFlow(0L)
@@ -136,6 +164,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
     val bookmarks = BookmarkStore()
     val notes = NoteStore()
     val plans = PlanStore()
+    val prayers = PrayerStore()
     val sync = SyncAccess()
 
     /** Reading plans the person follows, the most recently changed first (as Home picks one on iOS). */
@@ -191,6 +220,96 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             synchronized(lock) { transaction { writePlan(update(current).copy(updatedAt = now), deletedAt = null) } }
             reload()
             edited()
+        }
+    }
+
+    /** The private prayer journal, the most recently changed first. Free, with no limits. */
+    inner class PrayerStore {
+        private val _all = MutableStateFlow(load())
+        val all: StateFlow<List<Prayer>> = _all.asStateFlow()
+
+        internal fun reload() {
+            _all.value = load()
+        }
+
+        private fun load(): List<Prayer> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT $PRAYER_COLUMNS FROM prayers WHERE deleted_at IS NULL ORDER BY updated_at DESC").use { s ->
+                    while (s.step()) add(readPrayer(s))
+                }
+            }
+        }
+
+        /** Saves a new or edited prayer, stamping it with the edit time. */
+        fun save(prayer: Prayer, now: Long = System.currentTimeMillis()): Prayer {
+            val saved = prayer.copy(createdAt = if (prayer.createdAt == 0L) now else prayer.createdAt, updatedAt = now)
+            synchronized(lock) { transaction { writePrayer(saved, deletedAt = null) } }
+            reload()
+            edited()
+            return saved
+        }
+
+        fun delete(id: String, now: Long = System.currentTimeMillis()) {
+            synchronized(lock) {
+                transaction {
+                    connection.prepare("UPDATE prayers SET deleted_at = ?, updated_at = ? WHERE id = ? AND deleted_at IS NULL").use {
+                        it.bindLong(1, now)
+                        it.bindLong(2, now)
+                        it.bindText(3, id)
+                        it.step()
+                    }
+                }
+            }
+            reload()
+            edited()
+        }
+    }
+
+    private fun readPrayer(s: androidx.sqlite.SQLiteStatement) = Prayer(
+        id = s.getText(0),
+        title = s.getText(1),
+        body = s.getText(2),
+        category = PrayerCategory.lenient(s.getText(3)),
+        isAnswered = s.getLong(4) != 0L,
+        answeredAt = s.longOrNull(5),
+        answerNote = if (s.isNull(6)) null else s.getText(6),
+        reminderAt = s.longOrNull(7),
+        reminderRepeatsDaily = s.getLong(8) != 0L,
+        passages = PrayerPassage.decode(s.getText(9)),
+        lastPrayedAt = s.longOrNull(10),
+        createdAt = s.getLong(11),
+        updatedAt = s.getLong(12),
+    )
+
+    private fun writePrayer(prayer: Prayer, deletedAt: Long?) {
+        connection.prepare(
+            """
+            INSERT INTO prayers (id, title, body, category, is_answered, answered_at, answer_note, reminder_at, reminder_repeats_daily, passages, last_prayed_at, created_at, updated_at, deleted_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(id) DO UPDATE SET
+                title = excluded.title, body = excluded.body, category = excluded.category,
+                is_answered = excluded.is_answered, answered_at = excluded.answered_at, answer_note = excluded.answer_note,
+                reminder_at = excluded.reminder_at, reminder_repeats_daily = excluded.reminder_repeats_daily,
+                passages = excluded.passages, last_prayed_at = excluded.last_prayed_at,
+                created_at = excluded.created_at, updated_at = excluded.updated_at, deleted_at = excluded.deleted_at
+            """.trimIndent(),
+        ).use {
+            fun long(index: Int, value: Long?) = if (value == null) it.bindNull(index) else it.bindLong(index, value)
+            it.bindText(1, prayer.id)
+            it.bindText(2, prayer.title)
+            it.bindText(3, prayer.body)
+            it.bindText(4, prayer.category.id)
+            it.bindLong(5, if (prayer.isAnswered) 1 else 0)
+            long(6, prayer.answeredAt)
+            prayer.answerNote?.let { note -> it.bindText(7, note) } ?: it.bindNull(7)
+            long(8, prayer.reminderAt)
+            it.bindLong(9, if (prayer.reminderRepeatsDaily) 1 else 0)
+            it.bindText(10, PrayerPassage.encode(prayer.passages))
+            long(11, prayer.lastPrayedAt)
+            it.bindLong(12, prayer.createdAt)
+            it.bindLong(13, prayer.updatedAt)
+            long(14, deletedAt)
+            it.step()
         }
     }
 
@@ -629,6 +748,39 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             plans.reload()
         }
 
+        fun prayersChanged(since: Long): List<PrayerRecord> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT $PRAYER_COLUMNS, deleted_at FROM prayers WHERE updated_at > ?").use { s ->
+                    s.bindLong(1, since)
+                    while (s.step()) add(PrayerRecord(readPrayer(s), s.longOrNull(13)))
+                }
+            }
+        }
+
+        /** Pulled prayers. `keepPassages`: rows from a server without the journal's newer columns leave them alone. */
+        fun applyPrayers(rows: List<Pair<PrayerRecord, Boolean>>) = synchronized(lock) {
+            if (rows.isEmpty()) return@synchronized
+            transaction {
+                for ((row, keepPassages) in rows) {
+                    val prayer = row.prayer
+                    when (SyncMerge.decide(prayer.updatedAt, row.deletedAt != null, updatedAt("prayers", prayer.id))) {
+                        SyncMerge.Decision.KEEP_LOCAL -> Unit
+                        SyncMerge.Decision.DELETE_LOCAL -> markDeleted("prayers", prayer.id, row.deletedAt ?: prayer.updatedAt, prayer.updatedAt)
+                        SyncMerge.Decision.APPLY_REMOTE -> {
+                            val local = if (keepPassages) {
+                                connection.prepare("SELECT $PRAYER_COLUMNS FROM prayers WHERE id = ?").use { s ->
+                                    s.bindText(1, prayer.id)
+                                    if (s.step()) readPrayer(s) else null
+                                }
+                            } else null
+                            writePrayer(if (local != null) prayer.copy(passages = local.passages, lastPrayedAt = local.lastPrayedAt) else prayer, deletedAt = null)
+                        }
+                    }
+                }
+            }
+            prayers.reload()
+        }
+
         /** Server rows to mark deleted, by table. */
         fun pendingDeletions(): Map<String, List<String>> = synchronized(lock) {
             buildList {
@@ -653,12 +805,13 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
         /** Removes everything the person saved from this device (not from the cloud). */
         fun eraseAll() = synchronized(lock) {
             transaction {
-                for (table in listOf("highlights", "bookmarks", "notes", "reading_plans", "pending_deletions")) connection.execSQL("DELETE FROM $table")
+                for (table in listOf("highlights", "bookmarks", "notes", "reading_plans", "prayers", "pending_deletions")) connection.execSQL("DELETE FROM $table")
             }
             highlights.reload()
             bookmarks.reload()
             notes.reload()
             plans.reload()
+            prayers.reload()
         }
 
         private fun updatedAt(table: String, id: String): Long? =
@@ -703,6 +856,8 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
     override fun close() = synchronized(lock) { connection.close() }
 
     companion object {
+        private const val PRAYER_COLUMNS =
+            "id, title, body, category, is_answered, answered_at, answer_note, reminder_at, reminder_repeats_daily, passages, last_prayed_at, created_at, updated_at"
         private const val PLAN_COLUMNS =
             "id, plan_id, title, start_date, completed_days, custom_books, custom_days, is_active, created_at, updated_at"
 
