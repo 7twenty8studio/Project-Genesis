@@ -68,6 +68,7 @@ class VerselyApplication : Application() {
 
     /** Says Hebrew and Greek words aloud. */
     val pronouncer: com.genesis.app.original.WordPronouncer by lazy { com.genesis.app.original.WordPronouncer(this) }
+    val studyResources: com.genesis.app.studylibrary.StudyResourceLibrary by lazy { com.genesis.app.studylibrary.StudyResourceLibrary(this, account.client) }
 
     /** The server's switches (groups, community…). */
     val flags: FeatureFlags by lazy { FeatureFlags(this, account.client) }

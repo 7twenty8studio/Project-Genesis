@@ -275,6 +275,7 @@ internal fun ColumnScope.LexiconContent(strongs: String, viewModel: ReaderViewMo
             if (entry.usage.isNotEmpty()) Labeled(stringResource(R.string.in_the_kjv), entry.usage)
         }
     }
+    com.genesis.app.studylibrary.StudyLexiconSections(strongs)
     if (current.verses.isNotEmpty()) {
         Section(
             stringResource(R.string.where_its_used),

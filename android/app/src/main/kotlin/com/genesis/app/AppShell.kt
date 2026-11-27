@@ -93,6 +93,7 @@ fun AppShell(
     var journalOpen by rememberSaveable { mutableStateOf(false) }
     var memoriseOpen by rememberSaveable { mutableStateOf(false) }
     var sermonsOpen by rememberSaveable { mutableStateOf(false) }
+    var studyLibraryOpen by rememberSaveable { mutableStateOf(false) }
     var sermonsNew by rememberSaveable { mutableStateOf(false) }
     // A church sermon over any tab (its link's slug), and notes opened from it.
     var churchSermon by rememberSaveable { mutableStateOf<String?>(null) }
@@ -227,6 +228,17 @@ fun AppShell(
 
     churchSermon?.let { slug ->
         ChurchSermonScreen(slug, churchContext, onDone = { churchSermon = null }, modifier = Modifier.fillMaxSize().navigationBarsPadding())
+        return
+    }
+
+    if (studyLibraryOpen) {
+        com.genesis.app.studylibrary.StudyFlow(
+            com.genesis.app.studylibrary.StudyPlace.Library,
+            reader,
+            onDone = { studyLibraryOpen = false },
+            onOpenVerse = { studyLibraryOpen = false; read(it) },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
         return
     }
 
@@ -398,6 +410,7 @@ fun AppShell(
                     sermonsNew = false
                     sermonsOpen = true
                 },
+                onStudyLibrary = { studyLibraryOpen = true },
                 modifier = content,
             )
             AppTab.EXPLORE -> {

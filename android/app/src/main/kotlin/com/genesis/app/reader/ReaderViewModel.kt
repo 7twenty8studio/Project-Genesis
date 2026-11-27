@@ -65,6 +65,8 @@ data class ReaderUiState(
     val showsOriginal: Boolean = false,
     /** The verse whose word study is open, if any. */
     val wordStudyVerse: VerseId? = null,
+    /** The verse whose study notes and commentary are open (the selection bar's Study). */
+    val studyVerse: VerseId? = null,
 ) {
     val hasStartedReading: Boolean get() = position != null
 
@@ -414,6 +416,13 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     fun closeWordStudy() = _state.update { it.copy(wordStudyVerse = null) }
+
+    /** Opens the Study Library's notes and commentary for the first selected verse. */
+    fun openStudy() = _state.update { state ->
+        state.copy(studyVerse = state.selection.minByOrNull { it.rawValue }, selection = emptySet())
+    }
+
+    fun closeStudy() = _state.update { it.copy(studyVerse = null) }
 
     /** Runs [block] with the Bible being read, off the main thread; null if it fails. */
     internal suspend fun <T> withBible(block: (BibleRepository) -> T): T? {

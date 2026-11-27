@@ -119,10 +119,19 @@ fun ReaderRoute(
             onCrossReferences = viewModel::openCrossReferences,
             onMemorise = viewModel::memoriseSelection,
             onWordStudy = viewModel::openWordStudy,
+            onStudy = viewModel::openStudy,
         ),
     )
     state.wordStudyVerse?.let { verse ->
         com.genesis.app.original.VerseStudyScreen(verse, viewModel, onDone = viewModel::closeWordStudy)
+    }
+    state.studyVerse?.let { verse ->
+        com.genesis.app.studylibrary.StudyFlow(
+            com.genesis.app.studylibrary.StudyPlace.VerseResources(verse),
+            viewModel,
+            onDone = viewModel::closeStudy,
+            onOpenVerse = { viewModel.closeStudy(); viewModel.openVerse(it) },
+        )
     }
     }
 }
@@ -149,6 +158,7 @@ data class SelectionActions(
     val onCrossReferences: () -> Unit = {},
     val onMemorise: () -> Unit = {},
     val onWordStudy: () -> Unit = {},
+    val onStudy: () -> Unit = {},
 )
 
 /**
@@ -285,6 +295,7 @@ fun ReaderScreen(
                     onCrossReferences = selection.onCrossReferences,
                     onMemorise = selection.onMemorise,
                     onWordStudy = selection.onWordStudy,
+                    onStudy = selection.onStudy,
                     onDone = selection.onDone,
                 )
             } else BottomAppBar(containerColor = colors.background) {

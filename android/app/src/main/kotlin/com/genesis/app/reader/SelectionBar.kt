@@ -63,6 +63,7 @@ internal fun SelectionBar(
     onCrossReferences: () -> Unit,
     onMemorise: () -> Unit,
     onWordStudy: () -> Unit,
+    onStudy: () -> Unit,
     onDone: () -> Unit,
 ) {
     val colors = LocalReaderColors.current
@@ -104,6 +105,7 @@ internal fun SelectionBar(
             Action(R.string.note, onNote)
             Action(R.string.related, onCrossReferences)
             Action(R.string.word_study, onWordStudy)
+            Action(R.string.study_action, onStudy)
             // Memorize is Premium; without it the action isn't offered here.
             if (com.genesis.app.settings.Entitlements.isPremium) {
                 val added = stringResource(R.string.memorise_added)
