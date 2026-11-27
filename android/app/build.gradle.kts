@@ -39,6 +39,8 @@ android {
         versionName = "0.1.0"
         buildConfigField("String", "SUPABASE_URL", "\"${cloudSetting("SUPABASE_URL", "versely.supabaseUrl")}\"")
         buildConfigField("String", "SUPABASE_ANON_KEY", "\"${cloudSetting("SUPABASE_ANON_KEY", "versely.supabaseAnonKey")}\"")
+        // Crash reports go to the same Sentry project as the iPhone app's (none without a DSN).
+        buildConfigField("String", "SENTRY_DSN", "\"${cloudSetting("SENTRY_DSN", "versely.sentryDsn")}\"")
     }
 
     buildTypes {
@@ -85,6 +87,7 @@ dependencies {
     implementation(libs.glance.appwidget)
     implementation(libs.media3.session)
     implementation(libs.media3.exoplayer)
+    implementation(libs.sentry.android)
     testImplementation(libs.kotlin.test)
     testImplementation(libs.junit)
 }

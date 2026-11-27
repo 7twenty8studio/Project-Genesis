@@ -21,6 +21,7 @@ import kotlinx.coroutines.withContext
 class VerselyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+        CrashReporter.start(this)
         com.genesis.app.settings.Entitlements.load(this)
     }
 

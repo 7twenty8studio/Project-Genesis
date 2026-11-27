@@ -54,6 +54,9 @@
             </intent-filter>
         </activity>
 
+        <!-- Sentry starts from CrashReporter, only when the build has a DSN. -->
+        <meta-data android:name="io.sentry.auto-init" android:value="false" />
+
         <!-- A Bible download keeps going after the person leaves Versely. -->
         <service
             android:name=".bibles.BibleDownloadService"
