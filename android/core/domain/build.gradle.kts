@@ -27,7 +27,7 @@ sourceSets {
     test { resources.srcDir(shared.dir("fixtures")) }
 }
 
-val copyBibleBooks by tasks.registering(Copy::class) {
+val copyBibleBooks = tasks.register<Copy>("copyBibleBooks") {
     from(shared.file("bibleBooks.json"))
     into(layout.buildDirectory.dir("generated/bibleBooks/com/genesis/core/domain/bible"))
 }

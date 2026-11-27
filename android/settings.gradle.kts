@@ -11,6 +11,12 @@ pluginManagement {
     }
 }
 
+plugins {
+    // Downloads Java 21 for the build when the machine doesn't have it
+    // (a Mac with only Android Studio's own Java, for example).
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
