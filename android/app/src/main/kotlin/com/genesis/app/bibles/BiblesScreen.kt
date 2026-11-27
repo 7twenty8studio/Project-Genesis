@@ -79,6 +79,7 @@ fun BiblesScreen(currentBible: String, onRead: (InstalledBible) -> Unit, onDone:
     val downloads by library.downloads.collectAsStateWithLifecycle()
     val downloading by library.downloading.collectAsStateWithLifecycle()
     val problem by library.problem.collectAsStateWithLifecycle()
+    val bookProgress by library.bookProgress.collectAsStateWithLifecycle()
     var tried by remember { mutableStateOf(false) }
     var removing by remember { mutableStateOf<Pair<String, String>?>(null) }
     val scope = rememberCoroutineScope()
@@ -140,8 +141,12 @@ fun BiblesScreen(currentBible: String, onRead: (InstalledBible) -> Unit, onDone:
                                 translation = translations[entry.id],
                                 isCurrent = entry.id == currentBible,
                                 isDownloading = entry.id in downloading,
+                                booksDone = bookProgress[entry.id],
+                                savedBooks = offered[entry.id]?.takeIf { it.isYouVersion && entry.id !in downloading && entry.id !in downloads }?.let { library.savedBookCount(it) } ?: 0,
+                                toolsBible = offered[entry.id]?.takeIf { it.isYouVersion }?.let { toolsBibleName(it.baseLanguage, catalog, translations) },
+                                onDiscard = { offered[entry.id]?.let { library.discard(it) } },
                                 onRead = bible?.let { { onRead(it) } },
-                                onDownload = { offered[entry.id]?.let { item -> scope.launch { library.download(item, Entitlements.isPremium) } } },
+                                onDownload = { offered[entry.id]?.let { item -> library.start(item, Entitlements.isPremium) } },
                                 onRemove = if (entry.id in downloads) ({ removing = entry.id to entry.name }) else null,
                             )
                         }
@@ -165,6 +170,17 @@ fun BiblesScreen(currentBible: String, onRead: (InstalledBible) -> Unit, onDone:
         )
     }
 }
+
+/**
+ * The Bible Premium tools read beside a YouVersion one, by name: a free Bible
+ * in its language (the Reina-Valera for Spanish, even while it's still to
+ * come), else the King James Version.
+ */
+internal fun toolsBibleName(language: String, catalog: List<DownloadableBible>, installed: Map<String, Translation>): String =
+    installed.values.firstOrNull { !it.isYouVersion && !it.showsLicenseUnderChapters && it.language.substringBefore('-') == language }?.name
+        ?: installed.values.firstOrNull { it.id == "BLIVRE" && language == "pt" }?.name
+        ?: catalog.firstOrNull { !it.isYouVersion && !it.premium && it.rights == "public_domain" && it.baseLanguage == language }?.name
+        ?: "King James Version"
 
 /** The bundled Bibles' places in "most read" (the catalog's popularity for downloads). */
 private val builtInPopularity = mapOf("KJV" to 1, "BLIVRE" to 3, "WEB" to 4, "ASV" to 6)
@@ -202,6 +218,10 @@ private fun BibleCard(
     translation: Translation?,
     isCurrent: Boolean,
     isDownloading: Boolean,
+    booksDone: Int?,
+    savedBooks: Int,
+    toolsBible: String?,
+    onDiscard: () -> Unit,
     onRead: (() -> Unit)?,
     onDownload: () -> Unit,
     onRemove: (() -> Unit)?,
@@ -224,9 +244,19 @@ private fun BibleCard(
                     }
                 }
                 Text(parts.joinToString(" · "), style = MaterialTheme.typography.bodySmall, color = colors.secondaryText)
+                val total = com.genesis.core.domain.bible.YouVersionBuild.BOOK_CODES.size.toLong()
+                if (isDownloading && booksDone != null) {
+                    Text(stringResource(R.string.downloading_books, booksDone.toLong(), total), style = MaterialTheme.typography.bodySmall, color = colors.accent)
+                } else if (!isDownloading && savedBooks > 0 && onRead == null) {
+                    Text(stringResource(R.string.paused_books, savedBooks.toLong(), total), style = MaterialTheme.typography.bodySmall, color = colors.accent)
+                }
             }
             when {
                 isDownloading -> CircularProgressIndicator(color = colors.accent, strokeWidth = 2.dp, modifier = Modifier.size(24.dp))
+                savedBooks > 0 && onRead == null -> Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Text(stringResource(R.string.discard), style = MaterialTheme.typography.labelLarge, color = colors.secondaryText, modifier = Modifier.clickable(onClick = onDiscard).padding(4.dp))
+                    Pill(stringResource(R.string.continue_download), onDownload)
+                }
                 onRead != null && !isCurrent -> Pill(stringResource(R.string.read_action), onRead)
                 onRead != null -> Text("✓", style = MaterialTheme.typography.titleMedium, color = colors.accent)
                 locked -> Pill("🔒 " + stringResource(R.string.premium)) {}
@@ -234,6 +264,10 @@ private fun BibleCard(
             }
         }
         item?.summary?.takeIf { it.isNotEmpty() }?.let { Text(it, style = MaterialTheme.typography.bodySmall, color = colors.secondaryText) }
+        if (toolsBible != null) {
+            Text("🎁 " + stringResource(R.string.always_free), style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.SemiBold, color = colors.accent)
+            Text(stringResource(R.string.youversion_card_note, toolsBible), style = MaterialTheme.typography.bodySmall, color = colors.secondaryText)
+        }
         if (onRemove != null && !isCurrent) {
             Text(
                 stringResource(R.string.remove_from_device),

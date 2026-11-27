@@ -96,7 +96,10 @@ internal data class WidgetData(
                     // The passage due soonest, as its opening words (MemoryHint, verbatim).
                     val next = memory.minByOrNull { it.schedule.dueAt }
                     val memorise = if (!premium || next == null) null else {
-                        val text = repository.passage(next.start, next.end).joinToString(" ") { it.plainText }
+                        // A Premium tool: never a YouVersion Bible's text.
+                        val tools = app.bibles.premiumToolsBible(bible)
+                        val text = if (tools == bible) repository.passage(next.start, next.end).joinToString(" ") { it.plainText }
+                        else BibleRepository.open(context, tools).use { it.passage(next.start, next.end).joinToString(" ") { verse -> verse.plainText } }
                         Memorise(
                             reference = next.reference.description(language),
                             hint = text.takeIf { it.isNotEmpty() }?.let { MemoryHint.opening(it, 5) },

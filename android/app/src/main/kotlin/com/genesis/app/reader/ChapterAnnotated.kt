@@ -28,10 +28,26 @@ internal fun AnnotatedString.Builder.appendVerses(verses: List<Verse>, colors: R
         if (index > 0) append(if (poetry) "\n" else " ")
         pushStringAnnotation(tag = VERSE_TAG, annotation = verse.id.rawValue.toString())
         withStyle(SpanStyle(color = colors.accent, fontSize = 0.6.em, fontWeight = FontWeight.Medium, baselineShift = BaselineShift(0.35f))) {
-            append(verse.number.toString())
+            append(verse.numberLabel)
         }
         append("\u00A0")
-        withStyle(marks.style(verse.id, colors)) { append(verse.text) }
+        val notes = marks.footnotes[verse.id].orEmpty()
+        if (notes.isEmpty()) {
+            withStyle(marks.style(verse.id, colors)) { append(verse.text) }
+        } else {
+            // Footnote markers, small letters in the accent colour, between the
+            // verse's characters but never part of its text.
+            var start = 0
+            for (note in notes.sortedBy { it.offset }) {
+                val at = note.offset.coerceIn(start, verse.text.length)
+                withStyle(marks.style(verse.id, colors)) { append(verse.text.substring(start, at)) }
+                pushStringAnnotation(tag = NOTE_TAG, annotation = FOOTNOTE_PREFIX + note.index)
+                withStyle(SpanStyle(color = colors.accent, fontSize = 0.55.em, fontWeight = FontWeight.SemiBold, baselineShift = BaselineShift(0.38f))) { append(note.label) }
+                pop()
+                start = at
+            }
+            withStyle(marks.style(verse.id, colors)) { append(verse.text.substring(start)) }
+        }
         pop()
         marks.notes[verse.id]?.let { noteId ->
             // The note's mark: apart from the verse, never part of its words.
@@ -44,6 +60,17 @@ internal fun AnnotatedString.Builder.appendVerses(verses: List<Verse>, colors: R
 }
 
 internal const val NOTE_TAG = "note"
+
+/** A footnote marker's annotation: the prefix, then the note's place in the chapter. */
+internal const val FOOTNOTE_PREFIX = "footnote:"
+
+/** One footnote marker in a verse. */
+internal data class FootnoteMark(val offset: Int, val index: Int, val label: String)
+
+/** The chapter's footnotes by verse, lettered a, b, c… through the chapter. */
+internal fun footnoteMarks(chapter: Chapter?): Map<VerseId, List<FootnoteMark>> =
+    chapter?.footnotes.orEmpty().mapIndexed { index, note -> note.verse to FootnoteMark(note.offset, index, com.genesis.core.domain.bible.BibleSearchForm.footnoteLabel(index)) }
+        .groupBy({ it.first }, { it.second })
 private const val NOTE_MARK = "\u270E"
 
 /** The highlights and the selection, drawn as styles over the verbatim words. */
@@ -54,6 +81,8 @@ internal data class VerseMarks(
     val notes: Map<VerseId, String> = emptyMap(),
     /** The verse being read aloud, while Follow Along is on. */
     val playing: VerseId? = null,
+    /** The translation's footnote markers. */
+    val footnotes: Map<VerseId, List<FootnoteMark>> = emptyMap(),
 ) {
     fun style(verse: VerseId, colors: ReaderColors): SpanStyle {
         val highlight = highlights[verse]
@@ -81,6 +110,24 @@ internal const val VERSE_TAG = "verse"
  */
 internal fun chapterText(chapter: Chapter, colors: ReaderColors, marks: VerseMarks): AnnotatedString = buildAnnotatedString {
     val gap = ParagraphStyle(lineHeight = 0.6.em)
+    appendChapter(chapter, colors, marks, gap)
+    // A licensed Bible's notice, as its licence requires: small and apart from the text.
+    if (chapter.translation.showsLicenseUnderChapters) {
+        withStyle(gap) { append("\u200B") }
+        withStyle(ParagraphStyle()) {
+            val url = chapter.translation.publisherUrl
+            val style = SpanStyle(color = colors.secondaryText, fontSize = 0.62.em, textDecoration = if (url != null) TextDecoration.Underline else null)
+            if (url != null) pushStringAnnotation(NOTE_TAG, PUBLISHER_PREFIX + url)
+            withStyle(style) { append(chapter.translation.license) }
+            if (url != null) pop()
+        }
+    }
+}
+
+/** On a licensed Bible's notice: the publisher's site, opened by a tap. */
+internal const val PUBLISHER_PREFIX = "publisher:"
+
+private fun AnnotatedString.Builder.appendChapter(chapter: Chapter, colors: ReaderColors, marks: VerseMarks, gap: ParagraphStyle) {
     blocks(chapter).forEachIndexed { index, block ->
         if (index > 0) withStyle(gap) { append("​") }
         when (block) {

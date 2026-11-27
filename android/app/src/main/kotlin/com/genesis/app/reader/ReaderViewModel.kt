@@ -264,7 +264,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         val last = selection.last().takeIf { it.chapterId == first.chapterId } ?: first
         val max = com.genesis.core.domain.memorise.MemoriseSuggestions.MAXIMUM_VERSES
         val end = if (last.verse - first.verse < max) last else VerseId(first.book, first.chapter, first.verse + max - 1)
-        val bible = state.value.bible.id
+        val bible = premiumToolsBible().id
         viewModelScope.launch(Dispatchers.IO) { app.userData.memory.memorise(first, end, bible) }
         clearSelection()
     }
@@ -323,6 +323,24 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         app.progress.record(focus ?: current.chapterId.firstVerse)
     }
 
+    /** The Bible Premium tools read now (a free one beside a YouVersion Bible). */
+    fun premiumToolsBible(): InstalledBible = app.bibles.premiumToolsBible(state.value.bible)
+
+    /** Its name, for telling people before they use it. */
+    fun premiumToolsBibleName(): String {
+        val bible = premiumToolsBible()
+        return state.value.translations.firstOrNull { it.first == bible }?.second?.name ?: bible.id
+    }
+
+    /** Fetches the chapter again if it's a YouVersion chapter past its lifetime, and shows it if it changed. */
+    fun refreshIfStale() {
+        val current = state.value
+        if (!current.bible.sealed || current.chapter == null) return
+        viewModelScope.launch {
+            if (app.bibles.refreshIfStale(current.bible, current.chapterId.book, current.chapterId.chapter) && state.value.chapterId == current.chapterId) load()
+        }
+    }
+
     /** Verses of the Bible being read, verbatim, for Home's and Library's lists. */
     suspend fun verses(ids: Collection<VerseId>): Map<VerseId, Verse> {
         val bible = state.value.bible
@@ -339,10 +357,11 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
      * side too, only as decoy words for Fill the Gaps.
      */
     suspend fun memoryPassage(savedBibleId: String, from: VerseId, through: VerseId, nearby: Boolean = false): MemoryPassage? {
-        val reading = state.value.bible
+        // Never a YouVersion Bible: Memorize is a Premium tool.
+        val reading = premiumToolsBible()
         return withContext(Dispatchers.IO) {
             runCatching {
-                val saved = app.bibles.resolve(savedBibleId)
+                val saved = app.bibles.resolve(savedBibleId)?.let { app.bibles.premiumToolsBible(it) }
                 fun base(bible: InstalledBible) = repository(bible).translation.language.substringBefore('-')
                 val chosen = if (saved != null && base(saved) == base(reading)) saved else reading
                 var bible = chosen

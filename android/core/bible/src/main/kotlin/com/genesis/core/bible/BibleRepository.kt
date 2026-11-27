@@ -15,7 +15,11 @@ import java.io.File
  * Read access to one translation's database. The connection is used by one
  * thread at a time; callers run it off the main thread.
  */
-class BibleRepository private constructor(private val connection: SQLiteConnection) : AutoCloseable {
+class BibleRepository private constructor(
+    private val connection: SQLiteConnection,
+    /** False for a Bible kept open for the whole process (a YouVersion Bible in memory): close() leaves it open. */
+    private val owned: Boolean = true,
+) : AutoCloseable {
     private val lock = Any()
 
     val translation: Translation = synchronized(lock) {
@@ -31,7 +35,35 @@ class BibleRepository private constructor(private val connection: SQLiteConnecti
             language = meta["language"] ?: "en",
             license = meta["license"] ?: "",
             year = meta["year"],
+            publisherUrl = meta["publisher_url"]?.takeIf { it.startsWith("https://") },
+            isYouVersion = meta["source"] == "youversion",
         )
+    }
+
+    private val tables: Set<String> = synchronized(lock) {
+        buildSet {
+            connection.prepare("SELECT name FROM sqlite_master WHERE type = 'table'").use { while (it.step()) add(it.getText(0)) }
+        }
+    }
+    private val joinsVerses = "verse_spans" in tables
+    private val hasFootnotes = "footnotes" in tables
+
+    /** Joined verses in an id range: first verse id → last verse number. */
+    private fun spans(from: Int, through: Int): Map<Int, Int> {
+        if (!joinsVerses) return emptyMap()
+        return buildMap {
+            connection.prepare("SELECT id, last FROM verse_spans WHERE id BETWEEN ? AND ?").use { statement ->
+                statement.bindLong(1, from.toLong())
+                statement.bindLong(2, through.toLong())
+                while (statement.step()) put(statement.getLong(0).toInt(), statement.getLong(1).toInt() % 1_000)
+            }
+        }
+    }
+
+    private fun List<Verse>.spanned(): List<Verse> {
+        if (!joinsVerses || isEmpty()) return this
+        val found = spans(minOf { it.id.rawValue }, maxOf { it.id.rawValue })
+        return if (found.isEmpty()) this else map { verse -> found[verse.id.rawValue]?.let { verse.copy(lastVerse = it) } ?: verse }
     }
 
     /** The chapter's verses and headings, verbatim. */
@@ -64,13 +96,20 @@ class BibleRepository private constructor(private val connection: SQLiteConnecti
                 while (statement.step()) add(Heading(statement.getLong(0).toInt(), statement.getText(1)))
             }
         }
-        Chapter(id, translation, verses, headings)
+        val footnotes = if (!hasFootnotes) emptyList() else buildList {
+            connection.prepare("SELECT verse_id, position, text FROM footnotes WHERE verse_id BETWEEN ? AND ? ORDER BY verse_id, position, rowid").use { statement ->
+                statement.bindLong(1, range.first.toLong())
+                statement.bindLong(2, range.last.toLong())
+                while (statement.step()) add(Footnote(VerseId(statement.getLong(0).toInt()), statement.getLong(1).toInt(), statement.getText(2)))
+            }
+        }
+        Chapter(id, translation, verses.spanned(), headings, footnotes)
     }
 
     /** Verses by id, verbatim (Home's and Library's lists); missing ids are left out. */
     fun verses(ids: Collection<VerseId>): Map<VerseId, Verse> = synchronized(lock) {
         if (ids.isEmpty()) return@synchronized emptyMap()
-        buildMap {
+        val found = buildMap {
             for (chunk in ids.distinct().chunked(500)) {
                 val marks = chunk.joinToString(",") { "?" }
                 connection.prepare("SELECT id, text, paragraph, poetry FROM verses WHERE id IN ($marks)").use { statement ->
@@ -87,11 +126,12 @@ class BibleRepository private constructor(private val connection: SQLiteConnecti
                 }
             }
         }
+        if (joinsVerses) found.values.toList().spanned().associateBy { it.id } else found
     }
 
     /** The verses from one id through another, in order, verbatim (cross references). */
     fun passage(from: VerseId, through: VerseId, limit: Int = 200): List<Verse> = synchronized(lock) {
-        buildList {
+        val found = buildList {
             connection.prepare("SELECT id, text, paragraph, poetry FROM verses WHERE id BETWEEN ? AND ? ORDER BY id LIMIT ?").use { statement ->
                 statement.bindLong(1, from.rawValue.toLong())
                 statement.bindLong(2, maxOf(from.rawValue, through.rawValue).toLong())
@@ -108,6 +148,7 @@ class BibleRepository private constructor(private val connection: SQLiteConnecti
                 }
             }
         }
+        found.spanned()
     }
 
     /**
@@ -160,9 +201,37 @@ class BibleRepository private constructor(private val connection: SQLiteConnecti
         connection.prepare("SELECT count(*) FROM verses").use { if (it.step()) it.getLong(0).toInt() else 0 }
     }
 
-    override fun close() = synchronized(lock) { connection.close() }
+    override fun close() = synchronized(lock) { if (owned) connection.close() }
+
+    /** Replaces one chapter of a Bible built in memory with a newer copy from its source. */
+    fun replaceChapter(book: Int, chapter: com.genesis.core.domain.bible.YouVersionBook.Chapter) = synchronized(lock) {
+        check(!owned) { "Only a Bible built in memory can change" }
+        InMemoryBible.replace(connection, book, chapter)
+    }
+
+    /** Closes a Bible kept open for the process (when it's removed or rebuilt). */
+    fun release() = synchronized(lock) { connection.close() }
 
     companion object {
+        /**
+         * Builds a Bible in memory from YouVersion books (as BibleFileWriter on
+         * iOS: the same tables as build_bibles.py, plus verse_spans and
+         * footnotes): the licensed text is never written to a readable file.
+         * Kept open for the process (`close()` leaves it open; `release()`
+         * closes it). Verse text is stored exactly as given; only the search
+         * index holds a search-friendly form.
+         */
+        fun inMemory(books: Map<Int, com.genesis.core.domain.bible.YouVersionBook>, meta: Map<String, String>): BibleRepository {
+            val connection = BundledSQLiteDriver().open(":memory:", androidx.sqlite.driver.bundled.SQLITE_OPEN_READWRITE or androidx.sqlite.driver.bundled.SQLITE_OPEN_CREATE)
+            try {
+                InMemoryBible.write(connection, books, meta)
+            } catch (error: Throwable) {
+                connection.close()
+                throw error
+            }
+            return BibleRepository(connection, owned = false)
+        }
+
         /** Opens a database file read-only. */
         fun open(file: File): BibleRepository {
             val connection = BundledSQLiteDriver().open(file.path, SQLITE_OPEN_READONLY)
@@ -177,6 +246,7 @@ class BibleRepository private constructor(private val connection: SQLiteConnecti
         /** Opens a Bible on this phone, bundled or downloaded. */
         fun open(context: Context, bible: InstalledBible): BibleRepository = when {
             bible.bundled != null -> open(context, bible.bundled)
+            bible.sealed -> requireNotNull(SealedBibles.opener) { "Sealed Bibles aren't set up" }(bible)
             bible.file != null -> open(bible.file)
             else -> error("${bible.id} has no file")
         }

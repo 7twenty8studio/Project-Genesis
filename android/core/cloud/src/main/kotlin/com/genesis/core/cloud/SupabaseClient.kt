@@ -99,6 +99,37 @@ class SupabaseClient(
         send("POST", "functions/v1/$name", "", bodyJson, null)
 
     /**
+     * Calls an Edge Function with the anon key, waiting up to `timeoutMs` for
+     * the answer, and returns its status and body whatever the status (the
+     * caller reads a 429's `retryAfter`). Network failures throw Network.
+     */
+    fun callFunctionWithStatus(name: String, bodyJson: String, timeoutMs: Int): HttpResponse {
+        val connection = URI("$baseUrl/functions/v1/$name").toURL().openConnection() as HttpURLConnection
+        try {
+            connection.requestMethod = "POST"
+            connection.connectTimeout = 30_000
+            connection.readTimeout = timeoutMs
+            connection.useCaches = false
+            connection.setRequestProperty("apikey", anonKey)
+            connection.setRequestProperty("Authorization", "Bearer $anonKey")
+            connection.setRequestProperty("Content-Type", "application/json")
+            connection.doOutput = true
+            return try {
+                connection.outputStream.use { it.write(bodyJson.toByteArray()) }
+                val status = connection.responseCode
+                val stream = if (status in 200..299) connection.inputStream else connection.errorStream
+                HttpResponse(status, stream?.bufferedReader()?.use { it.readText() }.orEmpty())
+            } catch (error: java.net.SocketTimeoutException) {
+                throw SupabaseError.Timeout(error)
+            } catch (error: IOException) {
+                throw SupabaseError.Network(error)
+            }
+        } finally {
+            connection.disconnect()
+        }
+    }
+
+    /**
      * GETs a file (a sermon cover) as bytes, never cached; null for a 404.
      * Straight over HttpURLConnection, since the transport carries text.
      */

@@ -13,6 +13,10 @@ data class Translation(
     val language: String,
     val license: String,
     val year: String?,
+    /** The publisher's website, linked from the notice under every chapter (https only). */
+    val publisherUrl: String? = null,
+    /** A YouVersion Platform Bible: free, never read aloud, never in Premium tools. */
+    val isYouVersion: Boolean = false,
 ) {
     /** True for anything that isn't public domain: its notice shows under every chapter. */
     val showsLicenseUnderChapters: Boolean
@@ -40,8 +44,16 @@ data class InstalledBible(
     val id: String,
     val bundled: BundledBible? = null,
     val file: java.io.File? = null,
+    /** A YouVersion Bible: sealed on the phone and opened into memory by the app (`SealedBibles`). */
+    val sealed: Boolean = false,
 ) {
     companion object {
         fun of(bundled: BundledBible) = InstalledBible(bundled.id, bundled = bundled)
     }
+}
+
+/** Opens sealed Bibles (the app holds the key); set once by the app at launch. */
+object SealedBibles {
+    @Volatile
+    var opener: ((InstalledBible) -> BibleRepository)? = null
 }

@@ -1233,4 +1233,17 @@
     <string name="bible_needs_premium">This Bible comes with Premium. If you subscribe, try Restore Purchases in Settings.</string>
     <string name="bibles_busy">Lots of people are downloading Bibles right now. Please try again in a few minutes; what\'s already downloaded is kept.</string>
     <string name="more_bibles">More Bibles…</string>
+    <string name="downloads">Downloads</string>
+    <string name="download_name">Download %s</string>
+    <string name="downloading_books">Downloading · %1$d of %2$d books</string>
+    <string name="paused_books">Paused · %1$d of %2$d books saved</string>
+    <string name="continue_download">Continue</string>
+    <string name="discard">Discard</string>
+    <string name="downloads_paused_footer">A paused download keeps what it has for a week. Continue it any time.</string>
+    <string name="footnote">Footnote</string>
+    <string name="about_this_bible">About this Bible</string>
+    <string name="always_free">Always free</string>
+    <string name="youversion_card_note">Free to read, always. Listening isn\'t available, and Premium tools such as Memorize use the %s with this Bible.</string>
+    <string name="youversion_reader_note">%1$s is free to read, always. Listening isn\'t available for it, and Premium tools such as Memorize use the %2$s instead.</string>
+    <string name="listening_unavailable_bible">Listening isn\'t available for this Bible yet. Choose another Bible to listen.</string>
 </resources>

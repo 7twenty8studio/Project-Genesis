@@ -1,5 +1,6 @@
 package com.genesis.app.reader
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.size
@@ -92,6 +93,16 @@ fun ReaderRoute(
         lastListened = now
         if (following && now != null && before != null && now != before && state.chapterId == before) viewModel.open(now)
     }
+    var footnote by remember { mutableStateOf<com.genesis.core.bible.Footnote?>(null) }
+    val uriHandler = androidx.compose.ui.platform.LocalUriHandler.current
+    // A YouVersion chapter opened online after its Cache-Control lifetime is fetched again.
+    LaunchedEffect(state.chapter?.id, state.bible) { viewModel.refreshIfStale() }
+    // Once: a YouVersion Bible is free, isn't read aloud, and Premium tools use a free Bible beside it.
+    val youVersionNote = remember { app.getSharedPreferences("reader", android.content.Context.MODE_PRIVATE) }
+    var showsYouVersionNote by remember { mutableStateOf(false) }
+    LaunchedEffect(state.chapter?.translation?.isYouVersion) {
+        if (state.chapter?.translation?.isYouVersion == true && !youVersionNote.getBoolean("youVersion.noteShown", false)) showsYouVersionNote = true
+    }
     androidx.compose.foundation.layout.Box(Modifier.fillMaxSize()) {
     ReaderScreen(
         state = state,
@@ -117,13 +128,36 @@ fun ReaderRoute(
             onDone = viewModel::clearSelection,
             onBookmark = viewModel::toggleBookmark,
             onNote = viewModel::openNoteForSelection,
-            onNoteTap = viewModel::openNote,
+            onNoteTap = { tag ->
+                when {
+                    tag.startsWith(FOOTNOTE_PREFIX) -> footnote = tag.removePrefix(FOOTNOTE_PREFIX).toIntOrNull()?.let { state.chapter?.footnotes?.getOrNull(it) }
+                    tag.startsWith(PUBLISHER_PREFIX) -> uriHandler.openUri(tag.removePrefix(PUBLISHER_PREFIX))
+                    else -> viewModel.openNote(tag)
+                }
+            },
             onCrossReferences = viewModel::openCrossReferences,
             onMemorise = viewModel::memoriseSelection,
             onWordStudy = viewModel::openWordStudy,
             onStudy = viewModel::openStudy,
         ),
     )
+    footnote?.let { note ->
+        FootnoteSheet(note, state.chapter?.translation) { footnote = null }
+    }
+    if (showsYouVersionNote) {
+        val translation = state.chapter?.translation
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = {},
+            title = { Text(stringResource(R.string.about_this_bible)) },
+            text = { Text(stringResource(R.string.youversion_reader_note, translation?.abbreviation.orEmpty(), viewModel.premiumToolsBibleName())) },
+            confirmButton = {
+                TextButton(onClick = {
+                    youVersionNote.edit().putBoolean("youVersion.noteShown", true).apply()
+                    showsYouVersionNote = false
+                }) { Text(stringResource(R.string.ok)) }
+            },
+        )
+    }
     state.wordStudyVerse?.let { verse ->
         com.genesis.app.original.VerseStudyScreen(verse, viewModel, onDone = viewModel::closeWordStudy)
     }
@@ -327,7 +361,7 @@ fun ReaderScreen(
             val preferences = LocalReaderPreferences.current
             val notedVerses = state.notedVerses
             val playing = listening?.playing
-            val marks = remember(state.highlights, state.selection, notedVerses, playing) { VerseMarks(state.highlights, state.selection, notedVerses, playing) }
+            val marks = remember(state.highlights, state.selection, notedVerses, playing, state.chapter) { VerseMarks(state.highlights, state.selection, notedVerses, playing, footnoteMarks(state.chapter)) }
             val scripture = scriptureStyle(preferences, Entitlements.isPremium)
             // Forest, Ocean and Hearth: the scene behind clear pages.
             val scene = com.genesis.core.domain.theme.ThemeScene.of(preferences.theme)
@@ -458,11 +492,14 @@ private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMark
         }
         if (chapter.translation.showsLicenseUnderChapters) {
             item {
+                // The publisher's licence asks for a one-step link to its site wherever its text is shown.
+                val url = chapter.translation.publisherUrl
+                val uriHandler = androidx.compose.ui.platform.LocalUriHandler.current
                 Text(
                     chapter.translation.license,
-                    style = MaterialTheme.typography.bodyMedium,
+                    style = MaterialTheme.typography.bodyMedium.copy(textDecoration = if (url != null) androidx.compose.ui.text.style.TextDecoration.Underline else null),
                     color = colors.secondaryText,
-                    modifier = Modifier.padding(top = 24.dp),
+                    modifier = Modifier.padding(top = 24.dp).then(if (url != null) Modifier.clickable { uriHandler.openUri(url) } else Modifier),
                 )
             }
         }
@@ -524,6 +561,31 @@ private fun ReadingTimer() {
         onDispose {
             lifecycle.removeObserver(observer)
             stop()
+        }
+    }
+}
+
+/** A translation's footnote, as FootnoteSheet on iOS: the verse and Bible, then the note. */
+@OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
+@Composable
+private fun FootnoteSheet(note: com.genesis.core.bible.Footnote, translation: com.genesis.core.bible.Translation?, onDismiss: () -> Unit) {
+    val colors = LocalReaderColors.current
+    androidx.compose.material3.ModalBottomSheet(onDismissRequest = onDismiss, containerColor = colors.background) {
+        androidx.compose.foundation.layout.Column(
+            Modifier.fillMaxWidth().padding(horizontal = 20.dp).padding(bottom = 32.dp),
+            verticalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(12.dp),
+        ) {
+            Text(stringResource(R.string.footnote), style = MaterialTheme.typography.titleMedium, color = colors.text, modifier = Modifier.semantics { heading() })
+            val language = translation?.language ?: "en"
+            Text(
+                com.genesis.core.domain.bible.ReferenceParser.describe(note.verse.rawValue, language = language) + (translation?.let { " · " + it.abbreviation } ?: ""),
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.SemiBold,
+                color = colors.accent,
+            )
+            androidx.compose.foundation.text.selection.SelectionContainer {
+                Text(note.text, style = MaterialTheme.typography.bodyLarge, color = colors.text)
+            }
         }
     }
 }

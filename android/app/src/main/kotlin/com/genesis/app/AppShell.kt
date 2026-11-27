@@ -290,7 +290,7 @@ fun AppShell(
         MemoriseScreen(
             store = app.userData.memory,
             texts = MemoryTexts(
-                bibleId = state.bible.id,
+                bibleId = reader.premiumToolsBible().id,
                 language = translation?.language ?: "en",
                 passage = { verse, nearby -> reader.memoryPassage(verse.translationId, verse.start, verse.end, nearby) },
                 hasVerse = reader::hasVerse,

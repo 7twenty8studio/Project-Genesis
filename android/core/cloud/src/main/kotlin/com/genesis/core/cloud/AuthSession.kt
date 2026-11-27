@@ -38,6 +38,9 @@ sealed class SupabaseError(message: String) : Exception(message) {
 
     class InvalidResponse : SupabaseError("invalid response")
 
+    /** Connected, but the answer took too long. */
+    class Timeout(cause: Throwable) : SupabaseError(cause.message ?: "timeout")
+
     /** No connection, or it dropped. */
     class Network(cause: Throwable) : SupabaseError(cause.message ?: "network") {
         init {

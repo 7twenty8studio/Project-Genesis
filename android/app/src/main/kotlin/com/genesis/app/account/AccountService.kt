@@ -197,7 +197,7 @@ class AccountService(context: Context, private val scope: CoroutineScope) {
     private fun message(error: SupabaseError): AccountMessage = when (error) {
         is SupabaseError.EmailConfirmationRequired -> AccountMessage(R.string.confirm_email, isError = false)
         is SupabaseError.Http -> AccountMessage(text = error.message, isError = true)
-        is SupabaseError.Network -> AccountMessage(R.string.server_unreachable, isError = true)
+        is SupabaseError.Network, is SupabaseError.Timeout -> AccountMessage(R.string.server_unreachable, isError = true)
         is SupabaseError.InvalidResponse -> AccountMessage(R.string.unexpected_response, isError = true)
     }
 

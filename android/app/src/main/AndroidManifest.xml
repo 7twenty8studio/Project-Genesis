@@ -12,6 +12,7 @@
     <!-- Listening carries on with the screen off, with controls on the lock screen. -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
 
     <!-- The phone's text-to-speech engine, which reads chapters aloud. -->
     <queries>
@@ -52,6 +53,12 @@
                 <data android:scheme="https" android:host="versely.7twenty8studio.com" android:pathPrefix="/s/" />
             </intent-filter>
         </activity>
+
+        <!-- A Bible download keeps going after the person leaves Versely. -->
+        <service
+            android:name=".bibles.BibleDownloadService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
 
         <!-- Listening: the chapter read aloud keeps playing with the screen off (Media3). -->
         <service

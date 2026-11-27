@@ -131,6 +131,11 @@ class Listening(private val context: Context, val settings: ListeningSettings) {
 
     /** Starts reading a chapter of [bible], from a verse or the start. */
     fun play(bible: com.genesis.core.bible.InstalledBible, chapter: ChapterId, from: VerseId? = null) {
+        // YouVersion Bibles aren't read aloud (what Versely told YouVersion).
+        if (bible.sealed) {
+            _state.update { it.copy(status = ListeningStatus.PAUSED, bible = bible, chapter = chapter, verse = null, error = R.string.listening_unavailable_bible) }
+            return
+        }
         connectSession()
         stopSpeaking()
         loadJob?.cancel()

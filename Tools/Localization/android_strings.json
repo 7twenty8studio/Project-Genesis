@@ -1232,6 +1232,19 @@
     "not_a_bible": "That file isn't a Bible Versely can read.",
     "bible_needs_premium": "This Bible comes with Premium. If you subscribe, try Restore Purchases in Settings.",
     "bibles_busy": "Lots of people are downloading Bibles right now. Please try again in a few minutes; what's already downloaded is kept.",
-    "more_bibles": "More Bibles…"
+    "more_bibles": "More Bibles…",
+    "downloads": "Downloads",
+    "download_name": "Download %@",
+    "downloading_books": "Downloading · %lld of %lld books",
+    "paused_books": "Paused · %lld of %lld books saved",
+    "continue_download": "Continue",
+    "discard": "Discard",
+    "downloads_paused_footer": "A paused download keeps what it has for a week. Continue it any time.",
+    "footnote": "Footnote",
+    "about_this_bible": "About this Bible",
+    "always_free": "Always free",
+    "youversion_card_note": "Free to read, always. Listening isn't available, and Premium tools such as Memorize use the %@ with this Bible.",
+    "youversion_reader_note": "%@ is free to read, always. Listening isn't available for it, and Premium tools such as Memorize use the %@ instead.",
+    "listening_unavailable_bible": "Listening isn't available for this Bible yet. Choose another Bible to listen."
   }
 }

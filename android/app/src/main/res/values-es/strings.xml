@@ -1232,4 +1232,17 @@
     <string name="bible_needs_premium">Esta Biblia está incluida en Premium. Si tienes la suscripción, prueba Restaurar compras en Ajustes.</string>
     <string name="bibles_busy">Muchas personas están descargando Biblias en este momento. Inténtalo de nuevo en unos minutos; lo que ya se descargó se guarda.</string>
     <string name="more_bibles">Más Biblias…</string>
+    <string name="downloads">Descargas</string>
+    <string name="download_name">Descargar %s</string>
+    <string name="downloading_books">Descargando · %1$d de %2$d libros</string>
+    <string name="paused_books">En pausa · %1$d de %2$d libros guardados</string>
+    <string name="continue_download">Continuar</string>
+    <string name="discard">Descartar</string>
+    <string name="downloads_paused_footer">Una descarga en pausa guarda lo que tiene durante una semana. Continúala cuando quieras.</string>
+    <string name="footnote">Nota</string>
+    <string name="about_this_bible">Sobre esta Biblia</string>
+    <string name="always_free">Siempre gratis</string>
+    <string name="youversion_card_note">Gratis para leer, siempre. No se puede escuchar, y las herramientas Premium como Memorizar usan la %s con esta Biblia.</string>
+    <string name="youversion_reader_note">La %1$s es gratis para leer, siempre. No se puede escuchar, y las herramientas Premium como Memorizar usan la %2$s en su lugar.</string>
+    <string name="listening_unavailable_bible">Todavía no se puede escuchar esta Biblia. Elige otra Biblia para escuchar.</string>
 </resources>

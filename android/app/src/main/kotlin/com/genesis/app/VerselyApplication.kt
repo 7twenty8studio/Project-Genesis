@@ -27,7 +27,7 @@ class VerselyApplication : Application() {
     val readerSettings: ReaderSettingsStore by lazy { ReaderSettingsStore(this) }
 
     /** The Bibles on this phone and those offered for download. */
-    val bibles: com.genesis.app.bibles.BibleLibrary by lazy { com.genesis.app.bibles.BibleLibrary(this, account.client) }
+    val bibles: com.genesis.app.bibles.BibleLibrary by lazy { com.genesis.app.bibles.BibleLibrary(this, account.client, scope) }
 
     /** The Bible the person reads (the default when theirs is gone). */
     val currentBible: com.genesis.core.bible.InstalledBible get() = bibles.current(readerSettings.currentBible)
