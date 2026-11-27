@@ -1210,6 +1210,11 @@
     "category_gratitude": "Gratitude",
     "category_guidance": "Guidance",
     "widget_show": "Show",
-    "widget_verse_choose": "Choose which verse the widget shows."
+    "widget_verse_choose": "Choose which verse the widget shows.",
+    "group_progress": "Group Progress",
+    "widget_group_description": "Your group's reading plan: who has read today and how far everyone has come.",
+    "widget_group_empty": "Open a group with a reading plan in Versely to see its progress here.",
+    "read_today_label": "read today",
+    "read_today_count": "%lld of %lld read today"
   }
 }

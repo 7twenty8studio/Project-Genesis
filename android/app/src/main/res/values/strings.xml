@@ -1211,4 +1211,9 @@
     <string name="category_guidance">Guidance</string>
     <string name="widget_show">Show</string>
     <string name="widget_verse_choose">Choose which verse the widget shows.</string>
+    <string name="group_progress">Group Progress</string>
+    <string name="widget_group_description">Your group\'s reading plan: who has read today and how far everyone has come.</string>
+    <string name="widget_group_empty">Open a group with a reading plan in Versely to see its progress here.</string>
+    <string name="read_today_label">read today</string>
+    <string name="read_today_count">%1$d of %2$d read today</string>
 </resources>

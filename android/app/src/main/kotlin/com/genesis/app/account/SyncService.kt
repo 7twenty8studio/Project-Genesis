@@ -68,7 +68,7 @@ data class SyncState(
  * edit, after signing in, or Sync Now).
  */
 class SyncService(
-    context: Context,
+    private val context: Context,
     private val database: UserDatabase,
     private val account: AccountService,
     private val scope: CoroutineScope,
@@ -154,6 +154,8 @@ class SyncService(
             account.signOut()
             if (removeLocalData) withContext(Dispatchers.IO) { eraseDevice() }
         }
+        // The group widget shows other people's names: it goes with the account.
+        com.genesis.app.widget.GroupWidgetStore.clear(context)
     }
 
     /** Deletes the account; this device's copy of its data goes too. */
@@ -161,7 +163,7 @@ class SyncService(
         scheduled?.cancel()
         return running.withLock {
             account.deleteAccount().also { deleted -> if (deleted) withContext(Dispatchers.IO) { eraseDevice() } }
-        }
+        }.also { if (it) com.genesis.app.widget.GroupWidgetStore.clear(context) }
     }
 
     /** Removes the synced data and every cursor, so the next sync starts from scratch. */

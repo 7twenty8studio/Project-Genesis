@@ -139,6 +139,9 @@ fun GroupScreen(
     var finishedChallenges by rememberSaveable { mutableStateOf(false) }
     var newChallenge by remember { mutableStateOf(false) }
 
+    val planName = group?.plan?.let { groupPlanTitle(group, it) }
+    val widgetLanguage = bible.language
+
     suspend fun reload() {
         val api = store.api ?: return
         try {
@@ -159,6 +162,7 @@ fun GroupScreen(
                 )
             }
             loadError = null
+            writeGroupWidget(app, group, planName, widgetLanguage, content, state.blocked)
         } catch (error: CommunityError) {
             loadError = error
             content = content.copy(loaded = true)
@@ -656,5 +660,45 @@ private fun AnnouncementDialog(onPost: suspend (String, String) -> Boolean, onDo
             ) { Text(stringResource(R.string.post), color = colors.accent, fontWeight = FontWeight.SemiBold) }
         },
         dismissButton = { TextButton(onClick = onDone) { Text(stringResource(R.string.cancel), color = colors.secondaryText) } },
+    )
+}
+
+/** Keeps the Group Progress widget on this group, as GroupDetailModel does on iOS (groups with a plan only). */
+private suspend fun writeGroupWidget(
+    app: VerselyApplication,
+    group: com.genesis.core.cloud.community.GroupSummary?,
+    planName: String?,
+    language: String,
+    content: GroupContent,
+    blocked: Set<String>,
+) {
+    val plan = group?.plan ?: return
+    val day = group.planDay() ?: 0
+    val readers = content.readers[day].orEmpty().map { it.lowercase() }.toSet()
+    val members = content.members
+        .filter { it.userId.lowercase() !in blocked }
+        .map { member ->
+            val done = content.progress[member.userId.lowercase()]?.daysDone ?: 0
+            com.genesis.core.domain.widgets.GroupWidgetSnapshot.Member(
+                name = member.displayName,
+                fraction = if (plan.dayCount > 0) (done.toDouble() / plan.dayCount).coerceIn(0.0, 1.0) else 0.0,
+                readToday = member.userId.lowercase() in readers,
+            )
+        }
+        .sortedWith(compareByDescending<com.genesis.core.domain.widgets.GroupWidgetSnapshot.Member> { it.readToday }.thenByDescending { it.fraction })
+    com.genesis.app.widget.GroupWidgetStore.write(
+        app,
+        com.genesis.core.domain.widgets.GroupWidgetSnapshot(
+            groupId = group.id,
+            groupName = group.name,
+            planTitle = planName ?: "",
+            day = day,
+            dayCount = plan.dayCount,
+            dayTitle = plan.days.getOrNull(day - 1)?.title(language),
+            readTodayCount = members.count { it.readToday },
+            memberCount = members.size,
+            members = members,
+            writtenOn = java.time.LocalDate.now().toString(),
+        ),
     )
 }

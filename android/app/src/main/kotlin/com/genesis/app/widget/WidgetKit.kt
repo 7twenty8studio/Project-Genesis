@@ -136,6 +136,7 @@ object VerselyWidgets {
         PrayerReminderWidget(),
         TodaysReadingWidget(),
         MemoriseWidget(),
+        GroupProgressWidget(),
     )
 
     suspend fun refresh(context: Context) {

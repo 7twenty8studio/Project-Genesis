@@ -94,6 +94,7 @@ fun AppShell(
     var memoriseOpen by rememberSaveable { mutableStateOf(false) }
     var sermonsOpen by rememberSaveable { mutableStateOf(false) }
     var studyLibraryOpen by rememberSaveable { mutableStateOf(false) }
+    var groupToOpen by rememberSaveable { mutableStateOf<String?>(null) }
     var sermonsNew by rememberSaveable { mutableStateOf(false) }
     // A church sermon over any tab (its link's slug), and notes opened from it.
     var churchSermon by rememberSaveable { mutableStateOf<String?>(null) }
@@ -136,6 +137,11 @@ fun AppShell(
                 settingsOpen = false
                 plansOpen = false
                 journalOpen = true
+            }
+            is GenesisLink.Group -> {
+                settingsOpen = false
+                groupToOpen = link.id
+                tab = AppTab.TOGETHER
             }
             GenesisLink.Memorise -> {
                 settingsOpen = false
@@ -441,6 +447,7 @@ fun AppShell(
                 ),
                 bibleId = state.bible.id,
                 onSignIn = { accountOpen = true }, onRead = { read(it.firstVerse) }, modifier = content,
+                startGroup = groupToOpen, onStartGroupHandled = { groupToOpen = null },
                 onOpenSermon = { churchSermon = it })
         } }
     }

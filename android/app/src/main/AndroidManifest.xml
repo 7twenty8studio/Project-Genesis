@@ -159,6 +159,18 @@
         </receiver>
 
         <receiver
+            android:name=".widget.GroupProgressReceiver"
+            android:exported="false"
+            android:label="@string/group_progress">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/group_progress_widget_info" />
+        </receiver>
+
+        <receiver
             android:name=".notifications.ReminderReceiver"
             android:exported="false">
             <intent-filter>

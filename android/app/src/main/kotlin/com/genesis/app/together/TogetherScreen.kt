@@ -72,6 +72,9 @@ fun TogetherScreen(
     onRead: (com.genesis.core.domain.bible.ChapterId) -> Unit,
     modifier: Modifier = Modifier,
     onOpenSermon: (String) -> Unit = {},
+    /** A group to open (a Group Progress widget tap), once per request. */
+    startGroup: String? = null,
+    onStartGroupHandled: () -> Unit = {},
 ) {
     val app = LocalContext.current.applicationContext as VerselyApplication
     val store = app.community
@@ -79,6 +82,12 @@ fun TogetherScreen(
     val account by app.account.state.collectAsStateWithLifecycle()
     val colors = LocalReaderColors.current
     var openGroup by rememberSaveable { mutableStateOf<String?>(null) }
+    LaunchedEffect(startGroup) {
+        if (startGroup != null) {
+            openGroup = startGroup
+            onStartGroupHandled()
+        }
+    }
     var editingName by rememberSaveable { mutableStateOf(false) }
     var findingChurch by rememberSaveable { mutableStateOf(false) }
     val flags by app.flags.values.collectAsStateWithLifecycle()

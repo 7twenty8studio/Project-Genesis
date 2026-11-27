@@ -19,6 +19,8 @@ class GenesisLinkTest {
         assertEquals(GenesisLink.Plans, GenesisLink.parse("versely://plans"))
         assertEquals(GenesisLink.Prayer, GenesisLink.parse("versely://prayer"))
         assertEquals(GenesisLink.Memorise, GenesisLink.parse("versely://memorise"))
+        assertEquals(GenesisLink.Group("1f0c2b9e-aa00-4b1e-9d1c-2f6b0c7d8e9f"), GenesisLink.parse("versely://group/1F0C2B9E-AA00-4B1E-9D1C-2F6B0C7D8E9F"))
+        assertEquals(null, GenesisLink.parse("versely://group"))
     }
 
     @Test

@@ -1210,4 +1210,9 @@
     <string name="category_guidance">Direção</string>
     <string name="widget_show">Mostrar</string>
     <string name="widget_verse_choose">Escolha qual versículo o widget mostra.</string>
+    <string name="group_progress">Progresso do grupo</string>
+    <string name="widget_group_description">O plano de leitura do seu grupo: quem leu hoje e até onde cada um chegou.</string>
+    <string name="widget_group_empty">Abra no Versely um grupo com plano de leitura para ver o progresso dele aqui.</string>
+    <string name="read_today_label">leram hoje</string>
+    <string name="read_today_count">%1$d de %2$d leram hoje</string>
 </resources>

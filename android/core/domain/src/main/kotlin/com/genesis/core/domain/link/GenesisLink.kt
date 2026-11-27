@@ -27,6 +27,9 @@ sealed interface GenesisLink {
     /** versely://memorise: Memorize Scripture (the Memorize widget). */
     data object Memorise : GenesisLink
 
+    /** versely://group/<id>: one of the person's groups (the Group Progress widget). */
+    data class Group(val id: String) : GenesisLink
+
     /**
      * A church's sermon: versely://sermon/<slug>, or its one link
      * https://versely.7twenty8studio.com/s/<slug> (an App Link).
@@ -37,11 +40,14 @@ sealed interface GenesisLink {
         const val SCHEME = "versely"
 
         const val CONTINUE_READING = "$SCHEME://read"
+        const val HOME = "$SCHEME://home"
         const val PLANS = "$SCHEME://plans"
         const val PRAYER = "$SCHEME://prayer"
         const val MEMORISE = "$SCHEME://memorise"
 
         fun read(verse: VerseId): String = "$SCHEME://read/${verse.rawValue}"
+
+        fun group(id: String): String = "$SCHEME://group/$id"
 
         /** Reads a link; anything else (another scheme, a verse that doesn't exist) is null. */
         fun parse(link: String): GenesisLink? {
@@ -57,6 +63,7 @@ sealed interface GenesisLink {
                 "plans" -> Plans
                 "prayer" -> Prayer
                 "memorise" -> Memorise
+                "group" -> parts.getOrNull(1)?.takeIf { it.isNotBlank() }?.let { Group(it.lowercase()) }
                 else -> null
             }
         }
