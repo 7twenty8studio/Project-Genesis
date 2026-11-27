@@ -48,6 +48,8 @@ data class ReaderUiState(
     val openAtEnd: Boolean = false,
     /** The verses the person has tapped, for highlighting, copying and sharing. */
     val selection: Set<VerseId> = emptySet(),
+    /** The reader's controls and the tab bar (a tap on the page shows or hides them, as iOS). */
+    val showsControls: Boolean = true,
     /** Every highlight, by verse. */
     val highlights: Map<VerseId, HighlightColor> = emptyMap(),
     /** Every bookmarked verse (one per chapter). */
@@ -240,6 +242,8 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     fun clearSelection() = _state.update { it.copy(selection = emptySet()) }
+
+    fun toggleControls() = _state.update { it.copy(showsControls = !it.showsControls) }
 
     fun highlight(color: HighlightColor) {
         val verses = state.value.selection

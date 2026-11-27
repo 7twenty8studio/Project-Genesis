@@ -1396,4 +1396,15 @@
     <string name="ambient_bar_label">Sons ambientes, %s</string>
     <string name="ambient_volume">Volume de %s</string>
     <string name="ambient_footer_android">Os sons continuam tocando com o celular bloqueado, tocam junto com música de outros apps e ficam mais baixos enquanto a Bíblia é lida em voz alta.</string>
+    <string name="add_bookmark_short">Adicionar marcador</string>
+    <string name="remove_bookmark_short">Remover marcador</string>
+    <string name="add_bookmark_menu">Adicionar marcador</string>
+    <string name="toggle_study_panel">Mostrar ou ocultar o painel de estudo</string>
+    <string name="pause_listening">Pausar a leitura em voz alta</string>
+    <string name="study_panel">Painel de estudo</string>
+    <string name="panel">Painel</string>
+    <string name="find_a_book">Encontrar um livro</string>
+    <string name="currently_reading">Lendo agora</string>
+    <string name="read_in_parallel">Ler em paralelo</string>
+    <string name="stop_parallel_reading">Parar a leitura em paralelo</string>
 </resources>

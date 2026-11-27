@@ -1396,6 +1396,17 @@
     "ambient_stop": "Stop ambient sounds",
     "ambient_bar_label": "Ambient sounds, %@",
     "ambient_volume": "%@ volume",
-    "ambient_footer_android": "Sounds keep playing when you lock your phone, play alongside music from other apps, and sit quieter while the Bible is read aloud."
+    "ambient_footer_android": "Sounds keep playing when you lock your phone, play alongside music from other apps, and sit quieter while the Bible is read aloud.",
+    "add_bookmark_short": "Add bookmark",
+    "remove_bookmark_short": "Remove bookmark",
+    "add_bookmark_menu": "Add Bookmark",
+    "toggle_study_panel": "Toggle study panel",
+    "pause_listening": "Pause listening",
+    "study_panel": "Study Panel",
+    "panel": "Panel",
+    "find_a_book": "Find a book",
+    "currently_reading": "Currently reading",
+    "read_in_parallel": "Read in Parallel",
+    "stop_parallel_reading": "Stop Parallel Reading"
   }
 }

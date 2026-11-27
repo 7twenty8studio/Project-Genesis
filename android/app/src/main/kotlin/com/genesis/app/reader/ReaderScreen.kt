@@ -1,6 +1,16 @@
 package com.genesis.app.reader
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.only
+import androidx.compose.foundation.layout.union
+import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.layout.statusBarsIgnoringVisibility
+import androidx.compose.foundation.layout.navigationBarsIgnoringVisibility
+import androidx.compose.foundation.layout.displayCutout
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.size
@@ -121,6 +131,7 @@ fun ReaderRoute(
         onNext = { viewModel.next() },
         onPrevious = { viewModel.previous() },
         onPreviousAtEnd = { viewModel.previous(atEnd = true) },
+        onToggleControls = viewModel::toggleControls,
         selection = SelectionActions(
             onVerseTap = viewModel::toggle,
             onHighlight = viewModel::highlight,
@@ -215,6 +226,8 @@ fun ReaderScreen(
     onNext: () -> Unit,
     onPrevious: () -> Unit,
     onPreviousAtEnd: () -> Unit = onPrevious,
+    onToggleControls: () -> Unit = {},
+    onTogglePanel: () -> Unit = {},
     selection: SelectionActions = SelectionActions(),
     listening: ReaderListening? = null,
     viewModel: ReaderViewModel? = null,
@@ -239,167 +252,44 @@ fun ReaderScreen(
     val language = state.chapter?.translation?.language ?: "en"
     val colors = LocalReaderColors.current
 
-    Scaffold(
-        topBar = {
-            CenterAlignedTopAppBar(
-                title = {
-                    TextButton(onClick = { picking = true }) {
-                        Text(
-                            state.chapterId.description(language),
-                            style = MaterialTheme.typography.titleMedium,
-                            color = colors.text,
-                        )
-                    }
-                },
-                navigationIcon = {
-                    val readingSettings = stringResource(R.string.reading_settings)
-                    TextButton(
-                        onClick = { settingsOpen = true },
-                        modifier = Modifier.semantics { contentDescription = readingSettings },
-                    ) {
-                        Text("Aa", color = colors.accent, style = MaterialTheme.typography.titleMedium)
-                    }
-                },
-                actions = {
-                    if (listening != null && shows(com.genesis.core.domain.features.OptionalFeature.LISTEN)) {
-                        val listen = stringResource(R.string.listen_to_chapter)
-                        IconButton(
-                            onClick = {
-                                val current = listening.state
-                                if (current.isActive && current.chapter == state.chapterId && current.bible == state.bible) {
-                                    listening.controls.toggle()
-                                } else {
-                                    listening.controls.play(state.bible, state.chapterId)
-                                }
-                            },
-                            modifier = Modifier.semantics { contentDescription = listen },
-                        ) { HeadphonesIcon(colors.accent) }
-                    }
-                    val searchLabel = stringResource(R.string.search)
-                    IconButton(
-                        onClick = onSearchClick,
-                        modifier = Modifier.semantics { contentDescription = searchLabel },
-                    ) { Magnifier(colors.accent) }
-                    if (state.isChapterBookmarked) {
-                        val removeBookmark = stringResource(R.string.remove_bookmark)
-                        IconButton(
-                            onClick = selection.onBookmark,
-                            modifier = Modifier.semantics { contentDescription = removeBookmark },
-                        ) { Ribbon(colors.accent) }
-                    }
-                    Box {
-                        val chooseTranslation = stringResource(R.string.choose_translation)
-                        TextButton(
-                            onClick = { bibleMenu = true },
-                            modifier = Modifier.semantics { contentDescription = chooseTranslation },
-                        ) {
-                            Text(state.chapter?.translation?.abbreviation ?: state.bible.id, color = colors.accent)
-                        }
-                        DropdownMenu(expanded = bibleMenu, onDismissRequest = { bibleMenu = false }) {
-                            val byLanguage = state.translations.sortedWith(compareBy({ it.second.language.substringBefore('-') != (state.chapter?.translation?.language ?: "en").substringBefore('-') }, { it.second.language }))
-                            for ((bible, translation) in byLanguage) {
-                                DropdownMenuItem(
-                                    text = { Text("${translation.abbreviation} · ${translation.name}") },
-                                    onClick = {
-                                        bibleMenu = false
-                                        onChooseBible(bible)
-                                    },
-                                )
-                            }
-                            DropdownMenuItem(
-                                text = { Text(stringResource(R.string.more_bibles), color = colors.accent) },
-                                onClick = {
-                                    bibleMenu = false
-                                    onMoreBibles()
-                                },
-                            )
-                            if (viewModel != null && shows(com.genesis.core.domain.features.OptionalFeature.WORD_STUDY)) {
-                                androidx.compose.material3.HorizontalDivider(color = colors.separator)
-                                DropdownMenuItem(
-                                    text = { Text((if (state.showsOriginal) "✓ " else "") + stringResource(R.string.original_hebrew_greek)) },
-                                    onClick = {
-                                        bibleMenu = false
-                                        viewModel.setOriginal(!state.showsOriginal)
-                                    },
-                                )
-                            }
-                        }
-                    }
-                },
+    val chromeShown = state.showsControls && state.selection.isEmpty()
+    val wide = androidx.compose.ui.platform.LocalConfiguration.current.screenWidthDp >= 800
+    HideSystemBarsWhile(hidden = !state.showsControls && state.selection.isEmpty())
+
+    // The page reads edge to edge: the theme's colour or its scene fills the
+    // whole screen, behind the status bar and the tab bar too (as iOS).
+    Box(Modifier.fillMaxSize().background(colors.background), contentAlignment = Alignment.TopCenter) {
+        val preferences = LocalReaderPreferences.current
+        val notedVerses = state.notedVerses
+        val playing = listening?.playing
+        val marks = remember(state.highlights, state.selection, notedVerses, playing, state.chapter) { VerseMarks(state.highlights, state.selection, notedVerses, playing, footnoteMarks(state.chapter)) }
+        val scripture = scriptureStyle(preferences, Entitlements.isPremium)
+        // Forest, Ocean and Hearth: the scene behind clear pages, the whole screen.
+        val scene = com.genesis.core.domain.theme.ThemeScene.of(preferences.theme)
+            ?.takeIf { state.chapter != null && !state.showsOriginal }
+        if (scene != null) key(scene) { com.genesis.app.reader.backdrop.ThemeSceneView(scene, animates = preferences.seasonalEffects) }
+
+        // Text keeps clear of the system bars' stable insets, so nothing reflows as they show and hide.
+        val textArea = Modifier
+            .fillMaxSize()
+            .windowInsetsPadding(
+                androidx.compose.foundation.layout.WindowInsets.statusBarsIgnoringVisibility
+                    .union(androidx.compose.foundation.layout.WindowInsets.navigationBarsIgnoringVisibility)
+                    .union(androidx.compose.foundation.layout.WindowInsets.displayCutout)
+                    .only(androidx.compose.foundation.layout.WindowInsetsSides.Vertical),
             )
-        },
-        bottomBar = {
-          Column {
-            if (listening != null && listening.state.isActive && state.selection.isEmpty()) {
-                ListeningBar(
-                    state = listening.state,
-                    speed = listening.speed,
-                    listening = listening.controls,
-                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
-                )
-            }
-            if (state.selection.isEmpty() && shows(com.genesis.core.domain.features.OptionalFeature.AMBIENT_SOUNDS)) {
-                com.genesis.app.audio.AmbientMiniBar(
-                    ambient = ambient,
-                    onOpen = { ambientOpen = true },
-                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
-                )
-            }
-            if (state.selection.isNotEmpty()) {
-                val recent by LocalRecentColors.current
-                SelectionBar(
-                    reference = state.selectionReference,
-                    shareText = state.shareText,
-                    colorsInOrder = (recent + HighlightColor.entries).distinct(),
-                    anyHighlighted = state.selection.any { it in state.highlights },
-                    isBookmarked = state.isChapterBookmarked,
-                    onHighlight = selection.onHighlight,
-                    onRemoveHighlight = selection.onRemoveHighlight,
-                    onBookmark = selection.onBookmark,
-                    onNote = selection.onNote,
-                    onCrossReferences = selection.onCrossReferences,
-                    onMemorise = selection.onMemorise,
-                    onWordStudy = selection.onWordStudy,
-                    onStudy = selection.onStudy,
-                    onDone = selection.onDone,
-                    onImage = {
-                        verseImage = state.selectionCard
-                        selection.onDone()
-                    },
-                )
-            } else BottomAppBar(containerColor = colors.background) {
-                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                    TextButton(onClick = onPrevious, enabled = state.chapterId.previous != null) {
-                        Text("‹  " + stringResource(R.string.previous_chapter))
-                    }
-                    TextButton(onClick = onNext, enabled = state.chapterId.next != null) {
-                        Text(stringResource(R.string.next_chapter) + "  ›")
-                    }
-                }
-            }
-          }
-        },
-        containerColor = colors.background,
-    ) { padding ->
-        Box(Modifier.fillMaxSize().padding(padding), contentAlignment = Alignment.TopCenter) {
-            val preferences = LocalReaderPreferences.current
-            val notedVerses = state.notedVerses
-            val playing = listening?.playing
-            val marks = remember(state.highlights, state.selection, notedVerses, playing, state.chapter) { VerseMarks(state.highlights, state.selection, notedVerses, playing, footnoteMarks(state.chapter)) }
-            val scripture = scriptureStyle(preferences, Entitlements.isPremium)
-            // Forest, Ocean and Hearth: the scene behind clear pages.
-            val scene = com.genesis.core.domain.theme.ThemeScene.of(preferences.theme)
-                ?.takeIf { state.chapter != null && !state.showsOriginal }
-            if (scene != null) key(scene) { com.genesis.app.reader.backdrop.ThemeSceneView(scene, animates = preferences.seasonalEffects) }
+        Box(textArea, contentAlignment = Alignment.TopCenter) {
             when {
-                state.showsOriginal && viewModel != null -> OriginalParallelScreen(
-                    viewModel = viewModel,
-                    chapter = state.chapterId,
-                    bibleId = state.bible.id,
-                    fontSize = preferences.fontSize,
-                    onNext = onNext,
-                    onWord = { originalWord = it },
-                )
+                state.showsOriginal && viewModel != null -> Box(Modifier.padding(top = 56.dp)) {
+                    OriginalParallelScreen(
+                        viewModel = viewModel,
+                        chapter = state.chapterId,
+                        bibleId = state.bible.id,
+                        fontSize = preferences.fontSize,
+                        onNext = onNext,
+                        onWord = { originalWord = it },
+                    )
+                }
                 state.chapter != null && preferences.readingMode == ReadingMode.PAGE -> key(state.chapter.id, state.chapter.translation.id) {
                     val text = remember(state.chapter, colors, marks) { chapterText(state.chapter, colors, marks) }
                     PagedChapter(
@@ -415,28 +305,115 @@ fun ReaderScreen(
                         onVerseTap = selection.onVerseTap,
                         onNoteTap = selection.onNoteTap,
                         scene = scene,
+                        isSelecting = state.selection.isNotEmpty(),
+                        hidesPageChrome = chromeShown,
+                        onClearSelection = selection.onDone,
+                        onToggleControls = onToggleControls,
                     )
                 }
-                state.chapter != null -> ChapterText(state.chapter, scripture, marks, state.focus, playing, selection.onVerseTap, selection.onNoteTap)
+                state.chapter != null -> ChapterText(
+                    state.chapter, scripture, marks, state.focus, playing, selection.onVerseTap, selection.onNoteTap,
+                    onTap = { verse, x ->
+                        when (val action = com.genesis.core.domain.reader.ReaderTap.action(x, 0f, 0f, 0f, verse, state.selection.isNotEmpty(), turnsPages = false)) {
+                            is com.genesis.core.domain.reader.ReaderTap.Action.ToggleSelection -> selection.onVerseTap(action.verse)
+                            com.genesis.core.domain.reader.ReaderTap.Action.ClearSelection -> selection.onDone()
+                            else -> onToggleControls()
+                        }
+                    },
+                )
                 state.failed -> Text(
                     stringResource(R.string.chapter_load_failed),
                     color = colors.secondaryText,
                     modifier = Modifier.padding(24.dp),
                 )
             }
-            // Starlight's sky lies over the page, in the margins and the band at the top only.
-            val shownTheme = preferences.theme.resolved(androidx.compose.foundation.isSystemInDarkTheme())
-            val season = shownTheme.season
-            if (season != null && preferences.seasonalEffects && state.chapter != null && !state.showsOriginal) {
-                key(season) { com.genesis.app.reader.backdrop.SeasonalEffect(season) }
-            }
-            if (shownTheme.hasStars && state.chapter != null && !state.showsOriginal) {
-                val paged = preferences.readingMode == ReadingMode.PAGE
+        }
+        // Starlight's sky lies over the page, in the margins and the band at the top only.
+        val shownTheme = preferences.theme.resolved(androidx.compose.foundation.isSystemInDarkTheme())
+        val season = shownTheme.season
+        if (season != null && preferences.seasonalEffects && state.chapter != null && !state.showsOriginal) {
+            key(season) { com.genesis.app.reader.backdrop.SeasonalEffect(season) }
+        }
+        if (shownTheme.hasStars && state.chapter != null && !state.showsOriginal) {
+            val paged = preferences.readingMode == ReadingMode.PAGE
+            Box(textArea) {
                 com.genesis.app.reader.backdrop.StarlightSky(
                     textInsets = if (paged) com.genesis.app.reader.backdrop.TextInsets(28.dp, 28.dp, 28.dp, 28.dp)
                     else com.genesis.app.reader.backdrop.TextInsets(24.dp, 0.dp, 24.dp, 0.dp),
                     skyBand = if (paged) 28.dp else 0.dp,
                 )
+            }
+        }
+
+        // The controls float over the page's top while they're out (ReaderControls).
+        androidx.compose.animation.AnimatedVisibility(
+            visible = chromeShown,
+            enter = androidx.compose.animation.fadeIn(androidx.compose.animation.core.tween(150)),
+            exit = androidx.compose.animation.fadeOut(androidx.compose.animation.core.tween(120)),
+            modifier = Modifier.align(Alignment.TopCenter),
+        ) {
+            ReaderControls(
+                state = state,
+                listening = listening,
+                showsListen = listening != null && shows(com.genesis.core.domain.features.OptionalFeature.LISTEN),
+                showsOriginalItem = viewModel != null && shows(com.genesis.core.domain.features.OptionalFeature.WORD_STUDY),
+                showsPanelToggle = wide,
+                onChapterPicker = { picking = true },
+                onPrevious = onPrevious,
+                onNext = onNext,
+                onSettings = { settingsOpen = true },
+                onBookmark = selection.onBookmark,
+                onChooseBible = onChooseBible,
+                onMoreBibles = onMoreBibles,
+                onToggleOriginal = { viewModel?.setOriginal(!state.showsOriginal) },
+                onTogglePanel = onTogglePanel,
+            )
+        }
+
+        // Along the bottom: the listening or ambient bar over the tab bar while the
+        // controls are out, or the selection bar while verses are selected.
+        Column(Modifier.align(Alignment.BottomCenter).fillMaxWidth()) {
+            if (chromeShown) {
+                val tabBarRoom = Modifier.padding(bottom = TAB_BAR_HEIGHT).navigationBarsPadding()
+                if (listening != null && listening.state.isActive) {
+                    ListeningBar(
+                        state = listening.state,
+                        speed = listening.speed,
+                        listening = listening.controls,
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp).then(tabBarRoom),
+                    )
+                } else if (shows(com.genesis.core.domain.features.OptionalFeature.AMBIENT_SOUNDS)) {
+                    com.genesis.app.audio.AmbientMiniBar(
+                        ambient = ambient,
+                        onOpen = { ambientOpen = true },
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp).then(tabBarRoom),
+                    )
+                }
+            }
+            if (state.selection.isNotEmpty()) {
+                val recent by LocalRecentColors.current
+                Box(Modifier.navigationBarsPadding()) {
+                    SelectionBar(
+                        reference = state.selectionReference,
+                        shareText = state.shareText,
+                        colorsInOrder = (recent + HighlightColor.entries).distinct(),
+                        anyHighlighted = state.selection.any { it in state.highlights },
+                        isBookmarked = state.isChapterBookmarked,
+                        onHighlight = selection.onHighlight,
+                        onRemoveHighlight = selection.onRemoveHighlight,
+                        onBookmark = selection.onBookmark,
+                        onNote = selection.onNote,
+                        onCrossReferences = selection.onCrossReferences,
+                        onMemorise = selection.onMemorise,
+                        onWordStudy = selection.onWordStudy,
+                        onStudy = selection.onStudy,
+                        onDone = selection.onDone,
+                        onImage = {
+                            verseImage = state.selectionCard
+                            selection.onDone()
+                        },
+                    )
+                }
             }
         }
     }
@@ -472,7 +449,7 @@ fun ReaderScreen(
 }
 
 @Composable
-private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMarks, focus: ReaderFocus?, follow: VerseId?, onVerseTap: (VerseId) -> Unit, onNoteTap: (String) -> Unit) {
+private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMarks, focus: ReaderFocus?, follow: VerseId?, onVerseTap: (VerseId) -> Unit, onNoteTap: (String) -> Unit, onTap: (VerseId?, Float) -> Unit) {
     val colors = LocalReaderColors.current
     val listState = rememberLazyListState()
     val blocks = remember(chapter) { blocks(chapter) }
@@ -496,8 +473,12 @@ private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMark
 
     LazyColumn(
         state = listState,
-        modifier = Modifier.widthIn(max = 680.dp).fillMaxSize(),
-        contentPadding = PaddingValues(horizontal = 24.dp, vertical = 16.dp),
+        modifier = Modifier
+            .widthIn(max = 680.dp)
+            .fillMaxSize()
+            .pointerInput(Unit) { detectTapGestures { onTap(null, it.x) } },
+        // Room at the top for the controls, and at the bottom for the tab bar, so no verse hides under them.
+        contentPadding = PaddingValues(start = 24.dp, end = 24.dp, top = 64.dp, bottom = TAB_BAR_HEIGHT + 24.dp),
     ) {
         item {
             Text(
@@ -523,6 +504,7 @@ private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMark
                     marks,
                     onVerseTap,
                     onNoteTap,
+                    onTap,
                 )
             }
         }
@@ -624,4 +606,27 @@ private fun FootnoteSheet(note: com.genesis.core.bible.Footnote, translation: co
             }
         }
     }
+}
+
+/** The tab bar's height: what the reader's bottom bars and scrolling text keep clear of while it shows. */
+internal val TAB_BAR_HEIGHT = 80.dp
+
+/** The status and navigation bars hide while the reader's controls do (iOS hides the status bar). */
+@Composable
+private fun HideSystemBarsWhile(hidden: Boolean) {
+    val view = androidx.compose.ui.platform.LocalView.current
+    val window = remember(view) { view.context.findActivity()?.window }
+    DisposableEffect(window, hidden) {
+        val controller = window?.let { androidx.core.view.WindowCompat.getInsetsController(it, view) }
+        controller?.systemBarsBehavior = androidx.core.view.WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        if (hidden) controller?.hide(androidx.core.view.WindowInsetsCompat.Type.systemBars())
+        else controller?.show(androidx.core.view.WindowInsetsCompat.Type.systemBars())
+        onDispose { controller?.show(androidx.core.view.WindowInsetsCompat.Type.systemBars()) }
+    }
+}
+
+private tailrec fun android.content.Context.findActivity(): android.app.Activity? = when (this) {
+    is android.app.Activity -> this
+    is android.content.ContextWrapper -> baseContext.findActivity()
+    else -> null
 }

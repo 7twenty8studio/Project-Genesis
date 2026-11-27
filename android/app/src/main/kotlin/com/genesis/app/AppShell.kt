@@ -405,7 +405,14 @@ fun AppShell(
     Scaffold(
         containerColor = colors.background,
         bottomBar = {
-            NavigationBar(containerColor = colors.surface) {
+            // In the reader the tab bar comes and goes with the controls (iOS), over the page.
+            val readerState by reader.state.collectAsStateWithLifecycle()
+            androidx.compose.animation.AnimatedVisibility(
+                visible = tab != AppTab.READ || (readerState.showsControls && readerState.selection.isEmpty()),
+                enter = androidx.compose.animation.fadeIn(androidx.compose.animation.core.tween(150)),
+                exit = androidx.compose.animation.fadeOut(androidx.compose.animation.core.tween(120)),
+            ) {
+            NavigationBar(containerColor = if (tab == AppTab.READ) colors.surface.copy(alpha = 0.94f) else colors.surface) {
                 for (item in tabs) {
                     NavigationBarItem(
                         selected = tab == item,
@@ -419,6 +426,7 @@ fun AppShell(
                         ),
                     )
                 }
+            }
             }
         },
     ) { padding ->
@@ -457,7 +465,8 @@ fun AppShell(
                 onGoals = { goalsOpen = true },
                 modifier = content,
             )
-            AppTab.READ -> androidx.compose.foundation.layout.Box(content) {
+            // The reader reads edge to edge, under the status bar and the tab bar, and keeps its own insets.
+            AppTab.READ -> androidx.compose.foundation.layout.Box(Modifier.fillMaxSize()) {
                 ReaderRoute(onChangeSettings = onChangeSettings, onSearchClick = { searching = true }, onMoreBibles = { biblesOpen = true }, viewModel = reader)
             }
             AppTab.LIBRARY -> LibraryScreen(

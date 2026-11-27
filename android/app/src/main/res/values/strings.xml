@@ -1397,4 +1397,15 @@
     <string name="ambient_bar_label">Ambient sounds, %s</string>
     <string name="ambient_volume">%s volume</string>
     <string name="ambient_footer_android">Sounds keep playing when you lock your phone, play alongside music from other apps, and sit quieter while the Bible is read aloud.</string>
+    <string name="add_bookmark_short">Add bookmark</string>
+    <string name="remove_bookmark_short">Remove bookmark</string>
+    <string name="add_bookmark_menu">Add Bookmark</string>
+    <string name="toggle_study_panel">Toggle study panel</string>
+    <string name="pause_listening">Pause listening</string>
+    <string name="study_panel">Study Panel</string>
+    <string name="panel">Panel</string>
+    <string name="find_a_book">Find a book</string>
+    <string name="currently_reading">Currently reading</string>
+    <string name="read_in_parallel">Read in Parallel</string>
+    <string name="stop_parallel_reading">Stop Parallel Reading</string>
 </resources>

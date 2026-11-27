@@ -28,6 +28,8 @@ internal fun VerseText(
     onVerseTap: (VerseId) -> Unit,
     modifier: Modifier = Modifier,
     onNoteTap: (String) -> Unit = {},
+    /** Every other tap, with the verse under it (if any) and its x here; the reader decides (ReaderTap). */
+    onTap: ((VerseId?, Float) -> Unit)? = null,
 ) {
     var layout by remember { mutableStateOf<TextLayoutResult?>(null) }
     fun offsetAt(position: androidx.compose.ui.geometry.Offset): Int? {
@@ -52,7 +54,14 @@ internal fun VerseText(
         onTextLayout = { layout = it },
         modifier = modifier.pointerInput(text) {
             detectTapGestures(
-                onTap = { position -> noteAt(position)?.let(onNoteTap) ?: verseAt(position)?.let(onVerseTap) },
+                onTap = { position ->
+                    val note = noteAt(position)
+                    when {
+                        note != null -> onNoteTap(note)
+                        onTap != null -> onTap(verseAt(position), position.x)
+                        else -> verseAt(position)?.let(onVerseTap)
+                    }
+                },
                 onLongPress = { position -> verseAt(position)?.let(onVerseTap) },
             )
         },

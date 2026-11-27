@@ -32,6 +32,11 @@ import com.genesis.core.design.LocalReaderColors
 import com.genesis.core.domain.reader.Pagination
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.drop
+import kotlinx.coroutines.launch
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.input.pointer.pointerInput
 
 /**
  * Page-by-page reading, the iOS default: the chapter is laid out once at the
@@ -55,6 +60,11 @@ internal fun PagedChapter(
     onNoteTap: (String) -> Unit = {},
     /** Forest, Ocean or Hearth behind the pages: clear pages, and room kept above its swells or glow. */
     scene: com.genesis.core.domain.theme.ThemeScene? = null,
+    isSelecting: Boolean = false,
+    /** The controls are out: the running head and page number make way for them. */
+    hidesPageChrome: Boolean = false,
+    onClearSelection: () -> Unit = {},
+    onToggleControls: () -> Unit = {},
 ) {
     val colors = LocalReaderColors.current
     val measurer = rememberTextMeasurer()
@@ -104,21 +114,51 @@ internal fun PagedChapter(
             }
         }
 
+        val scope = androidx.compose.runtime.rememberCoroutineScope()
+        val pageWidth = with(density) { maxWidth.toPx() }
+        val marginPx = with(density) { horizontal.toPx() }
+        // ReaderTap: the edges turn the page, verses select, anything else shows or hides the controls.
+        fun tap(verse: com.genesis.core.domain.bible.VerseId?, x: Float) {
+            when (val action = com.genesis.core.domain.reader.ReaderTap.action(x, pageWidth, marginPx, marginPx, verse, isSelecting, turnsPages = true)) {
+                is com.genesis.core.domain.reader.ReaderTap.Action.TurnPage -> scope.launch {
+                    val target = (pager.currentPage + if (action.forward) 1 else -1).coerceIn(0, pageCount - 1)
+                    pager.animateScrollToPage(target)
+                }
+                is com.genesis.core.domain.reader.ReaderTap.Action.ToggleSelection -> onVerseTap(action.verse)
+                com.genesis.core.domain.reader.ReaderTap.Action.ClearSelection -> onClearSelection()
+                com.genesis.core.domain.reader.ReaderTap.Action.ToggleControls -> onToggleControls()
+            }
+        }
+
         HorizontalPager(state = pager, modifier = Modifier.fillMaxSize(), key = { it }) { index ->
-            Box(Modifier.fillMaxSize().background(if (scene != null) androidx.compose.ui.graphics.Color.Transparent else colors.background)) {
+            Box(
+                Modifier
+                    .fillMaxSize()
+                    .background(if (scene != null) androidx.compose.ui.graphics.Color.Transparent else colors.background)
+                    .pointerInput(isSelecting, pageWidth) { detectTapGestures { tap(null, it.x) } },
+            ) {
                 val page = pages.getOrNull(index - 1) ?: return@Box
+                val chromeAlpha by androidx.compose.animation.core.animateFloatAsState(if (hidesPageChrome) 0f else 1f, label = "pageChrome")
                 Column(Modifier.fillMaxSize().padding(horizontal = horizontal)) {
                     Text(
                         runningHead,
                         style = MaterialTheme.typography.bodyMedium.copy(fontSize = 12.sp, letterSpacing = 0.6.sp),
                         color = colors.secondaryText,
                         textAlign = TextAlign.Center,
-                        modifier = Modifier.fillMaxWidth().height(head).padding(top = 6.dp),
+                        modifier = Modifier.fillMaxWidth().height(head).padding(top = 6.dp).graphicsLayer { alpha = chromeAlpha },
                     )
-                    VerseText(page, style = style, color = colors.text, onVerseTap = onVerseTap, onNoteTap = onNoteTap, modifier = Modifier.weight(1f).fillMaxWidth())
+                    VerseText(
+                        page,
+                        style = style,
+                        color = colors.text,
+                        onVerseTap = onVerseTap,
+                        onNoteTap = onNoteTap,
+                        onTap = { verse, x -> tap(verse, x + marginPx) },
+                        modifier = Modifier.weight(1f).fillMaxWidth(),
+                    )
                     if (footRoom > 0.dp) androidx.compose.foundation.layout.Spacer(Modifier.height(footRoom))
                     Box(Modifier.fillMaxWidth().height(foot), contentAlignment = Alignment.Center) {
-                        Text("$index", style = MaterialTheme.typography.bodyMedium.copy(fontSize = 12.sp), color = colors.secondaryText)
+                        Text("$index", style = MaterialTheme.typography.bodyMedium.copy(fontSize = 12.sp), color = colors.secondaryText, modifier = Modifier.graphicsLayer { alpha = chromeAlpha })
                     }
                 }
             }
