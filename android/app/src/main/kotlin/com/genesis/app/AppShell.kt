@@ -86,6 +86,7 @@ fun AppShell(
     var readingSettings by rememberSaveable { mutableStateOf(false) }
     var notificationsOpen by rememberSaveable { mutableStateOf(false) }
     var insightsOpen by rememberSaveable { mutableStateOf(false) }
+    var yearOpen by rememberSaveable { mutableStateOf(false) }
     var goalsOpen by rememberSaveable { mutableStateOf(false) }
     var featuresOpen by rememberSaveable { mutableStateOf(false) }
     val readingRecord by app.progress.record.collectAsStateWithLifecycle()
@@ -361,10 +362,20 @@ fun AppShell(
         return
     }
 
+    if (yearOpen) {
+        com.genesis.app.insights.YearInReviewScreen(
+            year = com.genesis.core.domain.insights.YearInReview.reviewedYear(),
+            language = state.chapter?.translation?.language ?: "en",
+            onDone = { yearOpen = false },
+        )
+        return
+    }
+
     if (insightsOpen) {
         InsightsScreen(
             language = state.chapter?.translation?.language ?: "en",
             onDone = { insightsOpen = false },
+            onYearInReview = { yearOpen = true },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )
         return
@@ -526,6 +537,7 @@ fun AppShell(
                 },
                 record = readingRecord,
                 onInsights = { insightsOpen = true },
+                onYearInReview = { yearOpen = true },
                 onGoals = { goalsOpen = true },
                 modifier = Modifier.fillMaxSize(),
             )

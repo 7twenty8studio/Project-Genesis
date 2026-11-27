@@ -16,6 +16,8 @@ data class ReadingRecord(
     val chaptersRead: Set<Int> = emptySet(),
     /** Seconds in the reader per day. */
     val readingSeconds: Map<LocalDate, Int> = emptyMap(),
+    /** Chapter keys opened in each year ("progress.chaptersByYear", as iOS), for Year in Review. */
+    val chaptersByYear: Map<Int, Set<Int>> = emptyMap(),
 ) {
     val totalSeconds: Long get() = readingSeconds.values.sumOf { it.toLong() }
 }
@@ -50,6 +52,9 @@ class ReadingProgressStore(context: Context) {
         readingDays = defaults.getStringSet(DAYS, emptySet()).orEmpty().mapNotNull { runCatching { LocalDate.parse(it) }.getOrNull() }.toSet(),
         chaptersRead = defaults.getStringSet(CHAPTERS, emptySet()).orEmpty().mapNotNull { it.toIntOrNull() }.toSet(),
         readingSeconds = ReadingStats.decodeSeconds(defaults.getStringSet(SECONDS, emptySet()).orEmpty()),
+        chaptersByYear = defaults.getStringSet(BY_YEAR, emptySet()).orEmpty()
+            .mapNotNull { entry -> entry.split(':').takeIf { it.size == 2 }?.let { (year, key) -> year.toIntOrNull()?.let { y -> key.toIntOrNull()?.let { y to it } } } }
+            .groupBy({ it.first }, { it.second }).mapValues { it.value.toSet() },
     )
 
     fun record(verse: VerseId) {
@@ -58,11 +63,17 @@ class ReadingProgressStore(context: Context) {
         val chapter = ReadingStats.chapterKey(verse.book, verse.chapter)
         val newDay = today !in current.readingDays
         val newChapter = chapter !in current.chaptersRead
-        if (newDay || newChapter) {
+        val thisYear = current.chaptersByYear[today.year].orEmpty()
+        val newInYear = chapter !in thisYear
+        if (newDay || newChapter || newInYear) {
             _record.value = current.copy(
                 readingDays = current.readingDays + today,
                 chaptersRead = current.chaptersRead + chapter,
+                chaptersByYear = current.chaptersByYear + (today.year to thisYear + chapter),
             )
+        }
+        if (newInYear) {
+            defaults.edit().putStringSet(BY_YEAR, _record.value.chaptersByYear.flatMapTo(mutableSetOf()) { (year, keys) -> keys.map { "$year:$it" } }).apply()
         }
         recordRecent(today, chapter)
         if (_position.value == verse && !newDay && !newChapter) return
@@ -134,5 +145,6 @@ class ReadingProgressStore(context: Context) {
         const val CHAPTERS = "progress.chaptersRead"
         const val SECONDS = "progress.readingSeconds"
         const val BY_DAY = "progress.chaptersByDay"
+        const val BY_YEAR = "progress.chaptersByYear"
     }
 }

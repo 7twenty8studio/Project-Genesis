@@ -769,6 +769,15 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             }
         }
 
+        /** Every highlight with the day it was made (Year in Review). */
+        fun dated(): List<Triple<VerseId, HighlightColor, Long>> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT verse, color, created_at FROM highlights WHERE deleted_at IS NULL").use { statement ->
+                    while (statement.step()) add(Triple(VerseId(statement.getLong(0).toInt()), HighlightColor.withId(statement.getText(1)), statement.getLong(2)))
+                }
+            }
+        }
+
         fun set(verses: Collection<VerseId>, color: HighlightColor, now: Long = System.currentTimeMillis()) {
             synchronized(lock) {
                 transaction {

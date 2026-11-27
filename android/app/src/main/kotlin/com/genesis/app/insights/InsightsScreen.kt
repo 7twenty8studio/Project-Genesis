@@ -55,7 +55,7 @@ import java.util.Locale
  * highlights, notes, reading time, the last two weeks and favorite books.
  */
 @Composable
-fun InsightsScreen(language: String, onDone: () -> Unit, modifier: Modifier = Modifier) {
+fun InsightsScreen(language: String, onDone: () -> Unit, modifier: Modifier = Modifier, onYearInReview: () -> Unit = {}) {
     val colors = LocalReaderColors.current
     val app = LocalContext.current.applicationContext as VerselyApplication
     val record by app.progress.record.collectAsStateWithLifecycle()
@@ -79,6 +79,7 @@ fun InsightsScreen(language: String, onDone: () -> Unit, modifier: Modifier = Mo
             Modifier.verticalScroll(rememberScrollState()).padding(20.dp).widthIn(max = 720.dp),
             verticalArrangement = Arrangement.spacedBy(28.dp),
         ) {
+            YearInReviewCard(onYearInReview)
             val stats = buildList {
                 add(Stat("${(LocalContext.current.applicationContext as com.genesis.app.VerselyApplication).progress.streak(today, record.readingDays)}", stringResource(R.string.day_streak)))
                 add(Stat(stringResource(R.string.count_of_total, record.chaptersRead.size, ReadingStats.totalChapters), stringResource(R.string.chapters_read)))

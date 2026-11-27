@@ -104,6 +104,7 @@ fun HomeScreen(
     record: ReadingRecord,
     onInsights: () -> Unit,
     onGoals: () -> Unit = {},
+    onYearInReview: () -> Unit = {},
     /** Signed in: the morning welcome's name, else the sign-in's first name (HomeGreeting on iOS). */
     greetingName: String? = null,
     modifier: Modifier = Modifier,
@@ -151,6 +152,11 @@ fun HomeScreen(
             IconButton(onClick = onSettings, modifier = Modifier.semantics { contentDescription = settings }) {
                 Gear(colors.accent)
             }
+        }
+
+        // December and January: "Your 2026 in Review".
+        if (com.genesis.core.domain.insights.YearInReview.isSeason(today) && state.hasStartedReading && shows(OptionalFeature.INSIGHTS)) {
+            com.genesis.app.insights.YearInReviewCard(onYearInReview)
         }
 
         // Continue reading.
