@@ -183,6 +183,29 @@ data class RemoteSermonPush(
     @SerialName("deleted_at") val deletedAt: String? = null,
 )
 
+/**
+ * An attachment's details, as public.attachments (the file itself is in the
+ * person's own Google Drive or iCloud, at `storage_path`). Push and pull alike.
+ */
+@Serializable
+data class RemoteAttachment(
+    val id: String,
+    @SerialName("user_id") val userId: String,
+    @SerialName("owner_kind") val ownerKind: String,
+    @SerialName("owner_id") val ownerId: String,
+    val kind: String,
+    @SerialName("storage_path") val storagePath: String,
+    val bytes: Long = 0,
+    @SerialName("duration_seconds") val durationSeconds: Double? = null,
+    @SerialName("page_count") val pageCount: Int? = null,
+    val caption: String = "",
+    @SerialName("sort_order") val sortOrder: Int = 0,
+    @SerialName("created_at") val createdAt: String,
+    @SerialName("updated_at") val updatedAt: String,
+    @SerialName("deleted_at") val deletedAt: String? = null,
+    @SerialName("server_updated_at") val serverUpdatedAt: String? = null,
+)
+
 object SyncTable {
     const val HIGHLIGHTS = "highlights"
     const val BOOKMARKS = "bookmarks"
@@ -191,4 +214,5 @@ object SyncTable {
     const val PRAYERS = "prayers"
     const val MEMORY_VERSES = "memory_verses"
     const val SERMONS = "sermons"
+    const val ATTACHMENTS = "attachments"
 }

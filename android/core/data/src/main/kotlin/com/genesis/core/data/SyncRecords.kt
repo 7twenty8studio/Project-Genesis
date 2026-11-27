@@ -59,3 +59,8 @@ data class SermonRecord(
     val sermon: com.genesis.core.domain.sermons.Sermon,
     val deletedAt: Long?,
 )
+
+data class AttachmentRecord(
+    val attachment: com.genesis.core.domain.journal.Attachment,
+    val deletedAt: Long?,
+)

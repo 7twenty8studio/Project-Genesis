@@ -41,3 +41,24 @@ class AttachmentTest {
         assertEquals(listOf("b", "c", "a"), AttachmentLimits.sorted(listOf(a("a", 1, 1), a("b", 0, 5), a("c", 0, 9))).map { it.id })
     }
 }
+
+class AttachmentStorageTest {
+    @Test fun places() {
+        assertEquals(AttachmentStorage.Place.THIS_DEVICE, AttachmentStorage.place(null))
+        assertEquals(AttachmentStorage.Place.GOOGLE_DRIVE, AttachmentStorage.place("gdrive:abc.jpg"))
+        assertEquals(AttachmentStorage.Place.ICLOUD, AttachmentStorage.place("0f1e/abc.jpg"))
+    }
+
+    @Test fun driveNames() {
+        assertEquals("abc.jpg", AttachmentStorage.driveName(AttachmentStorage.drivePath("abc.jpg")))
+        assertEquals(null, AttachmentStorage.driveName("0f1e/abc.jpg"))
+        assertEquals(null, AttachmentStorage.driveName("gdrive:../x"))
+    }
+
+    @Test fun serverLimits() {
+        fun a(bytes: Long, seconds: Double? = null) = Attachment("a", AttachmentOwner.PRAYER, "p", AttachmentKind.AUDIO, bytes, durationSeconds = seconds)
+        assertTrue(AttachmentStorage.syncs(a(1000, 60.0)))
+        assertFalse(AttachmentStorage.syncs(a(AttachmentStorage.SERVER_MAX_BYTES + 1)))
+        assertFalse(AttachmentStorage.syncs(a(1000, 4 * 3600.0)))
+    }
+}

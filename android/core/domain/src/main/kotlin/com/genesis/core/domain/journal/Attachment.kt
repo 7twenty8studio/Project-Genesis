@@ -46,6 +46,8 @@ data class Attachment(
     val sortOrder: Int = 0,
     val createdAt: Long = 0,
     val updatedAt: Long = 0,
+    /** Where the file is kept beyond this device (AttachmentStorage); null until it's copied. */
+    val storagePath: String? = null,
 ) {
     val fileName: String get() = "${id.lowercase()}.${kind.fileExtension}"
 }
@@ -89,4 +91,36 @@ object AttachmentLimits {
     /** Attachments in the order they were placed, then added. */
     fun sorted(attachments: List<Attachment>): List<Attachment> =
         attachments.sortedWith(compareBy<Attachment> { it.sortOrder }.thenBy { it.createdAt })
+}
+
+/**
+ * Where an attachment's file is kept, from the row's storage_path. iPhone
+ * files are in the person's iCloud ("<user>/<file>"); Android files in a
+ * hidden Versely folder in the person's own Google Drive ("gdrive:<file>").
+ * Neither is Versely's storage.
+ */
+object AttachmentStorage {
+    const val DRIVE_PREFIX = "gdrive:"
+
+    /** The server keeps rows for files up to 25 MB and recordings up to about two hours. */
+    const val SERVER_MAX_BYTES: Long = 25L * 1024 * 1024
+    const val SERVER_MAX_SECONDS = 7_300.0
+
+    enum class Place { THIS_DEVICE, GOOGLE_DRIVE, ICLOUD }
+
+    fun drivePath(fileName: String): String = DRIVE_PREFIX + fileName
+
+    fun place(storagePath: String?): Place = when {
+        storagePath.isNullOrEmpty() -> Place.THIS_DEVICE
+        storagePath.startsWith(DRIVE_PREFIX) -> Place.GOOGLE_DRIVE
+        else -> Place.ICLOUD
+    }
+
+    /** The Drive file's name, or null for a file that isn't in Drive. */
+    fun driveName(storagePath: String?): String? =
+        storagePath?.takeIf { it.startsWith(DRIVE_PREFIX) }?.removePrefix(DRIVE_PREFIX)?.takeIf { it.isNotEmpty() && '/' !in it }
+
+    /** Whether the row fits the server's limits, so it can sync. */
+    fun syncs(attachment: Attachment): Boolean =
+        attachment.byteSize in 0..SERVER_MAX_BYTES && (attachment.durationSeconds ?: 0.0) <= SERVER_MAX_SECONDS
 }

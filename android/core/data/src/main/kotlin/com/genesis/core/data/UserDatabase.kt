@@ -233,6 +233,15 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             connection.execSQL("CREATE INDEX attachments_owner ON attachments (owner_id)")
             connection.execSQL("PRAGMA user_version = 8")
         }
+        if (version < 9) {
+            // Attachments sync: where the file is kept beyond this device (the
+            // person's Google Drive, or an iPhone's iCloud), and whether this
+            // device still has to copy it there.
+            connection.execSQL("ALTER TABLE attachments ADD COLUMN storage_path TEXT")
+            connection.execSQL("ALTER TABLE attachments ADD COLUMN needs_upload INTEGER NOT NULL DEFAULT 0")
+            connection.execSQL("UPDATE attachments SET needs_upload = 1 WHERE deleted_at IS NULL")
+            connection.execSQL("PRAGMA user_version = 9")
+        }
     }
 
     private val _localEdits = MutableStateFlow(0L)
@@ -427,29 +436,8 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
 
         private fun load(): List<Attachment> = synchronized(lock) {
             buildList {
-                connection.prepare(
-                    "SELECT id, owner_kind, owner_id, kind, byte_size, duration, page_count, caption, sort_order, created_at, updated_at " +
-                        "FROM attachments WHERE deleted_at IS NULL ORDER BY sort_order, created_at",
-                ).use { s ->
-                    while (s.step()) {
-                        val owner = AttachmentOwner.of(s.getText(1)) ?: continue
-                        val kind = AttachmentKind.of(s.getText(3)) ?: continue
-                        add(
-                            Attachment(
-                                id = s.getText(0),
-                                owner = owner,
-                                ownerId = s.getText(2),
-                                kind = kind,
-                                byteSize = s.getLong(4),
-                                durationSeconds = if (s.isNull(5)) null else s.getDouble(5),
-                                pageCount = s.intOrNull(6),
-                                caption = if (s.isNull(7)) null else s.getText(7),
-                                sortOrder = s.getLong(8).toInt(),
-                                createdAt = s.getLong(9),
-                                updatedAt = s.getLong(10),
-                            ),
-                        )
-                    }
+                connection.prepare("SELECT $ATTACHMENT_COLUMNS FROM attachments WHERE deleted_at IS NULL ORDER BY sort_order, created_at").use { s ->
+                    while (s.step()) readAttachment(s)?.let(::add)
                 }
             }
         }
@@ -461,27 +449,36 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
         fun add(attachment: Attachment, now: Long = System.currentTimeMillis()): Attachment {
             val order = (of(attachment.owner, attachment.ownerId).maxOfOrNull { it.sortOrder } ?: -1) + 1
             val saved = attachment.copy(sortOrder = order, createdAt = now, updatedAt = now)
+            synchronized(lock) { writeAttachment(saved, deletedAt = null, needsUpload = true) }
+            _all.value = load()
+            return saved
+        }
+
+        internal fun reload() {
+            _all.value = load()
+        }
+
+        /** Files this device still has to copy to the person's Drive. */
+        fun pendingUploads(): List<Attachment> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT $ATTACHMENT_COLUMNS FROM attachments WHERE deleted_at IS NULL AND needs_upload = 1 ORDER BY created_at").use { s ->
+                    while (s.step()) readAttachment(s)?.let(::add)
+                }
+            }
+        }
+
+        /** The file is in the person's Drive: the row says where, so it can sync. */
+        fun uploaded(id: String, storagePath: String, now: Long = System.currentTimeMillis()) {
             synchronized(lock) {
-                connection.prepare(
-                    "INSERT OR REPLACE INTO attachments (id, owner_kind, owner_id, kind, byte_size, duration, page_count, caption, sort_order, created_at, updated_at, deleted_at) " +
-                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)",
-                ).use {
-                    it.bindText(1, saved.id)
-                    it.bindText(2, saved.owner.id)
-                    it.bindText(3, saved.ownerId)
-                    it.bindText(4, saved.kind.id)
-                    it.bindLong(5, saved.byteSize)
-                    saved.durationSeconds?.let { d -> it.bindDouble(6, d) } ?: it.bindNull(6)
-                    saved.pageCount?.let { n -> it.bindLong(7, n.toLong()) } ?: it.bindNull(7)
-                    saved.caption?.let { c -> it.bindText(8, c) } ?: it.bindNull(8)
-                    it.bindLong(9, saved.sortOrder.toLong())
-                    it.bindLong(10, saved.createdAt)
-                    it.bindLong(11, saved.updatedAt)
+                connection.prepare("UPDATE attachments SET storage_path = ?, needs_upload = 0, updated_at = ? WHERE id = ?").use {
+                    it.bindText(1, storagePath)
+                    it.bindLong(2, now)
+                    it.bindText(3, id)
                     it.step()
                 }
             }
             _all.value = load()
-            return saved
+            edited()
         }
 
         /** Marks one removed and returns it, so its file can go too. */
@@ -508,6 +505,52 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                 }
             }
             _all.value = load()
+            edited()
+        }
+    }
+
+    private fun readAttachment(s: androidx.sqlite.SQLiteStatement): Attachment? {
+        val owner = AttachmentOwner.of(s.getText(1)) ?: return null
+        val kind = AttachmentKind.of(s.getText(3)) ?: return null
+        return Attachment(
+            id = s.getText(0),
+            owner = owner,
+            ownerId = s.getText(2),
+            kind = kind,
+            byteSize = s.getLong(4),
+            durationSeconds = if (s.isNull(5)) null else s.getDouble(5),
+            pageCount = s.intOrNull(6),
+            caption = if (s.isNull(7)) null else s.getText(7),
+            sortOrder = s.getLong(8).toInt(),
+            createdAt = s.getLong(9),
+            updatedAt = s.getLong(10),
+            storagePath = if (s.isNull(11)) null else s.getText(11),
+        )
+    }
+
+    private fun writeAttachment(a: Attachment, deletedAt: Long?, needsUpload: Boolean) {
+        connection.prepare(
+            "INSERT INTO attachments (id, owner_kind, owner_id, kind, byte_size, duration, page_count, caption, sort_order, created_at, updated_at, storage_path, needs_upload, deleted_at) " +
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
+                "ON CONFLICT(id) DO UPDATE SET owner_kind = excluded.owner_kind, owner_id = excluded.owner_id, kind = excluded.kind, byte_size = excluded.byte_size, " +
+                "duration = excluded.duration, page_count = excluded.page_count, caption = excluded.caption, sort_order = excluded.sort_order, created_at = excluded.created_at, " +
+                "updated_at = excluded.updated_at, storage_path = excluded.storage_path, needs_upload = excluded.needs_upload, deleted_at = excluded.deleted_at",
+        ).use {
+            it.bindText(1, a.id)
+            it.bindText(2, a.owner.id)
+            it.bindText(3, a.ownerId)
+            it.bindText(4, a.kind.id)
+            it.bindLong(5, a.byteSize)
+            a.durationSeconds?.let { d -> it.bindDouble(6, d) } ?: it.bindNull(6)
+            a.pageCount?.let { n -> it.bindLong(7, n.toLong()) } ?: it.bindNull(7)
+            a.caption?.let { c -> it.bindText(8, c) } ?: it.bindNull(8)
+            it.bindLong(9, a.sortOrder.toLong())
+            it.bindLong(10, a.createdAt)
+            it.bindLong(11, a.updatedAt)
+            a.storagePath?.let { p -> it.bindText(12, p) } ?: it.bindNull(12)
+            it.bindLong(13, if (needsUpload) 1 else 0)
+            deletedAt?.let { d -> it.bindLong(14, d) } ?: it.bindNull(14)
+            it.step()
         }
     }
 
@@ -1236,10 +1279,42 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
         }
 
         /** Removes everything the person saved from this device (not from the cloud). */
+        /** Attachment rows edited since then, deletions included; only those whose file is in Drive (or that came from another device) reach the server. */
+        fun attachmentsChanged(since: Long): List<AttachmentRecord> = synchronized(lock) {
+            buildList {
+                connection.prepare("SELECT $ATTACHMENT_COLUMNS, deleted_at FROM attachments WHERE updated_at > ? AND storage_path IS NOT NULL").use { s ->
+                    s.bindLong(1, since)
+                    while (s.step()) readAttachment(s)?.let { add(AttachmentRecord(it, s.longOrNull(12))) }
+                }
+            }
+        }
+
+        /** Applies pulled rows (newest edit wins); returns the attachments removed here, so their files can go. */
+        fun applyAttachments(rows: List<AttachmentRecord>): List<Attachment> = synchronized(lock) {
+            if (rows.isEmpty()) return@synchronized emptyList()
+            val removed = mutableListOf<Attachment>()
+            transaction {
+                for (row in rows) {
+                    val a = row.attachment
+                    when (SyncMerge.decide(a.updatedAt, row.deletedAt != null, updatedAt("attachments", a.id))) {
+                        SyncMerge.Decision.KEEP_LOCAL -> Unit
+                        SyncMerge.Decision.DELETE_LOCAL -> {
+                            attachments.all.value.firstOrNull { it.id == a.id }?.let(removed::add)
+                            markDeleted("attachments", a.id, row.deletedAt ?: a.updatedAt, a.updatedAt)
+                        }
+                        SyncMerge.Decision.APPLY_REMOTE -> writeAttachment(a, deletedAt = null, needsUpload = false)
+                    }
+                }
+            }
+            attachments.reload()
+            removed
+        }
+
         fun eraseAll() = synchronized(lock) {
             transaction {
-                for (table in listOf("highlights", "bookmarks", "notes", "reading_plans", "prayers", "memory_verses", "sermons", "pending_deletions")) connection.execSQL("DELETE FROM $table")
+                for (table in listOf("highlights", "bookmarks", "notes", "reading_plans", "prayers", "memory_verses", "sermons", "attachments", "pending_deletions")) connection.execSQL("DELETE FROM $table")
             }
+            attachments.reload()
             highlights.reload()
             bookmarks.reload()
             notes.reload()
@@ -1293,6 +1368,8 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
     companion object {
         private const val PRAYER_COLUMNS =
             "id, title, body, category, is_answered, answered_at, answer_note, reminder_at, reminder_repeats_daily, passages, last_prayed_at, created_at, updated_at"
+        private const val ATTACHMENT_COLUMNS =
+            "id, owner_kind, owner_id, kind, byte_size, duration, page_count, caption, sort_order, created_at, updated_at, storage_path"
         private const val SERMON_COLUMNS =
             "id, title, preacher, church, preached_at, series, body, passages, is_favourite, source_sermon_id, handouts, created_at, updated_at"
         private const val MEMORY_COLUMNS =

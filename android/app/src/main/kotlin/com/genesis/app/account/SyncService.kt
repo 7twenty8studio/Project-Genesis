@@ -197,6 +197,10 @@ class SyncService(
         pull(SyncTable.SERMONS, RemoteSermon.serializer(), client, token, userId, pageSize = 50) { rows ->
             database.sync.applySermons(rows.mapNotNull { it.record() })
         }
+        pull(SyncTable.ATTACHMENTS, com.genesis.core.cloud.RemoteAttachment.serializer(), client, token, userId) { rows ->
+            val removed = database.sync.applyAttachments(rows.mapNotNull { it.record() })
+            com.genesis.app.journal.AttachmentFiles.remove(context, removed)
+        }
 
         // Everything edited since the last successful push, deletions included.
         val since = prefs.getLong(key("lastPushedAt", userId), 0)
@@ -211,6 +215,14 @@ class SyncService(
         database.sync.sermonsChanged(since).map { it.remoteJson(userId) }.groupBy { it.keys }.values.forEach { rows ->
             for (chunk in rows.chunked(50)) client.upsert(SyncTable.SERMONS, JsonArray(chunk).toString(), token)
         }
+        // Attachments whose file is in the person's Drive (or came from another device), within the server's limits.
+        push(
+            SyncTable.ATTACHMENTS,
+            com.genesis.core.cloud.RemoteAttachment.serializer(),
+            database.sync.attachmentsChanged(since).filter { com.genesis.core.domain.journal.AttachmentStorage.syncs(it.attachment) }.mapNotNull { it.remote(userId) },
+            client,
+            token,
+        )
         for ((table, ids) in database.sync.pendingDeletions()) {
             client.markDeleted(table, ids, System.currentTimeMillis(), token)
             database.sync.clearPendingDeletions(table, ids)
@@ -462,3 +474,45 @@ private fun SermonRecord.remote(userId: String) = RemoteSermonPush(
     updatedAt = Timestamps.string(sermon.updatedAt),
     deletedAt = deletedAt?.let(Timestamps::string),
 )
+
+private fun com.genesis.core.cloud.RemoteAttachment.record(): com.genesis.core.data.AttachmentRecord? {
+    val owner = com.genesis.core.domain.journal.AttachmentOwner.of(ownerKind) ?: return null
+    val kind = com.genesis.core.domain.journal.AttachmentKind.of(kind) ?: return null
+    return com.genesis.core.data.AttachmentRecord(
+        com.genesis.core.domain.journal.Attachment(
+            id = id.lowercase(),
+            owner = owner,
+            ownerId = ownerId.lowercase(),
+            kind = kind,
+            byteSize = bytes,
+            durationSeconds = durationSeconds,
+            pageCount = pageCount,
+            caption = caption.ifEmpty { null },
+            sortOrder = sortOrder,
+            createdAt = Timestamps.millis(createdAt) ?: return null,
+            updatedAt = Timestamps.millis(updatedAt) ?: return null,
+            storagePath = storagePath,
+        ),
+        deletedAt?.let(Timestamps::millis),
+    )
+}
+
+private fun com.genesis.core.data.AttachmentRecord.remote(userId: String): com.genesis.core.cloud.RemoteAttachment? {
+    val path = attachment.storagePath ?: return null
+    return com.genesis.core.cloud.RemoteAttachment(
+        id = attachment.id,
+        userId = userId,
+        ownerKind = attachment.owner.id,
+        ownerId = attachment.ownerId,
+        kind = attachment.kind.id,
+        storagePath = path.take(200),
+        bytes = attachment.byteSize,
+        durationSeconds = attachment.durationSeconds,
+        pageCount = attachment.pageCount,
+        caption = attachment.caption.orEmpty().take(500),
+        sortOrder = attachment.sortOrder,
+        createdAt = Timestamps.string(attachment.createdAt),
+        updatedAt = Timestamps.string(attachment.updatedAt),
+        deletedAt = deletedAt?.let(Timestamps::string),
+    )
+}
