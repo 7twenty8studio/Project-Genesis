@@ -50,6 +50,9 @@ data class ReaderUiState(
     val selection: Set<VerseId> = emptySet(),
     /** The reader's controls and the tab bar (a tap on the page shows or hides them, as iOS). */
     val showsControls: Boolean = true,
+    /** The study panel beside the text on a wide screen: the person's choice (open until they close it), and what it shows. */
+    val companionChoice: Boolean? = null,
+    val companionMode: CompanionMode = CompanionMode.NOTES,
     /** Every highlight, by verse. */
     val highlights: Map<VerseId, HighlightColor> = emptyMap(),
     /** Every bookmarked verse (one per chapter). */
@@ -74,6 +77,9 @@ data class ReaderUiState(
     val hasStartedReading: Boolean get() = position != null
 
     val isChapterBookmarked: Boolean get() = Bookmarks.isBookmarked(bookmarks, chapterId)
+
+    /** The study panel shows (on a wide screen) until the person closes it. */
+    val companionShown: Boolean get() = companionChoice ?: true
 
     /** Notes on this chapter's verses, by the verse their mark follows. */
     val notedVerses: Map<VerseId, String>
@@ -245,6 +251,15 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
 
     fun toggleControls() = _state.update { it.copy(showsControls = !it.showsControls) }
 
+    fun toggleCompanion() = _state.update { it.copy(companionChoice = !it.companionShown) }
+
+    fun setCompanionMode(mode: CompanionMode) = _state.update { it.copy(companionMode = mode) }
+
+    /** A note on the whole chapter (the study panel's Note on John 15). */
+    fun newChapterNote() = _state.update {
+        it.copy(editingNote = Note(id = UUID.randomUUID().toString(), kind = com.genesis.core.domain.study.NoteKind.STUDY, anchor = com.genesis.core.domain.study.NoteAnchor.Chapter(it.chapterId)))
+    }
+
     fun highlight(color: HighlightColor) {
         val verses = state.value.selection
         if (verses.isEmpty()) return
@@ -414,10 +429,11 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     /** Related passages for the first selected verse (the selection bar's Related). */
-    fun openCrossReferences() {
-        val verse = state.value.selection.minByOrNull { it.rawValue } ?: return
+    fun openCrossReferences(forVerse: VerseId? = null) {
+        val verse = forVerse ?: state.value.selection.minByOrNull { it.rawValue } ?: return
         val bible = state.value.bible
-        _state.update { it.copy(crossReferences = CrossReferencesUiState(verse)) }
+        // On a wide screen they show in the study panel (CompanionPanel's Related).
+        _state.update { it.copy(crossReferences = CrossReferencesUiState(verse), companionMode = CompanionMode.RELATED) }
         viewModelScope.launch {
             val loaded = withContext(Dispatchers.IO) {
                 runCatching {

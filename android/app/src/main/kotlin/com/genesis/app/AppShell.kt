@@ -526,7 +526,9 @@ fun AppShell(
         )
     }
 
-    state.crossReferences?.let { crossReferences ->
+    // On a wide screen the reader's study panel shows them beside the text instead.
+    val panelShowsRelated = tab == AppTab.READ && androidx.compose.ui.platform.LocalConfiguration.current.screenWidthDp >= 800 && state.companionShown
+    state.crossReferences?.takeIf { !panelShowsRelated }?.let { crossReferences ->
         CrossReferencesSheet(
             crossReferences = crossReferences,
             scripture = scriptureStyle(LocalReaderPreferences.current, Entitlements.isPremium),

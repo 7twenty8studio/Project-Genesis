@@ -1407,6 +1407,8 @@
     "find_a_book": "Find a book",
     "currently_reading": "Currently reading",
     "read_in_parallel": "Read in Parallel",
-    "stop_parallel_reading": "Stop Parallel Reading"
+    "stop_parallel_reading": "Stop Parallel Reading",
+    "no_notes_in": "No notes in %@",
+    "no_notes_in_detail": "Tap a verse and choose Note, or add a note for the whole chapter."
   }
 }

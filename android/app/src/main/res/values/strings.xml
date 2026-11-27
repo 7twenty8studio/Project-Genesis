@@ -1408,4 +1408,6 @@
     <string name="currently_reading">Currently reading</string>
     <string name="read_in_parallel">Read in Parallel</string>
     <string name="stop_parallel_reading">Stop Parallel Reading</string>
+    <string name="no_notes_in">No notes in %s</string>
+    <string name="no_notes_in_detail">Tap a verse and choose Note, or add a note for the whole chapter.</string>
 </resources>

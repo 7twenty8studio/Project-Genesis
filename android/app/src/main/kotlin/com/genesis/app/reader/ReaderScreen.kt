@@ -1,6 +1,8 @@
 package com.genesis.app.reader
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.navigationBarsPadding
@@ -258,7 +260,9 @@ fun ReaderScreen(
 
     // The page reads edge to edge: the theme's colour or its scene fills the
     // whole screen, behind the status bar and the tab bar too (as iOS).
-    Box(Modifier.fillMaxSize().background(colors.background), contentAlignment = Alignment.TopCenter) {
+    val panelShown = wide && state.companionShown && viewModel != null
+    Row(Modifier.fillMaxSize().background(colors.background)) {
+    Box(Modifier.weight(1f).fillMaxHeight(), contentAlignment = Alignment.TopCenter) {
         val preferences = LocalReaderPreferences.current
         val notedVerses = state.notedVerses
         val playing = listening?.playing
@@ -366,7 +370,7 @@ fun ReaderScreen(
                 onChooseBible = onChooseBible,
                 onMoreBibles = onMoreBibles,
                 onToggleOriginal = { viewModel?.setOriginal(!state.showsOriginal) },
-                onTogglePanel = onTogglePanel,
+                onTogglePanel = { viewModel?.toggleCompanion() ?: onTogglePanel() },
             )
         }
 
@@ -416,6 +420,18 @@ fun ReaderScreen(
                 }
             }
         }
+    }
+    // A wide screen keeps the study panel beside the text (CompanionPanel).
+    if (panelShown && viewModel != null) {
+        androidx.compose.material3.VerticalDivider(color = colors.separator)
+        CompanionPanel(
+            state = state,
+            viewModel = viewModel,
+            scripture = scriptureStyle(LocalReaderPreferences.current, Entitlements.isPremium),
+            shows = shows,
+            modifier = Modifier.width(360.dp).fillMaxHeight(),
+        )
+    }
     }
 
     originalWord?.let { word ->

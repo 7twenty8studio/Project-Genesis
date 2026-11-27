@@ -1407,4 +1407,6 @@
     <string name="currently_reading">Lendo agora</string>
     <string name="read_in_parallel">Ler em paralelo</string>
     <string name="stop_parallel_reading">Parar a leitura em paralelo</string>
+    <string name="no_notes_in">Nenhuma anotação em %s</string>
+    <string name="no_notes_in_detail">Toque num versículo e escolha Anotação, ou adicione uma anotação para o capítulo todo.</string>
 </resources>

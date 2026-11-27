@@ -71,74 +71,91 @@ internal fun SearchSheet(
         sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true),
         containerColor = colors.background,
     ) {
-        Column(Modifier.fillMaxWidth().fillMaxHeight(0.94f).imePadding()) {
-            Row(Modifier.padding(horizontal = 16.dp), verticalAlignment = Alignment.CenterVertically) {
-                OutlinedTextField(
-                    value = search.text,
-                    onValueChange = onText,
-                    placeholder = { Text(stringResource(R.string.search)) },
-                    singleLine = true,
-                    keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.None, autoCorrectEnabled = false, imeAction = ImeAction.Search),
-                    colors = OutlinedTextFieldDefaults.colors(
-                        focusedTextColor = colors.text,
-                        unfocusedTextColor = colors.text,
-                        focusedBorderColor = colors.accent,
-                        unfocusedBorderColor = colors.separator,
-                        cursorColor = colors.accent,
-                    ),
-                    modifier = Modifier.weight(1f).focusRequester(focus),
-                )
-                TextButton(onClick = onDismiss) {
-                    Text(stringResource(R.string.done), color = colors.accent, fontWeight = FontWeight.SemiBold)
+        SearchContent(search, scripture, onText, onOpen, Modifier.fillMaxWidth().fillMaxHeight(0.94f).imePadding(), focus = focus) {
+            TextButton(onClick = onDismiss) {
+                Text(stringResource(R.string.done), color = colors.accent, fontWeight = FontWeight.SemiBold)
+            }
+        }
+    }
+}
+
+/** The search field and results: in the sheet on a phone, or the study panel beside the text. */
+@Composable
+internal fun SearchContent(
+    search: SearchUiState,
+    scripture: TextStyle,
+    onText: (String) -> Unit,
+    onOpen: (VerseId) -> Unit,
+    modifier: Modifier = Modifier,
+    focus: FocusRequester? = null,
+    trailing: @Composable () -> Unit = {},
+) {
+    val colors = LocalReaderColors.current
+    Column(modifier) {
+        Row(Modifier.padding(horizontal = 16.dp), verticalAlignment = Alignment.CenterVertically) {
+            OutlinedTextField(
+                value = search.text,
+                onValueChange = onText,
+                placeholder = { Text(stringResource(R.string.search)) },
+                singleLine = true,
+                keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.None, autoCorrectEnabled = false, imeAction = ImeAction.Search),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedTextColor = colors.text,
+                    unfocusedTextColor = colors.text,
+                    focusedBorderColor = colors.accent,
+                    unfocusedBorderColor = colors.separator,
+                    cursorColor = colors.accent,
+                ),
+                modifier = Modifier.weight(1f).then(if (focus != null) Modifier.focusRequester(focus) else Modifier),
+            )
+            trailing()
+        }
+        LazyColumn(Modifier.fillMaxWidth(), contentPadding = androidx.compose.foundation.layout.PaddingValues(bottom = 24.dp)) {
+            val results = search.results
+            if (search.text.isBlank()) {
+                item { SectionTitle(stringResource(R.string.search_try)) }
+                items(examples) { example ->
+                    val text = stringResource(example)
+                    Row_(text, colors) { onText(text) }
+                }
+                return@LazyColumn
+            }
+            results.reference?.let { reference ->
+                item {
+                    Text(
+                        stringResource(R.string.go_to, reference.description(search.language)),
+                        style = MaterialTheme.typography.titleMedium,
+                        color = colors.accent,
+                        modifier = Modifier.fillMaxWidth().clickable { onOpen(reference.firstVerse) }.padding(horizontal = 20.dp, vertical = 14.dp),
+                    )
                 }
             }
-            LazyColumn(Modifier.fillMaxWidth(), contentPadding = androidx.compose.foundation.layout.PaddingValues(bottom = 24.dp)) {
-                val results = search.results
-                if (search.text.isBlank()) {
-                    item { SectionTitle(stringResource(R.string.search_try)) }
-                    items(examples) { example ->
-                        val text = stringResource(example)
-                        Row_(text, colors) { onText(text) }
-                    }
-                    return@LazyColumn
+            if (results.bookSuggestions.isNotEmpty()) {
+                item { SectionTitle(stringResource(R.string.books)) }
+                items(results.bookSuggestions) { book ->
+                    Row_(book.name(search.language), colors) { onOpen(ChapterId(book.id, 1).firstVerse) }
                 }
-                results.reference?.let { reference ->
-                    item {
-                        Text(
-                            stringResource(R.string.go_to, reference.description(search.language)),
-                            style = MaterialTheme.typography.titleMedium,
-                            color = colors.accent,
-                            modifier = Modifier.fillMaxWidth().clickable { onOpen(reference.firstVerse) }.padding(horizontal = 20.dp, vertical = 14.dp),
-                        )
-                    }
+            }
+            if (results.verses.isNotEmpty()) {
+                item {
+                    val total = results.totalMatches
+                    val shown = results.verses.size
+                    SectionTitle(
+                        if (shown < total) stringResource(R.string.verses_showing, total, shown)
+                        else if (total == 1) stringResource(R.string.one_verse) else stringResource(R.string.verse_count, total),
+                    )
                 }
-                if (results.bookSuggestions.isNotEmpty()) {
-                    item { SectionTitle(stringResource(R.string.books)) }
-                    items(results.bookSuggestions) { book ->
-                        Row_(book.name(search.language), colors) { onOpen(ChapterId(book.id, 1).firstVerse) }
-                    }
+                items(results.verses, key = { it.id.rawValue }) { verse ->
+                    VerseResult(verse, results.terms, search.language, scripture, colors) { onOpen(verse.id) }
                 }
-                if (results.verses.isNotEmpty()) {
-                    item {
-                        val total = results.totalMatches
-                        val shown = results.verses.size
-                        SectionTitle(
-                            if (shown < total) stringResource(R.string.verses_showing, total, shown)
-                            else if (total == 1) stringResource(R.string.one_verse) else stringResource(R.string.verse_count, total),
-                        )
-                    }
-                    items(results.verses, key = { it.id.rawValue }) { verse ->
-                        VerseResult(verse, results.terms, search.language, scripture, colors) { onOpen(verse.id) }
-                    }
-                } else if (results.text.isNotEmpty() && results.isEmpty) {
-                    item {
-                        Text(
-                            stringResource(R.string.no_verses_found, search.translationAbbreviation),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = colors.secondaryText,
-                            modifier = Modifier.padding(20.dp),
-                        )
-                    }
+            } else if (results.text.isNotEmpty() && results.isEmpty) {
+                item {
+                    Text(
+                        stringResource(R.string.no_verses_found, search.translationAbbreviation),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = colors.secondaryText,
+                        modifier = Modifier.padding(20.dp),
+                    )
                 }
             }
         }

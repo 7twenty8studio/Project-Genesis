@@ -64,54 +64,68 @@ internal fun CrossReferencesSheet(
                     Text(stringResource(R.string.done), color = colors.accent, fontWeight = FontWeight.SemiBold)
                 }
             }
-            LazyColumn(Modifier.fillMaxWidth(), contentPadding = PaddingValues(bottom = 24.dp)) {
-                item {
-                    Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 12.dp)) {
-                        Text(
-                            ReferenceParser.describe(crossReferences.verse.rawValue, language = crossReferences.language),
-                            style = MaterialTheme.typography.labelLarge,
-                            fontWeight = FontWeight.SemiBold,
-                            color = colors.accent,
-                        )
-                        Text(crossReferences.sourceText, style = verseStyle, color = colors.text, modifier = Modifier.padding(top = 4.dp))
-                    }
-                }
-                item {
-                    Text(
-                        stringResource(R.string.related_passages),
-                        style = MaterialTheme.typography.labelLarge,
-                        color = colors.secondaryText,
-                        modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 16.dp, bottom = 6.dp).semantics { heading() },
-                    )
-                    HorizontalDivider(color = colors.separator)
-                }
-                if (!crossReferences.loading && crossReferences.items.isEmpty()) {
-                    item {
-                        Text(
-                            stringResource(R.string.no_cross_references),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = colors.secondaryText,
-                            modifier = Modifier.padding(20.dp),
-                        )
-                    }
-                }
-                items(crossReferences.items, key = { it.reference.target.rawValue * 31 + it.reference.targetEnd.rawValue }) { item ->
-                    Column(Modifier.fillMaxWidth().clickable { onOpen(item.reference.target) }.padding(horizontal = 20.dp, vertical = 12.dp)) {
-                        Text(item.title, style = MaterialTheme.typography.labelLarge, color = colors.accent)
-                        Text(item.text, style = verseStyle, color = colors.text, maxLines = 4, modifier = Modifier.padding(top = 4.dp))
-                    }
-                    HorizontalDivider(Modifier.padding(start = 20.dp), color = colors.separator)
-                }
-                if (!crossReferences.loading) {
-                    item {
-                        Text(
-                            stringResource(R.string.cross_references_attribution),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = colors.secondaryText,
-                            modifier = Modifier.padding(horizontal = 20.dp, vertical = 12.dp),
-                        )
-                    }
-                }
+            CrossReferencesContent(crossReferences, scripture, onOpen)
+        }
+    }
+}
+
+/** The verse and its related passages, in the sheet on a phone or the study panel beside the text. */
+@Composable
+internal fun CrossReferencesContent(
+    crossReferences: CrossReferencesUiState,
+    scripture: TextStyle,
+    onOpen: (VerseId) -> Unit,
+    modifier: Modifier = Modifier,
+    bottomPadding: androidx.compose.ui.unit.Dp = 24.dp,
+) {
+    val colors = LocalReaderColors.current
+    val verseStyle = scripture.copy(fontSize = 17.sp, lineHeight = 24.sp)
+    LazyColumn(modifier.fillMaxWidth(), contentPadding = PaddingValues(bottom = bottomPadding)) {
+        item {
+            Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 12.dp)) {
+                Text(
+                    ReferenceParser.describe(crossReferences.verse.rawValue, language = crossReferences.language),
+                    style = MaterialTheme.typography.labelLarge,
+                    fontWeight = FontWeight.SemiBold,
+                    color = colors.accent,
+                )
+                Text(crossReferences.sourceText, style = verseStyle, color = colors.text, modifier = Modifier.padding(top = 4.dp))
+            }
+        }
+        item {
+            Text(
+                stringResource(R.string.related_passages),
+                style = MaterialTheme.typography.labelLarge,
+                color = colors.secondaryText,
+                modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 16.dp, bottom = 6.dp).semantics { heading() },
+            )
+            HorizontalDivider(color = colors.separator)
+        }
+        if (!crossReferences.loading && crossReferences.items.isEmpty()) {
+            item {
+                Text(
+                    stringResource(R.string.no_cross_references),
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = colors.secondaryText,
+                    modifier = Modifier.padding(20.dp),
+                )
+            }
+        }
+        items(crossReferences.items, key = { it.reference.target.rawValue * 31 + it.reference.targetEnd.rawValue }) { item ->
+            Column(Modifier.fillMaxWidth().clickable { onOpen(item.reference.target) }.padding(horizontal = 20.dp, vertical = 12.dp)) {
+                Text(item.title, style = MaterialTheme.typography.labelLarge, color = colors.accent)
+                Text(item.text, style = verseStyle, color = colors.text, maxLines = 4, modifier = Modifier.padding(top = 4.dp))
+            }
+            HorizontalDivider(Modifier.padding(start = 20.dp), color = colors.separator)
+        }
+        if (!crossReferences.loading) {
+            item {
+                Text(
+                    stringResource(R.string.cross_references_attribution),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = colors.secondaryText,
+                    modifier = Modifier.padding(horizontal = 20.dp, vertical = 12.dp),
+                )
             }
         }
     }
