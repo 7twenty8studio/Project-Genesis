@@ -150,6 +150,7 @@ class AccountService(context: Context, private val scope: CoroutineScope) {
             try {
                 block()
             } catch (error: SupabaseError) {
+                Log.w(TAG, "Account request refused", error)
                 _state.update { it.copy(message = message(error)) }
             } catch (error: Exception) {
                 Log.e(TAG, "Account request failed", error)
