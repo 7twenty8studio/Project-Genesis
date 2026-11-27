@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.core.content.edit
 import com.genesis.app.reader.backdrop.drawScene
 import com.genesis.app.reader.backdrop.drawSeasonStill
+import com.genesis.app.reader.backdrop.drawSeasonMoment
 import com.genesis.app.reader.backdrop.sceneArt
 import com.genesis.core.domain.share.VerseImageStyle
 import com.genesis.core.domain.theme.ForestWide
@@ -117,17 +118,17 @@ object WidgetArt {
      * theme's paper and, for a season, its still kept to the edges so the
      * words in the middle stay clear; or a scene as the reader shows it still.
      */
-    fun paint(context: Context, style: WidgetArtStyle, width: Int, height: Int): Bitmap {
+    fun paint(context: Context, style: WidgetArtStyle, width: Int, height: Int, time: Double? = null, pixelScale: Float = 1f): Bitmap {
         val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
         val scene = ThemeScene.entries.firstOrNull { it.name == style.name }
         if (scene != null) {
             // Laid out at the widget's size in dp (a 2.6× phone), drawn at full size.
-            val density = 2.6f
+            val density = 2.6f * pixelScale
             val size = SceneSize(width / density.toDouble(), height / density.toDouble())
             val art = sceneArt(context.resources, scene, ForestWide.uses(size))
             CanvasDrawScope().draw(Density(density), LayoutDirection.Ltr, androidx.compose.ui.graphics.Canvas(canvas), Size(width.toFloat(), height.toFloat())) {
-                drawScene(scene, art, size)
+                if (time != null) drawScene(scene, art, size, time) else drawScene(scene, art, size)
             }
             return bitmap
         }
@@ -141,10 +142,12 @@ object WidgetArt {
             val layer = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
             val layerCanvas = Canvas(layer)
             // Drawn at phone size and enlarged, as on verse images.
-            val enlarge = 2.5f
+            val enlarge = 2.5f * pixelScale
             CanvasDrawScope().draw(Density(1f), LayoutDirection.Ltr, androidx.compose.ui.graphics.Canvas(layerCanvas), Size(width.toFloat(), height.toFloat())) {
                 scale(enlarge, pivot = Offset.Zero) {
-                    CanvasDrawScope().draw(Density(1f), LayoutDirection.Ltr, drawContext.canvas, Size(width / enlarge, height / enlarge)) { drawSeasonStill(season) }
+                    CanvasDrawScope().draw(Density(1f), LayoutDirection.Ltr, drawContext.canvas, Size(width / enlarge, height / enlarge)) {
+                        if (time != null) drawSeasonMoment(season, time, 1f) else drawSeasonStill(season)
+                    }
                 }
             }
             // Kept to the edges: faint in the middle, where the words go.

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A verse widget's moving background: its frames, flipped in a loop (WidgetFrames). -->
+<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_flipper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:autoStart="true"
+    android:flipInterval="220"
+    android:inAnimation="@anim/widget_frame_in"
+    android:outAnimation="@anim/widget_frame_out" />

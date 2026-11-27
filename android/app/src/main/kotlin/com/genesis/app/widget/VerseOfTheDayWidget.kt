@@ -27,6 +27,7 @@ import androidx.glance.layout.Column
 import androidx.glance.layout.Row
 import androidx.glance.layout.Spacer
 import androidx.glance.layout.fillMaxSize
+import androidx.glance.layout.Box
 import androidx.glance.layout.height
 import androidx.glance.layout.padding
 import androidx.glance.layout.width
@@ -96,7 +97,12 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
         val look = WidgetLook.of(if (style.isKeepsake || art.values.any { it != null }) style else com.genesis.core.domain.widgets.WidgetArtStyle.CLASSIC, art, styleTag = wanted != style)
         // Instant Photo and Film Strip use the person's photo first.
         val photo = if (style == com.genesis.core.domain.widgets.WidgetArtStyle.INSTANT_PHOTO || style == com.genesis.core.domain.widgets.WidgetArtStyle.FILM_STRIP) WidgetPhoto.thumbnail(context) else null
-        provideContent { Content(day, look, photo) }
+        // The seasons and scenes move: a loop of frames, drawn once in the background the first time.
+        val frames = if (look.keepsake == null && art.values.any { it != null } && WidgetFrames.animates(style) && WidgetFrames.allowed(context)) withContext(Dispatchers.IO) {
+            com.genesis.core.domain.widgets.WidgetArtShape.entries.associateWith { WidgetFrames.load(context, style, it) }
+                .also { loaded -> if (loaded.values.any { it == null }) WidgetFrames.drawLater(context, style) }
+        } else emptyMap()
+        provideContent { Content(day, look, photo, frames) }
     }
 
     /**
@@ -163,7 +169,35 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
     }
 
     @Composable
-    private fun Content(day: WidgetVerse?, look: WidgetLook, photo: android.graphics.Bitmap? = null) {
+    private fun Content(
+        day: WidgetVerse?,
+        look: WidgetLook,
+        photo: android.graphics.Bitmap? = null,
+        frames: Map<com.genesis.core.domain.widgets.WidgetArtShape, List<android.graphics.Bitmap>?> = emptyMap(),
+    ) {
+        val size = LocalSize.current
+        val shape = com.genesis.core.domain.widgets.WidgetArtShape.of(size.width.value, size.height.value)
+        val moving = frames[shape]
+        if (moving != null) {
+            // The frames flip behind the words; the words themselves stay still.
+            val context = androidx.glance.LocalContext.current
+            Box(GlanceModifier.fillMaxSize().cornerRadius(20.dp)) {
+                androidx.glance.appwidget.AndroidRemoteViews(WidgetFrames.flipper(context, moving), GlanceModifier.fillMaxSize())
+                Content(day, look.copy(art = emptyMap()), photo, emptyMap(), clear = true)
+            }
+            return
+        }
+        Content(day, look, photo, emptyMap(), clear = false)
+    }
+
+    @Composable
+    private fun Content(
+        day: WidgetVerse?,
+        look: WidgetLook,
+        photo: android.graphics.Bitmap?,
+        @Suppress("UNUSED_PARAMETER") none: Map<com.genesis.core.domain.widgets.WidgetArtShape, List<android.graphics.Bitmap>?>,
+        clear: Boolean,
+    ) {
         val size = LocalSize.current
         val picture = look.art[com.genesis.core.domain.widgets.WidgetArtShape.of(size.width.value, size.height.value)]
         val small = size.width < MEDIUM.width
@@ -197,7 +231,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
         Column(
             modifier = GlanceModifier
                 .fillMaxSize()
-                .background(picture?.let { ImageProvider(it) } ?: ImageProvider(R.drawable.widget_background))
+                .let { if (clear) it else it.background(picture?.let { p -> ImageProvider(p) } ?: ImageProvider(R.drawable.widget_background)) }
                 .cornerRadius(20.dp)
                 .padding(padding)
                 .clickable(actionStartActivity(open)),
