@@ -273,6 +273,7 @@ fun ReaderScreen(
             versePerLine = preferences.layout == com.genesis.core.domain.reader.TextLayout.VERSE_PER_LINE,
             paragraphSpacing = preferences.paragraphSpacing,
             largeInitial = preferences.largeInitial,
+            illuminated = preferences.largeInitial && preferences.initialStyle == com.genesis.core.domain.reader.InitialStyle.ILLUMINATED && Entitlements.isPremium,
         )
         val context = androidx.compose.ui.platform.LocalContext.current
         // Reaching a chapter's end by reading (a page turn or a scroll, not a jump): a brief ribbon, once a day.

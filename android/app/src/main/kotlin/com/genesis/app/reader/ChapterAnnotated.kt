@@ -37,6 +37,9 @@ internal fun AnnotatedString.Builder.appendVerses(verses: List<Verse>, colors: R
             }
             append("\u00A0")
         }
+        val letters = if (initial) LargeInitial.length(verse.text) else 0
+        // Illuminated (Premium): a picture before the verse stands for its first letters.
+        if (initial && options.illuminated && letters > 0) with(IlluminatedInitial) { appendOrnament(verse.text.substring(0, letters)) }
         val textStart = length
         val notes = marks.footnotes[verse.id].orEmpty()
         if (notes.isEmpty()) {
@@ -57,8 +60,10 @@ internal fun AnnotatedString.Builder.appendVerses(verses: List<Verse>, colors: R
         }
         if (initial) {
             // Restyled, never changed: the verse's own first letter (and any opening quotation mark), drawn large.
-            val letters = LargeInitial.length(verse.text)
-            if (letters > 0) addStyle(SpanStyle(fontSize = LargeInitial.SIZE.em, color = colors.text), textStart, textStart + letters)
+            if (letters > 0) {
+                val restyled = if (options.illuminated) IlluminatedInitial.hidden else SpanStyle(fontSize = LargeInitial.SIZE.em, color = colors.text)
+                addStyle(restyled, textStart, textStart + letters)
+            }
         }
         pop()
         marks.notes[verse.id]?.let { noteId ->
@@ -195,6 +200,8 @@ internal data class TextOptions(
     /** The gap between paragraphs, in ems. */
     val paragraphSpacing: Double = 0.55,
     val largeInitial: Boolean = false,
+    /** The large first letter as an illuminated initial (Premium, already checked). */
+    val illuminated: Boolean = false,
 )
 
 /** The chapter's large first letter, raised above the first line (as iOS keeps the line's height). */

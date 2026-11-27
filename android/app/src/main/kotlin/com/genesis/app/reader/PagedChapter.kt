@@ -103,7 +103,7 @@ internal fun PagedChapter(
         val heightPx = with(density) { (maxHeight - head - foot - footRoom).toPx() }.coerceAtLeast(1f)
 
         val pages = remember(text, style, widthPx, heightPx, density, direction) {
-            val layout = measurer.measure(text, style, constraints = Constraints(maxWidth = widthPx), density = density, layoutDirection = direction)
+            val layout = measurer.measure(text, style, placeholders = IlluminatedInitial.placeholders(text), constraints = Constraints(maxWidth = widthPx), density = density, layoutDirection = direction)
             val lines = 0 until layout.lineCount
             Pagination.pages(lines.map { layout.getLineTop(it) }, lines.map { layout.getLineBottom(it) }, heightPx).map { range ->
                 val start = layout.getLineStart(range.first)

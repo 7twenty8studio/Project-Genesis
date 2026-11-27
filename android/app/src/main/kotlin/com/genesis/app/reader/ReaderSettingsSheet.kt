@@ -202,6 +202,23 @@ internal fun ReaderSettingsSheet(
             ChoiceRow(stringResource(R.string.text), TextLayout.entries, preferences.layout, { stringResource(if (it == TextLayout.PARAGRAPHS) R.string.text_layout_paragraphs else R.string.text_layout_verse_by_verse) }) { l -> onChange { it.copy(layout = l) } }
             SwitchRow(stringResource(R.string.verse_numbers), preferences.showsVerseNumbers) { on -> onChange { it.copy(showsVerseNumbers = on) } }
             SwitchRow(stringResource(R.string.large_first_letter), preferences.largeInitial) { on -> onChange { it.copy(largeInitial = on) } }
+            if (preferences.largeInitial) {
+                // Illuminated is Premium; without it the reader shows the classic letter, so the row says so.
+                val premium = Entitlements.isPremium
+                ChoiceRow(
+                    stringResource(R.string.first_letter_style),
+                    com.genesis.core.domain.reader.InitialStyle.entries,
+                    if (premium) preferences.initialStyle else com.genesis.core.domain.reader.InitialStyle.PLAIN,
+                    { style ->
+                        if (style == com.genesis.core.domain.reader.InitialStyle.ILLUMINATED) {
+                            if (premium) stringResource(R.string.initial_illuminated) else stringResource(R.string.name_premium, stringResource(R.string.initial_illuminated))
+                        } else {
+                            stringResource(R.string.initial_classic)
+                        }
+                    },
+                    enabled = { !it.isPremium || premium },
+                ) { style -> onChange { it.copy(initialStyle = style) } }
+            }
             if (preferences.readingMode == ReadingMode.PAGE) {
                 SwitchRow(stringResource(R.string.page_turn_sound), preferences.pageTurnSound) { on -> onChange { it.copy(pageTurnSound = on) } }
                 if (preferences.pageTurnSound) {

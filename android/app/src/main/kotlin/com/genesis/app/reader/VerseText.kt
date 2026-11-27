@@ -51,6 +51,7 @@ internal fun VerseText(
         text,
         style = style,
         color = color,
+        inlineContent = remember(text, style) { IlluminatedInitial.content(text, style) },
         onTextLayout = { layout = it },
         modifier = modifier.pointerInput(text) {
             detectTapGestures(

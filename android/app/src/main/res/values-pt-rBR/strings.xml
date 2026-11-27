@@ -1656,4 +1656,8 @@
     <string name="prayers_heading">Orações</string>
     <string name="preparing_pdf">Preparando seu PDF…</string>
     <string name="original">Original</string>
+    <string name="first_letter_style">Estilo da letra inicial</string>
+    <string name="initial_classic">Clássico</string>
+    <string name="initial_illuminated">Iluminada</string>
+    <string name="name_premium">%s, Premium</string>
 </resources>

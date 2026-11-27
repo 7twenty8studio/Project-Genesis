@@ -1656,6 +1656,10 @@
     "all_categories": "All Categories",
     "prayers_heading": "Prayers",
     "preparing_pdf": "Preparing your PDF…",
-    "original": "Original"
+    "original": "Original",
+    "first_letter_style": "First letter style",
+    "initial_classic": "Classic",
+    "initial_illuminated": "Illuminated",
+    "name_premium": "%@, Premium"
   }
 }
