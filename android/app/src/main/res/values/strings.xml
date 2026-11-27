@@ -115,4 +115,10 @@
     <string name="new_note">New Note</string>
     <string name="progress_through">Progress through %s</string>
     <string name="color_highlight">%s highlight</string>
+    <string name="settings">Settings</string>
+    <string name="language">Language</string>
+    <string name="about_versely">About Versely</string>
+    <string name="version">Version %s</string>
+    <string name="same_as_phone">Same as phone</string>
+    <string name="language_footer">Versely is available in English, Spanish and Portuguese.</string>
 </resources>

@@ -25,6 +25,9 @@ import com.genesis.app.reader.NoteEditorSheet
 import com.genesis.app.reader.ReaderRoute
 import com.genesis.app.reader.ReaderViewModel
 import com.genesis.app.reader.SearchSheet
+import com.genesis.app.reader.ReaderSettingsSheet
+import com.genesis.app.settings.SettingsScreen
+import androidx.compose.foundation.layout.navigationBarsPadding
 import com.genesis.app.settings.Entitlements
 import com.genesis.app.settings.LocalReaderPreferences
 import com.genesis.core.design.LocalReaderColors
@@ -49,6 +52,8 @@ fun AppShell(onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Uni
     var tab by rememberSaveable { mutableStateOf(AppTab.HOME) }
     var shelf by rememberSaveable { mutableStateOf(LibraryShelf.HIGHLIGHTS) }
     var searching by rememberSaveable { mutableStateOf(false) }
+    var settingsOpen by rememberSaveable { mutableStateOf(false) }
+    var readingSettings by rememberSaveable { mutableStateOf(false) }
 
     fun read(verse: VerseId) {
         reader.openVerse(verse)
@@ -56,7 +61,24 @@ fun AppShell(onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Uni
     }
 
     // Back from Read or Library goes Home before it leaves the app.
-    BackHandler(enabled = tab != AppTab.HOME) { tab = AppTab.HOME }
+    BackHandler(enabled = tab != AppTab.HOME && !settingsOpen) { tab = AppTab.HOME }
+    BackHandler(enabled = settingsOpen) { settingsOpen = false }
+
+    if (settingsOpen) {
+        SettingsScreen(
+            onReading = { readingSettings = true },
+            onDone = { settingsOpen = false },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        if (readingSettings) {
+            ReaderSettingsSheet(
+                preferences = LocalReaderPreferences.current,
+                onChange = onChangeSettings,
+                onDismiss = { readingSettings = false },
+            )
+        }
+        return
+    }
 
     Scaffold(
         containerColor = colors.background,
@@ -86,6 +108,7 @@ fun AppShell(onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Uni
                 onRead = ::read,
                 onContinue = { tab = AppTab.READ },
                 onSearch = { searching = true },
+                onSettings = { settingsOpen = true },
                 onOpenNote = reader::openNote,
                 onSeeAll = {
                     shelf = it

@@ -12,6 +12,10 @@ import com.genesis.app.settings.LocalRecentColors
 import com.genesis.core.design.VerselyTheme
 
 class MainActivity : ComponentActivity() {
+    override fun attachBaseContext(newBase: android.content.Context) {
+        super.attachBaseContext(com.genesis.app.settings.AppLanguageChoice.wrap(newBase))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)

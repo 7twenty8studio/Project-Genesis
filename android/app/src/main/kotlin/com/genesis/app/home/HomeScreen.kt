@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
@@ -77,6 +78,7 @@ fun HomeScreen(
     onRead: (VerseId) -> Unit,
     onContinue: () -> Unit,
     onSearch: () -> Unit,
+    onSettings: () -> Unit,
     onOpenNote: (String) -> Unit,
     onSeeAll: (LibraryShelf) -> Unit,
     modifier: Modifier = Modifier,
@@ -114,6 +116,10 @@ fun HomeScreen(
             val search = stringResource(R.string.search)
             IconButton(onClick = onSearch, modifier = Modifier.semantics { contentDescription = search }) {
                 Magnifier(colors.accent, iconSize = 24.dp)
+            }
+            val settings = stringResource(R.string.settings)
+            IconButton(onClick = onSettings, modifier = Modifier.semantics { contentDescription = settings }) {
+                Gear(colors.accent)
             }
         }
 
@@ -238,3 +244,22 @@ private val Greeting.title: Int
         Greeting.AFTERNOON -> R.string.good_afternoon
         Greeting.EVENING -> R.string.good_evening
     }
+
+/** Settings' gear, drawn so the app needs no icon library. */
+@Composable
+private fun Gear(color: androidx.compose.ui.graphics.Color) {
+    androidx.compose.foundation.Canvas(Modifier.size(24.dp)) {
+        val center = this.center
+        val stroke = size.minDimension * 0.08f
+        val outer = size.minDimension * 0.42f
+        val ring = size.minDimension * 0.3f
+        for (i in 0 until 8) {
+            val angle = Math.toRadians(i * 45.0)
+            val from = androidx.compose.ui.geometry.Offset(center.x + (ring * kotlin.math.cos(angle)).toFloat(), center.y + (ring * kotlin.math.sin(angle)).toFloat())
+            val to = androidx.compose.ui.geometry.Offset(center.x + (outer * kotlin.math.cos(angle)).toFloat(), center.y + (outer * kotlin.math.sin(angle)).toFloat())
+            drawLine(color, from, to, stroke * 1.6f, androidx.compose.ui.graphics.StrokeCap.Round)
+        }
+        drawCircle(color, ring, center, style = androidx.compose.ui.graphics.drawscope.Stroke(stroke))
+        drawCircle(color, size.minDimension * 0.11f, center, style = androidx.compose.ui.graphics.drawscope.Stroke(stroke))
+    }
+}

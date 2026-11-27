@@ -1,0 +1,133 @@
+package com.genesis.app.settings
+
+import android.app.Activity
+import android.os.Build
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.background
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import com.genesis.app.R
+import com.genesis.core.design.LocalReaderColors
+
+/**
+ * Settings, as on iOS: Reading (the reader's look), Language, and About
+ * Versely with the version. Notifications, Features, Account and the rest
+ * join as their features arrive.
+ */
+@Composable
+fun SettingsScreen(onReading: () -> Unit, onDone: () -> Unit, modifier: Modifier = Modifier) {
+    val colors = LocalReaderColors.current
+    val context = LocalContext.current
+    var language by remember { mutableStateOf(AppLanguageChoice.saved(context)) }
+    val version = remember {
+        runCatching { context.packageManager.getPackageInfo(context.packageName, 0).versionName }.getOrNull() ?: ""
+    }
+
+    Column(modifier.fillMaxSize().background(colors.background).statusBarsPadding()) {
+        Row(Modifier.padding(start = 20.dp, end = 8.dp, top = 16.dp), verticalAlignment = Alignment.CenterVertically) {
+            Text(
+                stringResource(R.string.settings),
+                style = MaterialTheme.typography.headlineMedium.copy(fontFamily = FontFamily.Serif, fontWeight = FontWeight.SemiBold),
+                color = colors.text,
+                modifier = Modifier.weight(1f).semantics { heading() },
+            )
+            TextButton(onClick = onDone) {
+                Text(stringResource(R.string.done), color = colors.accent, fontWeight = FontWeight.SemiBold)
+            }
+        }
+        Column(Modifier.verticalScroll(rememberScrollState()).padding(horizontal = 20.dp, vertical = 8.dp)) {
+            Group {
+                Row_(stringResource(R.string.reading), onClick = onReading, trailing = "›")
+            }
+
+            Header(stringResource(R.string.language))
+            Group {
+                AppLanguageChoice.entries.forEachIndexed { index, choice ->
+                    val title = choice.nativeName ?: stringResource(R.string.same_as_phone)
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .selectable(selected = language == choice, role = Role.RadioButton) {
+                                if (language == choice) return@selectable
+                                language = choice
+                                AppLanguageChoice.save(context, choice)
+                                // Android 13+ redraws by itself; Android 12 starts the screen again.
+                                if (Build.VERSION.SDK_INT < 33) (context as? Activity)?.recreate()
+                            }
+                            .padding(horizontal = 16.dp, vertical = 14.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Text(title, style = MaterialTheme.typography.bodyLarge, color = colors.text, modifier = Modifier.weight(1f))
+                        if (language == choice) Text("✓", color = colors.accent, fontWeight = FontWeight.SemiBold)
+                    }
+                    if (index < AppLanguageChoice.entries.lastIndex) HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
+                }
+            }
+            Footer(stringResource(R.string.language_footer))
+
+            Header(stringResource(R.string.about_versely))
+            Footer(stringResource(R.string.version, version))
+        }
+    }
+}
+
+@Composable
+private fun Group(content: @Composable () -> Unit) {
+    Column(Modifier.fillMaxWidth().background(LocalReaderColors.current.surface, RoundedCornerShape(14.dp))) { content() }
+}
+
+@Composable
+private fun Row_(title: String, onClick: () -> Unit, trailing: String? = null) {
+    val colors = LocalReaderColors.current
+    Row(Modifier.fillMaxWidth().clickable(onClick = onClick).padding(horizontal = 16.dp, vertical = 14.dp), verticalAlignment = Alignment.CenterVertically) {
+        Text(title, style = MaterialTheme.typography.bodyLarge, color = colors.text, modifier = Modifier.weight(1f))
+        if (trailing != null) Text(trailing, color = colors.secondaryText, style = MaterialTheme.typography.titleLarge)
+    }
+}
+
+@Composable
+private fun Header(text: String) {
+    Text(
+        text.uppercase(),
+        style = MaterialTheme.typography.labelMedium,
+        color = LocalReaderColors.current.secondaryText,
+        modifier = Modifier.padding(start = 16.dp, top = 28.dp, bottom = 8.dp).semantics { heading() },
+    )
+}
+
+@Composable
+private fun Footer(text: String) {
+    Text(
+        text,
+        style = MaterialTheme.typography.bodySmall,
+        color = LocalReaderColors.current.secondaryText,
+        modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 8.dp),
+    )
+}

@@ -114,4 +114,10 @@
     <string name="new_note">Nova anotação</string>
     <string name="progress_through">Progresso em %s</string>
     <string name="color_highlight">Destaque %s</string>
+    <string name="settings">Ajustes</string>
+    <string name="language">Idioma</string>
+    <string name="about_versely">Sobre o Versely</string>
+    <string name="version">Versão %s</string>
+    <string name="same_as_phone">Igual ao celular</string>
+    <string name="language_footer">O Versely está disponível em inglês, espanhol e português.</string>
 </resources>

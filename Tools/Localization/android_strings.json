@@ -114,6 +114,12 @@
     "no_bookmarks_message": "Tap the bookmark in the reader to mark your place.",
     "new_note": "New Note",
     "progress_through": "Progress through %@",
-    "color_highlight": "%@ highlight"
+    "color_highlight": "%@ highlight",
+    "settings": "Settings",
+    "language": "Language",
+    "about_versely": "About Versely",
+    "version": "Version %@",
+    "same_as_phone": "Same as phone",
+    "language_footer": "Versely is available in English, Spanish and Portuguese."
   }
 }
