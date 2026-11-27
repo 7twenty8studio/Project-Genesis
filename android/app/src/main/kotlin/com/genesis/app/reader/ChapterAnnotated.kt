@@ -24,15 +24,20 @@ import androidx.compose.ui.text.style.TextDecoration
  * are exactly as stored: only their style changes. Each verse keeps its id as
  * an annotation, ready for taps, highlights and selection.
  */
-internal fun AnnotatedString.Builder.appendVerses(verses: List<Verse>, colors: ReaderColors, marks: VerseMarks = VerseMarks()) {
+internal fun AnnotatedString.Builder.appendVerses(verses: List<Verse>, colors: ReaderColors, marks: VerseMarks = VerseMarks(), options: TextOptions = TextOptions()) {
     val poetry = verses.firstOrNull()?.isPoetry == true
     verses.forEachIndexed { index, verse ->
-        if (index > 0) append(if (poetry) "\n" else " ")
+        if (index > 0) append(if (poetry || options.versePerLine) "\n" else " ")
         pushStringAnnotation(tag = VERSE_TAG, annotation = verse.id.rawValue.toString())
-        withStyle(SpanStyle(color = colors.accent, fontSize = 0.6.em, fontWeight = FontWeight.Medium, baselineShift = BaselineShift(0.35f))) {
-            append(verse.numberLabel)
+        // The large first letter takes verse 1's number's place (ReaderPreferences.largeInitial).
+        val initial = options.largeInitial && verse.number == 1
+        if (options.verseNumbers && !initial) {
+            withStyle(SpanStyle(color = colors.accent, fontSize = 0.6.em, fontWeight = FontWeight.Medium, baselineShift = BaselineShift(0.35f))) {
+                append(verse.numberLabel)
+            }
+            append("\u00A0")
         }
-        append("\u00A0")
+        val textStart = length
         val notes = marks.footnotes[verse.id].orEmpty()
         if (notes.isEmpty()) {
             withStyle(marks.style(verse.id, colors)) { append(verse.text) }
@@ -49,6 +54,11 @@ internal fun AnnotatedString.Builder.appendVerses(verses: List<Verse>, colors: R
                 start = at
             }
             withStyle(marks.style(verse.id, colors)) { append(verse.text.substring(start)) }
+        }
+        if (initial) {
+            // Restyled, never changed: the verse's own first letter (and any opening quotation mark), drawn large.
+            val letters = LargeInitial.length(verse.text)
+            if (letters > 0) addStyle(SpanStyle(fontSize = LargeInitial.SIZE.em, color = colors.text), textStart, textStart + letters)
         }
         pop()
         marks.notes[verse.id]?.let { noteId ->
@@ -110,9 +120,11 @@ internal const val VERSE_TAG = "verse"
  * indent is the same on every line, so a page that starts mid-paragraph
  * looks the same as the page before it.
  */
-internal fun chapterText(chapter: Chapter, colors: ReaderColors, marks: VerseMarks): AnnotatedString = buildAnnotatedString {
-    val gap = ParagraphStyle(lineHeight = 0.6.em)
-    appendChapter(chapter, colors, marks, gap)
+internal fun chapterText(chapter: Chapter, colors: ReaderColors, marks: VerseMarks, options: TextOptions = TextOptions()): AnnotatedString = buildAnnotatedString {
+    val gap = ParagraphStyle(lineHeight = options.paragraphSpacing.coerceAtLeast(0.05).em)
+    // Room above the first line for the raised large letter (not trimmed from the first page).
+    if (options.largeInitial && chapter.verses.firstOrNull()?.number == 1) withStyle(ParagraphStyle(lineHeight = LargeInitial.ROOM.em)) { append("\u2060") }
+    appendChapter(chapter, colors, marks, gap, options)
     // A licensed Bible's notice, as its licence requires: small and apart from the text.
     if (chapter.translation.showsLicenseUnderChapters) {
         withStyle(gap) { append("\u200B") }
@@ -129,9 +141,9 @@ internal fun chapterText(chapter: Chapter, colors: ReaderColors, marks: VerseMar
 /** On a licensed Bible's notice: the publisher's site, opened by a tap. */
 internal const val PUBLISHER_PREFIX = "publisher:"
 
-private fun AnnotatedString.Builder.appendChapter(chapter: Chapter, colors: ReaderColors, marks: VerseMarks, gap: ParagraphStyle) {
+private fun AnnotatedString.Builder.appendChapter(chapter: Chapter, colors: ReaderColors, marks: VerseMarks, gap: ParagraphStyle, options: TextOptions) {
     blocks(chapter).forEachIndexed { index, block ->
-        if (index > 0) withStyle(gap) { append("​") }
+        if (index > 0 && options.paragraphSpacing > 0.0) withStyle(gap) { append("​") }
         when (block) {
             is Block.Heading -> withStyle(ParagraphStyle()) {
                 withStyle(SpanStyle(fontWeight = FontWeight.SemiBold)) { append(block.text) }
@@ -141,7 +153,7 @@ private fun AnnotatedString.Builder.appendChapter(chapter: Chapter, colors: Read
                 // Left to right even where a verse opens with a Hebrew letter (Psalm 119 in the KJV).
                 val direction = if (ScriptureDirection.isRightToLeft(chapter.translation.language)) TextDirection.Rtl else TextDirection.Ltr
                 withStyle(ParagraphStyle(textIndent = TextIndent(firstLine = indent, restLine = indent), textDirection = direction)) {
-                    appendVerses(block.verses, colors, marks)
+                    appendVerses(block.verses, colors, marks, options)
                 }
             }
         }
@@ -174,4 +186,31 @@ internal fun blocks(chapter: Chapter): List<Block> {
     }
     flush()
     return result
+}
+
+/** How verses are laid out, from the reader's settings (Aa › Text and Layout). */
+internal data class TextOptions(
+    val verseNumbers: Boolean = true,
+    val versePerLine: Boolean = false,
+    /** The gap between paragraphs, in ems. */
+    val paragraphSpacing: Double = 0.55,
+    val largeInitial: Boolean = false,
+)
+
+/** The chapter's large first letter, raised above the first line (as iOS keeps the line's height). */
+internal object LargeInitial {
+    const val SIZE = 2.4f
+    /** The room kept above the first line for it, in ems. */
+    const val ROOM = 1.2f
+
+    /** How many characters to enlarge: an opening quotation mark or bracket with the letter after it. */
+    fun length(text: String): Int {
+        var index = 0
+        while (index < text.length && !Character.isLetterOrDigit(text.codePointAt(index))) {
+            index += Character.charCount(text.codePointAt(index))
+            if (index > 3) return 0
+        }
+        if (index >= text.length) return 0
+        return index + Character.charCount(text.codePointAt(index))
+    }
 }

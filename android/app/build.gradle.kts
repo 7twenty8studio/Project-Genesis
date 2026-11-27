@@ -59,6 +59,8 @@ android {
     sourceSets {
         // Ambient sounds: the same loops as iOS (Genesis/Resources/Ambient), never copied.
         getByName("main").assets.directories.add("../../Genesis/Resources/Ambient")
+        // The page-turn sound's five levels (page-turn-1…5.caf), shared with iOS.
+        getByName("main").assets.directories.add("../../Genesis/Resources/Sounds")
     }
     androidResources {
         // Screens in English, Spanish and Brazilian Portuguese, as on iOS.

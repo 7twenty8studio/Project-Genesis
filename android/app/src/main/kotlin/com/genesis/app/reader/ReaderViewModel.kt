@@ -78,8 +78,8 @@ data class ReaderUiState(
 
     val isChapterBookmarked: Boolean get() = Bookmarks.isBookmarked(bookmarks, chapterId)
 
-    /** The study panel shows (on a wide screen) until the person closes it. */
-    val companionShown: Boolean get() = companionChoice ?: true
+    /** The study panel (on a wide screen): the person's choice, else closed while the two-page spread is on, as iOS. */
+    fun companionShown(twoPageSpread: Boolean): Boolean = companionChoice ?: !twoPageSpread
 
     /** Notes on this chapter's verses, by the verse their mark follows. */
     val notedVerses: Map<VerseId, String>
@@ -251,7 +251,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
 
     fun toggleControls() = _state.update { it.copy(showsControls = !it.showsControls) }
 
-    fun toggleCompanion() = _state.update { it.copy(companionChoice = !it.companionShown) }
+    fun toggleCompanion(shown: Boolean) = _state.update { it.copy(companionChoice = !shown) }
 
     fun setCompanionMode(mode: CompanionMode) = _state.update { it.copy(companionMode = mode) }
 

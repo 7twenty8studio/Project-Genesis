@@ -260,7 +260,7 @@ fun ReaderScreen(
 
     // The page reads edge to edge: the theme's colour or its scene fills the
     // whole screen, behind the status bar and the tab bar too (as iOS).
-    val panelShown = wide && state.companionShown && viewModel != null
+    val panelShown = wide && state.companionShown(LocalReaderPreferences.current.twoPageSpread) && viewModel != null
     Row(Modifier.fillMaxSize().background(colors.background)) {
     Box(Modifier.weight(1f).fillMaxHeight(), contentAlignment = Alignment.TopCenter) {
         val preferences = LocalReaderPreferences.current
@@ -268,6 +268,14 @@ fun ReaderScreen(
         val playing = listening?.playing
         val marks = remember(state.highlights, state.selection, notedVerses, playing, state.chapter) { VerseMarks(state.highlights, state.selection, notedVerses, playing, footnoteMarks(state.chapter)) }
         val scripture = scriptureStyle(preferences, Entitlements.isPremium)
+        val textOptions = TextOptions(
+            verseNumbers = preferences.showsVerseNumbers,
+            versePerLine = preferences.layout == com.genesis.core.domain.reader.TextLayout.VERSE_PER_LINE,
+            paragraphSpacing = preferences.paragraphSpacing,
+            largeInitial = preferences.largeInitial,
+        )
+        val context = androidx.compose.ui.platform.LocalContext.current
+        val turnFeedback = remember(context) { PageTurnFeedback(context) }
         // Forest, Ocean and Hearth: the scene behind clear pages, the whole screen.
         val scene = com.genesis.core.domain.theme.ThemeScene.of(preferences.theme)
             ?.takeIf { state.chapter != null && !state.showsOriginal }
@@ -295,7 +303,7 @@ fun ReaderScreen(
                     )
                 }
                 state.chapter != null && preferences.readingMode == ReadingMode.PAGE -> key(state.chapter.id, state.chapter.translation.id) {
-                    val text = remember(state.chapter, colors, marks) { chapterText(state.chapter, colors, marks) }
+                    val text = remember(state.chapter, colors, marks, textOptions) { chapterText(state.chapter, colors, marks, textOptions) }
                     PagedChapter(
                         chapter = state.chapter,
                         text = text,
@@ -313,10 +321,21 @@ fun ReaderScreen(
                         hidesPageChrome = chromeShown,
                         onClearSelection = selection.onDone,
                         onToggleControls = onToggleControls,
+                        margin = preferences.margins.points.dp,
+                        pageTurn = preferences.pageTurn,
+                        spreadEnabled = preferences.twoPageSpread,
+                        leftHanded = preferences.leftHanded,
+                        sidePanelShown = panelShown,
+                        onPageTurned = {
+                            if (preferences.pageTurnSound) turnFeedback.playSound(preferences.pageTurnVolume)
+                            if (preferences.pageTurnHaptic) turnFeedback.haptic(preferences.pageTurnHapticStrength)
+                        },
                     )
                 }
                 state.chapter != null -> ChapterText(
                     state.chapter, scripture, marks, state.focus, playing, selection.onVerseTap, selection.onNoteTap,
+                    options = textOptions,
+                    margin = preferences.margins.points.dp,
                     onTap = { verse, x ->
                         when (val action = com.genesis.core.domain.reader.ReaderTap.action(x, 0f, 0f, 0f, verse, state.selection.isNotEmpty(), turnsPages = false)) {
                             is com.genesis.core.domain.reader.ReaderTap.Action.ToggleSelection -> selection.onVerseTap(action.verse)
@@ -370,7 +389,7 @@ fun ReaderScreen(
                 onChooseBible = onChooseBible,
                 onMoreBibles = onMoreBibles,
                 onToggleOriginal = { viewModel?.setOriginal(!state.showsOriginal) },
-                onTogglePanel = { viewModel?.toggleCompanion() ?: onTogglePanel() },
+                onTogglePanel = { viewModel?.toggleCompanion(panelShown) ?: onTogglePanel() },
             )
         }
 
@@ -440,7 +459,7 @@ fun ReaderScreen(
 
     if (settingsOpen) {
         ReaderSettingsSheet(
-            preferences = LocalReaderPreferences.current,
+            preferences = com.genesis.app.settings.LocalChosenReaderPreferences.current,
             onChange = onChangeSettings,
             onAmbient = if (shows(com.genesis.core.domain.features.OptionalFeature.AMBIENT_SOUNDS)) {
                 { settingsOpen = false; ambientOpen = true }
@@ -465,7 +484,7 @@ fun ReaderScreen(
 }
 
 @Composable
-private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMarks, focus: ReaderFocus?, follow: VerseId?, onVerseTap: (VerseId) -> Unit, onNoteTap: (String) -> Unit, onTap: (VerseId?, Float) -> Unit) {
+private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMarks, focus: ReaderFocus?, follow: VerseId?, onVerseTap: (VerseId) -> Unit, onNoteTap: (String) -> Unit, options: TextOptions, margin: androidx.compose.ui.unit.Dp, onTap: (VerseId?, Float) -> Unit) {
     val colors = LocalReaderColors.current
     val listState = rememberLazyListState()
     val blocks = remember(chapter) { blocks(chapter) }
@@ -494,7 +513,7 @@ private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMark
             .fillMaxSize()
             .pointerInput(Unit) { detectTapGestures { onTap(null, it.x) } },
         // Room at the top for the controls, and at the bottom for the tab bar, so no verse hides under them.
-        contentPadding = PaddingValues(start = 24.dp, end = 24.dp, top = 64.dp, bottom = TAB_BAR_HEIGHT + 24.dp),
+        contentPadding = PaddingValues(start = margin, end = margin, top = 64.dp, bottom = TAB_BAR_HEIGHT + 24.dp),
     ) {
         item {
             Text(
@@ -521,6 +540,8 @@ private fun ChapterText(chapter: Chapter, scripture: TextStyle, marks: VerseMark
                     onVerseTap,
                     onNoteTap,
                     onTap,
+                    // The large first letter belongs to verse 1's paragraph only.
+                    if (block === blocks.firstOrNull { it is Block.Prose }) options else options.copy(largeInitial = false),
                 )
             }
         }

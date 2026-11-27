@@ -70,8 +70,37 @@ val LocalRecentColors = staticCompositionLocalOf<androidx.compose.runtime.State<
     androidx.compose.runtime.mutableStateOf(emptyList())
 }
 
-/** The reader's settings for the screens below the activity. */
+/**
+ * The reader's settings for the screens below the activity, as they apply
+ * now: night reading's theme in place of the day theme while it's night,
+ * and the text size fixed when it doesn't follow the phone's font size.
+ */
 val LocalReaderPreferences = staticCompositionLocalOf { ReaderPreferences() }
+
+/** The settings as the person chose them (the Aa sheet shows and changes these). */
+val LocalChosenReaderPreferences = staticCompositionLocalOf { ReaderPreferences() }
+
+/**
+ * The settings as they apply now: night reading's theme (ReaderSettings.effectiveTheme
+ * on iOS), and the size held still against the phone's font scale when it isn't followed.
+ */
+@androidx.compose.runtime.Composable
+fun rememberEffectivePreferences(chosen: ReaderPreferences): ReaderPreferences {
+    val systemIsDark = androidx.compose.foundation.isSystemInDarkTheme()
+    val fontScale = androidx.compose.ui.platform.LocalDensity.current.fontScale
+    // Moved on at each edge of the night window, so the theme switches on time.
+    var clock by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(java.time.ZonedDateTime.now()) }
+    androidx.compose.runtime.LaunchedEffect(chosen.nightReading, clock) {
+        val next = com.genesis.core.domain.reader.NightReading.nextChange(clock, chosen.nightReading) ?: return@LaunchedEffect
+        kotlinx.coroutines.delay(java.time.Duration.between(java.time.ZonedDateTime.now(), next).toMillis().coerceAtLeast(1_000) + 500)
+        clock = java.time.ZonedDateTime.now()
+    }
+    val theme = com.genesis.core.domain.reader.NightReading.theme(chosen.nightReading, chosen.theme, clock.toLocalDateTime(), systemIsDark, Entitlements.isPremium)
+    return chosen.copy(
+        theme = theme,
+        fontSize = if (chosen.followsDynamicType) chosen.fontSize else chosen.fontSize / fontScale,
+    )
+}
 
 /**
  * Premium arrives with Play Billing. Until then everything Premium is shown

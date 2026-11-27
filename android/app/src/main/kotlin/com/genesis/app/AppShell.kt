@@ -394,7 +394,7 @@ fun AppShell(
         )
         if (readingSettings) {
             ReaderSettingsSheet(
-                preferences = LocalReaderPreferences.current,
+                preferences = com.genesis.app.settings.LocalChosenReaderPreferences.current,
                 onChange = onChangeSettings,
                 onDismiss = { readingSettings = false },
             )
@@ -527,7 +527,7 @@ fun AppShell(
     }
 
     // On a wide screen the reader's study panel shows them beside the text instead.
-    val panelShowsRelated = tab == AppTab.READ && androidx.compose.ui.platform.LocalConfiguration.current.screenWidthDp >= 800 && state.companionShown
+    val panelShowsRelated = tab == AppTab.READ && androidx.compose.ui.platform.LocalConfiguration.current.screenWidthDp >= 800 && state.companionShown(LocalReaderPreferences.current.twoPageSpread)
     state.crossReferences?.takeIf { !panelShowsRelated }?.let { crossReferences ->
         CrossReferencesSheet(
             crossReferences = crossReferences,

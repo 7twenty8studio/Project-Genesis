@@ -56,12 +56,33 @@ import com.genesis.core.domain.reader.ReaderPreferences
 import com.genesis.core.domain.reader.ReadingMode
 import com.genesis.core.domain.theme.ReaderTheme
 import kotlin.math.roundToInt
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.SliderDefaults
+import androidx.compose.material3.Switch
+import androidx.compose.material3.SwitchDefaults
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import com.genesis.app.audio.summary
+import com.genesis.core.domain.reader.NightReadingSchedule
+import com.genesis.core.domain.reader.NightReadingTiming
+import com.genesis.core.domain.reader.NightTheme
+import com.genesis.core.domain.reader.PageTurnStyle
+import com.genesis.core.domain.reader.ReaderMargins
+import com.genesis.core.domain.reader.TextLayout
 
 /**
- * The "Aa" sheet, as ReaderSettingsSheet.swift: pages or scroll, theme,
- * text size, line spacing and typeface. Premium themes and faces show their tag and can't
- * be chosen without Premium. Margins, page turns and the rest follow with
- * the paged reader.
+ * The "Aa" sheet, as ReaderSettingsSheet.swift: theme, brightness and the
+ * theme's motion; ambient sounds; night reading; text (font, size, line and
+ * paragraph spacing, margins, the phone's font size); layout (pages or
+ * scroll, page turn, two-page spread, paragraphs or verse by verse, verse
+ * numbers, large first letter, page-turn sound and haptic, left-handed);
+ * and Reset to Defaults. Premium themes and faces show their tag and can't
+ * be chosen without Premium.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -73,23 +94,44 @@ internal fun ReaderSettingsSheet(
 ) {
     val colors = LocalReaderColors.current
     val premium = Entitlements.isPremium
+    var fonts by remember { mutableStateOf(false) }
     ModalBottomSheet(
         onDismissRequest = onDismiss,
         sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true),
         containerColor = colors.background,
     ) {
-        Column(Modifier.verticalScroll(rememberScrollState()).navigationBarsPadding().padding(bottom = 24.dp)) {
+        Row(Modifier.fillMaxWidth().padding(start = 8.dp, end = 8.dp), verticalAlignment = Alignment.CenterVertically) {
+            if (fonts) {
+                androidx.compose.material3.TextButton(onClick = { fonts = false }) { Text("‹ " + stringResource(R.string.reading), color = colors.accent) }
+            } else Spacer(Modifier.width(72.dp))
             Text(
-                stringResource(R.string.reading),
-                style = MaterialTheme.typography.titleLarge,
+                stringResource(if (fonts) R.string.font else R.string.reading),
+                style = MaterialTheme.typography.titleMedium,
                 color = colors.text,
-                modifier = Modifier.padding(horizontal = 24.dp).semantics { heading() },
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                modifier = Modifier.weight(1f).semantics { heading() },
             )
-
-            SectionTitle(R.string.theme)
+            androidx.compose.material3.TextButton(onClick = onDismiss) { Text(stringResource(R.string.done), color = colors.accent, fontWeight = FontWeight.SemiBold) }
+        }
+        if (fonts) {
+            Column(Modifier.verticalScroll(rememberScrollState()).navigationBarsPadding().padding(bottom = 24.dp)) {
+                for (font in ReaderFont.offered) {
+                    FontRow(
+                        font = font,
+                        selected = font == preferences.font,
+                        locked = font.isPremium && !premium,
+                        onClick = { onChange { it.copy(font = font) } },
+                    )
+                }
+            }
+            return@ModalBottomSheet
+        }
+        Column(Modifier.verticalScroll(rememberScrollState()).navigationBarsPadding().padding(bottom = 24.dp)) {
+            // Theme, brightness and the theme's motion.
             LazyRow(
                 contentPadding = PaddingValues(horizontal = 24.dp),
                 horizontalArrangement = Arrangement.spacedBy(14.dp),
+                modifier = Modifier.padding(top = 8.dp),
             ) {
                 items(ReaderTheme.entries) { theme ->
                     ThemeSwatch(
@@ -100,45 +142,34 @@ internal fun ReaderSettingsSheet(
                     )
                 }
             }
-
+            BrightnessRow()
             val shown = preferences.theme.resolved(androidx.compose.foundation.isSystemInDarkTheme())
             if (shown.season != null || shown.isScene) {
                 val season = shown.season != null
-                Row(
-                    Modifier.fillMaxWidth().padding(horizontal = 24.dp).padding(top = 14.dp),
-                    verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
-                ) {
-                    Text(stringResource(if (season) R.string.seasonal_touches else R.string.gentle_motion), color = colors.text, modifier = Modifier.weight(1f))
-                    androidx.compose.material3.Switch(
-                        checked = preferences.seasonalEffects,
-                        onCheckedChange = { on -> onChange { it.copy(seasonalEffects = on) } },
-                        colors = androidx.compose.material3.SwitchDefaults.colors(checkedTrackColor = colors.accent),
-                    )
-                }
-                Text(
-                    stringResource(if (season) R.string.seasonal_touches_footer else R.string.gentle_motion_footer),
-                    style = MaterialTheme.typography.bodySmall,
-                    color = colors.secondaryText,
-                    modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp),
-                )
+                SwitchRow(stringResource(if (season) R.string.seasonal_touches else R.string.gentle_motion), preferences.seasonalEffects) { on -> onChange { it.copy(seasonalEffects = on) } }
+                Footer(stringResource(if (season) R.string.seasonal_touches_footer else R.string.gentle_motion_footer))
             }
 
-            SectionTitle(R.string.layout)
-            SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth().padding(horizontal = 24.dp)) {
-                ReadingMode.entries.forEachIndexed { index, mode ->
-                    SegmentedButton(
-                        selected = preferences.readingMode == mode,
-                        onClick = { onChange { it.copy(readingMode = mode) } },
-                        shape = SegmentedButtonDefaults.itemShape(index, ReadingMode.entries.size),
-                    ) {
-                        Text(stringResource(if (mode == ReadingMode.PAGE) R.string.reading_mode_pages else R.string.reading_mode_scroll))
-                    }
-                }
+            if (onAmbient != null) {
+                Divider()
+                val ambient = (androidx.compose.ui.platform.LocalContext.current.applicationContext as com.genesis.app.VerselyApplication).ambient
+                val ambientState by ambient.state.collectAsState()
+                val context = androidx.compose.ui.platform.LocalContext.current
+                NavRow(
+                    stringResource(R.string.ambient_title),
+                    value = if (ambientState.isPlaying) ambientState.summary(context) else null,
+                    locked = !premium,
+                    onClick = onAmbient,
+                )
+                Footer(stringResource(R.string.feature_ambient_detail))
             }
+
+            NightReadingSection(preferences, premium, onChange)
 
             SectionTitle(R.string.text)
+            NavRow(stringResource(R.string.font), value = preferences.font.available(premium).title, onClick = { fonts = true })
             Row(
-                Modifier.fillMaxWidth().padding(horizontal = 24.dp),
+                Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 4.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween,
             ) {
@@ -148,58 +179,230 @@ internal fun ReaderSettingsSheet(
                     onClick = { onChange { it.smaller() } },
                     enabled = preferences.fontSize > ReaderPreferences.FONT_SIZE_RANGE.start,
                     modifier = Modifier.semantics { contentDescription = smaller },
-                ) { Text("A", fontSize = 14.sp) }
-                Text(
-                    stringResource(R.string.font_size_points, preferences.fontSize.roundToInt()),
-                    color = colors.text,
-                    style = MaterialTheme.typography.bodyLarge,
-                )
+                ) { Text("A", fontSize = 14.sp, color = colors.text) }
+                Text(stringResource(R.string.font_size_points, preferences.fontSize.roundToInt()), color = colors.secondaryText, style = MaterialTheme.typography.bodyMedium)
                 OutlinedButton(
                     onClick = { onChange { it.larger() } },
                     enabled = preferences.fontSize < ReaderPreferences.FONT_SIZE_RANGE.endInclusive,
                     modifier = Modifier.semantics { contentDescription = larger },
-                ) { Text("A", fontSize = 22.sp) }
+                ) { Text("A", fontSize = 22.sp, color = colors.text) }
             }
-            Text(
-                stringResource(R.string.line_spacing),
-                color = colors.secondaryText,
-                style = MaterialTheme.typography.bodyMedium,
-                modifier = Modifier.padding(start = 24.dp, top = 16.dp),
-            )
-            Slider(
-                value = preferences.lineSpacing.toFloat(),
-                onValueChange = { value -> onChange { it.copy(lineSpacing = value.toDouble()) } },
-                valueRange = ReaderPreferences.LINE_SPACING_RANGE.start.toFloat()..ReaderPreferences.LINE_SPACING_RANGE.endInclusive.toFloat(),
-                modifier = Modifier.padding(horizontal = 24.dp),
-            )
+            LabeledSlider(stringResource(R.string.line_spacing), preferences.lineSpacing, ReaderPreferences.LINE_SPACING_RANGE) { v -> onChange { it.copy(lineSpacing = v) } }
+            LabeledSlider(stringResource(R.string.paragraph_spacing), preferences.paragraphSpacing, ReaderPreferences.PARAGRAPH_SPACING_RANGE) { v -> onChange { it.copy(paragraphSpacing = v) } }
+            ChoiceRow(stringResource(R.string.margins), ReaderMargins.entries, preferences.margins, { stringResource(it.title) }) { m -> onChange { it.copy(margins = m) } }
+            SwitchRow(stringResource(R.string.follow_system_font_size), preferences.followsDynamicType) { on -> onChange { it.copy(followsDynamicType = on) } }
 
-            SectionTitle(R.string.font)
-            for (font in ReaderFont.offered) {
-                FontRow(
-                    font = font,
-                    selected = font == preferences.font,
-                    locked = font.isPremium && !premium,
-                    onClick = { onChange { it.copy(font = font) } },
-                )
+            SectionTitle(R.string.layout)
+            Segmented(ReadingMode.entries, preferences.readingMode, { stringResource(if (it == ReadingMode.PAGE) R.string.reading_mode_pages else R.string.reading_mode_scroll) }) { mode -> onChange { it.copy(readingMode = mode) } }
+            if (preferences.readingMode == ReadingMode.PAGE) {
+                Text(stringResource(R.string.page_turn), color = colors.secondaryText, style = MaterialTheme.typography.bodyMedium, modifier = Modifier.padding(start = 24.dp, top = 14.dp, bottom = 6.dp))
+                Segmented(PageTurnStyle.entries, preferences.pageTurn, { stringResource(if (it == PageTurnStyle.SLIDE) R.string.page_turn_slide else R.string.page_turn_curl) }) { turn -> onChange { it.copy(pageTurn = turn) } }
+                SwitchRow(stringResource(R.string.two_page_spread), preferences.twoPageSpread, detail = stringResource(R.string.two_page_spread_detail)) { on -> onChange { it.copy(twoPageSpread = on) } }
             }
+            ChoiceRow(stringResource(R.string.text), TextLayout.entries, preferences.layout, { stringResource(if (it == TextLayout.PARAGRAPHS) R.string.text_layout_paragraphs else R.string.text_layout_verse_by_verse) }) { l -> onChange { it.copy(layout = l) } }
+            SwitchRow(stringResource(R.string.verse_numbers), preferences.showsVerseNumbers) { on -> onChange { it.copy(showsVerseNumbers = on) } }
+            SwitchRow(stringResource(R.string.large_first_letter), preferences.largeInitial) { on -> onChange { it.copy(largeInitial = on) } }
+            if (preferences.readingMode == ReadingMode.PAGE) {
+                SwitchRow(stringResource(R.string.page_turn_sound), preferences.pageTurnSound) { on -> onChange { it.copy(pageTurnSound = on) } }
+                if (preferences.pageTurnSound) {
+                    LabeledSlider(stringResource(R.string.page_turn_volume), preferences.pageTurnVolume, 0.0..1.0, steps = 3) { v -> onChange { it.copy(pageTurnVolume = v) } }
+                }
+                SwitchRow(stringResource(R.string.page_turn_haptic), preferences.pageTurnHaptic) { on -> onChange { it.copy(pageTurnHaptic = on) } }
+                if (preferences.pageTurnHaptic) {
+                    LabeledSlider(stringResource(R.string.page_turn_strength), preferences.pageTurnHapticStrength, ReaderPreferences.HAPTIC_STRENGTH_RANGE) { v -> onChange { it.copy(pageTurnHapticStrength = v) } }
+                }
+            }
+            SwitchRow(stringResource(R.string.left_handed_mode), preferences.leftHanded, detail = stringResource(R.string.left_handed_detail)) { on -> onChange { it.copy(leftHanded = on) } }
 
-            if (onAmbient != null) {
-                SectionTitle(R.string.ambient_sounds)
-                Row(
-                    Modifier
-                        .fillMaxWidth()
-                        .clickable(enabled = premium, role = Role.Button, onClick = onAmbient)
-                        .alpha(if (premium) 1f else 0.55f)
-                        .padding(horizontal = 24.dp, vertical = 10.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Text(stringResource(R.string.ambient_title), color = colors.text, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
-                    if (premium) Text("›", color = colors.secondaryText, fontSize = 20.sp) else PremiumTag()
+            Divider()
+            androidx.compose.material3.TextButton(onClick = { onChange { ReaderPreferences() } }, modifier = Modifier.padding(horizontal = 12.dp)) {
+                Text(stringResource(R.string.reset_to_defaults), color = androidx.compose.ui.graphics.Color(0xFFC0392B))
+            }
+        }
+    }
+}
+
+/** Aa › Night Reading, as NightReadingSettings.swift. */
+@Composable
+private fun NightReadingSection(preferences: ReaderPreferences, premium: Boolean, onChange: ((ReaderPreferences) -> ReaderPreferences) -> Unit) {
+    val schedule = preferences.nightReading
+    fun update(change: (NightReadingSchedule) -> NightReadingSchedule) = onChange { it.copy(nightReading = change(it.nightReading)) }
+    SectionTitle(R.string.night_reading)
+    ChoiceRow(
+        stringResource(R.string.night_switch_to),
+        NightTheme.entries,
+        schedule.theme,
+        { theme ->
+            when (theme) {
+                NightTheme.OFF -> stringResource(R.string.off)
+                NightTheme.NIGHT -> stringResource(R.string.theme_night)
+                NightTheme.STARLIGHT -> stringResource(R.string.theme_starlight) + if (!premium) " · " + stringResource(R.string.premium) else ""
+            }
+        },
+        enabled = { !it.isPremium || premium },
+    ) { theme -> update { it.copy(theme = theme) } }
+    if (schedule.theme != NightTheme.OFF) {
+        ChoiceRow(
+            stringResource(R.string.`when`),
+            NightReadingTiming.entries,
+            schedule.timing,
+            { stringResource(if (it == NightReadingTiming.DARK_MODE) R.string.night_with_dark_mode else R.string.night_at_set_hours) },
+        ) { timing -> update { it.copy(timing = timing) } }
+        if (schedule.timing == NightReadingTiming.HOURS) {
+            ChoiceRow(stringResource(R.string.night_from), (0..23).toList(), schedule.startHour, { hourLabel(it) }) { h -> update { it.copy(startHour = h) } }
+            ChoiceRow(stringResource(R.string.night_until), (0..23).toList(), schedule.endHour, { hourLabel(it) }) { h -> update { it.copy(endHour = h) } }
+        }
+    }
+    Footer(
+        stringResource(
+            when {
+                schedule.theme == NightTheme.OFF -> R.string.night_footer_off
+                schedule.theme.isPremium && !premium -> R.string.night_footer_locked
+                schedule.timing == NightReadingTiming.DARK_MODE -> R.string.night_footer_dark_mode
+                schedule.startHour == schedule.endHour -> R.string.night_footer_same_hours
+                else -> R.string.night_footer_hours
+            },
+        ),
+    )
+}
+
+/** "8 PM" or "20:00", as the phone's clock prefers. */
+@Composable
+private fun hourLabel(hour: Int): String {
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val format = android.text.format.DateFormat.getTimeFormat(context)
+    val calendar = java.util.Calendar.getInstance().apply { set(2001, 5, 15, hour, 0, 0) }
+    return format.format(calendar.time)
+}
+
+/** The screen's brightness while Versely is open, as iOS's brightness slider. */
+@Composable
+private fun BrightnessRow() {
+    val colors = LocalReaderColors.current
+    val view = androidx.compose.ui.platform.LocalView.current
+    val window = remember(view) { (view.context as? android.app.Activity)?.window ?: (view.context as? android.content.ContextWrapper)?.baseContext.let { it as? android.app.Activity }?.window }
+    var value by remember {
+        val current = window?.attributes?.screenBrightness ?: -1f
+        mutableStateOf(if (current < 0f) runCatching { android.provider.Settings.System.getInt(view.context.contentResolver, android.provider.Settings.System.SCREEN_BRIGHTNESS) / 255f }.getOrDefault(0.5f) else current)
+    }
+    val label = stringResource(R.string.brightness)
+    Row(Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
+        Text("☼", color = colors.secondaryText, fontSize = 14.sp)
+        Slider(
+            value = value,
+            onValueChange = { v ->
+                value = v
+                window?.let { w -> w.attributes = w.attributes.apply { screenBrightness = v.coerceIn(0.02f, 1f) } }
+            },
+            colors = SliderDefaults.colors(thumbColor = colors.accent, activeTrackColor = colors.accent),
+            modifier = Modifier.weight(1f).padding(horizontal = 10.dp).semantics { contentDescription = label },
+        )
+        Text("☀", color = colors.secondaryText, fontSize = 20.sp)
+    }
+}
+
+@Composable
+private fun SwitchRow(title: String, checked: Boolean, detail: String? = null, onChange: (Boolean) -> Unit) {
+    val colors = LocalReaderColors.current
+    Row(
+        Modifier.fillMaxWidth().clickable(role = Role.Switch) { onChange(!checked) }.padding(horizontal = 24.dp, vertical = 10.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Column(Modifier.weight(1f)) {
+            Text(title, color = colors.text, style = MaterialTheme.typography.bodyLarge)
+            if (detail != null) Text(detail, color = colors.secondaryText, style = MaterialTheme.typography.bodySmall)
+        }
+        Switch(checked = checked, onCheckedChange = onChange, colors = SwitchDefaults.colors(checkedTrackColor = colors.accent))
+    }
+}
+
+@Composable
+private fun NavRow(title: String, value: String? = null, locked: Boolean = false, onClick: () -> Unit) {
+    val colors = LocalReaderColors.current
+    Row(
+        Modifier.fillMaxWidth().clickable(enabled = !locked, role = Role.Button, onClick = onClick).padding(horizontal = 24.dp, vertical = 12.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text(title, color = colors.text, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
+        if (locked) PremiumTag() else if (value != null) Text(value, color = colors.secondaryText, maxLines = 1, modifier = Modifier.padding(end = 6.dp).widthIn(max = 180.dp))
+        Text("›", color = colors.secondaryText, fontSize = 20.sp)
+    }
+}
+
+/** A setting with a few choices, its value on the right opening a menu (iOS's menu picker). */
+@Composable
+private fun <T> ChoiceRow(title: String, choices: List<T>, selected: T, label: @Composable (T) -> String, enabled: (T) -> Boolean = { true }, onPick: (T) -> Unit) {
+    val colors = LocalReaderColors.current
+    var open by remember { mutableStateOf(false) }
+    Row(
+        Modifier.fillMaxWidth().clickable(role = Role.DropdownList) { open = true }.padding(horizontal = 24.dp, vertical = 12.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text(title, color = colors.text, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
+        Box {
+            Text(label(selected) + "  ⌄", color = colors.accent)
+            DropdownMenu(expanded = open, onDismissRequest = { open = false }) {
+                for (choice in choices) {
+                    DropdownMenuItem(
+                        text = { Text((if (choice == selected) "✓ " else "") + label(choice)) },
+                        enabled = enabled(choice),
+                        onClick = { open = false; onPick(choice) },
+                    )
                 }
             }
         }
     }
 }
+
+@Composable
+private fun <T> Segmented(choices: List<T>, selected: T, label: @Composable (T) -> String, onPick: (T) -> Unit) {
+    SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth().padding(horizontal = 24.dp)) {
+        choices.forEachIndexed { index, choice ->
+            SegmentedButton(
+                selected = choice == selected,
+                onClick = { onPick(choice) },
+                shape = SegmentedButtonDefaults.itemShape(index, choices.size),
+            ) { Text(label(choice)) }
+        }
+    }
+}
+
+@Composable
+private fun LabeledSlider(title: String, value: Double, range: ClosedFloatingPointRange<Double>, steps: Int = 0, onChange: (Double) -> Unit) {
+    val colors = LocalReaderColors.current
+    Text(title, color = colors.secondaryText, style = MaterialTheme.typography.bodyMedium, modifier = Modifier.padding(start = 24.dp, top = 12.dp))
+    Slider(
+        value = value.toFloat(),
+        onValueChange = { onChange(it.toDouble()) },
+        valueRange = range.start.toFloat()..range.endInclusive.toFloat(),
+        steps = steps,
+        colors = SliderDefaults.colors(thumbColor = colors.accent, activeTrackColor = colors.accent),
+        modifier = Modifier.padding(horizontal = 24.dp).semantics { contentDescription = title },
+    )
+}
+
+@Composable
+private fun Footer(text: String) {
+    Text(
+        text,
+        style = MaterialTheme.typography.bodySmall,
+        color = LocalReaderColors.current.secondaryText,
+        modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp),
+    )
+}
+
+@Composable
+private fun Divider() {
+    androidx.compose.material3.HorizontalDivider(Modifier.padding(vertical = 12.dp), color = LocalReaderColors.current.separator)
+}
+
+@get:StringRes
+private val ReaderMargins.title: Int
+    get() = when (this) {
+        ReaderMargins.NARROW -> R.string.margins_narrow
+        ReaderMargins.REGULAR -> R.string.margins_regular
+        ReaderMargins.WIDE -> R.string.margins_wide
+    }
 
 @Composable
 private fun SectionTitle(@StringRes title: Int) {

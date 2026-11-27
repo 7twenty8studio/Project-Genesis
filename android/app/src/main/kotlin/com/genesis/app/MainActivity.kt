@@ -37,8 +37,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             val preferences by settings.preferences.collectAsStateWithLifecycle()
             val recentColors = settings.recentColors.collectAsStateWithLifecycle()
-            VerselyTheme(theme = preferences.theme) {
-                CompositionLocalProvider(LocalReaderPreferences provides preferences, LocalRecentColors provides recentColors) {
+            val effective = com.genesis.app.settings.rememberEffectivePreferences(preferences)
+            VerselyTheme(theme = effective.theme) {
+                CompositionLocalProvider(
+                    LocalReaderPreferences provides effective,
+                    com.genesis.app.settings.LocalChosenReaderPreferences provides preferences,
+                    LocalRecentColors provides recentColors,
+                ) {
                     val pending by link.collectAsStateWithLifecycle()
                     AppShell(
                         onChangeSettings = settings::update,
