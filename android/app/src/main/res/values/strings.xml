@@ -148,4 +148,27 @@
     <string name="summary_web">A modern, readable translation in everyday English.</string>
     <string name="summary_asv">A precise, literal translation valued for careful study.</string>
     <string name="summary_blivre">The 1819 Almeida translation, updated into Brazilian Portuguese and free to read and share.</string>
+    <string name="account">Account</string>
+    <string name="keep_notes_safe">Keep your notes safe</string>
+    <string name="sign_in_message">Sign in to back up your highlights, notes, reading plans and prayers, and see them on all your devices. Everything also works without an account.</string>
+    <string name="cloud_not_set_up">Cloud sync isn\'t set up in this build.</string>
+    <string name="sign_in_with_apple">Sign in with Apple</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create Account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="password_new">Password (6+ characters)</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="continue_as_guest">Continue as Guest</string>
+    <string name="guest_footer">As a guest, everything stays on this device. You can sign in any time and your notes will come with you.</string>
+    <string name="signed_in_as">Signed in as</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="google_failed">Sign in with Google didn\'t work. Please try again.</string>
+    <string name="apple_failed">Sign in with Apple didn\'t work. Please try again.</string>
+    <string name="confirm_email">Check your email to confirm your account, then sign in.</string>
+    <string name="reset_sent">If an account exists for that email, a reset link is on its way.</string>
+    <string name="session_ended">Your session has ended. Please sign in again.</string>
+    <string name="unexpected_response">The server sent an unexpected response.</string>
+    <string name="server_unreachable">Couldn\'t reach Versely\'s server. Check your connection and try again.</string>
 </resources>

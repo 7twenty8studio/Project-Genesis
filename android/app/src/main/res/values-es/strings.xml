@@ -147,4 +147,27 @@
     <string name="summary_web">Una traducción moderna y fácil de leer, en inglés cotidiano.</string>
     <string name="summary_asv">Una traducción precisa y literal, apreciada para el estudio detallado.</string>
     <string name="summary_blivre">La traducción de Almeida de 1819, actualizada al portugués de Brasil y libre para leer y compartir.</string>
+    <string name="account">Cuenta</string>
+    <string name="keep_notes_safe">Mantén tus notas a salvo</string>
+    <string name="sign_in_message">Inicia sesión para hacer copia de seguridad de tus resaltados, notas, planes de lectura y oraciones, y verlos en todos tus dispositivos. Todo funciona también sin cuenta.</string>
+    <string name="cloud_not_set_up">La sincronización en la nube no está configurada en esta versión.</string>
+    <string name="sign_in_with_apple">Iniciar sesión con Apple</string>
+    <string name="sign_in_with_google">Iniciar sesión con Google</string>
+    <string name="sign_in">Iniciar sesión</string>
+    <string name="create_account">Crear cuenta</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="password_new">Contraseña (6 caracteres o más)</string>
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="continue_as_guest">Continuar como invitado</string>
+    <string name="guest_footer">Como invitado, todo se queda en este dispositivo. Puedes iniciar sesión cuando quieras y tus notas vendrán contigo.</string>
+    <string name="signed_in_as">Sesión iniciada como</string>
+    <string name="sign_out">Cerrar sesión</string>
+    <string name="google_failed">No se pudo iniciar sesión con Google. Inténtalo de nuevo.</string>
+    <string name="apple_failed">No se pudo iniciar sesión con Apple. Inténtalo de nuevo.</string>
+    <string name="confirm_email">Revisa tu correo para confirmar tu cuenta y luego inicia sesión.</string>
+    <string name="reset_sent">Si existe una cuenta con ese correo, te enviaremos un enlace para restablecerla.</string>
+    <string name="session_ended">Tu sesión terminó. Vuelve a iniciar sesión.</string>
+    <string name="unexpected_response">El servidor envió una respuesta inesperada.</string>
+    <string name="server_unreachable">No se pudo conectar con el servidor de Versely. Revisa tu conexión e inténtalo de nuevo.</string>
 </resources>

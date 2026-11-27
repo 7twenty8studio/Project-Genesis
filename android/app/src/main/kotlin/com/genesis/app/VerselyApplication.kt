@@ -1,6 +1,8 @@
 package com.genesis.app
 
 import android.app.Application
+import com.genesis.app.account.AccountService
+import kotlinx.coroutines.MainScope
 import com.genesis.app.settings.ReaderSettingsStore
 import com.genesis.app.settings.ReadingProgressStore
 import com.genesis.core.data.UserDatabase
@@ -12,4 +14,8 @@ class VerselyApplication : Application() {
     /** Opened off the main thread the first time (it reads the person's highlights). */
     val userData: UserDatabase by lazy { UserDatabase.open(this) }
     val progress: ReadingProgressStore by lazy { ReadingProgressStore(this) }
+
+    /** The process's own scope, for work that outlives a screen (sign-in). */
+    val scope = MainScope()
+    val account: AccountService by lazy { AccountService(this, scope) }
 }

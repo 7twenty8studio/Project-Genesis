@@ -24,6 +24,7 @@ import com.genesis.app.onboarding.OnboardingFlow
 import androidx.compose.ui.platform.LocalContext
 import com.genesis.app.library.LibraryScreen
 import com.genesis.app.library.LibraryShelf
+import com.genesis.app.account.AccountScreen
 import com.genesis.app.reader.CrossReferencesSheet
 import com.genesis.core.domain.link.GenesisLink
 import com.genesis.app.reader.NoteEditorSheet
@@ -65,6 +66,8 @@ fun AppShell(
     var searching by rememberSaveable { mutableStateOf(false) }
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
     var readingSettings by rememberSaveable { mutableStateOf(false) }
+    var accountOpen by rememberSaveable { mutableStateOf(false) }
+    val account by app.account.state.collectAsStateWithLifecycle()
 
     fun read(verse: VerseId) {
         reader.openVerse(verse)
@@ -104,10 +107,23 @@ fun AppShell(
 
     // Back from Read or Library goes Home before it leaves the app.
     BackHandler(enabled = tab != AppTab.HOME && !settingsOpen) { tab = AppTab.HOME }
-    BackHandler(enabled = settingsOpen) { settingsOpen = false }
+    BackHandler(enabled = settingsOpen && !accountOpen) { settingsOpen = false }
+    BackHandler(enabled = accountOpen) { accountOpen = false }
+
+    if (accountOpen) {
+        AccountScreen(
+            account = app.account,
+            state = account,
+            onDone = { accountOpen = false },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
 
     if (settingsOpen) {
         SettingsScreen(
+            accountTitle = account.user?.let { it.email ?: it.name },
+            onAccount = { accountOpen = true },
             onReading = { readingSettings = true },
             onDone = { settingsOpen = false },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),

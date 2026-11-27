@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -37,12 +39,18 @@ import com.genesis.app.R
 import com.genesis.core.design.LocalReaderColors
 
 /**
- * Settings, as on iOS: Reading (the reader's look), Language, and About
- * Versely with the version. Notifications, Features, Account and the rest
+ * Settings, as on iOS: Account, Reading (the reader's look), Language, and
+ * About Versely with the version. Notifications, Features and the rest
  * join as their features arrive.
  */
 @Composable
-fun SettingsScreen(onReading: () -> Unit, onDone: () -> Unit, modifier: Modifier = Modifier) {
+fun SettingsScreen(
+    accountTitle: String?,
+    onAccount: () -> Unit,
+    onReading: () -> Unit,
+    onDone: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     val colors = LocalReaderColors.current
     val context = LocalContext.current
     var language by remember { mutableStateOf(AppLanguageChoice.saved(context)) }
@@ -63,6 +71,11 @@ fun SettingsScreen(onReading: () -> Unit, onDone: () -> Unit, modifier: Modifier
             }
         }
         Column(Modifier.verticalScroll(rememberScrollState()).padding(horizontal = 20.dp, vertical = 8.dp)) {
+            Group {
+                // The account's email once signed in, else Sign In (as iOS's Account row).
+                Row_(accountTitle ?: stringResource(R.string.sign_in), onClick = onAccount, trailing = "›", label = stringResource(R.string.account))
+            }
+            Spacer(Modifier.size(20.dp))
             Group {
                 Row_(stringResource(R.string.reading), onClick = onReading, trailing = "›")
             }
@@ -99,21 +112,24 @@ fun SettingsScreen(onReading: () -> Unit, onDone: () -> Unit, modifier: Modifier
 }
 
 @Composable
-private fun Group(content: @Composable () -> Unit) {
+internal fun Group(content: @Composable () -> Unit) {
     Column(Modifier.fillMaxWidth().background(LocalReaderColors.current.surface, RoundedCornerShape(14.dp))) { content() }
 }
 
 @Composable
-private fun Row_(title: String, onClick: () -> Unit, trailing: String? = null) {
+internal fun Row_(title: String, onClick: () -> Unit, trailing: String? = null, label: String? = null) {
     val colors = LocalReaderColors.current
     Row(Modifier.fillMaxWidth().clickable(onClick = onClick).padding(horizontal = 16.dp, vertical = 14.dp), verticalAlignment = Alignment.CenterVertically) {
-        Text(title, style = MaterialTheme.typography.bodyLarge, color = colors.text, modifier = Modifier.weight(1f))
+        Column(Modifier.weight(1f)) {
+            if (label != null) Text(label, style = MaterialTheme.typography.labelMedium, color = colors.secondaryText)
+            Text(title, style = MaterialTheme.typography.bodyLarge, color = colors.text)
+        }
         if (trailing != null) Text(trailing, color = colors.secondaryText, style = MaterialTheme.typography.titleLarge)
     }
 }
 
 @Composable
-private fun Header(text: String) {
+internal fun Header(text: String) {
     Text(
         text.uppercase(),
         style = MaterialTheme.typography.labelMedium,
@@ -123,7 +139,7 @@ private fun Header(text: String) {
 }
 
 @Composable
-private fun Footer(text: String) {
+internal fun Footer(text: String) {
     Text(
         text,
         style = MaterialTheme.typography.bodySmall,

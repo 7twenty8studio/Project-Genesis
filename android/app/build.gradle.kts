@@ -1,3 +1,23 @@
+import java.util.Properties
+
+/**
+ * Supabase's address and public (anon) key: the same git-ignored
+ * Config/Secrets.xcconfig the iPhone app reads, or versely.supabaseUrl /
+ * versely.supabaseAnonKey in android/local.properties. Without them the build
+ * still runs, and the Account screen says sync isn't set up.
+ */
+fun cloudSetting(xcconfigKey: String, propertyKey: String): String {
+    val local = Properties().apply {
+        rootProject.file("local.properties").takeIf { it.exists() }?.inputStream()?.use { load(it) }
+    }
+    local.getProperty(propertyKey)?.trim()?.takeIf { it.isNotEmpty() }?.let { return it }
+    val secrets = rootProject.file("../Config/Secrets.xcconfig").takeIf { it.exists() } ?: return ""
+    val line = secrets.readLines().map { it.trim() }.firstOrNull { it.startsWith("$xcconfigKey ") || it.startsWith("$xcconfigKey=") }
+        ?: return ""
+    val value = line.substringAfter('=').trim().replace("\$(SLASH)", "/")
+    return if (value.startsWith("YOUR-") || value.contains("YOUR-PROJECT")) "" else value
+}
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -17,6 +37,8 @@ android {
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 1
         versionName = "0.1.0"
+        buildConfigField("String", "SUPABASE_URL", "\"${cloudSetting("SUPABASE_URL", "versely.supabaseUrl")}\"")
+        buildConfigField("String", "SUPABASE_ANON_KEY", "\"${cloudSetting("SUPABASE_ANON_KEY", "versely.supabaseAnonKey")}\"")
     }
 
     buildTypes {
@@ -30,7 +52,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    buildFeatures { compose = true }
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
     androidResources {
         // Screens in English, Spanish and Brazilian Portuguese, as on iOS.
         localeFilters += listOf("en", "es", "pt-rBR")
@@ -42,6 +67,7 @@ dependencies {
     implementation(project(":core:bible"))
     implementation(project(":core:design"))
     implementation(project(":core:data"))
+    implementation(project(":core:cloud"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)

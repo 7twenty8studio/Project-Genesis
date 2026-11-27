@@ -55,6 +55,9 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun receive(intent: Intent?) {
-        intent?.dataString?.let(GenesisLink::parse)?.let { parsed -> link.update { parsed } }
+        val data = intent?.dataString ?: return
+        // versely://auth-callback finishes signing in with Apple or Google.
+        if ((application as VerselyApplication).account.handleCallback(data)) return
+        GenesisLink.parse(data)?.let { parsed -> link.update { parsed } }
     }
 }
