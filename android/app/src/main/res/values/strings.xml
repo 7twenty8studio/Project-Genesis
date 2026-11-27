@@ -164,6 +164,15 @@
     <string name="guest_footer">As a guest, everything stays on this device. You can sign in any time and your notes will come with you.</string>
     <string name="signed_in_as">Signed in as</string>
     <string name="sign_out">Sign Out</string>
+    <string name="sign_out_question">Sign out?</string>
+    <string name="sign_out_keep_data">Sign Out and Keep Data on This Device</string>
+    <string name="sign_out_remove_data">Sign Out and Remove Data from This Device</string>
+    <string name="sign_out_message">Your data stays safe in your account either way.</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="delete_account_question">Delete your account?</string>
+    <string name="delete_account_message">This permanently deletes your account and your data in the cloud. It can\'t be undone.</string>
+    <string name="delete_account_failed">Your account couldn\'t be deleted. Please try again.</string>
+    <string name="delete_account_footer">Deletes your account and everything saved with it in the cloud: highlights, notes, plans, prayers, memory verses and group posts.</string>
     <string name="google_failed">Sign in with Google didn\'t work. Please try again.</string>
     <string name="apple_failed">Sign in with Apple didn\'t work. Please try again.</string>
     <string name="confirm_email">Check your email to confirm your account, then sign in.</string>
@@ -175,6 +184,7 @@
     <string name="sync_now">Sync Now</string>
     <string name="syncing">Syncing…</string>
     <string name="synced">Synced %s</string>
+    <string name="synced_just_now">Synced just now</string>
     <string name="waiting_to_sync">Waiting to sync</string>
     <string name="sync_footer">Highlights, notes and bookmarks sync automatically, free.</string>
 </resources>

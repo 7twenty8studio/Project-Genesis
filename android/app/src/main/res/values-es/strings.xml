@@ -163,6 +163,15 @@
     <string name="guest_footer">Como invitado, todo se queda en este dispositivo. Puedes iniciar sesión cuando quieras y tus notas vendrán contigo.</string>
     <string name="signed_in_as">Sesión iniciada como</string>
     <string name="sign_out">Cerrar sesión</string>
+    <string name="sign_out_question">¿Cerrar sesión?</string>
+    <string name="sign_out_keep_data">Cerrar sesión y conservar los datos en este dispositivo</string>
+    <string name="sign_out_remove_data">Cerrar sesión y eliminar los datos de este dispositivo</string>
+    <string name="sign_out_message">Tus datos quedan a salvo en tu cuenta de todos modos.</string>
+    <string name="delete_account">Eliminar cuenta</string>
+    <string name="delete_account_question">¿Eliminar tu cuenta?</string>
+    <string name="delete_account_message">Esto elimina para siempre tu cuenta y tus datos en la nube. No se puede deshacer.</string>
+    <string name="delete_account_failed">No se pudo eliminar tu cuenta. Inténtalo de nuevo.</string>
+    <string name="delete_account_footer">Elimina tu cuenta y todo lo guardado con ella en la nube: resaltados, notas, planes, oraciones, versículos para memorizar y publicaciones de grupo.</string>
     <string name="google_failed">No se pudo iniciar sesión con Google. Inténtalo de nuevo.</string>
     <string name="apple_failed">No se pudo iniciar sesión con Apple. Inténtalo de nuevo.</string>
     <string name="confirm_email">Revisa tu correo para confirmar tu cuenta y luego inicia sesión.</string>
@@ -174,6 +183,7 @@
     <string name="sync_now">Sincronizar ahora</string>
     <string name="syncing">Sincronizando…</string>
     <string name="synced">Sincronizado %s</string>
+    <string name="synced_just_now">Sincronizado hace un momento</string>
     <string name="waiting_to_sync">Esperando para sincronizar</string>
     <string name="sync_footer">Los resaltados, notas y marcadores se sincronizan automáticamente y gratis.</string>
 </resources>

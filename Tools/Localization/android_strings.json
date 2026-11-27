@@ -164,6 +164,15 @@
     "guest_footer": "As a guest, everything stays on this device. You can sign in any time and your notes will come with you.",
     "signed_in_as": "Signed in as",
     "sign_out": "Sign Out",
+    "sign_out_question": "Sign out?",
+    "sign_out_keep_data": "Sign Out and Keep Data on This Device",
+    "sign_out_remove_data": "Sign Out and Remove Data from This Device",
+    "sign_out_message": "Your data stays safe in your account either way.",
+    "delete_account": "Delete Account",
+    "delete_account_question": "Delete your account?",
+    "delete_account_message": "This permanently deletes your account and your data in the cloud. It can't be undone.",
+    "delete_account_failed": "Your account couldn't be deleted. Please try again.",
+    "delete_account_footer": "Deletes your account and everything saved with it in the cloud: highlights, notes, plans, prayers, memory verses and group posts.",
     "google_failed": "Sign in with Google didn't work. Please try again.",
     "apple_failed": "Sign in with Apple didn't work. Please try again.",
     "confirm_email": "Check your email to confirm your account, then sign in.",
@@ -175,6 +184,7 @@
     "sync_now": "Sync Now",
     "syncing": "Syncing…",
     "synced": "Synced %@",
+    "synced_just_now": "Synced just now",
     "waiting_to_sync": "Waiting to sync",
     "sync_footer": "Highlights, notes and bookmarks sync automatically, free."
   }

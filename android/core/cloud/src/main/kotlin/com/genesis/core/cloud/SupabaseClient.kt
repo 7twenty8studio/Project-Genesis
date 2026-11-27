@@ -90,6 +90,10 @@ class SupabaseClient(
         send("POST", "auth/v1/recover", "", buildJsonObject { put("email", email) }.toString(), null)
     }
 
+    /** Calls an Edge Function as the signed-in person; the response body. */
+    fun callFunction(name: String, bodyJson: String, accessToken: String): String =
+        send("POST", "functions/v1/$name", "", bodyJson, accessToken)
+
     // MARK: REST (PostgREST), as on iOS
 
     /** Rows of `table` changed on the server after `cursor` (server_updated_at), oldest first. */

@@ -5,6 +5,8 @@ import android.content.Intent
 import android.net.Uri
 import android.text.format.DateUtils
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.runtime.remember
+import androidx.compose.material3.AlertDialog
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.foundation.Canvas
@@ -115,8 +117,7 @@ fun AccountScreen(
                     }
                 }
                 CloudSync(sync, syncState)
-                Spacer(Modifier.size(24.dp))
-                Group { Row_(stringResource(R.string.sign_out), onClick = account::signOut) }
+                AccountActions(sync, state)
             } else {
                 SignedOut(account, state, onApple = { openBrowser(OAuthProvider.APPLE) }, onGoogle = { openBrowser(OAuthProvider.GOOGLE) }, onGuest = onDone)
             }
@@ -316,6 +317,8 @@ private fun CloudSync(sync: SyncService, state: SyncState) {
         val status = when {
             state.isSyncing -> stringResource(R.string.syncing)
             failure != null -> failure.text ?: failure.res?.let { stringResource(it) }.orEmpty()
+            state.lastSyncedAt != null && System.currentTimeMillis() - state.lastSyncedAt < DateUtils.MINUTE_IN_MILLIS ->
+                stringResource(R.string.synced_just_now)
             state.lastSyncedAt != null -> stringResource(
                 R.string.synced,
                 DateUtils.getRelativeTimeSpanString(state.lastSyncedAt, System.currentTimeMillis(), DateUtils.MINUTE_IN_MILLIS).toString(),
@@ -330,4 +333,74 @@ private fun CloudSync(sync: SyncService, state: SyncState) {
         )
     }
     Footer(stringResource(R.string.sync_footer))
+}
+
+/** Sign Out (keeping or removing this device's copy) and Delete Account, as on iOS. */
+@Composable
+private fun AccountActions(sync: SyncService, state: AccountUiState) {
+    val colors = LocalReaderColors.current
+    val scope = rememberCoroutineScope()
+    var confirmSignOut by remember { mutableStateOf(false) }
+    var confirmDelete by remember { mutableStateOf(false) }
+    val destructive = Color(0xFFC0392B)
+
+    Spacer(Modifier.size(24.dp))
+    Group { Row_(stringResource(R.string.sign_out), onClick = { confirmSignOut = true }) }
+    Spacer(Modifier.size(24.dp))
+    Group {
+        Row_(stringResource(R.string.delete_account), onClick = { if (!state.isWorking) confirmDelete = true })
+        state.message?.takeIf { it.isError }?.let { message ->
+            Text(
+                message.text ?: message.res?.let { stringResource(it) }.orEmpty(),
+                style = MaterialTheme.typography.bodySmall,
+                color = destructive,
+                modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 14.dp),
+            )
+        }
+    }
+    Footer(stringResource(R.string.delete_account_footer))
+
+    if (confirmSignOut) {
+        AlertDialog(
+            onDismissRequest = { confirmSignOut = false },
+            title = { Text(stringResource(R.string.sign_out_question)) },
+            text = {
+                Column {
+                    Text(stringResource(R.string.sign_out_message))
+                    Spacer(Modifier.size(16.dp))
+                    TextButton(onClick = { confirmSignOut = false; scope.launch { sync.signOut(removeLocalData = false) } }) {
+                        Text(stringResource(R.string.sign_out_keep_data), color = colors.accent)
+                    }
+                    TextButton(onClick = { confirmSignOut = false; scope.launch { sync.signOut(removeLocalData = true) } }) {
+                        Text(stringResource(R.string.sign_out_remove_data), color = destructive)
+                    }
+                }
+            },
+            confirmButton = {},
+            dismissButton = {
+                TextButton(onClick = { confirmSignOut = false }) { Text(stringResource(R.string.cancel), color = colors.accent) }
+            },
+            containerColor = colors.surface,
+            titleContentColor = colors.text,
+            textContentColor = colors.secondaryText,
+        )
+    }
+    if (confirmDelete) {
+        AlertDialog(
+            onDismissRequest = { confirmDelete = false },
+            title = { Text(stringResource(R.string.delete_account_question)) },
+            text = { Text(stringResource(R.string.delete_account_message)) },
+            confirmButton = {
+                TextButton(onClick = { confirmDelete = false; scope.launch { sync.deleteAccount() } }) {
+                    Text(stringResource(R.string.delete_account), color = destructive)
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { confirmDelete = false }) { Text(stringResource(R.string.cancel), color = colors.accent) }
+            },
+            containerColor = colors.surface,
+            titleContentColor = colors.text,
+            textContentColor = colors.secondaryText,
+        )
+    }
 }

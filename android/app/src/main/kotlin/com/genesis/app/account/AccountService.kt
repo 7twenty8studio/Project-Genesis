@@ -112,6 +112,31 @@ class AccountService(context: Context, private val scope: CoroutineScope) {
         if (ending != null && client != null) scope.launch(Dispatchers.IO) { client.signOut(ending) }
     }
 
+    /**
+     * Deletes the account and everything saved with it in the cloud (the
+     * delete-account function, as on iOS; every table cascades from the
+     * account). Apple's tokens are revoked only from an iPhone, which can
+     * ask Apple for a fresh code; the deletion itself never waits on Apple.
+     */
+    suspend fun deleteAccount(): Boolean {
+        val client = client ?: return false
+        _state.update { it.copy(isWorking = true, message = null) }
+        return try {
+            val token = accessToken()
+            withContext(Dispatchers.IO) { client.callFunction("delete-account", "{}", token) }
+            session = null
+            vault.clear()
+            _state.update { AccountUiState() }
+            true
+        } catch (error: SupabaseError) {
+            Log.w(TAG, "Delete account failed", error)
+            val message = if (error is SupabaseError.Network) AccountMessage(R.string.server_unreachable, isError = true)
+            else AccountMessage(R.string.delete_account_failed, isError = true)
+            _state.update { it.copy(isWorking = false, message = message) }
+            false
+        }
+    }
+
     fun clearMessage() = _state.update { it.copy(message = null) }
 
     /** A current access token, refreshed when close to expiry (for sync). */

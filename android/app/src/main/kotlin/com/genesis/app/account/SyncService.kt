@@ -122,10 +122,37 @@ class SyncService(
      */
     private fun didSignIn(userId: String) {
         val owner = prefs.getString(OWNER, null)
-        if (owner != null && owner != userId) database.sync.eraseAll()
+        if (owner != null && owner != userId) eraseDevice()
         prefs.edit { putString(OWNER, userId) }
         _state.update { SyncState(lastSyncedAt = prefs.longOrNull(key("lastSyncedAt", userId))) }
         schedule()
+    }
+
+    /**
+     * Signs out, as AccountView on iOS: the data stays in the account either
+     * way; on this device it stays (and joins whoever signs in next, unless
+     * that's another account) or is removed.
+     */
+    suspend fun signOut(removeLocalData: Boolean) {
+        scheduled?.cancel()
+        running.withLock {
+            account.signOut()
+            if (removeLocalData) withContext(Dispatchers.IO) { eraseDevice() }
+        }
+    }
+
+    /** Deletes the account; this device's copy of its data goes too. */
+    suspend fun deleteAccount(): Boolean {
+        scheduled?.cancel()
+        return running.withLock {
+            account.deleteAccount().also { deleted -> if (deleted) withContext(Dispatchers.IO) { eraseDevice() } }
+        }
+    }
+
+    /** Removes the synced data and every cursor, so the next sync starts from scratch. */
+    private fun eraseDevice() {
+        database.sync.eraseAll()
+        prefs.edit { clear() }
     }
 
     private fun sync(userId: String, client: SupabaseClient, token: String) {

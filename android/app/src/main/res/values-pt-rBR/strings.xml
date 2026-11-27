@@ -163,6 +163,15 @@
     <string name="guest_footer">Como convidado, tudo fica neste dispositivo. Você pode entrar quando quiser, e suas anotações vêm junto.</string>
     <string name="signed_in_as">Conectado como</string>
     <string name="sign_out">Sair da conta</string>
+    <string name="sign_out_question">Sair da conta?</string>
+    <string name="sign_out_keep_data">Sair e manter os dados neste dispositivo</string>
+    <string name="sign_out_remove_data">Sair e remover os dados deste dispositivo</string>
+    <string name="sign_out_message">De qualquer forma, seus dados ficam seguros na sua conta.</string>
+    <string name="delete_account">Apagar conta</string>
+    <string name="delete_account_question">Apagar sua conta?</string>
+    <string name="delete_account_message">Isto apaga para sempre sua conta e seus dados na nuvem. Não pode ser desfeito.</string>
+    <string name="delete_account_failed">Não foi possível apagar sua conta. Tente de novo.</string>
+    <string name="delete_account_footer">Apaga sua conta e tudo o que foi salvo com ela na nuvem: destaques, anotações, planos, orações, versículos para memorizar e publicações em grupos.</string>
     <string name="google_failed">Não foi possível entrar com o Google. Tente de novo.</string>
     <string name="apple_failed">Não foi possível entrar com a Apple. Tente de novo.</string>
     <string name="confirm_email">Confira seu e-mail para confirmar sua conta e depois entre.</string>
@@ -174,6 +183,7 @@
     <string name="sync_now">Sincronizar agora</string>
     <string name="syncing">Sincronizando…</string>
     <string name="synced">Sincronizado %s</string>
+    <string name="synced_just_now">Sincronizado agora mesmo</string>
     <string name="waiting_to_sync">Esperando para sincronizar</string>
     <string name="sync_footer">Destaques, anotações e marcadores sincronizam automaticamente, de graça.</string>
 </resources>
