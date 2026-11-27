@@ -84,18 +84,23 @@ class BibleRepository private constructor(private val connection: SQLiteConnecti
 /**
  * Bundled databases live in the APK's assets, which SQLite can't open in
  * place, so each is copied once into no-backup storage (it's part of the
- * app, not the person's data). A new app version with a different file
- * size copies it again.
+ * app, not the person's data). It's copied again whenever the app is
+ * installed or updated (the package's lastUpdateTime, kept beside the copy),
+ * so a new Bible file always replaces the old one. Assets are only read as
+ * streams: openFd fails on compressed assets.
  */
 internal object BundledFiles {
     fun file(context: Context, asset: String): File = synchronized(this) {
         val directory = File(context.noBackupFilesDir, "bundled").apply { mkdirs() }
         val target = File(directory, asset)
-        val size = context.assets.openFd(asset).use { it.length }
-        if (!target.exists() || target.length() != size) {
+        val stamp = File(directory, "$asset.installed")
+        val installed = context.packageManager.getPackageInfo(context.packageName, 0).lastUpdateTime.toString()
+        val current = target.exists() && stamp.exists() && stamp.readText() == installed
+        if (!current) {
             val partial = File(directory, "$asset.partial")
             context.assets.open(asset).use { input -> partial.outputStream().use { input.copyTo(it) } }
             check(partial.renameTo(target)) { "Couldn't move $asset into place" }
+            stamp.writeText(installed)
         }
         target
     }

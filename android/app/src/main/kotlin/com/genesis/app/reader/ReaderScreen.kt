@@ -126,7 +126,14 @@ fun ReaderScreen(
         containerColor = colors.background,
     ) { padding ->
         Box(Modifier.fillMaxSize().padding(padding), contentAlignment = Alignment.TopCenter) {
-            state.chapter?.let { ChapterText(it) }
+            when {
+                state.chapter != null -> ChapterText(state.chapter)
+                state.failed -> Text(
+                    stringResource(R.string.chapter_load_failed),
+                    color = colors.secondaryText,
+                    modifier = Modifier.padding(24.dp),
+                )
+            }
         }
     }
 

@@ -1,6 +1,7 @@
 package com.genesis.app.reader
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.genesis.core.bible.BibleRepository
@@ -23,6 +24,8 @@ data class ReaderUiState(
     val bible: BundledBible = BundledBible.KJV,
     val chapter: Chapter? = null,
     val translations: List<Pair<BundledBible, Translation>> = emptyList(),
+    /** True when the chapter couldn't be read; the reader says so instead of closing. */
+    val failed: Boolean = false,
 )
 
 class ReaderViewModel(application: Application) : AndroidViewModel(application) {
@@ -33,7 +36,11 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
     init {
         viewModelScope.launch {
             val translations = withContext(Dispatchers.IO) {
-                BundledBible.entries.map { it to repository(it).translation }
+                BundledBible.entries.mapNotNull { bible ->
+                    runCatching { bible to repository(bible).translation }
+                        .onFailure { Log.e(TAG, "Couldn't open ${bible.asset}", it) }
+                        .getOrNull()
+                }
             }
             _state.update { it.copy(translations = translations) }
             load()
@@ -56,13 +63,23 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
     private fun load() {
         val (id, bible) = state.value.let { it.chapterId to it.bible }
         viewModelScope.launch {
-            val chapter = withContext(Dispatchers.IO) { repository(bible).chapter(id) }
-            _state.update { if (it.chapterId == id && it.bible == bible) it.copy(chapter = chapter) else it }
+            val chapter = withContext(Dispatchers.IO) {
+                runCatching { repository(bible).chapter(id) }
+                    .onFailure { Log.e(TAG, "Couldn't read $id from ${bible.asset}", it) }
+                    .getOrNull()
+            }
+            _state.update {
+                if (it.chapterId == id && it.bible == bible) it.copy(chapter = chapter, failed = chapter == null) else it
+            }
         }
     }
 
     private fun repository(bible: BundledBible): BibleRepository = synchronized(repositories) {
         repositories.getOrPut(bible) { BibleRepository.open(getApplication(), bible) }
+    }
+
+    private companion object {
+        const val TAG = "Reader"
     }
 
     override fun onCleared() {

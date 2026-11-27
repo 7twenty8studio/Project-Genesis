@@ -11,4 +11,5 @@
     <string name="previous_chapter">Capítulo anterior</string>
     <string name="next_chapter">Capítulo siguiente</string>
     <string name="close">Cerrar</string>
+    <string name="chapter_load_failed">No se pudo cargar este capítulo.</string>
 </resources>

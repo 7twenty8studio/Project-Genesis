@@ -19,9 +19,6 @@ android {
         // cross references ride along for phase 2.
         getByName("main").assets.directories.add("../../../Genesis/Resources/Bibles")
     }
-    androidResources {
-        noCompress += "sqlite"
-    }
 }
 
 dependencies {

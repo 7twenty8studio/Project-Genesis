@@ -11,6 +11,7 @@
     "chapter_number": "Chapter %lld",
     "previous_chapter": "Previous chapter",
     "next_chapter": "Next chapter",
-    "close": "Close"
+    "close": "Close",
+    "chapter_load_failed": "This chapter couldn't be loaded."
   }
 }
