@@ -33,6 +33,7 @@ class ReminderReceiver : BroadcastReceiver() {
                 val id = intent.dataString.orEmpty()
                 val notification = NotificationCompat.Builder(context, intent.getStringExtra(EXTRA_KIND) ?: "verseOfTheDay")
                     .setSmallIcon(R.drawable.ic_notification)
+                    .setColor(0xFFB9825A.toInt()) // Copper, from the brand.
                     .setContentTitle(title)
                     .setContentText(body)
                     .setStyle(NotificationCompat.BigTextStyle().bigText(body))
