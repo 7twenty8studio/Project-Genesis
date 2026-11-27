@@ -179,6 +179,11 @@ class BibleLibrary(context: Context, private val client: SupabaseClient?, privat
         synchronized(jobs) { jobs[item.id] = job }
     }
 
+    /** Pauses one download; a YouVersion Bible keeps the books it has and Continue carries on from there. */
+    fun pause(id: String) {
+        synchronized(jobs) { jobs[id] }?.cancel()
+    }
+
     /** Stops every download; YouVersion books fetched so far are kept. */
     fun pauseAll() {
         synchronized(jobs) { jobs.values.toList() }.forEach { it.cancel() }

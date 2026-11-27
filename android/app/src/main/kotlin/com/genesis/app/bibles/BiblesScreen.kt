@@ -145,6 +145,7 @@ fun BiblesScreen(currentBible: String, onRead: (InstalledBible) -> Unit, onDone:
                                 savedBooks = offered[entry.id]?.takeIf { it.isYouVersion && entry.id !in downloading && entry.id !in downloads }?.let { library.savedBookCount(it) } ?: 0,
                                 toolsBible = offered[entry.id]?.takeIf { it.isYouVersion }?.let { toolsBibleName(it.baseLanguage, catalog, translations) },
                                 onDiscard = { offered[entry.id]?.let { library.discard(it) } },
+                                onPause = { library.pause(entry.id) },
                                 onRead = bible?.let { { onRead(it) } },
                                 onDownload = { offered[entry.id]?.let { item -> library.start(item, Entitlements.isPremium) } },
                                 onRemove = if (entry.id in downloads) ({ removing = entry.id to entry.name }) else null,
@@ -222,6 +223,7 @@ private fun BibleCard(
     savedBooks: Int,
     toolsBible: String?,
     onDiscard: () -> Unit,
+    onPause: () -> Unit,
     onRead: (() -> Unit)?,
     onDownload: () -> Unit,
     onRemove: (() -> Unit)?,
@@ -247,11 +249,19 @@ private fun BibleCard(
                 val total = com.genesis.core.domain.bible.YouVersionBuild.BOOK_CODES.size.toLong()
                 if (isDownloading && booksDone != null) {
                     Text(stringResource(R.string.downloading_books, booksDone.toLong(), total), style = MaterialTheme.typography.bodySmall, color = colors.accent)
+                    androidx.compose.material3.LinearProgressIndicator(
+                        progress = { booksDone / total.toFloat() },
+                        color = colors.accent,
+                        trackColor = colors.separator,
+                        modifier = Modifier.fillMaxWidth().padding(top = 4.dp, end = 12.dp),
+                    )
                 } else if (!isDownloading && savedBooks > 0 && onRead == null) {
                     Text(stringResource(R.string.paused_books, savedBooks.toLong(), total), style = MaterialTheme.typography.bodySmall, color = colors.accent)
                 }
             }
             when {
+                // A YouVersion Bible comes book by book, so it can pause and carry on later.
+                isDownloading && item?.isYouVersion == true -> Pill(stringResource(R.string.pause), onPause)
                 isDownloading -> CircularProgressIndicator(color = colors.accent, strokeWidth = 2.dp, modifier = Modifier.size(24.dp))
                 savedBooks > 0 && onRead == null -> Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
                     Text(stringResource(R.string.discard), style = MaterialTheme.typography.labelLarge, color = colors.secondaryText, modifier = Modifier.clickable(onClick = onDiscard).padding(4.dp))
