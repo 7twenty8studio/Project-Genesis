@@ -1761,4 +1761,8 @@
     <string name="app_icon_seasons_note">Estações muda o ícone ao longo do ano: Outono, Inverno, Primavera e Verão, conforme onde você mora. Sua tela inicial pode levar um momento para mostrar o ícone novo.</string>
     <string name="app_icon_premium_note">Noite e os ícones das estações vêm com o Versely Premium.</string>
     <string name="app_icon_standard">Padrão</string>
+    <string name="feature_is_off">%s está desativado</string>
+    <string name="feature_off_message">Você escolheu ocultar isto em Ajustes › Recursos. Nada foi apagado; ative para continuar de onde parou.</string>
+    <string name="attachment_drawing">Desenho</string>
+    <string name="attachment_drawing_on_iphone">Este desenho foi feito em um iPhone ou iPad. Abra estas anotações lá para vê-lo.</string>
 </resources>

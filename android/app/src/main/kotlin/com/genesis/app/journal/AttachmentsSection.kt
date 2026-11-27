@@ -75,6 +75,8 @@ import com.genesis.core.domain.journal.AttachmentOwner
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.io.File
+import com.genesis.core.domain.study.InkPage
+import androidx.compose.foundation.layout.systemBarsPadding
 
 /**
  * The attachments on a prayer or sermon notes (Premium journal extras), as
@@ -93,7 +95,7 @@ internal fun AttachmentsSection(owner: AttachmentOwner, ownerId: String) {
     val colors = LocalReaderColors.current
     val all by store.all.collectAsStateWithLifecycle()
     val attachments = remember(all, ownerId) { AttachmentLimits.sorted(all.filter { it.owner == owner && it.ownerId == ownerId }) }
-    val pictures = attachments.filter { it.kind == AttachmentKind.PHOTO || it.kind == AttachmentKind.PDF }
+    val pictures = attachments.filter { it.kind == AttachmentKind.PHOTO || it.kind == AttachmentKind.PDF || it.kind == AttachmentKind.DRAWING }
     val recordings = attachments.filter { it.kind == AttachmentKind.AUDIO }
     val unlocked = Entitlements.isPremium
     val scope = rememberCoroutineScope()
@@ -105,6 +107,10 @@ internal fun AttachmentsSection(owner: AttachmentOwner, ownerId: String) {
     var viewing by remember { mutableStateOf<Attachment?>(null) }
     var deleting by remember { mutableStateOf<Attachment?>(null) }
     var recording by remember { mutableStateOf(false) }
+    // A Pencil page being written: a new one (no attachment yet) or one already attached.
+    var drawingNew by remember { mutableStateOf(false) }
+    var drawingOpen by remember { mutableStateOf<Pair<Attachment, InkPage>?>(null) }
+    var drawingElsewhere by remember { mutableStateOf(false) }
 
     val transfers = app.attachmentTransfers
     val backup by transfers.enabled.collectAsStateWithLifecycle()
@@ -217,6 +223,12 @@ internal fun AttachmentsSection(owner: AttachmentOwner, ownerId: String) {
                         menu = false
                         recording = true
                     })
+                    if (owner.allows(AttachmentKind.DRAWING)) {
+                        DropdownMenuItem(text = { Text(stringResource(R.string.attachment_drawing)) }, onClick = {
+                            menu = false
+                            drawingNew = true
+                        })
+                    }
                     if (owner.allows(AttachmentKind.PDF)) {
                         DropdownMenuItem(text = { Text(stringResource(R.string.import_pdf)) }, onClick = {
                             menu = false
@@ -246,6 +258,7 @@ internal fun AttachmentsSection(owner: AttachmentOwner, ownerId: String) {
             AttachmentTransfers.Problem.DRIVE_FULL -> add(stringResource(R.string.drive_full))
             null -> if (waiting > 0 && attachments.isNotEmpty()) add(stringResource(R.string.drive_waiting, waiting))
         }
+        if (drawingElsewhere) add(stringResource(R.string.attachment_drawing_on_iphone))
         if (AttachmentStorage.Place.ICLOUD in missing) add(stringResource(R.string.attachment_in_icloud))
         if (AttachmentStorage.Place.GOOGLE_DRIVE in missing) add(stringResource(R.string.attachment_not_downloaded))
     }
@@ -258,7 +271,13 @@ internal fun AttachmentsSection(owner: AttachmentOwner, ownerId: String) {
     }
 
     viewing?.let { attachment ->
-        if (attachment.kind == AttachmentKind.PDF) {
+        if (attachment.kind == AttachmentKind.DRAWING) {
+            LaunchedEffect(attachment.id) {
+                val page = AttachmentFiles.drawing(context, attachment)
+                if (page != null) drawingOpen = attachment to page else drawingElsewhere = true
+                viewing = null
+            }
+        } else if (attachment.kind == AttachmentKind.PDF) {
             LaunchedEffect(attachment.id) {
                 if (!AttachmentFiles.open(context, attachment)) problem = AttachmentFiles.Problem.PDF
                 viewing = null
@@ -282,6 +301,18 @@ internal fun AttachmentsSection(owner: AttachmentOwner, ownerId: String) {
             containerColor = colors.surface,
             titleContentColor = colors.text,
         )
+    }
+    if (drawingNew) {
+        DrawingDialog(InkPage(), onDelete = null, onDone = { page ->
+            drawingNew = false
+            if (!page.isEmpty) adding { AttachmentFiles.addDrawing(context, store, ownerId, page) }
+        })
+    }
+    drawingOpen?.let { (attachment, original) ->
+        DrawingDialog(original, onDelete = { drawingOpen = null; deleting = attachment }, onDone = { page ->
+            drawingOpen = null
+            if (page != original) adding { AttachmentFiles.updateDrawing(context, store, attachment, page) }
+        })
     }
     if (recording) {
         RecorderDialog(
@@ -313,6 +344,8 @@ private fun Thumbnail(attachment: Attachment, downloads: Int, onOpen: () -> Unit
     val bitmap by produceState<Bitmap?>(null, attachment.id, downloads) { value = AttachmentFiles.thumbnail(context, attachment, side) }
     val label = if (attachment.kind == AttachmentKind.PDF) {
         attachment.pageCount?.let { stringResource(R.string.pdf_pages, it) } ?: stringResource(R.string.pdf)
+    } else if (attachment.kind == AttachmentKind.DRAWING) {
+        stringResource(R.string.attachment_drawing)
     } else {
         stringResource(R.string.style_photo)
     }
@@ -321,9 +354,9 @@ private fun Thumbnail(attachment: Attachment, downloads: Int, onOpen: () -> Unit
         contentAlignment = Alignment.BottomStart,
     ) {
         bitmap?.let { Image(it.asImageBitmap(), contentDescription = null, contentScale = ContentScale.Crop, modifier = Modifier.fillMaxSize()) }
-        if (attachment.kind == AttachmentKind.PDF) {
+        if (attachment.kind == AttachmentKind.PDF || attachment.kind == AttachmentKind.DRAWING) {
             Text(
-                stringResource(R.string.pdf),
+                if (attachment.kind == AttachmentKind.PDF) stringResource(R.string.pdf) else "✎",
                 style = MaterialTheme.typography.labelSmall,
                 fontWeight = FontWeight.SemiBold,
                 color = Color.White,
@@ -348,6 +381,29 @@ private fun PhotoViewer(attachment: Attachment, onDelete: () -> Unit, onClose: (
             Box(Modifier.weight(1f).fillMaxWidth(), contentAlignment = Alignment.Center) {
                 bitmap?.let { Image(it.asImageBitmap(), contentDescription = stringResource(R.string.style_photo), contentScale = ContentScale.Fit, modifier = Modifier.fillMaxSize()) }
             }
+        }
+    }
+}
+
+/** A Pencil page on sermon notes, full screen, as DrawingAttachmentSheet on iOS; Done keeps what was written. */
+@Composable
+private fun DrawingDialog(initial: InkPage, onDelete: (() -> Unit)?, onDone: (InkPage) -> Unit) {
+    val colors = LocalReaderColors.current
+    var page by remember { mutableStateOf(initial) }
+    Dialog(onDismissRequest = { onDone(page) }, properties = DialogProperties(usePlatformDefaultWidth = false, dismissOnClickOutside = false)) {
+        Column(Modifier.fillMaxSize().background(colors.background).systemBarsPadding()) {
+            Row(Modifier.fillMaxWidth().padding(8.dp), verticalAlignment = Alignment.CenterVertically) {
+                if (onDelete != null) TextButton(onClick = onDelete) { Text(stringResource(R.string.delete), color = Color(0xFFC0392B)) }
+                Text(
+                    stringResource(R.string.attachment_drawing),
+                    style = MaterialTheme.typography.titleMedium,
+                    color = colors.text,
+                    modifier = Modifier.weight(1f).padding(horizontal = 8.dp),
+                    textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                )
+                TextButton(onClick = { onDone(page) }) { Text(stringResource(R.string.done), color = colors.accent, fontWeight = FontWeight.SemiBold) }
+            }
+            com.genesis.app.reader.HandwritingPage(page = page, onChange = { page = it }, modifier = Modifier.weight(1f).fillMaxWidth())
         }
     }
 }

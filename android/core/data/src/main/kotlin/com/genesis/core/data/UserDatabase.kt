@@ -490,6 +490,20 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             edited()
         }
 
+        /** Its file was written again (an edited Pencil page): the new size, copied to Drive again. */
+        fun replaced(id: String, byteSize: Long, now: Long = System.currentTimeMillis()) {
+            synchronized(lock) {
+                connection.prepare("UPDATE attachments SET byte_size = ?, needs_upload = 1, updated_at = ? WHERE id = ?").use {
+                    it.bindLong(1, byteSize)
+                    it.bindLong(2, now)
+                    it.bindText(3, id)
+                    it.step()
+                }
+            }
+            _all.value = load()
+            edited()
+        }
+
         /** Marks one removed and returns it, so its file can go too. */
         fun delete(id: String, now: Long = System.currentTimeMillis()): Attachment? {
             val removed = _all.value.firstOrNull { it.id == id } ?: return null

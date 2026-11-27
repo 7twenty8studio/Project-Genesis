@@ -135,6 +135,8 @@ fun AppShell(
     var widgetStylesOpen by rememberSaveable { mutableStateOf(false) }
     var widgetPhotoOpen by rememberSaveable { mutableStateOf(false) }
     var appIconOpen by rememberSaveable { mutableStateOf(false) }
+    // A link to a feature the person hid: its note and switch instead of the screen.
+    var featureOff by rememberSaveable { mutableStateOf<String?>(null) }
     // The verse widget's painted backgrounds, drawn once a moment after launch.
     LaunchedEffect(Unit) { withContext(Dispatchers.Default) { com.genesis.app.widget.WidgetArt.drawIfNeeded(app) } }
     androidx.lifecycle.compose.LifecycleResumeEffect(Unit) {
@@ -173,6 +175,22 @@ fun AppShell(
 
     // A versely:// link (a widget tap) opens its place over whatever was showing.
     LaunchedEffect(link) {
+        val linked = when (link) {
+            GenesisLink.Plans -> OptionalFeature.PLANS
+            GenesisLink.Prayer -> OptionalFeature.PRAYER
+            GenesisLink.Memorise -> OptionalFeature.MEMORISE
+            GenesisLink.Sermons -> OptionalFeature.SERMONS
+            GenesisLink.Insights -> OptionalFeature.INSIGHTS
+            is GenesisLink.Group -> OptionalFeature.TOGETHER
+            is GenesisLink.Sermon -> OptionalFeature.CHURCH_SERMONS
+            else -> null
+        }
+        if (linked != null && linked !in features) {
+            settingsOpen = false
+            featureOff = linked.rawValue
+            onLinkHandled()
+            return@LaunchedEffect
+        }
         when (link) {
             is GenesisLink.Read -> {
                 settingsOpen = false
@@ -455,6 +473,17 @@ fun AppShell(
             showsAmbient = features.shows(OptionalFeature.AMBIENT_SOUNDS, flags),
             onPreview = { welcomePreview = true },
             onDone = { welcomeSettingsOpen = false },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
+
+    featureOff?.let(OptionalFeature::of)?.let { hidden ->
+        androidx.activity.compose.BackHandler { featureOff = null }
+        com.genesis.app.features.FeatureOffScreen(
+            feature = hidden,
+            onTurnOn = { app.features.set(hidden, on = true); featureOff = null },
+            onDone = { featureOff = null },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )
         return
