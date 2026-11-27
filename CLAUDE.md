@@ -311,7 +311,12 @@ shares; README.md has the architecture.
   cantillation, Greek monotonic); the word shown stays verbatim.
   `PronunciationNote` says it's modern pronunciation, or how to add a voice.
 - Handwritten pages (free): `Note.drawing` (PencilKit data, external storage),
-  synced as base64 in notes.drawing (≤ 2 MB; larger stays on the device).
+  synced as base64 in notes.drawing (≤ 2 MB; larger stays on the device),
+  and as Versely Ink in notes.ink (docs/HANDWRITING_FORMAT.md; JSON shared
+  with Android, `VerselyInk` pure, `NoteInk` to and from PencilKit,
+  fixtures/ink.json tested on both). iOS reads `drawing` first, else `ink`.
+  Sending ink waits for migration 20261129000000 (`VerselyInk.syncs`,
+  Android's `InkFormat.SYNCS`); then `NoteInkBackfill` pushes every page once.
   Journal entries offer `JournalPrompts`.
 - Reading touches: `ReaderPreferences.largeInitial` (restyles, never changes,
   the first letter; verse 1's number is dropped), `pageTurnSound`
@@ -1203,6 +1208,10 @@ shares; README.md has the architecture.
   choice, 27 November 2026), rows synced with storage_path "gdrive:<file>";
   iPhone files stay in iCloud and show a note. Setup:
   android/GOOGLE_DRIVE_SETUP.md.
+- Handwritten pages on Android (`HandwritingPage`, Text / Handwriting in
+  the note editor): Versely Ink drawn directly; pen, pencil, marker,
+  eraser (also a pen's eraser end or button), pressure from a stylus,
+  Only Draw with a Pen. A page only in PencilKit's data shows a note.
 - Strings: add the resource name and its English (as iOS writes it) to
   Tools/Localization/android_strings.json, its Spanish and Portuguese to
   es.json / pt.json as usual, then run
