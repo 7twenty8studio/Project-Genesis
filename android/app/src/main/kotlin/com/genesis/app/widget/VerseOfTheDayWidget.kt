@@ -93,8 +93,10 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
             com.genesis.core.domain.widgets.WidgetArtShape.entries.associateWith { WidgetArt.load(context, style, it) }
         } else emptyMap()
         // A painted style whose pictures aren't drawn yet shows Classic until they are.
-        val look = WidgetLook.of(if (art.values.any { it != null }) style else com.genesis.core.domain.widgets.WidgetArtStyle.CLASSIC, art, styleTag = wanted != style)
-        provideContent { Content(day, look) }
+        val look = WidgetLook.of(if (style.isKeepsake || art.values.any { it != null }) style else com.genesis.core.domain.widgets.WidgetArtStyle.CLASSIC, art, styleTag = wanted != style)
+        // Instant Photo and Film Strip use the person's photo first.
+        val photo = if (style == com.genesis.core.domain.widgets.WidgetArtStyle.INSTANT_PHOTO || style == com.genesis.core.domain.widgets.WidgetArtStyle.FILM_STRIP) WidgetPhoto.thumbnail(context) else null
+        provideContent { Content(day, look, photo) }
     }
 
     /**
@@ -161,7 +163,7 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
     }
 
     @Composable
-    private fun Content(day: WidgetVerse?, look: WidgetLook) {
+    private fun Content(day: WidgetVerse?, look: WidgetLook, photo: android.graphics.Bitmap? = null) {
         val size = LocalSize.current
         val picture = look.art[com.genesis.core.domain.widgets.WidgetArtShape.of(size.width.value, size.height.value)]
         val small = size.width < MEDIUM.width
@@ -179,6 +181,18 @@ class VerseOfTheDayWidget : GlanceAppWidget() {
         val open = Intent(Intent.ACTION_VIEW, Uri.parse(day?.link ?: "versely://read"))
             .setClass(androidx.glance.LocalContext.current, MainActivity::class.java)
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        look.keepsake?.let { keepsake ->
+            KeepsakeContent(
+                style = keepsake,
+                title = androidx.glance.LocalContext.current.getString((day?.title ?: VerseWidgetSource.VERSE_OF_THE_DAY).titleRes),
+                text = day?.text.orEmpty(),
+                citation = day?.citation.orEmpty(),
+                premiumTag = day?.premiumTag == true || look.styleTag,
+                photo = photo,
+                open = actionStartActivity(open),
+            )
+            return
+        }
 
         Column(
             modifier = GlanceModifier
@@ -280,9 +294,12 @@ internal data class WidgetLook(
     val styleTag: Boolean = false,
     /** The postcard: the words keep clear of the stamp, and the citation reads "John 3:16 — KJV". */
     val vintage: Boolean = false,
+    /** A keepsake: cards on linen (KeepsakeContent) rather than words over a picture. */
+    val keepsake: com.genesis.core.domain.widgets.WidgetArtStyle? = null,
 ) {
     companion object {
         fun of(style: com.genesis.core.domain.widgets.WidgetArtStyle, art: Map<com.genesis.core.domain.widgets.WidgetArtShape, android.graphics.Bitmap?>, styleTag: Boolean): WidgetLook {
+            if (style.isKeepsake) return WidgetLook(emptyMap(), WidgetPalette.text, WidgetPalette.secondary, WidgetPalette.accent, styleTag, keepsake = style)
             if (!style.hasPicture) return WidgetLook(emptyMap(), WidgetPalette.text, WidgetPalette.secondary, WidgetPalette.accent, styleTag)
             fun fixed(hex: Long) = androidx.glance.unit.ColorProvider(Color(hex))
             if (style.isDark) return WidgetLook(art, fixed(0xFFF6EEE2), fixed(0xFFDCCBB6), fixed(0xFFEBC08F), styleTag)

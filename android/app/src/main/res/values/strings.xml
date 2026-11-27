@@ -1692,4 +1692,11 @@
     <string name="widget_style_photo">Your Photo</string>
     <string name="choose_photo_for_style">Choose a photo to use this style.</string>
     <string name="widget_style_vintage">Vintage</string>
+    <string name="widget_style_instant_photo">Instant Photo</string>
+    <string name="widget_style_pressed_flowers">Pressed Flowers</string>
+    <string name="widget_style_film_strip">Film Strip</string>
+    <string name="widget_style_typewriter">Typewriter</string>
+    <string name="widget_style_library_card">Library Card</string>
+    <string name="widget_style_calendar_page">Calendar Page</string>
+    <string name="due_for_today">Due for Today</string>
 </resources>

@@ -181,6 +181,7 @@ fun WidgetStylesScreen(onDone: () -> Unit, onPhoto: () -> Unit, modifier: Modifi
 /** One style at one widget size: the verse over its background, as the widget draws it. */
 @Composable
 private fun Preview(style: WidgetArtStyle, shape: WidgetArtShape, verse: Pair<String, String>?, drawn: Int) {
+    if (style.isKeepsake) return KeepsakePreview(style, shape, verse)
     val context = LocalContext.current
     val photoVersion by WidgetPhoto.version.collectAsStateWithLifecycle()
     val picture by produceState<Bitmap?>(null, style, shape, drawn, photoVersion) {
@@ -234,6 +235,95 @@ private fun Preview(style: WidgetArtStyle, shape: WidgetArtShape, verse: Pair<St
                 modifier = Modifier.weight(1f),
             )
             verse?.second?.let { Text(it, color = secondary, fontFamily = FontFamily.Serif, fontStyle = FontStyle.Italic, fontSize = 12.sp, maxLines = 1) }
+        }
+    }
+}
+
+/** A keepsake as its widget draws it: cards on linen, the verse on the cream card. */
+@Composable
+private fun KeepsakePreview(style: WidgetArtStyle, shape: WidgetArtShape, verse: Pair<String, String>?) {
+    val context = LocalContext.current
+    val photoVersion by WidgetPhoto.version.collectAsStateWithLifecycle()
+    val label = stringResource(R.string.widget_style_preview, stringResource(style.titleRes))
+    // The preview's size in dp, as a phone's widget of that shape.
+    val (wDp, hDp) = when (shape) {
+        WidgetArtShape.SMALL -> 170f to 170f
+        WidgetArtShape.MEDIUM -> 360f to 171f
+        WidgetArtShape.LARGE -> 360f to 377f
+    }
+    val inner = 10f
+    val gap = 8f
+    val cards by produceState<Pair<Bitmap?, Bitmap?>>(null to null, style, shape, photoVersion) {
+        value = withContext(Dispatchers.Default) {
+            val photo = if (style == WidgetArtStyle.INSTANT_PHOTO || style == WidgetArtStyle.FILM_STRIP) WidgetPhoto.thumbnail(context) else null
+            val date = LocalDate.now()
+            val w = wDp - inner * 2
+            val h = hDp - inner * 2
+            when (shape) {
+                WidgetArtShape.MEDIUM -> Keepsakes.textCard(context, style, w - gap - 118f, h, false) to Keepsakes.pictureCard(context, style, 118f, h, shape, photo, date)
+                WidgetArtShape.LARGE -> Keepsakes.textCard(context, style, w, h - gap - 168f, false) to Keepsakes.pictureCard(context, style, w, 168f, shape, photo, date)
+                WidgetArtShape.SMALL ->
+                    if (style == WidgetArtStyle.INSTANT_PHOTO) null to Keepsakes.pictureCard(context, style, w, h, shape, photo, date, verse?.second?.substringBefore(" · "))
+                    else null to Keepsakes.pictureCard(context, style, w, h, shape, photo, date)
+            }
+        }
+    }
+    val typewriter = style == WidgetArtStyle.TYPEWRITER
+    @Composable
+    fun Words(modifier: Modifier) {
+        Column(modifier.padding(start = if (style == WidgetArtStyle.LIBRARY_CARD) 22.dp else 14.dp, end = 14.dp, top = if (style == WidgetArtStyle.FILM_STRIP) 20.dp else 12.dp, bottom = if (style == WidgetArtStyle.FILM_STRIP) 18.dp else 12.dp)) {
+            Text(
+                stringResource(if (style == WidgetArtStyle.LIBRARY_CARD) R.string.due_for_today else R.string.verse_of_the_day).uppercase(),
+                color = Color(if (style == WidgetArtStyle.LIBRARY_CARD) Keepsakes.TERRACOTTA else Keepsakes.SAGE),
+                fontSize = 10.sp, fontWeight = FontWeight.Bold, maxLines = 1,
+            )
+            Spacer(Modifier.size(6.dp))
+            Text(
+                verse?.first.orEmpty(),
+                color = Color(if (typewriter) Keepsakes.INK else Keepsakes.BODY),
+                fontFamily = if (typewriter) FontFamily.Monospace else FontFamily.Serif,
+                fontSize = if (shape == WidgetArtShape.LARGE) 17.sp else 14.sp,
+                lineHeight = if (shape == WidgetArtShape.LARGE) 22.sp else 18.sp,
+                overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.weight(1f),
+            )
+            verse?.second?.let {
+                Text(
+                    it.replace(" · ", " — "),
+                    color = Color(if (typewriter) Keepsakes.FADED_RED else Keepsakes.SAGE),
+                    fontFamily = if (typewriter) FontFamily.Monospace else FontFamily.Serif,
+                    fontStyle = if (typewriter) FontStyle.Normal else FontStyle.Italic,
+                    fontSize = 11.sp, maxLines = 1,
+                )
+            }
+        }
+    }
+    @Composable
+    fun Card(bitmap: Bitmap?, modifier: Modifier, words: Boolean) {
+        Box(modifier) {
+            bitmap?.let { Image(it.asImageBitmap(), contentDescription = null, contentScale = ContentScale.FillBounds, modifier = Modifier.fillMaxSize()) }
+            if (words) Words(Modifier.fillMaxSize())
+        }
+    }
+    Box(
+        Modifier
+            .size(wDp.dp, hDp.dp)
+            .clip(RoundedCornerShape(20.dp))
+            .background(Color(0xFFEEE8DE))
+            .clearAndSetSemantics { contentDescription = label },
+    ) {
+        Image(androidx.compose.ui.res.painterResource(R.drawable.keepsake_linen), contentDescription = null, contentScale = ContentScale.Crop, modifier = Modifier.fillMaxSize())
+        val (text, picture) = cards
+        when (shape) {
+            WidgetArtShape.MEDIUM -> Row(Modifier.fillMaxSize().padding(inner.dp), horizontalArrangement = Arrangement.spacedBy(gap.dp)) {
+                Card(text, Modifier.weight(1f).fillMaxSize(), words = true)
+                Card(picture, Modifier.size(118.dp, (hDp - inner * 2).dp), words = false)
+            }
+            WidgetArtShape.LARGE -> Column(Modifier.fillMaxSize().padding(inner.dp), verticalArrangement = Arrangement.spacedBy(gap.dp)) {
+                Card(picture, Modifier.fillMaxWidth().size((wDp - inner * 2).dp, 168.dp), words = false)
+                Card(text, Modifier.weight(1f).fillMaxWidth(), words = true)
+            }
+            WidgetArtShape.SMALL -> Card(picture, Modifier.fillMaxSize().padding(inner.dp), words = false)
         }
     }
 }

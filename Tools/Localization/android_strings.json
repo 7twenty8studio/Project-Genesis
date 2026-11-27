@@ -1691,6 +1691,13 @@
     "widget_photo_in_widget": "Your photo in the widget",
     "widget_style_photo": "Your Photo",
     "choose_photo_for_style": "Choose a photo to use this style.",
-    "widget_style_vintage": "Vintage"
+    "widget_style_vintage": "Vintage",
+    "widget_style_instant_photo": "Instant Photo",
+    "widget_style_pressed_flowers": "Pressed Flowers",
+    "widget_style_film_strip": "Film Strip",
+    "widget_style_typewriter": "Typewriter",
+    "widget_style_library_card": "Library Card",
+    "widget_style_calendar_page": "Calendar Page",
+    "due_for_today": "Due for Today"
   }
 }

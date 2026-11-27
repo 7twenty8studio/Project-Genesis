@@ -15,7 +15,9 @@ class WidgetArtTest {
     @Test fun idsMatchIOS() {
         assertEquals(WidgetArtStyle.FOREST, WidgetArtStyle.of("forest"))
         assertEquals(WidgetArtStyle.VINTAGE, WidgetArtStyle.of("vintage"))
-        assertEquals(null, WidgetArtStyle.of("typewriter"))
+        assertEquals(WidgetArtStyle.TYPEWRITER, WidgetArtStyle.of("typewriter"))
+        assertEquals(null, WidgetArtStyle.of("polaroid"))
+        assertTrue(WidgetArtStyle.CALENDAR_PAGE.isKeepsake && !WidgetArtStyle.CALENDAR_PAGE.isPainted)
     }
 
     @Test fun darkInk() {

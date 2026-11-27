@@ -48,6 +48,16 @@ object WidgetPhoto {
         original(context).takeIf { it.exists() }?.let { BitmapFactory.decodeFile(it.path) }
     }
 
+    /** The photo made small enough for a widget (the keepsakes' prints and film). */
+    suspend fun thumbnail(context: Context, longSide: Int = 720): Bitmap? = withContext(Dispatchers.IO) {
+        val file = original(context).takeIf { it.exists() } ?: return@withContext null
+        val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+        BitmapFactory.decodeFile(file.path, bounds)
+        var sample = 1
+        while (max(bounds.outWidth, bounds.outHeight) / (sample * 2) >= longSide) sample *= 2
+        BitmapFactory.decodeFile(file.path, BitmapFactory.Options().apply { inSampleSize = sample })
+    }
+
     /** Keeps a chosen photo and frames it in the middle for every widget size. */
     suspend fun save(context: Context, uri: Uri): Boolean = withContext(Dispatchers.IO) {
         val decoded = runCatching {

@@ -189,5 +189,11 @@ internal val com.genesis.core.domain.widgets.WidgetArtStyle.titleRes: Int
         com.genesis.core.domain.widgets.WidgetArtStyle.FOREST -> R.string.widget_style_forest
         com.genesis.core.domain.widgets.WidgetArtStyle.OCEAN -> R.string.widget_style_ocean
         com.genesis.core.domain.widgets.WidgetArtStyle.HEARTH -> R.string.widget_style_hearth
+        com.genesis.core.domain.widgets.WidgetArtStyle.INSTANT_PHOTO -> R.string.widget_style_instant_photo
+        com.genesis.core.domain.widgets.WidgetArtStyle.PRESSED_FLOWERS -> R.string.widget_style_pressed_flowers
+        com.genesis.core.domain.widgets.WidgetArtStyle.FILM_STRIP -> R.string.widget_style_film_strip
+        com.genesis.core.domain.widgets.WidgetArtStyle.TYPEWRITER -> R.string.widget_style_typewriter
+        com.genesis.core.domain.widgets.WidgetArtStyle.LIBRARY_CARD -> R.string.widget_style_library_card
+        com.genesis.core.domain.widgets.WidgetArtStyle.CALENDAR_PAGE -> R.string.widget_style_calendar_page
         com.genesis.core.domain.widgets.WidgetArtStyle.PHOTO -> R.string.widget_style_photo
     }

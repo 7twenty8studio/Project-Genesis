@@ -4,7 +4,7 @@ package com.genesis.core.domain.widgets
  * The verse widget's looks, as WidgetArtStyle on iOS (the same ids). Classic
  * is free; the painted papers, the seasons, Night and the scenes are
  * Premium, and show Classic with a Premium tag without it, never a locked
- * card. (The keepsakes join later.)
+ * card.
  */
 enum class WidgetArtStyle(val rawValue: String) {
     CLASSIC("classic"),
@@ -19,6 +19,13 @@ enum class WidgetArtStyle(val rawValue: String) {
     FOREST("forest"),
     OCEAN("ocean"),
     HEARTH("hearth"),
+    /** The keepsakes, after the owner's light mockups: linen, cream cards, sage and terracotta. */
+    INSTANT_PHOTO("instantPhoto"),
+    PRESSED_FLOWERS("pressedFlowers"),
+    FILM_STRIP("filmStrip"),
+    TYPEWRITER("typewriter"),
+    LIBRARY_CARD("libraryCard"),
+    CALENDAR_PAGE("calendarPage"),
     /** A photo the person chose in Versely (Settings › Widget Photo). */
     PHOTO("photo");
 
@@ -29,18 +36,23 @@ enum class WidgetArtStyle(val rawValue: String) {
     /** Words go in light ink on these (dark art or a shaded photo). */
     val isDark: Boolean get() = this == NIGHT || this == PHOTO || isScene
 
-    /** A picture the app paints for the widget. */
-    val isPainted: Boolean get() = this != CLASSIC && this != PHOTO
+    val isKeepsake: Boolean get() = this in setOf(INSTANT_PHOTO, PRESSED_FLOWERS, FILM_STRIP, TYPEWRITER, LIBRARY_CARD, CALENDAR_PAGE)
+
+    /** A picture the app paints once for the widget (keepsakes are drawn at the widget's size, with the day's date). */
+    val isPainted: Boolean get() = this != CLASSIC && this != PHOTO && !isKeepsake
 
     /** A picture behind the words (painted, or the person's photo). */
-    val hasPicture: Boolean get() = this != CLASSIC
+    val hasPicture: Boolean get() = this != CLASSIC && !isKeepsake
 
     /** What a widget shows: the style, or Classic without Premium (with a Premium tag). */
     fun shown(premium: Boolean): WidgetArtStyle = if (needsPremium && !premium) CLASSIC else this
 
     companion object {
         /** The order Widget Styles shows them in, as on iOS. */
-        val galleryOrder: List<WidgetArtStyle> = listOf(CLASSIC, PAPER, VINTAGE, NIGHT, SPRING, SUMMER, AUTUMN, WINTER, FOREST, OCEAN, HEARTH, PHOTO)
+        val galleryOrder: List<WidgetArtStyle> = listOf(
+            CLASSIC, PAPER, VINTAGE, NIGHT, SPRING, SUMMER, AUTUMN, WINTER, FOREST, OCEAN, HEARTH,
+            INSTANT_PHOTO, PRESSED_FLOWERS, FILM_STRIP, TYPEWRITER, LIBRARY_CARD, CALENDAR_PAGE, PHOTO,
+        )
 
         val painted: List<WidgetArtStyle> = entries.filter { it.isPainted }
 
