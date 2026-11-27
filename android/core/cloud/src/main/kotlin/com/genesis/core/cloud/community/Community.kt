@@ -149,6 +149,64 @@ enum class ContentKind(val rawValue: String) {
     GROUP_PRAYER("group_prayer"),
     GROUP_POST("group_post"),
     GROUP_ANNOUNCEMENT("group_announcement"),
+    COMMUNITY_POST("community_post"),
+    COMMUNITY_COMMENT("community_comment"),
+}
+
+/** The public community's two feeds: the prayer wall and reflections. */
+enum class CommunityPostKind(val rawValue: String) { PRAYER("prayer"), REFLECTION("reflection") }
+
+/**
+ * A prayer request or reflection, from community_feed() (which never says
+ * who wrote someone else's anonymous post: `authorId` is null then).
+ */
+@Serializable
+data class CommunityPost(
+    val id: String,
+    @SerialName("author_id") val authorId: String? = null,
+    @SerialName("is_mine") val isMine: Boolean = false,
+    val kind: String,
+    val body: String,
+    @SerialName("start_verse") val startVerse: Int? = null,
+    @SerialName("end_verse") val endVerse: Int? = null,
+    @SerialName("display_name") val displayName: String,
+    @SerialName("reaction_count") val reactionCount: Int = 0,
+    @SerialName("comment_count") val commentCount: Int = 0,
+    @SerialName("created_at") val createdAt: String,
+    @SerialName("hidden_at") val hiddenAt: String? = null,
+) {
+    val postKind: CommunityPostKind get() = if (kind == CommunityPostKind.REFLECTION.rawValue) CommunityPostKind.REFLECTION else CommunityPostKind.PRAYER
+
+    /** The passage it's about (verse 0 means the whole chapter), as ids, or null. */
+    val passage: Pair<Int, Int>? get() {
+        val start = startVerse ?: return null
+        if (start / 1_000_000 !in 1..66) return null
+        return start to (endVerse ?: start)
+    }
+}
+
+@Serializable
+data class CommunityComment(
+    val id: String,
+    @SerialName("post_id") val postId: String,
+    @SerialName("user_id") val userId: String,
+    @SerialName("display_name") val displayName: String,
+    val body: String,
+    @SerialName("created_at") val createdAt: String,
+)
+
+/** What someone writes before posting: verse ids only, never the passage's words. */
+data class CommunityDraft(
+    val kind: CommunityPostKind,
+    val body: String,
+    val start: Int? = null,
+    val end: Int? = null,
+    val isAnonymous: Boolean = false,
+) {
+    companion object {
+        const val MAXIMUM_LENGTH = 1500
+        const val PAGE = 40
+    }
 }
 
 /** Report reasons: the value sent is English, as iOS sends it. */
@@ -275,6 +333,67 @@ class CommunityApi(private val client: SupabaseClient, private val token: () -> 
 
     fun remove(kind: ContentKind, id: String) {
         rpc("remove_content", "p_type" to JsonPrimitive(kind.rawValue), "p_id" to JsonPrimitive(id.lowercase()))
+    }
+
+    // Community (the prayer wall and reflections; the `community` switch)
+
+    /** Newest first, through community_feed(), which keeps anonymous authors anonymous. */
+    fun feed(kind: CommunityPostKind, before: String?): List<CommunityPost> = wrap {
+        json.decodeFromString<List<CommunityPost>>(
+            rpc(
+                "community_feed",
+                "p_kind" to JsonPrimitive(kind.rawValue),
+                "p_before" to (before?.let(::JsonPrimitive) ?: JsonNull),
+                "p_limit" to JsonPrimitive(CommunityDraft.PAGE),
+            ).ifEmpty { "[]" },
+        )
+    }
+
+    @Serializable
+    private data class ReactionRow(@SerialName("post_id") val postId: String)
+
+    fun myReactions(posts: Collection<String>): Set<String> {
+        if (posts.isEmpty()) return emptySet()
+        return get<ReactionRow>(
+            "community_reactions",
+            "select" to "post_id",
+            "post_id" to "in.(${posts.joinToString(",") { it.lowercase() }})",
+            "user_id" to "eq.${me()}",
+        ).mapTo(mutableSetOf()) { it.postId.lowercase() }
+    }
+
+    fun addCommunityPost(draft: CommunityDraft) = insert(
+        "community_posts",
+        "kind" to JsonPrimitive(draft.kind.rawValue),
+        "body" to JsonPrimitive(draft.body.trim()),
+        "start_verse" to (draft.start?.let(::JsonPrimitive) ?: JsonNull),
+        "end_verse" to ((draft.end ?: draft.start)?.let(::JsonPrimitive) ?: JsonNull),
+        "is_anonymous" to JsonPrimitive(draft.isAnonymous),
+    )
+
+    fun setReacted(reacted: Boolean, post: String) {
+        if (reacted) {
+            insertIgnoringDuplicate("community_reactions", "post_id" to JsonPrimitive(post.lowercase()))
+        } else {
+            delete("community_reactions", "post_id" to "eq.${post.lowercase()}", "user_id" to "eq.${me()}")
+        }
+    }
+
+    /** The newest 300, oldest first. */
+    fun comments(post: String): List<CommunityComment> = get<CommunityComment>(
+        "community_comments",
+        "select" to "id,post_id,user_id,display_name,body,created_at",
+        "post_id" to "eq.${post.lowercase()}",
+        "order" to "created_at.desc",
+        "limit" to "300",
+    ).reversed()
+
+    fun addComment(body: String, post: String) =
+        insert("community_comments", "post_id" to JsonPrimitive(post.lowercase()), "body" to JsonPrimitive(body.trim()))
+
+    /** Blocks whoever wrote a post, even an anonymous one, without being told who. */
+    fun blockPostAuthor(post: String) {
+        rpc("block_post_author", "p_post" to JsonPrimitive(post.lowercase()))
     }
 
     // Groups

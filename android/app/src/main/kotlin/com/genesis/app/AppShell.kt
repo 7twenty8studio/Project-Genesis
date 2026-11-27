@@ -117,7 +117,7 @@ fun AppShell(
     val tabs = AppTab.entries.filter {
         when (it) {
             AppTab.EXPLORE -> features.shows(OptionalFeature.EXPLORE, flags)
-            AppTab.TOGETHER -> flags[FeatureFlags.GROUPS] == true && features.shows(OptionalFeature.TOGETHER, flags)
+            AppTab.TOGETHER -> (flags[FeatureFlags.GROUPS] == true || flags[FeatureFlags.COMMUNITY] == true) && features.shows(OptionalFeature.TOGETHER, flags)
             else -> true
         }
     }
