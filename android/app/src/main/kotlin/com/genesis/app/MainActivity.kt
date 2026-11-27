@@ -68,6 +68,8 @@ class MainActivity : ComponentActivity() {
             // A grant given (or ended) in Studio OS since Versely was last open.
             com.genesis.app.settings.Entitlements.refreshGrant(app)
         }
+        // Google Play: prices, and a subscription renewed, ended or bought on another phone.
+        (application as VerselyApplication).billing.start()
         // A new day, or a change in Android's notification settings.
         (application as VerselyApplication).refreshReminders()
     }
@@ -84,7 +86,8 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun receive(intent: Intent?) {
-        val data = intent?.dataString ?: return
+        // A push Android showed itself (Versely was closed) carries its link in the extras.
+        val data = intent?.dataString ?: intent?.getStringExtra("link")?.takeIf { it.startsWith("versely://") } ?: return
         // versely://auth-callback finishes signing in with Apple or Google.
         if ((application as VerselyApplication).account.handleCallback(data)) return
         GenesisLink.parse(data)?.let { parsed -> link.update { parsed } }

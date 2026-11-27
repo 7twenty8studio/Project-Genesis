@@ -177,6 +177,11 @@ class SupabaseClient(
         send("POST", "rest/v1/$table", "on_conflict=id", rowsJson, accessToken, prefer = "resolution=merge-duplicates,return=minimal")
     }
 
+    /** Inserts or updates one row by the given unique columns (e.g. "user_id,token"). */
+    fun upsert(table: String, conflict: String, rowJson: String, accessToken: String) {
+        send("POST", "rest/v1/$table", "on_conflict=${encode(conflict)}", rowJson, accessToken, prefer = "resolution=merge-duplicates,return=minimal")
+    }
+
     /** Marks rows deleted so other devices remove them too. */
     fun markDeleted(table: String, ids: Collection<String>, atMillis: Long, accessToken: String) {
         if (ids.isEmpty()) return

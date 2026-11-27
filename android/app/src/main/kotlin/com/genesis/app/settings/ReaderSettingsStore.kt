@@ -116,6 +116,7 @@ object Entitlements {
     private const val TEST_KEY = "premium.testAsPremium"
     private const val GRANT_KEY = "premium.grant"
     private const val GRANT_ENDS_KEY = "premium.grantEnds"
+    private const val PLAY_KEY = "premium.play"
     /** Settings › Developer › Test as Premium (debug builds). */
     var isTestingPremium: Boolean by mutableStateOf(false)
         private set
@@ -124,10 +125,21 @@ object Entitlements {
         set(value) { isTestingPremium = value }
     private var grant = com.genesis.core.domain.premium.PremiumGrant.NONE
 
+    /** A Google Play subscription this phone's Google account has (PlayBilling). */
+    var hasPlaySubscription: Boolean by mutableStateOf(false)
+        private set
+    private var appContext: Context? = null
+
+    /** Whether Premium came from the owner's grant (and its end), for the Premium screen. */
+    val grantEndsAt: java.time.Instant? get() = grant.endsAt.takeIf { grant.isActive() }
+    val hasGrant: Boolean get() = grant.isActive()
+
     private fun prefs(context: Context) = context.getSharedPreferences("premium", Context.MODE_PRIVATE)
 
     fun load(context: Context) {
+        appContext = context.applicationContext
         val prefs = prefs(context)
+        hasPlaySubscription = prefs.getBoolean(PLAY_KEY, false)
         testing = BuildConfig.DEBUG && prefs.getBoolean(TEST_KEY, false)
         val ends = prefs.getLong(GRANT_ENDS_KEY, 0L).takeIf { it > 0 }?.let(java.time.Instant::ofEpochMilli)
         grant = com.genesis.core.domain.premium.PremiumGrant(prefs.getBoolean(GRANT_KEY, false), ends)
@@ -168,7 +180,15 @@ object Entitlements {
         AppIcons.apply(app)
     }
 
+    /** Google Play answered: kept for the next launch, when Play may not have answered yet. */
+    fun setPlaySubscription(active: Boolean) {
+        hasPlaySubscription = active
+        appContext?.let { prefs(it).edit { putBoolean(PLAY_KEY, active) } }
+        recompute()
+        appContext?.let { AppIcons.apply(it) }
+    }
+
     private fun recompute() {
-        isPremium = testing || grant.isActive()
+        isPremium = testing || grant.isActive() || hasPlaySubscription
     }
 }

@@ -137,6 +137,24 @@
             android:exported="false"
             android:foregroundServiceType="dataSync" />
 
+        <!-- Group announcements and nudges (Firebase Cloud Messaging; off until Firebase is set up, AndroidPush). -->
+        <service
+            android:name=".push.VerselyMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/notification_copper" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="groups" />
+
         <!-- What's playing (the chapter read aloud and ambient sounds) keeps going with the screen off, in one player (Media3). -->
         <service
             android:name=".audio.ListeningService"

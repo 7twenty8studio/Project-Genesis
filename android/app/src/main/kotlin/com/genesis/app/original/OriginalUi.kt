@@ -2,6 +2,7 @@ package com.genesis.app.original
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -55,12 +56,13 @@ internal fun originalFont(language: OriginalLanguage): FontFamily {
 internal fun originalReadingSize(size: Double, language: OriginalLanguage): Double =
     if (language == OriginalLanguage.HEBREW) size * 1.3 else size * 1.08
 
-/** A Premium part of a free screen: what it offers. Unlocking arrives with billing. */
+/** A Premium part of a free screen: what it offers; tapping it opens the Premium screen. */
 @Composable
 internal fun PremiumTeaser(message: String, modifier: Modifier = Modifier) {
     val colors = LocalReaderColors.current
     Column(
-        modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(colors.surface).padding(16.dp),
+        modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(colors.surface)
+            .clickable { com.genesis.app.premium.Paywall.open() }.padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(6.dp),
     ) {
         Text(stringResource(R.string.premium), style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.SemiBold, color = colors.accent)

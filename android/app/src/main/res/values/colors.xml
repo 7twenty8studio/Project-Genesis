@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Copper, from the brand: the tint of Versely's notifications. -->
+    <color name="notification_copper">#B9825A</color>
+</resources>

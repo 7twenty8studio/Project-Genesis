@@ -62,3 +62,25 @@ test("a nudge reads in the receiver's language", () => {
   assert.deepEqual(payload.aps.alert["loc-args"], ["Ruth"]);
   assert.equal(payload.versely.groupID, "g1");
 });
+
+test("an Android message carries the announcement and the group's link", async () => {
+  const { fcmMessage, isDeadFcmToken, ANDROID_NUDGE_KEY } = await import("./lib.ts");
+  const announcement = notificationPayload("Grace Church", { id: "a1", group_id: "g1", title: "Sunday", body: "Bring a friend." });
+  const message = fcmMessage("token-1", announcement).message as Record<string, any>;
+  assert.equal(message.token, "token-1");
+  assert.equal(message.android.notification.title, "Grace Church");
+  assert.equal(message.android.notification.body, "Sunday\nBring a friend.");
+  assert.equal(message.android.notification.channel_id, "groups");
+  assert.equal(message.data.link, "versely://group/g1");
+  assert.equal(message.data.announcementID, "a1");
+
+  const nudge = fcmMessage("token-2", nudgePayload("Grace Church", "g1", "Ana")).message as Record<string, any>;
+  assert.equal(nudge.android.notification.body_loc_key, ANDROID_NUDGE_KEY);
+  assert.deepEqual(nudge.android.notification.body_loc_args, ["Ana"]);
+  assert.equal(nudge.android.notification.body, undefined);
+  assert.equal(nudge.data.nudge, "true");
+
+  assert.ok(isDeadFcmToken(404, undefined));
+  assert.ok(isDeadFcmToken(400, "INVALID_ARGUMENT"));
+  assert.ok(!isDeadFcmToken(503, "UNAVAILABLE"));
+});

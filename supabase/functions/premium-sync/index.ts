@@ -1,7 +1,10 @@
 // premium-sync: tells the server about the person's App Store subscription.
 //
 // POST /functions/v1/premium-sync with the user's access token and
-//   { signedTransaction }   (the StoreKit 2 JWS of the active subscription)
+//   { signedTransaction }   (the StoreKit 2 JWS of the active subscription), or
+//   { playPurchaseToken }   (Versely for Android: a Google Play subscription's
+//                            purchase token, checked with the Play Developer
+//                            API, _shared/playIO.ts),
 // or an empty body (just asks), returns
 //   { premium, expiresAt, source }   source: "grant" | "subscription" | null
 //
@@ -17,6 +20,8 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import { VerificationError } from "../_shared/appstore.ts";
 import { activeGrant, claimTransaction, forgetEntitlement, savedEntitlement } from "../_shared/premium.ts";
+import { isPurchaseToken, playKey, PlayVerificationError } from "../_shared/play.ts";
+import { claimPlayPurchase, PlayNotConfigured } from "../_shared/playIO.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -43,9 +48,24 @@ Deno.serve(async (req) => {
       ? body.signedTransaction
       : undefined;
 
+    const playPurchaseToken = isPurchaseToken(body?.playPurchaseToken) ? body.playPurchaseToken : undefined;
+
     // 1. The subscription the app sent, if any: verify and record it.
     let subscription: { expiresAt: string } | null = null;
     let checkFailed = false;
+    if (playPurchaseToken) {
+      try {
+        subscription = await claimPlayPurchase(admin, userID, playPurchaseToken);
+      } catch (error) {
+        if (error instanceof PlayVerificationError) {
+          // Ended, on hold or not this app's: only that Play row stops counting.
+          await admin.from("premium_entitlements").delete().eq("user_id", userID).eq("original_transaction_id", playKey(playPurchaseToken));
+        } else {
+          if (!(error instanceof PlayNotConfigured)) console.error(error);
+          checkFailed = true;
+        }
+      }
+    }
     if (signedTransaction) {
       try {
         subscription = await claimTransaction(admin, userID, signedTransaction);
@@ -62,7 +82,7 @@ Deno.serve(async (req) => {
     }
 
     // 2. Otherwise what's on file (kept current by App Store notifications).
-    if (!subscription && (!signedTransaction || checkFailed)) {
+    if (!subscription && ((!signedTransaction && !playPurchaseToken) || checkFailed)) {
       const saved = await savedEntitlement(admin, userID);
       if (saved && new Date(saved.expires_at).getTime() > Date.now()) subscription = { expiresAt: saved.expires_at };
     }

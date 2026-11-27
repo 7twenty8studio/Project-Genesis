@@ -75,8 +75,7 @@ import java.time.ZoneId
  * Settings › Widget Styles, as WidgetStylesView on iOS: every look the verse
  * widget can wear, each previewed with today's verse. The choice goes to
  * every verse widget whose Background is "Chosen in Versely" (the default).
- * Anyone can look; Premium styles carry a tag (and can be chosen once the
- * Premium screen comes with Google Play Billing).
+ * Anyone can look; Premium styles carry a tag and open the Premium screen.
  */
 @Composable
 fun WidgetStylesScreen(onDone: () -> Unit, onPhoto: () -> Unit, modifier: Modifier = Modifier) {
@@ -153,7 +152,8 @@ fun WidgetStylesScreen(onDone: () -> Unit, onPhoto: () -> Unit, modifier: Modifi
                         .clip(RoundedCornerShape(16.dp))
                         .background(colors.surface)
                         .semantics { this.selected = selected }
-                        .clickable(enabled = !locked, role = Role.RadioButton) {
+                        .clickable(role = Role.RadioButton) {
+                            if (locked) { com.genesis.app.premium.Paywall.open(); return@clickable }
                             scope.launch { WidgetStylePreference.set(context, style) }
                             if (style == WidgetArtStyle.PHOTO && !WidgetPhoto.exists(context)) onPhoto()
                         }

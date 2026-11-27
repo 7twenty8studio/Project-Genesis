@@ -118,6 +118,8 @@ fun SettingsScreen(
                 Divider_()
                 // The account's email once signed in, else Sign In (as iOS's Account row).
                 Row_(stringResource(R.string.account), onClick = onAccount, trailing = "›", icon = "👤", value = accountTitle ?: stringResource(R.string.sign_in))
+                Divider_()
+                Row_(stringResource(R.string.versely_premium), onClick = { com.genesis.app.premium.Paywall.openAlways() }, trailing = "›", icon = "✦")
             }
 
             Header(stringResource(R.string.reading))
@@ -132,10 +134,10 @@ fun SettingsScreen(
                     Row_(stringResource(R.string.ambient_title), onClick = onAmbient, trailing = "›", icon = "🔈", premium = !Entitlements.isPremium)
                 }
                 Divider_()
-                // Premium: without it the row shows its tag (the paywall comes with Google Play Billing).
+                // Premium: without it the row shows its tag and opens the Premium screen.
                 Row_(
                     stringResource(R.string.morning_welcome),
-                    onClick = { if (Entitlements.isPremium) onMorningWelcome() },
+                    onClick = { if (Entitlements.isPremium) onMorningWelcome() else com.genesis.app.premium.Paywall.open() },
                     trailing = "›",
                     icon = "🌅",
                     premium = !Entitlements.isPremium,

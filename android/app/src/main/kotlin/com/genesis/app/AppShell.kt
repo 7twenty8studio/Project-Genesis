@@ -111,7 +111,13 @@ fun AppShell(
     val prayers by app.userData.prayers.all.collectAsStateWithLifecycle()
     val account by app.account.state.collectAsStateWithLifecycle()
     // Signing in or out: that account's Premium grant.
-    LaunchedEffect(account.user?.id) { com.genesis.app.settings.Entitlements.refreshGrant(app) }
+    LaunchedEffect(account.user?.id) {
+        com.genesis.app.settings.Entitlements.refreshGrant(app)
+        // Group announcements and nudges reach this phone only while signed in.
+        com.genesis.app.push.AndroidPush.sync(app)
+        // A Google Play subscription bought before signing in reaches this account too.
+        app.billing.syncWithServer()
+    }
     val syncState by app.sync.state.collectAsStateWithLifecycle()
     val flags by app.flags.values.collectAsStateWithLifecycle()
     val features by app.features.enabled.collectAsStateWithLifecycle()
@@ -475,6 +481,15 @@ fun AppShell(
             showsAmbient = features.shows(OptionalFeature.AMBIENT_SOUNDS, flags),
             onPreview = { welcomePreview = true },
             onDone = { welcomeSettingsOpen = false },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
+
+    if (com.genesis.app.premium.Paywall.isShown) {
+        androidx.activity.compose.BackHandler { com.genesis.app.premium.Paywall.close() }
+        com.genesis.app.premium.PremiumScreen(
+            onDone = { com.genesis.app.premium.Paywall.close() },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )
         return

@@ -1213,6 +1213,18 @@ shares; README.md has the architecture.
   the note editor): Versely Ink drawn directly; pen, pencil, marker,
   eraser (also a pen's eraser end or button), pressure from a stylus,
   Only Draw with a Pen. A page only in PencilKit's data shows a note.
+- Premium on Android: `Entitlements.isPremium` = a Premium grant, a Google
+  Play subscription (`PlayBilling`: product
+  com.7twenty8studio.versely.premium, base plans monthly/yearly, trial as an
+  offer; no Family Sharing on Play, so Individual only) or the DEBUG
+  switch. Purchases carry the account id (obfuscatedAccountId) and go to
+  premium-sync as `playPurchaseToken`; rows are keyed "play:<token>" with
+  store 'google_play' (rules in _shared/play.ts, I/O in _shared/playIO.ts).
+  `play-notifications` (no-verify-jwt, `?secret=PLAY_RTDN_SECRET`) keeps
+  them current. Locked things open `Paywall` (`PremiumScreen`). Push: FCM
+  from local.properties `versely.firebase*` (no google-services.json),
+  tokens in android_push_tokens, sent by group-notify with
+  FIREBASE_SERVICE_ACCOUNT. Setup: android/PLAY_SETUP.md.
 - Strings: add the resource name and its English (as iOS writes it) to
   Tools/Localization/android_strings.json, its Spanish and Portuguese to
   es.json / pt.json as usual, then run

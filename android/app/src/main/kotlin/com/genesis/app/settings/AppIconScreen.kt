@@ -76,8 +76,8 @@ fun AppIconScreen(onDone: () -> Unit, modifier: Modifier = Modifier) {
                             selected = icon == chosen.shown(premium),
                             locked = locked,
                             onClick = {
-                                // The paywall comes with Google Play Billing; a locked icon stays a preview.
-                                if (!locked) { chosen = icon; AppIcons.choose(context, icon) }
+                                if (locked) com.genesis.app.premium.Paywall.open()
+                                else { chosen = icon; AppIcons.choose(context, icon) }
                             },
                             modifier = Modifier.weight(1f),
                         )
