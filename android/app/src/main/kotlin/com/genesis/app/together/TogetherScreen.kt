@@ -63,7 +63,7 @@ import kotlinx.coroutines.launch
  * asks once for the community guidelines.
  */
 @Composable
-fun TogetherScreen(onSignIn: () -> Unit, onRead: (com.genesis.core.domain.bible.ChapterId) -> Unit, modifier: Modifier = Modifier) {
+fun TogetherScreen(bible: com.genesis.app.prayer.JournalBible, bibleId: String, onSignIn: () -> Unit, onRead: (com.genesis.core.domain.bible.ChapterId) -> Unit, modifier: Modifier = Modifier) {
     val app = LocalContext.current.applicationContext as VerselyApplication
     val store = app.community
     val state by store.state.collectAsStateWithLifecycle()
@@ -75,7 +75,7 @@ fun TogetherScreen(onSignIn: () -> Unit, onRead: (com.genesis.core.domain.bible.
 
     openGroup?.let { id ->
         BackHandler { openGroup = null }
-        GroupScreen(groupId = id, onBack = { openGroup = null }, onRead = onRead, modifier = modifier)
+        GroupScreen(groupId = id, bible = bible, bibleId = bibleId, onBack = { openGroup = null }, onRead = onRead, modifier = modifier)
         return
     }
 

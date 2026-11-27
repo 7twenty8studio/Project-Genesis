@@ -299,7 +299,15 @@ fun AppShell(
                     modifier = content,
                 )
             }
-            AppTab.TOGETHER -> TogetherScreen(onSignIn = { accountOpen = true }, onRead = { read(it.firstVerse) }, modifier = content)
+            AppTab.TOGETHER -> TogetherScreen(
+                bible = JournalBible(
+                    key = state.bible,
+                    language = state.chapter?.translation?.language ?: "en",
+                    abbreviation = state.chapter?.translation?.abbreviation ?: state.bible.id,
+                    verses = reader::verses,
+                ),
+                bibleId = state.bible.id,
+                onSignIn = { accountOpen = true }, onRead = { read(it.firstVerse) }, modifier = content)
         }
     }
 

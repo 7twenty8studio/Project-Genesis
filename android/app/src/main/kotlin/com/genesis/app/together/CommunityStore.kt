@@ -1,6 +1,7 @@
 package com.genesis.app.together
 
 import com.genesis.app.account.AccountService
+import com.genesis.core.cloud.community.ChallengeApi
 import com.genesis.core.cloud.community.CommunityApi
 import com.genesis.core.cloud.community.CommunityError
 import com.genesis.core.cloud.community.CommunityProfile
@@ -48,6 +49,24 @@ class CommunityStore(private val account: AccountService, private val scope: Cor
             token = { runCatching { runBlocking { account.accessToken() } }.getOrElse { throw CommunityError.SignInRequired() } },
             userId = { account.state.value.user?.id },
         )
+    }
+
+    val challenges: ChallengeApi? = account.client?.let { client ->
+        ChallengeApi(client, token = { runCatching { runBlocking { account.accessToken() } }.getOrElse { throw CommunityError.SignInRequired() } })
+    }
+
+    /** Runs a challenge action, showing its error; true when it worked. */
+    suspend fun performChallenge(action: (ChallengeApi) -> Unit): Boolean {
+        val api = challenges ?: return false
+        _state.update { it.copy(isWorking = true, error = null) }
+        return try {
+            withContext(Dispatchers.IO) { action(api) }
+            _state.update { it.copy(isWorking = false) }
+            true
+        } catch (error: CommunityError) {
+            _state.update { it.copy(isWorking = false, error = error) }
+            false
+        }
     }
 
     fun isMine(user: String): Boolean = user.equals(state.value.userId, ignoreCase = true)

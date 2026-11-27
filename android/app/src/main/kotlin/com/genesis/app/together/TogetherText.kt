@@ -36,6 +36,11 @@ internal fun CommunityError.text(): Int = when (this) {
         "owner_role_fixed" -> R.string.error_owner_role_fixed
         "use_leave" -> R.string.error_use_leave
         "not_a_member" -> R.string.error_not_a_member
+        "invalid_challenge" -> R.string.error_invalid_challenge
+        "too_many_challenges" -> R.string.five_challenges
+        "challenge_ended" -> R.string.error_challenge_ended
+        "not_started" -> R.string.error_not_started
+        "invalid_item" -> R.string.error_invalid_item
         else -> R.string.error_unknown
     }
 }

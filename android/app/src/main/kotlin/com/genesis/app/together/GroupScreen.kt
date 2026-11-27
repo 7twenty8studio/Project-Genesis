@@ -71,6 +71,8 @@ import com.genesis.core.cloud.community.GroupMember
 import com.genesis.core.cloud.community.GroupPost
 import com.genesis.core.cloud.community.GroupPrayer
 import com.genesis.core.cloud.community.MemberProgress
+import com.genesis.core.cloud.community.ChallengeProgress
+import com.genesis.app.prayer.JournalBible
 import com.genesis.core.domain.bible.ChapterId
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.lazy.LazyListScope
@@ -104,7 +106,7 @@ internal data class GroupContent(
  * out; the database still decides who may post, remove or announce.
  */
 @Composable
-fun GroupScreen(groupId: String, onBack: () -> Unit, onRead: (ChapterId) -> Unit, modifier: Modifier = Modifier) {
+fun GroupScreen(groupId: String, bible: JournalBible, bibleId: String, onBack: () -> Unit, onRead: (ChapterId) -> Unit, modifier: Modifier = Modifier) {
     val app = LocalContext.current.applicationContext as VerselyApplication
     val store = app.community
     val state by store.state.collectAsStateWithLifecycle()
@@ -122,6 +124,10 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, onRead: (ChapterId) -> Unit
     var editing by remember { mutableStateOf(false) }
     var allDays by rememberSaveable { mutableStateOf(false) }
     var openDay by rememberSaveable { mutableStateOf<Int?>(null) }
+    var challenges by remember { mutableStateOf(ChallengeContent()) }
+    var openChallenge by rememberSaveable { mutableStateOf<String?>(null) }
+    var finishedChallenges by rememberSaveable { mutableStateOf(false) }
+    var newChallenge by remember { mutableStateOf(false) }
 
     suspend fun reload() {
         val api = store.api ?: return
@@ -148,10 +154,17 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, onRead: (ChapterId) -> Unit
             content = content.copy(loaded = true)
         }
     }
+    suspend fun reloadChallenges() {
+        val api = store.challenges ?: return
+        runCatching { withContext(Dispatchers.IO) { loadChallenges(api, groupId) } }.onSuccess { challenges = it }
+    }
     suspend fun reloadModeration() {
         if (group?.isLeader == true) runCatching { moderation = loadModeration(app, groupId) }
     }
-    LaunchedEffect(groupId) { reload() }
+    LaunchedEffect(groupId) {
+        reload()
+        reloadChallenges()
+    }
     LaunchedEffect(groupId, group?.isLeader, moderating) { if (!moderating) reloadModeration() }
 
     if (moderating && group != null) {
@@ -184,7 +197,33 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, onRead: (ChapterId) -> Unit
             runCatching { withContext(Dispatchers.IO) { api.readers(groupId, day) } }.onSuccess { content = content.copy(readers = content.readers + (day to it)) }
         }
     }
-    BackHandler(enabled = openDay != null || allDays) { if (openDay != null) openDay = null else allDays = false }
+    BackHandler(enabled = openDay != null || allDays || openChallenge != null || finishedChallenges) {
+        when {
+            openChallenge != null -> openChallenge = null
+            finishedChallenges -> finishedChallenges = false
+            openDay != null -> openDay = null
+            else -> allDays = false
+        }
+    }
+
+    /** Ticks a challenge item, showing it at once and putting it back if saving fails. */
+    fun tick(challengeId: String, done: Boolean, item: Int) {
+        val me = state.userId ?: return
+        val before = challenges
+        val rows = challenges.progress[challengeId].orEmpty().toMutableList()
+        val index = rows.indexOfFirst { it.userId.equals(me, ignoreCase = true) }.takeIf { it >= 0 }
+            ?: rows.size.also { rows += ChallengeProgress(me, state.profile?.displayName.orEmpty(), 0, emptyList()) }
+        val items = rows[index].items.orEmpty().toMutableSet().apply { if (done) add(item) else remove(item) }
+        rows[index] = rows[index].copy(items = items.sorted(), done = items.size)
+        challenges = challenges.copy(progress = challenges.progress + (challengeId to rows))
+        scope.launch {
+            if (store.performChallenge { it.setCheckin(done, item, challengeId) }) {
+                store.challenges?.let { api -> runCatching { withContext(Dispatchers.IO) { api.progress(challengeId) } }.onSuccess { challenges = challenges.copy(progress = challenges.progress + (challengeId to it)) } }
+            } else {
+                challenges = before
+            }
+        }
+    }
 
     Column(modifier.fillMaxSize().background(colors.background).statusBarsPadding().imePadding()) {
         Row(Modifier.padding(start = 4.dp, end = 4.dp, top = 8.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -243,6 +282,32 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, onRead: (ChapterId) -> Unit
         val postMenu = { post: GroupPost -> menu(ContentKind.GROUP_POST, post.id, post.userId, post.displayName) }
         fun send(day: Int?): suspend (String) -> Boolean = { body -> store.perform { it.addPost(body, day, groupId) }.also { if (it) reload() } }
         val visibleMembers = content.members.filter { it.userId.lowercase() !in state.blocked }
+        openChallenge?.let { id ->
+            val challenge = challenges.challenges.firstOrNull { it.id == id }
+            LaunchedEffect(id) {
+                store.challenges?.let { api -> runCatching { withContext(Dispatchers.IO) { api.progress(id) } }.onSuccess { challenges = challenges.copy(progress = challenges.progress + (id to it)) } }
+            }
+            ChallengeScreen(
+                challenge = challenge,
+                rows = challenges.progress[id].orEmpty().filter { store.isMine(it.userId) || it.userId.lowercase() !in state.blocked },
+                me = state.userId,
+                canManage = group.isLeader,
+                bible = bible,
+                onTick = { done, item -> tick(id, done, item) },
+                onRead = onRead,
+                onPrayers = {
+                    openChallenge = null
+                    finishedChallenges = false
+                    tab = GroupTab.PRAYER
+                },
+                onEnd = { scope.launch { if (store.performChallenge { it.end(id) }) reloadChallenges() } },
+            )
+            return@Column
+        }
+        if (finishedChallenges) {
+            FinishedChallenges(challenges, onOpen = { openChallenge = it })
+            return@Column
+        }
         val day = openDay
         if (plan != null && day != null) {
             LaunchedEffect(day) { loadReaders(day) }
@@ -269,6 +334,16 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, onRead: (ChapterId) -> Unit
                         }
                         if (plan != null && today != null && today > 0) item {
                             ProgressCard(plan, today, content, visibleMembers, store::isMine, onAllDays = { allDays = true })
+                        }
+                        item {
+                            ChallengesCard(
+                                challenges,
+                                me = state.userId,
+                                canManage = group.isLeader,
+                                onOpen = { openChallenge = it },
+                                onFinished = { finishedChallenges = true },
+                                onNew = { newChallenge = true },
+                            )
                         }
                     },
                 )
@@ -308,6 +383,23 @@ fun GroupScreen(groupId: String, onBack: () -> Unit, onRead: (ChapterId) -> Unit
             action = stringResource(R.string.leave),
             onConfirm = { scope.launch { if (store.leaveGroup(group.id)) onBack() } },
             onDismiss = { leaving = false },
+        )
+    }
+    if (newChallenge && group != null) {
+        NewChallengeDialog(
+            bible = bible,
+            bibleId = bibleId,
+            onCreate = { draft ->
+                var id: String? = null
+                val created = store.performChallenge { id = it.create(draft, groupId) }
+                if (created) {
+                    newChallenge = false
+                    reloadChallenges()
+                    openChallenge = id
+                }
+                created
+            },
+            onCancel = { newChallenge = false; store.clearError() },
         )
     }
     if (editing && group != null) {
