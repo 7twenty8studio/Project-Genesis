@@ -111,6 +111,20 @@ fun BiblesScreen(currentBible: String, onRead: (InstalledBible) -> Unit, onDone:
     var chosenLanguage by rememberSaveable { mutableStateOf<String?>(null) }
     val language = chosenLanguage ?: ReadingLibrary.defaultLanguage(currentLanguage, appLanguage, entries)
     val languages = ReadingLibrary.languages(entries, appLanguage)
+    var guideOpen by rememberSaveable { mutableStateOf(false) }
+    if (guideOpen) {
+        val guideLanguage = if (language == ReadingLibrary.ALL_LANGUAGES) ReadingLibrary.base(currentLanguage ?: appLanguage) else language
+        val bibles = ReadingLibrary.sections(entries, guideLanguage, appLanguage).firstOrNull()?.second.orEmpty().map { entry ->
+            GuideBible(
+                entry.id,
+                entry.name,
+                translations[entry.id]?.abbreviation ?: entry.id,
+                com.genesis.core.domain.bible.TranslationProfile.of(offered[entry.id], entry.id),
+            )
+        }
+        TranslationGuideScreen(languageName(guideLanguage), bibles) { guideOpen = false }
+        return
+    }
 
     Column(modifier.fillMaxSize().background(colors.background).statusBarsPadding()) {
         Row(Modifier.padding(start = 20.dp, end = 8.dp, top = 8.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -128,6 +142,12 @@ fun BiblesScreen(currentBible: String, onRead: (InstalledBible) -> Unit, onDone:
         ) {
             Text(stringResource(R.string.bibles_free_offline), style = MaterialTheme.typography.bodyMedium, color = colors.secondaryText)
             if (languages.size > 1) LanguageMenu(language, languages) { chosenLanguage = it }
+            Text(
+                "ⓘ  " + stringResource(R.string.guide_link),
+                style = MaterialTheme.typography.bodyLarge,
+                color = colors.accent,
+                modifier = Modifier.clickable { guideOpen = true }.padding(vertical = 4.dp),
+            )
             for ((code, list) in ReadingLibrary.sections(entries, language, appLanguage)) {
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text(languageName(code), style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold, color = colors.secondaryText, modifier = Modifier.semantics { heading() })
