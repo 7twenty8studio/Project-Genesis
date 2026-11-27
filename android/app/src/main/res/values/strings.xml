@@ -1758,4 +1758,8 @@
     <string name="start_each_day_with_verse">Start each day with a verse</string>
     <string name="notification_invite_message">Get the verse of the day each morning, and a gentle reminder in the evening if you haven\'t read yet. Change times or turn them off anytime in Settings › Notifications.</string>
     <string name="turn_on">Turn On</string>
+    <string name="app_icon">App Icon</string>
+    <string name="app_icon_seasons_note">Seasons changes the icon through the year: Autumn, Winter, Spring and Summer, by where you live. Your home screen can take a moment to show a new icon.</string>
+    <string name="app_icon_premium_note">Night and the seasonal icons come with Versely Premium.</string>
+    <string name="app_icon_standard">Standard</string>
 </resources>

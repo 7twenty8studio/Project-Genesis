@@ -34,6 +34,8 @@ class MainActivity : ComponentActivity() {
         // The widget catches up on a new day, the Bible or the language when the app opens.
         lifecycleScope.launch { VerseOfTheDayWidget.refresh(applicationContext) }
         (application as VerselyApplication).followReminders()
+        // Seasons changes with the calendar; a lapsed Premium returns to the standard icon.
+        com.genesis.app.settings.AppIcons.apply(applicationContext)
         setContent {
             val preferences by settings.preferences.collectAsStateWithLifecycle()
             val recentColors = settings.recentColors.collectAsStateWithLifecycle()

@@ -1757,6 +1757,10 @@
     "page_too_large": "This page is too large to sync, so it stays on this device.",
     "start_each_day_with_verse": "Start each day with a verse",
     "notification_invite_message": "Get the verse of the day each morning, and a gentle reminder in the evening if you haven't read yet. Change times or turn them off anytime in Settings › Notifications.",
-    "turn_on": "Turn On"
+    "turn_on": "Turn On",
+    "app_icon": "App Icon",
+    "app_icon_seasons_note": "Seasons changes the icon through the year: Autumn, Winter, Spring and Summer, by where you live. Your home screen can take a moment to show a new icon.",
+    "app_icon_premium_note": "Night and the seasonal icons come with Versely Premium.",
+    "app_icon_standard": "Standard"
   }
 }

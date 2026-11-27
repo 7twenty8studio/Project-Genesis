@@ -52,7 +52,7 @@ import com.genesis.core.design.LocalReaderColors
  * & Streaks, Bibles and Account; Reading (Theme & Reading, Listening,
  * Ambient Sounds, Morning Welcome); Send Feedback; About Versely (help, privacy, version);
  * Language; and the note that the reader's Aa holds the same settings.
- * Versely Premium, App Icon and Widget Photo join with Google Play Billing.
+ * Versely Premium's paywall joins with Google Play Billing.
  */
 @Composable
 fun SettingsScreen(
@@ -65,6 +65,7 @@ fun SettingsScreen(
     showsGoals: Boolean = true,
     onBibles: () -> Unit = {},
     onFeedback: () -> Unit = {},
+    onAppIcon: () -> Unit = {},
     showsListening: Boolean = true,
     onAmbient: (() -> Unit)? = null,
     offersYouVersionBibles: Boolean = false,
@@ -144,6 +145,9 @@ fun SettingsScreen(
                 Row_(stringResource(R.string.widget_styles), onClick = onWidgetStyles, trailing = "›", icon = "▦")
                 Divider_()
                 Row_(stringResource(R.string.widget_photo), onClick = onWidgetPhoto, trailing = "›", icon = "🖼")
+                Divider_()
+                // Open to everyone: the standard icon is free, the others carry their tag inside.
+                Row_(stringResource(R.string.app_icon), onClick = onAppIcon, trailing = "›", icon = "◻")
             }
 
             Spacer(Modifier.size(20.dp))

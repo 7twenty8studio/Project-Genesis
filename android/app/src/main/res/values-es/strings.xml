@@ -1757,4 +1757,8 @@
     <string name="start_each_day_with_verse">Empieza cada día con un versículo</string>
     <string name="notification_invite_message">Recibe el versículo del día cada mañana y un recordatorio amable por la tarde si aún no has leído. Cambia las horas o desactívalos cuando quieras en Ajustes › Notificaciones.</string>
     <string name="turn_on">Activar</string>
+    <string name="app_icon">Icono de la app</string>
+    <string name="app_icon_seasons_note">Estaciones cambia el icono a lo largo del año: Otoño, Invierno, Primavera y Verano, según donde vives. Tu pantalla de inicio puede tardar un momento en mostrar el icono nuevo.</string>
+    <string name="app_icon_premium_note">Noche y los iconos de temporada vienen con Versely Premium.</string>
+    <string name="app_icon_standard">Estándar</string>
 </resources>
