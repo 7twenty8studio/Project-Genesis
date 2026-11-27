@@ -3,6 +3,9 @@
 
     <!-- Accounts and sync (Supabase). Reading never needs the network. -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Voice recordings on prayers and sermon notes, asked for only when the person records. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
     <!-- Reminders: local notifications, scheduled on the phone (no server), put back after a restart. -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />

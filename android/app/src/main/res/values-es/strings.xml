@@ -1700,4 +1700,27 @@
     <string name="due_for_today">Para hoy</string>
     <string name="set_as_live_wallpaper">Usar como fondo animado</string>
     <string name="live_wallpaper_description">Tu versículo, con la estación pasando suavemente.</string>
+    <string name="attachments">Adjuntos</string>
+    <string name="add_attachment">Añadir adjunto</string>
+    <string name="choose_photos">Elegir fotos</string>
+    <string name="take_photo">Tomar foto</string>
+    <string name="record_voice">Grabar voz</string>
+    <string name="import_pdf">Importar PDF</string>
+    <string name="delete_attachment_question">¿Eliminar este adjunto?</string>
+    <string name="voice_recording">Grabación de voz</string>
+    <string name="record">Grabar</string>
+    <string name="record_again">Grabar de nuevo</string>
+    <string name="pdf">PDF</string>
+    <string name="pdf_pages">PDF, %d páginas</string>
+    <string name="attachment_photo_failed">No se pudo añadir esa foto.</string>
+    <string name="attachment_pdf_failed">No se pudo abrir ese PDF.</string>
+    <string name="attachment_too_large">Ese archivo es demasiado grande para adjuntarlo.</string>
+    <string name="attachment_recording_failed">No se pudo guardar la grabación.</string>
+    <string name="attachment_saving_failed">No se pudo guardar en este dispositivo.</string>
+    <string name="sermon_recording_reminder">Algunas iglesias piden que no se graben los sermones. Consulta primero, por favor.</string>
+    <string name="recording_failed_start">No se pudo empezar a grabar. Inténtalo de nuevo.</string>
+    <string name="attachments_device_footer">Los adjuntos se guardan en este dispositivo. Aún no se copian a tus otros dispositivos.</string>
+    <string name="attachments_premium_teaser">Añade fotos, grabaciones de voz y PDF con Premium.</string>
+    <string name="microphone_denied">Versely no puede usar el micrófono. Actívalo en Ajustes del teléfono › Aplicaciones › Versely › Permisos.</string>
+    <string name="recording_saved_on_device">Se guarda en este dispositivo. Aún no se copia a tus otros dispositivos.</string>
 </resources>

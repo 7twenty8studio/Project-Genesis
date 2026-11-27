@@ -21,6 +21,9 @@ import com.genesis.core.domain.memorise.MemorySchedule
 import com.genesis.core.domain.memorise.MemoryVerse
 import com.genesis.core.domain.prayer.Prayer
 import com.genesis.core.domain.sermons.Sermon
+import com.genesis.core.domain.journal.Attachment
+import com.genesis.core.domain.journal.AttachmentKind
+import com.genesis.core.domain.journal.AttachmentOwner
 import com.genesis.core.domain.prayer.PrayerCategory
 import com.genesis.core.domain.prayer.PrayerPassage
 import com.genesis.core.domain.plans.ReadingPlan
@@ -204,6 +207,32 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             )
             connection.execSQL("PRAGMA user_version = 7")
         }
+        if (version < 8) {
+            // Journal attachments, as attachments on the server: what each file
+            // is and what it belongs to. The file itself is on the device
+            // (Attachments/<id>.<ext>), never in the database. Kept on this
+            // device for now: these rows aren't synced.
+            connection.execSQL(
+                """
+                CREATE TABLE attachments (
+                    id TEXT PRIMARY KEY NOT NULL,
+                    owner_kind TEXT NOT NULL,
+                    owner_id TEXT NOT NULL,
+                    kind TEXT NOT NULL,
+                    byte_size INTEGER NOT NULL,
+                    duration REAL,
+                    page_count INTEGER,
+                    caption TEXT,
+                    sort_order INTEGER NOT NULL DEFAULT 0,
+                    created_at INTEGER NOT NULL,
+                    updated_at INTEGER NOT NULL,
+                    deleted_at INTEGER
+                )
+                """.trimIndent(),
+            )
+            connection.execSQL("CREATE INDEX attachments_owner ON attachments (owner_id)")
+            connection.execSQL("PRAGMA user_version = 8")
+        }
     }
 
     private val _localEdits = MutableStateFlow(0L)
@@ -220,6 +249,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
     val prayers = PrayerStore()
     val memory = MemoryStore()
     val sermons = SermonStore()
+    val attachments = AttachmentStore()
     val sync = SyncAccess()
 
     /** Reading plans the person follows, the most recently changed first (as Home picks one on iOS). */
@@ -387,6 +417,97 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
             }
             reload()
             edited()
+        }
+    }
+
+    /** Photos, recordings and PDFs on prayers and sermon notes; the files are the app's to keep. */
+    inner class AttachmentStore {
+        private val _all = MutableStateFlow(load())
+        val all: StateFlow<List<Attachment>> = _all.asStateFlow()
+
+        private fun load(): List<Attachment> = synchronized(lock) {
+            buildList {
+                connection.prepare(
+                    "SELECT id, owner_kind, owner_id, kind, byte_size, duration, page_count, caption, sort_order, created_at, updated_at " +
+                        "FROM attachments WHERE deleted_at IS NULL ORDER BY sort_order, created_at",
+                ).use { s ->
+                    while (s.step()) {
+                        val owner = AttachmentOwner.of(s.getText(1)) ?: continue
+                        val kind = AttachmentKind.of(s.getText(3)) ?: continue
+                        add(
+                            Attachment(
+                                id = s.getText(0),
+                                owner = owner,
+                                ownerId = s.getText(2),
+                                kind = kind,
+                                byteSize = s.getLong(4),
+                                durationSeconds = if (s.isNull(5)) null else s.getDouble(5),
+                                pageCount = s.intOrNull(6),
+                                caption = if (s.isNull(7)) null else s.getText(7),
+                                sortOrder = s.getLong(8).toInt(),
+                                createdAt = s.getLong(9),
+                                updatedAt = s.getLong(10),
+                            ),
+                        )
+                    }
+                }
+            }
+        }
+
+        fun of(owner: AttachmentOwner, ownerId: String): List<Attachment> =
+            _all.value.filter { it.owner == owner && it.ownerId == ownerId }
+
+        /** Adds one after the others already on its prayer or sermon. */
+        fun add(attachment: Attachment, now: Long = System.currentTimeMillis()): Attachment {
+            val order = (of(attachment.owner, attachment.ownerId).maxOfOrNull { it.sortOrder } ?: -1) + 1
+            val saved = attachment.copy(sortOrder = order, createdAt = now, updatedAt = now)
+            synchronized(lock) {
+                connection.prepare(
+                    "INSERT OR REPLACE INTO attachments (id, owner_kind, owner_id, kind, byte_size, duration, page_count, caption, sort_order, created_at, updated_at, deleted_at) " +
+                        "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)",
+                ).use {
+                    it.bindText(1, saved.id)
+                    it.bindText(2, saved.owner.id)
+                    it.bindText(3, saved.ownerId)
+                    it.bindText(4, saved.kind.id)
+                    it.bindLong(5, saved.byteSize)
+                    saved.durationSeconds?.let { d -> it.bindDouble(6, d) } ?: it.bindNull(6)
+                    saved.pageCount?.let { n -> it.bindLong(7, n.toLong()) } ?: it.bindNull(7)
+                    saved.caption?.let { c -> it.bindText(8, c) } ?: it.bindNull(8)
+                    it.bindLong(9, saved.sortOrder.toLong())
+                    it.bindLong(10, saved.createdAt)
+                    it.bindLong(11, saved.updatedAt)
+                    it.step()
+                }
+            }
+            _all.value = load()
+            return saved
+        }
+
+        /** Marks one removed and returns it, so its file can go too. */
+        fun delete(id: String, now: Long = System.currentTimeMillis()): Attachment? {
+            val removed = _all.value.firstOrNull { it.id == id } ?: return null
+            markDeleted("id = ?", id, now)
+            return removed
+        }
+
+        /** Everything on a prayer or sermon that was deleted; returns them so their files can go. */
+        fun deleteOwner(ownerId: String, now: Long = System.currentTimeMillis()): List<Attachment> {
+            val removed = _all.value.filter { it.ownerId == ownerId }
+            if (removed.isNotEmpty()) markDeleted("owner_id = ?", ownerId, now)
+            return removed
+        }
+
+        private fun markDeleted(where: String, value: String, now: Long) {
+            synchronized(lock) {
+                connection.prepare("UPDATE attachments SET deleted_at = ?, updated_at = ? WHERE $where AND deleted_at IS NULL").use {
+                    it.bindLong(1, now)
+                    it.bindLong(2, now)
+                    it.bindText(3, value)
+                    it.step()
+                }
+            }
+            _all.value = load()
         }
     }
 

@@ -1701,4 +1701,27 @@
     <string name="due_for_today">Due for Today</string>
     <string name="set_as_live_wallpaper">Set as Live Wallpaper</string>
     <string name="live_wallpaper_description">Your verse, with the season drifting by.</string>
+    <string name="attachments">Attachments</string>
+    <string name="add_attachment">Add Attachment</string>
+    <string name="choose_photos">Choose Photos</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="record_voice">Record Voice</string>
+    <string name="import_pdf">Import PDF</string>
+    <string name="delete_attachment_question">Delete this attachment?</string>
+    <string name="voice_recording">Voice Recording</string>
+    <string name="record">Record</string>
+    <string name="record_again">Record Again</string>
+    <string name="pdf">PDF</string>
+    <string name="pdf_pages">PDF, %d pages</string>
+    <string name="attachment_photo_failed">That photo couldn\'t be added.</string>
+    <string name="attachment_pdf_failed">That PDF couldn\'t be opened.</string>
+    <string name="attachment_too_large">That file is too large to attach.</string>
+    <string name="attachment_recording_failed">The recording couldn\'t be saved.</string>
+    <string name="attachment_saving_failed">That couldn\'t be saved on this device.</string>
+    <string name="sermon_recording_reminder">Some churches ask that sermons not be recorded. Please check first.</string>
+    <string name="recording_failed_start">Recording couldn\'t start. Please try again.</string>
+    <string name="attachments_device_footer">Attachments are saved on this device. They aren\'t copied to your other devices yet.</string>
+    <string name="attachments_premium_teaser">Add photos, voice recordings and PDFs with Premium.</string>
+    <string name="microphone_denied">Versely can\'t use the microphone. Turn it on in your phone\'s Settings › Apps › Versely › Permissions.</string>
+    <string name="recording_saved_on_device">Saved on this device. It isn\'t copied to your other devices yet.</string>
 </resources>

@@ -1,0 +1,375 @@
+package com.genesis.app.journal
+
+import android.Manifest
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.net.Uri
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableDoubleStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.produceState
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.genesis.app.R
+import com.genesis.app.VerselyApplication
+import com.genesis.app.original.PremiumTeaser
+import com.genesis.app.settings.Entitlements
+import com.genesis.app.settings.Footer
+import com.genesis.app.settings.Group
+import com.genesis.app.settings.Header
+import com.genesis.core.design.LocalReaderColors
+import com.genesis.core.domain.journal.Attachment
+import com.genesis.core.domain.journal.AttachmentKind
+import com.genesis.core.domain.journal.AttachmentLimits
+import com.genesis.core.domain.journal.AttachmentOwner
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import java.io.File
+
+/**
+ * The attachments on a prayer or sermon notes (Premium journal extras), as
+ * AttachmentsSection on iOS: a strip of photos and PDFs, the recordings
+ * below it, and an Add Attachment menu. Without Premium, anything already
+ * attached still shows, with a teaser in place of the menu. On Android the
+ * files stay on this device for now.
+ */
+@Composable
+internal fun AttachmentsSection(owner: AttachmentOwner, ownerId: String) {
+    val context = LocalContext.current
+    val app = context.applicationContext as VerselyApplication
+    val store = app.userData.attachments
+    val colors = LocalReaderColors.current
+    val all by store.all.collectAsStateWithLifecycle()
+    val attachments = remember(all, ownerId) { AttachmentLimits.sorted(all.filter { it.owner == owner && it.ownerId == ownerId }) }
+    val pictures = attachments.filter { it.kind == AttachmentKind.PHOTO || it.kind == AttachmentKind.PDF }
+    val recordings = attachments.filter { it.kind == AttachmentKind.AUDIO }
+    val unlocked = Entitlements.isPremium
+    val scope = rememberCoroutineScope()
+    val player = remember { VoiceNotePlayer(context) }
+    DisposableEffect(Unit) { onDispose { player.stop() } }
+
+    var problem by remember { mutableStateOf<AttachmentFiles.Problem?>(null) }
+    var busy by remember { mutableStateOf(false) }
+    var viewing by remember { mutableStateOf<Attachment?>(null) }
+    var deleting by remember { mutableStateOf<Attachment?>(null) }
+    var recording by remember { mutableStateOf(false) }
+
+    fun adding(block: suspend () -> Unit) {
+        problem = null
+        busy = true
+        scope.launch {
+            try {
+                block()
+            } catch (failure: AttachmentFiles.Failure) {
+                problem = failure.problem
+            } finally {
+                busy = false
+            }
+        }
+    }
+
+    val photos = rememberLauncherForActivityResult(ActivityResultContracts.PickMultipleVisualMedia()) { uris: List<Uri> ->
+        if (uris.isNotEmpty()) adding { uris.forEach { AttachmentFiles.addPhoto(context, store, owner, ownerId, it) } }
+    }
+    var cameraUri by remember { mutableStateOf<Uri?>(null) }
+    val camera = rememberLauncherForActivityResult(ActivityResultContracts.TakePicture()) { taken ->
+        val uri = cameraUri
+        if (taken && uri != null) adding { AttachmentFiles.addPhoto(context, store, owner, ownerId, uri) }
+    }
+    val pdf = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri: Uri? ->
+        if (uri != null) adding { AttachmentFiles.addPdf(context, store, ownerId, uri) }
+    }
+
+    Header(stringResource(R.string.attachments))
+    Group {
+        if (pictures.isNotEmpty()) {
+            Row(Modifier.horizontalScroll(rememberScrollState()).padding(12.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                pictures.forEach { attachment -> Thumbnail(attachment) { viewing = attachment } }
+            }
+            HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
+        }
+        val playing by player.playing.collectAsStateWithLifecycle()
+        recordings.forEach { attachment ->
+            Row(Modifier.fillMaxWidth().padding(start = 4.dp, end = 4.dp), verticalAlignment = Alignment.CenterVertically) {
+                TextButton(onClick = { player.toggle(attachment.id, AttachmentFiles.file(context, attachment)) }) {
+                    Text(if (playing == attachment.id) "❚❚" else "▶", color = colors.accent)
+                }
+                Column(Modifier.weight(1f)) {
+                    Text(stringResource(R.string.voice_recording), style = MaterialTheme.typography.bodyLarge, color = colors.text)
+                    attachment.durationSeconds?.let {
+                        Text(AttachmentLimits.durationLabel(it), style = MaterialTheme.typography.bodySmall, color = colors.secondaryText)
+                    }
+                }
+                TextButton(onClick = { deleting = attachment }) { Text(stringResource(R.string.delete), color = colors.secondaryText) }
+            }
+            HorizontalDivider(Modifier.padding(start = 16.dp), color = colors.separator)
+        }
+        if (unlocked) {
+            var menu by remember { mutableStateOf(false) }
+            Box {
+                Row(
+                    Modifier.fillMaxWidth().clickable(enabled = !busy) { menu = true }.padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text("📎  " + stringResource(R.string.add_attachment), style = MaterialTheme.typography.bodyLarge, color = colors.accent, modifier = Modifier.weight(1f))
+                    if (busy) CircularProgressIndicator(Modifier.size(18.dp), strokeWidth = 2.dp, color = colors.accent)
+                }
+                DropdownMenu(expanded = menu, onDismissRequest = { menu = false }) {
+                    DropdownMenuItem(text = { Text(stringResource(R.string.choose_photos)) }, onClick = {
+                        menu = false
+                        photos.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+                    })
+                    DropdownMenuItem(text = { Text(stringResource(R.string.take_photo)) }, onClick = {
+                        menu = false
+                        val target = AttachmentFiles.cameraTarget(context)
+                        cameraUri = target
+                        runCatching { camera.launch(target) }
+                    })
+                    DropdownMenuItem(text = { Text(stringResource(R.string.record_voice)) }, onClick = {
+                        menu = false
+                        recording = true
+                    })
+                    if (owner.allows(AttachmentKind.PDF)) {
+                        DropdownMenuItem(text = { Text(stringResource(R.string.import_pdf)) }, onClick = {
+                            menu = false
+                            pdf.launch(arrayOf("application/pdf"))
+                        })
+                    }
+                }
+            }
+        } else {
+            PremiumTeaser(stringResource(R.string.attachments_premium_teaser), Modifier.padding(4.dp))
+        }
+    }
+    problem?.let { Text(stringResource(it.message), style = MaterialTheme.typography.bodySmall, color = Color(0xFFC77700), modifier = Modifier.padding(start = 16.dp, top = 8.dp)) }
+    Footer(stringResource(R.string.attachments_device_footer))
+
+    viewing?.let { attachment ->
+        if (attachment.kind == AttachmentKind.PDF) {
+            LaunchedEffect(attachment.id) {
+                if (!AttachmentFiles.open(context, attachment)) problem = AttachmentFiles.Problem.PDF
+                viewing = null
+            }
+        } else {
+            PhotoViewer(attachment, onDelete = { viewing = null; deleting = attachment }, onClose = { viewing = null })
+        }
+    }
+    deleting?.let { attachment ->
+        AlertDialog(
+            onDismissRequest = { deleting = null },
+            title = { Text(stringResource(R.string.delete_attachment_question)) },
+            confirmButton = {
+                TextButton(onClick = {
+                    if (player.playing.value == attachment.id) player.stop()
+                    store.delete(attachment.id)?.let { AttachmentFiles.remove(context, listOf(it)) }
+                    deleting = null
+                }) { Text(stringResource(R.string.delete), color = Color(0xFFC0392B)) }
+            },
+            dismissButton = { TextButton(onClick = { deleting = null }) { Text(stringResource(R.string.cancel), color = colors.accent) } },
+            containerColor = colors.surface,
+            titleContentColor = colors.text,
+        )
+    }
+    if (recording) {
+        RecorderDialog(
+            sermon = owner == AttachmentOwner.SERMON,
+            player = player,
+            onSave = { file, seconds ->
+                recording = false
+                adding { AttachmentFiles.addRecording(context, store, owner, ownerId, file, seconds) }
+            },
+            onCancel = { recording = false },
+        )
+    }
+}
+
+private val AttachmentFiles.Problem.message: Int
+    get() = when (this) {
+        AttachmentFiles.Problem.PHOTO -> R.string.attachment_photo_failed
+        AttachmentFiles.Problem.PDF -> R.string.attachment_pdf_failed
+        AttachmentFiles.Problem.TOO_LARGE -> R.string.attachment_too_large
+        AttachmentFiles.Problem.RECORDING -> R.string.attachment_recording_failed
+        AttachmentFiles.Problem.SAVING -> R.string.attachment_saving_failed
+    }
+
+@Composable
+private fun Thumbnail(attachment: Attachment, onOpen: () -> Unit) {
+    val context = LocalContext.current
+    val colors = LocalReaderColors.current
+    val side = with(LocalDensity.current) { 84.dp.roundToPx() }
+    val bitmap by produceState<Bitmap?>(null, attachment.id) { value = AttachmentFiles.thumbnail(context, attachment, side) }
+    val label = if (attachment.kind == AttachmentKind.PDF) {
+        attachment.pageCount?.let { stringResource(R.string.pdf_pages, it) } ?: stringResource(R.string.pdf)
+    } else {
+        stringResource(R.string.style_photo)
+    }
+    Box(
+        Modifier.size(84.dp).clip(RoundedCornerShape(10.dp)).background(colors.background).clickable(onClick = onOpen).semantics { contentDescription = label },
+        contentAlignment = Alignment.BottomStart,
+    ) {
+        bitmap?.let { Image(it.asImageBitmap(), contentDescription = null, contentScale = ContentScale.Crop, modifier = Modifier.fillMaxSize()) }
+        if (attachment.kind == AttachmentKind.PDF) {
+            Text(
+                stringResource(R.string.pdf),
+                style = MaterialTheme.typography.labelSmall,
+                fontWeight = FontWeight.SemiBold,
+                color = Color.White,
+                modifier = Modifier.padding(6.dp).background(Color(0xAA000000), RoundedCornerShape(6.dp)).padding(horizontal = 6.dp, vertical = 2.dp),
+            )
+        }
+    }
+}
+
+@Composable
+private fun PhotoViewer(attachment: Attachment, onDelete: () -> Unit, onClose: () -> Unit) {
+    val context = LocalContext.current
+    val side = with(LocalDensity.current) { 1600.dp.roundToPx().coerceAtMost(2400) }
+    val bitmap by produceState<Bitmap?>(null, attachment.id) { value = AttachmentFiles.thumbnail(context, attachment, side) }
+    Dialog(onDismissRequest = onClose, properties = DialogProperties(usePlatformDefaultWidth = false)) {
+        Column(Modifier.fillMaxSize().background(Color.Black)) {
+            Row(Modifier.fillMaxWidth().padding(8.dp)) {
+                TextButton(onClick = onDelete) { Text(stringResource(R.string.delete), color = Color(0xFFFF8A7A)) }
+                Spacer(Modifier.weight(1f))
+                TextButton(onClick = onClose) { Text(stringResource(R.string.done), color = Color.White, fontWeight = FontWeight.SemiBold) }
+            }
+            Box(Modifier.weight(1f).fillMaxWidth(), contentAlignment = Alignment.Center) {
+                bitmap?.let { Image(it.asImageBitmap(), contentDescription = stringResource(R.string.style_photo), contentScale = ContentScale.Fit, modifier = Modifier.fillMaxSize()) }
+            }
+        }
+    }
+}
+
+/** Record, stop, listen back, then save or record again, as VoiceRecorderSheet on iOS. */
+@Composable
+private fun RecorderDialog(sermon: Boolean, player: VoiceNotePlayer, onSave: (File, Double) -> Unit, onCancel: () -> Unit) {
+    val context = LocalContext.current
+    val colors = LocalReaderColors.current
+    val recorder = remember { VoiceRecorder(context) }
+    val phase by recorder.phase.collectAsStateWithLifecycle()
+    val playing by player.playing.collectAsStateWithLifecycle()
+    var elapsed by remember { mutableDoubleStateOf(0.0) }
+    var failed by remember { mutableStateOf(false) }
+    var denied by remember { mutableStateOf(false) }
+    var saved by remember { mutableStateOf(false) }
+    DisposableEffect(Unit) {
+        onDispose {
+            if (player.playing.value == TAKE) player.stop()
+            if (!saved) recorder.discard()
+        }
+    }
+    LaunchedEffect(phase) {
+        while (phase == VoiceRecorder.Phase.RECORDING) {
+            elapsed = recorder.elapsed()
+            delay(250)
+        }
+        elapsed = recorder.elapsed()
+    }
+    fun begin() {
+        failed = false
+        player.stop()
+        (context.applicationContext as VerselyApplication).let {
+            it.listening.pause()
+            it.ambient.pause()
+        }
+        if (!recorder.start()) failed = true
+    }
+    val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+        if (granted) begin() else denied = true
+    }
+
+    AlertDialog(
+        onDismissRequest = {},
+        title = { Text(stringResource(R.string.voice_recording)) },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Text(
+                    AttachmentLimits.durationLabel(elapsed),
+                    style = MaterialTheme.typography.displaySmall,
+                    color = if (phase == VoiceRecorder.Phase.RECORDING) Color(0xFFC0392B) else colors.text,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    when (phase) {
+                        VoiceRecorder.Phase.READY -> TextButton(onClick = {
+                            if (ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) begin()
+                            else permission.launch(Manifest.permission.RECORD_AUDIO)
+                        }) { Text("● " + stringResource(R.string.record), color = Color(0xFFC0392B), fontWeight = FontWeight.SemiBold) }
+                        VoiceRecorder.Phase.RECORDING -> TextButton(onClick = recorder::stop) { Text("■ " + stringResource(R.string.stop), color = colors.accent, fontWeight = FontWeight.SemiBold) }
+                        VoiceRecorder.Phase.RECORDED -> {
+                            TextButton(onClick = { player.toggle(TAKE, recorder.take) }) {
+                                Text(stringResource(if (playing == TAKE) R.string.pause else R.string.play), color = colors.accent)
+                            }
+                            TextButton(onClick = { player.stop(); recorder.discard() }) { Text(stringResource(R.string.record_again), color = colors.accent) }
+                        }
+                    }
+                }
+                if (denied) Text(stringResource(R.string.microphone_denied), style = MaterialTheme.typography.bodySmall, color = colors.secondaryText)
+                if (failed) Text(stringResource(R.string.recording_failed_start), style = MaterialTheme.typography.bodySmall, color = colors.secondaryText)
+                if (sermon) Text(stringResource(R.string.sermon_recording_reminder), style = MaterialTheme.typography.bodySmall, color = colors.secondaryText)
+                Text(stringResource(R.string.recording_saved_on_device), style = MaterialTheme.typography.bodySmall, color = colors.secondaryText)
+            }
+        },
+        confirmButton = {
+            TextButton(enabled = phase == VoiceRecorder.Phase.RECORDED, onClick = {
+                player.stop()
+                saved = true
+                // The take moves into place, so it's copied out of the recorder's cache name first.
+                val file = File(context.cacheDir, "recording-${System.currentTimeMillis()}.m4a")
+                if (recorder.take.renameTo(file)) onSave(file, recorder.seconds) else onCancel()
+            }) { Text(stringResource(R.string.save), color = if (phase == VoiceRecorder.Phase.RECORDED) colors.accent else colors.secondaryText, fontWeight = FontWeight.SemiBold) }
+        },
+        dismissButton = { TextButton(onClick = onCancel) { Text(stringResource(R.string.cancel), color = colors.accent) } },
+        containerColor = colors.surface,
+        titleContentColor = colors.text,
+        textContentColor = colors.text,
+    )
+}
+
+private const val TAKE = "take"

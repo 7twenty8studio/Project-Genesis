@@ -53,6 +53,8 @@ internal class JournalExportBuilder(private val context: Context, private val bi
         body = sermon.body,
         isMarkdown = true,
         passages = passages(sermon.passages),
+        photos = photos(sermon.id),
+        listed = listed(sermon.id),
     )
 
     private suspend fun entry(prayer: Prayer): JournalExport.Entry {
@@ -68,7 +70,29 @@ internal class JournalExportBuilder(private val context: Context, private val bi
             body = prayer.body,
             answer = answer,
             passages = passages(prayer.passages),
+            photos = photos(prayer.id),
+            listed = listed(prayer.id),
         )
+    }
+
+    private val attachments get() = (context.applicationContext as com.genesis.app.VerselyApplication).userData.attachments.all.value
+
+    private fun on(ownerId: String) = com.genesis.core.domain.journal.AttachmentLimits.sorted(attachments.filter { it.ownerId == ownerId })
+
+    /** Photos from this device, as iOS draws them in from local files. */
+    private fun photos(ownerId: String) = on(ownerId)
+        .filter { it.kind == com.genesis.core.domain.journal.AttachmentKind.PHOTO }
+        .map { AttachmentFiles.file(context, it) }
+        .filter { it.exists() }
+
+    /** Recordings and PDFs are named in the export, not included. */
+    private fun listed(ownerId: String) = on(ownerId).mapNotNull {
+        when (it.kind) {
+            com.genesis.core.domain.journal.AttachmentKind.AUDIO -> context.getString(R.string.voice_recording) +
+                (it.durationSeconds?.let { s -> " · " + com.genesis.core.domain.journal.AttachmentLimits.durationLabel(s) } ?: "")
+            com.genesis.core.domain.journal.AttachmentKind.PDF -> it.pageCount?.let { n -> context.getString(R.string.pdf_pages, n) } ?: context.getString(R.string.pdf)
+            else -> null
+        }
     }
 
     /** Each passage verbatim; one missing from the Bible is left out. */

@@ -69,6 +69,8 @@ fun SermonNotesFlow(
     church: com.genesis.app.churchsermons.ChurchSermonContext? = null,
 ) {
     val sermons by store.all.collectAsStateWithLifecycle()
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val attachments = (context.applicationContext as com.genesis.app.VerselyApplication).userData.attachments
     var editingId by rememberSaveable { mutableStateOf(openId ?: if (startNew) UUID.randomUUID().toString() else null) }
 
     val editing = editingId
@@ -82,8 +84,13 @@ fun SermonNotesFlow(
             bible = bible,
             churchSuggestions = { typed -> SermonGrouping.churchSuggestions(sermons.filter { it.id != editing }, typed) },
             onClose = { draft, deleted ->
+                // Notes with only a photo, recording or PDF on them are kept, as ones with words.
+                val attached = attachments.of(com.genesis.core.domain.journal.AttachmentOwner.SERMON, editing).isNotEmpty()
                 when {
-                    deleted || !draft.hasContent -> if (existing != null) store.delete(editing)
+                    deleted || (!draft.hasContent && !attached) -> {
+                        if (existing != null) store.delete(editing)
+                        com.genesis.app.journal.AttachmentFiles.removeOwner(context, attachments, editing)
+                    }
                     draft != existing -> store.save(draft)
                 }
                 editingId = null

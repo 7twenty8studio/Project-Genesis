@@ -77,6 +77,8 @@ class JournalBible(
 @Composable
 fun PrayerJournalFlow(store: UserDatabase.PrayerStore, bible: JournalBible, onDone: () -> Unit, modifier: Modifier = Modifier) {
     val prayers by store.all.collectAsStateWithLifecycle()
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val attachments = (context.applicationContext as com.genesis.app.VerselyApplication).userData.attachments
     var editingId by rememberSaveable { mutableStateOf<String?>(null) }
     var newCategory by rememberSaveable { mutableStateOf<String?>(null) }
 
@@ -90,9 +92,13 @@ fun PrayerJournalFlow(store: UserDatabase.PrayerStore, bible: JournalBible, onDo
             original = start,
             bible = bible,
             onClose = { draft, deleted ->
+                // A prayer with only a photo or recording on it is kept, as one with words.
+                val attached = attachments.of(com.genesis.core.domain.journal.AttachmentOwner.PRAYER, editing).isNotEmpty()
                 when {
-                    deleted -> if (existing != null) store.delete(editing)
-                    !draft.hasContent -> if (existing != null) store.delete(editing)
+                    deleted || (!draft.hasContent && !attached) -> {
+                        if (existing != null) store.delete(editing)
+                        com.genesis.app.journal.AttachmentFiles.removeOwner(context, attachments, editing)
+                    }
                     draft != existing -> store.save(draft)
                 }
                 editingId = null

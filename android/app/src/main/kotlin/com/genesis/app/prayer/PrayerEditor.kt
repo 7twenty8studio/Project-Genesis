@@ -120,6 +120,8 @@ internal fun PrayerEditor(
 
             Passages(draft.passages, bible, PrayerPassage.MAXIMUM_PER_PRAYER, stringResource(R.string.pray_with_scripture), onAttach = { draft = draft.attaching(it) }, onDetach = { draft = draft.detaching(it) })
 
+            com.genesis.app.journal.AttachmentsSection(com.genesis.core.domain.journal.AttachmentOwner.PRAYER, draft.id)
+
             if (!draft.isAnswered) {
                 Spacer(Modifier.size(24.dp))
                 PrayerReminder(draft) { draft = it }

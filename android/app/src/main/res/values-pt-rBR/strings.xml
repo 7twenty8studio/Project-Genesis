@@ -1700,4 +1700,27 @@
     <string name="due_for_today">Para hoje</string>
     <string name="set_as_live_wallpaper">Usar como papel de parede animado</string>
     <string name="live_wallpaper_description">Seu versículo, com a estação passando suavemente.</string>
+    <string name="attachments">Anexos</string>
+    <string name="add_attachment">Adicionar anexo</string>
+    <string name="choose_photos">Escolher fotos</string>
+    <string name="take_photo">Tirar foto</string>
+    <string name="record_voice">Gravar voz</string>
+    <string name="import_pdf">Importar PDF</string>
+    <string name="delete_attachment_question">Apagar este anexo?</string>
+    <string name="voice_recording">Gravação de voz</string>
+    <string name="record">Gravar</string>
+    <string name="record_again">Gravar de novo</string>
+    <string name="pdf">PDF</string>
+    <string name="pdf_pages">PDF, %d páginas</string>
+    <string name="attachment_photo_failed">Não foi possível adicionar essa foto.</string>
+    <string name="attachment_pdf_failed">Não foi possível abrir esse PDF.</string>
+    <string name="attachment_too_large">Esse arquivo é grande demais para anexar.</string>
+    <string name="attachment_recording_failed">Não foi possível salvar a gravação.</string>
+    <string name="attachment_saving_failed">Não foi possível salvar isso neste dispositivo.</string>
+    <string name="sermon_recording_reminder">Algumas igrejas pedem que os sermões não sejam gravados. Confira antes, por favor.</string>
+    <string name="recording_failed_start">Não foi possível começar a gravar. Tente de novo.</string>
+    <string name="attachments_device_footer">Os anexos ficam salvos neste dispositivo. Ainda não são copiados para seus outros dispositivos.</string>
+    <string name="attachments_premium_teaser">Adicione fotos, gravações de voz e PDFs com o Premium.</string>
+    <string name="microphone_denied">O Versely não pode usar o microfone. Ative em Configurações do telefone › Apps › Versely › Permissões.</string>
+    <string name="recording_saved_on_device">Fica salva neste dispositivo. Ainda não é copiada para seus outros dispositivos.</string>
 </resources>

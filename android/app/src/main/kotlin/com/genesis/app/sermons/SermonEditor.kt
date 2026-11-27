@@ -242,6 +242,8 @@ internal fun SermonEditor(
                     onDetach = { passage -> draft = draft.copy(passages = draft.passages.filter { it.id != passage.id }) },
                 )
 
+                com.genesis.app.journal.AttachmentsSection(com.genesis.core.domain.journal.AttachmentOwner.SERMON, draft.id)
+
                 com.genesis.app.churchsermons.SavedHandoutsSection(draft.handoutsJson) { openHandout = it }
 
                 Spacer(Modifier.size(28.dp))

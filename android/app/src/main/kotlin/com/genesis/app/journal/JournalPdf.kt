@@ -56,6 +56,10 @@ data class JournalExport(
         /** How an answered prayer was answered. */
         val answer: String? = null,
         val passages: List<Passage> = emptyList(),
+        /** Photos on the entry, drawn in (files on this device). */
+        val photos: List<File> = emptyList(),
+        /** Recordings and imported PDFs, listed by name, not included. */
+        val listed: List<String> = emptyList(),
     )
 
     /** Verses for a passage from the Bible Premium tools use (never a YouVersion Bible's text). */
@@ -243,6 +247,26 @@ object JournalPdf {
                 text(it, paint(12f, italic = true), after = 8f)
             }
             passages(entry.passages)
+            attachments(entry)
+        }
+
+        private fun attachments(entry: JournalExport.Entry) {
+            if (entry.photos.isEmpty() && entry.listed.isEmpty()) return
+            label(context.getString(R.string.attachments))
+            entry.photos.forEach { file ->
+                val bitmap = runCatching { android.graphics.BitmapFactory.decodeFile(file.path) }.getOrNull() ?: return@forEach
+                val scale = minOf(contentWidth.toFloat() / bitmap.width, 320f / bitmap.height, 1f)
+                val w = bitmap.width * scale
+                val h = bitmap.height * scale
+                ensureSpace(h + 12f)
+                if (page == null) beginPage()
+                canvas!!.drawBitmap(bitmap, null, android.graphics.RectF(margin, y, margin + w, y + h), Paint(Paint.FILTER_BITMAP_FLAG))
+                bitmap.recycle()
+                y += h + 12f
+                empty = false
+            }
+            entry.listed.forEach { text("• $it", paint(11f, QUIET), after = 3f, indent = 14) }
+            y += 6f
         }
 
         private fun markdown(body: String) {
