@@ -24,6 +24,12 @@ sealed interface GenesisLink {
     /** versely://prayer: the Prayer Journal. */
     data object Prayer : GenesisLink
 
+    /**
+     * A church's sermon: versely://sermon/<slug>, or its one link
+     * https://versely.7twenty8studio.com/s/<slug> (an App Link).
+     */
+    data class Sermon(val slug: String) : GenesisLink
+
     companion object {
         const val SCHEME = "versely"
 
@@ -35,6 +41,7 @@ sealed interface GenesisLink {
 
         /** Reads a link; anything else (another scheme, a verse that doesn't exist) is null. */
         fun parse(link: String): GenesisLink? {
+            sermonSlug(link)?.let { return Sermon(it) }
             val rest = link.trim().removePrefix("$SCHEME://").takeIf { it != link.trim() } ?: return null
             val parts = rest.substringBefore('?').substringBefore('#').trim('/').split('/')
             return when (parts.first().lowercase()) {
@@ -47,6 +54,25 @@ sealed interface GenesisLink {
                 "prayer" -> Prayer
                 else -> null
             }
+        }
+
+        const val SERMON_HOST = "versely.7twenty8studio.com"
+
+        /** Ten lowercase letters and digits, as the database makes them. */
+        fun isSlug(text: String): Boolean = text.length == 10 && text.all { it in 'a'..'z' || it in '0'..'9' }
+
+        private fun sermonSlug(link: String): String? {
+            val trimmed = link.trim()
+            val scheme = trimmed.substringBefore("://", "").lowercase()
+            val rest = trimmed.substringAfter("://", "").substringBefore('?').substringBefore('#')
+            val host = rest.substringBefore('/').lowercase()
+            val parts = rest.substringAfter('/', "").split('/').filter { it.isNotEmpty() }
+            val slug = when (scheme) {
+                "https" -> if (host == SERMON_HOST && parts.size == 2 && parts[0] == "s") parts[1] else null
+                SCHEME -> if (host == "sermon" && parts.size == 1) parts[0] else null
+                else -> null
+            }
+            return slug?.takeIf(::isSlug)
         }
 
         private fun exists(verse: VerseId): Boolean {

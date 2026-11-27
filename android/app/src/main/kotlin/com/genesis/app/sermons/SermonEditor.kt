@@ -103,6 +103,7 @@ internal fun SermonEditor(
     churchSuggestions: (String) -> List<String>,
     onClose: (Sermon, Boolean) -> Unit,
     modifier: Modifier,
+    church: com.genesis.app.churchsermons.ChurchSermonContext? = null,
 ) {
     val context = LocalContext.current
     val prefs = remember { context.getSharedPreferences("sermons", Context.MODE_PRIVATE) }
@@ -113,8 +114,18 @@ internal fun SermonEditor(
     var detailsOpen by remember(original.id) { mutableStateOf(original.preacher.isBlank() && original.church.isBlank()) }
     var confirmDelete by remember { mutableStateOf(false) }
     var lookingUp by remember { mutableStateOf(false) }
+    var openHandout by remember { mutableStateOf<com.genesis.core.cloud.community.SavedHandout?>(null) }
     fun close() = onClose(draft.copy(body = body.text), false)
     BackHandler { close() }
+    openHandout?.let { handout ->
+        com.genesis.app.churchsermons.SavedHandoutScreen(
+            handout,
+            church,
+            onSave = { responses -> draft = com.genesis.app.churchsermons.ChurchSermonNotes.updating(draft, handout, responses) },
+            onDone = { openHandout = null },
+        )
+        return
+    }
 
     // Church Mode keeps the screen awake while the notes are open, and always lets go.
     val view = LocalView.current
@@ -215,6 +226,8 @@ internal fun SermonEditor(
                     onAttach = { passage -> draft = draft.attaching(passage) },
                     onDetach = { passage -> draft = draft.copy(passages = draft.passages.filter { it.id != passage.id }) },
                 )
+
+                com.genesis.app.churchsermons.SavedHandoutsSection(draft.handoutsJson) { openHandout = it }
 
                 Spacer(Modifier.size(28.dp))
                 TextButton(onClick = { confirmDelete = true }, modifier = Modifier.fillMaxWidth()) {

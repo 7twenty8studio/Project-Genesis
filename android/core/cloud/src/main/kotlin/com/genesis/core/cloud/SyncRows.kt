@@ -163,8 +163,8 @@ data class RemoteSermon(
 )
 
 /**
- * Sermon notes as pushed: never `source_sermon_id` or `handouts`, so an edit
- * here leaves the iPhone's church sermon link and saved handouts as they are.
+ * Sermon notes as pushed. `source_sermon_id` and `handouts` are added only
+ * when set (SyncService), so an edit never clears what the iPhone saved.
  */
 @Serializable
 data class RemoteSermonPush(

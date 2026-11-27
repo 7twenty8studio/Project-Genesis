@@ -55,6 +55,9 @@ class VerselyApplication : Application() {
     /** The server's switches (groups, community…). */
     val flags: FeatureFlags by lazy { FeatureFlags(this, account.client) }
 
+    /** Churches whose sermons the person hid (on this phone only). */
+    val hiddenChurches: com.genesis.app.churchsermons.HiddenChurches by lazy { com.genesis.app.churchsermons.HiddenChurches(this) }
+
     /** Church groups (Together). */
     val community: com.genesis.app.together.CommunityStore by lazy { com.genesis.app.together.CommunityStore(account, scope) }
 

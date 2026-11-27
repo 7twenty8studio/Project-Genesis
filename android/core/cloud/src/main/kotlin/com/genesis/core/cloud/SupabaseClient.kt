@@ -94,6 +94,36 @@ class SupabaseClient(
     fun callFunction(name: String, bodyJson: String, accessToken: String): String =
         send("POST", "functions/v1/$name", "", bodyJson, accessToken)
 
+    /** Calls an Edge Function with the anon key only (no account is sent). */
+    fun callFunctionAnonymously(name: String, bodyJson: String): String =
+        send("POST", "functions/v1/$name", "", bodyJson, null)
+
+    /**
+     * GETs a file (a sermon cover) as bytes, never cached; null for a 404.
+     * Straight over HttpURLConnection, since the transport carries text.
+     */
+    fun getBytes(path: String, query: String, accessToken: String?): ByteArray? {
+        val url = "$baseUrl/$path" + if (query.isNotEmpty()) "?$query" else ""
+        val connection = URI(url).toURL().openConnection() as HttpURLConnection
+        try {
+            connection.connectTimeout = 30_000
+            connection.readTimeout = 30_000
+            connection.useCaches = false
+            connection.setRequestProperty("apikey", anonKey)
+            connection.setRequestProperty("Authorization", "Bearer ${accessToken ?: anonKey}")
+            val status = try {
+                connection.responseCode
+            } catch (error: IOException) {
+                throw SupabaseError.Network(error)
+            }
+            if (status == 404) return null
+            if (status !in 200..299) throw SupabaseError.Http(status, "HTTP $status")
+            return connection.inputStream.use { it.readBytes() }
+        } finally {
+            connection.disconnect()
+        }
+    }
+
     // MARK: REST (PostgREST), as on iOS
 
     /** Rows of `table` changed on the server after `cursor` (server_updated_at), oldest first. */

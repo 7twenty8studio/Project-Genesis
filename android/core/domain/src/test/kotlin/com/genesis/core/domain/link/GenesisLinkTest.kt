@@ -27,4 +27,12 @@ class GenesisLinkTest {
         assertNull(GenesisLink.parse("versely://read/abc"))
         assertNull(GenesisLink.parse("versely://unknown"))
     }
+
+    @Test
+    fun readsSermonLinks() {
+        assertEquals(GenesisLink.Sermon("abcde12345"), GenesisLink.parse("https://versely.7twenty8studio.com/s/abcde12345"))
+        assertEquals(GenesisLink.Sermon("abcde12345"), GenesisLink.parse("versely://sermon/abcde12345"))
+        assertNull(GenesisLink.parse("https://versely.7twenty8studio.com/studio"))
+        assertNull(GenesisLink.parse("versely://sermon/ABC"))
+    }
 }

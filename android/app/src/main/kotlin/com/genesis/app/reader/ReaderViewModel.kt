@@ -343,6 +343,21 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
+    /**
+     * A church sermon's passage (KJV numbering) in one Bible on this phone,
+     * verbatim, through that Bible's verse map; a chapter's worth at most.
+     */
+    suspend fun churchPassage(bibleId: String, start: VerseId, end: VerseId): ChurchPassage? {
+        val bible = BundledBible.entries.firstOrNull { it.id == bibleId } ?: return null
+        return withContext(Dispatchers.IO) {
+            runCatching {
+                val repository = repository(bible)
+                val (first, last) = com.genesis.core.domain.bible.OriginalVersification.parallelMap(bible.id).ownRange(start, end)
+                ChurchPassage(bible.id, repository.translation.name, repository.translation.abbreviation, repository.translation.language, repository.passage(first, last, limit = 60))
+            }.onFailure { Log.e(TAG, "Couldn't read a sermon passage", it) }.getOrNull()
+        }
+    }
+
     /** True when the Bible being read has this verse (Memorize's Add Verse). */
     suspend fun hasVerse(verse: VerseId): Boolean {
         val bible = state.value.bible
@@ -414,6 +429,9 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         if (crossReferenceOpened) crossReferenceRepository.close()
     }
 }
+
+/** A church sermon's passage as shown, verbatim from one Bible. */
+data class ChurchPassage(val bibleId: String, val name: String, val abbreviation: String, val language: String, val verses: List<Verse>)
 
 /** A Memorize passage as shown: each verse's text verbatim, and the Bible it comes from. */
 data class MemoryPassage(

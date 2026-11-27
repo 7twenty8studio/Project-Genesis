@@ -189,7 +189,7 @@ sealed class CommunityError : Exception() {
             "objectionable_content", "rate_limited", "name_required", "invalid_name", "invalid_code", "group_full",
             "groups_off", "too_many_groups", "leaders_only", "last_leader", "not_allowed", "not_found", "not_signed_in",
             "banned", "approval_required", "too_many_requests", "owner_only", "moderators_only", "owner_role_fixed",
-            "use_leave", "not_a_member", "invalid_duration", "invalid_reason", "already_nudged", "nudge_limit", "nudges_off",
+            "use_leave", "not_a_member", "invalid_duration", "invalid_reason", "already_nudged", "nudge_limit", "nudges_off", "invalid_details",
         )
 
         fun from(error: Throwable): CommunityError = when (error) {

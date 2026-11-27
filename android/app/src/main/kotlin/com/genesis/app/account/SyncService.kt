@@ -204,7 +204,11 @@ class SyncService(
         push(SyncTable.READING_PLANS, RemotePlan.serializer(), database.sync.plansChanged(since).map { it.remote(userId) }, client, token)
         push(SyncTable.PRAYERS, RemotePrayer.serializer(), database.sync.prayersChanged(since).map { it.remote(userId) }, client, token)
         push(SyncTable.MEMORY_VERSES, RemoteMemoryVerse.serializer(), database.sync.memoryChanged(since).map { it.remote(userId) }, client, token)
-        push(SyncTable.SERMONS, RemoteSermonPush.serializer(), database.sync.sermonsChanged(since).map { it.remote(userId) }, client, token, batch = 50)
+        // Sermons: the church sermon link and saved handouts are sent only when
+        // set, each key set in its own request (every row in a request has the same keys).
+        database.sync.sermonsChanged(since).map { it.remoteJson(userId) }.groupBy { it.keys }.values.forEach { rows ->
+            for (chunk in rows.chunked(50)) client.upsert(SyncTable.SERMONS, JsonArray(chunk).toString(), token)
+        }
         for ((table, ids) in database.sync.pendingDeletions()) {
             client.markDeleted(table, ids, System.currentTimeMillis(), token)
             database.sync.clearPendingDeletions(table, ids)
@@ -430,6 +434,16 @@ private fun RemoteSermon.record(): SermonRecord? {
         millis(deletedAt),
     )
 }
+
+private fun SermonRecord.remoteJson(userId: String): JsonObject {
+    val row = syncJson.encodeToJsonElement(RemoteSermonPush.serializer(), remote(userId)).jsonObject.toMutableMap()
+    sermon.sourceSermonId?.let { row["source_sermon_id"] = kotlinx.serialization.json.JsonPrimitive(it) }
+    sermon.handoutsJson?.let { raw -> runCatching { syncJson.parseToJsonElement(raw) }.getOrNull() }
+        ?.takeIf { it is JsonArray && it.isNotEmpty() }?.let { row["handouts"] = it }
+    return JsonObject(row)
+}
+
+private val syncJson = kotlinx.serialization.json.Json { encodeDefaults = true; explicitNulls = true; ignoreUnknownKeys = true }
 
 private fun SermonRecord.remote(userId: String) = RemoteSermonPush(
     id = sermon.id,

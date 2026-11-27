@@ -55,6 +55,13 @@ class CommunityStore(private val account: AccountService, private val scope: Cor
         ChallengeApi(client, token = { runCatching { runBlocking { account.accessToken() } }.getOrElse { throw CommunityError.SignInRequired() } })
     }
 
+    /** Church sermons: signed in, the person's token (members-only sermons); signed out, the anon key. */
+    val sermons: com.genesis.core.cloud.community.ChurchSermonApi? = account.client?.let { client ->
+        com.genesis.core.cloud.community.ChurchSermonApi(client, token = {
+            if (account.state.value.user == null) null else runCatching { runBlocking { account.accessToken() } }.getOrNull()
+        })
+    }
+
     /** Runs a challenge action, showing its error; true when it worked. */
     suspend fun performChallenge(action: (ChallengeApi) -> Unit): Boolean {
         val api = challenges ?: return false

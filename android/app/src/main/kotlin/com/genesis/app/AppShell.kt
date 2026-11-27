@@ -28,6 +28,8 @@ import com.genesis.app.library.LibraryShelf
 import com.genesis.app.plans.PlansFlow
 import com.genesis.app.prayer.JournalBible
 import com.genesis.app.sermons.SermonNotesFlow
+import com.genesis.app.churchsermons.ChurchSermonContext
+import com.genesis.app.churchsermons.ChurchSermonScreen
 import com.genesis.app.memorise.MemoriseScreen
 import com.genesis.app.memorise.MemoryTexts
 import com.genesis.app.prayer.PrayerJournalFlow
@@ -92,6 +94,9 @@ fun AppShell(
     var memoriseOpen by rememberSaveable { mutableStateOf(false) }
     var sermonsOpen by rememberSaveable { mutableStateOf(false) }
     var sermonsNew by rememberSaveable { mutableStateOf(false) }
+    // A church sermon over any tab (its link's slug), and notes opened from it.
+    var churchSermon by rememberSaveable { mutableStateOf<String?>(null) }
+    var sermonNotesId by rememberSaveable { mutableStateOf<String?>(null) }
     val memoryVerses by app.userData.memory.all.collectAsStateWithLifecycle()
     val prayers by app.userData.prayers.all.collectAsStateWithLifecycle()
     val account by app.account.state.collectAsStateWithLifecycle()
@@ -130,6 +135,11 @@ fun AppShell(
                 settingsOpen = false
                 plansOpen = false
                 journalOpen = true
+            }
+            is GenesisLink.Sermon -> {
+                settingsOpen = false
+                sermonNotesId = null
+                churchSermon = link.slug
             }
             null -> return@LaunchedEffect
         }
@@ -171,6 +181,55 @@ fun AppShell(
         return
     }
 
+    val translationNow = state.chapter?.translation
+    val churchContext = ChurchSermonContext(
+        api = app.community.sermons,
+        hidden = app.hiddenChurches,
+        sermons = app.userData.sermons,
+        currentBible = state.bible.id,
+        bibles = state.translations.map { it.first.id }.ifEmpty { listOf(state.bible.id) },
+        language = translationNow?.language ?: "en",
+        isSignedIn = account.user != null,
+        isAvailable = flags[FeatureFlags.CHURCH_SERMONS] == true,
+        passage = reader::churchPassage,
+        onRead = { verse ->
+            churchSermon = null
+            sermonNotesId = null
+            sermonsOpen = false
+            read(verse)
+        },
+        onOpenNotes = { sermonNotesId = it },
+        onSignIn = {
+            churchSermon = null
+            settingsOpen = true
+            accountOpen = true
+        },
+    )
+
+    if (sermonNotesId != null) {
+        BackHandler { sermonNotesId = null }
+        SermonNotesFlow(
+            store = app.userData.sermons,
+            bible = JournalBible(
+                key = state.bible,
+                language = translationNow?.language ?: "en",
+                abbreviation = translationNow?.abbreviation ?: state.bible.id,
+                verses = reader::verses,
+            ),
+            startNew = false,
+            openId = sermonNotesId,
+            church = churchContext,
+            onDone = { sermonNotesId = null },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
+
+    churchSermon?.let { slug ->
+        ChurchSermonScreen(slug, churchContext, onDone = { churchSermon = null }, modifier = Modifier.fillMaxSize().navigationBarsPadding())
+        return
+    }
+
     if (sermonsOpen) {
         // Before the notes, so the editor's own back (save and close) comes first.
         BackHandler { sermonsOpen = false }
@@ -184,6 +243,7 @@ fun AppShell(
                 verses = reader::verses,
             ),
             startNew = sermonsNew,
+            church = churchContext,
             onDone = { sermonsOpen = false },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )
@@ -361,7 +421,8 @@ fun AppShell(
                     verses = reader::verses,
                 ),
                 bibleId = state.bible.id,
-                onSignIn = { accountOpen = true }, onRead = { read(it.firstVerse) }, modifier = content)
+                onSignIn = { accountOpen = true }, onRead = { read(it.firstVerse) }, modifier = content,
+                onOpenSermon = { churchSermon = it })
         } }
     }
 

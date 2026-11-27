@@ -108,7 +108,15 @@ internal data class GroupContent(
  */
 @OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 @Composable
-fun GroupScreen(groupId: String, bible: JournalBible, bibleId: String, onBack: () -> Unit, onRead: (ChapterId) -> Unit, modifier: Modifier = Modifier) {
+fun GroupScreen(
+    groupId: String,
+    bible: JournalBible,
+    bibleId: String,
+    onBack: () -> Unit,
+    onRead: (ChapterId) -> Unit,
+    modifier: Modifier = Modifier,
+    onOpenSermon: ((String) -> Unit)? = null,
+) {
     val app = LocalContext.current.applicationContext as VerselyApplication
     val store = app.community
     val state by store.state.collectAsStateWithLifecycle()
@@ -364,6 +372,10 @@ fun GroupScreen(groupId: String, bible: JournalBible, bibleId: String, onBack: (
                         }
                         if (plan != null && today != null && today > 0) item {
                             ProgressCard(plan, today, content, visibleMembers, store::isMine, onAllDays = { allDays = true })
+                        }
+                        if (group.isChurch && onOpenSermon != null) item {
+                            val app = androidx.compose.ui.platform.LocalContext.current.applicationContext as com.genesis.app.VerselyApplication
+                            com.genesis.app.churchsermons.GroupSermonsCard(group, app.community.sermons, app.hiddenChurches, onOpenSermon)
                         }
                         item {
                             ChallengesCard(

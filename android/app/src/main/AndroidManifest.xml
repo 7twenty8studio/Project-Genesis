@@ -44,6 +44,13 @@
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data android:scheme="versely" />
             </intent-filter>
+            <!-- A church sermon's one link opens here (App Links; assetlinks.json on the site verifies it). -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="versely.7twenty8studio.com" android:pathPrefix="/s/" />
+            </intent-filter>
         </activity>
 
         <!-- Listening: the chapter read aloud keeps playing with the screen off (Media3). -->

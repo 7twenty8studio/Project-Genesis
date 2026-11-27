@@ -64,9 +64,12 @@ fun SermonNotesFlow(
     startNew: Boolean,
     onDone: () -> Unit,
     modifier: Modifier = Modifier,
+    /** Opens these notes straight away (a church sermon's Take Notes); Done goes back. */
+    openId: String? = null,
+    church: com.genesis.app.churchsermons.ChurchSermonContext? = null,
 ) {
     val sermons by store.all.collectAsStateWithLifecycle()
-    var editingId by rememberSaveable { mutableStateOf(if (startNew) UUID.randomUUID().toString() else null) }
+    var editingId by rememberSaveable { mutableStateOf(openId ?: if (startNew) UUID.randomUUID().toString() else null) }
 
     val editing = editingId
     if (editing != null) {
@@ -84,8 +87,10 @@ fun SermonNotesFlow(
                     draft != existing -> store.save(draft)
                 }
                 editingId = null
+                if (openId != null) onDone()
             },
             modifier = modifier,
+            church = church,
         )
         return
     }

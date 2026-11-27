@@ -65,7 +65,14 @@ import kotlinx.coroutines.launch
  */
 @OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 @Composable
-fun TogetherScreen(bible: com.genesis.app.prayer.JournalBible, bibleId: String, onSignIn: () -> Unit, onRead: (com.genesis.core.domain.bible.ChapterId) -> Unit, modifier: Modifier = Modifier) {
+fun TogetherScreen(
+    bible: com.genesis.app.prayer.JournalBible,
+    bibleId: String,
+    onSignIn: () -> Unit,
+    onRead: (com.genesis.core.domain.bible.ChapterId) -> Unit,
+    modifier: Modifier = Modifier,
+    onOpenSermon: (String) -> Unit = {},
+) {
     val app = LocalContext.current.applicationContext as VerselyApplication
     val store = app.community
     val state by store.state.collectAsStateWithLifecycle()
@@ -73,11 +80,19 @@ fun TogetherScreen(bible: com.genesis.app.prayer.JournalBible, bibleId: String, 
     val colors = LocalReaderColors.current
     var openGroup by rememberSaveable { mutableStateOf<String?>(null) }
     var editingName by rememberSaveable { mutableStateOf(false) }
+    var findingChurch by rememberSaveable { mutableStateOf(false) }
+    val flags by app.flags.values.collectAsStateWithLifecycle()
+    val churchSermons = flags[com.genesis.app.FeatureFlags.CHURCH_SERMONS] == true
     LaunchedEffect(account.user?.id) { store.refresh() }
+
+    if (findingChurch && churchSermons) {
+        com.genesis.app.churchsermons.ChurchSearchScreen(store.sermons, app.hiddenChurches, onOpen = onOpenSermon, onDone = { findingChurch = false }, modifier = modifier.statusBarsPadding())
+        return
+    }
 
     openGroup?.let { id ->
         BackHandler { openGroup = null }
-        GroupScreen(groupId = id, bible = bible, bibleId = bibleId, onBack = { openGroup = null }, onRead = onRead, modifier = modifier)
+        GroupScreen(groupId = id, bible = bible, bibleId = bibleId, onBack = { openGroup = null }, onRead = onRead, modifier = modifier, onOpenSermon = if (churchSermons) onOpenSermon else null)
         return
     }
 
@@ -89,6 +104,9 @@ fun TogetherScreen(bible: com.genesis.app.prayer.JournalBible, bibleId: String, 
                 color = colors.text,
                 modifier = Modifier.weight(1f).semantics { heading() },
             )
+            if (churchSermons) {
+                TextButton(onClick = { findingChurch = true }) { Text(stringResource(R.string.find_a_church), color = colors.accent) }
+            }
             if (state.isSignedIn && state.profile != null) {
                 TextButton(onClick = { editingName = true }) { Text(stringResource(R.string.change_display_name), color = colors.accent) }
             }
