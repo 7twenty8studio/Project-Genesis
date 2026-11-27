@@ -10,10 +10,15 @@
 // - Members who turned notifications off for the group (or Group
 //   Announcements off in Settings, profiles.accepts_announcements) are skipped; a nudge
 //   goes only to someone who accepts nudges (profiles.accepts_nudges).
-// - Needs the APNS_KEY (the .p8 file's text), APNS_KEY_ID and APNS_TEAM_ID
-//   secrets; without them it does nothing and says so.
+// - iPhones: the APNS_KEY (the .p8 file's text), APNS_KEY_ID and APNS_TEAM_ID
+//   secrets. Android phones (public.android_push_tokens): Firebase Cloud
+//   Messaging with FIREBASE_SERVICE_ACCOUNT (a service account's JSON key
+//   with the Firebase Cloud Messaging API; its project_id names the
+//   project). Without either it does nothing and says so; with one, only
+//   that platform is sent to.
 import { createClient } from "jsr:@supabase/supabase-js@2";
-import { apnsHost, apnsToken, isDeadToken, notificationPayload, NotifyError, nudgePayload, parseNotifyRequest, parseNudgeRequest } from "./lib.ts";
+import { apnsHost, apnsToken, fcmMessage, fcmURL, isDeadFcmToken, isDeadToken, notificationPayload, NotifyError, nudgePayload, parseNotifyRequest, parseNudgeRequest } from "./lib.ts";
+import { FCM_SCOPE, GoogleTokens, parseServiceAccount } from "../_shared/google.ts";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
@@ -22,6 +27,10 @@ const APNS_KEY = Deno.env.get("APNS_KEY");
 const APNS_KEY_ID = Deno.env.get("APNS_KEY_ID");
 const APNS_TEAM_ID = Deno.env.get("APNS_TEAM_ID");
 const BUNDLE_ID = Deno.env.get("GENESIS_BUNDLE_ID") ?? "com.7twenty8studio.versely";
+
+const FIREBASE = parseServiceAccount(Deno.env.get("FIREBASE_SERVICE_ACCOUNT"));
+const firebaseTokens = FIREBASE?.project_id ? new GoogleTokens(FIREBASE, FCM_SCOPE) : undefined;
+const APNS_READY = Boolean(APNS_KEY && APNS_KEY_ID && APNS_TEAM_ID);
 
 const admin = createClient(SUPABASE_URL, SERVICE_ROLE_KEY, { auth: { persistSession: false } });
 let cachedToken: { value: string; issuedAt: number } | undefined;
@@ -57,8 +66,8 @@ Deno.serve(async (req) => {
     if (claimError) throw claimError;
     if (!claimed) return json({ sent: 0, removed: 0, reason: "not_found_or_already_sent" });
 
-    if (!APNS_KEY || !APNS_KEY_ID || !APNS_TEAM_ID) {
-      console.warn("group-notify: APNS_KEY, APNS_KEY_ID or APNS_TEAM_ID isn't set; nothing sent.");
+    if (!APNS_READY && !firebaseTokens) {
+      console.warn("group-notify: neither APNs (APNS_KEY, APNS_KEY_ID, APNS_TEAM_ID) nor FIREBASE_SERVICE_ACCOUNT is set; nothing sent.");
       return json({ sent: 0, removed: 0, reason: "not_configured" });
     }
 
@@ -103,8 +112,57 @@ Deno.serve(async (req) => {
   }
 });
 
-/** Pushes one payload to every device of these accounts; forgets dead tokens. */
+/** Pushes one payload to every iPhone and Android phone of these accounts; forgets dead tokens. */
 async function deliver(userIDs: string[], payload: Record<string, unknown>): Promise<{ sent: number; removed: number }> {
+  const [apple, android] = await Promise.all([
+    APNS_READY ? deliverToApple(userIDs, payload) : Promise.resolve({ sent: 0, removed: 0 }),
+    firebaseTokens ? deliverToAndroid(userIDs, payload) : Promise.resolve({ sent: 0, removed: 0 }),
+  ]);
+  return { sent: apple.sent + android.sent, removed: apple.removed + android.removed };
+}
+
+/** Android phones, through Firebase Cloud Messaging (HTTP v1, one message per token). */
+async function deliverToAndroid(userIDs: string[], payload: Record<string, unknown>): Promise<{ sent: number; removed: number }> {
+  const tokens: { user_id: string; token: string }[] = [];
+  for (const batch of chunks(userIDs, 100)) {
+    const { data, error } = await admin.from("android_push_tokens").select("user_id, token").in("user_id", batch);
+    if (error) throw error;
+    tokens.push(...(data ?? []));
+  }
+  if (tokens.length === 0) return { sent: 0, removed: 0 };
+  const access = await firebaseTokens!.token();
+  const url = fcmURL(FIREBASE!.project_id!);
+  let sent = 0;
+  const dead: { user_id: string; token: string }[] = [];
+  const queue = [...tokens];
+  await Promise.all(Array.from({ length: Math.min(8, queue.length) }, async () => {
+    for (let item = queue.shift(); item; item = queue.shift()) {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { authorization: `Bearer ${access}`, "content-type": "application/json" },
+        body: JSON.stringify(fcmMessage(item.token, payload)),
+      });
+      if (response.ok) {
+        sent += 1;
+        continue;
+      }
+      const error = (await response.json().catch(() => ({})))?.error;
+      const code = error?.details?.find?.((detail: { errorCode?: string }) => detail?.errorCode)?.errorCode ?? error?.status;
+      if (isDeadFcmToken(response.status, code)) {
+        dead.push(item);
+      } else {
+        console.warn(`group-notify: FCM ${response.status} ${code ?? ""}`);
+      }
+    }
+  }));
+  for (const item of dead) {
+    await admin.from("android_push_tokens").delete().eq("user_id", item.user_id).eq("token", item.token);
+  }
+  return { sent, removed: dead.length };
+}
+
+/** iPhones, through APNs. */
+async function deliverToApple(userIDs: string[], payload: Record<string, unknown>): Promise<{ sent: number; removed: number }> {
   // In batches, so a large group doesn't make an over-long request.
   const tokens: { user_id: string; token: string; environment: string }[] = [];
   for (const batch of chunks(userIDs, 100)) {
@@ -175,8 +233,8 @@ async function sendNudge(nudgeID: string, senderID: string): Promise<Record<stri
     .maybeSingle();
   if (claimError) throw claimError;
   if (!claimed) return { sent: 0, removed: 0, reason: "not_found_or_already_sent" };
-  if (!APNS_KEY || !APNS_KEY_ID || !APNS_TEAM_ID) {
-    console.warn("group-notify: APNS_KEY, APNS_KEY_ID or APNS_TEAM_ID isn't set; nothing sent.");
+  if (!APNS_READY && !firebaseTokens) {
+    console.warn("group-notify: neither APNs nor FIREBASE_SERVICE_ACCOUNT is set; nothing sent.");
     return { sent: 0, removed: 0, reason: "not_configured" };
   }
   const [{ data: group }, { data: sender }, { data: profile }] = await Promise.all([

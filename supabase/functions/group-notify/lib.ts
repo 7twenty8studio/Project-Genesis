@@ -103,3 +103,48 @@ export function apnsHost(environment: string): string {
 export function isDeadToken(status: number, reason: string | undefined): boolean {
   return status === 410 || reason === "BadDeviceToken" || reason === "Unregistered" || reason === "DeviceTokenNotForTopic";
 }
+
+// Firebase Cloud Messaging (Versely for Android) --------------------------
+
+/** The Android string resource the phone reads a nudge with, in its own language. */
+export const ANDROID_NUDGE_KEY = "nudge_message";
+
+function clip(text: string, length: number): string {
+  return text.length > length ? text.slice(0, length - 1) + "…" : text;
+}
+
+/**
+ * The FCM HTTP v1 message for an Android phone: shown by Android itself in
+ * the "groups" channel, with a versely:// link the app opens when tapped.
+ */
+export function fcmMessage(token: string, payload: Record<string, unknown>): Record<string, unknown> {
+  const alert = ((payload.aps as Record<string, unknown> | undefined)?.alert ?? {}) as Record<string, unknown>;
+  const versely = (payload.versely ?? {}) as Record<string, unknown>;
+  const groupID = String(versely.groupID ?? "");
+  const notification: Record<string, unknown> = {
+    title: clip(String(alert.title ?? ""), 60),
+    channel_id: "groups",
+    tag: `group-${groupID}`,
+  };
+  if (alert["loc-key"] === NUDGE_BODY_KEY) {
+    notification.body_loc_key = ANDROID_NUDGE_KEY;
+    notification.body_loc_args = (alert["loc-args"] as string[] | undefined) ?? [];
+  } else {
+    const subtitle = alert.subtitle ? String(alert.subtitle) : "";
+    const body = alert.body ? String(alert.body) : "";
+    notification.body = clip([subtitle, body].filter(Boolean).join("\n"), 240);
+  }
+  const data: Record<string, string> = { link: `versely://group/${groupID}`, groupID };
+  if (versely.announcementID) data.announcementID = String(versely.announcementID);
+  if (versely.nudge) data.nudge = "true";
+  return { message: { token, android: { priority: "high", notification }, data } };
+}
+
+export function fcmURL(projectID: string): string {
+  return `https://fcm.googleapis.com/v1/projects/${encodeURIComponent(projectID)}/messages:send`;
+}
+
+/** FCM answers after which a registration token should be forgotten. */
+export function isDeadFcmToken(status: number, errorCode: string | undefined): boolean {
+  return status === 404 || errorCode === "UNREGISTERED" || (status === 400 && errorCode === "INVALID_ARGUMENT");
+}
