@@ -68,13 +68,13 @@ fun ListeningBar(
                 Text(detail, style = MaterialTheme.typography.bodySmall, color = if (state.error != null) colors.accent else colors.secondaryText, maxLines = 2, overflow = TextOverflow.Ellipsis)
             }
             val previous = stringResource(R.string.previous_chapter)
-            IconButton(onClick = listening::previousChapter, modifier = Modifier.semantics { contentDescription = previous }) { SkipIcon(colors.text, forward = false) }
+            IconButton(onClick = listening::previousChapter, modifier = Modifier.size(42.dp).semantics { contentDescription = previous }) { SkipIcon(colors.text, forward = false) }
             val toggle = stringResource(if (state.isPlaying) R.string.pause else R.string.play)
             IconButton(onClick = listening::toggle, modifier = Modifier.semantics { contentDescription = toggle }) {
                 if (state.isPlaying) PauseIcon(colors.accent, 26.dp) else PlayIcon(colors.accent, 26.dp)
             }
             val next = stringResource(R.string.next_chapter)
-            IconButton(onClick = listening::nextChapter, enabled = state.chapter?.next != null, modifier = Modifier.semantics { contentDescription = next }) { SkipIcon(colors.text, forward = true) }
+            IconButton(onClick = listening::nextChapter, enabled = state.chapter?.next != null, modifier = Modifier.size(42.dp).semantics { contentDescription = next }) { SkipIcon(colors.text, forward = true) }
             Box {
                 val speedLabel = stringResource(R.string.speed)
                 TextButton(onClick = { speedMenu = true }, modifier = Modifier.semantics { contentDescription = "$speedLabel ${Narration.speedLabel(speed)}" }) {
@@ -94,7 +94,7 @@ fun ListeningBar(
             }
             Box {
                 val more = stringResource(R.string.more)
-                IconButton(onClick = { moreMenu = true }, modifier = Modifier.semantics { contentDescription = more }) { MoreIcon(colors.secondaryText) }
+                IconButton(onClick = { moreMenu = true }, modifier = Modifier.size(40.dp).semantics { contentDescription = more }) { MoreIcon(colors.secondaryText) }
                 DropdownMenu(expanded = moreMenu, onDismissRequest = { moreMenu = false }) {
                     Text(
                         stringResource(R.string.sleep_timer),
@@ -128,6 +128,9 @@ fun ListeningBar(
                     )
                 }
             }
+            // Stop and close, always in reach (the X on iOS's player).
+            val stop = stringResource(R.string.stop_listening)
+            IconButton(onClick = listening::stop, modifier = Modifier.size(40.dp).semantics { contentDescription = stop }) { CloseIcon(colors.secondaryText) }
         }
         // While both play, the sounds are a row of this player (AmbientControlsRow on iOS), so there's one player.
         if (ambient != null) AmbientControlsRow(ambient, onOpenAmbient, divider = true)
@@ -189,6 +192,15 @@ private fun SkipIcon(color: Color, forward: Boolean) {
             close()
         }, color)
         drawRect(color, Offset(if (forward) w * 0.74f else w * 0.12f, h * 0.18f), Size(w * 0.14f, h * 0.64f))
+    }
+}
+
+@Composable
+private fun CloseIcon(color: Color) {
+    Canvas(Modifier.size(14.dp)) {
+        val stroke = size.minDimension * 0.14f
+        drawLine(color, Offset(0f, 0f), Offset(size.width, size.height), stroke, StrokeCap.Round)
+        drawLine(color, Offset(size.width, 0f), Offset(0f, size.height), stroke, StrokeCap.Round)
     }
 }
 
