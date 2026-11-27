@@ -1,10 +1,8 @@
 package com.genesis.app.audio
 
 import android.content.Context
-import android.content.Intent
 import android.util.Log
 import androidx.annotation.StringRes
-import androidx.core.content.ContextCompat
 import androidx.media3.common.AudioAttributes
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
@@ -45,7 +43,7 @@ data class AmbientState(
  * loops shared with iOS, one looping player per sound in the mix, each
  * clipped to its loop's exact length. They play alongside other apps (no
  * audio focus, as iOS mixes with others), keep going with the screen off
- * (AmbientService), sit quieter while the Bible is read aloud and fade out
+ * (one media session with listening, ListeningService), sit quieter while the Bible is read aloud and fade out
  * when the timer ends. The mix is remembered.
  */
 class AmbientSounds(private val context: Context, listening: Listening) {
@@ -58,10 +56,29 @@ class AmbientSounds(private val context: Context, listening: Listening) {
     private val _state = MutableStateFlow(AmbientState(mix = AmbientRules.decode(prefs.getString(MIX_KEY, null))))
     val state: StateFlow<AmbientState> = _state.asStateFlow()
 
+    /** Holds the media session open while the sounds are out, so they keep playing with the screen off. */
+    private var controller: com.google.common.util.concurrent.ListenableFuture<androidx.media3.session.MediaController>? = null
+
     init {
         scope.launch {
             listening.state.map { it.isPlaying }.distinctUntilChanged().collect { setDucked(it) }
         }
+        // One player for both: the sounds join listening's notification and lock screen controls.
+        listening.player.ambient = this
+        scope.launch {
+            state.collect { listening.player.refresh() }
+        }
+    }
+
+    private fun connectSession() {
+        if (controller != null) return
+        val token = androidx.media3.session.SessionToken(context, android.content.ComponentName(context, ListeningService::class.java))
+        controller = androidx.media3.session.MediaController.Builder(context, token).buildAsync()
+    }
+
+    private fun releaseSession() {
+        controller?.let { androidx.media3.session.MediaController.releaseFuture(it) }
+        controller = null
     }
 
     /** Adds a sound to the mix (and starts playing), or takes it out. */
@@ -73,6 +90,7 @@ class AmbientSounds(private val context: Context, listening: Listening) {
             if (mix.isEmpty()) {
                 _state.update { it.copy(isPlaying = false, showsControls = false) }
                 setTimer(null)
+                releaseSession()
             }
         } else {
             _state.update { it.copy(mix = mix) }
@@ -101,7 +119,7 @@ class AmbientSounds(private val context: Context, listening: Listening) {
         if (state.value.mix.isEmpty()) return
         _state.update { it.copy(isPlaying = true, showsControls = true) }
         state.value.mix.keys.forEach { start(it) }
-        runCatching { ContextCompat.startForegroundService(context, Intent(context, AmbientService::class.java)) }
+        runCatching { connectSession() }
             .onFailure { Log.w(TAG, "Couldn't keep ambient sounds going in the background", it) }
     }
 
@@ -116,6 +134,7 @@ class AmbientSounds(private val context: Context, listening: Listening) {
     fun close() {
         pause()
         _state.update { it.copy(showsControls = false) }
+        releaseSession()
     }
 
     fun togglePlayback() = if (state.value.isPlaying) pause() else play()

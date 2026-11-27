@@ -47,7 +47,14 @@ import com.genesis.core.domain.audio.Narration
  * chapter, the speed, and a menu with the sleep timer and Stop.
  */
 @Composable
-fun ListeningBar(state: ListeningState, speed: Double, listening: Listening, modifier: Modifier = Modifier) {
+fun ListeningBar(
+    state: ListeningState,
+    speed: Double,
+    listening: Listening,
+    modifier: Modifier = Modifier,
+    ambient: AmbientSounds? = null,
+    onOpenAmbient: () -> Unit = {},
+) {
     val colors = LocalReaderColors.current
     var speedMenu by remember { mutableStateOf(false) }
     var moreMenu by remember { mutableStateOf(false) }
@@ -122,6 +129,8 @@ fun ListeningBar(state: ListeningState, speed: Double, listening: Listening, mod
                 }
             }
         }
+        // While both play, the sounds are a row of this player (AmbientControlsRow on iOS), so there's one player.
+        if (ambient != null) AmbientControlsRow(ambient, onOpenAmbient, divider = true)
     }
 }
 

@@ -66,7 +66,7 @@
             android:exported="false"
             android:foregroundServiceType="dataSync" />
 
-        <!-- Listening: the chapter read aloud keeps playing with the screen off (Media3). -->
+        <!-- What's playing (the chapter read aloud and ambient sounds) keeps going with the screen off, in one player (Media3). -->
         <service
             android:name=".audio.ListeningService"
             android:exported="true"
@@ -87,12 +87,6 @@
             </intent-filter>
             <meta-data android:name="android.service.wallpaper" android:resource="@xml/verse_wallpaper" />
         </service>
-
-        <!-- Ambient sounds keep playing with the screen off. -->
-        <service
-            android:name=".audio.AmbientService"
-            android:exported="false"
-            android:foregroundServiceType="mediaPlayback" />
 
         <activity
             android:name=".widget.VerseWidgetConfigureActivity"

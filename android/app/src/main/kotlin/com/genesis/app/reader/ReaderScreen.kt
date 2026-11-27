@@ -427,6 +427,8 @@ fun ReaderScreen(
                         speed = listening.speed,
                         listening = listening.controls,
                         modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp).then(tabBarRoom),
+                        ambient = ambient.takeIf { shows(com.genesis.core.domain.features.OptionalFeature.AMBIENT_SOUNDS) },
+                        onOpenAmbient = { ambientOpen = true },
                     )
                 } else if (shows(com.genesis.core.domain.features.OptionalFeature.AMBIENT_SOUNDS)) {
                     com.genesis.app.audio.AmbientMiniBar(

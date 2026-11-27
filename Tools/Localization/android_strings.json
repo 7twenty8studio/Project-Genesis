@@ -1723,6 +1723,12 @@
     "attachments_device_footer": "Attachments are saved on this device. They aren't copied to your other devices yet.",
     "attachments_premium_teaser": "Add photos, voice recordings and PDFs with Premium.",
     "microphone_denied": "Versely can't use the microphone. Turn it on in your phone's Settings › Apps › Versely › Permissions.",
-    "recording_saved_on_device": "Saved on this device. It isn't copied to your other devices yet."
+    "recording_saved_on_device": "Saved on this device. It isn't copied to your other devices yet.",
+    "pause_ambient_sounds": "Pause ambient sounds",
+    "play_ambient_sounds": "Play ambient sounds",
+    "now_playing": "Now Playing",
+    "change_sounds": "Change Sounds",
+    "add_ambient_sounds": "Add Ambient Sounds",
+    "ambient_sounds_lower": "Ambient sounds"
   }
 }

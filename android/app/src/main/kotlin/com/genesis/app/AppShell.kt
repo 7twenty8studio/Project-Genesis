@@ -513,6 +513,9 @@ fun AppShell(
                 enter = androidx.compose.animation.fadeIn(androidx.compose.animation.core.tween(150)),
                 exit = androidx.compose.animation.fadeOut(androidx.compose.animation.core.tween(120)),
             ) {
+            androidx.compose.foundation.layout.Column {
+            // What's playing, on every tab but the reader (which has its own bar), as iOS's tab-bar accessory.
+            if (tab != AppTab.READ) com.genesis.app.audio.NowPlayingAccessory(showsAmbient = features.shows(OptionalFeature.AMBIENT_SOUNDS, flags))
             NavigationBar(containerColor = if (tab == AppTab.READ) colors.surface.copy(alpha = 0.94f) else colors.surface) {
                 for (item in tabs) {
                     NavigationBarItem(
@@ -527,6 +530,7 @@ fun AppShell(
                         ),
                     )
                 }
+            }
             }
             }
         },

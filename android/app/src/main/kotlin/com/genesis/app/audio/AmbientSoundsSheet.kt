@@ -247,3 +247,45 @@ fun AmbientMiniBar(ambient: AmbientSounds, onOpen: () -> Unit, modifier: Modifie
         }
     }
 }
+
+/**
+ * The ambient sounds as a row of a player (AmbientControlsRow on iOS): what's
+ * in the mix and whether it plays (opens the sounds), Play/Pause and Stop.
+ * Shows nothing while the sounds are put away.
+ */
+@Composable
+fun AmbientControlsRow(ambient: AmbientSounds, onOpen: () -> Unit, divider: Boolean = false, modifier: Modifier = Modifier) {
+    val colors = LocalReaderColors.current
+    val state by ambient.state.collectAsState()
+    val context = LocalContext.current
+    if (!state.showsControls || state.mix.isEmpty()) return
+    val summary = state.summary(context)
+    val barLabel = stringResource(R.string.ambient_bar_label, summary)
+    val playLabel = stringResource(if (state.isPlaying) R.string.pause_ambient_sounds else R.string.play_ambient_sounds)
+    val stopLabel = stringResource(R.string.ambient_stop)
+    Column(modifier.fillMaxWidth()) {
+        if (divider) androidx.compose.material3.HorizontalDivider(Modifier.padding(end = 10.dp, top = 2.dp), color = colors.separator)
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Column(
+                Modifier
+                    .weight(1f)
+                    .clickable(role = Role.Button, onClick = onOpen)
+                    .semantics(mergeDescendants = true) { contentDescription = barLabel }
+                    .padding(vertical = 6.dp),
+            ) {
+                Text(summary, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Medium, color = colors.text, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                Text(
+                    stringResource(if (state.isPlaying) R.string.ambient_playing else R.string.ambient_paused),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = colors.secondaryText,
+                )
+            }
+            IconButton(onClick = ambient::togglePlayback, modifier = Modifier.semantics { contentDescription = playLabel }) {
+                if (state.isPlaying) PauseIcon(colors.accent, 18.dp) else PlayIcon(colors.accent, 18.dp)
+            }
+            IconButton(onClick = ambient::close, modifier = Modifier.semantics { contentDescription = stopLabel }) {
+                Text("✕", color = colors.secondaryText, fontSize = 14.sp)
+            }
+        }
+    }
+}

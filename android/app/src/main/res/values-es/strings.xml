@@ -1723,4 +1723,10 @@
     <string name="attachments_premium_teaser">Añade fotos, grabaciones de voz y PDF con Premium.</string>
     <string name="microphone_denied">Versely no puede usar el micrófono. Actívalo en Ajustes del teléfono › Aplicaciones › Versely › Permisos.</string>
     <string name="recording_saved_on_device">Se guarda en este dispositivo. Aún no se copia a tus otros dispositivos.</string>
+    <string name="pause_ambient_sounds">Pausar los sonidos ambientales</string>
+    <string name="play_ambient_sounds">Reproducir los sonidos ambientales</string>
+    <string name="now_playing">Reproduciendo</string>
+    <string name="change_sounds">Cambiar sonidos</string>
+    <string name="add_ambient_sounds">Añadir sonidos ambientales</string>
+    <string name="ambient_sounds_lower">Sonidos ambientales</string>
 </resources>
