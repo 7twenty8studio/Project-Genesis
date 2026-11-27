@@ -369,6 +369,15 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     /** Verses of the Bible being read, verbatim, for Home's and Library's lists. */
+    /** Verses from another installed Bible (the morning welcome's, Premium tools'), with its abbreviation and language. */
+    suspend fun versesIn(bible: InstalledBible, ids: Collection<VerseId>): Triple<Map<VerseId, Verse>, String, String>? =
+        withContext(Dispatchers.IO) {
+            runCatching {
+                val repository = repository(bible)
+                Triple(repository.verses(ids), repository.translation.abbreviation, repository.translation.language)
+            }.onFailure { Log.e(TAG, "Couldn't read verses", it) }.getOrNull()
+        }
+
     suspend fun verses(ids: Collection<VerseId>): Map<VerseId, Verse> {
         val bible = state.value.bible
         return withContext(Dispatchers.IO) {

@@ -1469,4 +1469,25 @@
     <string name="settings_also_in_reader">Theme, font and page turns are also in the reader under Aa.</string>
     <string name="settings_youversion_free">Bibles from the YouVersion Platform are always free in Versely. The YouVersion Bible App is free to download and use.</string>
     <string name="settings_languages_footer">Versely is available in English, Spanish and Portuguese.</string>
+    <string name="good_morning_name">Good morning, %s</string>
+    <string name="good_afternoon_name">Good afternoon, %s</string>
+    <string name="good_evening_name">Good evening, %s</string>
+    <string name="welcome_good_morning_name">Good morning, %s.</string>
+    <string name="welcome_good_afternoon_name">Good afternoon, %s.</string>
+    <string name="welcome_good_evening_name">Good evening, %s.</string>
+    <string name="welcome_good_morning">Good morning.</string>
+    <string name="welcome_good_afternoon">Good afternoon.</string>
+    <string name="welcome_good_evening">Good evening.</string>
+    <string name="morning_welcome">Morning Welcome</string>
+    <string name="welcome_show_each_day">Show Each Day</string>
+    <string name="welcome_show_each_day_footer">The first time you open Versely each day, a quiet welcome shows today\'s verse and reading.</string>
+    <string name="welcome_greeting">Greeting</string>
+    <string name="welcome_your_first_name">Your first name</string>
+    <string name="welcome_name_footer">Leave it empty to use your name in groups, or no name at all.</string>
+    <string name="welcome_ease_in_sounds">Ease In My Ambient Sounds</string>
+    <string name="welcome_choose_sounds_first">Choose your sounds first in Settings › Ambient Sounds.</string>
+    <string name="welcome_plays_sounds">Plays %s, fading in gently.</string>
+    <string name="preview">Preview</string>
+    <string name="not_now">Not Now</string>
+    <string name="continue_reading_button">Continue Reading</string>
 </resources>

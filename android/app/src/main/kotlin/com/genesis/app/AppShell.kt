@@ -127,6 +127,29 @@ fun AppShell(
         tab = AppTab.READ
     }
 
+    // The Premium morning welcome: the first open each day (skipped, and counted, when a link opened Versely).
+    var welcomeShown by rememberSaveable { mutableStateOf(false) }
+    var welcomePreview by rememberSaveable { mutableStateOf(false) }
+    var welcomeSettingsOpen by rememberSaveable { mutableStateOf(false) }
+    androidx.lifecycle.compose.LifecycleResumeEffect(Unit) {
+        if (link != null) app.welcome.markShown()
+        else if (app.welcome.shouldShow(com.genesis.app.settings.Entitlements.isPremium)) welcomeShown = true
+        onPauseOrDispose {}
+    }
+    if (welcomeShown || welcomePreview) {
+        val preview = welcomePreview
+        com.genesis.app.welcome.MorningWelcomeScreen(
+            reader = reader,
+            plans = plans,
+            signInName = account.user?.name,
+            isPreview = preview,
+            onReadChapter = { read(it.firstVerse) },
+            onContinue = { settingsOpen = false; tab = AppTab.READ },
+            onClose = { if (preview) welcomePreview = false else welcomeShown = false },
+        )
+        return
+    }
+
     // A versely:// link (a widget tap) opens its place over whatever was showing.
     LaunchedEffect(link) {
         when (link) {
@@ -392,6 +415,17 @@ fun AppShell(
         return
     }
 
+    if (welcomeSettingsOpen) {
+        androidx.activity.compose.BackHandler { welcomeSettingsOpen = false }
+        com.genesis.app.welcome.MorningWelcomeSettingsScreen(
+            showsAmbient = features.shows(OptionalFeature.AMBIENT_SOUNDS, flags),
+            onPreview = { welcomePreview = true },
+            onDone = { welcomeSettingsOpen = false },
+            modifier = Modifier.fillMaxSize().navigationBarsPadding(),
+        )
+        return
+    }
+
     if (settingsOpen) {
         val offersYouVersion = app.bibles.catalog.collectAsStateWithLifecycle().value.any { it.isYouVersion }
         SettingsScreen(
@@ -407,6 +441,7 @@ fun AppShell(
             showsListening = features.shows(OptionalFeature.LISTEN, flags),
             onAmbient = if (features.shows(OptionalFeature.AMBIENT_SOUNDS, flags)) ({ settingsAmbient = true }) else null,
             offersYouVersionBibles = offersYouVersion,
+            onMorningWelcome = { welcomeSettingsOpen = true },
             onDone = { settingsOpen = false },
             modifier = Modifier.fillMaxSize().navigationBarsPadding(),
         )
@@ -471,6 +506,11 @@ fun AppShell(
                 },
                 onReadChapter = { read(it.firstVerse) },
                 onMarkPlanDay = { enrollment, day, done -> app.userData.plans.setDay(day, done, enrollment.id) },
+                greetingName = account.user?.let { user ->
+                    val welcomeName = app.welcome.settings.collectAsStateWithLifecycle().value.name
+                    com.genesis.core.domain.welcome.MorningWelcomeRules.firstName(welcomeName)
+                        ?: com.genesis.core.domain.welcome.MorningWelcomeRules.firstName(user.name)
+                },
                 activePrayers = prayers.count { it.hasContent && !it.isAnswered },
                 onPrayerJournal = { journalOpen = true },
                 memorise = memoryVerses.size to memoryVerses.count { it.isDue() },

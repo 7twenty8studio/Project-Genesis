@@ -50,7 +50,7 @@ import com.genesis.core.design.LocalReaderColors
 /**
  * Settings from Home, as SettingsView.swift: Features, Notifications, Goals
  * & Streaks, Bibles and Account; Reading (Theme & Reading, Listening,
- * Ambient Sounds); Send Feedback; About Versely (help, privacy, version);
+ * Ambient Sounds, Morning Welcome); Send Feedback; About Versely (help, privacy, version);
  * Language; and the note that the reader's Aa holds the same settings.
  * Versely Premium, App Icon and Widget Photo join with Google Play Billing.
  */
@@ -68,6 +68,7 @@ fun SettingsScreen(
     showsListening: Boolean = true,
     onAmbient: (() -> Unit)? = null,
     offersYouVersionBibles: Boolean = false,
+    onMorningWelcome: () -> Unit = {},
     onDone: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -127,6 +128,15 @@ fun SettingsScreen(
                     Divider_()
                     Row_(stringResource(R.string.ambient_title), onClick = onAmbient, trailing = "›", icon = "🔈", premium = !Entitlements.isPremium)
                 }
+                Divider_()
+                // Premium: without it the row shows its tag (the paywall comes with Google Play Billing).
+                Row_(
+                    stringResource(R.string.morning_welcome),
+                    onClick = { if (Entitlements.isPremium) onMorningWelcome() },
+                    trailing = "›",
+                    icon = "🌅",
+                    premium = !Entitlements.isPremium,
+                )
             }
 
             Spacer(Modifier.size(20.dp))

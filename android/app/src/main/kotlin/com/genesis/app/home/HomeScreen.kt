@@ -104,6 +104,8 @@ fun HomeScreen(
     record: ReadingRecord,
     onInsights: () -> Unit,
     onGoals: () -> Unit = {},
+    /** Signed in: the morning welcome's name, else the sign-in's first name (HomeGreeting on iOS). */
+    greetingName: String? = null,
     modifier: Modifier = Modifier,
 ) {
     val colors = LocalReaderColors.current
@@ -136,7 +138,7 @@ fun HomeScreen(
                 val pattern = android.text.format.DateFormat.getBestDateTimePattern(Locale.getDefault(), "EEEEMMMMd")
                 Text(DateTimeFormatter.ofPattern(pattern).format(today), style = MaterialTheme.typography.bodyMedium, color = colors.secondaryText)
                 Text(
-                    stringResource(Greeting.at(LocalTime.now().hour).title),
+                    greeting(Greeting.at(LocalTime.now().hour), greetingName),
                     style = MaterialTheme.typography.displaySmall.copy(fontFamily = FontFamily.Serif),
                     color = colors.text,
                 )
@@ -395,6 +397,14 @@ private fun SectionHeader(title: String, onSeeAll: (() -> Unit)? = null) {
 private fun scriptureFamily() = rememberFontFamily(LocalReaderPreferences.current.font.available(Entitlements.isPremium))
 
 private fun Modifier.clip18(radius: Int = 18) = this.then(Modifier.clip(RoundedCornerShape(radius.dp)))
+
+@Composable
+private fun greeting(greeting: Greeting, name: String?): String = when {
+    name == null -> stringResource(greeting.title)
+    greeting == Greeting.MORNING -> stringResource(R.string.good_morning_name, name)
+    greeting == Greeting.AFTERNOON -> stringResource(R.string.good_afternoon_name, name)
+    else -> stringResource(R.string.good_evening_name, name)
+}
 
 private val Greeting.title: Int
     get() = when (this) {

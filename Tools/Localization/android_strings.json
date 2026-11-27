@@ -1468,6 +1468,27 @@
     "feedback_footer": "Report a problem, a mistake in a Bible text, or share an idea.",
     "settings_also_in_reader": "Theme, font and page turns are also in the reader under Aa.",
     "settings_youversion_free": "Bibles from the YouVersion Platform are always free in Versely. The YouVersion Bible App is free to download and use.",
-    "settings_languages_footer": "Versely is available in English, Spanish and Portuguese."
+    "settings_languages_footer": "Versely is available in English, Spanish and Portuguese.",
+    "good_morning_name": "Good morning, %@",
+    "good_afternoon_name": "Good afternoon, %@",
+    "good_evening_name": "Good evening, %@",
+    "welcome_good_morning_name": "Good morning, %@.",
+    "welcome_good_afternoon_name": "Good afternoon, %@.",
+    "welcome_good_evening_name": "Good evening, %@.",
+    "welcome_good_morning": "Good morning.",
+    "welcome_good_afternoon": "Good afternoon.",
+    "welcome_good_evening": "Good evening.",
+    "morning_welcome": "Morning Welcome",
+    "welcome_show_each_day": "Show Each Day",
+    "welcome_show_each_day_footer": "The first time you open Versely each day, a quiet welcome shows today's verse and reading.",
+    "welcome_greeting": "Greeting",
+    "welcome_your_first_name": "Your first name",
+    "welcome_name_footer": "Leave it empty to use your name in groups, or no name at all.",
+    "welcome_ease_in_sounds": "Ease In My Ambient Sounds",
+    "welcome_choose_sounds_first": "Choose your sounds first in Settings › Ambient Sounds.",
+    "welcome_plays_sounds": "Plays %@, fading in gently.",
+    "preview": "Preview",
+    "not_now": "Not Now",
+    "continue_reading_button": "Continue Reading"
   }
 }

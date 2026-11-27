@@ -93,6 +93,7 @@ class VerselyApplication : Application() {
     }
 
     /** Ambient sounds to read and pray with (Premium). */
+    val welcome: com.genesis.app.welcome.MorningWelcome by lazy { com.genesis.app.welcome.MorningWelcome(this) }
     val ambient: com.genesis.app.audio.AmbientSounds by lazy { com.genesis.app.audio.AmbientSounds(this, listening) }
 
     /** Settings › Notifications. */
