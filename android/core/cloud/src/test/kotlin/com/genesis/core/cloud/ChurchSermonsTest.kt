@@ -48,6 +48,9 @@ class ChurchSermonsTest {
         assertEquals(listOf(43003016 to 43003017), sermon.passages)
         assertNull(sermon.blanks[1].answer)
         assertEquals(SermonAnswers.REVEALED, sermon.answers)
+        // As the server sends it: the fields beside "status".
+        val flat = """{"status":"ok","id":"68de0630-e3b0-42a2-b059-94b484debcd3","slug":"6audf2zagi","group_id":"beba5c2f-8236-4897-90dc-052e6914069f","title":"Rest","blocks":[{"id":"p1","kind":"paragraph","text":"Come."}]}"""
+        assertEquals("Rest", assertIs<ChurchSermonLookup.Found>(ChurchSermonWire.lookup(flat)).sermon.title)
         assertEquals(ChurchSermonLookup.MembersOnly, ChurchSermonWire.lookup("""{"status":"members_only"}"""))
         assertEquals(ChurchSermonLookup.NotFound, ChurchSermonWire.lookup("""{"status":"gone"}"""))
     }

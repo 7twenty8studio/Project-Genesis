@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:autoStart="true"
-    android:flipInterval="220"
+    android:flipInterval="280"
     android:inAnimation="@anim/widget_frame_in"
     android:outAnimation="@anim/widget_frame_out" />

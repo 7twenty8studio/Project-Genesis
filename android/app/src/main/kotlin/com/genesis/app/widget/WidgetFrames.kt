@@ -35,12 +35,12 @@ import java.io.File
  * animations off.
  */
 object WidgetFrames {
-    const val COUNT = 10
-    /** Seconds of the animation between frames (the flipper shows each for 0.22 s). */
-    private const val STEP = 0.26
+    const val COUNT = 20
+    /** Seconds of the animation between frames (the flipper shows each for 0.28 s: a loop of about 5.6 s). */
+    private const val STEP = 0.3
     /** Frames are drawn at this share of the still's size. */
-    private const val SCALE = 0.55f
-    private const val VERSION = 2
+    private const val SCALE = 0.5f
+    private const val VERSION = 3
     private const val TAG = "WidgetFrames"
     private val drawing = Mutex()
     /** Styles whose frames failed to draw in this run of the app: not tried again until it restarts. */

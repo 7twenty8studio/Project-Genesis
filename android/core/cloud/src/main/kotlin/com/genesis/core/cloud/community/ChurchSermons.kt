@@ -386,7 +386,8 @@ object ChurchSermonWire {
     fun lookup(body: String): ChurchSermonLookup {
         val root = runCatching { json.parseToJsonElement(body) }.getOrNull().obj() ?: return ChurchSermonLookup.NotFound
         return when (root.str("status")) {
-            "ok" -> root["sermon"].obj()?.let(::sermon)?.let(ChurchSermonLookup::Found) ?: ChurchSermonLookup.NotFound
+            // The sermon's fields sit beside "status" (as SermonRow reads them on iOS).
+            "ok" -> (root["sermon"].obj() ?: root).let(::sermon)?.let(ChurchSermonLookup::Found) ?: ChurchSermonLookup.NotFound
             "members_only" -> ChurchSermonLookup.MembersOnly
             else -> ChurchSermonLookup.NotFound
         }
