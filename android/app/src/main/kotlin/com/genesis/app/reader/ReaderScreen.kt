@@ -23,6 +23,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -33,6 +34,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -45,6 +47,7 @@ import com.genesis.app.settings.Entitlements
 import com.genesis.app.settings.LocalReaderPreferences
 import com.genesis.core.design.scriptureStyle
 import com.genesis.core.domain.reader.ReaderPreferences
+import com.genesis.core.domain.reader.ReadingMode
 
 @Composable
 fun ReaderRoute(
@@ -59,6 +62,7 @@ fun ReaderRoute(
         onChooseBible = viewModel::choose,
         onNext = { viewModel.next() },
         onPrevious = { viewModel.previous() },
+        onPreviousAtEnd = { viewModel.previous(atEnd = true) },
     )
 }
 
@@ -77,6 +81,7 @@ fun ReaderScreen(
     onChooseBible: (com.genesis.core.bible.BundledBible) -> Unit,
     onNext: () -> Unit,
     onPrevious: () -> Unit,
+    onPreviousAtEnd: () -> Unit = onPrevious,
 ) {
     var picking by rememberSaveable { mutableStateOf(false) }
     var bibleMenu by remember { mutableStateOf(false) }
@@ -144,8 +149,22 @@ fun ReaderScreen(
         containerColor = colors.background,
     ) { padding ->
         Box(Modifier.fillMaxSize().padding(padding), contentAlignment = Alignment.TopCenter) {
+            val preferences = LocalReaderPreferences.current
+            val scripture = scriptureStyle(preferences, Entitlements.isPremium)
             when {
-                state.chapter != null -> ChapterText(state.chapter)
+                state.chapter != null && preferences.readingMode == ReadingMode.PAGE -> key(state.chapter.id, state.chapter.translation.id) {
+                    val text = remember(state.chapter, colors) { chapterText(state.chapter, colors) }
+                    PagedChapter(
+                        chapter = state.chapter,
+                        text = text,
+                        style = scripture,
+                        runningHead = state.chapterId.description(language).uppercase(),
+                        openAtEnd = state.openAtEnd,
+                        onNextChapter = onNext,
+                        onPreviousChapter = onPreviousAtEnd,
+                    )
+                }
+                state.chapter != null -> ChapterText(state.chapter, scripture)
                 state.failed -> Text(
                     stringResource(R.string.chapter_load_failed),
                     color = colors.secondaryText,
@@ -176,39 +195,10 @@ fun ReaderScreen(
     }
 }
 
-/** A run of verses shown together: a paragraph, a poetry block, or a heading. */
-private sealed interface Block {
-    data class Heading(val text: String) : Block
-    data class Prose(val verses: List<com.genesis.core.bible.Verse>) : Block
-}
-
-private fun blocks(chapter: Chapter): List<Block> {
-    val headings = chapter.headings.groupBy { it.beforeVerse }
-    val result = mutableListOf<Block>()
-    var current = mutableListOf<com.genesis.core.bible.Verse>()
-    fun flush() {
-        if (current.isNotEmpty()) result += Block.Prose(current)
-        current = mutableListOf()
-    }
-    for (verse in chapter.verses) {
-        val heading = headings[verse.number]
-        if (heading != null) {
-            flush()
-            heading.forEach { result += Block.Heading(it.text) }
-        }
-        val previous = current.lastOrNull()
-        if (verse.startsParagraph || verse.isPoetry || (previous != null && previous.isPoetry)) flush()
-        current += verse
-    }
-    flush()
-    return result
-}
-
 @Composable
-private fun ChapterText(chapter: Chapter) {
+private fun ChapterText(chapter: Chapter, scripture: TextStyle) {
     val colors = LocalReaderColors.current
     val listState = rememberLazyListState()
-    val scripture = scriptureStyle(LocalReaderPreferences.current, Entitlements.isPremium)
     LaunchedEffect(chapter.id, chapter.translation.id) { listState.scrollToItem(0) }
     val blocks = remember(chapter) { blocks(chapter) }
 

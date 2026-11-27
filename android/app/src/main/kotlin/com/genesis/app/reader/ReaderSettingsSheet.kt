@@ -28,6 +28,9 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.SegmentedButton
+import androidx.compose.material3.SegmentedButtonDefaults
+import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
@@ -50,12 +53,13 @@ import com.genesis.core.design.rememberFontFamily
 import com.genesis.core.design.toColors
 import com.genesis.core.domain.reader.ReaderFont
 import com.genesis.core.domain.reader.ReaderPreferences
+import com.genesis.core.domain.reader.ReadingMode
 import com.genesis.core.domain.theme.ReaderTheme
 import kotlin.math.roundToInt
 
 /**
- * The "Aa" sheet, as ReaderSettingsSheet.swift: theme, text size, line
- * spacing and typeface. Premium themes and faces show their tag and can't
+ * The "Aa" sheet, as ReaderSettingsSheet.swift: pages or scroll, theme,
+ * text size, line spacing and typeface. Premium themes and faces show their tag and can't
  * be chosen without Premium. Margins, page turns and the rest follow with
  * the paged reader.
  */
@@ -93,6 +97,19 @@ internal fun ReaderSettingsSheet(
                         locked = theme.isPremium && !premium,
                         onClick = { onChange { it.copy(theme = theme) } },
                     )
+                }
+            }
+
+            SectionTitle(R.string.layout)
+            SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth().padding(horizontal = 24.dp)) {
+                ReadingMode.entries.forEachIndexed { index, mode ->
+                    SegmentedButton(
+                        selected = preferences.readingMode == mode,
+                        onClick = { onChange { it.copy(readingMode = mode) } },
+                        shape = SegmentedButtonDefaults.itemShape(index, ReadingMode.entries.size),
+                    ) {
+                        Text(stringResource(if (mode == ReadingMode.PAGE) R.string.reading_mode_pages else R.string.reading_mode_scroll))
+                    }
                 }
             }
 

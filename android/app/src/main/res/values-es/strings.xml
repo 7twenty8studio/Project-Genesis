@@ -49,4 +49,7 @@
     <string name="font_caption_crimson_pro">Una letra elegante de estilo Garamond para capítulos largos</string>
     <string name="font_caption_source_serif">Una serif tranquila y sólida, de ritmo uniforme</string>
     <string name="font_caption_spectral">Una letra ligera y refinada, hecha para pantallas</string>
+    <string name="layout">Diseño</string>
+    <string name="reading_mode_pages">Páginas</string>
+    <string name="reading_mode_scroll">Desplazamiento</string>
 </resources>

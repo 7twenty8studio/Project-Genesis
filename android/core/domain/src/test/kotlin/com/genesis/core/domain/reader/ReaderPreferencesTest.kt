@@ -7,6 +7,7 @@ import kotlin.test.assertEquals
 class ReaderPreferencesTest {
     @Test fun defaultsMatchIOS() {
         val defaults = ReaderPreferences()
+        assertEquals(ReadingMode.PAGE, defaults.readingMode)
         assertEquals(ReaderTheme.AUTOMATIC, defaults.theme)
         assertEquals(ReaderFont.NEW_YORK, defaults.font)
         assertEquals(19.0, defaults.fontSize)
@@ -14,7 +15,7 @@ class ReaderPreferencesTest {
     }
 
     @Test fun roundTrips() {
-        val chosen = ReaderPreferences(ReaderTheme.SEPIA, ReaderFont.EB_GARAMOND, 22.0, 1.7)
+        val chosen = ReaderPreferences(ReadingMode.SCROLL, ReaderTheme.SEPIA, ReaderFont.EB_GARAMOND, 22.0, 1.7)
         assertEquals(chosen, ReaderPreferences.decoded(chosen.encoded()))
     }
 

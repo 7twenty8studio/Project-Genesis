@@ -26,6 +26,8 @@ data class ReaderUiState(
     val translations: List<Pair<BundledBible, Translation>> = emptyList(),
     /** True when the chapter couldn't be read; the reader says so instead of closing. */
     val failed: Boolean = false,
+    /** Paged reading opens a chapter on its last page when going back into it. */
+    val openAtEnd: Boolean = false,
 )
 
 class ReaderViewModel(application: Application) : AndroidViewModel(application) {
@@ -47,8 +49,8 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         }
     }
 
-    fun open(chapterId: ChapterId) {
-        _state.update { it.copy(chapterId = chapterId) }
+    fun open(chapterId: ChapterId, atEnd: Boolean = false) {
+        _state.update { it.copy(chapterId = chapterId, openAtEnd = atEnd) }
         load()
     }
 
@@ -57,8 +59,8 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         load()
     }
 
-    fun next() = state.value.chapterId.next?.let(::open)
-    fun previous() = state.value.chapterId.previous?.let(::open)
+    fun next() = state.value.chapterId.next?.let { open(it) }
+    fun previous(atEnd: Boolean = false) = state.value.chapterId.previous?.let { open(it, atEnd) }
 
     private fun load() {
         val (id, bible) = state.value.let { it.chapterId to it.bible }

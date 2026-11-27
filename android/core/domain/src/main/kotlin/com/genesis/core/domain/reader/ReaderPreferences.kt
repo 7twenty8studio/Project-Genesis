@@ -10,7 +10,14 @@ import kotlinx.serialization.json.Json
  * More of iOS's settings (paragraph spacing, page turns, first letter…)
  * join as their features arrive.
  */
+/** Page by page (the default, as on iOS) or one long scroll. */
+enum class ReadingMode(val id: String) {
+    PAGE("page"),
+    SCROLL("scroll"),
+}
+
 data class ReaderPreferences(
+    val readingMode: ReadingMode = ReadingMode.PAGE,
     val theme: ReaderTheme = ReaderTheme.AUTOMATIC,
     val font: ReaderFont = ReaderFont.NEW_YORK,
     val fontSize: Double = 19.0,
@@ -26,7 +33,7 @@ data class ReaderPreferences(
     fun smaller() = copy(fontSize = (fontSize - 1).coerceIn(FONT_SIZE_RANGE))
     fun larger() = copy(fontSize = (fontSize + 1).coerceIn(FONT_SIZE_RANGE))
 
-    fun encoded(): String = json.encodeToString(Stored.serializer(), Stored(theme.name, font.id, fontSize, lineSpacing))
+    fun encoded(): String = json.encodeToString(Stored.serializer(), Stored(theme.name, font.id, fontSize, lineSpacing, readingMode.id))
 
     @Serializable
     private data class Stored(
@@ -34,6 +41,7 @@ data class ReaderPreferences(
         val font: String? = null,
         val fontSize: Double? = null,
         val lineSpacing: Double? = null,
+        val readingMode: String? = null,
     )
 
     companion object {
@@ -47,6 +55,7 @@ data class ReaderPreferences(
             val defaults = ReaderPreferences()
             val stored = text?.let { runCatching { json.decodeFromString(Stored.serializer(), it) }.getOrNull() } ?: return defaults
             return ReaderPreferences(
+                readingMode = ReadingMode.entries.firstOrNull { it.id == stored.readingMode } ?: defaults.readingMode,
                 theme = ReaderTheme.entries.firstOrNull { it.name == stored.theme } ?: defaults.theme,
                 font = ReaderFont.withId(stored.font) ?: defaults.font,
                 fontSize = stored.fontSize ?: defaults.fontSize,

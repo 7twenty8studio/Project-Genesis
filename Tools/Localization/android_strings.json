@@ -49,6 +49,9 @@
     "font_caption_eb_garamond": "An elegant old-style book face",
     "font_caption_crimson_pro": "A graceful Garamond-style face for long chapters",
     "font_caption_source_serif": "A calm, sturdy serif with an even rhythm",
-    "font_caption_spectral": "A light, refined face made for screens"
+    "font_caption_spectral": "A light, refined face made for screens",
+    "layout": "Layout",
+    "reading_mode_pages": "Pages",
+    "reading_mode_scroll": "Scroll"
   }
 }

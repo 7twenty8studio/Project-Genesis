@@ -50,4 +50,7 @@
     <string name="font_caption_crimson_pro">A graceful Garamond-style face for long chapters</string>
     <string name="font_caption_source_serif">A calm, sturdy serif with an even rhythm</string>
     <string name="font_caption_spectral">A light, refined face made for screens</string>
+    <string name="layout">Layout</string>
+    <string name="reading_mode_pages">Pages</string>
+    <string name="reading_mode_scroll">Scroll</string>
 </resources>
