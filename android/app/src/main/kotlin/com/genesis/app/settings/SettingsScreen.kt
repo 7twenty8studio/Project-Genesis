@@ -168,7 +168,7 @@ fun SettingsScreen(
                     Row(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
                         Text(stringResource(R.string.test_as_premium), style = MaterialTheme.typography.bodyLarge, color = colors.text, modifier = Modifier.weight(1f))
                         Switch(
-                            checked = Entitlements.isPremium,
+                            checked = Entitlements.isTestingPremium,
                             onCheckedChange = { Entitlements.setTestingPremium(context, it) },
                             colors = SwitchDefaults.colors(checkedTrackColor = colors.accent),
                         )

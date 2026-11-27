@@ -103,24 +103,72 @@ fun rememberEffectivePreferences(chosen: ReaderPreferences): ReaderPreferences {
 }
 
 /**
- * Premium arrives with Play Billing. Until then everything Premium is shown
- * with its tag and can't be chosen, as on iOS without Premium; debug builds
- * have Settings › Developer › Test as Premium, as iOS's DEBUG builds do.
+ * Whether this person has Premium, as EntitlementService on iOS. Today that's
+ * a grant the owner gave (public.premium_grants, from Studio OS), checked on
+ * launch, return and sign-in, with a saved end date that ends it offline
+ * too; debug builds also have Settings › Developer › Test as Premium. Play
+ * Billing subscriptions join here when the Play account is ready.
  */
 object Entitlements {
     var isPremium: Boolean by mutableStateOf(false)
         private set
 
     private const val TEST_KEY = "premium.testAsPremium"
+    private const val GRANT_KEY = "premium.grant"
+    private const val GRANT_ENDS_KEY = "premium.grantEnds"
+    /** Settings › Developer › Test as Premium (debug builds). */
+    var isTestingPremium: Boolean by mutableStateOf(false)
+        private set
+    private var testing: Boolean
+        get() = isTestingPremium
+        set(value) { isTestingPremium = value }
+    private var grant = com.genesis.core.domain.premium.PremiumGrant.NONE
+
+    private fun prefs(context: Context) = context.getSharedPreferences("premium", Context.MODE_PRIVATE)
 
     fun load(context: Context) {
-        if (!BuildConfig.DEBUG) return
-        isPremium = context.getSharedPreferences("premium", Context.MODE_PRIVATE).getBoolean(TEST_KEY, false)
+        val prefs = prefs(context)
+        testing = BuildConfig.DEBUG && prefs.getBoolean(TEST_KEY, false)
+        val ends = prefs.getLong(GRANT_ENDS_KEY, 0L).takeIf { it > 0 }?.let(java.time.Instant::ofEpochMilli)
+        grant = com.genesis.core.domain.premium.PremiumGrant(prefs.getBoolean(GRANT_KEY, false), ends)
+        recompute()
     }
 
     fun setTestingPremium(context: Context, on: Boolean) {
         if (!BuildConfig.DEBUG) return
-        context.getSharedPreferences("premium", Context.MODE_PRIVATE).edit { putBoolean(TEST_KEY, on) }
-        isPremium = on
+        prefs(context).edit { putBoolean(TEST_KEY, on) }
+        testing = on
+        recompute()
+    }
+
+    /** Asks the server for this account's grant; offline, keeps what was known unless its end date passed. */
+    suspend fun refreshGrant(app: com.genesis.app.VerselyApplication) {
+        val client = app.account.client
+        val signedIn = app.account.state.value.user != null
+        val next = if (client == null || !signedIn) {
+            com.genesis.core.domain.premium.PremiumGrant.NONE
+        } else {
+            runCatching {
+                val token = app.account.accessToken()
+                val text = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+                    client.select("premium_grants", listOf("select" to "expires_at"), token)
+                }
+                val rows = kotlinx.serialization.json.Json.parseToJsonElement(text.ifEmpty { "[]" }) as kotlinx.serialization.json.JsonArray
+                val row = rows.firstOrNull() as? kotlinx.serialization.json.JsonObject
+                val ends = (row?.get("expires_at") as? kotlinx.serialization.json.JsonPrimitive)?.takeIf { it.isString }?.content
+                com.genesis.core.domain.premium.PremiumGrant.from(row != null, ends)
+            }.getOrElse { if (grant.isActive()) grant else com.genesis.core.domain.premium.PremiumGrant.NONE }
+        }
+        grant = if (next.isActive()) next else com.genesis.core.domain.premium.PremiumGrant.NONE
+        prefs(app).edit {
+            putBoolean(GRANT_KEY, grant.active)
+            grant.endsAt?.let { putLong(GRANT_ENDS_KEY, it.toEpochMilli()) } ?: remove(GRANT_ENDS_KEY)
+        }
+        recompute()
+        AppIcons.apply(app)
+    }
+
+    private fun recompute() {
+        isPremium = testing || grant.isActive()
     }
 }

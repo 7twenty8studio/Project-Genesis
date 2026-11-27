@@ -65,6 +65,8 @@ class MainActivity : ComponentActivity() {
             kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) { app.userData }
             app.sync.schedule()
             app.flags.refresh()
+            // A grant given (or ended) in Studio OS since Versely was last open.
+            com.genesis.app.settings.Entitlements.refreshGrant(app)
         }
         // A new day, or a change in Android's notification settings.
         (application as VerselyApplication).refreshReminders()

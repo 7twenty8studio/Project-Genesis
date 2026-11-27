@@ -110,6 +110,8 @@ fun AppShell(
     val memoryVerses by app.userData.memory.all.collectAsStateWithLifecycle()
     val prayers by app.userData.prayers.all.collectAsStateWithLifecycle()
     val account by app.account.state.collectAsStateWithLifecycle()
+    // Signing in or out: that account's Premium grant.
+    LaunchedEffect(account.user?.id) { com.genesis.app.settings.Entitlements.refreshGrant(app) }
     val syncState by app.sync.state.collectAsStateWithLifecycle()
     val flags by app.flags.values.collectAsStateWithLifecycle()
     val features by app.features.enabled.collectAsStateWithLifecycle()
