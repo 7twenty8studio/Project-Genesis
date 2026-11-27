@@ -91,4 +91,27 @@
     <string name="search_example_love">améis unos a otros</string>
     <string name="search_example_shepherd">“Jehová es mi pastor”</string>
     <string name="search_example_romans">Romanos 8</string>
+    <string name="tab_home">Inicio</string>
+    <string name="tab_library">Biblioteca</string>
+    <string name="highlights">Resaltados</string>
+    <string name="notes">Notas</string>
+    <string name="bookmarks">Marcadores</string>
+    <string name="continue_reading">Continuar leyendo</string>
+    <string name="begin_reading">Comenzar a leer</string>
+    <string name="verse_of_the_day">Versículo del día</string>
+    <string name="recently_highlighted">Resaltados recientes</string>
+    <string name="recent_notes">Notas recientes</string>
+    <string name="see_all">Ver todo</string>
+    <string name="good_morning">Buenos días</string>
+    <string name="good_afternoon">Buenas tardes</string>
+    <string name="good_evening">Buenas noches</string>
+    <string name="no_highlights_yet">Aún no hay resaltados</string>
+    <string name="no_highlights_message">En el lector, toca un versículo y elige un color.</string>
+    <string name="no_notes_yet">Aún no hay notas</string>
+    <string name="no_notes_message">Escribe sobre un versículo desde el lector o empieza una entrada de diario con el botón de abajo.</string>
+    <string name="no_bookmarks_yet">Aún no hay marcadores</string>
+    <string name="no_bookmarks_message">Toca el marcador en el lector para guardar por dónde vas.</string>
+    <string name="new_note">Nueva nota</string>
+    <string name="progress_through">Progreso en %s</string>
+    <string name="color_highlight">Resaltado %s</string>
 </resources>

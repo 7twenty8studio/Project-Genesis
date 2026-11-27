@@ -212,7 +212,8 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
 
     /**
      * Highlights: one per verse, as on iOS (highlighting again changes the
-     * colour). The live ones are kept in memory as a map for the reader.
+     * colour). The live ones are kept in memory as a map for the reader,
+     * the most recently changed first.
      */
     inner class HighlightStore {
         private val _all = MutableStateFlow(load())
@@ -220,7 +221,7 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
 
         private fun load(): Map<VerseId, HighlightColor> = synchronized(lock) {
             buildMap {
-                connection.prepare("SELECT verse, color FROM highlights WHERE deleted_at IS NULL").use { statement ->
+                connection.prepare("SELECT verse, color FROM highlights WHERE deleted_at IS NULL ORDER BY updated_at DESC").use { statement ->
                     while (statement.step()) put(VerseId(statement.getLong(0).toInt()), HighlightColor.withId(statement.getText(1)))
                 }
             }
@@ -250,7 +251,8 @@ class UserDatabase private constructor(private val connection: SQLiteConnection)
                         }
                     }
                 }
-                _all.value = _all.value + verses.associateWith { color }
+                // Newest first, so Home's Recently Highlighted reads the front.
+                _all.value = verses.associateWith { color } + (_all.value - verses.toSet())
             }
         }
 

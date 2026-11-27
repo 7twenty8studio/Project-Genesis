@@ -60,15 +60,14 @@ import com.genesis.app.settings.LocalRecentColors
 @Composable
 fun ReaderRoute(
     onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Unit,
+    onSearchClick: () -> Unit,
     viewModel: ReaderViewModel = viewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    val search by viewModel.search.collectAsStateWithLifecycle()
+    LaunchedEffect(state.chapter?.id, state.focus) { viewModel.recordPosition() }
     ReaderScreen(
         state = state,
-        search = search,
-        onSearch = viewModel::search,
-        onOpenVerse = viewModel::openVerse,
+        onSearchClick = onSearchClick,
         onChangeSettings = onChangeSettings,
         onOpen = viewModel::open,
         onChooseBible = viewModel::choose,
@@ -84,20 +83,10 @@ fun ReaderRoute(
             onNote = viewModel::openNoteForSelection,
             onNoteTap = viewModel::openNote,
         ),
-        notes = NoteActions(
-            onChange = viewModel::editNote,
-            onClose = viewModel::closeNote,
-            onDelete = viewModel::deleteNote,
-        ),
     )
 }
 
-/** What the note editor does. */
-data class NoteActions(
-    val onChange: ((Note) -> Note) -> Unit = {},
-    val onClose: () -> Unit = {},
-    val onDelete: () -> Unit = {},
-)
+
 
 /** What the reader does with tapped verses. */
 data class SelectionActions(
@@ -120,9 +109,7 @@ data class SelectionActions(
 @Composable
 fun ReaderScreen(
     state: ReaderUiState,
-    search: SearchUiState = SearchUiState(),
-    onSearch: (String) -> Unit = {},
-    onOpenVerse: (VerseId) -> Unit = {},
+    onSearchClick: () -> Unit = {},
     onChangeSettings: ((ReaderPreferences) -> ReaderPreferences) -> Unit,
     onOpen: (com.genesis.core.domain.bible.ChapterId) -> Unit,
     onChooseBible: (com.genesis.core.bible.BundledBible) -> Unit,
@@ -130,12 +117,10 @@ fun ReaderScreen(
     onPrevious: () -> Unit,
     onPreviousAtEnd: () -> Unit = onPrevious,
     selection: SelectionActions = SelectionActions(),
-    notes: NoteActions = NoteActions(),
 ) {
     var picking by rememberSaveable { mutableStateOf(false) }
     var bibleMenu by remember { mutableStateOf(false) }
     var settingsOpen by rememberSaveable { mutableStateOf(false) }
-    var searching by rememberSaveable { mutableStateOf(false) }
     val language = state.chapter?.translation?.language ?: "en"
     val colors = LocalReaderColors.current
 
@@ -163,7 +148,7 @@ fun ReaderScreen(
                 actions = {
                     val searchLabel = stringResource(R.string.search)
                     IconButton(
-                        onClick = { searching = true },
+                        onClick = onSearchClick,
                         modifier = Modifier.semantics { contentDescription = searchLabel },
                     ) { Magnifier(colors.accent) }
                     if (state.isChapterBookmarked) {
@@ -263,29 +248,6 @@ fun ReaderScreen(
         )
     }
 
-    if (searching) {
-        SearchSheet(
-            search = search,
-            scripture = scriptureStyle(LocalReaderPreferences.current, Entitlements.isPremium),
-            onText = onSearch,
-            onOpen = {
-                searching = false
-                onOpenVerse(it)
-            },
-            onDismiss = { searching = false },
-        )
-    }
-
-    state.editingNote?.let { note ->
-        NoteEditorSheet(
-            note = note,
-            language = language,
-            onChange = notes.onChange,
-            onClose = notes.onClose,
-            onDelete = notes.onDelete,
-        )
-    }
-
     if (picking) {
         BookPicker(
             language = language,
@@ -368,8 +330,8 @@ private fun Ribbon(color: androidx.compose.ui.graphics.Color) {
 
 /** The search button's magnifying glass. */
 @Composable
-private fun Magnifier(color: androidx.compose.ui.graphics.Color) {
-    Canvas(Modifier.size(20.dp)) {
+internal fun Magnifier(color: androidx.compose.ui.graphics.Color, iconSize: androidx.compose.ui.unit.Dp = 20.dp) {
+    Canvas(Modifier.size(iconSize)) {
         val stroke = size.minDimension * 0.11f
         val radius = size.minDimension * 0.32f
         val center = androidx.compose.ui.geometry.Offset(size.width * 0.42f, size.height * 0.42f)

@@ -91,4 +91,27 @@
     <string name="search_example_love">ameis uns aos outros</string>
     <string name="search_example_shepherd">“O Senhor é meu pastor”</string>
     <string name="search_example_romans">Romanos 8</string>
+    <string name="tab_home">Início</string>
+    <string name="tab_library">Biblioteca</string>
+    <string name="highlights">Destaques</string>
+    <string name="notes">Anotações</string>
+    <string name="bookmarks">Marcadores</string>
+    <string name="continue_reading">Continuar lendo</string>
+    <string name="begin_reading">Começar a ler</string>
+    <string name="verse_of_the_day">Versículo do dia</string>
+    <string name="recently_highlighted">Destacados recentemente</string>
+    <string name="recent_notes">Anotações recentes</string>
+    <string name="see_all">Ver tudo</string>
+    <string name="good_morning">Bom dia</string>
+    <string name="good_afternoon">Boa tarde</string>
+    <string name="good_evening">Boa noite</string>
+    <string name="no_highlights_yet">Ainda não há destaques</string>
+    <string name="no_highlights_message">No leitor, toque num versículo e escolha uma cor.</string>
+    <string name="no_notes_yet">Ainda não há anotações</string>
+    <string name="no_notes_message">Escreva sobre um versículo a partir do leitor, ou comece um registro no diário com o botão abaixo.</string>
+    <string name="no_bookmarks_yet">Ainda não há marcadores</string>
+    <string name="no_bookmarks_message">Toque no marcador no leitor para marcar onde parou.</string>
+    <string name="new_note">Nova anotação</string>
+    <string name="progress_through">Progresso em %s</string>
+    <string name="color_highlight">Destaque %s</string>
 </resources>

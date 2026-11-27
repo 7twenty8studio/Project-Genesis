@@ -7,7 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.genesis.app.reader.ReaderRoute
 import com.genesis.app.settings.LocalReaderPreferences
 import com.genesis.app.settings.LocalRecentColors
 import com.genesis.core.design.VerselyTheme
@@ -22,7 +21,7 @@ class MainActivity : ComponentActivity() {
             val recentColors = settings.recentColors.collectAsStateWithLifecycle()
             VerselyTheme(theme = preferences.theme) {
                 CompositionLocalProvider(LocalReaderPreferences provides preferences, LocalRecentColors provides recentColors) {
-                    ReaderRoute(onChangeSettings = settings::update)
+                    AppShell(onChangeSettings = settings::update)
                 }
             }
         }

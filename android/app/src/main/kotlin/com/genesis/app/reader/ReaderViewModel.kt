@@ -10,6 +10,7 @@ import com.genesis.core.bible.SearchResults
 import com.genesis.core.bible.BundledBible
 import com.genesis.core.bible.Chapter
 import com.genesis.core.bible.Translation
+import com.genesis.core.bible.Verse
 import com.genesis.app.VerselyApplication
 import com.genesis.core.domain.bible.ChapterId
 import com.genesis.core.domain.bible.ReferenceParser
@@ -53,7 +54,11 @@ data class ReaderUiState(
     val editingNote: Note? = null,
     /** A verse to bring into view (from search), once per request. */
     val focus: ReaderFocus? = null,
+    /** The last verse read in the reader, or null before the first chapter. */
+    val position: VerseId? = null,
 ) {
+    val hasStartedReading: Boolean get() = position != null
+
     val isChapterBookmarked: Boolean get() = Bookmarks.isBookmarked(bookmarks, chapterId)
 
     /** Notes on this chapter's verses, by the verse their mark follows. */
@@ -92,10 +97,15 @@ data class SearchUiState(
 
 class ReaderViewModel(application: Application) : AndroidViewModel(application) {
     private val repositories = mutableMapOf<BundledBible, BibleRepository>()
-    private val _state = MutableStateFlow(ReaderUiState(bible = BundledBible.default(Locale.getDefault().language)))
-    val state: StateFlow<ReaderUiState> = _state.asStateFlow()
-
     private val app = application as VerselyApplication
+
+    private val _state = MutableStateFlow(
+        ReaderUiState(
+            bible = BundledBible.default(Locale.getDefault().language),
+            chapterId = app.progress.position.value?.chapterId ?: ChapterId.john1,
+        ),
+    )
+    val state: StateFlow<ReaderUiState> = _state.asStateFlow()
 
     private val _search = MutableStateFlow(SearchUiState())
     val search: StateFlow<SearchUiState> = _search.asStateFlow()
@@ -105,6 +115,9 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         viewModelScope.launch {
             val highlights = withContext(Dispatchers.IO) { app.userData.highlights }
             highlights.all.collect { all -> _state.update { it.copy(highlights = all) } }
+        }
+        viewModelScope.launch {
+            app.progress.position.collect { position -> _state.update { it.copy(position = position) } }
         }
         viewModelScope.launch {
             val bookmarks = withContext(Dispatchers.IO) { app.userData.bookmarks }
@@ -236,6 +249,25 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
         viewModelScope.launch(Dispatchers.IO) { app.userData.notes.delete(note.id) }
     }
 
+    /** The reader is showing the chapter: remember the place (as ReadingProgress on iOS). */
+    fun recordPosition() {
+        val current = state.value
+        if (current.chapter?.id != current.chapterId) return
+        val focus = current.focus?.verse?.takeIf { it.chapterId == current.chapterId }
+        app.progress.record(focus ?: current.chapterId.firstVerse)
+    }
+
+    /** Verses of the Bible being read, verbatim, for Home's and Library's lists. */
+    suspend fun verses(ids: Collection<VerseId>): Map<VerseId, Verse> {
+        val bible = state.value.bible
+        return withContext(Dispatchers.IO) {
+            runCatching { repository(bible).verses(ids) }.onFailure { Log.e(TAG, "Couldn't read verses", it) }.getOrDefault(emptyMap())
+        }
+    }
+
+    /** Starts a note that isn't on a passage (Library's New Note). */
+    fun newNote() = _state.update { it.copy(editingNote = Note(id = UUID.randomUUID().toString())) }
+
     private fun load() {
         val (id, bible) = state.value.let { it.chapterId to it.bible }
         viewModelScope.launch {
@@ -247,6 +279,7 @@ class ReaderViewModel(application: Application) : AndroidViewModel(application) 
             _state.update {
                 if (it.chapterId == id && it.bible == bible) it.copy(chapter = chapter, failed = chapter == null) else it
             }
+
         }
     }
 

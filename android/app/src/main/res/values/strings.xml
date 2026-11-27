@@ -92,4 +92,27 @@
     <string name="search_example_love">love one another</string>
     <string name="search_example_shepherd">“the Lord is my shepherd”</string>
     <string name="search_example_romans">Romans 8</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_library">Library</string>
+    <string name="highlights">Highlights</string>
+    <string name="notes">Notes</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="continue_reading">Continue Reading</string>
+    <string name="begin_reading">Begin Reading</string>
+    <string name="verse_of_the_day">Verse of the Day</string>
+    <string name="recently_highlighted">Recently Highlighted</string>
+    <string name="recent_notes">Recent Notes</string>
+    <string name="see_all">See All</string>
+    <string name="good_morning">Good morning</string>
+    <string name="good_afternoon">Good afternoon</string>
+    <string name="good_evening">Good evening</string>
+    <string name="no_highlights_yet">No highlights yet</string>
+    <string name="no_highlights_message">In the reader, tap a verse and pick a color.</string>
+    <string name="no_notes_yet">No notes yet</string>
+    <string name="no_notes_message">Write about a verse from the reader, or start a journal entry with the button below.</string>
+    <string name="no_bookmarks_yet">No bookmarks yet</string>
+    <string name="no_bookmarks_message">Tap the bookmark in the reader to mark your place.</string>
+    <string name="new_note">New Note</string>
+    <string name="progress_through">Progress through %s</string>
+    <string name="color_highlight">%s highlight</string>
 </resources>

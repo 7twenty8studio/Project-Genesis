@@ -67,6 +67,28 @@ class BibleRepository private constructor(private val connection: SQLiteConnecti
         Chapter(id, translation, verses, headings)
     }
 
+    /** Verses by id, verbatim (Home's and Library's lists); missing ids are left out. */
+    fun verses(ids: Collection<VerseId>): Map<VerseId, Verse> = synchronized(lock) {
+        if (ids.isEmpty()) return@synchronized emptyMap()
+        buildMap {
+            for (chunk in ids.distinct().chunked(500)) {
+                val marks = chunk.joinToString(",") { "?" }
+                connection.prepare("SELECT id, text, paragraph, poetry FROM verses WHERE id IN ($marks)").use { statement ->
+                    chunk.forEachIndexed { index, id -> statement.bindLong(index + 1, id.rawValue.toLong()) }
+                    while (statement.step()) {
+                        val verse = Verse(
+                            id = VerseId(statement.getLong(0).toInt()),
+                            text = statement.getText(1),
+                            startsParagraph = statement.getLong(2) != 0L,
+                            isPoetry = statement.getLong(3) != 0L,
+                        )
+                        put(verse.id, verse)
+                    }
+                }
+            }
+        }
+    }
+
     /**
      * Verses matching an FTS5 expression (from `FullTextQuery`, never typed
      * text), verbatim, best match first or in Bible order.
